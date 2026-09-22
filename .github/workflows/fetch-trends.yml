@@ -27,6 +27,7 @@ jobs:
       - name: Run fetcher
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/fetch.py
 
       - name: Commit updated data

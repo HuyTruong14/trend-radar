@@ -86,6 +86,32 @@
     color: var(--dim);
   }
   .item .meta .src { color: var(--amber); }
+  .item .summary {
+    font-size: 13px;
+    color: var(--text);
+    opacity: 0.85;
+    margin-bottom: 4px;
+  }
+  .item .title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .score-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex: none;
+  }
+  .score-1, .score-2 { background: var(--dim); }
+  .score-3 { background: var(--amber); }
+  .score-4, .score-5 { background: var(--signal); }
+  .cross-badge {
+    font-size: 12px;
+    cursor: help;
+  }
   .empty, .loading {
     color: var(--dim);
     font-size: 13.5px;
@@ -153,8 +179,23 @@ function render() {
     html += `<div class="group"><div class="group-label">${src} (${bySource[src].length})</div>`;
     bySource[src].forEach(it => {
       const meta = [it.meta, fmtDate(it.published)].filter(Boolean).join(" · ");
+      const score = Number.isInteger(it.relevance_score) ? it.relevance_score : null;
+      const scoreDot = score
+        ? `<span class="score-dot score-${score}" title="Độ liên quan: ${score}/5"></span>`
+        : "";
+      const crossBadge = it.cross_source
+        ? `<span class="cross-badge" title="Cùng chủ đề với: ${escapeHtml((it.correlated_with || []).join(", "))}">🔥</span>`
+        : "";
+      const summary = it.summary
+        ? `<div class="summary">${escapeHtml(it.summary)}</div>`
+        : "";
       html += `<a class="item" href="${it.url || '#'}" target="_blank" rel="noopener">
-        <div class="title">${escapeHtml(it.title || "(no title)")}</div>
+        <div class="title-row">
+          ${scoreDot}
+          <div class="title">${escapeHtml(it.title || "(no title)")}</div>
+          ${crossBadge}
+        </div>
+        ${summary}
         <div class="meta"><span class="src">${escapeHtml(it.source || "")}</span> — ${escapeHtml(meta)}</div>
       </a>`;
     });

@@ -17,12 +17,18 @@ from urllib.parse import quote
 import feedparser
 import requests
 import yaml
+from rapidfuzz import fuzz
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_PATH = os.path.join(ROOT, "config.yaml")
 OUT_DIR = os.path.join(ROOT, "docs", "data")
 HEADERS = {"User-Agent": "trend-radar-bot/1.0 (personal research tool)"}
 TIMEOUT = 20
+
+DUP_THRESHOLD = 85  # rapidfuzz token_sort_ratio: >= this on title -> same story
+CORRELATION_WINDOW_HOURS = 48
+AI_MODEL = "claude-sonnet-5"
+AI_BATCH_LIMIT = 40
 
 
 def log(msg):
@@ -188,14 +194,161 @@ def fetch_rss(feed_urls, max_items):
 
 
 def dedupe(items):
-    seen = set()
-    out = []
+    """Merge near-duplicate items (same story, different title wording/URL).
+
+    Exact URL match is treated as an automatic duplicate. Otherwise, titles
+    are compared with rapidfuzz token_sort_ratio; a score >= DUP_THRESHOLD is
+    considered the same story. Between duplicates, keep the one with the
+    higher `score` (GitHub stars, HN points); if scores aren't comparable,
+    keep whichever came first.
+    """
+    kept = []
     for it in items:
-        key = (it.get("url") or it.get("title", "")).strip().lower()
-        if key and key not in seen:
-            seen.add(key)
-            out.append(it)
-    return out
+        title = (it.get("title") or "").strip().lower()
+        url = (it.get("url") or "").strip().lower()
+        match_idx = None
+        for i, k in enumerate(kept):
+            k_url = (k.get("url") or "").strip().lower()
+            if url and k_url and url == k_url:
+                match_idx = i
+                break
+            k_title = (k.get("title") or "").strip().lower()
+            if title and k_title and fuzz.token_sort_ratio(title, k_title) >= DUP_THRESHOLD:
+                match_idx = i
+                break
+        if match_idx is None:
+            kept.append(it)
+            continue
+        existing = kept[match_idx]
+        new_score, old_score = it.get("score"), existing.get("score")
+        if new_score is not None and old_score is not None:
+            if new_score > old_score:
+                kept[match_idx] = it
+        elif new_score is not None and old_score is None:
+            kept[match_idx] = it
+        # else: keep the existing (earlier) item
+    return kept
+
+
+def _extract_json_text(text):
+    text = text.strip()
+    if text.startswith("```"):
+        text = text.strip("`").strip()
+        if text.lower().startswith("json"):
+            text = text[4:].strip()
+    return text
+
+
+def score_items_with_ai(items, topic_label):
+    """Batch-score a topic's items with one Claude API call.
+
+    Adds `summary` (1-sentence Vietnamese) and `relevance_score` (1-5 int)
+    to each item in place. On any failure (missing key, network, bad JSON),
+    logs and leaves summary/relevance_score as None rather than crashing —
+    a scoring failure for one topic must not stop the other topics.
+    """
+    if not items:
+        return
+
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        log("  ! ANTHROPIC_API_KEY not set — skipping AI scoring")
+        for it in items:
+            it["summary"] = None
+            it["relevance_score"] = None
+        return
+
+    to_score = items[:AI_BATCH_LIMIT]
+    skipped = len(items) - len(to_score)
+    if skipped > 0:
+        log(f"  ! {skipped} item(s) skipped for AI scoring (batch limit {AI_BATCH_LIMIT}, kept newest)")
+
+    results = None
+    try:
+        import anthropic
+
+        client = anthropic.Anthropic(api_key=api_key)
+        payload = [{"title": it.get("title") or "", "meta": it.get("meta") or ""} for it in to_score]
+        system_prompt = (
+            "Bạn là trợ lý phân tích trend. Với danh sách item JSON đầu vào (mỗi item có "
+            "title, meta), trả về DUY NHẤT một JSON array cùng thứ tự, cùng số lượng phần tử "
+            "với đầu vào. Mỗi phần tử có 2 field: \"summary\" (tóm tắt 1 câu tiếng Việt) và "
+            "\"relevance_score\" (số nguyên 1-5, 5 = rất đáng chú ý với người theo dõi trend "
+            "AI/iGaming/business sớm). Không kèm text nào khác ngoài JSON array."
+        )
+        message = client.messages.create(
+            model=AI_MODEL,
+            max_tokens=4096,
+            system=system_prompt,
+            messages=[
+                {
+                    "role": "user",
+                    "content": f"Chu de: {topic_label}\n\nItems:\n{json.dumps(payload, ensure_ascii=False)}",
+                }
+            ],
+        )
+        raw_text = "".join(block.text for block in message.content if getattr(block, "type", None) == "text")
+        results = json.loads(_extract_json_text(raw_text))
+        if not isinstance(results, list) or len(results) != len(to_score):
+            raise ValueError(f"expected {len(to_score)} scored items, got {results!r}"[:200])
+    except Exception as e:
+        log(f"  ! AI scoring failed for topic '{topic_label}': {e}")
+        results = None
+
+    for idx, it in enumerate(to_score):
+        res = results[idx] if results else None
+        if isinstance(res, dict):
+            it["summary"] = res.get("summary")
+            score = res.get("relevance_score")
+            try:
+                it["relevance_score"] = int(score) if score is not None else None
+            except (TypeError, ValueError):
+                it["relevance_score"] = None
+        else:
+            it["summary"] = None
+            it["relevance_score"] = None
+
+    for it in items[len(to_score):]:
+        it["summary"] = None
+        it["relevance_score"] = None
+
+
+def correlate_cross_source(items):
+    """Flag items covering the same story across >=2 independent sources.
+
+    Two items are "the same story" if their titles are fuzzy-similar
+    (>= DUP_THRESHOLD), they come from different sources, and their
+    published dates are within CORRELATION_WINDOW_HOURS of each other.
+    Runs after dedupe() so it never confuses two copies of one article
+    for cross-source coverage.
+    """
+    n = len(items)
+    matches = [set() for _ in range(n)]
+    parsed_dates = [parse_dt(it.get("published")) for it in items]
+
+    for i in range(n):
+        title_i = (items[i].get("title") or "").strip().lower()
+        source_i = items[i].get("source")
+        if not title_i or parsed_dates[i] is None:
+            continue
+        for j in range(i + 1, n):
+            source_j = items[j].get("source")
+            if not source_j or source_i == source_j:
+                continue
+            title_j = (items[j].get("title") or "").strip().lower()
+            if not title_j or parsed_dates[j] is None:
+                continue
+            delta_hours = abs((parsed_dates[i] - parsed_dates[j]).total_seconds()) / 3600
+            if delta_hours > CORRELATION_WINDOW_HOURS:
+                continue
+            if fuzz.token_sort_ratio(title_i, title_j) >= DUP_THRESHOLD:
+                matches[i].add(source_j)
+                matches[j].add(source_i)
+
+    for idx, it in enumerate(items):
+        correlated = sorted(matches[idx])
+        it["cross_source"] = bool(correlated)
+        it["correlated_with"] = correlated
 
 
 def build_topic(topic_key, cfg, max_items, freshness_days):
@@ -232,6 +385,13 @@ def build_topic(topic_key, cfg, max_items, freshness_days):
         it.pop("_dt", None)
 
     log(f"  -> {len(fresh)} fresh items (from {len(items)} fetched)")
+
+    score_items_with_ai(fresh, cfg.get("label", topic_key))
+    correlate_cross_source(fresh)
+    cross_source_count = sum(1 for it in fresh if it.get("cross_source"))
+    if cross_source_count:
+        log(f"  -> {cross_source_count} item(s) flagged cross-source")
+
     return fresh
 
 
@@ -246,7 +406,11 @@ def main():
     manifest = {"updated": datetime.now(timezone.utc).isoformat(), "topics": []}
 
     for topic_key, cfg in config["topics"].items():
-        results = build_topic(topic_key, cfg, max_items, freshness_days)
+        try:
+            results = build_topic(topic_key, cfg, max_items, freshness_days)
+        except Exception as e:
+            log(f"  ! topic '{topic_key}' failed entirely: {e} — skipping, other topics continue")
+            continue
         out_path = os.path.join(OUT_DIR, f"{topic_key}.json")
         with open(out_path, "w") as f:
             json.dump({"label": cfg.get("label", topic_key), "items": results}, f, indent=2)
