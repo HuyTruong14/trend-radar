@@ -1,0 +1,38 @@
+name: Fetch trends
+
+on:
+  schedule:
+    # 07:00 UTC daily (= 14:00 Vietnam time). Edit the cron to change cadence.
+    - cron: "0 7 * * *"
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run fetcher
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/fetch.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "trend-radar-bot"
+          git config user.email "actions@github.com"
+          git add docs/data/*.json
+          git diff --quiet --cached || git commit -m "Update trend data $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push

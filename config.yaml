@@ -1,0 +1,47 @@
+# Trend Radar config
+# Add / remove keywords and feeds any time — no code changes needed.
+
+topics:
+  ai-tech:
+    label: "AI & Technology"
+    keywords:
+      - "AI video"
+      - "video generation"
+      - "generative AI"
+      - "AI agent"
+      - "large language model"
+    hackernews: true
+    arxiv:
+      categories: ["cs.AI", "cs.CV", "cs.CL"]
+      keywords:
+        - "video generation"
+        - "diffusion model"
+        - "AI agent"
+    github_search:
+      # GitHub Search API query terms (repos with recent activity)
+      - "ai video generation"
+      - "llm agent"
+    rss: []
+
+  igaming:
+    label: "iGaming & Gaming"
+    keywords:
+      - "igaming"
+      - "online casino"
+      - "sports betting"
+      - "slot provider"
+      - "game aggregator"
+    hackernews: false
+    arxiv:
+      categories: []
+      keywords: []
+    github_search: []
+    rss:
+      - "https://sbcnews.co.uk/feed/"
+      - "https://igamingbusiness.com/feed/"
+
+# How many items to keep per source, per topic
+max_items_per_source: 15
+
+# Only keep items published in the last N days (freshness filter)
+freshness_days: 14

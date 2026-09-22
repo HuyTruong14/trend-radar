@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Trend Radar</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #12181f;
+    --line: #232b34;
+    --text: #dbe2ea;
+    --dim: #7a8794;
+    --signal: #4fd1a5;
+    --amber: #e0a84e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.5;
+  }
+  header {
+    padding: 28px 24px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  header h1 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    letter-spacing: 0.2px;
+  }
+  header .sub {
+    color: var(--dim);
+    font-size: 13.5px;
+  }
+  .tabs {
+    display: flex;
+    gap: 4px;
+    padding: 14px 24px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .tab {
+    padding: 10px 16px;
+    font-size: 14px;
+    color: var(--dim);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    user-select: none;
+  }
+  .tab.active {
+    color: var(--text);
+    border-bottom-color: var(--signal);
+  }
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 22px 24px 60px;
+  }
+  .group {
+    margin-bottom: 26px;
+  }
+  .group-label {
+    font-size: 12px;
+    color: var(--dim);
+    margin-bottom: 8px;
+  }
+  .item {
+    display: block;
+    padding: 12px 14px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: var(--text);
+  }
+  .item:hover { border-color: var(--signal); }
+  .item .title {
+    font-size: 14.5px;
+    margin-bottom: 4px;
+  }
+  .item .meta {
+    font-size: 12px;
+    color: var(--dim);
+  }
+  .item .meta .src { color: var(--amber); }
+  .empty, .loading {
+    color: var(--dim);
+    font-size: 13.5px;
+    padding: 20px 0;
+  }
+  footer {
+    text-align: center;
+    color: var(--dim);
+    font-size: 12px;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Trend Radar</h1>
+  <div class="sub" id="updated">Đang tải dữ liệu…</div>
+</header>
+
+<div class="tabs" id="tabs"></div>
+
+<main id="main">
+  <div class="loading">Đang tải…</div>
+</main>
+
+<footer>Nguồn: Hacker News · arXiv · GitHub · RSS ngành — cập nhật tự động qua GitHub Actions</footer>
+
+<script>
+const TOPICS = [
+  { key: "ai-tech", file: "data/ai-tech.json" },
+  { key: "igaming", file: "data/igaming.json" },
+];
+
+let activeTopic = TOPICS[0].key;
+let dataByTopic = {};
+
+function fmtDate(iso) {
+  if (!iso) return "";
+  try {
+    const d = new Date(iso);
+    return d.toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric" });
+  } catch (e) { return ""; }
+}
+
+function render() {
+  const main = document.getElementById("main");
+  const topic = dataByTopic[activeTopic];
+  if (!topic || !topic.items || topic.items.length === 0) {
+    main.innerHTML = '<div class="empty">Chưa có dữ liệu cho chủ đề này — chờ lần chạy tự động tiếp theo, hoặc chạy workflow thủ công trong tab Actions.</div>';
+    return;
+  }
+
+  const bySource = {};
+  topic.items.forEach(it => {
+    const s = it.source || "Khác";
+    if (!bySource[s]) bySource[s] = [];
+    bySource[s].push(it);
+  });
+
+  let html = "";
+  Object.keys(bySource).forEach(src => {
+    html += `<div class="group"><div class="group-label">${src} (${bySource[src].length})</div>`;
+    bySource[src].forEach(it => {
+      const meta = [it.meta, fmtDate(it.published)].filter(Boolean).join(" · ");
+      html += `<a class="item" href="${it.url || '#'}" target="_blank" rel="noopener">
+        <div class="title">${escapeHtml(it.title || "(no title)")}</div>
+        <div class="meta"><span class="src">${escapeHtml(it.source || "")}</span> — ${escapeHtml(meta)}</div>
+      </a>`;
+    });
+    html += `</div>`;
+  });
+  main.innerHTML = html;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function renderTabs() {
+  const tabsEl = document.getElementById("tabs");
+  tabsEl.innerHTML = "";
+  TOPICS.forEach(t => {
+    const label = (dataByTopic[t.key] && dataByTopic[t.key].label) || t.key;
+    const el = document.createElement("div");
+    el.className = "tab" + (t.key === activeTopic ? " active" : "");
+    el.textContent = label;
+    el.onclick = () => { activeTopic = t.key; renderTabs(); render(); };
+    tabsEl.appendChild(el);
+  });
+}
+
+async function loadAll() {
+  for (const t of TOPICS) {
+    try {
+      const res = await fetch(t.file + "?_=" + Date.now());
+      dataByTopic[t.key] = await res.json();
+    } catch (e) {
+      dataByTopic[t.key] = { label: t.key, items: [] };
+    }
+  }
+  try {
+    const manifest = await (await fetch("data/manifest.json?_=" + Date.now())).json();
+    document.getElementById("updated").textContent =
+      "Cập nhật lần cuối: " + new Date(manifest.updated).toLocaleString("vi-VN");
+  } catch (e) {
+    document.getElementById("updated").textContent = "Chưa có lần cập nhật nào — hãy chạy workflow lần đầu.";
+  }
+  renderTabs();
+  render();
+}
+
+loadAll();
+</script>
+
+</body>
+</html>
