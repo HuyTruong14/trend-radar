@@ -542,4 +542,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main((  # TEMP: intentional syntax error to test the "Alert on failure" workflow step
+    main()
