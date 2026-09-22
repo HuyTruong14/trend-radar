@@ -117,6 +117,44 @@
     font-size: 13.5px;
     padding: 20px 0;
   }
+  .chart-wrap {
+    position: relative;
+    margin-bottom: 22px;
+  }
+  .chart-label {
+    font-size: 12px;
+    color: var(--dim);
+    margin-bottom: 6px;
+  }
+  .velocity-chart {
+    display: block;
+    width: 100%;
+    height: 70px;
+  }
+  .chart-bar {
+    fill: var(--signal);
+    opacity: 0.75;
+    cursor: pointer;
+    transition: opacity 0.1s;
+  }
+  .chart-bar:hover, .chart-bar:active {
+    opacity: 1;
+  }
+  .chart-tooltip {
+    position: absolute;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 5px 9px;
+    font-size: 11.5px;
+    color: var(--text);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s;
+    z-index: 5;
+    transform: translateY(-100%);
+  }
   footer {
     text-align: center;
     color: var(--dim);
@@ -150,6 +188,7 @@ const TOPICS = [
 
 let activeTopic = TOPICS[0].key;
 let dataByTopic = {};
+let historyByTopic = {};
 
 function fmtDate(iso) {
   if (!iso) return "";
@@ -159,12 +198,78 @@ function fmtDate(iso) {
   } catch (e) { return ""; }
 }
 
+function computeChartPoints(history) {
+  const width = 600, height = 70, padX = 4, padY = 8;
+  const sorted = history.slice().sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+  const n = sorted.length;
+  const maxTotal = Math.max(1, ...sorted.map(h => h.total_items || 0));
+  const barW = (width - padX * 2) / n;
+  return sorted.map((h, i) => {
+    const barH = Math.max(2, (h.total_items || 0) / maxTotal * (height - padY * 2));
+    return {
+      x: padX + i * barW,
+      y: height - padY - barH,
+      w: Math.max(1, barW - 1.5),
+      h: barH,
+      date: h.date,
+      total: h.total_items,
+      avg: h.avg_relevance_score,
+    };
+  });
+}
+
+function renderVelocityChartHtml(points) {
+  const width = 600, height = 70;
+  const bars = points.map((p, i) =>
+    `<rect class="chart-bar" data-idx="${i}" x="${p.x.toFixed(2)}" y="${p.y.toFixed(2)}" width="${p.w.toFixed(2)}" height="${p.h.toFixed(2)}" rx="1.5"></rect>`
+  ).join("");
+  return `<div class="chart-wrap">
+    <div class="chart-label">Số item/ngày (${points.length} ngày gần nhất)</div>
+    <svg class="velocity-chart" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none">${bars}</svg>
+    <div class="chart-tooltip"></div>
+  </div>`;
+}
+
+function wireChartTooltip(wrapEl, points) {
+  if (!wrapEl) return;
+  const tooltip = wrapEl.querySelector(".chart-tooltip");
+  const bars = wrapEl.querySelectorAll(".chart-bar");
+  if (!tooltip || !bars.length) return;
+
+  function showTip(el, p) {
+    const barRect = el.getBoundingClientRect();
+    const wrapRect = wrapEl.getBoundingClientRect();
+    const avgTxt = (p.avg === null || p.avg === undefined) ? "—" : p.avg;
+    tooltip.innerHTML = `${escapeHtml(fmtDate(p.date))}<br>${p.total} item · điểm TB ${avgTxt}`;
+    tooltip.style.left = Math.max(0, barRect.left - wrapRect.left - 10) + "px";
+    tooltip.style.top = (barRect.top - wrapRect.top - 6) + "px";
+    tooltip.style.opacity = "1";
+  }
+  function hideTip() { tooltip.style.opacity = "0"; }
+
+  bars.forEach((el, i) => {
+    el.addEventListener("mouseenter", () => showTip(el, points[i]));
+    el.addEventListener("mouseleave", hideTip);
+    el.addEventListener("click", (e) => { e.stopPropagation(); showTip(el, points[i]); });
+  });
+  document.addEventListener("click", hideTip);
+}
+
 function render() {
   const main = document.getElementById("main");
   const topic = dataByTopic[activeTopic];
+  const history = historyByTopic[activeTopic] || [];
+
   if (!topic || !topic.items || topic.items.length === 0) {
     main.innerHTML = '<div class="empty">Chưa có dữ liệu cho chủ đề này — chờ lần chạy tự động tiếp theo, hoặc chạy workflow thủ công trong tab Actions.</div>';
     return;
+  }
+
+  let chartPoints = null;
+  let chartHtml = "";
+  if (history.length > 0) {
+    chartPoints = computeChartPoints(history);
+    chartHtml = renderVelocityChartHtml(chartPoints);
   }
 
   const bySource = {};
@@ -174,7 +279,7 @@ function render() {
     bySource[s].push(it);
   });
 
-  let html = "";
+  let html = chartHtml;
   Object.keys(bySource).forEach(src => {
     html += `<div class="group"><div class="group-label">${src} (${bySource[src].length})</div>`;
     bySource[src].forEach(it => {
@@ -202,6 +307,10 @@ function render() {
     html += `</div>`;
   });
   main.innerHTML = html;
+
+  if (chartPoints) {
+    wireChartTooltip(main.querySelector(".chart-wrap"), chartPoints);
+  }
 }
 
 function escapeHtml(s) {
@@ -228,6 +337,13 @@ async function loadAll() {
       dataByTopic[t.key] = await res.json();
     } catch (e) {
       dataByTopic[t.key] = { label: t.key, items: [] };
+    }
+    try {
+      const res = await fetch(`data/history/${t.key}.json?_=` + Date.now());
+      const h = res.ok ? await res.json() : [];
+      historyByTopic[t.key] = Array.isArray(h) ? h : [];
+    } catch (e) {
+      historyByTopic[t.key] = [];
     }
   }
   try {

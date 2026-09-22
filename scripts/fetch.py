@@ -19,6 +19,8 @@ import requests
 import yaml
 from rapidfuzz import fuzz
 
+import notify
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_PATH = os.path.join(ROOT, "config.yaml")
 OUT_DIR = os.path.join(ROOT, "docs", "data")
@@ -28,6 +30,7 @@ TIMEOUT = 20
 
 DUP_THRESHOLD = 85  # rapidfuzz token_sort_ratio: >= this on title -> same story
 CORRELATION_WINDOW_HOURS = 48
+ALERT_SCORE_THRESHOLD = 4
 AI_MODEL = "claude-sonnet-5"
 AI_BATCH_LIMIT = 40
 
@@ -352,6 +355,40 @@ def correlate_cross_source(items):
         it["correlated_with"] = correlated
 
 
+def _format_alert_line(idx, it):
+    tags = []
+    score = it.get("relevance_score")
+    if isinstance(score, int) and score >= ALERT_SCORE_THRESHOLD:
+        tags.append(f"score {score}")
+    if it.get("cross_source"):
+        sources = it.get("correlated_with") or []
+        tags.append("🔥 cross-source: " + (" + ".join(sources) if sources else "?"))
+    title = it.get("title") or "(no title)"
+    url = it.get("url") or ""
+    return f"{idx}. [{', '.join(tags)}] {title} — {url}"
+
+
+def build_alert_message(topic_label, items):
+    """Return a Telegram message for a topic's standout items, or None.
+
+    Standout = relevance_score >= ALERT_SCORE_THRESHOLD or cross_source.
+    Returns None (send nothing) when no item in this topic qualifies —
+    silence is the normal case, not an error.
+    """
+    qualifying = [
+        it
+        for it in items
+        if (isinstance(it.get("relevance_score"), int) and it["relevance_score"] >= ALERT_SCORE_THRESHOLD)
+        or it.get("cross_source")
+    ]
+    if not qualifying:
+        return None
+
+    lines = [f"🔥 Trend Radar — {topic_label} ({len(qualifying)} tín hiệu đáng chú ý)"]
+    lines += [_format_alert_line(i, it) for i, it in enumerate(qualifying, 1)]
+    return "\n".join(lines)
+
+
 def update_history(topic_key, items, history_days):
     """Append/replace today's rolling summary entry for a topic's history.
 
@@ -487,6 +524,16 @@ def main():
             update_history(topic_key, results, history_days)
         except Exception as e:
             log(f"  ! history update failed for '{topic_key}': {e} — skipping history for this topic")
+
+        try:
+            alert_msg = build_alert_message(cfg.get("label", topic_key), results)
+            if alert_msg:
+                if notify.send_message(alert_msg):
+                    log(f"  -> Telegram alert sent for '{topic_key}'")
+                else:
+                    log(f"  ! Telegram alert not sent for '{topic_key}' (see notify log above)")
+        except Exception as e:
+            log(f"  ! alert failed for '{topic_key}': {e} — continuing")
 
     with open(os.path.join(OUT_DIR, "manifest.json"), "w") as f:
         json.dump(manifest, f, indent=2)
