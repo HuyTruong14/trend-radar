@@ -40,6 +40,32 @@ topics:
       - "https://sbcnews.co.uk/feed/"
       - "https://igamingbusiness.com/feed/"
 
+  business:
+    label: "Business & Funding"
+    keywords: []
+    hackernews: false
+    arxiv:
+      categories: []
+      keywords: []
+    github_search: []
+    rss:
+      - "https://techcrunch.com/category/venture/feed/"
+      - "https://news.crunchbase.com/feed/"
+      - "https://a16z.com/feed/"
+      - "https://hbr.org/feed"
+
+  news:
+    label: "News (theo từ khóa)"
+    keywords: []
+    hackernews: false
+    arxiv:
+      categories: []
+      keywords: []
+    github_search: []
+    rss:
+      - "https://news.google.com/rss/search?q=igaming+regulation&hl=vi-VN&gl=VN&ceid=VN:vi"
+      - "https://news.google.com/rss/search?q=AI+regulation&hl=vi-VN&gl=VN&ceid=VN:vi"
+
 # How many items to keep per source, per topic
 max_items_per_source: 15
 
