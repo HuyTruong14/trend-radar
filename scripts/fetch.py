@@ -22,6 +22,7 @@ from rapidfuzz import fuzz
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_PATH = os.path.join(ROOT, "config.yaml")
 OUT_DIR = os.path.join(ROOT, "docs", "data")
+HISTORY_DIR = os.path.join(OUT_DIR, "history")
 HEADERS = {"User-Agent": "trend-radar-bot/1.0 (personal research tool)"}
 TIMEOUT = 20
 
@@ -351,6 +352,67 @@ def correlate_cross_source(items):
         it["correlated_with"] = correlated
 
 
+def update_history(topic_key, items, history_days):
+    """Append/replace today's rolling summary entry for a topic's history.
+
+    Stores aggregate counts only (never full item content), so the file
+    stays small no matter how long the workflow runs daily. One entry per
+    calendar date: re-running the same day replaces that day's entry
+    instead of appending a duplicate. Entries older than history_days are
+    dropped on every write.
+    """
+    os.makedirs(HISTORY_DIR, exist_ok=True)
+    path = os.path.join(HISTORY_DIR, f"{topic_key}.json")
+
+    history = []
+    if os.path.exists(path):
+        try:
+            with open(path) as f:
+                loaded = json.load(f)
+            if not isinstance(loaded, list):
+                raise ValueError("expected a JSON array")
+            history = loaded
+        except Exception as e:
+            log(f"  ! history file for '{topic_key}' unreadable ({e}) — recreating from empty")
+            history = []
+
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    scores = [it.get("relevance_score") for it in items if isinstance(it.get("relevance_score"), int)]
+    avg_score = round(sum(scores) / len(scores), 2) if scores else None
+
+    by_source, by_keyword = {}, {}
+    cross_source_count = 0
+    for it in items:
+        src = it.get("source") or ""
+        by_source[src] = by_source.get(src, 0) + 1
+        kw = it.get("matched_keyword") or ""
+        by_keyword[kw] = by_keyword.get(kw, 0) + 1
+        if it.get("cross_source"):
+            cross_source_count += 1
+
+    entry = {
+        "date": today,
+        "total_items": len(items),
+        "avg_relevance_score": avg_score,
+        "cross_source_count": cross_source_count,
+        "by_source": by_source,
+        "by_keyword": by_keyword,
+    }
+
+    history = [h for h in history if isinstance(h, dict) and h.get("date") != today]
+    history.append(entry)
+
+    cutoff = (datetime.now(timezone.utc).date() - timedelta(days=history_days - 1)).isoformat()
+    history = [h for h in history if isinstance(h.get("date"), str) and h["date"] >= cutoff]
+    history.sort(key=lambda h: h.get("date", ""))
+
+    with open(path, "w") as f:
+        json.dump(history, f, indent=2, ensure_ascii=False)
+
+    return entry
+
+
 def build_topic(topic_key, cfg, max_items, freshness_days):
     log(f"Fetching topic: {topic_key}")
     items = []
@@ -406,6 +468,7 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     max_items = config.get("max_items_per_source", 15)
     freshness_days = config.get("freshness_days", 14)
+    history_days = config.get("history_days", 60)
 
     manifest = {"updated": datetime.now(timezone.utc).isoformat(), "topics": []}
 
@@ -419,6 +482,11 @@ def main():
         with open(out_path, "w") as f:
             json.dump({"label": cfg.get("label", topic_key), "items": results}, f, indent=2)
         manifest["topics"].append({"key": topic_key, "label": cfg.get("label", topic_key), "count": len(results)})
+
+        try:
+            update_history(topic_key, results, history_days)
+        except Exception as e:
+            log(f"  ! history update failed for '{topic_key}': {e} — skipping history for this topic")
 
     with open(os.path.join(OUT_DIR, "manifest.json"), "w") as f:
         json.dump(manifest, f, indent=2)

@@ -71,3 +71,6 @@ max_items_per_source: 15
 
 # Only keep items published in the last N days (freshness filter)
 freshness_days: 14
+
+# How many days of daily history snapshots to keep per topic
+history_days: 60
