@@ -370,7 +370,11 @@ def build_topic(topic_key, cfg, max_items, freshness_days):
     if rss_feeds:
         items += fetch_rss(rss_feeds, max_items)
 
+    raw_count = len(items)
     items = dedupe(items)
+    dup_count = raw_count - len(items)
+    if dup_count:
+        log(f"  -> {dup_count} near-duplicate(s) merged by dedupe ({raw_count} -> {len(items)})")
 
     # attach parsed datetime for sorting/filtering, then drop stale items
     fresh = []
@@ -384,7 +388,7 @@ def build_topic(topic_key, cfg, max_items, freshness_days):
     for it in fresh:
         it.pop("_dt", None)
 
-    log(f"  -> {len(fresh)} fresh items (from {len(items)} fetched)")
+    log(f"  -> {len(fresh)} fresh items (from {raw_count} fetched)")
 
     score_items_with_ai(fresh, cfg.get("label", topic_key))
     correlate_cross_source(fresh)
