@@ -73,4 +73,4 @@ max_items_per_source: 15
 freshness_days: 14
 
 # How many days of daily history snapshots to keep per topic
-history_days: 1  # TEMP: testing cutoff, will revert to 60 right after
+history_days: 60
