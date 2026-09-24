@@ -24,6 +24,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: TEMP - test Telegram delivery
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -c "import sys; sys.path.insert(0, 'scripts'); import notify; ok = notify.send_message('✅ Trend Radar — test kết nối Telegram thành công!'); sys.exit(0 if ok else 1)"
+
       - name: Run fetcher
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
