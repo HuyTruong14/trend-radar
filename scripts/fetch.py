@@ -12,7 +12,7 @@ import re
 import sys
 import time
 from datetime import datetime, timedelta, timezone
-from urllib.parse import quote
+from urllib.parse import quote, urljoin
 
 import feedparser
 import requests
@@ -182,12 +182,17 @@ def fetch_rss(feed_urls, max_items):
         if not r:
             continue
         parsed = feedparser.parse(r.content)
+        # Some feeds (e.g. HBR) only give entry links relative to the
+        # site's homepage, not to the feed URL itself — resolve against
+        # the feed's own <link> when present, falling back to the feed URL.
+        base_url = parsed.feed.get("link") or feed_url
         for entry in parsed.entries[:max_items]:
+            raw_link = entry.get("link")
             items.append(
                 {
                     "source": parsed.feed.get("title", feed_url),
                     "title": entry.get("title", "(no title)"),
-                    "url": entry.get("link"),
+                    "url": urljoin(base_url, raw_link) if raw_link else None,
                     "matched_keyword": "",
                     "score": None,
                     "meta": entry.get("published", "")[:16],

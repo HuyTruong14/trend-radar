@@ -51,8 +51,10 @@ topics:
     rss:
       - "https://techcrunch.com/category/venture/feed/"
       - "https://news.crunchbase.com/feed/"
-      - "https://a16z.com/feed/"
-      - "https://hbr.org/feed"
+      # a16z.com's RSS feed has been dead for 2+ years (confirmed via
+      # feeder.co and direct probing — every path now serves the HTML
+      # homepage instead of XML, no working replacement exists) — removed.
+      - "http://feeds.harvardbusiness.org/harvardbusiness"  # hbr.org/feed 404s; this is HBR's real feed host
 
   news:
     label: "News (theo từ khóa)"
