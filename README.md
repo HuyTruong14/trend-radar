@@ -50,6 +50,28 @@ không cần mở máy tính.
   nếu trang đổi cấu trúc, sửa lại URL trong `config.yaml`.
 - Chưa có Reddit / Product Hunt / Google Trends (cần OAuth token) — nếu
   muốn thêm, nói để tôi bổ sung.
-- Đây là bản MVP cho keyword-matching đơn giản, chưa có AI tóm tắt/xếp
-  hạng độ liên quan — có thể nâng cấp sau bằng cách gọi Claude API trong
-  bước fetch.
+- AI scoring (tóm tắt + điểm liên quan 1-5), cross-source correlation, và
+  alert Telegram cho item điểm cao đã có code (Phase 1 & 3) nhưng **đang
+  tắt** vì repo chưa cấu hình `ANTHROPIC_API_KEY` (dùng API Anthropic trả
+  phí theo token — khác với gói Claude Pro trên claude.ai, không dùng
+  chung được). Thêm secret đó vào repo là bật được ngay, không cần sửa
+  code.
+
+## Phase 4 (roadmap — chưa làm)
+
+Chưa bắt đầu, ghi lại để làm tiếp khi cần:
+
+- **Tránh báo trùng Telegram**: hiện tại 1 item có thể bị báo lại nhiều
+  lần nếu nó vẫn còn nằm trong danh sách "fresh" (do `freshness_days`)
+  ở các lần chạy sau — Phase 3 chấp nhận việc này để giữ đơn giản. Cần
+  lưu lại "đã báo item nào" (vd. set URL đã alert, có TTL) để chỉ báo 1
+  lần cho mỗi item. Chỉ đáng làm sau khi `ANTHROPIC_API_KEY` được bật,
+  vì hiện alert theo điểm/cross-source chưa kích hoạt.
+- **Thêm nguồn mới**: Reddit, Product Hunt, Google Trends — đều cần
+  OAuth/API key riêng, chưa có trong `requirements.txt`/`fetch.py`.
+- **RSS dự phòng**: khi 1 feed 404 (như a16z, hbr.org từng bị), tự động
+  thử feed thay thế thay vì phải sửa `config.yaml` thủ công mỗi lần.
+- **Dọn label nguồn**: một số feed trả `<title>` xấu (vd. feed HBR trả
+  "HBR CMS" thay vì "Harvard Business Review") — có thể thêm field
+  `display_name` tùy chọn trong `config.yaml` để override label hiển thị
+  trên dashboard.
