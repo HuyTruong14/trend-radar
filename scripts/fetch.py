@@ -6,6 +6,7 @@ docs/index.html dashboard reads.
 Run locally:  python scripts/fetch.py
 Run in CI:    triggered by .github/workflows/fetch-trends.yml
 """
+import html
 import json
 import os
 import re
@@ -96,6 +97,7 @@ def fetch_hackernews(keywords, max_items):
                     "score": hit.get("points", 0),
                     "meta": f"{hit.get('points', 0)} pts · {hit.get('num_comments', 0)} comments",
                     "published": hit.get("created_at"),
+                    "summary": None,
                 }
             )
         time.sleep(0.3)
@@ -122,6 +124,9 @@ def fetch_arxiv(categories, keywords, max_items):
         return items
     feed = feedparser.parse(r.text)
     for entry in feed.entries:
+        abstract = re.sub(r"<[^>]+>", "", entry.get("summary", ""))
+        abstract = html.unescape(abstract)
+        abstract = re.sub(r"\s+", " ", abstract).strip()
         items.append(
             {
                 "source": "arXiv",
@@ -131,6 +136,7 @@ def fetch_arxiv(categories, keywords, max_items):
                 "score": None,
                 "meta": entry.get("published", "")[:10],
                 "published": entry.get("published"),
+                "summary": abstract[:300] if abstract else None,
             }
         )
     return items
@@ -166,8 +172,9 @@ def fetch_github(queries, max_items):
                     "url": repo.get("html_url"),
                     "matched_keyword": q,
                     "score": repo.get("stargazers_count", 0),
-                    "meta": f"{repo.get('stargazers_count', 0)} stars · {repo.get('description') or ''}"[:140],
+                    "meta": f"{repo.get('stargazers_count', 0)} stars",
                     "published": repo.get("pushed_at"),
+                    "summary": repo.get("description") or None,
                 }
             )
         time.sleep(0.3)
@@ -188,6 +195,10 @@ def fetch_rss(feed_urls, max_items):
         base_url = parsed.feed.get("link") or feed_url
         for entry in parsed.entries[:max_items]:
             raw_link = entry.get("link")
+            desc = entry.get("summary") or entry.get("description") or ""
+            desc = re.sub(r"<[^>]+>", "", desc)
+            desc = html.unescape(desc).strip()
+            desc = re.sub(r"\s+", " ", desc)
             items.append(
                 {
                     "source": parsed.feed.get("title", feed_url),
@@ -197,6 +208,7 @@ def fetch_rss(feed_urls, max_items):
                     "score": None,
                     "meta": entry.get("published", "")[:16],
                     "published": entry.get("published"),
+                    "summary": desc[:300] if desc else None,
                 }
             )
     return items
@@ -239,6 +251,52 @@ def dedupe(items):
     return kept
 
 
+def score_items_simple(items, keywords):
+    """Score items using engagement metrics + keyword density. No API needed."""
+    kw_list = [k.lower() for k in keywords if k]
+    for it in items:
+        source = it.get("source", "")
+        raw = it.get("score")
+        text = ((it.get("title") or "") + " " + (it.get("summary") or "")).lower()
+        kw_hits = sum(1 for k in kw_list if k in text) if kw_list else 0
+
+        if source == "GitHub" and isinstance(raw, (int, float)):
+            if raw >= 50000:
+                base = 5
+            elif raw >= 10000:
+                base = 4
+            elif raw >= 3000:
+                base = 3
+            elif raw >= 500:
+                base = 2
+            else:
+                base = 1
+        elif source == "Hacker News" and isinstance(raw, (int, float)):
+            if raw >= 500:
+                base = 5
+            elif raw >= 200:
+                base = 4
+            elif raw >= 50:
+                base = 3
+            elif raw >= 10:
+                base = 2
+            else:
+                base = 1
+        else:
+            if kw_hits >= 3:
+                base = 4
+            elif kw_hits >= 2:
+                base = 3
+            elif kw_hits >= 1:
+                base = 2
+            else:
+                base = 1
+
+        if kw_hits >= 2 and base < 5:
+            base = min(base + 1, 5)
+        it["relevance_score"] = base
+
+
 def _extract_json_text(text):
     text = text.strip()
     if text.startswith("```"):
@@ -261,10 +319,7 @@ def score_items_with_ai(items, topic_label):
 
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
-        log("  ! ANTHROPIC_API_KEY not set — skipping AI scoring")
-        for it in items:
-            it["summary"] = None
-            it["relevance_score"] = None
+        log("  -> No ANTHROPIC_API_KEY — using simple scoring (stars/points/keywords)")
         return
 
     to_score = items[:AI_BATCH_LIMIT]
@@ -394,6 +449,32 @@ def build_alert_message(topic_label, items):
     return "\n".join(lines)
 
 
+def build_daily_digest(all_results):
+    """Build a Telegram daily digest summarizing top items across all topics."""
+    today = datetime.now(timezone.utc).strftime("%d/%m/%Y")
+    lines = [f"📊 Trend Radar — {today}", ""]
+    total = 0
+    for topic_key, label, items in all_results:
+        count = len(items)
+        total += count
+        top = sorted(items, key=lambda x: x.get("relevance_score") or 0, reverse=True)[:3]
+        lines.append(f"📌 {label} ({count} item)")
+        for it in top:
+            s = it.get("relevance_score") or 0
+            stars = "⭐" * min(s, 5) if s >= 3 else ""
+            title = (it.get("title") or "")[:55]
+            url = it.get("url") or ""
+            if stars:
+                lines.append(f"  {stars} {title}")
+            else:
+                lines.append(f"  • {title}")
+            if url:
+                lines.append(f"    {url}")
+        lines.append("")
+    lines.append(f"Tổng: {total} item")
+    return "\n".join(lines)
+
+
 def update_history(topic_key, items, history_days):
     """Append/replace today's rolling summary entry for a topic's history.
 
@@ -494,6 +575,12 @@ def build_topic(topic_key, cfg, max_items, freshness_days):
 
     log(f"  -> {len(fresh)} fresh items (from {raw_count} fetched)")
 
+    all_keywords = list(cfg.get("keywords", []))
+    arxiv_kw = (cfg.get("arxiv") or {}).get("keywords", [])
+    all_keywords.extend(arxiv_kw)
+    gh_kw = cfg.get("github_search") or []
+    all_keywords.extend(gh_kw)
+    score_items_simple(fresh, all_keywords)
     score_items_with_ai(fresh, cfg.get("label", topic_key))
     correlate_cross_source(fresh)
     cross_source_count = sum(1 for it in fresh if it.get("cross_source"))
@@ -513,6 +600,7 @@ def main():
     history_days = config.get("history_days", 60)
 
     manifest = {"updated": datetime.now(timezone.utc).isoformat(), "topics": []}
+    all_results = []
 
     for topic_key, cfg in config["topics"].items():
         try:
@@ -520,10 +608,12 @@ def main():
         except Exception as e:
             log(f"  ! topic '{topic_key}' failed entirely: {e} — skipping, other topics continue")
             continue
+        label = cfg.get("label", topic_key)
         out_path = os.path.join(OUT_DIR, f"{topic_key}.json")
         with open(out_path, "w") as f:
-            json.dump({"label": cfg.get("label", topic_key), "items": results}, f, indent=2)
-        manifest["topics"].append({"key": topic_key, "label": cfg.get("label", topic_key), "count": len(results)})
+            json.dump({"label": label, "items": results}, f, indent=2)
+        manifest["topics"].append({"key": topic_key, "label": label, "count": len(results)})
+        all_results.append((topic_key, label, results))
 
         try:
             update_history(topic_key, results, history_days)
@@ -531,7 +621,7 @@ def main():
             log(f"  ! history update failed for '{topic_key}': {e} — skipping history for this topic")
 
         try:
-            alert_msg = build_alert_message(cfg.get("label", topic_key), results)
+            alert_msg = build_alert_message(label, results)
             if alert_msg:
                 if notify.send_message(alert_msg):
                     log(f"  -> Telegram alert sent for '{topic_key}'")
@@ -539,6 +629,16 @@ def main():
                     log(f"  ! Telegram alert not sent for '{topic_key}' (see notify log above)")
         except Exception as e:
             log(f"  ! alert failed for '{topic_key}': {e} — continuing")
+
+    try:
+        if all_results:
+            digest = build_daily_digest(all_results)
+            if notify.send_message(digest):
+                log("  -> Telegram daily digest sent")
+            else:
+                log("  ! Telegram daily digest not sent (see notify log above)")
+    except Exception as e:
+        log(f"  ! daily digest failed: {e}")
 
     with open(os.path.join(OUT_DIR, "manifest.json"), "w") as f:
         json.dump(manifest, f, indent=2)
