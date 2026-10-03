@@ -154,15 +154,25 @@ pages:
 
           - type: rss
             title: AI News
-            limit: 10
+            limit: 12
             collapse-after: 5
             feeds:
-              - url: https://techcrunch.com/category/artificial-intelligence/feed/
-                title: TechCrunch AI
               - url: https://www.marktechpost.com/feed/
                 title: MarkTechPost
               - url: https://blog.google/technology/ai/rss/
                 title: Google AI Blog
+              - url: http://rsshub:1200/36kr/motif/327686782977
+                title: 36Kr AI
+
+          - type: rss
+            title: Dev & HN (via RSSHub)
+            limit: 10
+            collapse-after: 5
+            feeds:
+              - url: http://rsshub:1200/hackernews/best
+                title: HN Best
+              - url: http://rsshub:1200/dev.to/top/week
+                title: Dev.to Top
 
           - type: repository
             title: Trend Radar
@@ -190,9 +200,82 @@ pages:
                   - title: arXiv AI
                     url: https://arxiv.org/list/cs.AI/recent
                     icon: si:arxiv
+                  - title: RSSHub
+                    url: http://localhost:1200
+                    icon: si:rss
                   - title: OSS Insight
                     url: https://ossinsight.io/trending/ai
                     icon: si:github
+
+  - name: Feeds
+    columns:
+      - size: small
+        widgets:
+          - type: rss
+            title: arXiv — AI & ML
+            limit: 15
+            collapse-after: 8
+            feeds:
+              - url: http://rsshub:1200/arxiv/search_query=cat:cs.AI
+                title: cs.AI
+              - url: http://rsshub:1200/arxiv/search_query=cat:cs.LG
+                title: cs.LG
+
+          - type: rss
+            title: SSPai Matrix
+            limit: 8
+            collapse-after: 5
+            feeds:
+              - url: http://rsshub:1200/sspai/matrix
+
+      - size: full
+        widgets:
+          - type: rss
+            title: Tech News
+            style: detailed-list
+            limit: 20
+            collapse-after: 10
+            feeds:
+              - url: http://rsshub:1200/36kr/motif/327686782977
+                title: 36Kr AI
+              - url: https://www.marktechpost.com/feed/
+                title: MarkTechPost
+              - url: https://blog.google/technology/ai/rss/
+                title: Google AI Blog
+
+          - type: rss
+            title: Hacker News Best
+            limit: 15
+            collapse-after: 8
+            feeds:
+              - url: http://rsshub:1200/hackernews/best
+                title: HN Best
+              - url: http://rsshub:1200/hackernews/show
+                title: Show HN
+
+      - size: small
+        widgets:
+          - type: rss
+            title: Dev Community
+            limit: 10
+            collapse-after: 5
+            feeds:
+              - url: http://rsshub:1200/dev.to/top/week
+                title: Dev.to Weekly
+              - url: http://rsshub:1200/dev.to/top/month
+                title: Dev.to Monthly
+
+          - type: rss
+            title: GitHub Repos
+            limit: 8
+            collapse-after: 5
+            feeds:
+              - url: http://rsshub:1200/github/repos/langchain-ai/langchain
+                title: LangChain
+              - url: http://rsshub:1200/github/repos/langgenius/dify
+                title: Dify
+              - url: http://rsshub:1200/github/repos/DIYgod/RSSHub
+                title: RSSHub
 
   - name: Tools
     columns:

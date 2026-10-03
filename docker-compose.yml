@@ -5,4 +5,26 @@ services:
       - ./glance.yml:/app/config/glance.yml
     ports:
       - 8686:8686
+    depends_on:
+      - rsshub
     restart: unless-stopped
+
+  rsshub:
+    image: diygod/rsshub:latest
+    ports:
+      - 1200:1200
+    environment:
+      CACHE_TYPE: redis
+      REDIS_URL: "redis://redis:6379/"
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  redis:
+    image: redis:alpine
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+
+volumes:
+  redis-data:
