@@ -200,6 +200,9 @@ pages:
                   - title: arXiv AI
                     url: https://arxiv.org/list/cs.AI/recent
                     icon: si:arxiv
+                  - title: Miniflux
+                    url: http://localhost:8080
+                    icon: si:rss
                   - title: RSSHub
                     url: http://localhost:1200
                     icon: si:rss
@@ -309,3 +312,4 @@ pages:
               - unclecode/crawl4ai
               - mendableai/firecrawl
               - DIYgod/RSSHub
+              - miniflux/v2
