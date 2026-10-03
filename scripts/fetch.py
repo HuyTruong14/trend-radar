@@ -737,7 +737,88 @@ def main():
     with open(os.path.join(OUT_DIR, "manifest.json"), "w") as f:
         json.dump(manifest, f, indent=2)
 
+    for topic_key, label, results in all_results:
+        try:
+            generate_stats(topic_key, results)
+        except Exception as e:
+            log(f"  ! stats generation failed for '{topic_key}': {e}")
+
     log("Done.")
+
+
+CAT_PATTERNS = [
+    ("Trading", r"trading|financial|finance"),
+    ("Web Scraping", r"crawl|scrape|web.?data|spider"),
+    ("RAG", r"\brag\b|retrieval|knowledge.?base"),
+    ("Video / Media", r"video|image.?gen|diffusion|animation|frame|vfx|media.?gen|movie"),
+    ("Tối ưu chi phí", r"token.?reduc|caveman|cost.?optim"),
+    ("Tài nguyên học", r"awesome|collection|tutorial|course|curated"),
+    ("AI App", r"desktop.?ai|all.?in.?one|studio|local.?ai"),
+    ("Agent Framework", r"agent|harness|workflow|agentic|orchestrat|sub.?agent"),
+]
+
+
+def _detect_category(item):
+    if item.get("category"):
+        return item["category"]
+    t = f"{item.get('summary', '')} {item.get('title', '')} {item.get('matched_keyword', '')}".lower()
+    for label, pattern in CAT_PATTERNS:
+        if re.search(pattern, t):
+            return label
+    return "Khác"
+
+
+def generate_stats(topic_key, items):
+    from collections import Counter
+    gh = [i for i in items if i.get("source") == "GitHub"]
+    arxiv = [i for i in items if i.get("source") == "arXiv"]
+
+    cat_colors = {
+        "Agent Framework": "#06b6d4", "Video / Media": "#ec4899",
+        "RAG": "#a855f7", "Web Scraping": "#3b82f6", "Trading": "#eab308",
+        "Tối ưu chi phí": "#f59e0b", "AI App": "#6366f1",
+        "Tài nguyên học": "#f97316", "Khác": "#64748b",
+    }
+    cat_counts = Counter(_detect_category(i) for i in gh)
+    star_tiers = Counter()
+    for i in gh:
+        s = i.get("score") or 0
+        if s >= 100000:
+            star_tiers["100k+"] += 1
+        elif s >= 10000:
+            star_tiers["10k-100k"] += 1
+        elif s >= 1000:
+            star_tiers["1k-10k"] += 1
+        else:
+            star_tiers["<1k"] += 1
+
+    analyzed = sum(1 for i in gh if i.get("what"))
+    max_cat = max(cat_counts.values()) if cat_counts else 1
+    max_star = max(star_tiers.values()) if star_tiers else 1
+
+    stats = {
+        "updated": datetime.now(timezone.utc).isoformat(),
+        "total": len(items),
+        "github": len(gh),
+        "arxiv": len(arxiv),
+        "analyzed": analyzed,
+        "categories": [
+            {"name": k, "count": v, "color": cat_colors.get(k, "#64748b"), "pct": round(v / max_cat * 100)}
+            for k, v in cat_counts.most_common()
+        ],
+        "star_tiers": [
+            {"tier": t, "count": star_tiers[t], "pct": round(star_tiers[t] / max_star * 100)}
+            for t in ["100k+", "10k-100k", "1k-10k", "<1k"] if star_tiers[t]
+        ],
+        "top5": [
+            {"name": i["title"], "stars": i.get("score", 0), "cat": _detect_category(i)}
+            for i in sorted(gh, key=lambda x: x.get("score", 0) or 0, reverse=True)[:5]
+        ],
+    }
+    out = os.path.join(OUT_DIR, f"{topic_key}-stats.json")
+    with open(out, "w") as f:
+        json.dump(stats, f, indent=2)
+    log(f"  -> stats written to {out}")
 
 
 if __name__ == "__main__":

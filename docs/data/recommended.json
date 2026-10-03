@@ -70,5 +70,41 @@
     "catColor": "#ec4899",
     "desc": "Nền tảng kéo-thả tạo agentic workflows, RAG pipelines — self-host hoặc cloud",
     "apply": "Tạo workflow tự động: thu thập → phân tích → scoring → gửi report, không cần code"
+  },
+  {
+    "name": "DIYgod/RSSHub",
+    "url": "https://github.com/DIYgod/RSSHub",
+    "stars": 46000,
+    "cat": "Data Collection",
+    "catColor": "#22c55e",
+    "desc": "Biến mọi thứ thành RSS feed — GitHub, Reddit, Twitter, YouTube, forum... hỗ trợ 2000+ nguồn",
+    "apply": "Thêm nguồn dữ liệu mới cho trend-radar mà không cần viết parser riêng"
+  },
+  {
+    "name": "ossinsight/ossinsight",
+    "url": "https://github.com/pingcap/ossinsight",
+    "stars": 17000,
+    "cat": "Analytics",
+    "catColor": "#8b5cf6",
+    "desc": "Phân tích realtime 10.5 tỷ GitHub events — trending repos, developer insights, so sánh repos",
+    "apply": "Tham khảo cách tính trending score và ranking algorithm cho trend-radar"
+  },
+  {
+    "name": "superiorlu/AITreasureBox",
+    "url": "https://github.com/superiorlu/AITreasureBox",
+    "stars": 642,
+    "cat": "GitHub Tracking",
+    "catColor": "#f97316",
+    "desc": "Tự động cập nhật và re-rank AI repos theo stars mỗi 2 giờ, phân loại theo category",
+    "apply": "Tham khảo cách auto-categorize và ranking — hoặc dùng làm nguồn dữ liệu bổ sung"
+  },
+  {
+    "name": "miniflux/v2",
+    "url": "https://github.com/miniflux/v2",
+    "stars": 9600,
+    "cat": "RSS Reader",
+    "catColor": "#06b6d4",
+    "desc": "RSS reader tối giản, Go, hỗ trợ Fever/Google Reader API — chạy cùng Glance",
+    "apply": "Dùng song song Glance để quản lý RSS feeds chuyên sâu, sync với mobile reader"
   }
 ]

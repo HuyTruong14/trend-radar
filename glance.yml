@@ -1,0 +1,228 @@
+server:
+  port: 8686
+
+branding:
+  logo-text: TR
+  app-name: Trend Radar
+  hide-footer: true
+
+theme:
+  background-color: 225 14 10
+  primary-color: 43 50 70
+  positive-color: 120 50 50
+  negative-color: 0 70 60
+  contrast-multiplier: 1.1
+
+pages:
+  - name: Trends
+    columns:
+      - size: small
+        widgets:
+          - type: clock
+            hour-format: 24h
+            timezones:
+              - timezone: Asia/Ho_Chi_Minh
+                label: Vietnam
+
+          - type: search
+            search-engine: google
+            autofocus: true
+
+          - type: custom-api
+            title: "📊 Overview"
+            cache: 1h
+            url: https://huytruong14.github.io/trend-radar/data/ai-tech-stats.json
+            template: |
+              <div class="flex justify-between text-center margin-bottom-15">
+                <div>
+                  <div class="color-highlight size-h3">{{ .JSON.Int "total" }}</div>
+                  <div class="size-h6 color-subtext">TỔNG</div>
+                </div>
+                <div>
+                  <div class="color-primary size-h3">{{ .JSON.Int "github" }}</div>
+                  <div class="size-h6 color-subtext">GITHUB</div>
+                </div>
+                <div>
+                  <div class="color-positive size-h3">{{ .JSON.Int "arxiv" }}</div>
+                  <div class="size-h6 color-subtext">ARXIV</div>
+                </div>
+                <div>
+                  <div class="color-negative size-h3">{{ .JSON.Int "analyzed" }}</div>
+                  <div class="size-h6 color-subtext">GEMINI</div>
+                </div>
+              </div>
+              <div class="size-h6 color-subtext margin-bottom-5">PHÂN BỐ SAO</div>
+              {{ range .JSON.Array "star_tiers" }}
+                <div class="flex items-center gap-7 margin-top-5">
+                  <span class="size-h6 color-paragraph" style="min-width:65px">{{ .String "tier" }}</span>
+                  <div style="flex:1;height:14px;background:hsla(0,0%,100%,.06);border-radius:3px;overflow:hidden">
+                    <div style="width:{{ .Int "pct" }}%;height:100%;background:hsl(43 50% 70%);border-radius:3px"></div>
+                  </div>
+                  <span class="size-h6 color-highlight" style="min-width:18px;text-align:right">{{ .Int "count" }}</span>
+                </div>
+              {{ end }}
+
+          - type: custom-api
+            title: "🏷️ Categories"
+            cache: 1h
+            url: https://huytruong14.github.io/trend-radar/data/ai-tech-stats.json
+            template: |
+              {{ range .JSON.Array "categories" }}
+                <div class="flex items-center gap-7 margin-top-7">
+                  <span style="width:8px;height:8px;border-radius:50%;background:{{ .String "color" }};flex-shrink:0"></span>
+                  <span class="size-h6 color-paragraph" style="flex:1">{{ .String "name" }}</span>
+                  <div style="flex:1;height:12px;background:hsla(0,0%,100%,.06);border-radius:3px;overflow:hidden">
+                    <div style="width:{{ .Int "pct" }}%;height:100%;background:{{ .String "color" }};border-radius:3px;opacity:.7"></div>
+                  </div>
+                  <span class="size-h6 color-highlight" style="min-width:18px;text-align:right">{{ .Int "count" }}</span>
+                </div>
+              {{ end }}
+
+          - type: hacker-news
+            title: Hacker News
+            limit: 10
+            collapse-after: 5
+            sort-by: top
+
+      - size: full
+        widgets:
+          - type: custom-api
+            title: "🏆 Top 5 — Stars"
+            cache: 1h
+            url: https://huytruong14.github.io/trend-radar/data/ai-tech-stats.json
+            template: |
+              {{ range .JSON.Array "top5" }}
+              <div class="flex items-center gap-10 margin-top-10">
+                <div style="flex:1;min-width:0">
+                  <div class="size-h4 color-highlight text-truncate">{{ .String "name" }}</div>
+                  <span class="size-h6 color-subtext">{{ .String "cat" }}</span>
+                </div>
+                <span class="size-h4 color-primary shrink-0">⭐ {{ .Int "stars" | formatNumber }}</span>
+              </div>
+              {{ end }}
+
+          - type: custom-api
+            title: "🔥 GitHub Repos — AI/Tech"
+            cache: 1h
+            url: https://huytruong14.github.io/trend-radar/data/ai-tech.json
+            template: |
+              {{ $items := .JSON.Array "items" }}
+              <ul class="list list-gap-14 collapsible-container" data-collapse-after="10">
+              {{ range $i, $item := $items }}
+                {{ if eq ($item.String "source") "GitHub" }}
+                <li>
+                  <div class="flex items-center gap-10">
+                    <span class="size-h4 color-highlight block text-truncate">
+                      <a href="{{ $item.String "url" }}">{{ $item.String "title" }}</a>
+                    </span>
+                    <span class="size-h6 color-primary shrink-0">⭐ {{ $item.String "meta" }}</span>
+                  </div>
+                  {{ if $item.String "what" }}
+                    <div class="size-h6 color-paragraph margin-top-3">💡 {{ $item.String "what" }}</div>
+                    <div class="size-h6 color-positive margin-top-3">→ {{ $item.String "apply" }}</div>
+                  {{ else }}
+                    <div class="size-h6 color-subtext margin-top-3">{{ $item.String "summary" }}</div>
+                  {{ end }}
+                </li>
+                {{ end }}
+              {{ end }}
+              </ul>
+
+          - type: custom-api
+            title: "📰 Tech News"
+            cache: 1h
+            url: https://huytruong14.github.io/trend-radar/data/news.json
+            template: |
+              {{ $items := .JSON.Array "items" }}
+              <ul class="list list-gap-10 collapsible-container" data-collapse-after="8">
+              {{ range $items }}
+                <li>
+                  <a class="size-h4 color-highlight block text-truncate" href="{{ .String "url" }}">{{ .String "title" }}</a>
+                  <span class="size-h6 color-subtext">{{ .String "source" }}</span>
+                </li>
+              {{ end }}
+              </ul>
+
+      - size: small
+        widgets:
+          - type: reddit
+            title: r/MachineLearning
+            subreddit: MachineLearning
+            sort-by: hot
+            limit: 8
+            collapse-after: 5
+
+          - type: rss
+            title: AI News
+            limit: 10
+            collapse-after: 5
+            feeds:
+              - url: https://techcrunch.com/category/artificial-intelligence/feed/
+                title: TechCrunch AI
+              - url: https://www.marktechpost.com/feed/
+                title: MarkTechPost
+              - url: https://blog.google/technology/ai/rss/
+                title: Google AI Blog
+
+          - type: repository
+            title: Trend Radar
+            repository: HuyTruong14/trend-radar
+
+          - type: bookmarks
+            title: Quick Links
+            groups:
+              - title: Dashboards
+                links:
+                  - title: Trend Radar Dashboard
+                    url: https://huytruong14.github.io/trend-radar/
+                    icon: mdi:chart-line
+                  - title: GitHub Actions
+                    url: https://github.com/HuyTruong14/trend-radar/actions
+                    icon: si:githubactions
+              - title: Sources
+                links:
+                  - title: GitHub Trending
+                    url: https://github.com/trending
+                    icon: si:github
+                  - title: Hacker News
+                    url: https://news.ycombinator.com
+                    icon: si:ycombinator
+                  - title: arXiv AI
+                    url: https://arxiv.org/list/cs.AI/recent
+                    icon: si:arxiv
+                  - title: OSS Insight
+                    url: https://ossinsight.io/trending/ai
+                    icon: si:github
+
+  - name: Tools
+    columns:
+      - size: full
+        widgets:
+          - type: custom-api
+            title: "🛠 Recommended Tools"
+            cache: 6h
+            url: https://huytruong14.github.io/trend-radar/data/recommended.json
+            template: |
+              <ul class="list list-gap-14">
+              {{ range .JSON.Array "" }}
+                <li>
+                  <div class="flex items-center gap-10">
+                    <a class="size-h4 color-highlight" href="{{ .String "url" }}">{{ .String "name" }}</a>
+                    <span class="size-h6 color-primary shrink-0">⭐ {{ .Int "stars" | formatNumber }}</span>
+                    <span class="size-h6 color-subtext">{{ .String "cat" }}</span>
+                  </div>
+                  <div class="size-h6 color-paragraph margin-top-3">{{ .String "desc" }}</div>
+                  <div class="size-h6 color-positive margin-top-3">→ {{ .String "apply" }}</div>
+                </li>
+              {{ end }}
+              </ul>
+
+          - type: releases
+            title: Release Tracker
+            repositories:
+              - glanceapp/glance
+              - langgenius/dify
+              - langchain-ai/langchain
+              - unclecode/crawl4ai
+              - mendableai/firecrawl
+              - DIYgod/RSSHub
