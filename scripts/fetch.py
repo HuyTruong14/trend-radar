@@ -214,6 +214,44 @@ def fetch_rss(feed_urls, max_items):
     return items
 
 
+def enrich_with_firecrawl(items, max_enrich=5):
+    """Scrape full content for items with thin summaries using Firecrawl API."""
+    api_key = os.environ.get("FIRECRAWL_API_KEY")
+    if not api_key:
+        return
+
+    try:
+        from firecrawl import FirecrawlApp
+    except ImportError:
+        log("  -> firecrawl-py not installed — pip install firecrawl-py")
+        return
+
+    candidates = [
+        it for it in items
+        if it.get("url") and (not it.get("summary") or len(it.get("summary", "")) < 80)
+        and it.get("source") not in ("GitHub",)
+    ][:max_enrich]
+
+    if not candidates:
+        return
+
+    app = FirecrawlApp(api_key=api_key)
+    enriched = 0
+    for it in candidates:
+        try:
+            result = app.scrape_url(it["url"], params={"formats": ["markdown"]})
+            md = result.get("markdown", "")
+            if md:
+                it["summary"] = re.sub(r"\s+", " ", md).strip()[:500]
+                enriched += 1
+        except Exception as e:
+            log(f"  ! Firecrawl scrape failed for {it['url']}: {e}")
+            continue
+
+    if enriched:
+        log(f"  -> Firecrawl enriched {enriched}/{len(candidates)} items")
+
+
 def dedupe(items):
     """Merge near-duplicate items (same story, different title wording/URL).
 
@@ -667,6 +705,8 @@ def build_topic(topic_key, cfg, max_items, freshness_days):
         it.pop("_dt", None)
 
     log(f"  -> {len(fresh)} fresh items (from {raw_count} fetched)")
+
+    enrich_with_firecrawl(fresh)
 
     all_keywords = list(cfg.get("keywords", []))
     arxiv_kw = (cfg.get("arxiv") or {}).get("keywords", [])
