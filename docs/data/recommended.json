@@ -1,0 +1,74 @@
+[
+  {
+    "name": "glanceapp/glance",
+    "url": "https://github.com/glanceapp/glance",
+    "stars": 37306,
+    "cat": "Dashboard",
+    "catColor": "#3b82f6",
+    "desc": "Self-hosted dashboard tổng hợp mọi feeds (RSS, Reddit, HN, GitHub, weather...) vào một giao diện duy nhất",
+    "apply": "Tham khảo thiết kế widget hoặc migrate dashboard sang glance để có thêm widget system"
+  },
+  {
+    "name": "firecrawl/firecrawl",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "stars": 187779,
+    "cat": "Data Collection",
+    "catColor": "#22c55e",
+    "desc": "Web data API cho AI agents — search, scrape, crawl toàn bộ website thành dữ liệu sạch",
+    "apply": "Thay feedparser để scrape web content chất lượng cao hơn, output LLM-ready"
+  },
+  {
+    "name": "unclecode/crawl4ai",
+    "url": "https://github.com/unclecode/crawl4ai",
+    "stars": 84645,
+    "cat": "Data Collection",
+    "catColor": "#22c55e",
+    "desc": "Open-source web crawler cho LLMs — convert website thành clean Markdown, self-host được",
+    "apply": "Thay thế hoặc bổ sung RSS scraping, lấy nội dung chi tiết hơn cho AI analysis"
+  },
+  {
+    "name": "browser-use/browser-use",
+    "url": "https://github.com/browser-use/browser-use",
+    "stars": 116997,
+    "cat": "Automation",
+    "catColor": "#a855f7",
+    "desc": "Cho AI agent điều khiển browser thực — click, navigate, đọc nội dung dynamic",
+    "apply": "Scrape trang cần JavaScript render, auto-fill forms, test dashboard UI"
+  },
+  {
+    "name": "JuliusBrussee/caveman",
+    "url": "https://github.com/JuliusBrussee/caveman",
+    "stars": 108877,
+    "cat": "Cost Optimization",
+    "catColor": "#eab308",
+    "desc": "Proxy middleware cắt 65% token cho coding agents bằng cách nén ngôn ngữ",
+    "apply": "Khi bật ANTHROPIC_API_KEY, cắm middleware này vào giảm chi phí scoring đáng kể"
+  },
+  {
+    "name": "infiniflow/ragflow",
+    "url": "https://github.com/infiniflow/ragflow",
+    "stars": 91601,
+    "cat": "Knowledge Base",
+    "catColor": "#06b6d4",
+    "desc": "RAG engine mạnh — import docs, PDF, web content rồi hỏi đáp tự nhiên",
+    "apply": "Index toàn bộ dữ liệu trend-radar thu thập → tạo knowledge base tìm kiếm thông minh"
+  },
+  {
+    "name": "vitalets/github-trending-repos",
+    "url": "https://github.com/vitalets/github-trending-repos",
+    "stars": 3013,
+    "cat": "GitHub Tracking",
+    "catColor": "#f97316",
+    "desc": "Track GitHub trending repos qua native GitHub notifications, theo từng ngôn ngữ",
+    "apply": "Kết hợp với GitHub search API hiện tại để bắt trending repos chính xác hơn"
+  },
+  {
+    "name": "langgenius/dify",
+    "url": "https://github.com/langgenius/dify",
+    "stars": 157734,
+    "cat": "Workflow Engine",
+    "catColor": "#ec4899",
+    "desc": "Nền tảng kéo-thả tạo agentic workflows, RAG pipelines — self-host hoặc cloud",
+    "apply": "Tạo workflow tự động: thu thập → phân tích → scoring → gửi report, không cần code"
+  }
+]

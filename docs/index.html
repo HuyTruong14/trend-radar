@@ -113,6 +113,30 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSy
 .rank-stars{color:var(--amber);font-size:12px;flex-shrink:0}
 .rank-delta{font-size:11px;flex-shrink:0;min-width:55px;text-align:right}
 .rank-delta.up{color:var(--accent)}.rank-delta.dn{color:var(--red)}.rank-delta.eq{color:var(--dim)}
+.rank-sum{font-size:11px;color:var(--dim);padding:0 16px 8px 48px;line-height:1.5;border-bottom:1px solid var(--border)}
+
+/* category chart */
+.cat-chart{display:flex;align-items:flex-end;gap:6px;padding:0 4px;margin-bottom:14px}
+.cat-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;transition:opacity .15s}
+.cat-col:hover{opacity:1!important}
+.cat-col .bar{width:100%;border-radius:4px 4px 0 0;transition:height .3s}
+.cat-col .lbl{font-size:9.5px;color:var(--dim);text-align:center;line-height:1.2;max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cat-col .cnt{font-size:11px;font-weight:600}
+.cat-hd{display:flex;align-items:center;gap:8px;margin-bottom:6px;padding:8px 0 4px}
+.cat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.cat-label{font-size:12px;font-weight:600}.cat-count{font-size:11px;color:var(--dim)}
+
+/* recommended */
+.rec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:768px){.rec-grid{grid-template-columns:1fr}}
+.rec-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--R);padding:12px 16px;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:5px;transition:.15s}
+.rec-card:hover{border-color:var(--border-h);background:var(--surface-2)}
+.rec-top{display:flex;justify-content:space-between;align-items:center}
+.rec-name{font-size:13px;font-weight:600}
+.rec-stars{font-size:11px;color:var(--amber);flex-shrink:0}
+.rec-cat{font-size:10px;text-transform:uppercase;font-weight:600;letter-spacing:.3px}
+.rec-desc{font-size:11.5px;color:var(--dim);line-height:1.5}
+.rec-why{font-size:11px;color:var(--accent);margin-top:auto;padding-top:2px}
 
 /* empty / loading */
 .empty{text-align:center;padding:50px 20px;color:var(--dim)}
@@ -143,7 +167,7 @@ const PAL=['#3b82f6','#22c55e','#eab308','#a855f7','#f97316','#06b6d4','#ec4899'
 const STOPS=new Set(['the','a','an','and','or','but','in','on','at','to','for','of','with','by','from','is','are','was','were','be','been','has','have','had','will','can','may','could','would','should','this','that','these','those','it','its','new','how','what','why','when','where','who','which','not','no','all','more','than','into','over','your','our','their','you','we','they','he','she','do','does','did','get','set','use','up','out','about','just','also','very','so','if','then','as','my','me','us','am','being','each','every','both','few','most','other','some','such','only','own','same','too','after','before','above','below','between','during','through','via','per','using','based','via','two','one','three','four','five','first','using','based','under','top',
 'và','của','cho','trong','với','là','được','có','này','đó','các','một','những','để','từ','theo','về','trên','sẽ','khi','không','nhưng','hay','hoặc','đã','đang','cũng','như','tại','ra','vào','lên','xuống','giữa','bởi','mà','thì','nên','rằng','nào','đều','vẫn','qua','đến','bị','mới','nhất','hơn','rất','quá','chỉ','vì','nếu','tuy','dù','sau','trước','giờ','ngày','năm','tháng','còn','lại','đây','kia','nhiều','ít','lớn','nhỏ','tin','tức','bài','viết']);
 
-let active=TOPICS[0].key, data={}, hist={}, filterText='', sortBy='date', activeKw=null;
+let active=TOPICS[0].key, data={}, hist={}, recommended=[], filterText='', sortBy='date', activeKw=null;
 
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function fmtD(iso){if(!iso)return'';try{return new Date(iso).toLocaleDateString('vi-VN',{day:'2-digit',month:'2-digit',year:'numeric'})}catch(e){return''}}
@@ -247,6 +271,8 @@ function render(){
   html+=renderItems(items,stats.sources);
   html+=`</div></div>`;
 
+  html+=renderRecommended();
+
   ct.innerHTML=html;
   wireEvents(history);
 }
@@ -275,9 +301,25 @@ function renderChart(history){
   </div>`;
 }
 
+const CAT_COLORS={'agent framework':'#06b6d4','web scraping':'var(--blue)','rag':'var(--purple)','video/media':'#ec4899','dev tool':'#6366f1','trading':'var(--amber)','ai app':'#6366f1','resource':'#f97316','tối ưu chi phí':'var(--accent)'};
+function detectCategory(item){
+  if(item.category){const lc=item.category.toLowerCase();return{k:lc.replace(/[^a-z]/g,''),l:item.category,c:CAT_COLORS[lc]||'var(--dim)'};}
+  const t=((item.summary||'')+' '+(item.title||'')+' '+(item.matched_keyword||'')).toLowerCase();
+  if(/trading|financial|finance/.test(t))return{k:'trade',l:'Trading',c:'var(--amber)'};
+  if(/crawl|scrape|web.?data|spider/.test(t))return{k:'scrape',l:'Web Scraping',c:'var(--blue)'};
+  if(/\brag\b|retrieval|knowledge.?base/.test(t))return{k:'rag',l:'RAG',c:'var(--purple)'};
+  if(/video|image.?gen|diffusion|animation|toonflow|frame|vfx|film|media.?gen|short.?video|movie|cinema/.test(t))return{k:'video',l:'Video / Media',c:'#ec4899'};
+  if(/token.?reduc|caveman|cost.?optim/.test(t))return{k:'cost',l:'Tối ưu chi phí',c:'var(--accent)'};
+  if(/awesome|100\+|collection|tutorial|course|curated|教程|开源/.test(t))return{k:'learn',l:'Tài nguyên học',c:'#f97316'};
+  if(/desktop.?ai|all.?in.?one|studio|local.?ai/.test(t))return{k:'app',l:'AI App',c:'#6366f1'};
+  if(/agent|harness|workflow|agentic|orchestrat|sub.?agent/.test(t))return{k:'agent',l:'Agent Framework',c:'#06b6d4'};
+  return{k:'other',l:'Khác',c:'var(--dim)'};
+}
+
 function renderRanking(items,history){
-  const ghItems=items.filter(i=>i.source==='GitHub'&&typeof i.score==='number').sort((a,b)=>b.score-a.score).slice(0,10);
+  const ghItems=items.filter(i=>i.source==='GitHub'&&typeof i.score==='number').sort((a,b)=>b.score-a.score);
   if(!ghItems.length)return'';
+
   const sorted=history.slice().sort((a,b)=>(b.date||'').localeCompare(a.date||''));
   const d7=sorted.find(h=>{const age=(Date.now()-new Date(h.date).getTime())/864e5;return age>=6&&age<=9});
   const old=d7&&Array.isArray(d7.top_repos)?Object.fromEntries(d7.top_repos.map(r=>[r.name,r.stars])):{};
@@ -285,17 +327,44 @@ function renderRanking(items,history){
   sorted.filter(h=>{const age=(Date.now()-new Date(h.date).getTime())/864e5;return age<=15}).forEach(h=>{
     (h.top_repos||[]).forEach(r=>seen14.add(r.name));
   });
-  let rows=ghItems.map((it,i)=>{
-    const name=it.title||'';
-    const stars=it.score;
-    const fmtS=stars>=1000?(stars/1000).toFixed(1)+'k':stars;
-    let deltaHtml='';
-    if(name in old){const d=stars-old[name];deltaHtml=d>0?`<span class="rank-delta up">+${d>=1000?(d/1000).toFixed(1)+'k':d}</span>`:d<0?`<span class="rank-delta dn">${d}</span>`:`<span class="rank-delta eq">—</span>`}
-    else if(seen14.size>0&&!seen14.has(name)){deltaHtml=`<span class="badge b-new">MỚI</span>`}
-    else{deltaHtml=`<span class="rank-delta eq">—</span>`}
-    return`<a class="rank-row" href="${it.url||'#'}" target="_blank" rel="noopener"><span class="rank-n">${i+1}</span><span class="rank-name">${esc(name)}</span><span class="rank-stars">${fmtS} ★</span>${deltaHtml}</a>`;
-  }).join('');
-  return`<div class="sec"><div class="sec-t">Repo được chú ý nhất</div><div class="rank">${rows}</div></div>`;
+
+  const groups={};
+  ghItems.forEach(it=>{
+    const cat=detectCategory(it);
+    it._cat=cat;
+    if(!groups[cat.k])groups[cat.k]={label:cat.l,color:cat.c,items:[]};
+    groups[cat.k].items.push(it);
+  });
+  const catEntries=Object.entries(groups).sort((a,b)=>b[1].items.length-a[1].items.length);
+  const maxCat=Math.max(...catEntries.map(([_,g])=>g.items.length));
+
+  let chart='<div class="cat-chart" style="height:70px">';
+  catEntries.forEach(([k,g])=>{
+    const h=Math.max(4,g.items.length/maxCat*50);
+    chart+=`<div class="cat-col"><span class="cnt" style="color:${g.color}">${g.items.length}</span><div class="bar" style="background:${g.color};opacity:.55;height:${h}px"></div><span class="lbl">${g.label}</span></div>`;
+  });
+  chart+='</div>';
+
+  let list='';
+  catEntries.forEach(([k,g])=>{
+    list+=`<div class="cat-hd"><span class="cat-dot" style="background:${g.color}"></span><span class="cat-label">${g.label}</span><span class="cat-count">(${g.items.length})</span></div><div class="rank">`;
+    g.items.forEach((it,i)=>{
+      const name=it.title||'';
+      const stars=it.score;
+      const fmtS=stars>=1000?(stars/1000).toFixed(1)+'k':stars;
+      let deltaHtml='';
+      if(name in old){const d=stars-old[name];deltaHtml=d>0?`<span class="rank-delta up">+${d>=1000?(d/1000).toFixed(1)+'k':d}</span>`:d<0?`<span class="rank-delta dn">${d}</span>`:`<span class="rank-delta eq">—</span>`}
+      else if(seen14.size>0&&!seen14.has(name)){deltaHtml=`<span class="badge b-new">MỚI</span>`}
+      else{deltaHtml=`<span class="rank-delta eq">—</span>`}
+      let row=`<a class="rank-row" href="${it.url||'#'}" target="_blank" rel="noopener"><span class="rank-n">${i+1}</span><span class="rank-name">${esc(name)}</span><span class="rank-stars">${fmtS} ★</span>${deltaHtml}</a>`;
+      if(it.what){let d=`<div class="rank-sum">${esc(it.what)}`;if(it.apply)d+=`<br><span style="color:var(--accent)">→ ${esc(it.apply)}</span>`;row+=d+'</div>';}
+      else if(it.summary)row+=`<div class="rank-sum">${esc(it.summary.substring(0,150))}</div>`;
+      list+=row;
+    });
+    list+='</div>';
+  });
+
+  return`<div class="sec"><div class="sec-t">GitHub Insights — Phân tích theo nhóm</div>${chart}${list}</div>`;
 }
 
 function renderSrcBar(items,sources){
@@ -350,6 +419,20 @@ function renderItems(items,sources){
       <div class="card-bt">${fmtD(it.published)} ${badges}</div>
     </a>`;
   }).join('');
+}
+
+function renderRecommended(){
+  if(!recommended.length)return'';
+  let cards=recommended.map(r=>{
+    const fmtS=r.stars>=1000?(r.stars/1000).toFixed(1)+'k':r.stars;
+    return`<a class="rec-card" href="${r.url}" target="_blank" rel="noopener">
+      <div class="rec-top"><span class="rec-name">${esc(r.name)}</span><span class="rec-stars">${fmtS} ★</span></div>
+      <span class="rec-cat" style="color:${r.catColor||'var(--dim)'}">${esc(r.cat)}</span>
+      <div class="rec-desc">${esc(r.desc)}</div>
+      <div class="rec-why">→ ${esc(r.apply)}</div>
+    </a>`;
+  }).join('');
+  return`<div class="sec"><div class="sec-t">Công cụ đề xuất cho Trend Radar</div><div class="rec-grid">${cards}</div></div>`;
 }
 
 function wireEvents(history){
@@ -407,6 +490,7 @@ async function loadAll(){
     catch(e){hist[t.key]=[]}
   });
   await Promise.all(fetches);
+  try{recommended=await(await fetch('data/recommended.json?_='+Date.now())).json()}catch(e){recommended=[]}
   try{
     const m=await(await fetch('data/manifest.json?_='+Date.now())).json();
     document.getElementById('upd').textContent='Cập nhật: '+new Date(m.updated).toLocaleString('vi-VN');

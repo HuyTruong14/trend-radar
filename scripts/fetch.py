@@ -377,6 +377,62 @@ def score_items_with_ai(items, topic_label):
         it["relevance_score"] = None
 
 
+GEMINI_MODEL = "gemini-3.8-flash"
+GEMINI_TOP_N = 5
+
+
+def analyze_repos_with_gemini(items):
+    """Analyze top GitHub repos with Gemini Flash (free tier, 1 request)."""
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        log("  -> No GEMINI_API_KEY — skipping repo insights")
+        return
+
+    gh = sorted(
+        [i for i in items if i.get("source") == "GitHub" and isinstance(i.get("score"), (int, float))],
+        key=lambda x: x["score"],
+        reverse=True,
+    )[:GEMINI_TOP_N]
+    if not gh:
+        return
+
+    payload = [{"name": it["title"], "desc": it.get("summary") or ""} for it in gh]
+    prompt = (
+        "Phân tích các GitHub repo sau. Trả về DUY NHẤT JSON array cùng thứ tự, "
+        "mỗi phần tử có 3 field:\n"
+        '- "category": nhóm (Agent Framework, Web Scraping, RAG, Video/Media, '
+        "Dev Tool, Trading, AI App, Resource, hoặc tự đặt)\n"
+        '- "what": 1 câu tiếng Việt mô tả repo làm gì\n'
+        '- "apply": 1 câu tiếng Việt gợi ý cách tích hợp/sử dụng cho developer\n'
+        "Không kèm text nào khác.\n\n"
+        f"{json.dumps(payload, ensure_ascii=False)}"
+    )
+
+    try:
+        r = requests.post(
+            f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={api_key}",
+            headers={"Content-Type": "application/json"},
+            json={
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"temperature": 0.2, "maxOutputTokens": 1024},
+            },
+            timeout=30,
+        )
+        r.raise_for_status()
+        raw = r.json()["candidates"][0]["content"]["parts"][0]["text"]
+        results = json.loads(_extract_json_text(raw))
+        if not isinstance(results, list) or len(results) != len(gh):
+            raise ValueError(f"expected {len(gh)}, got {len(results) if isinstance(results, list) else type(results)}")
+        for it, res in zip(gh, results):
+            if isinstance(res, dict):
+                it["category"] = res.get("category")
+                it["what"] = res.get("what")
+                it["apply"] = res.get("apply")
+        log(f"  -> Gemini analyzed top {len(gh)} repos")
+    except Exception as e:
+        log(f"  ! Gemini repo analysis failed: {e}")
+
+
 def correlate_cross_source(items):
     """Flag items covering the same story across >=2 independent sources.
 
@@ -470,6 +526,10 @@ def build_daily_digest(all_results):
                 lines.append(f"  • {title}")
             if url:
                 lines.append(f"    {url}")
+            if it.get("what"):
+                lines.append(f"    💡 {it['what']}")
+            if it.get("apply"):
+                lines.append(f"    🔧 {it['apply']}")
         lines.append("")
     lines.append(f"Tổng: {total} item")
     return "\n".join(lines)
@@ -589,6 +649,7 @@ def build_topic(topic_key, cfg, max_items, freshness_days):
     all_keywords.extend(gh_kw)
     score_items_simple(fresh, all_keywords)
     score_items_with_ai(fresh, cfg.get("label", topic_key))
+    analyze_repos_with_gemini(fresh)
     correlate_cross_source(fresh)
     cross_source_count = sum(1 for it in fresh if it.get("cross_source"))
     if cross_source_count:
