@@ -410,7 +410,7 @@ def analyze_repos_with_gemini(items):
 
     try:
         r = requests.post(
-            f"https://generativelanguage.googleapis.com/v1/models/{GEMINI_MODEL}:generateContent?key={api_key}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={api_key}",
             headers={"Content-Type": "application/json"},
             json={
                 "contents": [{"parts": [{"text": prompt}]}],
@@ -418,8 +418,14 @@ def analyze_repos_with_gemini(items):
             },
             timeout=30,
         )
-        r.raise_for_status()
-        raw = r.json()["candidates"][0]["content"]["parts"][0]["text"]
+        if not r.ok:
+            log(f"  ! Gemini HTTP {r.status_code}: {r.text[:200]}")
+            return
+        body = r.json()
+        if "error" in body:
+            log(f"  ! Gemini error: {body['error'].get('message', '')[:200]}")
+            return
+        raw = body["candidates"][0]["content"]["parts"][0]["text"]
         results = json.loads(_extract_json_text(raw))
         if not isinstance(results, list) or len(results) != len(gh):
             raise ValueError(f"expected {len(gh)}, got {len(results) if isinstance(results, list) else type(results)}")
