@@ -214,18 +214,24 @@ def fetch_rss(feed_urls, max_items):
     return items
 
 
-def enrich_with_firecrawl(items, max_enrich=5):
-    """Scrape full content for items with thin summaries using Firecrawl API."""
-    api_key = os.environ.get("FIRECRAWL_API_KEY")
-    if not api_key:
-        return
+def _scrape_with_crawl4ai(url):
+    """Scrape a URL using crawl4ai (local, no API key needed)."""
+    from crawl4ai import AsyncWebCrawler
+    import asyncio
 
-    try:
-        from firecrawl import FirecrawlApp
-    except ImportError:
-        log("  -> firecrawl-py not installed — pip install firecrawl-py")
-        return
+    async def _crawl():
+        async with AsyncWebCrawler() as crawler:
+            result = await crawler.arun(url=url)
+            return result.markdown if result.success else None
 
+    return asyncio.run(_crawl())
+
+
+def enrich_with_scraper(items, max_enrich=5):
+    """Scrape full content for items with thin summaries.
+
+    Tries Firecrawl (cloud API) first, falls back to crawl4ai (local).
+    """
     candidates = [
         it for it in items
         if it.get("url") and (not it.get("summary") or len(it.get("summary", "")) < 80)
@@ -235,21 +241,43 @@ def enrich_with_firecrawl(items, max_enrich=5):
     if not candidates:
         return
 
-    app = FirecrawlApp(api_key=api_key)
+    # pick scraper: firecrawl (cloud) if key available, else crawl4ai (local)
+    firecrawl_key = os.environ.get("FIRECRAWL_API_KEY")
+    scraper = None
+
+    if firecrawl_key:
+        try:
+            from firecrawl import FirecrawlApp
+            app = FirecrawlApp(api_key=firecrawl_key)
+            def scraper(url):
+                result = app.scrape_url(url, params={"formats": ["markdown"]})
+                return result.get("markdown", "")
+            log("  -> Using Firecrawl for content enrichment")
+        except ImportError:
+            pass
+
+    if scraper is None:
+        try:
+            import crawl4ai  # noqa: F401
+            scraper = _scrape_with_crawl4ai
+            log("  -> Using crawl4ai for content enrichment")
+        except ImportError:
+            log("  -> No scraper available (set FIRECRAWL_API_KEY or pip install crawl4ai)")
+            return
+
     enriched = 0
     for it in candidates:
         try:
-            result = app.scrape_url(it["url"], params={"formats": ["markdown"]})
-            md = result.get("markdown", "")
+            md = scraper(it["url"])
             if md:
                 it["summary"] = re.sub(r"\s+", " ", md).strip()[:500]
                 enriched += 1
         except Exception as e:
-            log(f"  ! Firecrawl scrape failed for {it['url']}: {e}")
+            log(f"  ! Scrape failed for {it['url']}: {e}")
             continue
 
     if enriched:
-        log(f"  -> Firecrawl enriched {enriched}/{len(candidates)} items")
+        log(f"  -> Enriched {enriched}/{len(candidates)} items")
 
 
 def dedupe(items):
@@ -706,7 +734,7 @@ def build_topic(topic_key, cfg, max_items, freshness_days):
 
     log(f"  -> {len(fresh)} fresh items (from {raw_count} fetched)")
 
-    enrich_with_firecrawl(fresh)
+    enrich_with_scraper(fresh)
 
     all_keywords = list(cfg.get("keywords", []))
     arxiv_kw = (cfg.get("arxiv") or {}).get("keywords", [])
