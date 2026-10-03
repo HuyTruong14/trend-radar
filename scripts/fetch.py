@@ -377,7 +377,7 @@ def score_items_with_ai(items, topic_label):
         it["relevance_score"] = None
 
 
-GEMINI_MODEL = "gemini-3.6-flash"
+GEMINI_MODELS = ["gemini-3.6-flash", "gemini-3.5-flash-lite"]
 GEMINI_TOP_N = 5
 
 
@@ -408,25 +408,44 @@ def analyze_repos_with_gemini(items):
         f"{json.dumps(payload, ensure_ascii=False)}"
     )
 
+    raw = None
+    for model in GEMINI_MODELS:
+        for attempt in range(2):
+            try:
+                r = requests.post(
+                    f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}",
+                    headers={"Content-Type": "application/json"},
+                    json={
+                        "contents": [{"parts": [{"text": prompt}]}],
+                        "generationConfig": {"temperature": 0.2, "maxOutputTokens": 2048},
+                    },
+                    timeout=30,
+                )
+                if r.status_code == 503:
+                    log(f"  ! Gemini {model} overloaded (attempt {attempt + 1})")
+                    time.sleep(5)
+                    continue
+                if not r.ok:
+                    log(f"  ! Gemini HTTP {r.status_code}: {r.text[:200]}")
+                    break
+                body = r.json()
+                if "error" in body:
+                    log(f"  ! Gemini error: {body['error'].get('message', '')[:200]}")
+                    break
+                raw = body["candidates"][0]["content"]["parts"][0]["text"]
+                log(f"  -> Gemini {model} responded ({len(raw)} chars)")
+                break
+            except Exception as e:
+                log(f"  ! Gemini request failed: {e}")
+                break
+        if raw:
+            break
+
+    if not raw:
+        log("  ! Gemini: all models/retries exhausted")
+        return
+
     try:
-        r = requests.post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={api_key}",
-            headers={"Content-Type": "application/json"},
-            json={
-                "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"temperature": 0.2, "maxOutputTokens": 2048},
-            },
-            timeout=30,
-        )
-        if not r.ok:
-            log(f"  ! Gemini HTTP {r.status_code}: {r.text[:200]}")
-            return
-        body = r.json()
-        if "error" in body:
-            log(f"  ! Gemini error: {body['error'].get('message', '')[:200]}")
-            return
-        raw = body["candidates"][0]["content"]["parts"][0]["text"]
-        log(f"  -> Gemini raw ({len(raw)} chars): {raw[:200]}")
         results = json.loads(_extract_json_text(raw))
         if not isinstance(results, list) or len(results) != len(gh):
             raise ValueError(f"expected {len(gh)}, got {len(results) if isinstance(results, list) else type(results)}")
@@ -437,7 +456,7 @@ def analyze_repos_with_gemini(items):
                 it["apply"] = res.get("apply")
         log(f"  -> Gemini analyzed top {len(gh)} repos")
     except Exception as e:
-        log(f"  ! Gemini repo analysis failed: {e}")
+        log(f"  ! Gemini JSON parse failed: {e} — raw: {raw[:300]}")
 
 
 def correlate_cross_source(items):
