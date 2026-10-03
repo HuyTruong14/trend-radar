@@ -1,0 +1,76 @@
+services:
+  ragflow:
+    image: infiniflow/ragflow:latest
+    ports:
+      - 9380:9380
+      - 80:80
+      - 443:443
+    volumes:
+      - ragflow-data:/ragflow/data
+    environment:
+      MYSQL_HOST: ragflow-mysql
+      MYSQL_PORT: "3306"
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ragflow
+      MYSQL_DATABASE: ragflow
+      ES_HOST: ragflow-es
+      ES_PORT: "9200"
+      MINIO_HOST: ragflow-minio:9000
+      MINIO_USER: minioadmin
+      MINIO_PASSWORD: minioadmin
+      REDIS_HOST: ragflow-redis
+      REDIS_PORT: "6379"
+    depends_on:
+      ragflow-mysql:
+        condition: service_healthy
+      ragflow-es:
+        condition: service_healthy
+      ragflow-minio:
+        condition: service_started
+      ragflow-redis:
+        condition: service_started
+    restart: unless-stopped
+
+  ragflow-mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ragflow
+      MYSQL_DATABASE: ragflow
+    volumes:
+      - ragflow-mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      start_period: 30s
+    restart: unless-stopped
+
+  ragflow-es:
+    image: elasticsearch:8.11.3
+    environment:
+      discovery.type: single-node
+      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+      xpack.security.enabled: "false"
+    volumes:
+      - ragflow-es:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health | grep -q '\"status\":\"green\"\\|\"status\":\"yellow\"'"]
+      interval: 10s
+      start_period: 60s
+    restart: unless-stopped
+
+  ragflow-minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    volumes:
+      - ragflow-minio:/data
+    restart: unless-stopped
+
+  ragflow-redis:
+    image: redis:alpine
+    restart: unless-stopped
+
+volumes:
+  ragflow-data:
+  ragflow-mysql:
+  ragflow-es:
+  ragflow-minio:

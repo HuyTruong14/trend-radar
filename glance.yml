@@ -200,6 +200,9 @@ pages:
                   - title: arXiv AI
                     url: https://arxiv.org/list/cs.AI/recent
                     icon: si:arxiv
+                  - title: RAGFlow
+                    url: http://localhost:80
+                    icon: si:opensearch
                   - title: Miniflux
                     url: http://localhost:8080
                     icon: si:rss
@@ -311,5 +314,6 @@ pages:
               - langchain-ai/langchain
               - unclecode/crawl4ai
               - firecrawl/firecrawl
+              - infiniflow/ragflow
               - DIYgod/RSSHub
               - miniflux/v2
