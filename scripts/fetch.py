@@ -414,7 +414,7 @@ def analyze_repos_with_gemini(items):
             headers={"Content-Type": "application/json"},
             json={
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"temperature": 0.2, "maxOutputTokens": 1024},
+                "generationConfig": {"temperature": 0.2, "maxOutputTokens": 2048},
             },
             timeout=30,
         )
@@ -426,6 +426,7 @@ def analyze_repos_with_gemini(items):
             log(f"  ! Gemini error: {body['error'].get('message', '')[:200]}")
             return
         raw = body["candidates"][0]["content"]["parts"][0]["text"]
+        log(f"  -> Gemini raw ({len(raw)} chars): {raw[:200]}")
         results = json.loads(_extract_json_text(raw))
         if not isinstance(results, list) or len(results) != len(gh):
             raise ValueError(f"expected {len(gh)}, got {len(results) if isinstance(results, list) else type(results)}")
