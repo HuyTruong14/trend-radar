@@ -377,7 +377,7 @@ def score_items_with_ai(items, topic_label):
         it["relevance_score"] = None
 
 
-GEMINI_MODEL = "gemini-3.8-flash"
+GEMINI_MODEL = "gemini-3.6-flash"
 GEMINI_TOP_N = 5
 
 
@@ -410,7 +410,7 @@ def analyze_repos_with_gemini(items):
 
     try:
         r = requests.post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={api_key}",
+            f"https://generativelanguage.googleapis.com/v1/models/{GEMINI_MODEL}:generateContent?key={api_key}",
             headers={"Content-Type": "application/json"},
             json={
                 "contents": [{"parts": [{"text": prompt}]}],
