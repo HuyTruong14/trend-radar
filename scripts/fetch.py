@@ -514,6 +514,12 @@ def update_history(topic_key, items, history_days):
         if it.get("cross_source"):
             cross_source_count += 1
 
+    gh_repos = sorted(
+        [it for it in items if it.get("source") == "GitHub" and isinstance(it.get("score"), (int, float))],
+        key=lambda x: x["score"], reverse=True,
+    )[:10]
+    top_repos = [{"name": r["title"], "stars": r["score"]} for r in gh_repos]
+
     entry = {
         "date": today,
         "total_items": len(items),
@@ -521,6 +527,7 @@ def update_history(topic_key, items, history_days):
         "cross_source_count": cross_source_count,
         "by_source": by_source,
         "by_keyword": by_keyword,
+        "top_repos": top_repos,
     }
 
     history = [h for h in history if isinstance(h, dict) and h.get("date") != today]
