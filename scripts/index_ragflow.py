@@ -38,7 +38,7 @@ def get_or_create_dataset(name):
         if ds.get("name") == name:
             log(f"  Dataset '{name}' exists (id={ds['id']})")
             return ds["id"]
-    resp = api("POST", "/datasets", json={"name": name, "chunk_method": "naive"})
+    resp = api("POST", "/datasets", json={"name": name})
     ds_id = resp["data"]["id"]
     log(f"  Created dataset '{name}' (id={ds_id})")
     return ds_id
