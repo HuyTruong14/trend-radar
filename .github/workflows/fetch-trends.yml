@@ -34,6 +34,12 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/fetch.py
 
+      - name: Index into RAGFlow
+        if: env.RAGFLOW_API_KEY != ''
+        env:
+          RAGFLOW_API_KEY: ${{ secrets.RAGFLOW_API_KEY }}
+        run: python scripts/index_ragflow.py
+
       - name: Commit updated data
         run: |
           git config user.name "trend-radar-bot"

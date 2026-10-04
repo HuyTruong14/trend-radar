@@ -1,6 +1,7 @@
 services:
   ragflow:
     image: infiniflow/ragflow:latest
+    command: ["--enable-adminserver", "--init-superuser"]
     ports:
       - 9380:9380
       - 80:80
