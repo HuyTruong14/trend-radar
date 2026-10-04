@@ -598,32 +598,43 @@ def build_alert_message(topic_label, items):
 
 
 def build_daily_digest(all_results):
-    """Build a Telegram daily digest summarizing top items across all topics."""
+    """Build a concise Telegram digest: top items across all topics, ranked by score."""
     today = datetime.now(timezone.utc).strftime("%d/%m/%Y")
-    lines = [f"📊 Trend Radar — {today}", ""]
+
+    all_items = []
     total = 0
+    cross = 0
     for topic_key, label, items in all_results:
-        count = len(items)
-        total += count
-        top = sorted(items, key=lambda x: x.get("relevance_score") or 0, reverse=True)[:3]
-        lines.append(f"📌 {label} ({count} item)")
-        for it in top:
-            s = it.get("relevance_score") or 0
-            stars = "⭐" * min(s, 5) if s >= 3 else ""
-            title = (it.get("title") or "")[:55]
-            url = it.get("url") or ""
-            if stars:
-                lines.append(f"  {stars} {title}")
-            else:
-                lines.append(f"  • {title}")
-            if url:
-                lines.append(f"    {url}")
-            if it.get("what"):
-                lines.append(f"    💡 {it['what']}")
-            if it.get("apply"):
-                lines.append(f"    🔧 {it['apply']}")
+        total += len(items)
+        for it in items:
+            if it.get("cross_source"):
+                cross += 1
+            it["_topic_label"] = label
+            all_items.append(it)
+
+    top = sorted(all_items, key=lambda x: x.get("relevance_score") or 0, reverse=True)[:5]
+
+    lines = [f"🔥 Trend Radar — {today}", "", "HOT HÔM NAY:"]
+    for i, it in enumerate(top, 1):
+        title = (it.get("title") or "")[:60]
+        meta = it.get("meta") or ""
+        meta_str = f" ({meta})" if meta else ""
+        lines.append(f"{i}. {title}{meta_str}")
+        if it.get("what"):
+            lines.append(f"   💡 {it['what']}")
+        if it.get("apply"):
+            lines.append(f"   🔧 {it['apply']}")
+        elif it.get("summary"):
+            lines.append(f"   📝 {(it['summary'])[:120]}")
+        if it.get("url"):
+            lines.append(f"   🔗 {it['url']}")
         lines.append("")
-    lines.append(f"Tổng: {total} item")
+
+    summary_parts = [f"📊 Tổng: {total} item"]
+    if cross:
+        summary_parts.append(f"{cross} cross-source signals")
+    lines.append(" | ".join(summary_parts))
+    lines.append("🔗 https://huytruong14.github.io/trend-radar/")
     return "\n".join(lines)
 
 
