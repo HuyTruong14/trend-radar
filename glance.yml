@@ -285,105 +285,12 @@ pages:
 
   - name: Skills
     columns:
-      - size: small
-        widgets:
-          - type: custom-api
-            title: "📊 Skill Funnel"
-            cache: 5m
-            url: http://skill-dashboard:8765/data/dashboard.json
-            template: |
-              <div class="flex justify-between text-center margin-bottom-15">
-                <div>
-                  <div class="color-primary size-h3">{{ .JSON.Array "pending" | len }}</div>
-                  <div class="size-h6 color-subtext">PENDING</div>
-                </div>
-                <div>
-                  <div class="color-positive size-h3">{{ .JSON.Array "approved" | len }}</div>
-                  <div class="size-h6 color-subtext">APPROVED</div>
-                </div>
-                <div>
-                  <div class="color-negative size-h3">{{ .JSON.Array "rejected" | len }}</div>
-                  <div class="size-h6 color-subtext">REJECTED</div>
-                </div>
-              </div>
-              <div class="size-h6 color-subtext">Updated: {{ .JSON.String "updated" }}</div>
-
-          - type: custom-api
-            title: "⏳ Pending Review"
-            cache: 5m
-            url: http://skill-dashboard:8765/data/dashboard.json
-            template: |
-              {{ $pending := .JSON.Array "pending" }}
-              {{ if not $pending }}
-                <div class="size-h6 color-subtext">Không có repo nào chờ duyệt</div>
-              {{ else }}
-                <ul class="list list-gap-10">
-                {{ range $pending }}
-                  <li>
-                    <div class="flex items-center gap-10">
-                      <a class="size-h4 color-highlight block text-truncate" href="{{ .String "source" }}">{{ .String "slug" }}</a>
-                      <span class="size-h6 color-primary shrink-0">⭐ {{ .Int "stars" | formatNumber }}</span>
-                    </div>
-                    <div class="flex gap-7 margin-top-3">
-                      <span class="size-h6 color-subtext">{{ .String "license" }}</span>
-                      <span class="size-h6 color-subtext">{{ .String "markers" }}</span>
-                    </div>
-                    {{ if .String "recommendation" }}
-                      <div class="size-h6 color-positive margin-top-3">→ {{ .String "recommendation" }}</div>
-                    {{ end }}
-                  </li>
-                {{ end }}
-                </ul>
-              {{ end }}
-
-          - type: bookmarks
-            title: Actions
-            groups:
-              - title: Skill Funnel
-                links:
-                  - title: Dashboard (Approve/Reject)
-                    url: http://localhost:8765
-                    icon: mdi:check-circle
-                  - title: Skill Funnel Repo
-                    url: https://github.com/HuyTruong14/skill-funnel
-                    icon: si:github
-                  - title: Actions Runs
-                    url: https://github.com/HuyTruong14/skill-funnel/actions
-                    icon: si:githubactions
-
       - size: full
         widgets:
-          - type: custom-api
-            title: "✅ Approved Skills"
-            cache: 5m
-            url: http://skill-dashboard:8765/data/dashboard.json
-            template: |
-              {{ $approved := .JSON.Array "approved" }}
-              <div class="flex gap-10 flex-wrap">
-              {{ range $approved }}
-                <div style="background:hsla(120,50%,50%,.1);padding:4px 10px;border-radius:6px;margin:2px">
-                  <span class="size-h6 color-highlight">{{ .String "name" }}</span>
-                  <span class="size-h6 color-positive"> · {{ .String "category" }}</span>
-                </div>
-              {{ end }}
-              </div>
-
-          - type: custom-api
-            title: "❌ Rejected"
-            cache: 5m
-            url: http://skill-dashboard:8765/data/dashboard.json
-            template: |
-              {{ $rejected := .JSON.Array "rejected" }}
-              <ul class="list list-gap-7">
-              {{ range $rejected }}
-                <li>
-                  <span class="size-h6 color-highlight">{{ .String "name" }}</span>
-                  {{ if .String "reason" }}
-                    <span class="size-h6 color-negative"> — {{ .String "reason" }}</span>
-                  {{ end }}
-                </li>
-              {{ end }}
-              </ul>
+          - type: iframe
+            title: Skill Funnel
+            source: http://localhost:8765
+            height: 1200
 
       - size: small
         widgets:
@@ -403,9 +310,17 @@ pages:
                 url: http://miniflux:8080
                 icon: si:rss
 
-          - type: repository
-            title: Skill Funnel
-            repository: HuyTruong14/skill-funnel
+          - type: bookmarks
+            title: Links
+            groups:
+              - title: Skill Funnel
+                links:
+                  - title: Skill Funnel Repo
+                    url: https://github.com/HuyTruong14/skill-funnel
+                    icon: si:github
+                  - title: Actions Runs
+                    url: https://github.com/HuyTruong14/skill-funnel/actions
+                    icon: si:githubactions
 
   - name: Tools
     columns:

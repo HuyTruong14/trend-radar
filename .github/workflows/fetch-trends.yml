@@ -40,13 +40,6 @@ jobs:
           RAGFLOW_API_KEY: ${{ secrets.RAGFLOW_API_KEY }}
         run: python scripts/index_ragflow.py
 
-      - name: Sync skill repos to skill-funnel
-        env:
-          GITHUB_TOKEN: ${{ secrets.SKILL_FUNNEL_TOKEN }}
-          SKILL_FUNNEL_REPO: HuyTruong14/skill-funnel
-        run: python scripts/sync_skill_funnel.py
-        continue-on-error: true
-
       - name: Commit updated data
         run: |
           git config user.name "trend-radar-bot"

@@ -373,19 +373,18 @@ def _extract_json_text(text):
 
 
 def score_items_with_ai(items, topic_label):
-    """Batch-score a topic's items with one Claude API call.
+    """Batch-score a topic's items with Gemini Flash (free tier).
 
-    Adds `summary` (1-sentence Vietnamese) and `relevance_score` (1-5 int)
-    to each item in place. On any failure (missing key, network, bad JSON),
-    logs and leaves summary/relevance_score as None rather than crashing —
-    a scoring failure for one topic must not stop the other topics.
+    Adds `summary`, `relevance_score` (1-5), and `category` to each item.
+    Falls back to Anthropic if GEMINI_API_KEY is not set.
     """
     if not items:
         return
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        log("  -> No ANTHROPIC_API_KEY — using simple scoring (stars/points/keywords)")
+    gemini_key = os.environ.get("GEMINI_API_KEY")
+    anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not gemini_key and not anthropic_key:
+        log("  -> No GEMINI_API_KEY or ANTHROPIC_API_KEY — using simple scoring")
         return
 
     to_score = items[:AI_BATCH_LIMIT]
@@ -393,42 +392,77 @@ def score_items_with_ai(items, topic_label):
     if skipped > 0:
         log(f"  ! {skipped} item(s) skipped for AI scoring (batch limit {AI_BATCH_LIMIT}, kept newest)")
 
-    results = None
-    try:
-        import anthropic
+    payload = [{"title": it.get("title") or "", "meta": it.get("meta") or ""} for it in to_score]
+    prompt_text = (
+        "Bạn là trợ lý phân tích trend. Với danh sách item JSON đầu vào (mỗi item có "
+        "title, meta), trả về DUY NHẤT một JSON array cùng thứ tự, cùng số lượng phần tử "
+        "với đầu vào. Mỗi phần tử có 3 field: \"summary\" (tóm tắt 1 câu tiếng Việt), "
+        "\"relevance_score\" (số nguyên 1-5, 5 = rất đáng chú ý với người theo dõi trend "
+        "AI/iGaming/business sớm), và \"category\" (1 nhãn ngắn phân loại chủ đề, ví dụ: "
+        "Agent Framework, RAG, Web Scraping, Video/Media, Dev Tool, LLM, Database, "
+        "Automation, UI/Frontend, Security, Data Pipeline, Trading, AI App, Resource, "
+        "hoặc tự đặt nếu không khớp). Không kèm text nào khác ngoài JSON array.\n\n"
+        f"Chu de: {topic_label}\n\nItems:\n{json.dumps(payload, ensure_ascii=False)}"
+    )
 
-        client = anthropic.Anthropic(api_key=api_key)
-        payload = [{"title": it.get("title") or "", "meta": it.get("meta") or ""} for it in to_score]
-        system_prompt = (
-            "Bạn là trợ lý phân tích trend. Với danh sách item JSON đầu vào (mỗi item có "
-            "title, meta), trả về DUY NHẤT một JSON array cùng thứ tự, cùng số lượng phần tử "
-            "với đầu vào. Mỗi phần tử có 2 field: \"summary\" (tóm tắt 1 câu tiếng Việt) và "
-            "\"relevance_score\" (số nguyên 1-5, 5 = rất đáng chú ý với người theo dõi trend "
-            "AI/iGaming/business sớm). Không kèm text nào khác ngoài JSON array."
-        )
-        message = client.messages.create(
-            model=AI_MODEL,
-            max_tokens=4096,
-            system=system_prompt,
-            messages=[
-                {
-                    "role": "user",
-                    "content": f"Chu de: {topic_label}\n\nItems:\n{json.dumps(payload, ensure_ascii=False)}",
-                }
-            ],
-        )
-        raw_text = "".join(block.text for block in message.content if getattr(block, "type", None) == "text")
-        results = json.loads(_extract_json_text(raw_text))
-        if not isinstance(results, list) or len(results) != len(to_score):
-            raise ValueError(f"expected {len(to_score)} scored items, got {results!r}"[:200])
-    except Exception as e:
-        log(f"  ! AI scoring failed for topic '{topic_label}': {e}")
-        results = None
+    results = None
+    if gemini_key:
+        for model in GEMINI_MODELS:
+            for attempt in range(2):
+                try:
+                    r = requests.post(
+                        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={gemini_key}",
+                        headers={"Content-Type": "application/json"},
+                        json={
+                            "contents": [{"parts": [{"text": prompt_text}]}],
+                            "generationConfig": {"temperature": 0.2, "maxOutputTokens": 4096},
+                        },
+                        timeout=60,
+                    )
+                    if r.status_code == 503:
+                        log(f"  ! Gemini {model} overloaded (attempt {attempt + 1})")
+                        time.sleep(5)
+                        continue
+                    if not r.ok:
+                        log(f"  ! Gemini scoring HTTP {r.status_code}: {r.text[:200]}")
+                        break
+                    body = r.json()
+                    if "error" in body:
+                        log(f"  ! Gemini scoring error: {body['error'].get('message', '')[:200]}")
+                        break
+                    raw_text = body["candidates"][0]["content"]["parts"][0]["text"]
+                    results = json.loads(_extract_json_text(raw_text))
+                    if not isinstance(results, list) or len(results) != len(to_score):
+                        raise ValueError(f"expected {len(to_score)}, got {len(results) if isinstance(results, list) else type(results)}")
+                    log(f"  -> Gemini {model} scored {len(to_score)} items")
+                    break
+                except Exception as e:
+                    log(f"  ! Gemini scoring failed: {e}")
+                    break
+            if results:
+                break
+    elif anthropic_key:
+        try:
+            import anthropic
+            client = anthropic.Anthropic(api_key=anthropic_key)
+            message = client.messages.create(
+                model=AI_MODEL, max_tokens=4096,
+                system=prompt_text.split("\n\nChu de:")[0],
+                messages=[{"role": "user", "content": f"Chu de:{prompt_text.split('Chu de:')[1]}"}],
+            )
+            raw_text = "".join(block.text for block in message.content if getattr(block, "type", None) == "text")
+            results = json.loads(_extract_json_text(raw_text))
+            if not isinstance(results, list) or len(results) != len(to_score):
+                raise ValueError(f"expected {len(to_score)} scored items, got {results!r}"[:200])
+        except Exception as e:
+            log(f"  ! Anthropic scoring failed for topic '{topic_label}': {e}")
+            results = None
 
     for idx, it in enumerate(to_score):
         res = results[idx] if results else None
         if isinstance(res, dict):
             it["summary"] = res.get("summary")
+            it["category"] = res.get("category")
             score = res.get("relevance_score")
             try:
                 it["relevance_score"] = int(score) if score is not None else None
@@ -437,10 +471,12 @@ def score_items_with_ai(items, topic_label):
         else:
             it["summary"] = None
             it["relevance_score"] = None
+            it["category"] = None
 
     for it in items[len(to_score):]:
         it["summary"] = None
         it["relevance_score"] = None
+        it["category"] = None
 
 
 GEMINI_MODELS = ["gemini-3.6-flash", "gemini-3.5-flash-lite"]
@@ -683,6 +719,8 @@ def update_history(topic_key, items, history_days):
     )[:10]
     top_repos = [{"name": r["title"], "stars": r["score"]} for r in gh_repos]
 
+    all_gh_titles = [it["title"] for it in items if it.get("source") == "GitHub" and it.get("title")]
+
     entry = {
         "date": today,
         "total_items": len(items),
@@ -691,6 +729,7 @@ def update_history(topic_key, items, history_days):
         "by_source": by_source,
         "by_keyword": by_keyword,
         "top_repos": top_repos,
+        "github_repos": all_gh_titles,
     }
 
     history = [h for h in history if isinstance(h, dict) and h.get("date") != today]
