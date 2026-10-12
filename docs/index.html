@@ -116,7 +116,7 @@ body {
 .hdr-right {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .status-indicator {
@@ -143,6 +143,32 @@ body {
 @keyframes pulse-live {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Bilingual Switcher */
+.lang-toggle-pill {
+  display: inline-flex;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2px;
+}
+.lang-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--dim);
+  padding: 4px 11px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.lang-toggle-btn.active {
+  background: var(--accent);
+  color: #07090e;
+  box-shadow: 0 0 10px var(--accent-glow);
 }
 
 /* Tabs */
@@ -290,6 +316,83 @@ body {
   height: 14px;
   background: var(--accent);
   border-radius: 2px;
+}
+
+/* Hero Daily Grid */
+.hero-daily-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.hero-story-card {
+  background: linear-gradient(135deg, rgba(14, 19, 31, 0.9) 0%, rgba(20, 28, 46, 0.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--R);
+  padding: 20px 22px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+.hero-story-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--cyan) 100%);
+}
+.hero-story-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px -8px rgba(16, 185, 129, 0.25);
+}
+.hero-badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.hero-topic-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--cyan);
+  letter-spacing: 0.5px;
+}
+.hero-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  color: #fff;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.hero-summary {
+  font-size: 13px;
+  color: var(--dim);
+  line-height: 1.5;
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.hero-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
 }
 
 /* Keywords Chips */
@@ -445,6 +548,7 @@ body {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   box-shadow: var(--shadow);
+  cursor: pointer;
 }
 .card:hover {
   border-color: var(--border-h);
@@ -705,6 +809,195 @@ footer {
   padding: 30px 20px;
   border-top: 1px solid var(--border);
 }
+
+/* --- RADAR READING DRAWER & EDITORIAL STYLES --- */
+.reader-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reader-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.reader-drawer {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: min(720px, 100vw);
+  background: #0e131f;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: -15px 0 40px rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+.reader-overlay.open .reader-drawer {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(14, 19, 31, 0.95);
+  backdrop-filter: blur(10px);
+}
+.btn-close-drawer {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--dim);
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+.btn-close-drawer:hover {
+  color: #fff;
+  border-color: var(--dim);
+  background: var(--surface-2);
+}
+.drawer-link-orig {
+  color: var(--cyan);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  background: rgba(6, 182, 212, 0.08);
+  transition: all 0.2s;
+}
+.drawer-link-orig:hover {
+  background: rgba(6, 182, 212, 0.18);
+}
+
+.drawer-scroll-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 32px;
+}
+.drawer-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.drawer-badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.drawer-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+/* AI Executive Summary Card */
+.ai-brief-card {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+.ai-brief-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.ai-badge {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  color: #818cf8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ai-model-tag {
+  font-size: 11px;
+  color: var(--dim);
+  font-family: var(--font-mono);
+}
+.ai-tldr-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #f8fafc;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+.ai-points-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.ai-points-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ai-points-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+.ai-points-list li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  color: var(--cyan);
+  font-size: 18px;
+  top: -2px;
+}
+
+/* Reader Typography */
+.reader-content-body {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #cbd5e1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.reader-content-body p {
+  margin-bottom: 18px;
+}
 </style>
 </head>
 <body>
@@ -716,6 +1009,11 @@ footer {
       <h1>Trend <b>Radar</b></h1>
     </a>
     <div class="hdr-right">
+      <!-- Global Bilingual Switcher -->
+      <div class="lang-toggle-pill">
+        <button class="lang-toggle-btn active" id="btn-lang-vi" onclick="setGlobalLang('vi')">🇻🇳 VI</button>
+        <button class="lang-toggle-btn" id="btn-lang-en" onclick="setGlobalLang('en')">🇬🇧 EN</button>
+      </div>
       <div class="status-indicator">
         <span class="live-dot"></span>
         <span id="upd">Đang đồng bộ…</span>
@@ -731,6 +1029,49 @@ footer {
   <div class="loading">
     <span class="live-dot"></span> Đang nạp dữ liệu thị trường...
   </div>
+</div>
+
+<!-- Reading Drawer Markup -->
+<div class="reader-overlay" id="reader-overlay" onclick="closeReaderDrawer(event)">
+  <aside class="reader-drawer" onclick="event.stopPropagation()">
+    <div class="drawer-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <button class="btn-close-drawer" onclick="closeReaderDrawer()" title="Đóng (Esc)">✕</button>
+        <span id="drawer-source-badge" class="drawer-badge">SOURCE</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div class="lang-toggle-pill">
+          <button id="drawer-btn-vi" class="lang-toggle-btn active" onclick="setDrawerLang('vi')">VI</button>
+          <button id="drawer-btn-en" class="lang-toggle-btn" onclick="setDrawerLang('en')">EN</button>
+        </div>
+        <a id="drawer-orig-link" href="#" target="_blank" class="drawer-link-orig">Mở bài gốc ↗</a>
+      </div>
+    </div>
+
+    <div class="drawer-scroll-body">
+      <div class="drawer-meta-row">
+        <span id="drawer-cat-tag" class="drawer-badge" style="background: rgba(255,255,255,0.08); color: var(--text);">NEWS</span>
+        <span id="drawer-pub-date">Vừa xong</span>
+      </div>
+      <h1 id="drawer-article-title" class="drawer-title">Tiêu đề bài viết</h1>
+
+      <!-- AI Summary -->
+      <div class="ai-brief-card" id="drawer-ai-card">
+        <div class="ai-brief-header">
+          <div class="ai-badge">✨ AI Executive Brief</div>
+          <div class="ai-model-tag">Gemini / Claude</div>
+        </div>
+        <div id="drawer-ai-tldr" class="ai-tldr-text">Đang tải tóm tắt bài viết...</div>
+        <div class="ai-points-title">Điểm then chốt (Key Takeaways):</div>
+        <ul id="drawer-ai-points" class="ai-points-list"></ul>
+      </div>
+
+      <!-- Clean Article Content -->
+      <div class="reader-content-body" id="drawer-article-body">
+        <p>Nội dung chi tiết bài viết...</p>
+      </div>
+    </div>
+  </aside>
 </div>
 
 <footer>
@@ -750,9 +1091,93 @@ const STOPS=new Set(['the','a','an','and','or','but','in','on','at','to','for','
 'và','của','cho','trong','với','là','được','có','này','đó','các','một','những','để','từ','theo','về','trên','sẽ','khi','không','nhưng','hay','hoặc','đã','đang','cũng','như','tại','ra','vào','lên','xuống','giữa','bởi','mà','thì','nên','rằng','nào','đều','vẫn','qua','đến','bị','mới','nhất','hơn','rất','quá','chỉ','vì','nếu','tuy','dù','sau','trước','giờ','ngày','năm','tháng','còn','lại','đây','kia','nhiều','ít','lớn','nhỏ','tin','tức','bài','viết']);
 
 let active=TOPICS[0].key, data={}, hist={}, recommended=[], filterText='', sortBy='date', activeKw=null;
+let currentAppLang = 'vi';
+let activeReaderArticle = null;
 
 function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function fmtD(iso){if(!iso)return'';try{return new Date(iso).toLocaleDateString('vi-VN',{day:'2-digit',month:'2-digit',year:'numeric'})}catch(e){return''}}
+
+/* Drawer Controls */
+function openReaderDrawer(item) {
+  if (!item) return;
+  activeReaderArticle = item;
+  updateDrawerUI();
+  
+  const overlay = document.getElementById('reader-overlay');
+  if (overlay) {
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeReaderDrawer(e) {
+  if (e && e.target !== e.currentTarget && !e.target.classList.contains('btn-close-drawer')) return;
+  const overlay = document.getElementById('reader-overlay');
+  if (overlay) {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function updateDrawerUI() {
+  if (!activeReaderArticle) return;
+  const a = activeReaderArticle;
+  const isVi = currentAppLang === 'vi';
+
+  const title = (isVi && a.title_vi) ? a.title_vi : a.title;
+  const tldr = a.ai_summary 
+    ? (isVi ? (a.ai_summary.vi?.tldr || a.ai_summary.tldr) : (a.ai_summary.en?.tldr || a.ai_summary.tldr))
+    : (a.summary || a.description || "Bài viết từ nguồn tin sớm. Bạn có thể bấm nút Mở bài gốc để xem toàn bộ nội dung.");
+  
+  const points = a.ai_summary 
+    ? (isVi ? (a.ai_summary.vi?.key_points || a.ai_summary.points) : (a.ai_summary.en?.key_points || a.ai_summary.points))
+    : [];
+
+  const bodyContent = (isVi && a.body_vi) ? a.body_vi : (a.content || a.summary || a.description || "");
+
+  document.getElementById('drawer-article-title').innerText = title || '(Không có tiêu đề)';
+  document.getElementById('drawer-ai-tldr').innerText = tldr;
+  document.getElementById('drawer-source-badge').innerText = a.source || 'FEED';
+  document.getElementById('drawer-orig-link').href = a.url || a.link || '#';
+  document.getElementById('drawer-pub-date').innerText = fmtD(a.published) || a.meta || '';
+  
+  const pointsList = document.getElementById('drawer-ai-points');
+  if (points && points.length > 0) {
+    pointsList.innerHTML = points.map(p => `<li>${esc(p)}</li>`).join('');
+    document.getElementById('drawer-ai-card').style.display = 'block';
+  } else {
+    pointsList.innerHTML = `<li>Cập nhật từ nguồn tin ${esc(a.source || 'gốc')}.</li>`;
+  }
+
+  const bodyEl = document.getElementById('drawer-article-body');
+  if (bodyContent && bodyContent.startsWith('<p>')) {
+    bodyEl.innerHTML = bodyContent;
+  } else if (bodyContent) {
+    bodyEl.innerHTML = `<p>${esc(bodyContent)}</p>`;
+  } else {
+    bodyEl.innerHTML = `<p style="color:var(--muted)">Nhấn 'Mở bài gốc' ở phía trên để đọc bài viết trực tiếp tại trang nguồn.</p>`;
+  }
+
+  document.getElementById('drawer-btn-vi').className = isVi ? 'lang-toggle-btn active' : 'lang-toggle-btn';
+  document.getElementById('drawer-btn-en').className = !isVi ? 'lang-toggle-btn active' : 'lang-toggle-btn';
+}
+
+function setGlobalLang(lang) {
+  currentAppLang = lang;
+  const isVi = lang === 'vi';
+  document.getElementById('btn-lang-vi').className = isVi ? 'lang-toggle-btn active' : 'lang-toggle-btn';
+  document.getElementById('btn-lang-en').className = !isVi ? 'lang-toggle-btn active' : 'lang-toggle-btn';
+  if (activeReaderArticle) updateDrawerUI();
+  render();
+}
+
+function setDrawerLang(lang) {
+  setGlobalLang(lang);
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeReaderDrawer();
+});
 
 function extractKw(items,limit){
   limit=limit||14;
@@ -803,6 +1228,44 @@ function renderTabs(){
   });
 }
 
+function renderHeroStories(items) {
+  // Top 3 stories with highest relevance or cross_source
+  const topStories = items.slice().sort((a,b) => {
+    if (a.cross_source && !b.cross_source) return -1;
+    if (!a.cross_source && b.cross_source) return 1;
+    return (b.relevance_score || 0) - (a.relevance_score || 0);
+  }).slice(0, 3);
+
+  if (!topStories.length) return '';
+
+  let cards = topStories.map(it => {
+    const isVi = currentAppLang === 'vi';
+    const title = (isVi && it.title_vi) ? it.title_vi : it.title;
+    const summary = (isVi && it.summary_vi) ? it.summary_vi : (it.summary || it.what || '');
+    return `
+      <div class="hero-story-card" onclick="openReaderItem('${esc(it.url || it.title)}')">
+        <div>
+          <div class="hero-badge-row">
+            <span class="hero-topic-badge">${esc(it.source || 'FEATURED')}</span>
+            ${it.cross_source ? '<span class="badge b-hot">🔥 HOT STORY</span>' : '<span class="badge b-score">TOP RATED</span>'}
+          </div>
+          <div class="hero-title">${esc(title)}</div>
+          <div class="hero-summary">${esc(summary)}</div>
+        </div>
+        <div class="hero-footer">
+          <span>${fmtD(it.published)}</span>
+          <span style="color:var(--accent);font-weight:600">Đọc tóm tắt ➔</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  return `<div class="sec">
+    <div class="sec-t">🔥 Sự kiện nổi bật trong ngày (Top Daily Stories)</div>
+    <div class="hero-daily-grid">${cards}</div>
+  </div>`;
+}
+
 function render(){
   const ct=document.getElementById('ct');
   const topic=data[active];
@@ -826,6 +1289,9 @@ function render(){
     <div class="st"><div class="st-v">${stats.sources.length}</div><div class="st-l">Nguồn tin</div></div>
     <div class="st"><div class="st-v">${stats.fresh}</div><div class="st-l">Mới trong 24h</div></div>
   </div>`;
+
+  // Hero Stories Section
+  html+=renderHeroStories(items);
 
   // Trending keywords
   if(keywords.length){
@@ -986,6 +1452,15 @@ function renderSrcBar(items,sources){
   return barHtml+'</div>'+legHtml+'</div>';
 }
 
+function openReaderItem(key) {
+  const currentTopic = data[active];
+  if (!currentTopic || !currentTopic.items) return;
+  const found = currentTopic.items.find(i => (i.url === key || i.title === key));
+  if (found) {
+    openReaderDrawer(found);
+  }
+}
+
 function renderItems(items,sources){
   let filtered=items.slice();
   const q=(filterText||'').toLowerCase();
@@ -1000,6 +1475,8 @@ function renderItems(items,sources){
   });
   if(!filtered.length)return'<div class="empty" style="grid-column:1/-1"><p>Không tìm thấy mục nào phù hợp với bộ lọc.</p></div>';
   const now=Date.now(),day=864e5;
+  const isVi = currentAppLang === 'vi';
+
   return filtered.map(it=>{
     const isNew=it.published&&(now-new Date(it.published).getTime())<day;
     const col=srcColor(it.source,sources);
@@ -1014,19 +1491,22 @@ function renderItems(items,sources){
       }
       badges+=`<span class="dots" title="Relevance: ${it.relevance_score}/5">${dots}</span>`;
     }
-    const summary=it.summary?`<div class="card-sum">${esc(it.summary)}</div>`:'';
-    return`<a class="card" href="${it.url||'#'}" target="_blank" rel="noopener">
+    const title = (isVi && it.title_vi) ? it.title_vi : it.title;
+    const summary = (isVi && it.summary_vi) ? it.summary_vi : (it.summary || it.what || '');
+    const summaryHtml = summary ? `<div class="card-sum">${esc(summary)}</div>` : '';
+
+    return`<div class="card" onclick="openReaderItem('${esc(it.url || it.title)}')">
       <div class="card-top">
         <span class="card-src" style="color:${col};border-left:2px solid ${col}">${esc(it.source||'')}</span>
         ${badges}
       </div>
-      <div class="card-ttl">${esc(it.title||'(không tiêu đề)')}</div>
-      ${summary}
+      <div class="card-ttl">${esc(title||'(không tiêu đề)')}</div>
+      ${summaryHtml}
       <div class="card-bt">
         <span>${fmtD(it.published)}</span>
-        <span style="color:var(--dim)">Xem chi tiết ↗</span>
+        <span style="color:var(--accent);font-weight:600">Đọc ngay ➔</span>
       </div>
-    </a>`;
+    </div>`;
   }).join('');
 }
 
