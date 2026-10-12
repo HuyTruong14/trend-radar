@@ -7,440 +7,328 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:hsl(225 14% 10%);--surface:hsl(225 14% 14%);--widget:hsl(225 14% 12%);
-  --border:hsl(225 10% 20%);--text:hsl(225 10% 85%);--muted:hsl(225 10% 50%);
-  --primary:hsl(43 50% 70%);--positive:hsl(120 50% 50%);--negative:hsl(0 70% 60%);
-  --accent:hsl(215 70% 55%);--warning:hsl(35 90% 55%);
+  --bg:hsl(225 14% 10%);
+  --surface:hsl(225 14% 14%);
+  --widget:hsl(225 14% 12%);
+  --border:hsl(225 10% 20%);
+  --text:hsl(225 10% 85%);
+  --muted:hsl(225 10% 50%);
+  --primary:hsl(43 50% 70%);
+  --positive:hsl(120 50% 50%);
+  --negative:hsl(0 70% 60%);
+  --accent:hsl(215 70% 55%);
+  --warning:hsl(35 90% 55%);
+  --radius:10px;
 }
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:14px;line-height:1.5}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:13px;line-height:1.5;padding:16px}
 a{color:var(--primary);text-decoration:none}
-.container{max-width:900px;margin:0 auto;padding:16px}
-header{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);margin-bottom:16px;flex-wrap:wrap}
-header h1{font-size:18px;font-weight:600;flex:1}
+a:hover{text-decoration:underline}
+.container{max-width:960px;margin:0 auto}
+
+header{display:flex;align-items:center;gap:12px;padding:10px 0 16px;border-bottom:1px solid var(--border);margin-bottom:20px;flex-wrap:wrap}
+header h1{font-size:18px;font-weight:600;flex:1;display:flex;align-items:center;gap:8px}
 .live-dot{width:8px;height:8px;border-radius:50%;background:var(--positive);animation:pulse-opacity 2s infinite}
 @keyframes pulse-opacity{0%,100%{opacity:1}50%{opacity:.3}}
 .status-text{font-size:12px;color:var(--muted)}
-.btn{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:4px 12px;border-radius:4px;cursor:pointer;font-size:12px;display:flex;align-items:center;gap:4px}
-.btn:hover{border-color:var(--muted)}
-.btn svg{width:14px;height:14px;transition:transform .8s}
-.btn.spinning svg{transform:rotate(360deg)}
+.btn{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;display:flex;align-items:center;gap:6px;font-family:inherit;transition:opacity .15s}
+.btn:hover{opacity:.85;border-color:var(--muted)}
+.btn svg{width:13px;height:13px}
 
-.summary{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
-.badge{padding:3px 10px;border-radius:12px;font-size:12px;font-weight:500}
-.badge-pass{background:hsla(120,50%,50%,.15);color:var(--positive)}
-.badge-run{background:hsla(215,70%,55%,.15);color:var(--accent)}
-.badge-fail{background:hsla(0,70%,60%,.15);color:var(--negative)}
-.badge-wait{background:hsla(225,10%,50%,.15);color:var(--muted)}
+/* Pipeline Flow Stepper */
+.flow-diagram{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:12px;margin-bottom:24px}
+@media(max-width:768px){.flow-diagram{grid-template-columns:1fr;gap:10px}}
+.stage-card{background:var(--widget);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;position:relative}
+.stage-card.active{border-color:hsl(225 10% 32%)}
+.stage-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.stage-num{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:600}
+.stage-badge{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600}
+.badge-ok{background:hsla(120,50%,50%,.15);color:var(--positive)}
+.badge-filter{background:hsla(35,90%,55%,.15);color:var(--warning)}
+.badge-ready{background:hsla(215,70%,55%,.15);color:var(--accent)}
+.stage-title{font-size:14px;font-weight:600;margin-bottom:4px;color:var(--primary)}
+.stage-desc{font-size:11px;color:var(--muted);margin-bottom:12px}
+.stage-metric{margin-top:auto;padding-top:10px;border-top:1px solid var(--border);display:flex;align-items:baseline;justify-content:space-between}
+.metric-val{font-size:20px;font-weight:700}
+.metric-label{font-size:11px;color:var(--muted)}
 
-.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:16px}
-.tab{padding:8px 16px;cursor:pointer;color:var(--muted);border-bottom:2px solid transparent;font-size:13px;font-weight:500}
-.tab.active{color:var(--primary);border-bottom-color:var(--primary)}
-.tab:hover:not(.active){color:var(--text)}
-.flow{display:none}.flow.active{display:block}
+.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px}
+@media(max-width:768px){.flow-arrow{transform:rotate(90deg);padding:4px 0}}
 
-.step{position:relative;padding-left:32px;margin-bottom:4px}
-.step:not(:last-child){padding-bottom:8px}
-.step::before{content:'';position:absolute;left:11px;top:24px;bottom:0;width:2px;background:var(--border)}
-.step:last-child::before{display:none}
-.step.pass::before{background:var(--positive)}.step.fail::before{background:var(--negative)}.step.run::before{background:var(--accent)}
+/* Details Grid */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+@media(max-width:768px){.grid-2{grid-template-columns:1fr}}
+.panel{background:var(--widget);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
+.panel-hd{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;font-weight:600;color:var(--muted);margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.item-list{display:flex;flex-direction:column;gap:8px}
+.item-row{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--surface);border-radius:6px;border:1px solid hsla(0,0%,100%,.04);font-size:12px}
+.item-name{font-weight:500;display:flex;align-items:center;gap:6px}
+.item-tag{font-size:10px;padding:1px 6px;border-radius:4px}
+.tag-app{background:hsla(120,50%,50%,.15);color:var(--positive)}
+.tag-pend{background:hsla(35,90%,55%,.15);color:var(--warning)}
+.tag-rej{background:hsla(0,70%,60%,.15);color:var(--negative)}
+.tag-cat{background:hsla(215,70%,55%,.12);color:var(--accent)}
 
-.dot{position:absolute;left:4px;top:4px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff}
-.dot-pass{background:var(--positive)}.dot-fail{background:var(--negative)}
-.dot-run{background:var(--accent);animation:pulse-scale 1.5s infinite}
-.dot-wait{background:transparent;border:2px solid var(--muted)}
-@keyframes pulse-scale{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
-
-.step-header{display:flex;align-items:center;gap:8px;min-height:24px}
-.step-name{font-size:13px;font-weight:500}.step-desc{font-size:11px;color:var(--muted)}
-.step.wait .step-name{color:var(--muted)}
-.step-time{margin-left:auto;font-size:11px;color:var(--muted);white-space:nowrap}
-
-.log-box{margin:6px 0 4px;padding:6px 8px;background:var(--widget);border-left:3px solid var(--border);border-radius:0 4px 4px 0;font-family:"SF Mono",Consolas,monospace;font-size:11px;max-height:120px;overflow-y:auto}
-.step.pass .log-box{border-left-color:var(--positive)}.step.fail .log-box{border-left-color:var(--negative)}.step.run .log-box{border-left-color:var(--accent)}
-.log-line{white-space:pre-wrap;word-break:break-all}
-.log-ok{color:var(--positive)}.log-err{color:var(--negative)}.log-info{color:var(--accent)}.log-warn{color:var(--warning)}.log-muted{color:var(--muted)}
-
-.services{margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
-.services h3{font-size:13px;color:var(--muted);margin-bottom:8px}
-.svc-grid{display:flex;gap:8px;flex-wrap:wrap}
-.svc{padding:6px 12px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:12px;display:flex;align-items:center;gap:6px}
+/* Services Bar */
+.svc-bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.svc-pill{display:flex;align-items:center;gap:6px;padding:5px 10px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:11.5px}
 .svc-dot{width:6px;height:6px;border-radius:50%}
-.svc-up{background:var(--positive)}.svc-down{background:var(--negative)}.svc-unknown{background:var(--muted)}
+.dot-up{background:var(--positive)}
+.dot-down{background:var(--negative)}
+.dot-wait{background:var(--muted)}
 </style>
 </head>
 <body>
 <div class="container">
   <header>
-    <h1>Pipeline Monitor</h1>
+    <h1><span>⚡</span> Pipeline Flow Monitor</h1>
     <span class="live-dot"></span>
-    <span class="status-text" id="status">Starting...</span>
-    <button class="btn" onclick="refresh()" id="refreshBtn">
+    <span class="status-text" id="statusText">Đang tải dữ liệu...</span>
+    <button class="btn" onclick="fetchPipelineData()" id="refreshBtn">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
-      Refresh
+      Làm mới
     </button>
   </header>
 
-  <div class="summary" id="summary"></div>
+  <!-- 3-STAGE PIPELINE FLOW -->
+  <div class="flow-diagram">
+    <!-- Stage 1 -->
+    <div class="stage-card active">
+      <div class="stage-header">
+        <span class="stage-num">Giai đoạn 1</span>
+        <span class="stage-badge badge-ok">Hoạt động</span>
+      </div>
+      <div class="stage-title">1. Trend Radar</div>
+      <div class="stage-desc">Crawl & chấm điểm trend từ GitHub, arXiv, RSS & Hacker News</div>
+      <div class="stage-metric">
+        <div>
+          <div class="metric-val" id="stage1Count" style="color:var(--accent)">--</div>
+          <div class="metric-label">Tổng items theo dõi</div>
+        </div>
+        <div style="text-align:right">
+          <div class="metric-val" id="stage1Topics" style="font-size:16px;color:var(--primary)">--</div>
+          <div class="metric-label">Topics phân loại</div>
+        </div>
+      </div>
+    </div>
 
-  <div class="tabs">
-    <div class="tab active" onclick="switchTab('flow1')">Data → Glance</div>
-    <div class="tab" onclick="switchTab('flow2')">Send → Extract</div>
+    <div class="flow-arrow">➔</div>
+
+    <!-- Stage 2 -->
+    <div class="stage-card active">
+      <div class="stage-header">
+        <span class="stage-num">Giai đoạn 2</span>
+        <span class="stage-badge badge-filter">Sàng lọc</span>
+      </div>
+      <div class="stage-title">2. Skill Funnel</div>
+      <div class="stage-desc">Quét marker files (.claude, SKILL.md, AGENTS.md), kiểm tra license</div>
+      <div class="stage-metric">
+        <div>
+          <div class="metric-val" id="stage2Count" style="color:var(--warning)">--</div>
+          <div class="metric-label">Repos trong phễu</div>
+        </div>
+        <div style="text-align:right">
+          <div class="metric-val" id="stage2Pending" style="font-size:16px;color:var(--warning)">--</div>
+          <div class="metric-label">Chờ duyệt</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">➔</div>
+
+    <!-- Stage 3 -->
+    <div class="stage-card active">
+      <div class="stage-header">
+        <span class="stage-num">Giai đoạn 3</span>
+        <span class="stage-badge badge-ready">Sẵn sàng</span>
+      </div>
+      <div class="stage-title">3. Apply Workflow</div>
+      <div class="stage-desc">Nạp vào kho skills/rules của AI Coding Agents (Claude Code, Cursor)</div>
+      <div class="stage-metric">
+        <div>
+          <div class="metric-val" id="stage3Count" style="color:var(--positive)">--</div>
+          <div class="metric-label">Approved Skills</div>
+        </div>
+        <div style="text-align:right">
+          <div class="metric-val" style="font-size:14px;color:var(--positive)">100% Ready</div>
+          <div class="metric-label">Tương thích stack</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="flow active" id="flow1"></div>
-  <div class="flow" id="flow2"></div>
+  <!-- DETAILS GRID -->
+  <div class="grid-2">
+    <!-- Panel 1: Skill Funnel Details -->
+    <div class="panel">
+      <div class="panel-hd">
+        <span>Sàng lọc Repos & Skills (Phễu)</span>
+        <a href="http://localhost:8765" target="_blank" style="font-size:11px">Mở Skill Dashboard ↗</a>
+      </div>
+      <div class="item-list" id="funnelItemsList">
+        <div style="color:var(--muted);font-size:12px">Đang tải...</div>
+      </div>
+    </div>
 
-  <div class="services">
-    <h3>Local Services</h3>
-    <div class="svc-grid" id="svcGrid"></div>
+    <!-- Panel 2: Trend Radar Status -->
+    <div class="panel">
+      <div class="panel-hd">
+        <span>Trend Radar Topics & Cập nhật</span>
+        <span id="lastUpdatedStr" style="font-size:11px;color:var(--muted)">--</span>
+      </div>
+      <div class="item-list" id="topicsList">
+        <div style="color:var(--muted);font-size:12px">Đang tải...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCAL SERVICES HEALTH -->
+  <div class="panel">
+    <div class="panel-hd">Trạng thái Services Cục bộ (Local Health)</div>
+    <div class="svc-bar" id="svcBar"></div>
   </div>
 </div>
 
 <script>
-const OWNER = 'HuyTruong14';
-const REPO_TR = 'trend-radar';
-const REPO_SF = 'skill-funnel';
-const POLL_MS = 30000;
-let TOKEN = '';
-let pollTimer = null;
-
-const FLOW1_STEPS = [
-  {id:'trigger',   name:'Actions trigger',   desc:'Cron 14:00 VN / manual dispatch'},
-  {id:'crawl',     name:'Crawl trending',    desc:'GitHub Trending + arXiv + news'},
-  {id:'scoring',   name:'Gemini scoring',    desc:'Summary + relevance_score + category'},
-  {id:'analyze',   name:'Analyze top 5',     desc:'Deep analysis what/apply'},
-  {id:'history',   name:'Update history',    desc:'github_repos new/returning'},
-  {id:'stats',     name:'Generate stats',    desc:'ai-tech-stats.json'},
-  {id:'commit',    name:'Git commit + push', desc:'Push data lên repo'},
-  {id:'deploy',    name:'GitHub Pages deploy',desc:'Data public on Pages'},
-  {id:'glance',    name:'Glance reads data', desc:'Dashboard hiện trends'},
-  {id:'telegram',  name:'Telegram digest',   desc:'Gửi top-5 daily'},
-];
-
-const FLOW2_STEPS = [
-  {id:'send',      name:'User nhấn Send',    desc:'Chọn repo từ dashboard'},
-  {id:'sources',   name:'Ghi sources.md',    desc:'GitHub API → skill-funnel/sources.md'},
-  {id:'sf_trigger', name:'Workflow trigger',  desc:'skill-funnel Actions detect push'},
-  {id:'read',      name:'Read pending',      desc:'Parse sources.md → danh sách'},
-  {id:'clone',     name:'Clone & scan',      desc:'Clone repo, phân tích structure'},
-  {id:'extract',   name:'AI extract',        desc:'License, markers, purpose'},
-  {id:'save',      name:'Save dashboard.json',desc:'Ghi kết quả extraction'},
-  {id:'sf_commit', name:'Commit + push',     desc:'Push data lên skill-funnel'},
-  {id:'sf_dash',   name:'Dashboard shows',   desc:'Repo xuất hiện ở tab'},
-  {id:'approve',   name:'User Approve/Reject',desc:'Review extract → quyết định'},
-  {id:'approve_wf',name:'Approve workflow',   desc:'Move → approved/ hoặc rejected/'},
-];
+const DATA_BASE = 'https://huytruong14.github.io/trend-radar/data';
 
 const SERVICES = [
-  {name:'Glance',     url:'http://localhost:8686'},
-  {name:'Skill Dash', url:'http://localhost:8765'},
-  {name:'RSSHub',     url:'http://localhost:1200'},
-  {name:'Miniflux',   url:'http://localhost:8080'},
-  {name:'RAGFlow',    url:'http://localhost:80'},
-  {name:'Pipeline Mon',url:'http://localhost:8766'},
+  {name:'Glance (8686)', url:'http://localhost:8686'},
+  {name:'Skill Dashboard (8765)', url:'http://localhost:8765'},
+  {name:'Pipeline Monitor (8766)', url:'http://localhost:8766'},
+  {name:'RSSHub (1200)', url:'http://localhost:1200'},
+  {name:'Miniflux (8080)', url:'http://localhost:8080'},
 ];
 
-async function loadToken() {
+async function checkService(s) {
   try {
-    const r = await fetch('http://localhost:8765/config.json');
-    const cfg = await r.json();
-    TOKEN = cfg.github_token || '';
+    await fetch(s.url, {mode:'no-cors', cache:'no-cache'});
+    return true;
   } catch(e) {
-    TOKEN = localStorage.getItem('gh_token') || '';
-  }
-  if (!TOKEN) {
-    const t = prompt('GitHub token (for API calls):');
-    if (t) { TOKEN = t; localStorage.setItem('gh_token', t); }
+    return false;
   }
 }
 
-async function ghApi(path) {
-  const h = TOKEN ? {Authorization: `token ${TOKEN}`} : {};
-  const r = await fetch(`https://api.github.com${path}`, {headers: h});
-  if (!r.ok) throw new Error(`GitHub API ${r.status}`);
-  return r.json();
-}
-
-function renderSteps(containerId, steps, statuses) {
-  const el = document.getElementById(containerId);
-  el.innerHTML = steps.map((s, i) => {
-    const st = statuses[s.id] || {status:'wait'};
-    const dotClass = `dot dot-${st.status}`;
-    const dotContent = st.status === 'pass' ? '✓' : st.status === 'fail' ? '✗' : st.status === 'run' ? '↻' : '';
-    const timeStr = st.time ? new Date(st.time).toLocaleTimeString('vi-VN',{hour12:false}) : '';
-    const logs = st.logs || [];
-    const logHtml = logs.length && st.status !== 'wait' ? `<div class="log-box">${logs.map(l =>
-      `<div class="log-line ${l.level}">${l.ts ? `[${l.ts}] ` : ''}${l.msg}</div>`
-    ).join('')}</div>` : '';
-    return `<div class="step ${st.status}">
-      <div class="${dotClass}">${dotContent}</div>
-      <div class="step-header">
-        <span class="step-name">Step ${i+1}: ${s.name}</span>
-        <span class="step-time">${timeStr}</span>
-      </div>
-      <div class="step-desc">${st.message || s.desc}</div>
-      ${logHtml}
-    </div>`;
-  }).join('');
-}
-
-function renderSummary(allStatuses) {
-  const counts = {pass:0, run:0, fail:0, wait:0};
-  Object.values(allStatuses).forEach(s => counts[s.status] = (counts[s.status]||0) + 1);
-  document.getElementById('summary').innerHTML =
-    `<span class="badge badge-pass">Passed: ${counts.pass}</span>` +
-    `<span class="badge badge-run">Running: ${counts.run}</span>` +
-    `<span class="badge badge-fail">Failed: ${counts.fail}</span>` +
-    `<span class="badge badge-wait">Waiting: ${counts.wait}</span>`;
-}
-
-function mapWorkflowToSteps(run, jobs) {
-  const statuses = {};
-  if (!run) {
-    FLOW1_STEPS.forEach(s => statuses[s.id] = {status:'wait'});
-    return statuses;
-  }
-
-  const runStatus = run.status;
-  const conclusion = run.conclusion;
-  const created = run.created_at;
-  const updated = run.updated_at;
-
-  if (runStatus === 'queued' || runStatus === 'waiting') {
-    statuses.trigger = {status:'run', time:created, message:'Workflow queued...', logs:[{msg:'Waiting for runner', level:'log-info'}]};
-    FLOW1_STEPS.slice(1).forEach(s => statuses[s.id] = {status:'wait'});
-    return statuses;
-  }
-
-  const fetcherStep = jobs?.flatMap(j => j.steps || []).find(s => s.name && s.name.toLowerCase().includes('fetcher'));
-  const commitStep = jobs?.flatMap(j => j.steps || []).find(s => s.name && s.name.toLowerCase().includes('commit'));
-  const ragflowStep = jobs?.flatMap(j => j.steps || []).find(s => s.name && s.name.toLowerCase().includes('ragflow'));
-
-  statuses.trigger = {status:'pass', time:created, message:'Workflow triggered', logs:[
-    {ts:fmtTime(created), msg:'Workflow started', level:'log-ok'}
-  ]};
-
-  if (runStatus === 'in_progress') {
-    if (fetcherStep && fetcherStep.status === 'in_progress') {
-      const elapsed = (new Date(updated) - new Date(fetcherStep.started_at || created)) / 1000;
-      const subSteps = ['crawl','scoring','analyze','history','stats'];
-      const thresholds = [0, 10, 50, 90, 100];
-      let activeIdx = 0;
-      for (let i = thresholds.length - 1; i >= 0; i--) {
-        if (elapsed >= thresholds[i]) { activeIdx = i; break; }
-      }
-      subSteps.forEach((id, i) => {
-        if (i < activeIdx) statuses[id] = {status:'pass', time:fetcherStep.started_at, message:'Completed'};
-        else if (i === activeIdx) statuses[id] = {status:'run', time:updated, message:'Processing...', logs:[{msg:`Running (~${Math.round(elapsed)}s elapsed)`, level:'log-info'}]};
-        else statuses[id] = {status:'wait'};
-      });
-    } else if (!fetcherStep || fetcherStep.status === 'queued') {
-      ['crawl','scoring','analyze','history','stats'].forEach(id => statuses[id] = {status:'wait'});
-    } else {
-      ['crawl','scoring','analyze','history','stats'].forEach(id => statuses[id] = {status:'pass', time:fetcherStep.completed_at});
-    }
-    statuses.commit = commitStep?.status === 'completed' ? {status: commitStep.conclusion === 'success' ? 'pass' : 'fail', time:commitStep.completed_at} : {status:'wait'};
-    statuses.deploy = {status:'wait'};
-    statuses.glance = {status:'wait'};
-    statuses.telegram = {status:'wait'};
-  } else if (runStatus === 'completed') {
-    const ok = conclusion === 'success';
-    if (ok) {
-      ['crawl','scoring','analyze','history','stats','commit'].forEach(id =>
-        statuses[id] = {status:'pass', time:updated, message:'Completed'}
-      );
-      statuses.telegram = {status:'pass', time:updated, message:'Digest sent'};
-    } else {
-      if (fetcherStep?.conclusion === 'failure') {
-        statuses.crawl = {status:'fail', time:fetcherStep.completed_at, message:'Fetcher failed', logs:[{msg:`Conclusion: ${fetcherStep.conclusion}`, level:'log-err'}]};
-        ['scoring','analyze','history','stats','commit'].forEach(id => statuses[id] = {status:'wait'});
-      } else {
-        ['crawl','scoring','analyze','history','stats'].forEach(id => statuses[id] = {status:'pass', time:updated});
-        statuses.commit = commitStep?.conclusion === 'failure'
-          ? {status:'fail', time:commitStep.completed_at, message:'Commit failed', logs:[{msg:'Git commit/push failed', level:'log-err'}]}
-          : {status:'pass', time:updated};
-      }
-      statuses.telegram = {status: ok ? 'pass' : 'fail', time:updated};
-    }
-    statuses.deploy = {status:'wait'};
-    statuses.glance = {status:'wait'};
-  }
-
-  return statuses;
-}
-
-async function checkPages(statuses) {
-  try {
-    const r = await fetch('https://huytruong14.github.io/trend-radar/data/manifest.json', {cache:'no-store'});
-    if (r.ok) {
-      const data = await r.json();
-      statuses.deploy = {status:'pass', message:'Pages live', logs:[{msg:`manifest.json accessible`, level:'log-ok'}]};
-      statuses.glance = {status:'pass', message:'Data available'};
-    }
-  } catch(e) {
-    statuses.deploy = {status:'fail', message:'Pages unreachable', logs:[{msg:e.message, level:'log-err'}]};
-  }
-}
-
-function mapSkillFunnelToSteps(run, jobs) {
-  const statuses = {};
-  if (!run) {
-    FLOW2_STEPS.forEach(s => statuses[s.id] = {status:'wait'});
-    return statuses;
-  }
-
-  const runStatus = run.status;
-  const conclusion = run.conclusion;
-
-  statuses.send = {status:'pass', message:'User action'};
-  statuses.sources = {status:'pass', time:run.created_at, message:'sources.md updated'};
-  statuses.sf_trigger = {status:'pass', time:run.created_at};
-
-  if (runStatus === 'in_progress') {
-    const allSteps = jobs?.flatMap(j => j.steps || []) || [];
-    const scanStep = allSteps.find(s => s.name?.toLowerCase().includes('scan') || s.name?.toLowerCase().includes('extract'));
-    if (scanStep?.status === 'in_progress') {
-      statuses.read = {status:'pass'};
-      statuses.clone = {status:'pass'};
-      statuses.extract = {status:'run', message:'AI extracting...', logs:[{msg:'Processing repos...', level:'log-info'}]};
-      ['save','sf_commit','sf_dash','approve','approve_wf'].forEach(id => statuses[id] = {status:'wait'});
-    } else {
-      statuses.read = {status:'run', message:'Reading pending repos...'};
-      ['clone','extract','save','sf_commit','sf_dash','approve','approve_wf'].forEach(id => statuses[id] = {status:'wait'});
-    }
-  } else if (runStatus === 'completed') {
-    if (conclusion === 'success') {
-      ['read','clone','extract','save','sf_commit','sf_dash'].forEach(id =>
-        statuses[id] = {status:'pass', time:run.updated_at}
-      );
-      statuses.approve = {status:'wait', message:'Waiting for user review'};
-      statuses.approve_wf = {status:'wait'};
-    } else {
-      statuses.read = {status:'fail', time:run.updated_at, message:'Workflow failed', logs:[{msg:`Conclusion: ${conclusion}`, level:'log-err'}]};
-      ['clone','extract','save','sf_commit','sf_dash','approve','approve_wf'].forEach(id => statuses[id] = {status:'wait'});
-    }
-  }
-
-  return statuses;
-}
-
-async function checkServices() {
-  const grid = document.getElementById('svcGrid');
-  grid.innerHTML = SERVICES.map(s => {
-    return `<div class="svc"><span class="svc-dot svc-unknown" id="svc-${s.name.replace(/\s/g,'')}"></span>${s.name}</div>`;
-  }).join('');
+async function renderServices() {
+  const container = document.getElementById('svcBar');
+  container.innerHTML = SERVICES.map(s => `
+    <div class="svc-pill">
+      <span class="svc-dot dot-wait" id="dot-${s.name.replace(/[^a-z0-9]/gi,'')}"></span>
+      <span>${s.name}</span>
+    </div>
+  `).join('');
 
   for (const s of SERVICES) {
-    const dotEl = document.getElementById(`svc-${s.name.replace(/\s/g,'')}`);
-    try {
-      const r = await fetch(s.url, {mode:'no-cors', cache:'no-store', signal: AbortSignal.timeout(3000)});
-      dotEl.className = 'svc-dot svc-up';
-    } catch(e) {
-      dotEl.className = 'svc-dot svc-down';
+    const ok = await checkService(s);
+    const dot = document.getElementById(`dot-${s.name.replace(/[^a-z0-9]/gi,'')}`);
+    if (dot) {
+      dot.className = `svc-dot ${ok ? 'dot-up' : 'dot-down'}`;
     }
   }
 }
 
-function fmtTime(iso) {
-  if (!iso) return '';
-  return new Date(iso).toLocaleTimeString('vi-VN', {hour12:false});
-}
-
-let MOCK = new URLSearchParams(location.search).has('mock');
-
-function getMockData() {
-  const now = new Date();
-  const t = (minAgo) => new Date(now - minAgo*60000).toISOString();
-  const flow1 = {
-    trigger:  {status:'pass', time:t(8), message:'Cron 14:00 VN triggered', logs:[{ts:fmtTime(t(8)), msg:'Workflow run #142 started', level:'log-ok'},{ts:fmtTime(t(8)), msg:'Runner ubuntu-latest assigned', level:'log-muted'}]},
-    crawl:    {status:'pass', time:t(7), message:'30 repos + 15 papers fetched', logs:[{ts:fmtTime(t(7.5)), msg:'Fetching GitHub Trending...', level:'log-info'},{ts:fmtTime(t(7.2)), msg:'30 repos fetched', level:'log-ok'},{ts:fmtTime(t(7)), msg:'15 arXiv papers fetched', level:'log-ok'}]},
-    scoring:  {status:'pass', time:t(5), message:'45 items scored', logs:[{ts:fmtTime(t(6)), msg:'Scoring 45 items with Gemini Flash...', level:'log-info'},{ts:fmtTime(t(5.5)), msg:'gemini-3.6-flash responded (2.1s)', level:'log-ok'},{ts:fmtTime(t(5)), msg:'45/45 items scored', level:'log-ok'}]},
-    analyze:  {status:'run', time:t(3), message:'Analyzing top 5 repos...', logs:[{ts:fmtTime(t(3)), msg:'Analyzing affaan-m/ECC (271k stars)...', level:'log-info'},{ts:fmtTime(t(2.5)), msg:'Analyzing bytedance/deer-flow...', level:'log-info'},{ts:fmtTime(t(2)), msg:'3/5 repos analyzed', level:'log-warn'}]},
-    history:  {status:'wait'},
-    stats:    {status:'wait'},
-    commit:   {status:'wait'},
-    deploy:   {status:'pass', message:'Pages live', logs:[{ts:fmtTime(t(0.5)), msg:'manifest.json accessible', level:'log-ok'}]},
-    glance:   {status:'pass', message:'Dashboard serving'},
-    telegram: {status:'fail', time:t(1), message:'Token expired', logs:[{ts:fmtTime(t(1)), msg:'Telegram API returned 401: Unauthorized', level:'log-err'},{ts:fmtTime(t(1)), msg:'Check TELEGRAM_BOT_TOKEN secret', level:'log-warn'}]},
-  };
-  const flow2 = {
-    send:      {status:'pass', message:'User clicked Send'},
-    sources:   {status:'pass', time:t(15), message:'3 repos added to sources.md', logs:[{ts:fmtTime(t(15)), msg:'Added: langchain-ai/langchain', level:'log-ok'},{ts:fmtTime(t(15)), msg:'Added: unclecode/crawl4ai', level:'log-ok'},{ts:fmtTime(t(15)), msg:'Added: infiniflow/ragflow', level:'log-ok'}]},
-    sf_trigger:{status:'pass', time:t(14), message:'Push detected'},
-    read:      {status:'pass', time:t(13), message:'3 pending repos found'},
-    clone:     {status:'pass', time:t(12), message:'All repos cloned', logs:[{ts:fmtTime(t(12.5)), msg:'Cloning langchain-ai/langchain...', level:'log-info'},{ts:fmtTime(t(12)), msg:'3/3 repos cloned (142MB total)', level:'log-ok'}]},
-    extract:   {status:'run', time:t(10), message:'AI extracting 2/3...', logs:[{ts:fmtTime(t(10)), msg:'Extracting langchain-ai/langchain...', level:'log-info'},{ts:fmtTime(t(9)), msg:'langchain: MIT, Python, RAG framework', level:'log-ok'},{ts:fmtTime(t(8)), msg:'Extracting unclecode/crawl4ai...', level:'log-info'}]},
-    save:      {status:'wait'},
-    sf_commit: {status:'wait'},
-    sf_dash:   {status:'wait'},
-    approve:   {status:'wait', message:'Waiting for user review'},
-    approve_wf:{status:'wait'},
-  };
-  return {flow1, flow2};
-}
-
-async function refresh() {
-  const btn = document.getElementById('refreshBtn');
-  btn.classList.add('spinning');
-  setTimeout(() => btn.classList.remove('spinning'), 800);
+async function fetchPipelineData() {
+  const statusEl = document.getElementById('statusText');
+  statusEl.textContent = 'Đang đồng bộ...';
 
   try {
-    let flow1, flow2;
-
-    if (MOCK) {
-      const mock = getMockData();
-      flow1 = mock.flow1;
-      flow2 = mock.flow2;
-    } else {
-      const [trRuns, sfRuns] = await Promise.all([
-        ghApi(`/repos/${OWNER}/${REPO_TR}/actions/runs?per_page=1`).catch(() => null),
-        ghApi(`/repos/${OWNER}/${REPO_SF}/actions/runs?per_page=1`).catch(() => null),
-      ]);
-
-      const trRun = trRuns?.workflow_runs?.[0];
-      const sfRun = sfRuns?.workflow_runs?.[0];
-
-      let trJobs = null, sfJobs = null;
-      if (trRun?.status === 'in_progress') {
-        trJobs = (await ghApi(`/repos/${OWNER}/${REPO_TR}/actions/runs/${trRun.id}/jobs`).catch(() => null))?.jobs;
-      }
-      if (sfRun?.status === 'in_progress') {
-        sfJobs = (await ghApi(`/repos/${OWNER}/${REPO_SF}/actions/runs/${sfRun.id}/jobs`).catch(() => null))?.jobs;
-      }
-
-      flow1 = mapWorkflowToSteps(trRun, trJobs);
-      await checkPages(flow1);
-      flow2 = mapSkillFunnelToSteps(sfRun, sfJobs);
+    // 1. Fetch Trend Radar Manifest
+    let manifest = null;
+    try {
+      manifest = await fetch(`data/manifest.json?_=${Date.now()}`).then(r => r.ok ? r.json() : null);
+    } catch(e) {}
+    if (!manifest) {
+      try {
+        manifest = await fetch(`${DATA_BASE}/manifest.json?_=${Date.now()}`).then(r => r.ok ? r.json() : null);
+      } catch(e) {}
+    }
+    if (!manifest) {
+      try {
+        manifest = await fetch('http://localhost:8765/data/manifest.json').then(r => r.ok ? r.json() : null);
+      } catch(e) {}
     }
 
-    renderSteps('flow1', FLOW1_STEPS, flow1);
-    renderSteps('flow2', FLOW2_STEPS, flow2);
-    renderSummary({...flow1, ...flow2});
+    if (manifest && manifest.topics) {
+      const totalItems = manifest.topics.reduce((acc, t) => acc + (t.count || 0), 0);
+      document.getElementById('stage1Count').textContent = totalItems;
+      document.getElementById('stage1Topics').textContent = `${manifest.topics.length} topics`;
+      
+      const upd = manifest.updated ? new Date(manifest.updated).toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit', day:'2-digit', month:'2-digit'}) : 'Vừa xong';
+      document.getElementById('lastUpdatedStr').textContent = `Cập nhật: ${upd}`;
 
-    const ago = new Date().toLocaleTimeString('vi-VN', {hour12:false});
-    document.getElementById('status').textContent = (MOCK ? 'MOCK  ·  ' : 'Live  ·  ') + `Updated ${ago}`;
+      // Render topics
+      const topicsList = document.getElementById('topicsList');
+      topicsList.innerHTML = manifest.topics.map(t => `
+        <div class="item-row">
+          <span class="item-name">
+            <span style="color:var(--primary)">●</span> ${t.label || t.key}
+          </span>
+          <span class="item-tag tag-cat">${t.count || 0} items</span>
+        </div>
+      `).join('');
+    }
+
+    // 2. Fetch Skill Funnel Data
+    let funnel = null;
+    try {
+      funnel = await fetch(`data/skill-funnel.json?_=${Date.now()}`).then(r => r.ok ? r.json() : null);
+    } catch(e) {}
+    if (!funnel) {
+      try {
+        funnel = await fetch(`${DATA_BASE}/skill-funnel.json?_=${Date.now()}`).then(r => r.ok ? r.json() : null);
+      } catch(e) {}
+    }
+    if (!funnel) {
+      try {
+        funnel = await fetch('http://localhost:8765/data/dashboard.json').then(r => r.ok ? r.json() : null);
+      } catch(e) {}
+    }
+
+    let items = [];
+    if (funnel && funnel.items) {
+      items = funnel.items;
+    } else if (funnel && (funnel.approved || funnel.pending || funnel.rejected)) {
+      (funnel.approved || []).forEach(a => items.push({source:'Approved', title: a.name || a.title, status:'approved', summary: a.category || 'Skill'}));
+      (funnel.pending || []).forEach(p => items.push({source:'Pending', title: p.slug || p.name, status:'pending', summary: 'Đang trích xuất / Chờ duyệt'}));
+      (funnel.rejected || []).forEach(r => items.push({source:'Rejected', title: r.name, status:'rejected', summary: r.reason || 'Từ chối'}));
+    }
+
+    if (items.length > 0) {
+      const approvedCount = items.filter(i => (i.source === 'Approved' || i.status === 'approved')).length;
+      const pendingCount = items.filter(i => (i.source === 'Pending' || i.status === 'pending')).length;
+      const rejectedCount = items.filter(i => (i.source === 'Rejected' || i.status === 'rejected')).length;
+
+      document.getElementById('stage2Count').textContent = items.length;
+      document.getElementById('stage2Pending').textContent = `${pendingCount} chờ duyệt`;
+      document.getElementById('stage3Count').textContent = approvedCount;
+
+      const funnelList = document.getElementById('funnelItemsList');
+      funnelList.innerHTML = items.slice(0, 6).map(it => {
+        const isApp = it.source === 'Approved' || it.status === 'approved';
+        const isPend = it.source === 'Pending' || it.status === 'pending';
+        const tagCls = isApp ? 'tag-app' : (isPend ? 'tag-pend' : 'tag-rej');
+        const tagText = isApp ? 'Approved' : (isPend ? 'Pending' : 'Rejected');
+        return `
+          <div class="item-row">
+            <div style="min-width:0;flex:1;padding-right:8px">
+              <a href="${it.url || '#'}" target="_blank" class="item-name" style="text-overflow:ellipsis;overflow:hidden;white-space:nowrap">${it.title}</a>
+              <div style="font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${it.summary || ''}</div>
+            </div>
+            <span class="item-tag ${tagCls}">${tagText}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    statusEl.textContent = 'Hoạt động bình thường (Auto poll: 30s)';
   } catch(e) {
-    document.getElementById('status').textContent = `Error: ${e.message}`;
+    statusEl.textContent = 'Lỗi kết nối dữ liệu: ' + e.message;
   }
-
-  checkServices();
 }
 
-function switchTab(flowId) {
-  document.querySelectorAll('.tab').forEach((t, i) => {
-    t.classList.toggle('active', (flowId === 'flow1' ? i === 0 : i === 1));
-  });
-  document.querySelectorAll('.flow').forEach(f => f.classList.remove('active'));
-  document.getElementById(flowId).classList.add('active');
-}
-
-async function init() {
-  if (!MOCK) await loadToken();
-  await refresh();
-  if (!MOCK) pollTimer = setInterval(refresh, POLL_MS);
-}
-
-init();
+// Initial run
+fetchPipelineData();
+renderServices();
+setInterval(fetchPipelineData, 30000);
 </script>
 </body>
 </html>

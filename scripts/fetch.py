@@ -861,6 +861,13 @@ def main():
         except Exception as e:
             log(f"  ! stats generation failed for '{topic_key}': {e}")
 
+    try:
+        import export_skill_funnel
+        export_skill_funnel.build_skill_funnel_data()
+        log("  -> exported skill-funnel data")
+    except Exception as e:
+        log(f"  ! skill-funnel export failed: {e}")
+
     log("Done.")
 
 

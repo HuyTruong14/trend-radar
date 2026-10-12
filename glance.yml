@@ -327,6 +327,60 @@ pages:
                     url: http://localhost:8766
                     icon: mdi:monitor-dashboard
 
+  - name: Pipeline
+    columns:
+      - size: full
+        widgets:
+          - type: iframe
+            title: Pipeline Flow Monitor
+            source: http://localhost:8766
+            height: 900
+
+      - size: small
+        widgets:
+          - type: monitor
+            title: Services Health
+            sites:
+              - title: Glance Dashboard
+                url: http://glance:8686
+                icon: mdi:view-dashboard
+              - title: Pipeline Monitor
+                url: http://pipeline-monitor:8766
+                icon: mdi:monitor-dashboard
+              - title: Skill Dashboard
+                url: http://skill-dashboard:8765
+                icon: mdi:check-circle
+              - title: RSSHub
+                url: http://rsshub:1200
+                icon: si:rss
+              - title: Miniflux
+                url: http://miniflux:8080
+                icon: si:rss
+
+          - type: bookmarks
+            title: Repos & Actions
+            groups:
+              - title: Trend Radar
+                links:
+                  - title: GitHub Repository
+                    url: https://github.com/HuyTruong14/trend-radar
+                    icon: si:github
+                  - title: Actions Runs
+                    url: https://github.com/HuyTruong14/trend-radar/actions
+                    icon: si:githubactions
+                  - title: GitHub Pages
+                    url: https://huytruong14.github.io/trend-radar/
+                    icon: mdi:web
+              - title: Skill Funnel
+                links:
+                  - title: Skill Funnel Repo
+                    url: https://github.com/HuyTruong14/skill-funnel
+                    icon: si:github
+                  - title: Actions Runs
+                    url: https://github.com/HuyTruong14/skill-funnel/actions
+                    icon: si:githubactions
+
+
   - name: Tools
     columns:
       - size: full

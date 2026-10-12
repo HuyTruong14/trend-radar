@@ -58,9 +58,10 @@ services:
   skill-dashboard:
     image: halverneus/static-file-server:latest
     volumes:
-      - /Users/felixtruong/Desktop/skill-funnel/docs:/web
+      - ./skill-funnel/docs:/web
     environment:
       PORT: 8765
+      CORS: "true"
     ports:
       - 8765:8765
     restart: unless-stopped
@@ -69,8 +70,10 @@ services:
     image: halverneus/static-file-server:latest
     volumes:
       - ./monitor:/web
+      - ./docs/data:/web/data
     environment:
       PORT: 8766
+      CORS: "true"
     ports:
       - 8766:8766
     restart: unless-stopped

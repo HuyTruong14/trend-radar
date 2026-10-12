@@ -162,6 +162,7 @@ const TOPICS=[
   {key:"igaming",file:"data/igaming.json"},
   {key:"business",file:"data/business.json"},
   {key:"news",file:"data/news.json"},
+  {key:"skill-funnel",file:"data/skill-funnel.json"},
 ];
 const PAL=['#3b82f6','#22c55e','#eab308','#a855f7','#f97316','#06b6d4','#ec4899','#6366f1','#14b8a6','#ef4444'];
 const STOPS=new Set(['the','a','an','and','or','but','in','on','at','to','for','of','with','by','from','is','are','was','were','be','been','has','have','had','will','can','may','could','would','should','this','that','these','those','it','its','new','how','what','why','when','where','who','which','not','no','all','more','than','into','over','your','our','their','you','we','they','he','she','do','does','did','get','set','use','up','out','about','just','also','very','so','if','then','as','my','me','us','am','being','each','every','both','few','most','other','some','such','only','own','same','too','after','before','above','below','between','during','through','via','per','using','based','via','two','one','three','four','five','first','using','based','under','top',
@@ -200,7 +201,12 @@ function getStats(items,history){
   return{total,sources,fresh,delta};
 }
 
-function srcColor(src,allSrc){return PAL[allSrc.indexOf(src)%PAL.length]}
+function srcColor(src,allSrc){
+  if(src==='Approved')return'var(--accent)';
+  if(src==='Pending')return'var(--amber)';
+  if(src==='Rejected')return'var(--red)';
+  return PAL[allSrc.indexOf(src)%PAL.length];
+}
 
 function renderTabs(){
   const el=document.getElementById('tabs');el.innerHTML='';
@@ -301,7 +307,7 @@ function renderChart(history){
   </div>`;
 }
 
-const CAT_COLORS={'agent framework':'#06b6d4','web scraping':'var(--blue)','rag':'var(--purple)','video/media':'#ec4899','dev tool':'#6366f1','trading':'var(--amber)','ai app':'#6366f1','resource':'#f97316','tối ưu chi phí':'var(--accent)'};
+const CAT_COLORS={'agent framework':'#06b6d4','web scraping':'var(--blue)','rag':'var(--purple)','video/media':'#ec4899','dev tool':'#6366f1','trading':'var(--amber)','ai app':'#6366f1','resource':'#f97316','tối ưu chi phí':'var(--accent)','agent skills':'var(--accent)','pending review':'var(--amber)','rejected':'var(--red)'};
 function detectCategory(item){
   if(item.category){const lc=item.category.toLowerCase();return{k:lc.replace(/[^a-z]/g,''),l:item.category,c:CAT_COLORS[lc]||'var(--dim)'};}
   const t=((item.summary||'')+' '+(item.title||'')+' '+(item.matched_keyword||'')).toLowerCase();
