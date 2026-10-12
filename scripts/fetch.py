@@ -29,10 +29,24 @@ HISTORY_DIR = os.path.join(OUT_DIR, "history")
 HEADERS = {"User-Agent": "trend-radar-bot/1.0 (personal research tool)"}
 TIMEOUT = 20
 
+def _load_env():
+    env_file = os.path.join(ROOT, ".env")
+    if os.path.exists(env_file):
+        with open(env_file, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    k, v = line.split("=", 1)
+                    k, v = k.strip(), v.strip().strip('"').strip("'")
+                    if k not in os.environ:
+                        os.environ[k] = v
+
+_load_env()
+
 DUP_THRESHOLD = 85  # rapidfuzz token_sort_ratio: >= this on title -> same story
 CORRELATION_WINDOW_HOURS = 48
 ALERT_SCORE_THRESHOLD = 4
-AI_MODEL = "claude-sonnet-5"
+AI_MODEL = os.environ.get("AI_MODEL", "claude-sonnet-5")
 AI_BATCH_LIMIT = 40
 
 
@@ -381,10 +395,12 @@ def score_items_with_ai(items, topic_label):
     if not items:
         return
 
+    ai_key = os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("AI_API_KEY")
     gemini_key = os.environ.get("GEMINI_API_KEY")
-    anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not gemini_key and not anthropic_key:
-        log("  -> No GEMINI_API_KEY or ANTHROPIC_API_KEY — using simple scoring")
+    base_url = os.environ.get("ANTHROPIC_BASE_URL") or os.environ.get("AI_BASE_URL")
+
+    if not ai_key and not gemini_key:
+        log("  -> No AI API Key or GEMINI_API_KEY — using simple scoring")
         return
 
     to_score = items[:AI_BATCH_LIMIT]
@@ -406,7 +422,30 @@ def score_items_with_ai(items, topic_label):
     )
 
     results = None
-    if gemini_key:
+    # 1. Try configured AI Key first (Anthropic / Custom Proxy)
+    if ai_key:
+        try:
+            import anthropic
+            kwargs = {"api_key": ai_key}
+            if base_url:
+                kwargs["base_url"] = base_url
+            client = anthropic.Anthropic(**kwargs)
+            message = client.messages.create(
+                model=AI_MODEL, max_tokens=4096,
+                system=prompt_text.split("\n\nChu de:")[0],
+                messages=[{"role": "user", "content": f"Chu de:{prompt_text.split('Chu de:')[1]}"}],
+            )
+            raw_text = "".join(block.text for block in message.content if getattr(block, "type", None) == "text")
+            results = json.loads(_extract_json_text(raw_text))
+            if not isinstance(results, list) or len(results) != len(to_score):
+                raise ValueError(f"expected {len(to_score)} scored items, got {results!r}"[:200])
+            log(f"  -> AI Model ({AI_MODEL}) scored {len(to_score)} items")
+        except Exception as e:
+            log(f"  ! AI Key scoring failed for topic '{topic_label}': {e}")
+            results = None
+
+    # 2. Fallback to Gemini if AI Key didn't succeed
+    if not results and gemini_key:
         for model in GEMINI_MODELS:
             for attempt in range(2):
                 try:
@@ -441,22 +480,6 @@ def score_items_with_ai(items, topic_label):
                     break
             if results:
                 break
-    elif anthropic_key:
-        try:
-            import anthropic
-            client = anthropic.Anthropic(api_key=anthropic_key)
-            message = client.messages.create(
-                model=AI_MODEL, max_tokens=4096,
-                system=prompt_text.split("\n\nChu de:")[0],
-                messages=[{"role": "user", "content": f"Chu de:{prompt_text.split('Chu de:')[1]}"}],
-            )
-            raw_text = "".join(block.text for block in message.content if getattr(block, "type", None) == "text")
-            results = json.loads(_extract_json_text(raw_text))
-            if not isinstance(results, list) or len(results) != len(to_score):
-                raise ValueError(f"expected {len(to_score)} scored items, got {results!r}"[:200])
-        except Exception as e:
-            log(f"  ! Anthropic scoring failed for topic '{topic_label}': {e}")
-            results = None
 
     for idx, it in enumerate(to_score):
         res = results[idx] if results else None
