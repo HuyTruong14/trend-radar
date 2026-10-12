@@ -3,78 +3,307 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pipeline Monitor</title>
+<title>Pipeline Flow Monitor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:hsl(225 14% 10%);
-  --surface:hsl(225 14% 14%);
-  --widget:hsl(225 14% 12%);
-  --border:hsl(225 10% 20%);
-  --text:hsl(225 10% 85%);
-  --muted:hsl(225 10% 50%);
-  --primary:hsl(43 50% 70%);
-  --positive:hsl(120 50% 50%);
-  --negative:hsl(0 70% 60%);
-  --accent:hsl(215 70% 55%);
-  --warning:hsl(35 90% 55%);
-  --radius:10px;
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg: #07090e;
+  --surface: #0e131f;
+  --surface-2: #141c2e;
+  --surface-elevated: #1a253c;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-h: rgba(255, 255, 255, 0.18);
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --dim: #64748b;
+  
+  --primary: #f59e0b;
+  --positive: #10b981;
+  --negative: #f43f5e;
+  --accent: #3b82f6;
+  --cyan: #06b6d4;
+  --warning: #f59e0b;
+  --radius: 12px;
+  
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:13px;line-height:1.5;padding:16px}
-a{color:var(--primary);text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:960px;margin:0 auto}
 
-header{display:flex;align-items:center;gap:12px;padding:10px 0 16px;border-bottom:1px solid var(--border);margin-bottom:20px;flex-wrap:wrap}
-header h1{font-size:18px;font-weight:600;flex:1;display:flex;align-items:center;gap:8px}
-.live-dot{width:8px;height:8px;border-radius:50%;background:var(--positive);animation:pulse-opacity 2s infinite}
-@keyframes pulse-opacity{0%,100%{opacity:1}50%{opacity:.3}}
-.status-text{font-size:12px;color:var(--muted)}
-.btn{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;display:flex;align-items:center;gap:6px;font-family:inherit;transition:opacity .15s}
-.btn:hover{opacity:.85;border-color:var(--muted)}
-.btn svg{width:13px;height:13px}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+  padding: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 1040px; margin: 0 auto; }
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0 18px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 18px;
+  font-weight: 800;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -0.3px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--positive);
+  box-shadow: 0 0 10px var(--positive);
+  animation: pulse-live 2s infinite;
+}
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.85); }
+}
+
+.status-text {
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+.btn {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+.btn:hover {
+  background: var(--surface-elevated);
+  border-color: var(--border-h);
+  transform: translateY(-1px);
+}
+.btn svg { width: 14px; height: 14px; }
 
 /* Pipeline Flow Stepper */
-.flow-diagram{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:12px;margin-bottom:24px}
-@media(max-width:768px){.flow-diagram{grid-template-columns:1fr;gap:10px}}
-.stage-card{background:var(--widget);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;display:flex;flex-direction:column;position:relative}
-.stage-card.active{border-color:hsl(225 10% 32%)}
-.stage-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.stage-num{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:600}
-.stage-badge{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600}
-.badge-ok{background:hsla(120,50%,50%,.15);color:var(--positive)}
-.badge-filter{background:hsla(35,90%,55%,.15);color:var(--warning)}
-.badge-ready{background:hsla(215,70%,55%,.15);color:var(--accent)}
-.stage-title{font-size:14px;font-weight:600;margin-bottom:4px;color:var(--primary)}
-.stage-desc{font-size:11px;color:var(--muted);margin-bottom:12px}
-.stage-metric{margin-top:auto;padding-top:10px;border-top:1px solid var(--border);display:flex;align-items:baseline;justify-content:space-between}
-.metric-val{font-size:20px;font-weight:700}
-.metric-label{font-size:11px;color:var(--muted)}
+.flow-diagram {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+@media(max-width: 800px) { .flow-diagram { grid-template-columns: 1fr; gap: 12px; } }
 
-.flow-arrow{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px}
-@media(max-width:768px){.flow-arrow{transform:rotate(90deg);padding:4px 0}}
+.stage-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px -10px rgba(0,0,0,0.5);
+}
+.stage-card:hover {
+  border-color: var(--border-h);
+  transform: translateY(-2px);
+  background: var(--surface-2);
+}
+.stage-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.stage-card:nth-child(1)::before { background: var(--accent); }
+.stage-card:nth-child(3)::before { background: var(--warning); }
+.stage-card:nth-child(5)::before { background: var(--positive); }
+
+.stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.stage-num {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--dim);
+  font-weight: 700;
+}
+.stage-badge {
+  font-size: 10.5px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+.badge-ok { background: rgba(16, 185, 129, 0.15); color: var(--positive); border: 1px solid rgba(16, 185, 129, 0.2); }
+.badge-filter { background: rgba(245, 158, 11, 0.15); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.2); }
+.badge-ready { background: rgba(59, 130, 246, 0.15); color: var(--accent); border: 1px solid rgba(59, 130, 246, 0.2); }
+
+.stage-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.stage-desc {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 16px;
+  line-height: 1.45;
+}
+.stage-metric {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.metric-val {
+  font-size: 24px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+}
+.metric-label {
+  font-size: 11px;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dim);
+  font-size: 20px;
+}
+@media(max-width: 800px) {
+  .flow-arrow { transform: rotate(90deg); padding: 4px 0; }
+}
 
 /* Details Grid */
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
-@media(max-width:768px){.grid-2{grid-template-columns:1fr}}
-.panel{background:var(--widget);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
-.panel-hd{font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;font-weight:600;color:var(--muted);margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
-.item-list{display:flex;flex-direction:column;gap:8px}
-.item-row{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--surface);border-radius:6px;border:1px solid hsla(0,0%,100%,.04);font-size:12px}
-.item-name{font-weight:500;display:flex;align-items:center;gap:6px}
-.item-tag{font-size:10px;padding:1px 6px;border-radius:4px}
-.tag-app{background:hsla(120,50%,50%,.15);color:var(--positive)}
-.tag-pend{background:hsla(35,90%,55%,.15);color:var(--warning)}
-.tag-rej{background:hsla(0,70%,60%,.15);color:var(--negative)}
-.tag-cat{background:hsla(215,70%,55%,.12);color:var(--accent)}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+@media(max-width: 800px) { .grid-2 { grid-template-columns: 1fr; } }
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: 0 8px 24px -10px rgba(0,0,0,0.5);
+}
+.panel-hd {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--surface-2);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 12.5px;
+  transition: all 0.15s ease;
+}
+.item-row:hover {
+  background: var(--surface-elevated);
+  border-color: var(--border-h);
+  transform: translateX(2px);
+}
+.item-name {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+}
+.item-tag {
+  font-size: 10.5px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+.tag-app { background: rgba(16, 185, 129, 0.15); color: var(--positive); border: 1px solid rgba(16, 185, 129, 0.2); }
+.tag-pend { background: rgba(245, 158, 11, 0.15); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.2); }
+.tag-rej { background: rgba(244, 63, 94, 0.15); color: var(--negative); border: 1px solid rgba(244, 63, 94, 0.2); }
+.tag-cat { background: rgba(59, 130, 246, 0.15); color: var(--accent); border: 1px solid rgba(59, 130, 246, 0.2); }
 
 /* Services Bar */
-.svc-bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-.svc-pill{display:flex;align-items:center;gap:6px;padding:5px 10px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:11.5px}
-.svc-dot{width:6px;height:6px;border-radius:50%}
-.dot-up{background:var(--positive)}
-.dot-down{background:var(--negative)}
-.dot-wait{background:var(--muted)}
+.svc-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.svc-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+.svc-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+.dot-up { background: var(--positive); box-shadow: 0 0 6px var(--positive); }
+.dot-down { background: var(--negative); box-shadow: 0 0 6px var(--negative); }
+.dot-wait { background: var(--dim); }
 </style>
 </head>
 <body>
@@ -92,7 +321,7 @@ header h1{font-size:18px;font-weight:600;flex:1;display:flex;align-items:center;
   <!-- 3-STAGE PIPELINE FLOW -->
   <div class="flow-diagram">
     <!-- Stage 1 -->
-    <div class="stage-card active">
+    <div class="stage-card">
       <div class="stage-header">
         <span class="stage-num">Giai đoạn 1</span>
         <span class="stage-badge badge-ok">Hoạt động</span>
@@ -114,7 +343,7 @@ header h1{font-size:18px;font-weight:600;flex:1;display:flex;align-items:center;
     <div class="flow-arrow">➔</div>
 
     <!-- Stage 2 -->
-    <div class="stage-card active">
+    <div class="stage-card">
       <div class="stage-header">
         <span class="stage-num">Giai đoạn 2</span>
         <span class="stage-badge badge-filter">Sàng lọc</span>
@@ -136,7 +365,7 @@ header h1{font-size:18px;font-weight:600;flex:1;display:flex;align-items:center;
     <div class="flow-arrow">➔</div>
 
     <!-- Stage 3 -->
-    <div class="stage-card active">
+    <div class="stage-card">
       <div class="stage-header">
         <span class="stage-num">Giai đoạn 3</span>
         <span class="stage-badge badge-ready">Sẵn sàng</span>
@@ -149,7 +378,7 @@ header h1{font-size:18px;font-weight:600;flex:1;display:flex;align-items:center;
           <div class="metric-label">Approved Skills</div>
         </div>
         <div style="text-align:right">
-          <div class="metric-val" style="font-size:14px;color:var(--positive)">100% Ready</div>
+          <div class="metric-val" style="font-size:15px;color:var(--positive)">100% Ready</div>
           <div class="metric-label">Tương thích stack</div>
         </div>
       </div>
@@ -162,10 +391,10 @@ header h1{font-size:18px;font-weight:600;flex:1;display:flex;align-items:center;
     <div class="panel">
       <div class="panel-hd">
         <span>Sàng lọc Repos & Skills (Phễu)</span>
-        <a href="http://localhost:8765" target="_blank" style="font-size:11px">Mở Skill Dashboard ↗</a>
+        <a href="http://localhost:8765" target="_blank" style="font-size:11px;color:var(--cyan)">Mở Dashboard ↗</a>
       </div>
       <div class="item-list" id="funnelItemsList">
-        <div style="color:var(--muted);font-size:12px">Đang tải...</div>
+        <div style="color:var(--muted);font-size:12px">Đang nạp dữ liệu...</div>
       </div>
     </div>
 
@@ -173,17 +402,17 @@ header h1{font-size:18px;font-weight:600;flex:1;display:flex;align-items:center;
     <div class="panel">
       <div class="panel-hd">
         <span>Trend Radar Topics & Cập nhật</span>
-        <span id="lastUpdatedStr" style="font-size:11px;color:var(--muted)">--</span>
+        <span id="lastUpdatedStr" style="font-size:11px;color:var(--muted);font-family:var(--font-mono)">--</span>
       </div>
       <div class="item-list" id="topicsList">
-        <div style="color:var(--muted);font-size:12px">Đang tải...</div>
+        <div style="color:var(--muted);font-size:12px">Đang nạp dữ liệu...</div>
       </div>
     </div>
   </div>
 
   <!-- LOCAL SERVICES HEALTH -->
   <div class="panel">
-    <div class="panel-hd">Trạng thái Services Cục bộ (Local Health)</div>
+    <div class="panel-hd">Trạng thái Dịch vụ Cục bộ (Local Services Health)</div>
     <div class="svc-bar" id="svcBar"></div>
   </div>
 </div>
@@ -302,7 +531,7 @@ async function fetchPipelineData() {
       document.getElementById('stage3Count').textContent = approvedCount;
 
       const funnelList = document.getElementById('funnelItemsList');
-      funnelList.innerHTML = items.slice(0, 6).map(it => {
+      funnelList.innerHTML = items.slice(0, 8).map(it => {
         const isApp = it.source === 'Approved' || it.status === 'approved';
         const isPend = it.source === 'Pending' || it.status === 'pending';
         const tagCls = isApp ? 'tag-app' : (isPend ? 'tag-pend' : 'tag-rej');

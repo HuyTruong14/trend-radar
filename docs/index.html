@@ -3,158 +3,739 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trend Radar</title>
+<title>Trend Radar — AI Market & Tech Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0a0e14;
-  --surface: #12171e;
-  --surface-2: #1a2029;
-  --border: #252d38;
-  --border-h: #3a4553;
-  --text: #e2e8f0;
-  --dim: #64748b;
-  --accent: #22c55e;
-  --accent-bg: rgba(34,197,94,0.1);
-  --amber: #eab308;
-  --amber-bg: rgba(234,179,8,0.1);
+  --bg: #07090e;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #151d30 0%, #07090e 70%);
+  --surface: #0e131f;
+  --surface-2: #141c2e;
+  --surface-3: #1a253c;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-h: rgba(255, 255, 255, 0.18);
+  --text: #f1f5f9;
+  --dim: #94a3b8;
+  --muted: #64748b;
+  
+  --accent: #10b981;
+  --accent-glow: rgba(16, 185, 129, 0.25);
+  --accent-bg: rgba(16, 185, 129, 0.12);
+  --amber: #f59e0b;
+  --amber-bg: rgba(245, 158, 11, 0.12);
   --blue: #3b82f6;
-  --blue-bg: rgba(59,130,246,0.1);
-  --red: #ef4444;
-  --red-bg: rgba(239,68,68,0.1);
+  --blue-bg: rgba(59, 130, 246, 0.12);
+  --cyan: #06b6d4;
+  --cyan-bg: rgba(6, 182, 212, 0.12);
+  --red: #f43f5e;
+  --red-bg: rgba(244, 63, 94, 0.12);
   --purple: #a855f7;
-  --R: 10px;
-  --Rs: 6px;
+  --purple-bg: rgba(168, 85, 247, 0.12);
+  
+  --R: 12px;
+  --Rs: 8px;
+  --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',sans-serif;line-height:1.6;min-height:100vh}
 
-/* header */
-.hdr{padding:24px 28px 0;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
-.hdr h1{font-size:22px;font-weight:700;letter-spacing:-.3px}
-.hdr h1 b{color:var(--accent);font-weight:700}
-.hdr .upd{font-size:12px;color:var(--dim)}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
 
-/* tabs */
-.tabs{display:flex;gap:2px;padding:14px 28px 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.tab{padding:7px 16px;font-size:13px;color:var(--dim);cursor:pointer;border-radius:var(--Rs);white-space:nowrap;transition:.15s;user-select:none}
-.tab:hover{color:var(--text);background:var(--surface)}
-.tab.on{color:var(--accent);background:var(--accent-bg);font-weight:600}
-.tab .cnt{font-size:11px;opacity:.7;margin-left:3px}
+/* Glass Header */
+.header-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(7, 9, 14, 0.75);
+  border-bottom: 1px solid var(--border);
+}
 
-/* container */
-.ct{max-width:1100px;margin:0 auto;padding:20px 28px 60px}
+.hdr {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
 
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
-@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
-.st{background:var(--surface);border:1px solid var(--border);border-radius:var(--R);padding:16px 18px}
-.st-v{font-size:26px;font-weight:700;letter-spacing:-.5px;line-height:1.2}
-.st-l{font-size:11.5px;color:var(--dim);margin-top:3px}
-.st-up{color:var(--accent)}.st-dn{color:var(--red)}.st-eq{color:var(--dim)}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
 
-/* section */
-.sec{margin-bottom:22px}
-.sec-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
-.sec-t{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--cyan) 100%);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px var(--accent-glow);
+  color: #07090e;
+  font-weight: 800;
+  font-size: 16px;
+}
 
-/* keywords */
-.kws{display:flex;flex-wrap:wrap;gap:7px}
-.kw{padding:4px 13px;background:var(--surface);border:1px solid var(--border);border-radius:18px;font-size:12.5px;color:var(--text);cursor:pointer;transition:.15s;user-select:none}
-.kw:hover{border-color:var(--accent);color:var(--accent)}
-.kw.on{background:var(--accent-bg);border-color:var(--accent);color:var(--accent)}
-.kw .n{font-size:10.5px;color:var(--dim);margin-left:3px}
+.brand h1 {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  background: linear-gradient(180deg, #ffffff 30%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-/* chart */
-.chart-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--R);padding:16px 18px;position:relative}
-.vel-chart{display:block;width:100%;height:110px}
-.c-bar{fill:var(--accent);opacity:.55;cursor:pointer;transition:opacity .1s}
-.c-bar:hover,.c-bar:active{opacity:1}
-.c-grid{stroke:var(--border);stroke-width:.5}
-.c-tip{position:absolute;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--Rs);padding:7px 11px;font-size:11.5px;color:var(--text);white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .15s;z-index:10;transform:translateY(-110%);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.brand h1 b {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
 
-/* source bar */
-.src-bar{display:flex;height:5px;border-radius:3px;overflow:hidden;margin-top:14px}
-.src-seg{transition:flex .3s}
-.src-leg{display:flex;flex-wrap:wrap;gap:10px 16px;margin-top:8px}
-.src-leg-i{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--dim)}
-.src-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.hdr-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 
-/* controls */
-.ctrls{display:flex;gap:8px;align-items:center}
-.ctrls select,.ctrls input{background:var(--surface);border:1px solid var(--border);border-radius:var(--Rs);color:var(--text);padding:5px 10px;font-size:12.5px;outline:none;transition:border-color .15s}
-.ctrls select:focus,.ctrls input:focus{border-color:var(--accent)}
-.ctrls input{width:160px}
-@media(max-width:640px){.ctrls input{width:110px}}
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--dim);
+}
 
-/* items grid */
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-@media(max-width:768px){.grid{grid-template-columns:1fr}}
-.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--R);padding:14px 16px;text-decoration:none;color:var(--text);transition:.15s;position:relative}
-.card:hover{border-color:var(--border-h);background:var(--surface-2);transform:translateY(-1px)}
-.card-src{font-size:10.5px;color:var(--amber);font-weight:600;text-transform:uppercase;letter-spacing:.3px;margin-bottom:5px}
-.card-ttl{font-size:13.5px;font-weight:600;line-height:1.45;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.card-sum{font-size:12px;color:var(--dim);margin-bottom:7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.card-bt{margin-top:auto;display:flex;align-items:center;gap:7px;font-size:11px;color:var(--dim);flex-wrap:wrap}
-.badge{display:inline-flex;align-items:center;padding:1px 7px;border-radius:9px;font-size:10px;font-weight:600}
-.b-hot{background:var(--red-bg);color:var(--red)}
-.b-new{background:var(--accent-bg);color:var(--accent)}
-.b-score{background:var(--blue-bg);color:var(--blue)}
-.dots{display:flex;gap:2px}
-.dot{width:5px;height:5px;border-radius:50%;background:var(--border)}
-.dot.f{background:var(--accent)}.dot.m{background:var(--amber)}
+.live-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulse-live 2s infinite;
+}
 
-/* ranking */
-.rank{background:var(--surface);border:1px solid var(--border);border-radius:var(--R);overflow:hidden}
-.rank-row{display:flex;align-items:center;padding:9px 16px;gap:10px;border-bottom:1px solid var(--border);font-size:13px;text-decoration:none;color:var(--text);transition:.12s}
-.rank-row:last-child{border-bottom:none}
-.rank-row:hover{background:var(--surface-2)}
-.rank-n{width:22px;color:var(--dim);font-weight:700;font-size:12px;text-align:center;flex-shrink:0}
-.rank-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500}
-.rank-stars{color:var(--amber);font-size:12px;flex-shrink:0}
-.rank-delta{font-size:11px;flex-shrink:0;min-width:55px;text-align:right}
-.rank-delta.up{color:var(--accent)}.rank-delta.dn{color:var(--red)}.rank-delta.eq{color:var(--dim)}
-.rank-sum{font-size:11px;color:var(--dim);padding:0 16px 8px 48px;line-height:1.5;border-bottom:1px solid var(--border)}
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
 
-/* category chart */
-.cat-chart{display:flex;align-items:flex-end;gap:6px;padding:0 4px;margin-bottom:14px}
-.cat-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;transition:opacity .15s}
-.cat-col:hover{opacity:1!important}
-.cat-col .bar{width:100%;border-radius:4px 4px 0 0;transition:height .3s}
-.cat-col .lbl{font-size:9.5px;color:var(--dim);text-align:center;line-height:1.2;max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.cat-col .cnt{font-size:11px;font-weight:600}
-.cat-hd{display:flex;align-items:center;gap:8px;margin-bottom:6px;padding:8px 0 4px}
-.cat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.cat-label{font-size:12px;font-weight:600}.cat-count{font-size:11px;color:var(--dim)}
+/* Tabs */
+.tabs-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
 
-/* recommended */
-.rec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-@media(max-width:768px){.rec-grid{grid-template-columns:1fr}}
-.rec-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--R);padding:12px 16px;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:5px;transition:.15s}
-.rec-card:hover{border-color:var(--border-h);background:var(--surface-2)}
-.rec-top{display:flex;justify-content:space-between;align-items:center}
-.rec-name{font-size:13px;font-weight:600}
-.rec-stars{font-size:11px;color:var(--amber);flex-shrink:0}
-.rec-cat{font-size:10px;text-transform:uppercase;font-weight:600;letter-spacing:.3px}
-.rec-desc{font-size:11.5px;color:var(--dim);line-height:1.5}
-.rec-why{font-size:11px;color:var(--accent);margin-top:auto;padding-top:2px}
+.tabs {
+  display: flex;
+  gap: 6px;
+  padding: 12px 0 14px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar { display: none; }
 
-/* empty / loading */
-.empty{text-align:center;padding:50px 20px;color:var(--dim)}
-.empty p{font-size:13.5px;margin-top:8px}
-.loading{color:var(--dim);font-size:13.5px;padding:40px 0;text-align:center}
+.tab {
+  padding: 8px 18px;
+  font-size: 13.5px;
+  color: var(--dim);
+  cursor: pointer;
+  border-radius: 20px;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  border: 1px solid transparent;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
-footer{text-align:center;color:var(--dim);font-size:11.5px;padding:20px;border-top:1px solid var(--border)}
+.tab:hover {
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.tab.on {
+  color: var(--text);
+  background: var(--surface-2);
+  border-color: var(--border-h);
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.tab .cnt {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  padding: 1px 7px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: var(--muted);
+}
+.tab.on .cnt {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/* Main Container */
+.ct {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 28px 80px;
+}
+
+/* KPI Stats Cards */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+@media(max-width: 768px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+.st {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--R);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.st::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+.st:hover {
+  border-color: var(--border-h);
+  transform: translateY(-2px);
+}
+
+.st-v {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  line-height: 1.1;
+  font-family: var(--font-sans);
+}
+.st-l {
+  font-size: 12px;
+  color: var(--dim);
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+}
+.st-up { color: var(--accent); }
+.st-dn { color: var(--red); }
+.st-eq { color: var(--muted); }
+
+/* Section Styling */
+.sec {
+  margin-bottom: 30px;
+}
+.sec-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.sec-t {
+  font-size: 12.5px;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sec-t::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Keywords Chips */
+.kws {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.kw {
+  padding: 5px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 12.5px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.kw:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+.kw.on {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+.kw .n {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+/* Chart Box */
+.chart-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--R);
+  padding: 20px 22px;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+.vel-chart {
+  display: block;
+  width: 100%;
+  height: 115px;
+}
+.c-bar {
+  fill: var(--accent);
+  opacity: 0.55;
+  cursor: pointer;
+  transition: opacity 0.15s, fill 0.15s;
+}
+.c-bar:hover, .c-bar:active {
+  opacity: 1;
+  fill: #34d399;
+}
+.c-grid { stroke: var(--border); stroke-width: 0.8; }
+.c-tip {
+  position: absolute;
+  background: var(--surface-2);
+  border: 1px solid var(--border-h);
+  border-radius: var(--Rs);
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--text);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 20;
+  transform: translateY(-115%);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  font-family: var(--font-mono);
+}
+
+/* Source distribution bar */
+.src-bar {
+  display: flex;
+  height: 6px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 18px;
+}
+.src-seg { transition: flex 0.3s; }
+.src-leg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 10px;
+}
+.src-leg-i {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--dim);
+}
+.src-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Toolbar Controls */
+.ctrls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.ctrls select, .ctrls input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--Rs);
+  color: var(--text);
+  padding: 8px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.ctrls select:focus, .ctrls input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+.ctrls input { width: 220px; }
+@media(max-width: 640px) { .ctrls input { width: 140px; } }
+
+/* Cards Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media(max-width: 840px) { .grid { grid-template-columns: 1fr; } }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--R);
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  box-shadow: var(--shadow);
+}
+.card:hover {
+  border-color: var(--border-h);
+  background: var(--surface-2);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -10px rgba(0,0,0,0.7);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.card-src {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.05);
+}
+.card-ttl {
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  margin-bottom: 6px;
+  color: var(--text);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-sum {
+  font-size: 12.5px;
+  color: var(--dim);
+  margin-bottom: 12px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-bt {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10.5px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+.b-hot { background: var(--red-bg); color: var(--red); border: 1px solid rgba(244,63,94,0.2); }
+.b-new { background: var(--accent-bg); color: var(--accent); border: 1px solid rgba(16,185,129,0.2); }
+.b-score { background: var(--blue-bg); color: var(--blue); }
+
+.dots { display: flex; gap: 3px; align-items: center; }
+.dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.12); }
+.dot.f { background: var(--accent); box-shadow: 0 0 6px var(--accent-glow); }
+.dot.m { background: var(--amber); }
+
+/* GitHub Insights & Ranking */
+.rank {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--R);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+.rank-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13.5px;
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.15s;
+}
+.rank-row:last-child { border-bottom: none; }
+.rank-row:hover { background: var(--surface-2); }
+.rank-n {
+  width: 24px;
+  color: var(--muted);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.rank-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.rank-stars {
+  color: var(--amber);
+  font-size: 12.5px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.rank-delta {
+  font-size: 11.5px;
+  font-family: var(--font-mono);
+  min-width: 60px;
+  text-align: right;
+  font-weight: 600;
+}
+.rank-delta.up { color: var(--accent); }
+.rank-delta.dn { color: var(--red); }
+.rank-delta.eq { color: var(--muted); }
+.rank-sum {
+  font-size: 12px;
+  color: var(--dim);
+  padding: 0 18px 10px 54px;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Category chart */
+.cat-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 10px 4px 6px;
+  margin-bottom: 18px;
+}
+.cat-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.cat-col:hover { opacity: 1 !important; }
+.cat-col .bar {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  transition: height 0.3s;
+}
+.cat-col .lbl {
+  font-size: 10px;
+  color: var(--dim);
+  text-align: center;
+  line-height: 1.2;
+  max-width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 4px;
+}
+.cat-col .cnt {
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+.cat-hd {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 0 8px;
+  padding: 4px 0;
+}
+.cat-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.cat-label { font-size: 13px; font-weight: 700; }
+.cat-count { font-size: 11.5px; color: var(--muted); font-family: var(--font-mono); }
+
+/* Recommended Tools Cards */
+.rec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media(max-width: 768px) { .rec-grid { grid-template-columns: 1fr; } }
+.rec-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--R);
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.2s;
+  box-shadow: var(--shadow);
+}
+.rec-card:hover {
+  border-color: var(--border-h);
+  background: var(--surface-2);
+  transform: translateY(-2px);
+}
+.rec-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rec-name { font-size: 14px; font-weight: 700; }
+.rec-stars { font-size: 12px; color: var(--amber); font-family: var(--font-mono); font-weight: 600; }
+.rec-cat { font-size: 10px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
+.rec-desc { font-size: 12px; color: var(--dim); line-height: 1.5; }
+.rec-why { font-size: 11.5px; color: var(--accent); margin-top: auto; padding-top: 6px; font-weight: 500; }
+
+/* Empty / Loading States */
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--dim);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--R);
+}
+.empty p { font-size: 14px; margin-top: 8px; }
+.loading {
+  color: var(--dim);
+  font-size: 14px;
+  padding: 60px 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 30px 20px;
+  border-top: 1px solid var(--border);
+}
 </style>
 </head>
 <body>
 
-<div class="hdr">
-  <h1>Trend <b>Radar</b></h1>
-  <div class="upd" id="upd">Đang tải…</div>
+<div class="header-wrap">
+  <div class="hdr">
+    <a href="#" class="brand">
+      <div class="brand-icon">⚡</div>
+      <h1>Trend <b>Radar</b></h1>
+    </a>
+    <div class="hdr-right">
+      <div class="status-indicator">
+        <span class="live-dot"></span>
+        <span id="upd">Đang đồng bộ…</span>
+      </div>
+    </div>
+  </div>
+  <div class="tabs-wrap">
+    <div class="tabs" id="tabs"></div>
+  </div>
 </div>
-<div class="tabs" id="tabs"></div>
-<div class="ct" id="ct"><div class="loading">Đang tải dữ liệu…</div></div>
-<footer>Hacker News · arXiv · GitHub · RSS — cập nhật tự động qua GitHub Actions</footer>
+
+<div class="ct" id="ct">
+  <div class="loading">
+    <span class="live-dot"></span> Đang nạp dữ liệu thị trường...
+  </div>
+</div>
+
+<footer>
+  Hacker News · arXiv · GitHub Trending · Google News RSS — Phân tích & Xếp hạng tự động bởi Trend Radar AI
+</footer>
 
 <script>
 const TOPICS=[
@@ -164,17 +745,17 @@ const TOPICS=[
   {key:"news",file:"data/news.json"},
   {key:"skill-funnel",file:"data/skill-funnel.json"},
 ];
-const PAL=['#3b82f6','#22c55e','#eab308','#a855f7','#f97316','#06b6d4','#ec4899','#6366f1','#14b8a6','#ef4444'];
+const PAL=['#3b82f6','#10b981','#f59e0b','#a855f7','#f97316','#06b6d4','#ec4899','#6366f1','#14b8a6','#f43f5e'];
 const STOPS=new Set(['the','a','an','and','or','but','in','on','at','to','for','of','with','by','from','is','are','was','were','be','been','has','have','had','will','can','may','could','would','should','this','that','these','those','it','its','new','how','what','why','when','where','who','which','not','no','all','more','than','into','over','your','our','their','you','we','they','he','she','do','does','did','get','set','use','up','out','about','just','also','very','so','if','then','as','my','me','us','am','being','each','every','both','few','most','other','some','such','only','own','same','too','after','before','above','below','between','during','through','via','per','using','based','via','two','one','three','four','five','first','using','based','under','top',
 'và','của','cho','trong','với','là','được','có','này','đó','các','một','những','để','từ','theo','về','trên','sẽ','khi','không','nhưng','hay','hoặc','đã','đang','cũng','như','tại','ra','vào','lên','xuống','giữa','bởi','mà','thì','nên','rằng','nào','đều','vẫn','qua','đến','bị','mới','nhất','hơn','rất','quá','chỉ','vì','nếu','tuy','dù','sau','trước','giờ','ngày','năm','tháng','còn','lại','đây','kia','nhiều','ít','lớn','nhỏ','tin','tức','bài','viết']);
 
 let active=TOPICS[0].key, data={}, hist={}, recommended=[], filterText='', sortBy='date', activeKw=null;
 
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function fmtD(iso){if(!iso)return'';try{return new Date(iso).toLocaleDateString('vi-VN',{day:'2-digit',month:'2-digit',year:'numeric'})}catch(e){return''}}
 
 function extractKw(items,limit){
-  limit=limit||12;
+  limit=limit||14;
   const freq={};
   items.forEach(it=>{
     const words=(it.title||'').toLowerCase().split(/[\s\-–—:;,.()\[\]{}"'`!?|\/\\<>@#$%^&*+=~]+/);
@@ -216,7 +797,7 @@ function renderTabs(){
     const count=d&&d.items?d.items.length:0;
     const tab=document.createElement('div');
     tab.className='tab'+(t.key===active?' on':'');
-    tab.innerHTML=esc(label)+'<span class="cnt">('+count+')</span>';
+    tab.innerHTML=`<span>${esc(label)}</span><span class="cnt">${count}</span>`;
     tab.onclick=()=>{active=t.key;filterText='';activeKw=null;sortBy='date';renderTabs();render()};
     el.appendChild(tab);
   });
@@ -227,7 +808,7 @@ function render(){
   const topic=data[active];
   const history=hist[active]||[];
   if(!topic||!topic.items||!topic.items.length){
-    ct.innerHTML='<div class="empty"><p>Chưa có dữ liệu — chờ workflow chạy hoặc trigger thủ công trong Actions.</p></div>';
+    ct.innerHTML='<div class="empty"><p>Chưa có dữ liệu — chờ workflow phân tích hoặc trigger trong Actions.</p></div>';
     return;
   }
   const items=topic.items;
@@ -240,15 +821,15 @@ function render(){
   const deltaCls=stats.delta>0?'st-up':stats.delta<0?'st-dn':'st-eq';
   const deltaVal=stats.delta!==null?deltaSign+stats.delta:'—';
   html+=`<div class="stats">
-    <div class="st"><div class="st-v">${stats.total}</div><div class="st-l">Tổng item</div></div>
-    <div class="st"><div class="st-v ${deltaCls}">${deltaVal}</div><div class="st-l">So với lần trước</div></div>
-    <div class="st"><div class="st-v">${stats.sources.length}</div><div class="st-l">Nguồn dữ liệu</div></div>
+    <div class="st"><div class="st-v">${stats.total}</div><div class="st-l">Tổng items</div></div>
+    <div class="st"><div class="st-v ${deltaCls}">${deltaVal}</div><div class="st-l">Tăng trưởng</div></div>
+    <div class="st"><div class="st-v">${stats.sources.length}</div><div class="st-l">Nguồn tin</div></div>
     <div class="st"><div class="st-v">${stats.fresh}</div><div class="st-l">Mới trong 24h</div></div>
   </div>`;
 
   // Trending keywords
   if(keywords.length){
-    html+=`<div class="sec"><div class="sec-t">Chủ đề nổi bật</div><div class="kws" id="kws">`;
+    html+=`<div class="sec"><div class="sec-t">Chủ đề & Từ khóa trọng tâm</div><div class="kws" id="kws">`;
     keywords.forEach(k=>{
       const on=activeKw===k.word?' on':'';
       html+=`<span class="kw${on}" data-kw="${esc(k.word)}">${esc(k.word)}<span class="n">${k.count}</span></span>`;
@@ -258,7 +839,7 @@ function render(){
 
   // Chart + source breakdown
   if(history.length>1){
-    html+=`<div class="sec"><div class="sec-t">Hoạt động</div>`;
+    html+=`<div class="sec"><div class="sec-t">Biểu đồ nhịp độ tin & Phân bổ nguồn</div>`;
     html+=renderChart(history);
     html+=renderSrcBar(items,stats.sources);
     html+=`</div>`;
@@ -267,11 +848,15 @@ function render(){
   // GitHub ranking
   html+=renderRanking(items,history);
 
-  // Items
-  html+=`<div class="sec"><div class="sec-hd"><div class="sec-t">Danh sách</div>
+  // Items List
+  html+=`<div class="sec"><div class="sec-hd"><div class="sec-t">Danh sách khám phá</div>
     <div class="ctrls">
-      <select id="sort-sel"><option value="date">Mới nhất</option><option value="score">Điểm cao</option><option value="source">Theo nguồn</option></select>
-      <input type="text" id="filter-in" placeholder="Lọc tiêu đề…" value="${esc(filterText)}">
+      <select id="sort-sel">
+        <option value="date">⚡ Mới nhất</option>
+        <option value="score">⭐ Điểm liên quan</option>
+        <option value="source">📁 Theo nguồn</option>
+      </select>
+      <input type="text" id="filter-in" placeholder="🔍 Lọc tiêu đề / keyword…" value="${esc(filterText)}">
     </div></div>`;
   html+=`<div class="grid" id="items-grid">`;
   html+=renderItems(items,stats.sources);
@@ -284,7 +869,7 @@ function render(){
 }
 
 function renderChart(history){
-  const W=700,H=110,px=6,py=10;
+  const W=700,H=115,px=6,py=10;
   const sorted=history.slice().sort((a,b)=>(a.date||'').localeCompare(b.date||''));
   const n=sorted.length;
   const mx=Math.max(1,...sorted.map(h=>h.total_items||0));
@@ -295,11 +880,10 @@ function renderChart(history){
     const y=H-py-((s/mx)*(H-py*2));
     gridLines+=`<line class="c-grid" x1="${px}" y1="${y.toFixed(1)}" x2="${W-px}" y2="${y.toFixed(1)}"/>`;
   });
-  const points=sorted.map((h,i)=>{
-    const bh=Math.max(2,(h.total_items||0)/mx*(H-py*2));
+  sorted.forEach((h,i)=>{
+    const bh=Math.max(3,(h.total_items||0)/mx*(H-py*2));
     const x=px+i*bw, y=H-py-bh;
-    bars+=`<rect class="c-bar" data-idx="${i}" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${Math.max(1,bw-1.5).toFixed(1)}" height="${bh.toFixed(1)}" rx="2"/>`;
-    return{x,y,w:bw,h:bh,date:h.date,total:h.total_items,avg:h.avg_relevance_score};
+    bars+=`<rect class="c-bar" data-idx="${i}" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${Math.max(1,bw-1.5).toFixed(1)}" height="${bh.toFixed(1)}" rx="3"/>`;
   });
   return `<div class="chart-box" id="chart-box">
     <svg class="vel-chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${gridLines}${bars}</svg>
@@ -307,7 +891,21 @@ function renderChart(history){
   </div>`;
 }
 
-const CAT_COLORS={'agent framework':'#06b6d4','web scraping':'var(--blue)','rag':'var(--purple)','video/media':'#ec4899','dev tool':'#6366f1','trading':'var(--amber)','ai app':'#6366f1','resource':'#f97316','tối ưu chi phí':'var(--accent)','agent skills':'var(--accent)','pending review':'var(--amber)','rejected':'var(--red)'};
+const CAT_COLORS={
+  'agent framework':'#06b6d4',
+  'web scraping':'var(--blue)',
+  'rag':'var(--purple)',
+  'video/media':'#ec4899',
+  'dev tool':'#6366f1',
+  'trading':'var(--amber)',
+  'ai app':'#6366f1',
+  'resource':'#f97316',
+  'tối ưu chi phí':'var(--accent)',
+  'agent skills':'var(--accent)',
+  'pending review':'var(--amber)',
+  'rejected':'var(--red)'
+};
+
 function detectCategory(item){
   if(item.category){const lc=item.category.toLowerCase();return{k:lc.replace(/[^a-z]/g,''),l:item.category,c:CAT_COLORS[lc]||'var(--dim)'};}
   const t=((item.summary||'')+' '+(item.title||'')+' '+(item.matched_keyword||'')).toLowerCase();
@@ -344,10 +942,10 @@ function renderRanking(items,history){
   const catEntries=Object.entries(groups).sort((a,b)=>b[1].items.length-a[1].items.length);
   const maxCat=Math.max(...catEntries.map(([_,g])=>g.items.length));
 
-  let chart='<div class="cat-chart" style="height:70px">';
+  let chart='<div class="cat-chart" style="height:75px">';
   catEntries.forEach(([k,g])=>{
-    const h=Math.max(4,g.items.length/maxCat*50);
-    chart+=`<div class="cat-col"><span class="cnt" style="color:${g.color}">${g.items.length}</span><div class="bar" style="background:${g.color};opacity:.55;height:${h}px"></div><span class="lbl">${g.label}</span></div>`;
+    const h=Math.max(5,g.items.length/maxCat*52);
+    chart+=`<div class="cat-col"><span class="cnt" style="color:${g.color}">${g.items.length}</span><div class="bar" style="background:${g.color};opacity:.65;height:${h}px"></div><span class="lbl">${g.label}</span></div>`;
   });
   chart+='</div>';
 
@@ -364,13 +962,13 @@ function renderRanking(items,history){
       else{deltaHtml=`<span class="rank-delta eq">—</span>`}
       let row=`<a class="rank-row" href="${it.url||'#'}" target="_blank" rel="noopener"><span class="rank-n">${i+1}</span><span class="rank-name">${esc(name)}</span><span class="rank-stars">${fmtS} ★</span>${deltaHtml}</a>`;
       if(it.what){let d=`<div class="rank-sum">${esc(it.what)}`;if(it.apply)d+=`<br><span style="color:var(--accent)">→ ${esc(it.apply)}</span>`;row+=d+'</div>';}
-      else if(it.summary)row+=`<div class="rank-sum">${esc(it.summary.substring(0,150))}</div>`;
+      else if(it.summary)row+=`<div class="rank-sum">${esc(it.summary.substring(0,160))}</div>`;
       list+=row;
     });
     list+='</div>';
   });
 
-  return`<div class="sec"><div class="sec-t">GitHub Insights — Phân tích theo nhóm</div>${chart}${list}</div>`;
+  return`<div class="sec"><div class="sec-t">GitHub Trending — Phân Tích Danh Mục</div>${chart}${list}</div>`;
 }
 
 function renderSrcBar(items,sources){
@@ -381,7 +979,6 @@ function renderSrcBar(items,sources){
   let legHtml='<div class="src-leg">';
   sources.forEach(s=>{
     const c=counts[s]||0;
-    const pct=(c/total*100).toFixed(1);
     const col=srcColor(s,sources);
     barHtml+=`<div class="src-seg" style="flex:${c};background:${col}"></div>`;
     legHtml+=`<div class="src-leg-i"><span class="src-dot" style="background:${col}"></span>${esc(s)} (${c})</div>`;
@@ -401,13 +998,13 @@ function renderItems(items,sources){
     const db=b.published?new Date(b.published).getTime():0;
     return db-da;
   });
-  if(!filtered.length)return'<div class="empty" style="grid-column:1/-1"><p>Không tìm thấy item nào.</p></div>';
+  if(!filtered.length)return'<div class="empty" style="grid-column:1/-1"><p>Không tìm thấy mục nào phù hợp với bộ lọc.</p></div>';
   const now=Date.now(),day=864e5;
   return filtered.map(it=>{
     const isNew=it.published&&(now-new Date(it.published).getTime())<day;
     const col=srcColor(it.source,sources);
     let badges='';
-    if(it.cross_source)badges+=`<span class="badge b-hot">CROSS</span>`;
+    if(it.cross_source)badges+=`<span class="badge b-hot">🔥 CROSS</span>`;
     if(isNew)badges+=`<span class="badge b-new">MỚI</span>`;
     if(Number.isInteger(it.relevance_score)){
       let dots='';
@@ -415,14 +1012,20 @@ function renderItems(items,sources){
         const cls=i<=it.relevance_score?(it.relevance_score>=4?'f':'m'):'';
         dots+=`<span class="dot ${cls}"></span>`;
       }
-      badges+=`<span class="dots">${dots}</span>`;
+      badges+=`<span class="dots" title="Relevance: ${it.relevance_score}/5">${dots}</span>`;
     }
     const summary=it.summary?`<div class="card-sum">${esc(it.summary)}</div>`:'';
     return`<a class="card" href="${it.url||'#'}" target="_blank" rel="noopener">
-      <div class="card-src" style="color:${col}">${esc(it.source||'')}</div>
-      <div class="card-ttl">${esc(it.title||'(no title)')}</div>
+      <div class="card-top">
+        <span class="card-src" style="color:${col};border-left:2px solid ${col}">${esc(it.source||'')}</span>
+        ${badges}
+      </div>
+      <div class="card-ttl">${esc(it.title||'(không tiêu đề)')}</div>
       ${summary}
-      <div class="card-bt">${fmtD(it.published)} ${badges}</div>
+      <div class="card-bt">
+        <span>${fmtD(it.published)}</span>
+        <span style="color:var(--dim)">Xem chi tiết ↗</span>
+      </div>
     </a>`;
   }).join('');
 }
@@ -432,13 +1035,16 @@ function renderRecommended(){
   let cards=recommended.map(r=>{
     const fmtS=r.stars>=1000?(r.stars/1000).toFixed(1)+'k':r.stars;
     return`<a class="rec-card" href="${r.url}" target="_blank" rel="noopener">
-      <div class="rec-top"><span class="rec-name">${esc(r.name)}</span><span class="rec-stars">${fmtS} ★</span></div>
+      <div class="rec-top">
+        <span class="rec-name">${esc(r.name)}</span>
+        <span class="rec-stars">${fmtS} ★</span>
+      </div>
       <span class="rec-cat" style="color:${r.catColor||'var(--dim)'}">${esc(r.cat)}</span>
       <div class="rec-desc">${esc(r.desc)}</div>
       <div class="rec-why">→ ${esc(r.apply)}</div>
     </a>`;
   }).join('');
-  return`<div class="sec"><div class="sec-t">Công cụ đề xuất cho Trend Radar</div><div class="rec-grid">${cards}</div></div>`;
+  return`<div class="sec"><div class="sec-t">Công cụ đề xuất & Khuyên dùng</div><div class="rec-grid">${cards}</div></div>`;
 }
 
 function wireEvents(history){
@@ -454,9 +1060,9 @@ function wireEvents(history){
       const show=()=>{
         const r=el.getBoundingClientRect(),br=box.getBoundingClientRect();
         const avgT=h.avg_relevance_score!=null?h.avg_relevance_score:'—';
-        tip.innerHTML=`${esc(fmtD(h.date))}<br>${h.total_items} item · TB ${avgT}`;
+        tip.innerHTML=`<strong>${esc(fmtD(h.date))}</strong><br>${h.total_items} items · TB ${avgT}/5`;
         tip.style.left=Math.max(0,r.left-br.left-10)+'px';
-        tip.style.top=(r.top-br.top-4)+'px';
+        tip.style.top=(r.top-br.top-6)+'px';
         tip.style.opacity='1';
       };
       el.addEventListener('mouseenter',show);
@@ -500,7 +1106,7 @@ async function loadAll(){
   try{
     const m=await(await fetch('data/manifest.json?_='+Date.now())).json();
     document.getElementById('upd').textContent='Cập nhật: '+new Date(m.updated).toLocaleString('vi-VN');
-  }catch(e){document.getElementById('upd').textContent='Chưa có lần cập nhật nào'}
+  }catch(e){document.getElementById('upd').textContent='Sẵn sàng'}
   renderTabs();render();
 }
 loadAll();
