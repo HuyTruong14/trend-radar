@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Funnel — Sàng lọc Repo & Kỹ năng AI</title>
+  <meta name="description" content="Trang sàng lọc các GitHub Repository tiềm năng và gửi vào Phễu bóc tách Skill Funnel">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* DESIGN TOKENS (Matching My News & Signal Intelligence) */
+    :root {
+      --bg: #0f1117;
+      --bg-card: #1a1d27;
+      --bg-card-hover: #222634;
+      --bg-glass: rgba(26, 29, 39, 0.75);
+      --fg: #e4e6ed;
+      --fg-dim: #8b8fa3;
+      --fg-muted: #5c6078;
+      --border: #2a2e3d;
+      --border-accent: rgba(45, 106, 255, 0.35);
+
+      --accent: #2d6aff;
+      --accent-hover: #3f79ff;
+      --hot: #ff6b35;
+      --purple: #a78bfa;
+      --cyan: #06b6d4;
+
+      --score-high: #34d399;
+      --score-mid: #fbbf24;
+      --score-low: #6b7280;
+
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-full: 9999px;
+
+      --transition-fast: 0.15s ease;
+      --transition-normal: 0.25s ease;
+      --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(45, 106, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(167, 139, 250, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(6, 182, 212, 0.04) 0%, transparent 50%);
+      color: var(--fg);
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      line-height: 1.5;
+      padding: 24px 20px;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    .header {
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-card);
+      flex-wrap: wrap;
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.25), rgba(45, 106, 255, 0.25));
+      border: 1px solid rgba(167, 139, 250, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 0 16px rgba(167, 139, 250, 0.25);
+    }
+
+    .header-title {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-subtitle {
+      font-size: 12px;
+      color: var(--fg-dim);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* STATS COUNTER BAR */
+    .counter-pill {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .counter-part {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .count-highlight {
+      font-weight: 700;
+      color: #38bdf8;
+    }
+    .count-sent {
+      font-weight: 700;
+      color: var(--score-high);
+    }
+
+    .nav-btn {
+      padding: 7px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      color: var(--fg-dim);
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+      cursor: pointer;
+    }
+    .nav-btn:hover {
+      background: var(--bg-card-hover);
+      color: var(--fg);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .nav-btn-primary {
+      background: linear-gradient(135deg, rgba(45, 106, 255, 0.2), rgba(167, 139, 250, 0.2));
+      border-color: rgba(45, 106, 255, 0.4);
+      color: #93c5fd;
+    }
+    .nav-btn-primary:hover {
+      background: linear-gradient(135deg, rgba(45, 106, 255, 0.35), rgba(167, 139, 250, 0.35));
+      color: #fff;
+      box-shadow: 0 0 14px rgba(45, 106, 255, 0.3);
+    }
+
+    /* FILTER & TOOLBAR PANEL */
+    .filter-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .filter-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--fg-muted);
+      font-family: var(--font-mono);
+      letter-spacing: 0.5px;
+      margin-right: 4px;
+    }
+
+    .filter-pill {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      color: var(--fg-dim);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .filter-pill:hover {
+      background: rgba(255,255,255,0.08);
+      color: var(--fg);
+    }
+    .filter-pill.active {
+      background: rgba(45, 106, 255, 0.2);
+      border-color: var(--accent);
+      color: #60a5fa;
+    }
+
+    .search-input {
+      background: rgba(0,0,0,0.25);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      padding: 7px 14px;
+      border-radius: var(--radius-md);
+      font-size: 12.5px;
+      font-family: var(--font-sans);
+      min-width: 260px;
+      outline: none;
+      transition: var(--transition-fast);
+    }
+    .search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 10px rgba(45, 106, 255, 0.25);
+    }
+
+    .select-dropdown {
+      background: rgba(0,0,0,0.25);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      padding: 6px 12px;
+      border-radius: var(--radius-md);
+      font-size: 12px;
+      font-family: var(--font-mono);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .view-toggle {
+      display: inline-flex;
+      background: rgba(0,0,0,0.3);
+      padding: 3px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+    .view-btn {
+      background: transparent;
+      border: none;
+      color: var(--fg-muted);
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11.5px;
+      font-weight: 600;
+      transition: var(--transition-fast);
+    }
+    .view-btn.active {
+      background: var(--bg-card);
+      color: var(--fg);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    /* REPO GRID VIEW */
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .repo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* REPO CARD */
+    .repo-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      transition: var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .repo-card:hover {
+      border-color: rgba(167, 139, 250, 0.4);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px -4px rgba(0,0,0,0.5), 0 0 15px -3px rgba(167, 139, 250, 0.15);
+    }
+    .repo-card.sent-state {
+      border-color: rgba(52, 211, 153, 0.4);
+    }
+    .repo-card.sent-state::after {
+      content: '✓ ĐÃ GỬI PHỄU';
+      position: absolute;
+      top: 12px;
+      right: -30px;
+      transform: rotate(45deg);
+      background: rgba(52, 211, 153, 0.2);
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      color: var(--score-high);
+      font-family: var(--font-mono);
+      font-size: 8px;
+      font-weight: 700;
+      padding: 2px 28px;
+      letter-spacing: 0.5px;
+    }
+
+    .repo-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .repo-title-link {
+      font-size: 15px;
+      font-weight: 700;
+      color: #93c5fd;
+      text-decoration: none;
+      font-family: var(--font-mono);
+      word-break: break-all;
+      transition: var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .repo-title-link:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .repo-desc {
+      font-size: 12.5px;
+      color: var(--fg-dim);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .repo-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .tag-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tag-topic {
+      background: rgba(45, 106, 255, 0.15);
+      color: #93c5fd;
+      border: 1px solid rgba(45, 106, 255, 0.3);
+    }
+    .tag-source {
+      background: rgba(255,255,255,0.05);
+      color: var(--fg-dim);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .tag-score {
+      font-weight: 700;
+    }
+    .score-high { color: var(--score-high); background: rgba(52, 211, 153, 0.15); border: 1px solid rgba(52, 211, 153, 0.3); }
+    .score-mid { color: var(--score-mid); background: rgba(251, 191, 36, 0.15); border: 1px solid rgba(251, 191, 36, 0.3); }
+    .score-low { color: var(--score-low); background: rgba(107, 114, 128, 0.15); border: 1px solid rgba(107, 114, 128, 0.3); }
+
+    .velocity-pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: var(--radius-sm);
+    }
+    .v-rising { background: rgba(255, 107, 53, 0.18); color: var(--hot); border: 1px solid rgba(255, 107, 53, 0.3); }
+    .v-stable { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .v-cooling { background: rgba(100, 116, 139, 0.15); color: #94a3b8; border: 1px solid rgba(100, 116, 139, 0.3); }
+
+    /* CARD ACTION BUTTONS */
+    .repo-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .btn-funnel {
+      flex: 1;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.2), rgba(45, 106, 255, 0.2));
+      border: 1px solid rgba(167, 139, 250, 0.4);
+      color: #c4b5fd;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+    }
+    .btn-funnel:hover {
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.35), rgba(45, 106, 255, 0.35));
+      color: #fff;
+      box-shadow: 0 0 12px rgba(167, 139, 250, 0.3);
+    }
+    .btn-funnel.sent {
+      background: rgba(52, 211, 153, 0.15);
+      border-color: rgba(52, 211, 153, 0.4);
+      color: var(--score-high);
+      cursor: default;
+    }
+
+    .btn-github {
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--fg-dim);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition-fast);
+    }
+    .btn-github:hover {
+      background: rgba(255,255,255,0.1);
+      color: var(--fg);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    /* COMPACT TABLE VIEW */
+    .table-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 30px;
+      display: none;
+    }
+    .repo-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+    .repo-table th {
+      background: rgba(0,0,0,0.3);
+      padding: 12px 16px;
+      color: var(--fg-muted);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--border);
+    }
+    .repo-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: middle;
+    }
+    .repo-table tr:hover td {
+      background: var(--bg-card-hover);
+    }
+
+    /* TOAST NOTIFICATION */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--score-high);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-family: var(--font-sans);
+      z-index: 1000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* EMPTY / LOADING STATE */
+    .state-box {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--fg-dim);
+      font-size: 14px;
+    }
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid rgba(255,255,255,0.1);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-brand">
+      <div class="brand-icon">🔬</div>
+      <div>
+        <div class="header-title">
+          Skill Funnel — Sàng lọc Repos
+        </div>
+        <div class="header-subtitle">
+          Trích lọc mã nguồn GitHub tiềm năng từ Trend Radar vào Phễu kỹ năng AI
+        </div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <!-- Live Counter: X repos chờ đánh giá | Y đã gửi phễu -->
+      <div class="counter-pill">
+        <div class="counter-part">
+          <span class="count-highlight" id="totalPendingCount">0</span>
+          <span style="color:var(--fg-dim)">repos chờ đánh giá</span>
+        </div>
+        <span style="color:var(--border)">|</span>
+        <div class="counter-part">
+          <span class="count-sent" id="totalSentCount">0</span>
+          <span style="color:var(--fg-dim)">đã gửi phễu</span>
+        </div>
+      </div>
+
+      <!-- Navigation links -->
+      <a href="index.html" class="nav-btn" title="Quay lại My News">
+        <span>← My News (:8088)</span>
+      </a>
+      <a href="workflow.html" class="nav-btn" title="Xem sơ đồ Workflow Hub">
+        <span>⚡ Workflow Hub</span>
+      </a>
+      <a href="http://localhost:8765" target="_blank" class="nav-btn nav-btn-primary" title="Mở Skill Dashboard chính thức">
+        <span>🎯 Mở Skill Dashboard (:8765) ↗</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- FILTER & TOOLBAR PANEL -->
+  <section class="filter-panel">
+    <div class="filter-row">
+      <!-- Topic Filter -->
+      <div class="filter-group">
+        <span class="filter-label">Chủ đề:</span>
+        <button class="filter-pill active" onclick="setFilter('topic', 'all')" data-topic="all">Tất cả</button>
+        <button class="filter-pill" onclick="setFilter('topic', 'AI/Tech')" data-topic="AI/Tech">AI / Tech</button>
+        <button class="filter-pill" onclick="setFilter('topic', 'iGaming')" data-topic="iGaming">iGaming</button>
+        <button class="filter-pill" onclick="setFilter('topic', 'Business')" data-topic="Business">Business</button>
+        <button class="filter-pill" onclick="setFilter('topic', 'News')" data-topic="News">News</button>
+      </div>
+
+      <!-- Velocity Filter -->
+      <div class="filter-group">
+        <span class="filter-label">Velocity:</span>
+        <button class="filter-pill active" onclick="setFilter('velocity', 'all')" data-vel="all">Tất cả</button>
+        <button class="filter-pill" onclick="setFilter('velocity', 'rising')" data-vel="rising">↑ Rising</button>
+        <button class="filter-pill" onclick="setFilter('velocity', 'stable')" data-vel="stable">→ Stable</button>
+        <button class="filter-pill" onclick="setFilter('velocity', 'cooling')" data-vel="cooling">↓ Cooling</button>
+      </div>
+    </div>
+
+    <div class="filter-row">
+      <!-- Search Box -->
+      <div class="filter-group" style="flex:1">
+        <input type="text" class="search-input" id="searchInput" placeholder="🔍 Tìm theo tên repo (owner/repo) hoặc mô tả..." oninput="handleSearch(this.value)">
+      </div>
+
+      <!-- Score Threshold & Sort & View -->
+      <div class="filter-group">
+        <span class="filter-label">Ngưỡng điểm:</span>
+        <select class="select-dropdown" id="scoreThresholdSelect" onchange="setFilter('score', this.value)">
+          <option value="0">Tất cả điểm</option>
+          <option value="50">Điểm ≥ 50</option>
+          <option value="70">Điểm ≥ 70</option>
+          <option value="85">Điểm ≥ 85 (Top signals)</option>
+        </select>
+
+        <span class="filter-label" style="margin-left:8px">Sắp xếp:</span>
+        <select class="select-dropdown" id="sortSelect" onchange="setSort(this.value)">
+          <option value="score-desc">Score: Cao nhất trước</option>
+          <option value="score-asc">Score: Thấp nhất trước</option>
+          <option value="name-asc">Tên Repo (A-Z)</option>
+        </select>
+
+        <div class="view-toggle" style="margin-left:8px">
+          <button class="view-btn active" id="btnViewGrid" onclick="switchView('grid')" title="Dạng Card Lưới">Card</button>
+          <button class="view-btn" id="btnViewTable" onclick="switchView('table')" title="Dạng Bảng">Bảng</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT CONTAINER -->
+  <main id="mainContainer">
+    <!-- Loading Spinner -->
+    <div class="state-box" id="loadingState">
+      <div class="spinner"></div>
+      <p>Đang nạp và trích lọc các GitHub Repos từ dữ liệu Trend Radar...</p>
+    </div>
+
+    <!-- Card Grid View -->
+    <div class="repo-grid" id="repoGrid" style="display:none"></div>
+
+    <!-- Compact Table View -->
+    <div class="table-container" id="repoTableContainer">
+      <table class="repo-table">
+        <thead>
+          <tr>
+            <th>Tên Repo</th>
+            <th>Chủ đề</th>
+            <th>Nguồn</th>
+            <th>Score</th>
+            <th>Velocity</th>
+            <th>Mô tả</th>
+            <th style="text-align:right">Thao tác</th>
+          </tr>
+        </thead>
+        <tbody id="repoTableBody"></tbody>
+      </table>
+    </div>
+
+    <!-- Empty State -->
+    <div class="state-box" id="emptyState" style="display:none">
+      <p>Không tìm thấy repository nào khớp với bộ lọc hiện tại.</p>
+    </div>
+  </main>
+
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toastMessage">
+  <span>✓</span>
+  <span id="toastText">Đã gửi repo vào phễu!</span>
+</div>
+
+<script>
+// ==================== STATE MANAGEMENT ====================
+let allRepos = [];
+let filteredRepos = [];
+let sentRepos = new Set();
+
+const currentFilters = {
+  topic: 'all',
+  velocity: 'all',
+  minScore: 0,
+  search: '',
+  sortBy: 'score-desc',
+  view: 'grid'
+};
+
+const DATA_FILES = [
+  'data/ai-tech.json',
+  'data/igaming.json',
+  'data/business.json',
+  'data/news.json'
+];
+
+// Fallback search bases in case path differs
+const BASE_URLS = [
+  '',
+  'http://localhost:8088/',
+  'https://huytruong14.github.io/trend-radar/'
+];
+
+// ==================== STORAGE FOR SENT REPOS ====================
+function initSentReposStorage() {
+  try {
+    const raw = localStorage.getItem('sent_funnel_repos');
+    if (raw) {
+      const arr = JSON.parse(raw);
+      if (Array.isArray(arr)) {
+        sentRepos = new Set(arr);
+      }
+    }
+  } catch(e) {}
+}
+
+function saveSentReposStorage() {
+  try {
+    localStorage.setItem('sent_funnel_repos', JSON.stringify(Array.from(sentRepos)));
+  } catch(e) {}
+}
+
+// ==================== DATA LOADER ====================
+async function fetchWithFallback(filename) {
+  for (const base of BASE_URLS) {
+    try {
+      const url = `${base}${filename}?_=${Date.now()}`;
+      const res = await fetch(url);
+      if (res.ok) {
+        return await res.json();
+      }
+    } catch(e) {}
+  }
+  return null;
+}
+
+function normalizeTopicName(labelOrKey) {
+  const l = (labelOrKey || '').toLowerCase();
+  if (l.includes('ai') || l.includes('tech')) return 'AI/Tech';
+  if (l.includes('igaming') || l.includes('gaming')) return 'iGaming';
+  if (l.includes('business') || l.includes('fund')) return 'Business';
+  return 'News';
+}
+
+async function loadAllRepositories() {
+  initSentReposStorage();
+  const repoMap = new Map();
+
+  for (const file of DATA_FILES) {
+    const data = await fetchWithFallback(file);
+    if (!data) continue;
+
+    // Structure 1: { label: "...", items: [...] }
+    if (Array.isArray(data.items)) {
+      const defaultTopic = normalizeTopicName(data.label || file);
+      processItemList(data.items, defaultTopic, repoMap);
+    }
+    // Structure 2: { topics: { "AI/Tech": { items: [...] }, ... } }
+    else if (data.topics && typeof data.topics === 'object') {
+      for (const [topicKey, topicData] of Object.entries(data.topics)) {
+        const topicName = normalizeTopicName(topicKey);
+        if (topicData && Array.isArray(topicData.items)) {
+          processItemList(topicData.items, topicName, repoMap);
+        }
+      }
+    }
+  }
+
+  allRepos = Array.from(repoMap.values());
+  applyFiltersAndRender();
+
+  document.getElementById('loadingState').style.display = 'none';
+  if (currentFilters.view === 'grid') {
+    document.getElementById('repoGrid').style.display = 'grid';
+  } else {
+    document.getElementById('repoTableContainer').style.display = 'block';
+  }
+}
+
+function processItemList(items, topicName, repoMap) {
+  for (const it of items) {
+    const src = (it.source || (it.sources ? it.sources.join(', ') : '') || '').toLowerCase();
+    const url = (it.url || '').toLowerCase();
+
+    // Condition 2: Filter items where source === "GitHub" or URL contains "github.com"
+    const isGitHub = src.includes('github') || url.includes('github.com');
+    if (!isGitHub) continue;
+
+    const rawUrl = it.url || '';
+    let repoName = it.title || '';
+
+    // Extract owner/repo if url is clean github url
+    if (!repoName.includes('/') && rawUrl.includes('github.com/')) {
+      const parts = rawUrl.replace(/https?:\/\/(www\.)?github\.com\//i, '').split('/');
+      if (parts.length >= 2) {
+        repoName = `${parts[0]}/${parts[1]}`;
+      }
+    }
+
+    const key = rawUrl.toLowerCase().replace(/\/+$/, '') || repoName.toLowerCase();
+    if (!key) continue;
+
+    // Score normalization (if score is missing or very large stars, normalize to 1-100)
+    let score = it.score;
+    if (score === null || score === undefined) {
+      score = it.relevance_score ? it.relevance_score * 20 : 50;
+    } else if (score > 1000) {
+      // It's stars count, map logarithmically into 60-99 score
+      score = Math.min(99, Math.round(50 + Math.log10(score) * 10));
+    }
+
+    // Velocity normalization
+    let velocity = (it.velocity || '').toLowerCase();
+    if (!['rising', 'stable', 'cooling'].includes(velocity)) {
+      velocity = score >= 75 ? 'rising' : (score >= 50 ? 'stable' : 'cooling');
+    }
+
+    const existing = repoMap.get(key);
+    if (!existing || (score > existing.score)) {
+      repoMap.set(key, {
+        id: key,
+        title: repoName,
+        url: it.url,
+        summary: it.summary || it.desc || '',
+        score: Math.round(score),
+        velocity: velocity,
+        topic: topicName,
+        source: it.source || (it.sources ? it.sources[0] : 'GitHub'),
+        stars: it.meta && it.meta.includes('stars') ? it.meta : null,
+        published: it.published || ''
+      });
+    }
+  }
+}
+
+// ==================== FILTERING & SORTING ====================
+function applyFiltersAndRender() {
+  filteredRepos = allRepos.filter(repo => {
+    // Topic filter
+    if (currentFilters.topic !== 'all' && repo.topic !== currentFilters.topic) {
+      return false;
+    }
+    // Velocity filter
+    if (currentFilters.velocity !== 'all' && repo.velocity !== currentFilters.velocity) {
+      return false;
+    }
+    // Score threshold
+    if (repo.score < currentFilters.minScore) {
+      return false;
+    }
+    // Search query
+    if (currentFilters.search) {
+      const q = currentFilters.search.toLowerCase();
+      const match = repo.title.toLowerCase().includes(q) || repo.summary.toLowerCase().includes(q);
+      if (!match) return false;
+    }
+    return true;
+  });
+
+  // Sorting
+  if (currentFilters.sortBy === 'score-desc') {
+    filteredRepos.sort((a, b) => b.score - a.score);
+  } else if (currentFilters.sortBy === 'score-asc') {
+    filteredRepos.sort((a, b) => a.score - b.score);
+  } else if (currentFilters.sortBy === 'name-asc') {
+    filteredRepos.sort((a, b) => a.title.localeCompare(b.title));
+  }
+
+  // Update counters
+  updateCounters();
+
+  // Render view
+  renderCurrentView();
+}
+
+function updateCounters() {
+  const sentCount = allRepos.filter(r => sentRepos.has(r.id)).length;
+  const pendingCount = allRepos.length - sentCount;
+
+  document.getElementById('totalPendingCount').textContent = pendingCount;
+  document.getElementById('totalSentCount').textContent = sentCount;
+}
+
+function renderCurrentView() {
+  const grid = document.getElementById('repoGrid');
+  const tbody = document.getElementById('repoTableBody');
+  const empty = document.getElementById('emptyState');
+
+  if (filteredRepos.length === 0) {
+    grid.innerHTML = '';
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  if (currentFilters.view === 'grid') {
+    grid.innerHTML = filteredRepos.map(repo => renderRepoCard(repo)).join('');
+  } else {
+    tbody.innerHTML = filteredRepos.map(repo => renderRepoTableRow(repo)).join('');
+  }
+}
+
+// ==================== CARD & TABLE TEMPLATES ====================
+function getVelocityBadge(v) {
+  if (v === 'rising') return `<span class="velocity-pill v-rising">↑ rising</span>`;
+  if (v === 'stable') return `<span class="velocity-pill v-stable">→ stable</span>`;
+  return `<span class="velocity-pill v-cooling">↓ cooling</span>`;
+}
+
+function getScoreBadge(score) {
+  const cls = score >= 80 ? 'score-high' : (score >= 60 ? 'score-mid' : 'score-low');
+  return `<span class="tag-badge tag-score ${cls}">Score ${score}</span>`;
+}
+
+function renderRepoCard(repo) {
+  const isSent = sentRepos.has(repo.id);
+  const sentCls = isSent ? 'sent-state' : '';
+  const btnText = isSent ? '✓ Đã gửi' : '🔬 Gửi Phễu';
+  const btnCls = isSent ? 'btn-funnel sent' : 'btn-funnel';
+
+  return `
+    <div class="repo-card ${sentCls}" id="card-${escapeHtml(repo.id)}">
+      <div>
+        <div class="repo-header">
+          <a href="${repo.url}" target="_blank" rel="noopener noreferrer" class="repo-title-link">
+            <span>📦</span> ${escapeHtml(repo.title)}
+          </a>
+          ${getScoreBadge(repo.score)}
+        </div>
+
+        <p class="repo-desc">${escapeHtml(repo.summary || 'Chưa có mô tả chi tiết cho repository này.')}</p>
+
+        <div class="repo-meta-row">
+          <span class="tag-badge tag-topic">${escapeHtml(repo.topic)}</span>
+          <span class="tag-badge tag-source">${escapeHtml(repo.source)}</span>
+          ${getVelocityBadge(repo.velocity)}
+          ${repo.stars ? `<span class="tag-badge tag-source">⭐ ${escapeHtml(repo.stars)}</span>` : ''}
+        </div>
+      </div>
+
+      <div class="repo-actions">
+        <button class="${btnCls}" onclick="sendToFunnel('${escapeHtml(repo.id)}')">
+          ${btnText}
+        </button>
+        <a href="${repo.url}" target="_blank" rel="noopener noreferrer" class="btn-github">
+          ↗ Mở GitHub
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+function renderRepoTableRow(repo) {
+  const isSent = sentRepos.has(repo.id);
+  const btnText = isSent ? '✓ Đã gửi' : '🔬 Gửi Phễu';
+  const btnCls = isSent ? 'btn-funnel sent' : 'btn-funnel';
+
+  return `
+    <tr id="row-${escapeHtml(repo.id)}">
+      <td>
+        <a href="${repo.url}" target="_blank" rel="noopener noreferrer" class="repo-title-link" style="font-size:13.5px">
+          ${escapeHtml(repo.title)}
+        </a>
+      </td>
+      <td><span class="tag-badge tag-topic">${escapeHtml(repo.topic)}</span></td>
+      <td><span class="tag-badge tag-source">${escapeHtml(repo.source)}</span></td>
+      <td>${getScoreBadge(repo.score)}</td>
+      <td>${getVelocityBadge(repo.velocity)}</td>
+      <td style="max-width:320px;color:var(--fg-dim);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
+        ${escapeHtml(repo.summary || '--')}
+      </td>
+      <td style="text-align:right">
+        <div style="display:inline-flex;gap:6px">
+          <button class="${btnCls}" style="padding:4px 10px;font-size:11px" onclick="sendToFunnel('${escapeHtml(repo.id)}')">
+            ${btnText}
+          </button>
+          <a href="${repo.url}" target="_blank" rel="noopener noreferrer" class="btn-github" style="padding:4px 10px;font-size:11px">
+            ↗ GitHub
+          </a>
+        </div>
+      </td>
+    </tr>
+  `;
+}
+
+// ==================== ACTIONS & EVENT HANDLERS ====================
+function sendToFunnel(repoId) {
+  const repo = allRepos.find(r => r.id === repoId);
+  if (!repo) return;
+
+  // Requirement 3: onclick sẽ gọi API ở Phase 2, tạm thời console.log
+  console.log("🔬 [Skill Funnel API Call - Phase 2 Candidate]: Sending repo to funnel:", repo);
+
+  if (!sentRepos.has(repoId)) {
+    sentRepos.add(repoId);
+    saveSentReposStorage();
+  }
+
+  showToast(`Đã gửi ${repo.title} vào Phễu sàng lọc Skill Funnel!`);
+  updateCounters();
+
+  // Re-render only changed card or table row
+  renderCurrentView();
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toastMessage');
+  const toastText = document.getElementById('toastText');
+  toastText.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3200);
+}
+
+function setFilter(type, value) {
+  if (type === 'topic') {
+    currentFilters.topic = value;
+    document.querySelectorAll('[data-topic]').forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-topic') === value);
+    });
+  } else if (type === 'velocity') {
+    currentFilters.velocity = value;
+    document.querySelectorAll('[data-vel]').forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-vel') === value);
+    });
+  } else if (type === 'score') {
+    currentFilters.minScore = parseInt(value, 10) || 0;
+  }
+  applyFiltersAndRender();
+}
+
+function handleSearch(val) {
+  currentFilters.search = val.trim();
+  applyFiltersAndRender();
+}
+
+function setSort(val) {
+  currentFilters.sortBy = val;
+  applyFiltersAndRender();
+}
+
+function switchView(view) {
+  currentFilters.view = view;
+  const btnGrid = document.getElementById('btnViewGrid');
+  const btnTable = document.getElementById('btnViewTable');
+  const grid = document.getElementById('repoGrid');
+  const table = document.getElementById('repoTableContainer');
+
+  if (view === 'grid') {
+    btnGrid.classList.add('active');
+    btnTable.classList.remove('active');
+    grid.style.display = 'grid';
+    table.style.display = 'none';
+  } else {
+    btnTable.classList.add('active');
+    btnGrid.classList.remove('active');
+    grid.style.display = 'none';
+    table.style.display = 'block';
+  }
+  renderCurrentView();
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// ==================== INIT ====================
+window.addEventListener('DOMContentLoaded', () => {
+  loadAllRepositories();
+});
+</script>
+
+</body>
+</html>
