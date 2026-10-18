@@ -819,7 +819,7 @@ def check_watchlist_and_alert(output_data, out_dir):
     """
     watchlist_config = load_watchlist_config(out_dir)
     keywords = watchlist_config.get("keywords", [])
-    threshold = watchlist_config.get("threshold", 50)
+    threshold = watchlist_config.get("threshold", 35)
     lower_keywords = [k.lower().strip() for k in keywords if k]
 
     matched_alerts = []
@@ -827,18 +827,18 @@ def check_watchlist_and_alert(output_data, out_dir):
     for topic_name, topic_data in output_data.get("topics", {}).items():
         for item in topic_data.get("items", []):
             score = item.get("score") or 0
-            if score < threshold:
-                continue
 
             search_text = f"{item.get('title', '')} {item.get('summary', '')}".lower()
             for kw in lower_keywords:
                 if kw in search_text:
                     item["watchlist_matched"] = kw
+                    effective_score = max(score, threshold)
+                    item["score"] = effective_score
                     matched_alerts.append({
                         "keyword": kw,
                         "title": item.get("title"),
                         "url": item.get("url"),
-                        "score": score,
+                        "score": effective_score,
                         "topic": topic_name
                     })
                     break

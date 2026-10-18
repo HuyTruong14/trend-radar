@@ -508,7 +508,7 @@ def score_items_with_ai(items, topic_label):
         it["category"] = None
 
 
-GEMINI_MODELS = ["gemini-3.6-flash", "gemini-3.5-flash-lite"]
+GEMINI_MODELS = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-flash-8b"]
 GEMINI_TOP_N = 5
 
 

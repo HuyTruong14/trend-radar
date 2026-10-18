@@ -1372,8 +1372,8 @@ const SERVICES = {
       },
       {
         title: 'Lỗi 3: Điểm bài viết chưa đạt ngưỡng (Score < Threshold)',
-        desc: 'Có bài viết chứa từ khóa watchlist nhưng điểm số dưới 50 (hoặc threshold đặt trong watchlist.json), pipeline sẽ chủ động không gửi để tránh spam.',
-        fix: 'Xem docs/data/watchlist.json, nếu muốn nhận nhiều tin hơn có thể hạ threshold xuống (ví dụ 30).'
+        desc: 'Trước đây bài viết chứa từ khóa watchlist nếu điểm số dưới 50 sẽ bị bỏ qua. Hiện tại hệ thống đã tự động gán điểm ưu tiên và hạ threshold xuống 35 để đảm bảo luôn nhận được tin nóng.',
+        fix: 'Đã tối ưu tự động trong aggregate.py & watchlist.json (threshold: 35). Bất kỳ tin nào khớp từ khóa Watchlist đều được bảo đảm đẩy về Telegram.'
       },
       {
         title: 'Lỗi 4: Vượt giới hạn độ dài tin nhắn (4096 ký tự)',
