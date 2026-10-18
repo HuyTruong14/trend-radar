@@ -23,6 +23,12 @@ from rapidfuzz import fuzz
 import notify
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
+SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
+if SCRIPTS_DIR not in sys.path:
+    sys.path.insert(0, SCRIPTS_DIR)
+
 CONFIG_PATH = os.path.join(ROOT, "config.yaml")
 OUT_DIR = os.path.join(ROOT, "docs", "data")
 HISTORY_DIR = os.path.join(OUT_DIR, "history")
@@ -772,6 +778,14 @@ def build_topic(topic_key, cfg, max_items, freshness_days):
     log(f"Fetching topic: {topic_key}")
     items = []
 
+    LABEL_TO_FETCHER_TOPIC = {
+        "AI & Technology": "AI/Tech",
+        "iGaming & Gaming": "iGaming",
+        "Business & Funding": "Business",
+        "News (theo từ khóa)": "News",
+    }
+    fetcher_topic = LABEL_TO_FETCHER_TOPIC.get(cfg.get("label", ""), topic_key)
+
     if cfg.get("hackernews"):
         items += fetch_hackernews(cfg.get("keywords", []), max_items)
 
@@ -786,6 +800,34 @@ def build_topic(topic_key, cfg, max_items, freshness_days):
     rss_feeds = cfg.get("rss") or []
     if rss_feeds:
         items += fetch_rss(rss_feeds, max_items)
+
+    # --- New sources: Reddit, Twitter/X, Quora ---
+    try:
+        from fetchers import reddit
+        reddit_items = reddit.fetch_topic_reddit(fetcher_topic)
+        if reddit_items:
+            items += reddit_items
+            log(f"  -> Reddit: {len(reddit_items)} items")
+    except Exception as e:
+        log(f"  ! Reddit fetch failed: {e}")
+
+    try:
+        from fetchers import twitter
+        twitter_items = twitter.fetch_topic_twitter(fetcher_topic)
+        if twitter_items:
+            items += twitter_items
+            log(f"  -> Twitter/X: {len(twitter_items)} items")
+    except Exception as e:
+        log(f"  ! Twitter fetch failed: {e}")
+
+    try:
+        from fetchers import quora
+        quora_items = quora.fetch_topic_quora(fetcher_topic)
+        if quora_items:
+            items += quora_items
+            log(f"  -> Quora: {len(quora_items)} items")
+    except Exception as e:
+        log(f"  ! Quora fetch failed: {e}")
 
     raw_count = len(items)
     items = dedupe(items)
@@ -872,6 +914,9 @@ def main():
                 log("  -> Telegram daily digest sent")
             else:
                 log("  ! Telegram daily digest not sent (see notify log above)")
+    except Exception as e:
+        log(f"  ! daily digest failed: {e}")
+
     try:
         import aggregate
         aggregate.build_aggregated_news(all_results, OUT_DIR)

@@ -30,6 +30,7 @@ services:
       CREATE_ADMIN: "1"
       ADMIN_USERNAME: admin
       ADMIN_PASSWORD: trendradar
+      FETCHER_ALLOW_PRIVATE_NETWORKS: "1"
     depends_on:
       postgres:
         condition: service_healthy

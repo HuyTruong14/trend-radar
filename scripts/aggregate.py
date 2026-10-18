@@ -658,82 +658,138 @@ def build_aggregated_news(topics_data=None, out_dir=DATA_DIR):
 
 # --- BRIEFING GENERATION & WATCHLIST TELEGRAM ALERTS ---
 
-def generate_ai_briefing(topic_name, top_items, api_key):
-    """Use Claude Haiku to generate a 3-sentence natural briefing if ANTHROPIC_API_KEY exists."""
-    try:
-        import requests
-        url = "https://api.anthropic.com/v1/messages"
-        headers = {
-            "x-api-key": api_key,
-            "anthropic-version": "2023-06-01",
-            "content-type": "application/json"
-        }
-        prompt = (
-            f"Write a concise, 3-sentence executive briefing summarizing the following top tech/news stories for {topic_name}:\n"
-        )
-        for idx, it in enumerate(top_items[:5], 1):
-            prompt += f"{idx}. {it.get('title')}: {it.get('summary')}\n"
-        prompt += "\nOutput exactly 3 sentences. No bullet points or intro/outro text."
+def generate_ai_briefing(topic_name, top_items, api_key=None):
+    """Use Gemini Flash (primary) or Claude Haiku (secondary) to generate an executive daily briefing."""
+    import requests
+    # 1. Primary: Use Gemini if GEMINI_API_KEY is present
+    gemini_key = os.environ.get("GEMINI_API_KEY")
+    if gemini_key:
+        models = ["gemini-2.0-flash", "gemini-1.5-flash"]
+        for model in models:
+            try:
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={gemini_key}"
+                prompt = (
+                    f"Bạn là chuyên gia phân tích công nghệ của Trend Radar. Hãy viết một bản tin điều hành (Executive Daily Briefing) "
+                    f"khoảng 3-4 câu sắc sảo, tự nhiên bằng tiếng Việt cho chủ đề {topic_name}.\n\n"
+                    f"Dựa trên các bài viết/dự án nổi bật nhất hôm nay:\n"
+                )
+                for idx, it in enumerate(top_items[:5], 1):
+                    prompt += f"{idx}. {it.get('title')}: {it.get('summary')}\n"
+                prompt += (
+                    "\nYêu cầu:\n"
+                    "- Nêu rõ dự án/chủ đề dẫn đầu và lý do quan trọng.\n"
+                    "- Tóm tắt xu hướng công nghệ nổi bật và tác động thực tế.\n"
+                    "- Trả lời bằng đoạn văn sạch, tự nhiên, súc tích, không dùng gạch đầu dòng hay lời chào/kết."
+                )
 
-        payload = {
-            "model": "claude-3-haiku-20240307",
-            "max_tokens": 200,
-            "messages": [{"role": "user", "content": prompt}]
-        }
-        resp = requests.post(url, headers=headers, json=payload, timeout=12)
-        if resp.ok:
-            data = resp.json()
-            content = data.get("content", [{}])[0].get("text", "").strip()
-            if content:
-                return content
-    except Exception as e:
-        print(f"Warning: Claude Haiku briefing generation failed for {topic_name}: {e}")
+                payload = {
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    "generationConfig": {"temperature": 0.3, "maxOutputTokens": 500}
+                }
+                resp = requests.post(url, json=payload, timeout=15)
+                if resp.ok:
+                    data = resp.json()
+                    candidates = data.get("candidates", [])
+                    if candidates:
+                        text = candidates[0].get("content", {}).get("parts", [{}])[0].get("text", "").strip()
+                        if text:
+                            print(f"[aggregate] Generated Gemini briefing ({model}) for {topic_name}")
+                            return text
+            except Exception as e:
+                print(f"[aggregate] Warning: Gemini {model} briefing failed for {topic_name}: {e}")
+
+    # 2. Secondary fallback: Try Claude Haiku if ANTHROPIC_API_KEY is present
+    anthropic_key = api_key or os.environ.get("ANTHROPIC_API_KEY")
+    if anthropic_key:
+        try:
+            url = "https://api.anthropic.com/v1/messages"
+            headers = {
+                "x-api-key": anthropic_key,
+                "anthropic-version": "2023-06-01",
+                "content-type": "application/json"
+            }
+            prompt = (
+                f"Hãy viết một bản tóm tắt điều hành (Executive Daily Briefing) khoảng 3-4 câu tự nhiên bằng tiếng Việt cho chủ đề {topic_name}:\n"
+            )
+            for idx, it in enumerate(top_items[:5], 1):
+                prompt += f"{idx}. {it.get('title')}: {it.get('summary')}\n"
+            prompt += "\nNêu rõ giải pháp dẫn đầu, xu hướng nổi bật và tác động chính. Không dùng gạch đầu dòng."
+
+            payload = {
+                "model": "claude-3-haiku-20240307",
+                "max_tokens": 300,
+                "messages": [{"role": "user", "content": prompt}]
+            }
+            resp = requests.post(url, headers=headers, json=payload, timeout=15)
+            if resp.ok:
+                data = resp.json()
+                content = data.get("content", [{}])[0].get("text", "").strip()
+                if content:
+                    return content
+        except Exception as e:
+            print(f"[aggregate] Warning: Claude Haiku briefing generation failed for {topic_name}: {e}")
     return None
 
 
 def generate_briefing(topic_name, items):
     """
     Generate daily briefing for each topic:
-    - If ANTHROPIC_API_KEY exists, try Claude Haiku 3-sentence natural briefing.
-    - Fallback: Template-based:
-      'Top stories: <strong>{item1.title}</strong> (score {score}). Also trending: <strong>{item2.title}</strong> and <strong>{item3.title}</strong>. {rising_count} signals rising today.'
+    - If GEMINI_API_KEY or ANTHROPIC_API_KEY exists, try AI-generated natural briefing.
+    - Fallback: Rich Executive Template containing top story summaries and market velocity pulse.
     """
     if not items:
-        return f"No major signals recorded for {topic_name} today."
+        return f"Chưa có tín hiệu công nghệ mới nào được ghi nhận cho {topic_name} hôm nay."
 
     top_items = sorted(items, key=lambda x: x.get("score") or 0, reverse=True)
     rising_count = sum(1 for it in items if (it.get("velocity") or "").lower() == "rising")
 
     api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if api_key:
+    gemini_key = os.environ.get("GEMINI_API_KEY")
+    if api_key or gemini_key:
         ai_briefing = generate_ai_briefing(topic_name, top_items, api_key)
         if ai_briefing:
             return ai_briefing
 
-    # Template-based fallback
+    # Rich Executive Template fallback
     it1 = top_items[0]
     score1 = it1.get("score", 0)
+    title1 = it1.get("title", "")
+    summary1 = (it1.get("summary") or "").strip()
+    if summary1 and len(summary1) > 160:
+        summary1 = summary1[:157] + "..."
 
-    if len(top_items) >= 3:
+    lines = []
+    lines.append(
+        f"🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>{title1}</strong> (Score {score1})"
+        + (f" — <em>{summary1}</em>" if summary1 else "")
+        + "."
+    )
+
+    if len(top_items) >= 2:
         it2 = top_items[1]
-        it3 = top_items[2]
-        return (
-            f"Top stories: <strong>{it1.get('title')}</strong> (score {score1}). "
-            f"Also trending: <strong>{it2.get('title')}</strong> and <strong>{it3.get('title')}</strong>. "
-            f"{rising_count} signals rising today."
-        )
-    elif len(top_items) == 2:
-        it2 = top_items[1]
-        return (
-            f"Top stories: <strong>{it1.get('title')}</strong> (score {score1}) "
-            f"and <strong>{it2.get('title')}</strong>. "
-            f"{rising_count} signals rising today."
-        )
+        score2 = it2.get("score", 0)
+        title2 = it2.get("title", "")
+        summary2 = (it2.get("summary") or "").strip()
+        if summary2 and len(summary2) > 120:
+            summary2 = summary2[:117] + "..."
+
+        trending_parts = [f"<strong>{title2}</strong> (Score {score2})" + (f": {summary2}" if summary2 else "")]
+
+        if len(top_items) >= 3:
+            it3 = top_items[2]
+            title3 = it3.get("title", "")
+            trending_parts.append(f"<strong>{title3}</strong>")
+
+        lines.append(f"🔥 <strong>Xu hướng nổi bật:</strong> " + " và ".join(trending_parts) + ".")
+
+    pulse_info = f"📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng {len(top_items)} tín hiệu theo dõi."
+    if rising_count > 0:
+        pulse_info += f" Trong đó có <strong>{rising_count} tín hiệu đang bứt phá mạnh (Rising Velocity)</strong>."
     else:
-        return (
-            f"Top story: <strong>{it1.get('title')}</strong> (score {score1}). "
-            f"{rising_count} signals rising today."
-        )
+        pulse_info += " Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng."
+    lines.append(pulse_info)
+
+    return "<br><br>".join(lines)
 
 
 def load_watchlist_config(out_dir):

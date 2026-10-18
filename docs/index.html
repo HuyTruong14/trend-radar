@@ -227,6 +227,27 @@
       color: var(--fg);
     }
 
+    .workflow-hub-btn {
+      padding: 6px 12px;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(99, 102, 241, 0.15));
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      border-radius: var(--radius-full);
+      color: #38bdf8;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition-fast);
+    }
+    .workflow-hub-btn:hover {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(99, 102, 241, 0.25));
+      border-color: #38bdf8;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+    }
+
     /* Fallback Warning Banner */
     .fallback-banner {
       display: none;
@@ -935,6 +956,9 @@
           <span class="sync-indicator"></span>
           <span id="syncText">Syncing...</span>
         </div>
+        <a href="workflow.html" class="workflow-hub-btn" title="Mở Workflow Hub & Telemetry Monitor">
+          <span>⚡ Workflow Hub</span>
+        </a>
         <button class="theme-toggle-btn" id="themeToggle" title="Toggle theme">
           <span id="themeIcon">☀️ Light</span>
         </button>

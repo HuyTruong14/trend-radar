@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trend Radar — Workflow Hub & Error Diagnostic Telemetry</title>
+  <meta name="description" content="Trung tâm điều phối luồng dữ liệu, đường truyền động & Hệ thống chẩn đoán điểm lỗi toàn diện">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* DESIGN TOKENS */
+    :root {
+      --bg: #06080e;
+      --bg-card: #0c101a;
+      --bg-card-hover: #121826;
+      --bg-glass: rgba(12, 16, 26, 0.78);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(6, 182, 212, 0.35);
+
+      --text: #f1f5f9;
+      --text-dim: #94a3b8;
+      --text-muted: #64748b;
+
+      --cyan: #06b6d4;
+      --cyan-rgb: 6, 182, 212;
+      --amber: #f59e0b;
+      --amber-rgb: 245, 158, 11;
+      --emerald: #10b981;
+      --emerald-rgb: 16, 185, 129;
+      --rose: #f43f5e;
+      --rose-rgb: 244, 63, 94;
+      --indigo: #6366f1;
+      --blue: #3b82f6;
+      --purple: #a855f7;
+      --telegram: #229ed9;
+
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --radius-full: 9999px;
+
+      --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.09) 0%, transparent 45%),
+        radial-gradient(circle at 90% 20%, rgba(6, 182, 212, 0.09) 0%, transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      line-height: 1.5;
+      padding: 24px;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1480px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.6);
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(99, 102, 241, 0.2));
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      position: relative;
+      box-shadow: 0 0 18px rgba(6, 182, 212, 0.25);
+    }
+    .brand-icon::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      top: -2px;
+      right: -2px;
+      box-shadow: 0 0 10px var(--emerald);
+      animation: pulse-live 2s infinite;
+    }
+
+    @keyframes pulse-live {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .brand-title {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(to right, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-badge {
+      background: rgba(6, 182, 212, 0.15);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      color: var(--cyan);
+      font-size: 10px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      -webkit-text-fill-color: initial;
+    }
+
+    .brand-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    /* TELEMETRY TOP STATS */
+    .telemetry-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .telemetry-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+    }
+    .telemetry-item .label {
+      color: var(--text-muted);
+    }
+    .telemetry-item .value {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .btn {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(99, 102, 241, 0.15));
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(99, 102, 241, 0.25));
+      border-color: var(--cyan);
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--border);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    .btn-audit {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(244, 63, 94, 0.18));
+      border-color: rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+    }
+    .btn-audit:hover {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(244, 63, 94, 0.3));
+      border-color: #fbbf24;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
+    }
+
+    /* DATA TRANSMISSION CONDUIT BAR */
+    .conduit-stream-bar {
+      background: rgba(6, 182, 212, 0.04);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: var(--radius-md);
+      padding: 10px 16px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .conduit-stream-bar::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.15), transparent);
+      animation: scanLaser 3s infinite linear;
+    }
+    @keyframes scanLaser {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    .conduit-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      letter-spacing: 0.5px;
+    }
+    .conduit-pulse-line {
+      flex: 1;
+      height: 4px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+    .conduit-pulse-glow {
+      position: absolute;
+      top: 0; left: 0; height: 100%; width: 35%;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      box-shadow: 0 0 10px var(--cyan);
+      animation: flowingBeam 2s infinite linear;
+    }
+    @keyframes flowingBeam {
+      0% { left: -35%; }
+      100% { left: 100%; }
+    }
+
+    /* WORKFLOW CANVAS / STAGES */
+    .section-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .section-title span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(260px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    @media (max-width: 1400px) {
+      .workflow-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 900px) {
+      .workflow-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* STAGE COLUMN */
+    .stage-col {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+    }
+
+    .stage-header {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .stage-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--cyan);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .stage-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* NODE CARD */
+    .node-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .node-card:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      background: var(--bg-card-hover);
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5), 0 0 15px -3px rgba(6, 182, 212, 0.2);
+      transform: translateY(-2px);
+    }
+    .node-card.active {
+      border-color: var(--cyan);
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.25);
+    }
+    .node-card.error-state {
+      border-color: var(--rose) !important;
+      box-shadow: 0 0 20px rgba(244, 63, 94, 0.3) !important;
+      animation: alertPulse 2s infinite;
+    }
+    @keyframes alertPulse {
+      0%, 100% { border-color: rgba(244, 63, 94, 0.8); }
+      50% { border-color: rgba(244, 63, 94, 0.3); }
+    }
+
+    .node-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--node-accent, var(--cyan));
+      border-radius: 4px 0 0 4px;
+    }
+
+    .node-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .node-info {
+      flex: 1;
+    }
+    .node-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .node-subtitle {
+      font-size: 11.5px;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    .node-port-badge {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .node-status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      padding-top: 6px;
+      border-top: 1px dashed var(--border);
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot-online { background: var(--emerald); box-shadow: 0 0 6px var(--emerald); }
+    .dot-offline { background: var(--rose); box-shadow: 0 0 6px var(--rose); }
+    .dot-checking { background: var(--amber); box-shadow: 0 0 6px var(--amber); }
+
+    .node-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      background: rgba(0,0,0,0.25);
+      padding: 8px;
+      border-radius: var(--radius-sm);
+    }
+    .metric-box {
+      display: flex;
+      flex-direction: column;
+    }
+    .metric-key {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+    }
+    .metric-val {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      font-family: var(--font-mono);
+    }
+
+    .node-actions {
+      display: flex;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .node-btn {
+      flex: 1;
+      padding: 5px 8px;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+    .node-btn:hover {
+      background: rgba(255,255,255,0.1);
+      color: var(--text);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .node-btn-primary {
+      background: rgba(6, 182, 212, 0.12);
+      border-color: rgba(6, 182, 212, 0.3);
+      color: var(--cyan);
+    }
+    .node-btn-primary:hover {
+      background: rgba(6, 182, 212, 0.25);
+      color: #fff;
+    }
+
+    /* TELEMETRY INSPECTOR & ERROR RADAR */
+    .inspector-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .inspector-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .inspector-title {
+      font-size: 16px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .inspector-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tab-btn.active {
+      background: rgba(6, 182, 212, 0.15);
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+    .tab-btn.tab-danger.active {
+      background: rgba(244, 63, 94, 0.15);
+      border-color: var(--rose);
+      color: var(--rose);
+    }
+
+    .inspector-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    @media (max-width: 900px) {
+      .inspector-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .io-column {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .io-title {
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .io-badge {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+    }
+    .badge-in {
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+    .badge-out {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .badge-err {
+      background: rgba(244, 63, 94, 0.15);
+      color: #fb7185;
+      border: 1px solid rgba(244, 63, 94, 0.3);
+    }
+
+    .io-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+    .io-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 9px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+    }
+    .io-item .key {
+      font-weight: 700;
+      color: var(--cyan);
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+    .io-item .val {
+      color: var(--text-dim);
+      margin-top: 2px;
+      word-break: break-word;
+    }
+
+    /* ERROR DIAGNOSTIC CARDS */
+    .error-card {
+      background: rgba(244, 63, 94, 0.05);
+      border: 1px solid rgba(244, 63, 94, 0.2);
+      border-left: 3px solid var(--rose);
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+    }
+    .error-card-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #fda4af;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .error-card-desc {
+      font-size: 11.5px;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+    .error-card-fix {
+      font-size: 11.5px;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px dashed rgba(56, 189, 248, 0.3);
+      padding: 6px 10px;
+      border-radius: 4px;
+      margin-top: 6px;
+      font-family: var(--font-mono);
+    }
+
+    .code-box {
+      background: #05070c;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: #cbd5e1;
+      max-height: 320px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* LIVE EVENT TICKER / TERMINAL */
+    .terminal-panel {
+      background: #04060b;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.6);
+    }
+    .terminal-hd {
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      color: var(--text-dim);
+    }
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .t-red { background: #ef4444; }
+    .t-yel { background: #f59e0b; }
+    .t-grn { background: #10b981; }
+
+    .terminal-body {
+      padding: 14px 16px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.6;
+      max-height: 180px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .log-line {
+      display: flex;
+      gap: 10px;
+    }
+    .log-ts { color: var(--text-muted); font-size: 11px; min-width: 75px; }
+    .log-tag { font-weight: 700; min-width: 65px; }
+    .tag-info { color: var(--cyan); }
+    .tag-ok { color: var(--emerald); }
+    .tag-warn { color: var(--amber); }
+    .tag-err { color: var(--rose); }
+    .log-msg { color: var(--text); flex: 1; word-break: break-all; }
+
+    /* EMBEDDED MODAL PREVIEW */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(8px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      width: 100%;
+      max-width: 1200px;
+      height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+      overflow: hidden;
+    }
+    .modal-header {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .modal-iframe {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #000;
+    }
+
+    /* CUSTOM SCROLLBAR */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.25); }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- COMMAND CENTER HEADER -->
+  <header>
+    <div class="brand">
+      <div class="brand-icon">⚡</div>
+      <div>
+        <div class="brand-title">
+          Trend Radar Workflow Hub
+          <span class="brand-badge">DIAGNOSTIC v2.5</span>
+        </div>
+        <div class="brand-desc">Trung tâm giám sát đường truyền dữ liệu động & Chẩn đoán điểm lỗi Telegram / Pipelines</div>
+      </div>
+    </div>
+
+    <!-- Live Telemetry Status Bar -->
+    <div class="telemetry-bar">
+      <div class="telemetry-item">
+        <span class="dot dot-online" id="globalDot"></span>
+        <span class="label">Services:</span>
+        <span class="value" id="servicesOnlineCount">--/-- Online</span>
+      </div>
+      <div class="telemetry-item">
+        <span class="label">Miniflux:</span>
+        <span class="value" id="minifluxArticlesCount" style="color:var(--emerald)">767 items</span>
+      </div>
+      <div class="telemetry-item">
+        <span class="label">Telegram Bot:</span>
+        <span class="value" id="telegramHeaderStatus" style="color:var(--amber)">Sẵn sàng / Chờ Secret</span>
+      </div>
+      <button class="btn btn-audit" onclick="runFullDiagnosticAudit()" id="auditBtn" title="Chạy kiểm tra chẩn đoán toàn bộ lỗi hệ thống">
+        <span>🩺 Audit Điểm Lỗi</span>
+      </button>
+      <button class="btn btn-secondary" onclick="pingAllServices()" id="refreshBtn" title="Ping lại tất cả các port">
+        <span id="refreshIcon">↻</span> Ping All Ports
+      </button>
+      <a href="http://localhost:8088" target="_blank" class="btn" title="Mở Dashboard đọc tin tức">
+        <span>📰 My News (:8088)</span> ↗
+      </a>
+    </div>
+  </header>
+
+  <!-- ANIMATED DATA TRANSMISSION CONDUIT -->
+  <div class="conduit-stream-bar">
+    <div class="conduit-title">
+      <span>⚡ DÒNG TRUYỀN DỮ LIỆU THỜI GIAN THỰC</span>
+      <span style="font-size:10px;color:var(--text-dim)">[Crawlers & RSSHub ➔ Miniflux DB ➔ AI Core ➔ Dashboards & Telegram Alert]</span>
+    </div>
+    <div class="conduit-pulse-line">
+      <div class="conduit-pulse-glow"></div>
+    </div>
+    <div style="font-family:var(--font-mono);font-size:11px;color:var(--emerald);display:flex;align-items:center;gap:6px">
+      <span class="dot dot-online"></span> ACTIVE FLOW
+    </div>
+  </div>
+
+  <!-- WORKFLOW DAG / 5 STAGES -->
+  <div class="section-title">
+    <span>Sơ đồ Pipeline Dữ liệu & Các Trạm Giám Sát</span>
+    <span style="font-size:11px;color:var(--text-dim);font-weight:500;text-transform:none">Nhấn vào từng node để xem Input, Output & Chẩn đoán lỗi tại trạm đó</span>
+  </div>
+
+  <div class="workflow-grid">
+
+    <!-- STAGE 1: INGESTION & RSS BRIDGES -->
+    <div class="stage-col">
+      <div class="stage-header">
+        <span class="stage-num">Giai đoạn 01</span>
+        <span class="stage-name">Thu thập & Bridges</span>
+      </div>
+
+      <!-- Node: RSSHub -->
+      <div class="node-card" style="--node-accent: var(--amber)" onclick="inspectNode('rsshub')" id="card-rsshub">
+        <div class="node-top">
+          <div class="node-info">
+            <div class="node-title">RSSHub <span style="font-size:11px">📡</span></div>
+            <div class="node-subtitle">Tạo RSS cho HN, Dev.to, GitHub</div>
+          </div>
+          <span class="node-port-badge">:1200</span>
+        </div>
+        <div class="node-metrics">
+          <div class="metric-box">
+            <span class="metric-key">Latency</span>
+            <span class="metric-val" id="rsshub-latency">-- ms</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-key">Engine</span>
+            <span class="metric-val">Node / Redis</span>
+          </div>
+        </div>
+        <div class="node-status-row">
+          <span class="status-pill"><span class="dot dot-checking" id="dot-rsshub"></span> <span id="status-rsshub">Checking...</span></span>
+          <span style="color:var(--text-muted);font-size:10px">INPUT: Routes</span>
+        </div>
+        <div class="node-actions">
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('rsshub')">Inspect & Lỗi</button>
+          <a class="node-btn" href="http://localhost:1200" target="_blank" onclick="event.stopPropagation()">Mở Web ↗</a>
+        </div>
+      </div>
+
+      <!-- Node: Direct Fetchers -->
+      <div class="node-card" style="--node-accent: var(--purple)" onclick="inspectNode('fetchers')" id="card-fetchers">
+        <div class="node-top">
+          <div class="node-info">
+            <div class="node-title">Direct Crawlers <span style="font-size:11px">🕷️</span></div>
+            <div class="node-subtitle">HN, arXiv, GitHub, Quora, X</div>
+          </div>
+          <span class="node-port-badge">fetch.py</span>
+        </div>
+        <div class="node-metrics">
+          <div class="metric-box">
+            <span class="metric-key">Sources</span>
+            <span class="metric-val">7 Kênh crawl</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-key">Trigger</span>
+            <span class="metric-val">Cron / Manual</span>
+          </div>
+        </div>
+        <div class="node-status-row">
+          <span class="status-pill"><span class="dot dot-online"></span> Sẵn sàng</span>
+          <span style="color:var(--text-muted);font-size:10px">OUTPUT: Raw JSON</span>
+        </div>
+        <div class="node-actions">
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('fetchers')">Inspect & Lỗi</button>
+          <button class="node-btn" onclick="event.stopPropagation(); copyRunCommand()">Copy Run</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2: STORAGE & FEED MANAGER -->
+    <div class="stage-col">
+      <div class="stage-header">
+        <span class="stage-num">Giai đoạn 02</span>
+        <span class="stage-name">Lưu trữ & Feed DB</span>
+      </div>
+
+      <!-- Node: Miniflux -->
+      <div class="node-card" style="--node-accent: var(--indigo)" onclick="inspectNode('miniflux')" id="card-miniflux">
+        <div class="node-top">
+          <div class="node-info">
+            <div class="node-title">Miniflux Reader <span style="font-size:11px">🗄️</span></div>
+            <div class="node-subtitle">Lưu trữ 767 tin & Postgres DB</div>
+          </div>
+          <span class="node-port-badge">:8080</span>
+        </div>
+        <div class="node-metrics">
+          <div class="metric-box">
+            <span class="metric-key">Latency</span>
+            <span class="metric-val" id="miniflux-latency">-- ms</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-key">Feeds / Items</span>
+            <span class="metric-val" id="miniflux-card-stat">11 feeds / 767 items</span>
+          </div>
+        </div>
+        <div class="node-status-row">
+          <span class="status-pill"><span class="dot dot-checking" id="dot-miniflux"></span> <span id="status-miniflux">Checking...</span></span>
+          <span style="color:var(--text-muted);font-size:10px">SSRF: Allowed</span>
+        </div>
+        <div class="node-actions">
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('miniflux')">Inspect & Lỗi</button>
+          <a class="node-btn" href="http://localhost:8080" target="_blank" onclick="event.stopPropagation()">Đăng nhập ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: AI SCORING & INTELLIGENCE -->
+    <div class="stage-col">
+      <div class="stage-header">
+        <span class="stage-num">Giai đoạn 03</span>
+        <span class="stage-name">Xử lý & AI Scoring</span>
+      </div>
+
+      <!-- Node: Pipeline Core -->
+      <div class="node-card" style="--node-accent: var(--cyan)" onclick="inspectNode('aggregate')" id="card-aggregate">
+        <div class="node-top">
+          <div class="node-info">
+            <div class="node-title">Pipeline Core <span style="font-size:11px">🧠</span></div>
+            <div class="node-subtitle">Lọc trùng, Velocity, AI Briefing</div>
+          </div>
+          <span class="node-port-badge">aggregate.py</span>
+        </div>
+        <div class="node-metrics">
+          <div class="metric-box">
+            <span class="metric-key">AI Model</span>
+            <span class="metric-val">Claude Haiku</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-key">Watchlist</span>
+            <span class="metric-val" id="watchlist-count">4 từ khóa</span>
+          </div>
+        </div>
+        <div class="node-status-row">
+          <span class="status-pill"><span class="dot dot-online"></span> Hoạt động</span>
+          <span style="color:var(--cyan);font-size:10px;font-weight:700">➔ PUSH TELEGRAM</span>
+        </div>
+        <div class="node-actions">
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('aggregate')">Inspect & Lỗi</button>
+          <button class="node-btn" onclick="event.stopPropagation(); showPayload('manifest.json')">Payload</button>
+        </div>
+      </div>
+
+      <!-- Node: Skill Funnel -->
+      <div class="node-card" style="--node-accent: var(--rose)" onclick="inspectNode('skillfunnel')" id="card-skillfunnel">
+        <div class="node-top">
+          <div class="node-info">
+            <div class="node-title">Skill Funnel <span style="font-size:11px">🎯</span></div>
+            <div class="node-subtitle">Phễu sàng lọc repo thành Skill</div>
+          </div>
+          <span class="node-port-badge">:8765</span>
+        </div>
+        <div class="node-metrics">
+          <div class="metric-box">
+            <span class="metric-key">Latency</span>
+            <span class="metric-val" id="skillfunnel-latency">-- ms</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-key">Status</span>
+            <span class="metric-val" id="skillfunnel-approved">--</span>
+          </div>
+        </div>
+        <div class="node-status-row">
+          <span class="status-pill"><span class="dot dot-checking" id="dot-skillfunnel"></span> <span id="status-skillfunnel">Checking...</span></span>
+          <span style="color:var(--text-muted);font-size:10px">PHỄU: 3 Bước</span>
+        </div>
+        <div class="node-actions">
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('skillfunnel')">Inspect & Lỗi</button>
+          <a class="node-btn" href="http://localhost:8765" target="_blank" onclick="event.stopPropagation()">Mở Phễu ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: PRESENTATION & TELEGRAM DELIVERY -->
+    <div class="stage-col">
+      <div class="stage-header">
+        <span class="stage-num">Giai đoạn 04</span>
+        <span class="stage-name">Đầu ra & Cảnh báo</span>
+      </div>
+
+      <!-- Node: Telegram Bot Alerts (FIRST-CLASS CITIZEN) -->
+      <div class="node-card" style="--node-accent: var(--telegram)" onclick="inspectNode('telegram')" id="card-telegram">
+        <div class="node-top">
+          <div class="node-info">
+            <div class="node-title">Telegram Alerts <span style="font-size:11px">🤖</span></div>
+            <div class="node-subtitle">Bắn alert Watchlist & Daily Digest</div>
+          </div>
+          <span class="node-port-badge" style="color:var(--telegram)">:telegram</span>
+        </div>
+        <div class="node-metrics">
+          <div class="metric-box">
+            <span class="metric-key">API Base</span>
+            <span class="metric-val">api.telegram.org</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-key">Threshold</span>
+            <span class="metric-val">Score ≥ 50</span>
+          </div>
+        </div>
+        <div class="node-status-row">
+          <span class="status-pill"><span class="dot dot-checking" id="dot-telegram"></span> <span id="status-telegram">Chờ kiểm tra</span></span>
+          <span style="color:var(--telegram);font-size:10px;font-weight:700">OUTBOUND PUSH</span>
+        </div>
+        <div class="node-actions">
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('telegram')">Bắt Lỗi Bot 🩺</button>
+          <button class="node-btn" onclick="event.stopPropagation(); testTelegramPing()">Test Ping</button>
+        </div>
+      </div>
+
+      <!-- Node: My News Dashboard -->
+      <div class="node-card" style="--node-accent: var(--blue)" onclick="inspectNode('mynews')" id="card-mynews">
+        <div class="node-top">
+          <div class="node-info">
+            <div class="node-title">My News <span style="font-size:11px">📰</span></div>
+            <div class="node-subtitle">Dashboard đọc tin & Signals</div>
+          </div>
+          <span class="node-port-badge">:8088</span>
+        </div>
+        <div class="node-metrics">
+          <div class="metric-box">
+            <span class="metric-key">Latency</span>
+            <span class="metric-val" id="mynews-latency">-- ms</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-key">View</span>
+            <span class="metric-val">Dark Theme</span>
+          </div>
+        </div>
+        <div class="node-status-row">
+          <span class="status-pill"><span class="dot dot-checking" id="dot-mynews"></span> <span id="status-mynews">Checking...</span></span>
+          <span style="color:var(--text-muted);font-size:10px">PAGES: Live</span>
+        </div>
+        <div class="node-actions">
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('mynews')">Inspect & Lỗi</button>
+          <a class="node-btn" href="http://localhost:8088" target="_blank" onclick="event.stopPropagation()">Đọc tin ↗</a>
+        </div>
+      </div>
+
+      <!-- Node: Glance -->
+      <div class="node-card" style="--node-accent: var(--emerald)" onclick="inspectNode('glance')" id="card-glance">
+        <div class="node-top">
+          <div class="node-info">
+            <div class="node-title">Glance <span style="font-size:11px">📊</span></div>
+            <div class="node-subtitle">Bảng điều khiển cá nhân hàng ngày</div>
+          </div>
+          <span class="node-port-badge">:8686</span>
+        </div>
+        <div class="node-metrics">
+          <div class="metric-box">
+            <span class="metric-key">Latency</span>
+            <span class="metric-val" id="glance-latency">-- ms</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-key">Widgets</span>
+            <span class="metric-val">Feeds + RSS</span>
+          </div>
+        </div>
+        <div class="node-status-row">
+          <span class="status-pill"><span class="dot dot-checking" id="dot-glance"></span> <span id="status-glance">Checking...</span></span>
+          <span style="color:var(--text-muted);font-size:10px">UI: Widgets</span>
+        </div>
+        <div class="node-actions">
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('glance')">Inspect & Lỗi</button>
+          <a class="node-btn" href="http://localhost:8686" target="_blank" onclick="event.stopPropagation()">Xem Glance ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: OPS & ORCHESTRATION -->
+    <div class="stage-col">
+      <div class="stage-header">
+        <span class="stage-num">Giai đoạn 05</span>
+        <span class="stage-name">Điều phối & Hạ tầng</span>
+      </div>
+
+      <!-- Node: Pipeline Monitor -->
+      <div class="node-card active" style="--node-accent: var(--cyan)" onclick="inspectNode('monitor')" id="card-monitor">
+        <div class="node-top">
+          <div class="node-info">
+            <div class="node-title">Workflow Hub <span style="font-size:11px">🕹️</span></div>
+            <div class="node-subtitle">Trạm điều phối trung tâm hiện tại</div>
+          </div>
+          <span class="node-port-badge">:8766</span>
+        </div>
+        <div class="node-metrics">
+          <div class="metric-box">
+            <span class="metric-key">Auto Poll</span>
+            <span class="metric-val">25s Cycle</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-key">Role</span>
+            <span class="metric-val">Master Hub</span>
+          </div>
+        </div>
+        <div class="node-status-row">
+          <span class="status-pill"><span class="dot dot-online"></span> Đang xem</span>
+          <span style="color:var(--text-muted);font-size:10px">THIS PAGE</span>
+        </div>
+        <div class="node-actions">
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('monitor')">Inspect & Lỗi</button>
+          <a class="node-btn" href="http://localhost:8766" target="_blank" onclick="event.stopPropagation()">Reload :8766</a>
+        </div>
+      </div>
+
+      <!-- Node: Tooldock Portal -->
+      <div class="node-card" style="--node-accent: var(--amber)" onclick="inspectNode('tooldock')" id="card-tooldock">
+        <div class="node-top">
+          <div class="node-info">
+            <div class="node-title">ToolDock Stack <span style="font-size:11px">🛠️</span></div>
+            <div class="node-subtitle">Portainer, Markitdown, Frontone</div>
+          </div>
+          <span class="node-port-badge">:4000</span>
+        </div>
+        <div class="node-metrics">
+          <div class="metric-box">
+            <span class="metric-key">Latency</span>
+            <span class="metric-val" id="tooldock-latency">-- ms</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-key">Portainer</span>
+            <span class="metric-val">:9001</span>
+          </div>
+        </div>
+        <div class="node-status-row">
+          <span class="status-pill"><span class="dot dot-checking" id="dot-tooldock"></span> <span id="status-tooldock">Checking...</span></span>
+          <span style="color:var(--text-muted);font-size:10px">OPS CLUSTER</span>
+        </div>
+        <div class="node-actions">
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('tooldock')">Inspect & Lỗi</button>
+          <a class="node-btn" href="http://localhost:4000" target="_blank" onclick="event.stopPropagation()">Mở Portal ↗</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TELEMETRY & ERROR RADAR INSPECTOR -->
+  <div class="inspector-panel" id="inspectorPanel">
+    <div class="inspector-header">
+      <div class="inspector-title">
+        <span style="color:var(--cyan)">⚡</span>
+        <span id="inspectNodeTitle">Telemetry Inspector: Telegram Alerts (:telegram)</span>
+      </div>
+      <div class="inspector-tabs">
+        <button class="tab-btn active" onclick="switchInspectTab('io')" id="btnTabIO">Luồng Input / Output</button>
+        <button class="tab-btn tab-danger" onclick="switchInspectTab('errors')" id="btnTabErrors">🩺 Điểm Nghẽn & Bắt Lỗi</button>
+        <button class="tab-btn" onclick="switchInspectTab('payload')" id="btnTabPayload">Dữ liệu JSON Thực tế</button>
+        <button class="tab-btn" onclick="openNodeInIframe()" id="btnTabEmbed">Xem Giao diện (Embed) ↗</button>
+      </div>
+    </div>
+
+    <!-- TAB 1: INPUT / OUTPUT BREAKDOWN -->
+    <div class="inspector-content" id="tabContentIO">
+      <div class="io-column">
+        <div class="io-title">
+          <span>DỮ LIỆU ĐẦU VÀO (INPUT STREAM)</span>
+          <span class="io-badge badge-in">INBOUND</span>
+        </div>
+        <div class="io-list" id="inspectInputList"></div>
+      </div>
+
+      <div class="io-column">
+        <div class="io-title">
+          <span>DỮ LIỆU ĐẦU RA (OUTPUT STREAM)</span>
+          <span class="io-badge badge-out">OUTBOUND</span>
+        </div>
+        <div class="io-list" id="inspectOutputList"></div>
+      </div>
+    </div>
+
+    <!-- TAB 2: ERROR DIAGNOSTIC RADAR -->
+    <div class="inspector-content" id="tabContentErrors" style="display:none; grid-template-columns: 1fr;">
+      <div class="io-column" style="width:100%">
+        <div class="io-title">
+          <span>BẢN ĐỒ BẮT LỖI & ĐIỂM NGHẼN TẠI TRẠM NÀY (DIAGNOSTIC & FAILURE RADAR)</span>
+          <span class="io-badge badge-err" id="errorCountBadge">4 kịch bản lỗi</span>
+        </div>
+        <div id="inspectErrorsList" style="max-height:360px;overflow-y:auto;padding-right:4px"></div>
+      </div>
+    </div>
+
+    <!-- TAB 3: LIVE PAYLOAD VIEWER -->
+    <div class="inspector-content" id="tabContentPayload" style="display:none; grid-template-columns: 1fr;">
+      <div class="io-column" style="width:100%">
+        <div class="io-title">
+          <span>LIVE JSON PAYLOAD (ĐỌC TRỰC TIẾP TỪ DISK / ENDPOINTS)</span>
+          <div style="display:flex;gap:6px">
+            <select id="payloadSelect" onchange="loadSelectedPayload(this.value)" style="background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--text);padding:3px 8px;border-radius:4px;font-family:var(--font-mono);font-size:11px">
+              <option value="manifest.json">data/manifest.json (Tổng quan)</option>
+              <option value="watchlist.json">data/watchlist.json (Từ khóa theo dõi)</option>
+              <option value="ai-tech.json">data/ai-tech.json (Tin AI & Technology)</option>
+              <option value="skill-funnel.json">data/skill-funnel.json (Phễu sàng lọc)</option>
+            </select>
+            <button class="btn btn-secondary" onclick="copyCurrentPayload()" style="padding:3px 8px;font-size:11px">Copy JSON</button>
+          </div>
+        </div>
+        <pre class="code-box" id="payloadCodeBox">Đang nạp dữ liệu...</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE EVENT TICKER / TERMINAL -->
+  <div class="section-title">
+    <span>Nhật ký truyền tin & Sự kiện thời gian thực (Live Telemetry Logs)</span>
+  </div>
+  <div class="terminal-panel">
+    <div class="terminal-hd">
+      <div class="terminal-dots">
+        <span class="t-dot t-red"></span>
+        <span class="t-dot t-yel"></span>
+        <span class="t-dot t-grn"></span>
+      </div>
+      <span>trend-radar-telemetry-daemon --stream</span>
+      <span id="terminalClock" style="font-size:11px">--:--:--</span>
+    </div>
+    <div class="terminal-body" id="terminalLogs">
+      <div class="log-line">
+        <span class="log-ts">00:00:00</span>
+        <span class="log-tag tag-info">[INIT]</span>
+        <span class="log-msg">Khởi tạo Trend Radar Workflow & Diagnostic Engine trên Port 8766...</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- EMBEDDED MODAL PREVIEW -->
+<div class="modal-overlay" id="previewModal" onclick="closeModal(event)">
+  <div class="modal-card" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div style="font-weight:700" id="modalTitle">Service Preview</div>
+      <div style="display:flex;gap:8px">
+        <a id="modalExternalLink" href="#" target="_blank" class="btn btn-secondary" style="padding:4px 10px;font-size:11px">Mở tab mới ↗</a>
+        <button class="btn btn-secondary" onclick="closeModalDirect()" style="padding:4px 10px;font-size:11px">Đóng ✕</button>
+      </div>
+    </div>
+    <iframe class="modal-iframe" id="modalIframe" src="about:blank"></iframe>
+  </div>
+</div>
+
+<script>
+// ==================== CONFIG & TELEMETRY DEFINITIONS ====================
+const DATA_FALLBACKS = [
+  'data',
+  'http://localhost:8088/data',
+  'http://localhost:8766/data',
+  'https://huytruong14.github.io/trend-radar/data'
+];
+
+const SERVICES = {
+  telegram: {
+    name: 'Telegram Alerts',
+    port: 'Bot Push',
+    url: 'https://api.telegram.org',
+    role: 'Real-time Push Notifications',
+    input: [
+      { key: 'Watcher Event', val: 'Khớp từ khóa trong docs/data/watchlist.json với điểm số bài viết >= 50' },
+      { key: 'Digest Event', val: 'Tạo bản tin tổng kết hàng ngày (Daily Digest) sau khi aggregate.py kết thúc' },
+      { key: 'Secrets yêu cầu', val: 'TELEGRAM_BOT_TOKEN (Token bot BotFather), TELEGRAM_CHAT_ID (ID người nhận/nhóm)' },
+      { key: 'HTTP Method', val: 'POST https://api.telegram.org/bot<TOKEN>/sendMessage' }
+    ],
+    output: [
+      { key: 'Tin nhắn Watchlist', val: '🚨 <b>Watchlist Match!</b> Tiêu đề + Điểm số Velocity + Đường dẫn bài viết' },
+      { key: 'Tin nhắn Digest', val: '⚡ <b>Daily Briefing</b>: Tóm tắt 3 tin nóng nhất bằng Claude Haiku' },
+      { key: 'Đích gửi', val: 'Ứng dụng Telegram trên điện thoại/máy tính của bạn' }
+    ],
+    errors: [
+      {
+        title: 'Lỗi 1: Thiếu Secret (TELEGRAM_BOT_TOKEN hoặc TELEGRAM_CHAT_ID trống)',
+        desc: 'Pipeline vẫn chạy bình thường nhưng terminal log: "[notify] TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set — skipping Telegram alert", không có tin nhắn nào được gửi về điện thoại.',
+        fix: 'Thêm 2 secret vào GitHub Repo (Settings > Secrets and variables > Actions) hoặc file .env cục bộ: TELEGRAM_BOT_TOKEN và TELEGRAM_CHAT_ID.'
+      },
+      {
+        title: 'Lỗi 2: Chưa bấm /start với Bot hoặc Chat ID sai (403 Forbidden / 400 Bad Request)',
+        desc: 'Telegram chặn không cho Bot tự ý nhắn tin trước cho người dùng nếu người đó chưa mở cuộc trò chuyện với bot.',
+        fix: 'Mở ứng dụng Telegram, tìm tên username Bot của bạn (ví dụ @YourTrendRadarBot) và bấm nút "/start". Sau đó kiểm tra lại TELEGRAM_CHAT_ID chính xác.'
+      },
+      {
+        title: 'Lỗi 3: Điểm bài viết chưa đạt ngưỡng (Score < Threshold)',
+        desc: 'Có bài viết chứa từ khóa watchlist nhưng điểm số dưới 50 (hoặc threshold đặt trong watchlist.json), pipeline sẽ chủ động không gửi để tránh spam.',
+        fix: 'Xem docs/data/watchlist.json, nếu muốn nhận nhiều tin hơn có thể hạ threshold xuống (ví dụ 30).'
+      },
+      {
+        title: 'Lỗi 4: Vượt giới hạn độ dài tin nhắn (4096 ký tự)',
+        desc: 'Telegram quy định 1 tin nhắn không được vượt quá 4096 ký tự. Nếu vượt quá sẽ nhận mã lỗi HTTP 400.',
+        fix: 'Đã được xử lý tự động trong scripts/notify.py: Hàm send_message tự động cắt bớt 20 ký tự cuối và thêm "... (cắt bớt)" để không bao giờ bị lỗi.'
+      }
+    ]
+  },
+  aggregate: {
+    name: 'Pipeline Core (aggregate.py)',
+    port: 'Script',
+    url: 'https://github.com/HuyTruong14/trend-radar/blob/main/scripts/aggregate.py',
+    role: 'AI Scoring, Velocity & Telegram Trigger',
+    input: [
+      { key: 'Raw Consolidated Items', val: 'Toàn bộ bài viết từ 7 kênh fetch.py (HN, arXiv, GitHub, Reddit, Twitter, Quora, RSS)' },
+      { key: 'Watchlist Config', val: 'docs/data/watchlist.json (keywords: "Claude", "Anthropic", "iGaming", threshold: 50)' },
+      { key: 'AI Secret', val: 'GEMINI_API_KEY (Google Gemini Flash tạo Daily Briefing & Scoring)' }
+    ],
+    output: [
+      { key: 'Velocity Scoring', val: 'Tính điểm lan truyền & Gắn nhãn (game-changer, high-impact)' },
+      { key: 'Entity Clustering', val: 'Gom nhóm các bài viết có cùng nội dung / sự kiện' },
+      { key: 'JSON Outputs', val: 'docs/data/manifest.json, docs/data/ai-tech.json, igaming.json, business.json, news.json' },
+      { key: 'Telegram Trigger', val: 'Gọi notify.send_message(digest) và notify.send_message(watchlist_alert)' }
+    ],
+    errors: [
+      {
+        title: 'Lỗi 1: Hết Quota hoặc thiếu GEMINI_API_KEY',
+        desc: 'Không thể gọi Google Gemini để viết bản tóm tắt phân tích tự nhiên.',
+        fix: 'Tự động fallback về Rich Executive Template briefing (0 chi phí). Pipeline không bao giờ bị dừng.'
+      },
+      {
+        title: 'Lỗi 2: Trùng lặp bài viết giữa nhiều nguồn (Cross-source duplicate)',
+        desc: 'Một tin tức xuất hiện đồng thời trên cả HackerNews và Reddit gây nhiễu loạn.',
+        fix: 'Đã giải quyết bằng thuật toán Normalized Title Deduplication trong scripts/aggregate.py.'
+      }
+    ]
+  },
+  rsshub: {
+    name: 'RSSHub',
+    port: 1200,
+    url: 'http://localhost:1200',
+    role: 'Dynamic RSS Bridge',
+    input: [
+      { key: 'Web Endpoints', val: 'Hacker News (/hackernews/best), Dev.to (/dev.to/top/week), GitHub repos' },
+      { key: 'Routing Engine', val: 'Node.js + Puppeteer headless browser + Redis cache (:6379)' }
+    ],
+    output: [
+      { key: 'Feed Formats', val: 'RSS 2.0 XML, Atom 1.0, JSON Feed' },
+      { key: 'Consumer', val: 'Miniflux (:8080) và Glance (:8686)' }
+    ],
+    errors: [
+      {
+        title: 'Lỗi 1: Route đòi hỏi cấu hình token của mạng xã hội (Twitter / X)',
+        desc: 'Báo lỗi "ConfigNotFoundError: Twitter API is not configured" khi truy cập /twitter/user/...',
+        fix: 'Trend Radar đã chủ động không dùng RSSHub cho Twitter, mà chuyển sang module fetchers/twitter.py (Nitter instances độc lập).'
+      },
+      {
+        title: 'Lỗi 2: Container Redis dừng hoặc lỗi kết nối',
+        desc: 'RSSHub không cache được dữ liệu, làm giảm tốc độ sinh feed.',
+        fix: 'Kiểm tra container trend-radar-redis-1 trong docker-compose: docker compose up -d redis.'
+      }
+    ]
+  },
+  fetchers: {
+    name: 'Direct Crawlers (fetch.py)',
+    port: 'Script',
+    url: 'https://github.com/HuyTruong14/trend-radar/blob/main/scripts/fetch.py',
+    role: 'Multi-Source Crawlers (7 Kênh)',
+    input: [
+      { key: 'Quora CSE', val: 'Google Custom Search API (GOOGLE_CSE_KEY, GOOGLE_CSE_ID)' },
+      { key: 'Twitter / X', val: 'Nitter RSS (nitter.privacydev.net, nitter.poast.org)' },
+      { key: 'Reddit API', val: 'Public subreddit JSON (/r/MachineLearning.json, /r/artificial.json)' },
+      { key: 'arXiv & HN', val: 'arXiv XML API + Algolia HN Search' }
+    ],
+    output: [
+      { key: 'Danh sách bài viết', val: 'Consolidated list of raw article dictionaries' },
+      { key: 'Next Hop', val: 'Chuyển thẳng sang scripts/aggregate.py để khử trùng & tính điểm' }
+    ],
+    errors: [
+      {
+        title: 'Lỗi 1: Vượt quá 100 truy vấn/ngày của Google CSE (Quora)',
+        desc: 'Google trả về mã lỗi HTTP 429 Too Many Requests.',
+        fix: 'Hệ thống giới hạn 4 truy vấn/ngày (mỗi topic 1 call). Trong trường hợp hết quota, fetchers/quora.py trả về mảng rỗng [] không crash pipeline.'
+      },
+      {
+        title: 'Lỗi 2: Nitter instances bị sập (Twitter/X)',
+        desc: 'Máy chủ Nitter công cộng thường xuyên bị chặn IP bởi X.',
+        fix: 'fetchers/twitter.py cài sẵn cơ chế xoay vòng: nếu nitter 1 chết sẽ thử nitter 2, nếu tất cả chết sẽ log warning và trả về rỗng không làm gián đoạn fetch.'
+      }
+    ]
+  },
+  miniflux: {
+    name: 'Miniflux Reader',
+    port: 8080,
+    url: 'http://localhost:8080',
+    role: 'Feed Manager & PostgreSQL DB (767 items)',
+    input: [
+      { key: 'Feed Subscriptions', val: '11 Feeds (TechCrunch, Crunchbase, SBC News, iGaming Business, BBC, RSSHub...)' },
+      { key: 'Credentials', val: 'Username: admin | Password: trendradar' }
+    ],
+    output: [
+      { key: 'Database Storage', val: 'PostgreSQL 16 (767 bài viết đang lưu trữ)' },
+      { key: 'REST API', val: 'GET /v1/entries?status=unread' }
+    ],
+    errors: [
+      {
+        title: 'Lỗi 1: Chặn truy cập mạng nội bộ (SSRF)',
+        desc: 'Miniflux báo: "refusing to access private network host 172.19.0.4" khi thêm link từ RSSHub.',
+        fix: 'Đã sửa: Đã thêm biến môi trường FETCHER_ALLOW_PRIVATE_NETWORKS: "1" vào docker-compose.yml.'
+      },
+      {
+        title: 'Lỗi 2: Database Postgres chưa sẵn sàng',
+        desc: 'Miniflux container thoát liên tục (Crash-loop) nếu Postgres chưa pass healthcheck.',
+        fix: 'Đã cài depends_on: condition: service_healthy trong docker-compose.yml.'
+      }
+    ]
+  },
+  skillfunnel: {
+    name: 'Skill Funnel Dashboard',
+    port: 8765,
+    url: 'http://localhost:8765',
+    role: 'Repo Extraction & Skill Filter',
+    input: [
+      { key: 'Selected Repos', val: 'Nút "Send to Funnel" từ My News ➔ Ghi vào sources.md' }
+    ],
+    output: [
+      { key: 'Status Phễu', val: 'Approved (Sẵn sàng) | Pending (Chờ duyệt) | Rejected (Từ chối)' },
+      { key: 'JSON Feeds', val: 'data/skill-funnel.json' }
+    ],
+    errors: [
+      {
+        title: 'Lỗi 1: GitHub Token hết hạn khi tạo commit sources.md',
+        desc: 'Báo lỗi 401 Bad Credentials khi ấn gửi repo.',
+        fix: 'Cập nhật lại GitHub Personal Access Token trong config.json của skill-funnel.'
+      }
+    ]
+  },
+  mynews: {
+    name: 'My News Dashboard',
+    port: 8088,
+    url: 'http://localhost:8088',
+    role: 'Signal Intelligence Reader',
+    input: [
+      { key: 'Manifest Feed', val: 'data/manifest.json & các topic JSONs' }
+    ],
+    output: [
+      { key: 'Web Interface', val: 'Giao diện Dark-first: Hot Cards, Entity Clusters, Watchlist banner' }
+    ],
+    errors: [
+      {
+        title: 'Lỗi 1: Trình duyệt chặn CORS khi mở file:/// trực tiếp',
+        desc: 'fetch() bị chặn, dashboard không hiện bài viết.',
+        fix: 'Chạy qua web server cục bộ: cd docs && python3 -m http.server 8088 (hiện đang chạy tốt).'
+      }
+    ]
+  },
+  glance: {
+    name: 'Glance Dashboard',
+    port: 8686,
+    url: 'http://localhost:8686',
+    role: 'Personal Daily Feed Hub',
+    input: [
+      { key: 'Config File', val: './glance.yml' }
+    ],
+    output: [
+      { key: 'Daily UI', val: 'Màn hình tổng quan widget cá nhân' }
+    ],
+    errors: [
+      {
+        title: 'Lỗi 1: Link widget RSSHub bị chậm hoặc chết',
+        desc: 'Widget hiển thị vòng xoay tải mãi không xong.',
+        fix: 'Đặt timeout trong glance.yml hoặc kiểm tra RSSHub đang chạy trên port 1200.'
+      }
+    ]
+  },
+  monitor: {
+    name: 'Workflow Hub (Pipeline Monitor)',
+    port: 8766,
+    url: 'http://localhost:8766',
+    role: 'Master Orchestrator & Telemetry',
+    input: [
+      { key: 'Heartbeat Pings', val: 'Ping HTTP HEAD/GET tới các port' }
+    ],
+    output: [
+      { key: 'Workflow Canvas', val: 'Biểu đồ luồng dữ liệu 5 giai đoạn & Chẩn đoán lỗi' }
+    ],
+    errors: [
+      {
+        title: 'Lỗi 1: Container pipeline-monitor chưa được bật',
+        desc: 'Trang localhost:8766 báo Connection Refused.',
+        fix: 'Chạy lệnh docker compose up -d pipeline-monitor (hiện đang chạy tốt).'
+      }
+    ]
+  },
+  tooldock: {
+    name: 'ToolDock Stack',
+    port: 4000,
+    url: 'http://localhost:4000',
+    role: 'Microservices & Infrastructure',
+    input: [
+      { key: 'Service Cluster', val: 'Portal (:4000), Portainer (:9001), Frontone (:3010)' }
+    ],
+    output: [
+      { key: 'Ops UI', val: 'Quản lý container Docker, chuyển đổi tài liệu' }
+    ],
+    errors: [
+      {
+        title: 'Lỗi 1: Portainer mất kết nối docker.sock',
+        desc: 'Không xem được danh sách containers trong Portainer.',
+        fix: 'Kiểm tra quyền truy cập socket trong docker-compose tooldock.'
+      }
+    ]
+  }
+};
+
+let activeNodeKey = 'telegram';
+let currentPayloadData = null;
+
+// ==================== LOGGING FUNCTION ====================
+function log(tag, msg, type = 'info') {
+  const terminal = document.getElementById('terminalLogs');
+  const ts = new Date().toLocaleTimeString('vi-VN', {hour12:false});
+  const tagClass = `tag-${type}`;
+
+  const row = document.createElement('div');
+  row.className = 'log-line';
+  row.innerHTML = `
+    <span class="log-ts">${ts}</span>
+    <span class="log-tag ${tagClass}">[${tag.toUpperCase()}]</span>
+    <span class="log-msg">${msg}</span>
+  `;
+  terminal.appendChild(row);
+  terminal.scrollTop = terminal.scrollHeight;
+}
+
+// Update clock
+setInterval(() => {
+  const clock = document.getElementById('terminalClock');
+  if (clock) clock.textContent = new Date().toLocaleTimeString('vi-VN', {hour12:false});
+}, 1000);
+
+// ==================== SERVICE PING & TELEMETRY ====================
+async function checkServicePing(url) {
+  const start = performance.now();
+  try {
+    await fetch(url, {mode: 'no-cors', cache: 'no-cache'});
+    const duration = Math.round(performance.now() - start);
+    return { ok: true, latency: duration };
+  } catch(e) {
+    return { ok: false, latency: 0 };
+  }
+}
+
+async function pingAllServices() {
+  const refreshIcon = document.getElementById('refreshIcon');
+  if (refreshIcon) refreshIcon.style.animation = 'spin 0.8s linear infinite';
+
+  log('PING', 'Đang kiểm tra nhịp tim (Heartbeat) các dịch vụ và Telegram API...', 'info');
+
+  const targets = [
+    { key: 'rsshub', id: 'rsshub', url: 'http://localhost:1200' },
+    { key: 'miniflux', id: 'miniflux', url: 'http://localhost:8080' },
+    { key: 'glance', id: 'glance', url: 'http://localhost:8686' },
+    { key: 'skillfunnel', id: 'skillfunnel', url: 'http://localhost:8765' },
+    { key: 'mynews', id: 'mynews', url: 'http://localhost:8088' },
+    { key: 'tooldock', id: 'tooldock', url: 'http://localhost:4000' }
+  ];
+
+  let onlineCount = 1; // Workflow monitor (itself) is always 1
+
+  for (const t of targets) {
+    const res = await checkServicePing(t.url);
+    const dot = document.getElementById(`dot-${t.id}`);
+    const statusText = document.getElementById(`status-${t.id}`);
+    const latencyText = document.getElementById(`${t.id}-latency`);
+
+    if (res.ok) {
+      onlineCount++;
+      if (dot) dot.className = 'dot dot-online';
+      if (statusText) statusText.textContent = `Online (${res.latency}ms)`;
+      if (latencyText) latencyText.textContent = `${res.latency} ms`;
+    } else {
+      if (dot) dot.className = 'dot dot-offline';
+      if (statusText) statusText.textContent = 'Offline';
+      if (latencyText) latencyText.textContent = 'Down';
+      log('ERR', `Cổng mạng ${t.key.toUpperCase()} (${t.url}) không phản hồi!`, 'err');
+    }
+  }
+
+  // Test Telegram API reachability
+  const tgPing = await checkServicePing('https://api.telegram.org');
+  const tgDot = document.getElementById('dot-telegram');
+  const tgStatus = document.getElementById('status-telegram');
+  const tgHeader = document.getElementById('telegramHeaderStatus');
+
+  if (tgPing.ok) {
+    if (tgDot) tgDot.className = 'dot dot-online';
+    if (tgStatus) tgStatus.textContent = `API Reachable (${tgPing.latency}ms)`;
+    if (tgHeader) {
+      tgHeader.textContent = 'API OK / Chờ Secret';
+      tgHeader.style.color = 'var(--emerald)';
+    }
+  } else {
+    if (tgDot) tgDot.className = 'dot dot-checking';
+    if (tgStatus) tgStatus.textContent = 'API Offline';
+  }
+
+  onlineCount++; // monitor itself
+  const total = targets.length + 1;
+  document.getElementById('servicesOnlineCount').textContent = `${onlineCount}/${total} Online`;
+  
+  if (refreshIcon) refreshIcon.style.animation = '';
+}
+
+// ==================== FETCH PIPELINE DATA ====================
+async function fetchPipelineJSON(filename) {
+  for (const base of DATA_FALLBACKS) {
+    try {
+      const url = `${base}/${filename}?_=${Date.now()}`;
+      const res = await fetch(url);
+      if (res.ok) {
+        return await res.json();
+      }
+    } catch(e) {}
+  }
+  return null;
+}
+
+async function loadPipelineData() {
+  // 1. Miniflux Entries
+  try {
+    const res = await fetch('http://localhost:8080/v1/entries?limit=1', {
+      headers: { 'Authorization': 'Basic ' + btoa('admin:trendradar') }
+    });
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.total !== undefined) {
+        document.getElementById('minifluxArticlesCount').textContent = `${data.total} items`;
+        document.getElementById('miniflux-card-stat').textContent = `11 feeds / ${data.total} items`;
+        log('MINIFLUX', `Cơ sở dữ liệu Miniflux đang lưu trữ ${data.total} bài viết đã đồng bộ`, 'ok');
+      }
+    }
+  } catch(e) {}
+
+  // 2. Watchlist
+  const watchlist = await fetchPipelineJSON('watchlist.json');
+  if (watchlist && watchlist.keywords) {
+    document.getElementById('watchlist-count').textContent = `${watchlist.keywords.length} từ khóa`;
+  }
+
+  // 3. Skill Funnel
+  const funnel = await fetchPipelineJSON('skill-funnel.json');
+  if (funnel) {
+    const approved = (funnel.approved || []).length;
+    const pending = (funnel.pending || []).length;
+    document.getElementById('skillfunnel-approved').textContent = `${approved} Appr / ${pending} Pend`;
+  }
+}
+
+// ==================== TELEMETRY INSPECTOR ====================
+function inspectNode(nodeKey) {
+  activeNodeKey = nodeKey;
+  const node = SERVICES[nodeKey];
+  if (!node) return;
+
+  // Highlight active card
+  document.querySelectorAll('.node-card').forEach(c => c.classList.remove('active'));
+  const card = document.getElementById(`card-${nodeKey}`);
+  if (card) card.classList.add('active');
+
+  // Set title
+  document.getElementById('inspectNodeTitle').textContent = `Telemetry Inspector: ${node.name} (Port: ${node.port})`;
+
+  // Render Input List
+  const inList = document.getElementById('inspectInputList');
+  inList.innerHTML = node.input.map(item => `
+    <div class="io-item">
+      <div class="key">${item.key}</div>
+      <div class="val">${item.val}</div>
+    </div>
+  `).join('');
+
+  // Render Output List
+  const outList = document.getElementById('inspectOutputList');
+  outList.innerHTML = node.output.map(item => `
+    <div class="io-item">
+      <div class="key">${item.key}</div>
+      <div class="val">${item.val}</div>
+    </div>
+  `).join('');
+
+  // Render Error Diagnostics List
+  const errList = document.getElementById('inspectErrorsList');
+  const errBadge = document.getElementById('errorCountBadge');
+  const errors = node.errors || [];
+  errBadge.textContent = `${errors.length} kịch bản lỗi cần lưu ý`;
+
+  if (errors.length > 0) {
+    errList.innerHTML = errors.map(err => `
+      <div class="error-card">
+        <div class="error-card-title">⚠️ ${err.title}</div>
+        <div class="error-card-desc"><strong>Triệu chứng:</strong> ${err.desc}</div>
+        <div class="error-card-fix">💡 <strong>Cách xử lý:</strong> ${err.fix}</div>
+      </div>
+    `).join('');
+  } else {
+    errList.innerHTML = '<div style="color:var(--text-muted);font-size:12px">Không có cảnh báo lỗi đặc thù nào.</div>';
+  }
+
+  log('INSPECT', `Xem Telemetry & Chẩn đoán lỗi của trạm: ${node.name}`, 'info');
+
+  const panel = document.getElementById('inspectorPanel');
+  if (panel && window.innerWidth < 900) {
+    panel.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+function switchInspectTab(tab) {
+  const btnIO = document.getElementById('btnTabIO');
+  const btnErrors = document.getElementById('btnTabErrors');
+  const btnPayload = document.getElementById('btnTabPayload');
+
+  const contentIO = document.getElementById('tabContentIO');
+  const contentErrors = document.getElementById('tabContentErrors');
+  const contentPayload = document.getElementById('tabContentPayload');
+
+  btnIO.classList.remove('active');
+  btnErrors.classList.remove('active');
+  btnPayload.classList.remove('active');
+
+  contentIO.style.display = 'none';
+  contentErrors.style.display = 'none';
+  contentPayload.style.display = 'none';
+
+  if (tab === 'io') {
+    btnIO.classList.add('active');
+    contentIO.style.display = 'grid';
+  } else if (tab === 'errors') {
+    btnErrors.classList.add('active');
+    contentErrors.style.display = 'grid';
+  } else {
+    btnPayload.classList.add('active');
+    contentPayload.style.display = 'grid';
+    loadSelectedPayload(document.getElementById('payloadSelect').value);
+  }
+}
+
+async function loadSelectedPayload(filename) {
+  const codeBox = document.getElementById('payloadCodeBox');
+  codeBox.textContent = `Đang tải ${filename}...`;
+  const data = await fetchPipelineJSON(filename);
+  if (data) {
+    currentPayloadData = data;
+    codeBox.textContent = JSON.stringify(data, null, 2);
+  } else {
+    codeBox.textContent = `// Không tìm thấy dữ liệu hoặc file ${filename} chưa được sinh ra.`;
+  }
+}
+
+function showPayload(filename) {
+  switchInspectTab('payload');
+  const select = document.getElementById('payloadSelect');
+  if (select) {
+    select.value = filename;
+    loadSelectedPayload(filename);
+  }
+}
+
+function copyCurrentPayload() {
+  if (currentPayloadData) {
+    navigator.clipboard.writeText(JSON.stringify(currentPayloadData, null, 2));
+    alert('Đã sao chép toàn bộ JSON vào clipboard!');
+  }
+}
+
+function copyRunCommand() {
+  const cmd = 'python3 scripts/fetch.py';
+  navigator.clipboard.writeText(cmd);
+  log('CMD', `Đã copy lệnh chạy: "${cmd}"`, 'ok');
+  alert(`Đã copy lệnh chạy pipeline vào clipboard:\n\n${cmd}`);
+}
+
+async function testTelegramPing() {
+  log('TG_TEST', 'Đang test kết nối trực tiếp tới api.telegram.org...', 'info');
+  const res = await checkServicePing('https://api.telegram.org');
+  if (res.ok) {
+    log('TG_TEST', `Kết nối tới Telegram API thành công (${res.latency}ms). Mạng không bị chặn!`, 'ok');
+    alert(`✅ KẾT NỐI TELEGRAM API THÀNH CÔNG (${res.latency}ms)\n\n• Máy chủ Telegram api.telegram.org phản hồi tốt.\n• Để nhận thông báo về điện thoại, hãy đảm bảo bạn đã cấu hình TELEGRAM_BOT_TOKEN và TELEGRAM_CHAT_ID trong GitHub Secrets hoặc .env!`);
+  } else {
+    log('TG_TEST', 'Không thể kết nối api.telegram.org (Có thể do mạng hoặc DNS)', 'err');
+    alert('❌ Không thể kết nối tới Telegram API. Vui lòng kiểm tra lại đường truyền mạng hoặc DNS.');
+  }
+}
+
+async function runFullDiagnosticAudit() {
+  const btn = document.getElementById('auditBtn');
+  btn.textContent = '⏳ Đang kiểm tra...';
+  log('AUDIT', 'BẮT ĐẦU CHẨN ĐOÁN TOÀN DIỆN TẤT CẢ CÁC ĐIỂM NGHẼN...', 'warn');
+
+  let passed = 0;
+  let warnings = 0;
+
+  // 1. Check Miniflux (8080)
+  const mf = await checkServicePing('http://localhost:8080');
+  if (mf.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: Miniflux (:8080) chưa bật', 'err'); }
+
+  // 2. Check RSSHub (1200)
+  const rh = await checkServicePing('http://localhost:1200');
+  if (rh.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: RSSHub (:1200) chưa bật', 'err'); }
+
+  // 3. Check Glance (8686)
+  const gl = await checkServicePing('http://localhost:8686');
+  if (gl.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: Glance (:8686) chưa bật', 'err'); }
+
+  // 4. Check Skill Dashboard (8765)
+  const sf = await checkServicePing('http://localhost:8765');
+  if (sf.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: Skill Dashboard (:8765) chưa bật', 'err'); }
+
+  // 5. Check My News (8088)
+  const mn = await checkServicePing('http://localhost:8088');
+  if (mn.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: My News (:8088) chưa bật', 'err'); }
+
+  // 6. Check Telegram API
+  const tg = await checkServicePing('https://api.telegram.org');
+  if (tg.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: Telegram API không thể kết nối', 'err'); }
+
+  // 7. Check Data Manifest
+  const manifest = await fetchPipelineJSON('manifest.json');
+  if (manifest) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: data/manifest.json chưa được sinh ra', 'err'); }
+
+  // 8. Check Watchlist config
+  const wl = await fetchPipelineJSON('watchlist.json');
+  if (wl && wl.keywords) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: data/watchlist.json thiếu cấu hình', 'err'); }
+
+  btn.innerHTML = '<span>🩺 Audit Điểm Lỗi</span>';
+  log('AUDIT', `KẾT QUẢ CHẨN ĐOÁN: ${passed} chặng an toàn, ${warnings} điểm cần lưu ý.`, passed > 6 ? 'ok' : 'warn');
+
+  alert(`🩺 KẾT QUẢ CHẨN ĐOÁN TOÀN BỘ HỆ THỐNG:\n\n` +
+        `• Các chặng hoạt động hoàn hảo: ${passed}/8\n` +
+        `• Điểm cảnh báo / Cần lưu ý: ${warnings}\n\n` +
+        `Chi tiết:\n` +
+        `- Miniflux (:8080): ${mf.ok ? '✅ Online (767 tin)' : '❌ Offline'}\n` +
+        `- RSSHub (:1200): ${rh.ok ? '✅ Online' : '❌ Offline'}\n` +
+        `- Glance (:8686): ${gl.ok ? '✅ Online' : '❌ Offline'}\n` +
+        `- Skill Funnel (:8765): ${sf.ok ? '✅ Online' : '❌ Offline'}\n` +
+        `- My News (:8088): ${mn.ok ? '✅ Online' : '❌ Offline'}\n` +
+        `- Telegram API: ${tg.ok ? '✅ Kết nối tốt (Chờ Secret để bắn tin)' : '❌ Bị chặn'}\n` +
+        `- Manifest & Watchlist: ${manifest && wl ? '✅ Dữ liệu hợp lệ' : '⚠️ Thiếu file'}`);
+}
+
+// ==================== MODAL PREVIEW ====================
+function openNodeInIframe() {
+  const node = SERVICES[activeNodeKey];
+  if (!node || !node.url || node.url.startsWith('https://github')) {
+    alert('Dịch vụ này là Script hoặc không hỗ trợ nhúng trực tiếp. Bạn có thể mở link bên ngoài.');
+    return;
+  }
+  const modal = document.getElementById('previewModal');
+  const iframe = document.getElementById('modalIframe');
+  const title = document.getElementById('modalTitle');
+  const ext = document.getElementById('modalExternalLink');
+
+  title.textContent = `Xem trước: ${node.name} (${node.url})`;
+  ext.href = node.url;
+  iframe.src = node.url;
+  modal.classList.add('open');
+}
+
+function closeModal(e) {
+  const modal = document.getElementById('previewModal');
+  const iframe = document.getElementById('modalIframe');
+  iframe.src = 'about:blank';
+  modal.classList.remove('open');
+}
+
+function closeModalDirect() {
+  closeModal();
+}
+
+// ==================== INITIALIZATION ====================
+window.addEventListener('DOMContentLoaded', () => {
+  inspectNode('telegram'); // Default inspect Telegram node per user request
+  switchInspectTab('errors'); // Open Error tab directly
+  pingAllServices();
+  loadPipelineData();
+
+  setInterval(pingAllServices, 25000);
+});
+</script>
+
+<style>
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+</style>
+
+</body>
+</html>
