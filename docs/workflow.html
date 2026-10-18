@@ -514,6 +514,33 @@
       color: #fff;
     }
 
+    /* FUNNEL FLOW CONNECTOR */
+    .funnel-flow-connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 10px;
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.08), rgba(45, 106, 255, 0.08));
+      border: 1px dashed rgba(167, 139, 250, 0.35);
+      border-radius: var(--radius-md);
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: #c4b5fd;
+      text-align: center;
+      margin: -2px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .funnel-arrow {
+      color: #38bdf8;
+      font-weight: 700;
+      animation: funnelBounce 1.8s infinite;
+    }
+    @keyframes funnelBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(3px); }
+    }
+
     /* TELEMETRY INSPECTOR & ERROR RADAR */
     .inspector-panel {
       background: var(--bg-card);
@@ -1002,42 +1029,121 @@
         </div>
       </div>
 
-      <!-- Node: Skill Funnel -->
-      <div class="node-card" style="--node-accent: var(--rose)" onclick="inspectNode('skillfunnel')" id="card-skillfunnel">
+    <!-- STAGE 3: AI SCORING & INTELLIGENCE -->
+    <div class="stage-col">
+      <div class="stage-header">
+        <span class="stage-num">Giai đoạn 03</span>
+        <span class="stage-name">Xử lý & AI Scoring</span>
+      </div>
+
+      <!-- Node: Pipeline Core -->
+      <div class="node-card" style="--node-accent: var(--cyan)" onclick="inspectNode('aggregate')" id="card-aggregate">
         <div class="node-top">
           <div class="node-info">
-            <div class="node-title">Skill Funnel <span style="font-size:11px">🎯</span></div>
-            <div class="node-subtitle">Sàng lọc Repo & Bóc tách Kỹ năng AI</div>
+            <div class="node-title">Pipeline Core <span style="font-size:11px">🧠</span></div>
+            <div class="node-subtitle">Lọc trùng, Velocity, AI Briefing</div>
           </div>
-          <span class="node-port-badge">:8088 / :4000</span>
+          <span class="node-port-badge">aggregate.py</span>
         </div>
         <div class="node-metrics">
           <div class="metric-box">
-            <span class="metric-key">Sàng lọc (:8088)</span>
-            <span class="metric-val" id="skillfunnel-latency">-- ms</span>
+            <span class="metric-key">AI Model</span>
+            <span class="metric-val">Claude / Gemini</span>
           </div>
           <div class="metric-box">
-            <span class="metric-key">Hàng đợi (:4000)</span>
-            <span class="metric-val" id="skillfunnel-approved">--</span>
+            <span class="metric-key">Watchlist</span>
+            <span class="metric-val" id="watchlist-count">4 từ khóa</span>
           </div>
         </div>
         <div class="node-status-row">
-          <span class="status-pill"><span class="dot dot-checking" id="dot-skillfunnel"></span> <span id="status-skillfunnel">Checking...</span></span>
-          <span style="color:var(--rose);font-size:10px;font-weight:700">UI :8088 ➔ API :4000</span>
+          <span class="status-pill"><span class="dot dot-online"></span> Hoạt động</span>
+          <span style="color:var(--cyan);font-size:10px;font-weight:700">➔ PUSH TELEGRAM</span>
         </div>
         <div class="node-actions">
-          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('skillfunnel')">Inspect & Lỗi</button>
-          <a class="node-btn" href="http://localhost:8088/skill-funnel.html" target="_blank" onclick="event.stopPropagation()">Mở Phễu ↗</a>
-          <a class="node-btn" href="http://localhost:4000/tools/frontone.html" target="_blank" onclick="event.stopPropagation()" title="Mở Frontone Engine bóc tách trên ToolDock">Frontone (:4000) ↗</a>
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('aggregate')">Inspect & Lỗi</button>
+          <button class="node-btn" onclick="event.stopPropagation(); showPayload('manifest.json')">Payload</button>
         </div>
       </div>
     </div>
 
-    <!-- STAGE 4: PRESENTATION & TELEGRAM DELIVERY -->
+    <!-- STAGE 4: SKILL FUNNEL & FRONTONE ENGINE (FUNNEL FLOW) -->
     <div class="stage-col">
       <div class="stage-header">
         <span class="stage-num">Giai đoạn 04</span>
-        <span class="stage-name">Đầu ra & Cảnh báo</span>
+        <span class="stage-name">Phễu Kỹ Năng & FrontOne</span>
+      </div>
+
+      <!-- Node 1: Skill Funnel (Sàng lọc Repos) -->
+      <div class="node-card" style="--node-accent: var(--rose)" onclick="inspectNode('skillfunnel')" id="card-skillfunnel">
+        <div class="node-top">
+          <div class="node-info">
+            <div class="node-title">Skill Funnel <span style="font-size:11px">🎯</span></div>
+            <div class="node-subtitle">Sàng lọc GitHub repos tiềm năng</div>
+          </div>
+          <span class="node-port-badge">:8088</span>
+        </div>
+        <div class="node-metrics">
+          <div class="metric-box">
+            <span class="metric-key">Chủ đề lọc</span>
+            <span class="metric-val" id="skillfunnel-candidates">4 Topics (AI/Tech)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-key">Latency</span>
+            <span class="metric-val" id="skillfunnel-latency">-- ms</span>
+          </div>
+        </div>
+        <div class="node-status-row">
+          <span class="status-pill"><span class="dot dot-checking" id="dot-skillfunnel"></span> <span id="status-skillfunnel">Checking...</span></span>
+          <span style="color:var(--rose);font-size:10px;font-weight:700">DISPATCHER ➔ :4000</span>
+        </div>
+        <div class="node-actions">
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('skillfunnel')">Inspect & Lỗi</button>
+          <a class="node-btn" href="http://localhost:8088/skill-funnel.html" target="_blank" onclick="event.stopPropagation()">Mở Sàng Lọc ↗</a>
+        </div>
+      </div>
+
+      <!-- Funnel Flow Connector: Dispatch to FrontOne Queue -->
+      <div class="funnel-flow-connector" title="Luồng tự động gửi qua API khi bấm 'Gửi Phễu'">
+        <span class="funnel-arrow">⬇</span>
+        <span>POST /api/frontone/queue (repo_url, score, velocity)</span>
+      </div>
+
+      <!-- Node 2: FrontOne Engine (Bóc tách Kỹ năng AI) -->
+      <div class="node-card" style="--node-accent: var(--purple)" onclick="inspectNode('frontone')" id="card-frontone">
+        <div class="node-top">
+          <div class="node-info">
+            <div class="node-title">FrontOne Engine <span style="font-size:11px">🔬</span></div>
+            <div class="node-subtitle">AST Code Analysis & SKILL.md Gen</div>
+          </div>
+          <span class="node-port-badge">:4000 / :3010</span>
+        </div>
+        <div class="node-metrics">
+          <div class="metric-box">
+            <span class="metric-key">Hàng đợi Queue</span>
+            <span class="metric-val" id="frontone-queue-stat">-- in Queue</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-key">Engine AI</span>
+            <span class="metric-val">Gemini Flash</span>
+          </div>
+        </div>
+        <div class="node-status-row">
+          <span class="status-pill"><span class="dot dot-checking" id="dot-frontone"></span> <span id="status-frontone">Checking...</span></span>
+          <span style="color:var(--purple);font-size:10px;font-weight:700">OUTPUT: SKILL.md</span>
+        </div>
+        <div class="node-actions">
+          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('frontone')">Inspect & Lỗi</button>
+          <a class="node-btn" href="http://localhost:4000/tools/frontone.html" target="_blank" onclick="event.stopPropagation()">Mở FrontOne ↗</a>
+          <a class="node-btn" href="http://localhost:4000/api/frontone/queue" target="_blank" onclick="event.stopPropagation()">Queue API ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: PRESENTATION, DELIVERY & OPS -->
+    <div class="stage-col">
+      <div class="stage-header">
+        <span class="stage-num">Giai đoạn 05</span>
+        <span class="stage-name">Đầu ra & Điều phối</span>
       </div>
 
       <!-- Node: Telegram Bot Alerts (FIRST-CLASS CITIZEN) -->
@@ -1126,50 +1232,13 @@
           <a class="node-btn" href="http://localhost:8686" target="_blank" onclick="event.stopPropagation()">Xem Glance ↗</a>
         </div>
       </div>
-    </div>
 
-    <!-- STAGE 5: OPS & ORCHESTRATION -->
-    <div class="stage-col">
-      <div class="stage-header">
-        <span class="stage-num">Giai đoạn 05</span>
-        <span class="stage-name">Điều phối & Hạ tầng</span>
-      </div>
-
-      <!-- Node: Pipeline Monitor -->
-      <div class="node-card active" style="--node-accent: var(--cyan)" onclick="inspectNode('monitor')" id="card-monitor">
-        <div class="node-top">
-          <div class="node-info">
-            <div class="node-title">Workflow Hub <span style="font-size:11px">🕹️</span></div>
-            <div class="node-subtitle">Trạm điều phối trung tâm hiện tại</div>
-          </div>
-          <span class="node-port-badge">:8766</span>
-        </div>
-        <div class="node-metrics">
-          <div class="metric-box">
-            <span class="metric-key">Auto Poll</span>
-            <span class="metric-val">25s Cycle</span>
-          </div>
-          <div class="metric-box">
-            <span class="metric-key">Role</span>
-            <span class="metric-val">Master Hub</span>
-          </div>
-        </div>
-        <div class="node-status-row">
-          <span class="status-pill"><span class="dot dot-online"></span> Đang xem</span>
-          <span style="color:var(--text-muted);font-size:10px">THIS PAGE</span>
-        </div>
-        <div class="node-actions">
-          <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('monitor')">Inspect & Lỗi</button>
-          <a class="node-btn" href="http://localhost:8766" target="_blank" onclick="event.stopPropagation()">Reload :8766</a>
-        </div>
-      </div>
-
-      <!-- Node: Tooldock Portal -->
+      <!-- Node: ToolDock Portal & Controller -->
       <div class="node-card" style="--node-accent: var(--amber)" onclick="inspectNode('tooldock')" id="card-tooldock">
         <div class="node-top">
           <div class="node-info">
-            <div class="node-title">ToolDock Stack <span style="font-size:11px">🛠️</span></div>
-            <div class="node-subtitle">Portainer, Markitdown, Frontone</div>
+            <div class="node-title">ToolDock Portal <span style="font-size:11px">🛠️</span></div>
+            <div class="node-subtitle">Reverse Proxy & Microservices</div>
           </div>
           <span class="node-port-badge">:4000</span>
         </div>
@@ -1459,34 +1528,62 @@ const SERVICES = {
     ]
   },
   skillfunnel: {
-    name: 'Skill Funnel & Frontone Engine',
-    port: '8088 / 4000',
+    name: 'Skill Funnel (Sàng lọc Repos)',
+    port: 8088,
     url: 'http://localhost:8088/skill-funnel.html',
-    role: 'Repo Screening (:8088) & Skill Extraction (:4000)',
+    role: 'GitHub Candidates Screening & Funnel Dispatcher',
     input: [
-      { key: 'Trang Sàng lọc Repo', val: 'http://localhost:8088/skill-funnel.html (Lọc GitHub repos từ data/*.json)' },
-      { key: 'Frontone Queue API', val: 'POST http://localhost:4000/api/frontone/queue (Gửi repo vào phễu bóc tách)' }
+      { key: 'Nguồn dữ liệu', val: 'docs/data/ai-tech.json, igaming.json, business.json, news.json' },
+      { key: 'Tiêu chí lọc', val: 'Lọc GitHub repos theo Topic, Score threshold (>=50, >=70, >=85), Velocity (rising)' }
     ],
     output: [
-      { key: 'Frontone Engine', val: 'http://localhost:4000/tools/frontone.html (Chạy phân tích bóc tách kỹ năng)' },
-      { key: 'Extracted Skills', val: 'Tạo cấu trúc SKILL.md / AGENTS.md rules và zip frontend generator' },
-      { key: 'Queue Status', val: 'GET http://localhost:4000/api/frontone/queue (Đồng bộ hàng đợi thực tế)' }
+      { key: 'Dispatch Payload', val: 'POST http://localhost:4000/api/frontone/queue' },
+      { key: 'Dữ liệu gửi', val: '{ repo_url, title, score, velocity, topic }' },
+      { key: 'Lưu vết UI', val: 'localStorage & cập nhật trạng thái "✓ Đã gửi"' }
     ],
     errors: [
       {
-        title: 'Lỗi 1: Không kết nối được Frontone API (:4000)',
-        desc: 'Nút "Gửi Phễu" hoặc danh sách hàng đợi báo lỗi không thể kết nối tới localhost:4000.',
-        fix: 'Kiểm tra container tooldock-portal (:4000) và tooldock-frontone (:3010) đang chạy bình thường (docker ps).'
+        title: 'Lỗi 1: Không tải được danh sách repo từ docs/data/*.json',
+        desc: 'Trang hiển thị rỗng hoặc đang quay spinner liên tục.',
+        fix: 'Kiểm tra server python :8088 đang chạy tại thư mục docs/, hoặc chạy python3 scripts/aggregate.py để sinh lại file JSON.'
       },
       {
-        title: 'Lỗi 2: Trình duyệt chặn CORS khi gọi từ :8088 sang :4000',
-        desc: 'Trình duyệt gửi OPTIONS preflight và bị lỗi CORS.',
-        fix: 'Đã được giải quyết bằng cấu hình CORS header Access-Control-Allow-Origin: * trong Nginx của tooldock-portal.'
+        title: 'Lỗi 2: Bấm "Gửi Phễu" bị báo lỗi mạng hoặc CORS',
+        desc: 'Trình duyệt không kết nối được tới FrontOne API (:4000) hoặc bị chặn cross-origin.',
+        fix: 'Đã giải quyết bằng cấu hình CORS header Access-Control-Allow-Origin: * trong Nginx của tooldock-portal (:4000).'
+      }
+    ]
+  },
+  frontone: {
+    name: 'FrontOne Engine (Bóc tách Kỹ năng AI)',
+    port: '4000 / 3010',
+    url: 'http://localhost:4000/tools/frontone.html',
+    role: 'Repo AST Code Analysis & AI Skill Rules Generator',
+    input: [
+      { key: 'Hàng đợi từ Skill Funnel', val: 'POST http://localhost:4000/api/frontone/queue (nhận repo_url, score, velocity)' },
+      { key: 'Mã nguồn GitHub', val: 'Clone untrusted public GitHub repo vào sandbox container an toàn' },
+      { key: 'AI Model Analysis', val: 'Google Gemini 2.0 Flash / 1.5 Flash trích xuất function & AST' }
+    ],
+    output: [
+      { key: 'Extracted Skills', val: 'Cấu trúc quy tắc SKILL.md / AGENTS.md chuẩn format cho AI Agent' },
+      { key: 'Scaffold Frontend', val: 'Bộ mã nguồn React + Vite hoàn chỉnh đóng gói dạng .zip' },
+      { key: 'Approved Skills Tab', val: 'GET http://localhost:4000/api/frontone/approved' }
+    ],
+    errors: [
+      {
+        title: 'Lỗi 1: Thiếu hoặc sai GEMINI_API_KEY trong FrontOne',
+        desc: 'FrontOne dùng Google Gemini Flash để phân tích AST và tạo các rule kỹ năng. Nếu thiếu key sẽ không thể analyze.',
+        fix: 'Kiểm tra biến FRONTONE_GEMINI_API_KEY hoặc GEMINI_API_KEY trong ToolDock/.env hoặc docker-compose.yml.'
       },
       {
-        title: 'Lỗi 3: Port 8765 đã được loại bỏ để tinh gọn hệ thống',
-        desc: 'Trước đây Skill Funnel chạy một container static server riêng ở port 8765 gây phân mảnh cổng.',
-        fix: 'Đã gom về chạy trực tiếp trên web server chính (:8088/skill-funnel.html) và kết nối thẳng API Frontone (:4000).'
+        title: 'Lỗi 2: Container tooldock-frontone chưa bật hoặc crash',
+        desc: 'Không thể phân tích repo do cổng :3010 không phản hồi.',
+        fix: 'Chạy docker start tooldock-frontone tooldock-portal trong terminal.'
+      },
+      {
+        title: 'Lỗi 3: Lỗi CORS khi gọi từ web khác sang Frontone',
+        desc: 'Trình duyệt chặn request khi gọi POST /api/frontone/queue.',
+        fix: 'Đã được giải quyết triệt để bằng cấu hình Nginx CORS header Access-Control-Allow-Origin: * trên cổng :4000.'
       }
     ]
   },
@@ -1617,6 +1714,7 @@ async function pingAllServices() {
     { key: 'miniflux', id: 'miniflux', url: 'http://localhost:8080' },
     { key: 'glance', id: 'glance', url: 'http://localhost:8686' },
     { key: 'skillfunnel', id: 'skillfunnel', url: 'http://localhost:8088/skill-funnel.html' },
+    { key: 'frontone', id: 'frontone', url: 'http://localhost:4000/api/frontone/queue' },
     { key: 'mynews', id: 'mynews', url: 'http://localhost:8088' },
     { key: 'tooldock', id: 'tooldock', url: 'http://localhost:4000' }
   ];
@@ -1703,18 +1801,16 @@ async function loadPipelineData() {
     document.getElementById('watchlist-count').textContent = `${watchlist.keywords.length} từ khóa`;
   }
 
-  // 3. Skill Funnel & Frontone Queue
+  // 3. FrontOne Queue & Skill Funnel metrics
   try {
     const qRes = await fetch('http://localhost:4000/api/frontone/queue').then(r => r.json()).catch(() => null);
     if (qRes && Array.isArray(qRes)) {
-      document.getElementById('skillfunnel-approved').textContent = `${qRes.length} in Queue`;
-    } else {
-      const funnel = await fetchPipelineJSON('skill-funnel.json');
-      if (funnel) {
-        const approved = (funnel.approved || []).length;
-        const pending = (funnel.pending || []).length;
-        document.getElementById('skillfunnel-approved').textContent = `${approved} Appr / ${pending} Pend`;
-      }
+      const qLen = qRes.length;
+      const readyCount = qRes.filter(it => it.status === 'ready' || it.status === 'approved').length;
+      const elQueue = document.getElementById('frontone-queue-stat');
+      if (elQueue) elQueue.textContent = `${qLen} in Queue (${readyCount} ready)`;
+      const elCand = document.getElementById('skillfunnel-candidates');
+      if (elCand) elCand.textContent = '4 Topics (AI/Tech)';
     }
   } catch(e) {}
 }
@@ -1878,21 +1974,22 @@ async function runFullDiagnosticAudit() {
   const sf = await checkServicePing('http://localhost:8088/skill-funnel.html');
   if (sf.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: Skill Funnel (:8088/skill-funnel.html) chưa bật', 'err'); }
 
-  // 5. Check My News (8088)
+  // 5. Check FrontOne Engine (:4000)
+  const fo = await checkServicePing('http://localhost:4000/api/frontone/queue');
+  if (fo.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: FrontOne API (:4000) không phản hồi', 'err'); }
+
+  // 6. Check My News (8088)
   const mn = await checkServicePing('http://localhost:8088');
   if (mn.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: My News (:8088) chưa bật', 'err'); }
 
-  // 6. Check Telegram API
+  // 7. Check Telegram API
   const tg = await checkServicePing('https://api.telegram.org');
   if (tg.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: Telegram API không thể kết nối', 'err'); }
 
-  // 7. Check Data Manifest
+  // 8. Check Data Manifest & Watchlist
   const manifest = await fetchPipelineJSON('manifest.json');
-  if (manifest) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: data/manifest.json chưa được sinh ra', 'err'); }
-
-  // 8. Check Watchlist config
   const wl = await fetchPipelineJSON('watchlist.json');
-  if (wl && wl.keywords) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: data/watchlist.json thiếu cấu hình', 'err'); }
+  if (manifest && wl && wl.keywords) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: Dữ liệu manifest/watchlist thiếu', 'err'); }
 
   btn.innerHTML = '<span>🩺 Audit Điểm Lỗi</span>';
   log('AUDIT', `KẾT QUẢ CHẨN ĐOÁN: ${passed} chặng an toàn, ${warnings} điểm cần lưu ý.`, passed > 6 ? 'ok' : 'warn');
@@ -1904,10 +2001,11 @@ async function runFullDiagnosticAudit() {
         `- Miniflux (:8080): ${mf.ok ? '✅ Online (767 tin)' : '❌ Offline'}\n` +
         `- RSSHub (:1200): ${rh.ok ? '✅ Online' : '❌ Offline'}\n` +
         `- Glance (:8686): ${gl.ok ? '✅ Online' : '❌ Offline'}\n` +
-        `- Skill Funnel (:8088): ${sf.ok ? '✅ Online' : '❌ Offline'}\n` +
+        `- Skill Funnel Sàng Lọc (:8088): ${sf.ok ? '✅ Online' : '❌ Offline'}\n` +
+        `- FrontOne Engine Phễu (:4000): ${fo.ok ? '✅ Online' : '❌ Offline'}\n` +
         `- My News (:8088): ${mn.ok ? '✅ Online' : '❌ Offline'}\n` +
         `- Telegram API: ${tg.ok ? '✅ Kết nối tốt (Chờ Secret để bắn tin)' : '❌ Bị chặn'}\n` +
-        `- Manifest & Watchlist: ${manifest && wl ? '✅ Dữ liệu hợp lệ' : '⚠️ Thiếu file'}`);
+        `- Dữ liệu Pipeline: ${manifest && wl ? '✅ Hợp lệ' : '⚠️ Thiếu file'}`);
 }
 
 // ==================== MODAL PREVIEW ====================
