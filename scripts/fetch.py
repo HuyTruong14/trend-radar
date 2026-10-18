@@ -872,8 +872,12 @@ def main():
                 log("  -> Telegram daily digest sent")
             else:
                 log("  ! Telegram daily digest not sent (see notify log above)")
+    try:
+        import aggregate
+        aggregate.build_aggregated_news(all_results, OUT_DIR)
+        log("  -> aggregated news consolidated into news.json")
     except Exception as e:
-        log(f"  ! daily digest failed: {e}")
+        log(f"  ! news aggregation failed: {e}")
 
     with open(os.path.join(OUT_DIR, "manifest.json"), "w") as f:
         json.dump(manifest, f, indent=2)

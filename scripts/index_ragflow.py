@@ -55,6 +55,9 @@ def index_topic(topic_key):
 
     label = data.get("label", topic_key)
     items = data.get("items", [])
+    if not items and "topics" in data:
+        topic_info = data["topics"].get(topic_key) or data["topics"].get("News") or {}
+        items = topic_info.get("items", [])
     if not items:
         log(f"  ! No items in '{topic_key}'")
         return
