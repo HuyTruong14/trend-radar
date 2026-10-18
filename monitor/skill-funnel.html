@@ -463,11 +463,16 @@
       color: #fff;
       box-shadow: 0 0 12px rgba(167, 139, 250, 0.3);
     }
-    .btn-funnel.sent {
-      background: rgba(52, 211, 153, 0.15);
-      border-color: rgba(52, 211, 153, 0.4);
-      color: var(--score-high);
-      cursor: default;
+    .btn-funnel.sent, .btn-funnel:disabled {
+      background: rgba(52, 211, 153, 0.15) !important;
+      border-color: rgba(52, 211, 153, 0.4) !important;
+      color: var(--score-high) !important;
+      cursor: not-allowed;
+      opacity: 0.9;
+    }
+    .btn-funnel.loading {
+      opacity: 0.65;
+      cursor: wait;
     }
 
     .btn-github {
@@ -523,6 +528,132 @@
     }
     .repo-table tr:hover td {
       background: var(--bg-card-hover);
+    }
+
+    /* QUEUE SECTION (ĐÃ GỬI PHỄU) */
+    .queue-section {
+      margin-top: 36px;
+      margin-bottom: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+    }
+    .queue-header-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .queue-title-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .queue-title {
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .queue-badge-count {
+      background: rgba(167, 139, 250, 0.18);
+      border: 1px solid rgba(167, 139, 250, 0.35);
+      color: #c4b5fd;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+    }
+    .queue-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-refresh {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      padding: 6px 14px;
+      border-radius: var(--radius-md);
+      font-size: 12.5px;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition-fast);
+    }
+    .btn-refresh:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.25);
+    }
+    .api-status-hint {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--fg-muted);
+    }
+
+    /* STATUS PILLS */
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      font-size: 11.5px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      text-transform: capitalize;
+    }
+    .status-pill::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .status-queued {
+      background: rgba(251, 191, 36, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(251, 191, 36, 0.35);
+    }
+    .status-queued::before {
+      background: #fbbf24;
+    }
+    .status-processing {
+      background: rgba(6, 182, 212, 0.15);
+      color: #22d3ee;
+      border: 1px solid rgba(6, 182, 212, 0.35);
+    }
+    .status-processing::before {
+      background: #22d3ee;
+      animation: pulse-dot 1.5s infinite;
+    }
+    .status-approved, .status-done {
+      background: rgba(52, 211, 153, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(52, 211, 153, 0.35);
+    }
+    .status-approved::before, .status-done::before {
+      background: #34d399;
+    }
+    .status-rejected {
+      background: rgba(248, 113, 113, 0.15);
+      color: #f87171;
+      border: 1px solid rgba(248, 113, 113, 0.35);
+    }
+    .status-rejected::before {
+      background: #f87171;
+    }
+    @keyframes pulse-dot {
+      0% { opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { opacity: 0.4; }
     }
 
     /* TOAST NOTIFICATION */
@@ -704,6 +835,55 @@
     </div>
   </main>
 
+  <!-- SECTION: ĐÃ GỬI PHỄU (FRONTONE QUEUE) -->
+  <section class="queue-section" id="queueSection">
+    <div class="queue-header-wrap">
+      <div class="queue-title-area">
+        <h2 class="queue-title">
+          <span>📬</span> Đã gửi phễu (Frontone Queue)
+        </h2>
+        <span class="queue-badge-count" id="queueItemsCount">0 repos</span>
+      </div>
+      <div class="queue-controls">
+        <span class="api-status-hint" id="queueSyncTime">Chưa đồng bộ</span>
+        <button class="btn-refresh" id="btnRefreshQueue" onclick="loadFrontoneQueue(true)" title="Cập nhật hàng đợi từ API">
+          <span>🔄</span> Làm mới
+        </button>
+      </div>
+    </div>
+
+    <!-- Queue Table -->
+    <div class="table-container" id="queueTableContainer" style="display:block; margin-bottom:0">
+      <table class="repo-table">
+        <thead>
+          <tr>
+            <th>Repository</th>
+            <th>Chủ đề</th>
+            <th>Score</th>
+            <th>Velocity</th>
+            <th>Trạng thái</th>
+            <th>Thời gian gửi</th>
+            <th style="text-align:right">Thao tác</th>
+          </tr>
+        </thead>
+        <tbody id="queueTableBody">
+          <tr>
+            <td colspan="7" style="text-align:center; padding:30px; color:var(--fg-dim)">
+              <div class="spinner" style="width:24px;height:24px;border-width:2px;margin:0 auto 10px"></div>
+              Đang tải danh sách hàng đợi từ Frontone API (:4000)...
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Empty State for Queue -->
+    <div class="state-box" id="queueEmptyState" style="display:none; padding:36px 20px">
+      <p style="color:var(--fg-dim); margin-bottom:8px">Chưa có repository nào được gửi vào phễu.</p>
+      <p style="font-size:12px; color:var(--fg-muted)">Nhấn nút <b>"🔬 Gửi Phễu"</b> ở danh sách phía trên để gửi repo vào Frontone bóc tách kỹ năng.</p>
+    </div>
+  </section>
+
 </div>
 
 <!-- TOAST NOTIFICATION -->
@@ -714,9 +894,12 @@
 
 <script>
 // ==================== STATE MANAGEMENT ====================
+const FRONTONE_API = 'http://localhost:4000/api/frontone/queue';
+
 let allRepos = [];
 let filteredRepos = [];
 let sentRepos = new Set();
+let queueItems = [];
 
 const currentFilters = {
   topic: 'all',
@@ -980,7 +1163,7 @@ function renderRepoCard(repo) {
       </div>
 
       <div class="repo-actions">
-        <button class="${btnCls}" onclick="sendToFunnel('${escapeHtml(repo.id)}')">
+        <button class="${btnCls}" ${isSent ? 'disabled' : ''} onclick="sendToFunnel('${escapeHtml(repo.id)}')">
           ${btnText}
         </button>
         <a href="${repo.url}" target="_blank" rel="noopener noreferrer" class="btn-github">
@@ -1012,7 +1195,7 @@ function renderRepoTableRow(repo) {
       </td>
       <td style="text-align:right">
         <div style="display:inline-flex;gap:6px">
-          <button class="${btnCls}" style="padding:4px 10px;font-size:11px" onclick="sendToFunnel('${escapeHtml(repo.id)}')">
+          <button class="${btnCls}" style="padding:4px 10px;font-size:11px" ${isSent ? 'disabled' : ''} onclick="sendToFunnel('${escapeHtml(repo.id)}')">
             ${btnText}
           </button>
           <a href="${repo.url}" target="_blank" rel="noopener noreferrer" class="btn-github" style="padding:4px 10px;font-size:11px">
@@ -1025,23 +1208,295 @@ function renderRepoTableRow(repo) {
 }
 
 // ==================== ACTIONS & EVENT HANDLERS ====================
-function sendToFunnel(repoId) {
-  const repo = allRepos.find(r => r.id === repoId);
-  if (!repo) return;
+async function sendToFunnel(itemOrId) {
+  let item = (typeof itemOrId === 'object' && itemOrId !== null)
+    ? itemOrId
+    : allRepos.find(r => r.id === itemOrId);
 
-  // Requirement 3: onclick sẽ gọi API ở Phase 2, tạm thời console.log
-  console.log("🔬 [Skill Funnel API Call - Phase 2 Candidate]: Sending repo to funnel:", repo);
+  if (!item) return;
 
-  if (!sentRepos.has(repoId)) {
+  const repoId = item.id || item.url || item.title;
+
+  // Set visual loading state on buttons
+  updateButtonLoadingState(repoId, true);
+
+  try {
+    const res = await fetch(FRONTONE_API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        repo_url: item.url,
+        title: item.title,
+        score: item.score,
+        velocity: item.velocity,
+        topic: item.topic
+      })
+    });
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+    }
+
+    const data = await res.json().catch(() => ({}));
+    console.log("✓ [Frontone API Queue Response]:", data);
+
+    // Update UI: đổi nút thành "✓ Đã gửi", disable nút
     sentRepos.add(repoId);
     saveSentReposStorage();
+    updateButtonSentState(repoId);
+    updateCounters();
+    showToast(`✓ Đã gửi ${item.title} vào Phễu Frontone thành công!`);
+
+    // Tự động làm mới danh sách hàng đợi
+    loadFrontoneQueue(false);
+  } catch (err) {
+    console.error("Lỗi khi gửi vào phễu Frontone API:", err);
+    // Ghi nhận local để giữ trạng thái cho người dùng
+    sentRepos.add(repoId);
+    saveSentReposStorage();
+    updateButtonSentState(repoId);
+    updateCounters();
+    showToast(`Đã gửi ${item.title} (Ghi chú API: ${err.message || 'offline'})`);
+    loadFrontoneQueue(false);
+  }
+}
+
+function updateButtonLoadingState(repoId, isLoading) {
+  const card = document.getElementById(`card-${repoId}`);
+  if (card) {
+    const btn = card.querySelector('.btn-funnel');
+    if (btn) {
+      btn.disabled = isLoading;
+      if (isLoading) {
+        btn.classList.add('loading');
+        btn.textContent = '⏳ Đang gửi...';
+      }
+    }
   }
 
-  showToast(`Đã gửi ${repo.title} vào Phễu sàng lọc Skill Funnel!`);
-  updateCounters();
+  const row = document.getElementById(`row-${repoId}`);
+  if (row) {
+    const btn = row.querySelector('.btn-funnel');
+    if (btn) {
+      btn.disabled = isLoading;
+      if (isLoading) {
+        btn.classList.add('loading');
+        btn.textContent = '⏳ Đang gửi...';
+      }
+    }
+  }
+}
 
-  // Re-render only changed card or table row
-  renderCurrentView();
+function updateButtonSentState(repoId) {
+  const card = document.getElementById(`card-${repoId}`);
+  if (card) {
+    card.classList.add('sent-state');
+    const btn = card.querySelector('.btn-funnel');
+    if (btn) {
+      btn.disabled = true;
+      btn.classList.remove('loading');
+      btn.classList.add('sent');
+      btn.textContent = '✓ Đã gửi';
+    }
+  }
+
+  const row = document.getElementById(`row-${repoId}`);
+  if (row) {
+    const btn = row.querySelector('.btn-funnel');
+    if (btn) {
+      btn.disabled = true;
+      btn.classList.remove('loading');
+      btn.classList.add('sent');
+      btn.textContent = '✓ Đã gửi';
+    }
+  }
+}
+
+// ==================== FRONTONE QUEUE API ====================
+async function loadFrontoneQueue(showFeedback = false) {
+  const tbody = document.getElementById('queueTableBody');
+  const countBadge = document.getElementById('queueItemsCount');
+  const syncTime = document.getElementById('queueSyncTime');
+  const btnRefresh = document.getElementById('btnRefreshQueue');
+
+  if (showFeedback && btnRefresh) {
+    btnRefresh.innerHTML = '<span>⏳</span> Đang tải...';
+    btnRefresh.disabled = true;
+  }
+
+  try {
+    const res = await fetch(FRONTONE_API, {
+      method: 'GET',
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+    }
+
+    const data = await res.json();
+    let items = [];
+    if (Array.isArray(data)) {
+      items = data;
+    } else if (data && Array.isArray(data.items)) {
+      items = data.items;
+    } else if (data && Array.isArray(data.queue)) {
+      items = data.queue;
+    }
+
+    queueItems = items;
+
+    // Đồng bộ sentRepos từ hàng đợi thực tế trên máy chủ
+    for (const q of queueItems) {
+      const qUrl = (q.repo_url || '').toLowerCase().replace(/\/+$/, '');
+      const qTitle = (q.title || '').toLowerCase();
+      for (const r of allRepos) {
+        const rUrl = (r.url || '').toLowerCase().replace(/\/+$/, '');
+        const rTitle = (r.title || '').toLowerCase();
+        if ((qUrl && rUrl === qUrl) || (qTitle && rTitle === qTitle) || r.id === q.id) {
+          sentRepos.add(r.id);
+        }
+      }
+    }
+    saveSentReposStorage();
+    updateCounters();
+    renderCurrentView();
+
+    renderQueueTable(queueItems);
+    if (countBadge) countBadge.textContent = `${queueItems.length} repos`;
+    if (syncTime) syncTime.textContent = `Cập nhật: ${new Date().toLocaleTimeString('vi-VN')}`;
+    if (showFeedback) showToast(`✓ Đã cập nhật ${queueItems.length} repo trong hàng đợi phễu!`);
+  } catch (err) {
+    console.warn("Không thể fetch Frontone Queue:", err);
+    if (syncTime) syncTime.textContent = `API: ${err.message || 'offline'}`;
+    renderQueueFallback();
+  } finally {
+    if (btnRefresh) {
+      btnRefresh.innerHTML = '<span>🔄</span> Làm mới';
+      btnRefresh.disabled = false;
+    }
+  }
+}
+
+function renderQueueTable(items) {
+  const tbody = document.getElementById('queueTableBody');
+  const emptyState = document.getElementById('queueEmptyState');
+  const tableContainer = document.getElementById('queueTableContainer');
+
+  if (!items || items.length === 0) {
+    tableContainer.style.display = 'none';
+    emptyState.style.display = 'block';
+    return;
+  }
+
+  emptyState.style.display = 'none';
+  tableContainer.style.display = 'block';
+
+  tbody.innerHTML = items.map(item => {
+    const title = item.title || item.repo_url || 'Unknown Repo';
+    const url = item.repo_url || `https://github.com/${title}`;
+    const topic = item.topic || 'AI/Tech';
+    const score = item.score !== undefined && item.score !== null ? item.score : '--';
+    const velocity = item.velocity || 'stable';
+    const status = (item.status || 'queued').toLowerCase();
+    const queuedAt = item.queued_at || item.created_at || item.updated_at;
+    const formattedDate = queuedAt ? formatQueueTime(queuedAt) : 'Vừa xong';
+
+    const statusBadge = getStatusBadge(status);
+    const scoreBadge = score !== '--' ? getScoreBadge(score) : `<span class="tag-badge tag-score score-mid">--</span>`;
+    const velBadge = getVelocityBadge(velocity);
+
+    return `
+      <tr>
+        <td>
+          <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="repo-title-link" style="font-size:13.5px">
+            <span>📦</span> ${escapeHtml(title)}
+          </a>
+        </td>
+        <td><span class="tag-badge tag-topic">${escapeHtml(topic)}</span></td>
+        <td>${scoreBadge}</td>
+        <td>${velBadge}</td>
+        <td>${statusBadge}</td>
+        <td style="color:var(--fg-dim); font-size:12px; font-family:var(--font-mono)">${escapeHtml(formattedDate)}</td>
+        <td style="text-align:right">
+          <div style="display:inline-flex; gap:6px">
+            <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" class="btn-github" style="padding:4px 10px; font-size:11px">
+              ↗ GitHub
+            </a>
+            <a href="http://localhost:8765" target="_blank" class="nav-btn nav-btn-primary" style="padding:4px 10px; font-size:11px" title="Xem phân tích trong Skill Dashboard">
+              🎯 Bóc tách
+            </a>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function getStatusBadge(status) {
+  let cls = 'status-queued';
+  let label = '⏳ Chờ xử lý (queued)';
+
+  if (status === 'processing') {
+    cls = 'status-processing';
+    label = '⚙️ Đang bóc tách';
+  } else if (status === 'approved' || status === 'done' || status === 'completed') {
+    cls = 'status-approved';
+    label = '✓ Hoàn tất / Đã duyệt';
+  } else if (status === 'rejected' || status === 'ignored') {
+    cls = 'status-rejected';
+    label = '✕ Từ chối';
+  }
+
+  return `<span class="status-pill ${cls}">${label}</span>`;
+}
+
+function formatQueueTime(dateStr) {
+  try {
+    const d = new Date(dateStr);
+    if (isNaN(d.getTime())) return dateStr;
+    return `${d.toLocaleDateString('vi-VN')} ${d.toLocaleTimeString('vi-VN', {hour: '2-digit', minute:'2-digit'})}`;
+  } catch(e) {
+    return dateStr;
+  }
+}
+
+function renderQueueFallback() {
+  const tbody = document.getElementById('queueTableBody');
+  const emptyState = document.getElementById('queueEmptyState');
+  const tableContainer = document.getElementById('queueTableContainer');
+  const countBadge = document.getElementById('queueItemsCount');
+
+  // Nếu API chưa sẵn sàng, hiển thị các repo đã gửi lưu ở LocalStorage
+  const localSent = allRepos.filter(r => sentRepos.has(r.id));
+  if (localSent.length > 0) {
+    tableContainer.style.display = 'block';
+    emptyState.style.display = 'none';
+    if (countBadge) countBadge.textContent = `${localSent.length} repos (local)`;
+    tbody.innerHTML = localSent.map(repo => `
+      <tr>
+        <td>
+          <a href="${escapeHtml(repo.url)}" target="_blank" rel="noopener noreferrer" class="repo-title-link" style="font-size:13.5px">
+            <span>📦</span> ${escapeHtml(repo.title)}
+          </a>
+        </td>
+        <td><span class="tag-badge tag-topic">${escapeHtml(repo.topic)}</span></td>
+        <td>${getScoreBadge(repo.score)}</td>
+        <td>${getVelocityBadge(repo.velocity)}</td>
+        <td><span class="status-pill status-queued">⏳ Đã ghi nhận</span></td>
+        <td style="color:var(--fg-dim); font-size:12px; font-family:var(--font-mono)">Hôm nay</td>
+        <td style="text-align:right">
+          <a href="${escapeHtml(repo.url)}" target="_blank" rel="noopener noreferrer" class="btn-github" style="padding:4px 10px; font-size:11px">
+            ↗ GitHub
+          </a>
+        </td>
+      </tr>
+    `).join('');
+  } else {
+    tableContainer.style.display = 'none';
+    emptyState.style.display = 'block';
+    if (countBadge) countBadge.textContent = `0 items`;
+  }
 }
 
 function showToast(msg) {
@@ -1113,8 +1568,9 @@ function escapeHtml(str) {
 }
 
 // ==================== INIT ====================
-window.addEventListener('DOMContentLoaded', () => {
-  loadAllRepositories();
+window.addEventListener('DOMContentLoaded', async () => {
+  await loadAllRepositories();
+  await loadFrontoneQueue();
 });
 </script>
 
