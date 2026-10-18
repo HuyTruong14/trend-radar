@@ -1234,7 +1234,8 @@ async function sendToFunnel(itemOrId) {
     });
 
     if (!res.ok) {
-      throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(errData.detail || `HTTP ${res.status}: ${res.statusText}`);
     }
 
     const data = await res.json().catch(() => ({}));
@@ -1251,25 +1252,24 @@ async function sendToFunnel(itemOrId) {
     loadFrontoneQueue(false);
   } catch (err) {
     console.error("Lỗi khi gửi vào phễu Frontone API:", err);
-    // Ghi nhận local để giữ trạng thái cho người dùng
-    sentRepos.add(repoId);
-    saveSentReposStorage();
-    updateButtonSentState(repoId);
-    updateCounters();
-    showToast(`Đã gửi ${item.title} (Ghi chú API: ${err.message || 'offline'})`);
-    loadFrontoneQueue(false);
+    updateButtonLoadingState(repoId, false);
+    showToast(`❌ Không thể gửi vào phễu: ${err.message || 'Lỗi kết nối API'}`, true);
   }
 }
 
 function updateButtonLoadingState(repoId, isLoading) {
+  const isSent = sentRepos.has(repoId);
   const card = document.getElementById(`card-${repoId}`);
   if (card) {
     const btn = card.querySelector('.btn-funnel');
     if (btn) {
-      btn.disabled = isLoading;
+      btn.disabled = isLoading || isSent;
+      btn.classList.remove('loading');
       if (isLoading) {
         btn.classList.add('loading');
         btn.textContent = '⏳ Đang gửi...';
+      } else {
+        btn.textContent = isSent ? '✓ Đã gửi' : '🔬 Gửi Phễu';
       }
     }
   }
@@ -1278,10 +1278,13 @@ function updateButtonLoadingState(repoId, isLoading) {
   if (row) {
     const btn = row.querySelector('.btn-funnel');
     if (btn) {
-      btn.disabled = isLoading;
+      btn.disabled = isLoading || isSent;
+      btn.classList.remove('loading');
       if (isLoading) {
         btn.classList.add('loading');
         btn.textContent = '⏳ Đang gửi...';
+      } else {
+        btn.textContent = isSent ? '✓ Đã gửi' : '🔬 Gửi Phễu';
       }
     }
   }
@@ -1499,14 +1502,19 @@ function renderQueueFallback() {
   }
 }
 
-function showToast(msg) {
+function showToast(msg, isError = false) {
   const toast = document.getElementById('toastMessage');
   const toastText = document.getElementById('toastText');
+  const toastIcon = toast.querySelector('span:first-child');
+  if (toastIcon) {
+    toastIcon.textContent = isError ? '⚠️' : '✓';
+  }
+  toast.style.borderColor = isError ? '#f87171' : 'var(--score-high)';
   toastText.textContent = msg;
   toast.classList.add('show');
   setTimeout(() => {
     toast.classList.remove('show');
-  }, 3200);
+  }, 3500);
 }
 
 function setFilter(type, value) {
