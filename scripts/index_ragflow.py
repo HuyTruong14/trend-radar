@@ -114,6 +114,9 @@ def main():
     except Exception as e:
         log(f"Cannot reach RAGFlow at {RAGFLOW_URL}: {e}")
         log("Start it: docker compose -f docker-compose.ragflow.yml up -d")
+        if os.environ.get("GITHUB_ACTIONS") or os.environ.get("CI"):
+            log("Running in CI/GitHub Actions without local RAGFlow container — skipping indexing step.")
+            return
         sys.exit(1)
 
     topics = sys.argv[1:] if len(sys.argv) > 1 else []
