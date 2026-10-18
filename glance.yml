@@ -289,7 +289,7 @@ pages:
         widgets:
           - type: iframe
             title: Skill Funnel
-            source: http://localhost:8765
+            source: http://localhost:8088/skill-funnel.html
             height: 1200
 
       - size: small
@@ -300,8 +300,8 @@ pages:
               - title: Glance Dashboard
                 url: http://glance:8686
                 icon: mdi:view-dashboard
-              - title: Skill Dashboard
-                url: http://skill-dashboard:8765
+              - title: Skill Funnel (:8088)
+                url: http://localhost:8088/skill-funnel.html
                 icon: mdi:check-circle
               - title: RSSHub
                 url: http://rsshub:1200
@@ -347,8 +347,8 @@ pages:
               - title: Pipeline Monitor
                 url: http://pipeline-monitor:8766
                 icon: mdi:monitor-dashboard
-              - title: Skill Dashboard
-                url: http://skill-dashboard:8765
+              - title: Skill Funnel (:8088)
+                url: http://localhost:8088/skill-funnel.html
                 icon: mdi:check-circle
               - title: RSSHub
                 url: http://rsshub:1200

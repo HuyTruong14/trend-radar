@@ -56,17 +56,6 @@ services:
       - redis-data:/data
     restart: unless-stopped
 
-  skill-dashboard:
-    image: halverneus/static-file-server:latest
-    volumes:
-      - ./skill-funnel/docs:/web
-    environment:
-      PORT: 8765
-      CORS: "true"
-    ports:
-      - 8765:8765
-    restart: unless-stopped
-
   pipeline-monitor:
     image: halverneus/static-file-server:latest
     volumes:

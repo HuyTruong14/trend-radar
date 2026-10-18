@@ -1007,27 +1007,28 @@
         <div class="node-top">
           <div class="node-info">
             <div class="node-title">Skill Funnel <span style="font-size:11px">🎯</span></div>
-            <div class="node-subtitle">Phễu sàng lọc repo thành Skill</div>
+            <div class="node-subtitle">Sàng lọc Repo & Bóc tách Kỹ năng AI</div>
           </div>
-          <span class="node-port-badge">:8765</span>
+          <span class="node-port-badge">:8088 / :4000</span>
         </div>
         <div class="node-metrics">
           <div class="metric-box">
-            <span class="metric-key">Latency</span>
+            <span class="metric-key">Sàng lọc (:8088)</span>
             <span class="metric-val" id="skillfunnel-latency">-- ms</span>
           </div>
           <div class="metric-box">
-            <span class="metric-key">Status</span>
+            <span class="metric-key">Hàng đợi (:4000)</span>
             <span class="metric-val" id="skillfunnel-approved">--</span>
           </div>
         </div>
         <div class="node-status-row">
           <span class="status-pill"><span class="dot dot-checking" id="dot-skillfunnel"></span> <span id="status-skillfunnel">Checking...</span></span>
-          <span style="color:var(--text-muted);font-size:10px">PHỄU: 3 Bước</span>
+          <span style="color:var(--rose);font-size:10px;font-weight:700">UI :8088 ➔ API :4000</span>
         </div>
         <div class="node-actions">
           <button class="node-btn node-btn-primary" onclick="event.stopPropagation(); inspectNode('skillfunnel')">Inspect & Lỗi</button>
-          <a class="node-btn" href="http://localhost:8765" target="_blank" onclick="event.stopPropagation()">Mở Phễu ↗</a>
+          <a class="node-btn" href="http://localhost:8088/skill-funnel.html" target="_blank" onclick="event.stopPropagation()">Mở Phễu ↗</a>
+          <a class="node-btn" href="http://localhost:4000/tools/frontone.html" target="_blank" onclick="event.stopPropagation()" title="Mở Frontone Engine bóc tách trên ToolDock">Frontone (:4000) ↗</a>
         </div>
       </div>
     </div>
@@ -1458,22 +1459,34 @@ const SERVICES = {
     ]
   },
   skillfunnel: {
-    name: 'Skill Funnel Dashboard',
-    port: 8765,
-    url: 'http://localhost:8765',
-    role: 'Repo Extraction & Skill Filter',
+    name: 'Skill Funnel & Frontone Engine',
+    port: '8088 / 4000',
+    url: 'http://localhost:8088/skill-funnel.html',
+    role: 'Repo Screening (:8088) & Skill Extraction (:4000)',
     input: [
-      { key: 'Selected Repos', val: 'Nút "Send to Funnel" từ My News ➔ Ghi vào sources.md' }
+      { key: 'Trang Sàng lọc Repo', val: 'http://localhost:8088/skill-funnel.html (Lọc GitHub repos từ data/*.json)' },
+      { key: 'Frontone Queue API', val: 'POST http://localhost:4000/api/frontone/queue (Gửi repo vào phễu bóc tách)' }
     ],
     output: [
-      { key: 'Status Phễu', val: 'Approved (Sẵn sàng) | Pending (Chờ duyệt) | Rejected (Từ chối)' },
-      { key: 'JSON Feeds', val: 'data/skill-funnel.json' }
+      { key: 'Frontone Engine', val: 'http://localhost:4000/tools/frontone.html (Chạy phân tích bóc tách kỹ năng)' },
+      { key: 'Extracted Skills', val: 'Tạo cấu trúc SKILL.md / AGENTS.md rules và zip frontend generator' },
+      { key: 'Queue Status', val: 'GET http://localhost:4000/api/frontone/queue (Đồng bộ hàng đợi thực tế)' }
     ],
     errors: [
       {
-        title: 'Lỗi 1: GitHub Token hết hạn khi tạo commit sources.md',
-        desc: 'Báo lỗi 401 Bad Credentials khi ấn gửi repo.',
-        fix: 'Cập nhật lại GitHub Personal Access Token trong config.json của skill-funnel.'
+        title: 'Lỗi 1: Không kết nối được Frontone API (:4000)',
+        desc: 'Nút "Gửi Phễu" hoặc danh sách hàng đợi báo lỗi không thể kết nối tới localhost:4000.',
+        fix: 'Kiểm tra container tooldock-portal (:4000) và tooldock-frontone (:3010) đang chạy bình thường (docker ps).'
+      },
+      {
+        title: 'Lỗi 2: Trình duyệt chặn CORS khi gọi từ :8088 sang :4000',
+        desc: 'Trình duyệt gửi OPTIONS preflight và bị lỗi CORS.',
+        fix: 'Đã được giải quyết bằng cấu hình CORS header Access-Control-Allow-Origin: * trong Nginx của tooldock-portal.'
+      },
+      {
+        title: 'Lỗi 3: Port 8765 đã được loại bỏ để tinh gọn hệ thống',
+        desc: 'Trước đây Skill Funnel chạy một container static server riêng ở port 8765 gây phân mảnh cổng.',
+        fix: 'Đã gom về chạy trực tiếp trên web server chính (:8088/skill-funnel.html) và kết nối thẳng API Frontone (:4000).'
       }
     ]
   },
@@ -1603,7 +1616,7 @@ async function pingAllServices() {
     { key: 'rsshub', id: 'rsshub', url: 'http://localhost:1200' },
     { key: 'miniflux', id: 'miniflux', url: 'http://localhost:8080' },
     { key: 'glance', id: 'glance', url: 'http://localhost:8686' },
-    { key: 'skillfunnel', id: 'skillfunnel', url: 'http://localhost:8765' },
+    { key: 'skillfunnel', id: 'skillfunnel', url: 'http://localhost:8088/skill-funnel.html' },
     { key: 'mynews', id: 'mynews', url: 'http://localhost:8088' },
     { key: 'tooldock', id: 'tooldock', url: 'http://localhost:4000' }
   ];
@@ -1690,13 +1703,20 @@ async function loadPipelineData() {
     document.getElementById('watchlist-count').textContent = `${watchlist.keywords.length} từ khóa`;
   }
 
-  // 3. Skill Funnel
-  const funnel = await fetchPipelineJSON('skill-funnel.json');
-  if (funnel) {
-    const approved = (funnel.approved || []).length;
-    const pending = (funnel.pending || []).length;
-    document.getElementById('skillfunnel-approved').textContent = `${approved} Appr / ${pending} Pend`;
-  }
+  // 3. Skill Funnel & Frontone Queue
+  try {
+    const qRes = await fetch('http://localhost:4000/api/frontone/queue').then(r => r.json()).catch(() => null);
+    if (qRes && Array.isArray(qRes)) {
+      document.getElementById('skillfunnel-approved').textContent = `${qRes.length} in Queue`;
+    } else {
+      const funnel = await fetchPipelineJSON('skill-funnel.json');
+      if (funnel) {
+        const approved = (funnel.approved || []).length;
+        const pending = (funnel.pending || []).length;
+        document.getElementById('skillfunnel-approved').textContent = `${approved} Appr / ${pending} Pend`;
+      }
+    }
+  } catch(e) {}
 }
 
 // ==================== TELEMETRY INSPECTOR ====================
@@ -1854,9 +1874,9 @@ async function runFullDiagnosticAudit() {
   const gl = await checkServicePing('http://localhost:8686');
   if (gl.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: Glance (:8686) chưa bật', 'err'); }
 
-  // 4. Check Skill Dashboard (8765)
-  const sf = await checkServicePing('http://localhost:8765');
-  if (sf.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: Skill Dashboard (:8765) chưa bật', 'err'); }
+  // 4. Check Skill Funnel (:8088/skill-funnel.html)
+  const sf = await checkServicePing('http://localhost:8088/skill-funnel.html');
+  if (sf.ok) passed++; else { warnings++; log('AUDIT', 'Cảnh báo: Skill Funnel (:8088/skill-funnel.html) chưa bật', 'err'); }
 
   // 5. Check My News (8088)
   const mn = await checkServicePing('http://localhost:8088');
@@ -1884,7 +1904,7 @@ async function runFullDiagnosticAudit() {
         `- Miniflux (:8080): ${mf.ok ? '✅ Online (767 tin)' : '❌ Offline'}\n` +
         `- RSSHub (:1200): ${rh.ok ? '✅ Online' : '❌ Offline'}\n` +
         `- Glance (:8686): ${gl.ok ? '✅ Online' : '❌ Offline'}\n` +
-        `- Skill Funnel (:8765): ${sf.ok ? '✅ Online' : '❌ Offline'}\n` +
+        `- Skill Funnel (:8088): ${sf.ok ? '✅ Online' : '❌ Offline'}\n` +
         `- My News (:8088): ${mn.ok ? '✅ Online' : '❌ Offline'}\n` +
         `- Telegram API: ${tg.ok ? '✅ Kết nối tốt (Chờ Secret để bắn tin)' : '❌ Bị chặn'}\n` +
         `- Manifest & Watchlist: ${manifest && wl ? '✅ Dữ liệu hợp lệ' : '⚠️ Thiếu file'}`);
