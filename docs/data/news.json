@@ -1,46 +1,50 @@
 {
-  "updated": "2026-10-19T14:14:11.645769+00:00",
+  "updated": "2026-10-20T12:28:50.901210+00:00",
   "topics": {
     "AI/Tech": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>NousResearch/hermes-agent</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>langchain-ai/langchain</strong> (Score 45) và <strong>morluto/rea</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 30 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>tetherto/qvac</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>paperclipai/paperclip</strong> (Score 45) và <strong>OpenHands/OpenHands</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 45 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
+        {
+          "label": "Agent",
+          "items": [
+            4,
+            31,
+            32
+          ]
+        },
         {
           "label": "Open",
           "items": [
+            19,
             26,
-            28
+            44
+          ]
+        },
+        {
+          "label": "LLM",
+          "items": [
+            30,
+            36
           ]
         }
       ],
       "items": [
         {
-          "title": "NousResearch/hermes-agent",
+          "title": "tetherto/qvac",
           "summary": "",
-          "url": "https://github.com/NousResearch/hermes-agent",
+          "url": "https://github.com/tetherto/qvac",
           "sources": [
             "gh"
           ],
-          "time": "1m",
+          "time": "2m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal"
         },
         {
-          "title": "langchain-ai/langchain",
+          "title": "paperclipai/paperclip",
           "summary": "",
-          "url": "https://github.com/langchain-ai/langchain",
-          "sources": [
-            "gh"
-          ],
-          "time": "1m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "morluto/rea",
-          "summary": "",
-          "url": "https://github.com/morluto/rea",
+          "url": "https://github.com/paperclipai/paperclip",
           "sources": [
             "gh"
           ],
@@ -56,55 +60,31 @@
           "sources": [
             "gh"
           ],
-          "time": "4m",
+          "time": "3m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal"
         },
         {
-          "title": "paperclipai/paperclip",
+          "title": "ZeroLu/awesome-seedance",
           "summary": "",
-          "url": "https://github.com/paperclipai/paperclip",
+          "url": "https://github.com/ZeroLu/awesome-seedance",
           "sources": [
             "gh"
           ],
-          "time": "8m",
+          "time": "9m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal"
         },
         {
-          "title": "tetherto/qvac",
+          "title": "NousResearch/hermes-agent",
           "summary": "",
-          "url": "https://github.com/tetherto/qvac",
+          "url": "https://github.com/NousResearch/hermes-agent",
           "sources": [
             "gh"
           ],
-          "time": "11m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "firecrawl/firecrawl",
-          "summary": "",
-          "url": "https://github.com/firecrawl/firecrawl",
-          "sources": [
-            "gh"
-          ],
-          "time": "24m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "langgenius/dify",
-          "summary": "",
-          "url": "https://github.com/langgenius/dify",
-          "sources": [
-            "gh"
-          ],
-          "time": "27m",
+          "time": "10m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal"
@@ -116,15 +96,39 @@
           "sources": [
             "gh"
           ],
-          "time": "56m",
+          "time": "12m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal"
         },
         {
-          "title": "ZeroLu/awesome-seedance",
+          "title": "morluto/rea",
           "summary": "",
-          "url": "https://github.com/ZeroLu/awesome-seedance",
+          "url": "https://github.com/morluto/rea",
+          "sources": [
+            "gh"
+          ],
+          "time": "14m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal"
+        },
+        {
+          "title": "langgenius/dify",
+          "summary": "",
+          "url": "https://github.com/langgenius/dify",
+          "sources": [
+            "gh"
+          ],
+          "time": "17m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal"
+        },
+        {
+          "title": "langchain-ai/langchain",
+          "summary": "",
+          "url": "https://github.com/langchain-ai/langchain",
           "sources": [
             "gh"
           ],
@@ -140,7 +144,43 @@
           "sources": [
             "gh"
           ],
-          "time": "4h",
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal"
+        },
+        {
+          "title": "firecrawl/firecrawl",
+          "summary": "",
+          "url": "https://github.com/firecrawl/firecrawl",
+          "sources": [
+            "gh"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal"
+        },
+        {
+          "title": "YILS-LIN/short-video-factory",
+          "summary": "",
+          "url": "https://github.com/YILS-LIN/short-video-factory",
+          "sources": [
+            "gh"
+          ],
+          "time": "3h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal"
+        },
+        {
+          "title": "browser-use/browser-use",
+          "summary": "",
+          "url": "https://github.com/browser-use/browser-use",
+          "sources": [
+            "gh"
+          ],
+          "time": "6h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal"
@@ -152,43 +192,19 @@
           "sources": [
             "gh"
           ],
-          "time": "5h",
+          "time": "7h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal"
         },
         {
-          "title": "JuliusBrussee/caveman",
+          "title": "HBAI-Ltd/Toonflow-app",
           "summary": "",
-          "url": "https://github.com/JuliusBrussee/caveman",
+          "url": "https://github.com/HBAI-Ltd/Toonflow-app",
           "sources": [
             "gh"
           ],
-          "time": "6h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "Likely7/Veyra-NRVideo",
-          "summary": "",
-          "url": "https://github.com/Likely7/Veyra-NRVideo",
-          "sources": [
-            "gh"
-          ],
-          "time": "6h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "AceDataCloud/Nexior",
-          "summary": "",
-          "url": "https://github.com/AceDataCloud/Nexior",
-          "sources": [
-            "gh"
-          ],
-          "time": "6h",
+          "time": "8h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal"
@@ -197,6 +213,18 @@
           "title": "affaan-m/ECC",
           "summary": "",
           "url": "https://github.com/affaan-m/ECC",
+          "sources": [
+            "gh"
+          ],
+          "time": "8h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal"
+        },
+        {
+          "title": "Likely7/Veyra-NRVideo",
+          "summary": "",
+          "url": "https://github.com/Likely7/Veyra-NRVideo",
           "sources": [
             "gh"
           ],
@@ -218,13 +246,230 @@
           "tag": "signal"
         },
         {
+          "title": "AceDataCloud/Nexior",
+          "summary": "",
+          "url": "https://github.com/AceDataCloud/Nexior",
+          "sources": [
+            "gh"
+          ],
+          "time": "16h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Anil-matcha/Open-Generative-AI",
+          "summary": "",
+          "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+          "sources": [
+            "gh"
+          ],
+          "time": "16h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Text-to-Image Generative Modeling Without Language Pretraining",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26863v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "OpenVLHarness: Real World Visual Agentic Tool-Use with Multimodal Memory",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26860v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Can It Actually Work? Synthesizing Functional CAD Mechanisms",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26861v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Reinforcement Learning with Visually Attributable On-Policy Self-Distillation",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26856v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "VideoMaMa++: Temporally Consistent Video Matting via Preserve-and-Refine Token",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26857v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Ropedia W0: Scaling Loco-Manipulation World Models across Embodiments with Human Experience",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26855v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "InfiniDream: Open-Ended Photorealistic 3D Worlds Through Procedural Generation",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26853v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "CoopUQ: Robust Multi-Robot Social Navigation via Uncertainty-Aware Cooperative Forecasting",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26852v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Manga2Animate: An Agentic Framework for Faithful Manga Animation with Script and Storyboard Planning",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26851v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "tool"
+        },
+        {
+          "title": "GenOlympiad: Benchmarking Frontier Image Models at Their Capability Boundaries",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26850v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Where is Physical RSI capability from? An Observational Scaling Law of LLM-as-policy",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26848v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "WeAct: Dynamic Weight Switching as Agent Actions",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26847v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Train An Imaginative Agent",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26845v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "AnyGoal: On World Model Generalization Beyond Expert Rollouts",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26844v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "LatComm: Reusable Context Compression for Latent Communication between Large Language Models",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2610.26840v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "JuliusBrussee/caveman",
+          "summary": "",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "sources": [
+            "gh"
+          ],
+          "time": "1d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
           "title": "Shubhamsaboo/awesome-llm-apps",
           "summary": "",
           "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
           "sources": [
             "gh"
           ],
-          "time": "21h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -237,7 +482,7 @@
           "sources": [
             "gh"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -249,19 +494,7 @@
           "sources": [
             "gh"
           ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "browser-use/browser-use",
-          "summary": "",
-          "url": "https://github.com/browser-use/browser-use",
-          "sources": [
-            "gh"
-          ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -273,7 +506,7 @@
           "sources": [
             "gh"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -285,51 +518,27 @@
           "sources": [
             "gh"
           ],
-          "time": "2d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "YILS-LIN/short-video-factory",
-          "summary": "",
-          "url": "https://github.com/YILS-LIN/short-video-factory",
-          "sources": [
-            "gh"
-          ],
           "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
-          "title": "HBAI-Ltd/Toonflow-app",
+          "title": "vargHQ/sdk",
           "summary": "",
-          "url": "https://github.com/HBAI-Ltd/Toonflow-app",
-          "sources": [
-            "gh"
-          ],
-          "time": "3d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "leofan90/Awesome-World-Models",
-          "summary": "",
-          "url": "https://github.com/leofan90/Awesome-World-Models",
+          "url": "https://github.com/vargHQ/sdk",
           "sources": [
             "gh"
           ],
           "time": "4d",
           "score": 41,
           "velocity": "cooling",
-          "tag": "signal"
+          "tag": "tool"
         },
         {
-          "title": "Anil-matcha/Open-Generative-AI",
+          "title": "leofan90/Awesome-World-Models",
           "summary": "",
-          "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+          "url": "https://github.com/leofan90/Awesome-World-Models",
           "sources": [
             "gh"
           ],
@@ -345,7 +554,7 @@
           "sources": [
             "gh"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -357,97 +566,61 @@
           "sources": [
             "gh"
           ],
-          "time": "10d",
+          "time": "11d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool"
-        },
-        {
-          "title": "szczyglis-dev/py-gpt",
-          "summary": "",
-          "url": "https://github.com/szczyglis-dev/py-gpt",
-          "sources": [
-            "gh"
-          ],
-          "time": "13d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
         }
       ]
     },
     "iGaming": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>ONJN ex-boss: “Don’t turn problem gamblers into collateral of leadership changes”</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Catena Media withdraws double-digit growth hopes after “weak” Q3</strong> (Score 45) và <strong>Austria faces TRIS deadline for EU approval of new gaming orders</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 25 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Flutter Entertainment to cut up to 1,400 UK & Ireland jobs</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Hippos ATG secures access to Finland in 2027</strong> (Score 45) và <strong>Highway to Hell? France warns of gambling risks in video games</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 25 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
-          "label": "MGD",
+          "label": "Finland",
           "items": [
-            14,
-            22,
-            23
+            1,
+            6,
+            24
           ]
         },
         {
-          "label": "Brazil",
+          "label": "Hippos ATG",
           "items": [
-            7,
-            20
+            1,
+            6
           ]
         }
       ],
       "items": [
         {
-          "title": "ONJN ex-boss: “Don’t turn problem gamblers into collateral of leadership changes”",
+          "title": "Flutter Entertainment to cut up to 1,400 UK & Ireland jobs",
           "summary": "",
-          "url": "https://sbcnews.co.uk/europe/2026/10/19/romania-onjn-interview/",
+          "url": "https://sbcnews.co.uk/sportsbook/2026/10/20/flutter-cuts-1400-uki-jobs/",
           "sources": [
             "rss"
           ],
-          "time": "27m",
+          "time": "45m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal"
         },
         {
-          "title": "Catena Media withdraws double-digit growth hopes after “weak” Q3",
+          "title": "Hippos ATG secures access to Finland in 2027",
           "summary": "",
-          "url": "https://sbcnews.co.uk/affiliatenews/2026/10/19/catena-ceo-on-weak-q3/",
-          "sources": [
-            "rss"
-          ],
-          "time": "59m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "market"
-        },
-        {
-          "title": "Austria faces TRIS deadline for EU approval of new gaming orders",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/europe/2026/10/19/austria-tris-eu/",
-          "sources": [
-            "rss"
-          ],
-          "time": "1h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "Kambi continues to grow network with QuinnBet partnership",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/sportsbook/2026/10/19/kambi-quinnbet-partner/",
+          "url": "https://sbcnews.co.uk/europe/2026/10/20/finland-hippos-atg/",
           "sources": [
             "rss"
           ],
           "time": "2h",
           "score": 45,
           "velocity": "stable",
-          "tag": "market"
+          "tag": "signal"
         },
         {
-          "title": "National Lottery licence to be evaluated by UK watchdog",
+          "title": "Highway to Hell? France warns of gambling risks in video games",
           "summary": "",
-          "url": "https://sbcnews.co.uk/europe/uk/2026/10/19/national-lottery-uk/",
+          "url": "https://sbcnews.co.uk/europe/2026/10/20/france-anj-video-games/",
           "sources": [
             "rss"
           ],
@@ -457,33 +630,33 @@
           "tag": "signal"
         },
         {
-          "title": "SBC and VNLOK announce strategic partnership to strengthen licensed operator participation at SBC Summit Europe",
+          "title": "Matchbook gains “massive advantage” in exchange space with Betdaq acquisition",
           "summary": "",
-          "url": "https://sbcnews.co.uk/events/sbcevents/2026/10/19/sbc-vnlok-sbc-summit-europe/",
+          "url": "https://sbcnews.co.uk/features/interviews/2026/10/20/matchbook-ceo-interview/",
           "sources": [
             "rss"
           ],
-          "time": "4h",
+          "time": "3h",
           "score": 45,
           "velocity": "stable",
           "tag": "market"
         },
         {
-          "title": "BGC lambasts calls by 90 MPs to raise UK betting tax as “deeply misguided”",
+          "title": "Norsk Tipping & Sportradar: player betting took over in World Cup ‘26",
           "summary": "",
-          "url": "https://sbcnews.co.uk/features/comment/2026/10/19/bgc-ceo-on-mps-mgd-letter/",
+          "url": "https://sbcnews.co.uk/features/interviews/2026/10/20/world-cup-player-betting/",
           "sources": [
             "rss"
           ],
-          "time": "4h",
+          "time": "3h",
           "score": 45,
           "velocity": "stable",
-          "tag": "market"
+          "tag": "signal"
         },
         {
-          "title": "BetConstruct AI: Brazil chaos will create scars across industry",
+          "title": "Better Collective debuts Prediction Pro ahead of US midterms",
           "summary": "",
-          "url": "https://sbcnews.co.uk/features/2026/10/19/betconstruct-ai-brazil-chaos-interview/",
+          "url": "https://sbcnews.co.uk/marketing/2026/10/20/better-collective-debuts-prediction-pro-ahead-of-us-midterms/",
           "sources": [
             "rss"
           ],
@@ -493,27 +666,123 @@
           "tag": "signal"
         },
         {
-          "title": "“A historic moment” – Norsk Tipping & Sportradar on a World Cup to remember",
+          "title": "Hippos ATG announces Finland licence ahead of market launch",
           "summary": "",
-          "url": "https://sbcnews.co.uk/features/interviews/2026/10/19/norsk-tipping-sportradar/",
+          "url": "https://igamingbusiness.com/legal-compliance/licensing/hippos-atg-announces-finland-licence/",
           "sources": [
             "rss"
           ],
-          "time": "4h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "20h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "market"
+        },
+        {
+          "title": "From niche to new vertical: The evolution of prediction markets",
+          "summary": "",
+          "url": "https://igamingbusiness.com/prediction-markets/evolution-prediction-markets/",
+          "sources": [
+            "rss"
+          ],
+          "time": "20h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "market"
+        },
+        {
+          "title": "ONJN ex-boss: “Don’t turn problem gamblers into collateral of leadership changes”",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/europe/2026/10/19/romania-onjn-interview/",
+          "sources": [
+            "rss"
+          ],
+          "time": "22h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal"
         },
         {
-          "title": "Entain reiterates confidence in cash generation and “laser focus” on shareholder returns",
+          "title": "Catena Media withdraws double-digit growth hopes after “weak” Q3",
           "summary": "",
-          "url": "https://sbcnews.co.uk/sportsbook/2026/10/19/entain-q3-investor-call/",
+          "url": "https://sbcnews.co.uk/affiliatenews/2026/10/19/catena-ceo-on-weak-q3/",
           "sources": [
             "rss"
           ],
-          "time": "6h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "23h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "market"
+        },
+        {
+          "title": "Austria faces TRIS deadline for EU approval of new gaming orders",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/europe/2026/10/19/austria-tris-eu/",
+          "sources": [
+            "rss"
+          ],
+          "time": "23h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Kambi continues to grow network with QuinnBet partnership",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/sportsbook/2026/10/19/kambi-quinnbet-partner/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "market"
+        },
+        {
+          "title": "ACMA issues first guidance on Australia’s ban on notable people in gambling ads",
+          "summary": "",
+          "url": "https://igamingbusiness.com/marketing-affiliates/marketing-regulation/acma-issues-first-guidance-on-australias-ban-on-notable-people/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "risk"
+        },
+        {
+          "title": "Labour MPs call for increased tax on Category B machines",
+          "summary": "",
+          "url": "https://igamingbusiness.com/finance/tax/labour-mps-increased-tax-category-b-machines-uk-mgd/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "The PA agrees takeover of Racing and Sports owner RAS Technology",
+          "summary": "",
+          "url": "https://igamingbusiness.com/strategy/ma/the-pa-agrees-takeover-of-racing-and-sports-owner-ras-technology/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Last orders for Britain’s arcades?",
+          "summary": "",
+          "url": "https://igamingbusiness.com/finance/tax/last-orders-for-britains-arcades/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal"
         },
         {
@@ -523,7 +792,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market"
@@ -547,7 +816,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk"
@@ -559,7 +828,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market"
@@ -571,7 +840,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market"
@@ -583,7 +852,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -595,7 +864,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -607,7 +876,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -619,96 +888,22 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market"
-        },
-        {
-          "title": "The hidden infrastructure of high-load business: Inside RedCore’s tech stack",
-          "summary": "",
-          "url": "https://igamingbusiness.com/tech-innovation/redcore-high-load-tech-infrastructure/",
-          "sources": [
-            "rss"
-          ],
-          "time": "4d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Entain CEO expects Brazil market to reopen, and it will be ready",
-          "summary": "",
-          "url": "https://igamingbusiness.com/finance/entain-confident-brazil-market-will-reopen/",
-          "sources": [
-            "rss"
-          ],
           "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market"
-        },
-        {
-          "title": "Swedish appeals court upholds fines and warnings on Bet365 operator",
-          "summary": "",
-          "url": "https://igamingbusiness.com/legal-compliance/compliance/swedish-appeals-court-upholds-fines-warnings-bet365-operator/",
-          "sources": [
-            "rss"
-          ],
-          "time": "4d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "risk"
-        },
-        {
-          "title": "Rank CEO says MGD rise would ‘reduce viability’ of venues but hails ‘strong start’ to financial year",
-          "summary": "",
-          "url": "https://igamingbusiness.com/finance/mgd-rise-would-reduce-viability-venues-ranks-q1-ngr/",
-          "sources": [
-            "rss"
-          ],
-          "time": "4d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Divided they fall: Is the sector presenting the right argument against MGD hike threats?",
-          "summary": "",
-          "url": "https://igamingbusiness.com/finance/tax/is-the-sector-presenting-the-right-argument-against-mgd-hike/",
-          "sources": [
-            "rss"
-          ],
-          "time": "4d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Day of reckoning comes for Pennsylvania skill games as legislation deadline expires",
-          "summary": "",
-          "url": "https://igamingbusiness.com/legal-compliance/legal/skill-games-pa-illegal-october-2026/",
-          "sources": [
-            "rss"
-          ],
-          "time": "4d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
         }
       ]
     },
     "Business": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Your AI Marketing Transformation Will Get Harder Before It Gets Easier</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>The Loyal Customers Your Luxury Brand Is Overlooking</strong> (Score 45) và <strong>LatAm Startup Funding Jumps 26% In Q3 As VCs Begin ‘Rediscovering’ The Region</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 38 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>How To Build A Billion-Dollar Company Without Venture Capital</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Fintech Funding Fell 21% In Q3 As Deals Grew Scarcer</strong> (Score 45) và <strong>Tenstorrent hits $6.2B valuation to scale open-weight AI chips</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 38 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "TechCrunch Disrupt",
           "items": [
-            15,
             20,
-            27,
-            32,
-            33,
+            25,
+            30,
             34,
             35,
             36,
@@ -716,35 +911,88 @@
           ]
         },
         {
-          "label": "San Francisco",
+          "label": "Benchmark",
           "items": [
-            4,
-            20
+            9,
+            15
           ]
         },
         {
-          "label": "Benchmark",
+          "label": "San Francisco",
           "items": [
-            4,
-            10
+            9,
+            25
           ]
         },
         {
           "label": "Last",
           "items": [
-            13,
-            15
-          ]
-        },
-        {
-          "label": "Exclusive",
-          "items": [
-            19,
-            24
+            18,
+            20
           ]
         }
       ],
       "items": [
+        {
+          "title": "How To Build A Billion-Dollar Company Without Venture Capital",
+          "summary": "",
+          "url": "https://news.crunchbase.com/startups/bootstrapping-billion-dollar-company-ai-staffing-demarco-bairesdev/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "market"
+        },
+        {
+          "title": "Fintech Funding Fell 21% In Q3 As Deals Grew Scarcer",
+          "summary": "",
+          "url": "https://news.crunchbase.com/venture/q3-2026-fintech-startup-funding-deal-count-fell-ai/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "market"
+        },
+        {
+          "title": "Tenstorrent hits $6.2B valuation to scale open-weight AI chips",
+          "summary": "",
+          "url": "https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/",
+          "sources": [
+            "rss"
+          ],
+          "time": "17h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "market"
+        },
+        {
+          "title": "AI assistant startup Town nabs unicorn valuation 4 months after launch",
+          "summary": "",
+          "url": "https://techcrunch.com/2026/10/19/ai-assistant-startup-town-nabs-unicorn-valuation-four-months-after-launch/",
+          "sources": [
+            "rss"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "market"
+        },
+        {
+          "title": "Accelerating Agentic AI in Production to Drive Measurable Outcomes",
+          "summary": "",
+          "url": "http://hbr.org/sponsored/2026/10/accelerating-agentic-ai-in-production-to-drive-measurable-outcomes",
+          "sources": [
+            "rss"
+          ],
+          "time": "22h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
         {
           "title": "Your AI Marketing Transformation Will Get Harder Before It Gets Easier",
           "summary": "",
@@ -752,9 +1000,9 @@
           "sources": [
             "rss"
           ],
-          "time": "1h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "1d",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal"
         },
         {
@@ -764,9 +1012,9 @@
           "sources": [
             "rss"
           ],
-          "time": "2h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "1d",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal"
         },
         {
@@ -776,9 +1024,9 @@
           "sources": [
             "rss"
           ],
-          "time": "3h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "1d",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "market"
         },
         {
@@ -788,9 +1036,9 @@
           "sources": [
             "rss"
           ],
-          "time": "3h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "1d",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal"
         },
         {
@@ -800,7 +1048,7 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market"
@@ -812,7 +1060,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market"
@@ -824,7 +1072,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -836,7 +1084,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -848,7 +1096,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -860,7 +1108,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market"
@@ -872,7 +1120,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -884,7 +1132,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -896,7 +1144,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -908,7 +1156,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -920,7 +1168,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -944,7 +1192,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -956,7 +1204,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -968,7 +1216,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -980,7 +1228,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market"
@@ -992,7 +1240,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1016,7 +1264,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1028,31 +1276,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Exclusive: Stella & Dot Founder Raises $5M For Her Next Act, AI Marketing Startup Marklo",
-          "summary": "",
-          "url": "https://news.crunchbase.com/venture/founder-raises-5m-next-act-ai-marketing-startup-marklo-herrin/",
-          "sources": [
-            "rss"
-          ],
-          "time": "5d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market"
-        },
-        {
-          "title": "How I Learned That Some Startup Problems Are Too Big For A Minimum Viable Product",
-          "summary": "",
-          "url": "https://news.crunchbase.com/startups/minimum-viable-product-problems-ai-fintech-kjellen-freda/",
-          "sources": [
-            "rss"
-          ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1064,7 +1288,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1088,7 +1312,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1100,7 +1324,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1112,19 +1336,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Why Great Teams Don’t Need to Like Each Other",
-          "summary": "",
-          "url": "http://hbr.org/podcast/2026/10/why-great-teams-dont-need-to-like-each-other",
-          "sources": [
-            "rss"
-          ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1148,7 +1360,7 @@
           "sources": [
             "rss"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1160,7 +1372,7 @@
           "sources": [
             "rss"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1172,31 +1384,7 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "TechCrunch Disrupt 2026: Gamma’s Grant Lee, Engine’s Elia Wallen, and GV’s Crystal Huang on landing your first 1,000 customers",
-          "summary": "",
-          "url": "https://techcrunch.com/2026/10/09/techcrunch-disrupt-2026-gammas-grant-lee-engines-elia-wallen-and-gvs-crystal-huang-on-landing-your-first-1000-customers/",
-          "sources": [
-            "rss"
-          ],
           "time": "9d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "TechCrunch Disrupt 2026 starts in 4 days — lock in your pass savings of up to $100 before prices rise",
-          "summary": "",
-          "url": "https://techcrunch.com/2026/10/09/techcrunch-disrupt-2026-starts-in-4-days-lock-in-your-pass-savings-of-up-to-100-before-prices-rise/",
-          "sources": [
-            "rss"
-          ],
-          "time": "10d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1204,17 +1392,14 @@
       ]
     },
     "News": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>AI management based on standards and accountability. - Vietnam.vn</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Rules tightened on foreign-only prize-winning electronic games - vietnamnews.vn</strong> (Score 41) và <strong>Anthropic predicts AI will boost US GDP growth. - Vietnam.vn</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 16 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Billionaire Elon Musk announced he would donate SpaceX stock to all American children. - Vietnam.vn</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Nghiên cứu của Bitcoin Policy Institute cho thấy AI ưu tiên Bitcoin hơn tiền pháp định - nguoiquansat.vn</strong> (Score 41) và <strong>AI management based on standards and accountability. - Vietnam.vn</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 15 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "Vietnam",
           "items": [
             0,
             2,
-            3,
-            4,
             5,
-            6,
             7,
             8,
             9,
@@ -1222,34 +1407,42 @@
             11,
             12,
             13,
-            14,
-            15
-          ]
-        },
-        {
-          "label": "Anthropic",
-          "items": [
-            2,
-            9,
-            13
+            14
           ]
         },
         {
           "label": "Microsoft",
           "items": [
-            3,
-            5
-          ]
-        },
-        {
-          "label": "Claude",
-          "items": [
-            9,
-            13
+            5,
+            7
           ]
         }
       ],
       "items": [
+        {
+          "title": "Billionaire Elon Musk announced he would donate SpaceX stock to all American children. - Vietnam.vn",
+          "summary": "",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNYThuSkkxZWpyLWU2c3hvX1JnTHJXZkNDbnNzdXdVci1XYTBIZUR3eEIyXzVONThfOFlTbnZ0a0kxcndNb1hmZmNlMVlUMU80MXl3MWhMemNpYzd6LWQzYTNqZ1c2ZzJDZERhOEt1NjNOLU1EYnVXMlZ1OHAzclpLMmJiOUQ3TEpDWngzczM1M09BQlhIbUpjRg?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "11h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal"
+        },
+        {
+          "title": "Nghiên cứu của Bitcoin Policy Institute cho thấy AI ưu tiên Bitcoin hơn tiền pháp định - nguoiquansat.vn",
+          "summary": "",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZ0oyQkdlY3ZoalhwMm1ZM09kM3FIT2ljQjk3R3k0bng3UjhKN3lGcjNuMGMzVFN0Zy1kRlBDUjd5NGczVDZVekxjTVN0UXBTUTdxOXRMTGdVbThPc3laSmFNc2NYQmUxellQMFhpLUNoeGFkazgzdTJqRHhmYUt5OFlvZXk0UTdHSjJNdS0xaXNZSHpBNHlrbUVBRWhLMktrMk9FQUNEcmtxa2UyTFNYc2RtcEZadml4el8yOVc4WQ?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "5d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
         {
           "title": "AI management based on standards and accountability. - Vietnam.vn",
           "summary": "",
@@ -1257,35 +1450,34 @@
           "sources": [
             "rss"
           ],
-          "time": "6h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "1d",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal"
         },
         {
-          "title": "Rules tightened on foreign-only prize-winning electronic games - vietnamnews.vn",
+          "title": "AI-generated images and videos must be labelled starting March 1, 2026 - LuatVietnam",
           "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQU83bFlYbUQyUkxBUTh0cFVuY01LamRUS1gzT1lFa0U2elRad18xMnBzdUV2cXl6QmJDTlNDVUV5RHNDTUNOQ2JOMHpKU1NGY3pPU3dtNW1jOFhxU3hfU3cxaDFaLUxZR3owYThjQkdRUUhtaW84ZDM5UHB0cGxMRnRoWENuZ3o4YUp0OEhrRFJsTnFHVkZtbThQV28ySjFsaUtwUjlfNmtpc2VyeVFCNTRR?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQbFc4TUp5SFBlZ1pRQkNGbERTWEQxa19tUkNiWTNIejNsWWM1TEFhbThJVUpNQjFrNjZvNzhRWFA0NmJHMGoybjFHUl9RcEszN09UVXpIQngzTWY0LUt6bDkwLWxDeWowTlktSFZFOHJjUENzemZDUGoyc0huOHI3WHNMUjB5YVRIYzBPWlpSV3I5MFExaVUyX3B6LTlrNzNZZ2hJQnhWNmdVTjVwWExfN1VzVjBGYXYzLWxoS0ZBdnJFa1FibXRKWk5PcVgyRkhqdWxCRQ?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "205d",
+          "time": "231d",
           "score": 41,
           "velocity": "cooling",
-          "tag": "risk"
+          "tag": "signal"
         },
         {
-          "title": "Anthropic predicts AI will boost US GDP growth. - Vietnam.vn",
+          "title": "AI Law takes effect, anchors national governance framework - vietnamnews.vn",
           "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE96M01xQUZMUEY1RkRkdnRTajFGa2pPOEhUUnpRbG1BQm83d0dRMWFNdFJGT1V1LTBBZjJRVFFhcFBtT05MR3FEMlMwLS1QV2hxclMxd2ZMa0FuRjdqX3BEZkhuR3MtQXh6S0xYd1VsVkhUTTJYT2duSXdRdnV6Zw?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOc0Iybnh4MEpVczhNY1pBQUl0MXhUdkd2RE1rcDFIU3FlSWVUM1E4cEhta29VZjEzUjJqbExBdFJPN3pfdXdkOXp2SWxBbTdyRDZ1clFBM2pxUkZRX2gzaEppdUxSNlJoWThnaE5ES2Z6UHJJSWpRNzBrckF5dTB1X0ZJSnpuTzY0NWFnaExHWWd0ODk0djE2V1dxY1l0OFN4NWZN?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "12h",
+          "time": "229d",
           "score": 41,
           "velocity": "cooling",
-          "tag": "market",
-          "watchlist_matched": "anthropic"
+          "tag": "tool"
         },
         {
           "title": "Microsoft issues a warning regarding AI regulation. - Vietnam.vn",
@@ -1294,19 +1486,19 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "10d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk"
         },
         {
-          "title": "USGA ra mắt Rules AI: Hỗ trợ golfer tra cứu Luật Golf tức thời - Vietnam Golf Magazine",
+          "title": "The Law on Artificial Intelligence must ensure four key pillars - Tạp chí KH&CN Việt Nam",
           "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPN3g3Rk9xY3A1WkRZU2ZlRHFRV1RYVF9UaDBDLTJWdml4THRvT2tZMVhHYkVXd1VCTHRzekFBcUtwSlQzTk8tN0NIVnhDQjZMLWlMT19XeVdBa0t3Rl85VmYwUVFjVVdsaUNJOVhxdDlDbFZONmwtd2FqXzZwWkZwRXNCVFpoME9ZeVYwNDBxWFlkckRsVGlNTjhJUzM?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNb2JHd1ZMZW92ZE9wSVhFMkIzdndRUlY5bEd3SjVpMDdYblBxal9SZGh6SXRBWmVOZW9hUWVWR0FfT0ZpVHh5OEwyeUVwbW1GbnFXVEhSRzBnOE11X2RFeFJpd2syRGNHZWRlVUNESlprOVAzbll0YUFOeGR2XzRXaGtLMmNfaE0yQW5QdnhYeU9RYXNE?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "62d",
+          "time": "335d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1318,7 +1510,19 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "How do the US, China, and the EU regulate AI differently? - Vietnam.vn",
+          "summary": "",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5uY1AyYUVMd2FZRV82SW9OSXBlX1FqQmp6NUJyTFpCWUVWNFdtWFFVXzNvUVpMYnlZcDhkRkJFWXYta2pEQjdjcm5zTFpXVW1kZ3UzYUNhTnlNNkthUTM5dmVTTm5NbGFQcFlsZEpHZ1lhMjNMdzZpOHBR?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "13d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1330,7 +1534,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
@@ -1342,22 +1546,10 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal"
-        },
-        {
-          "title": "Tighten regulations on AI short films. - Vietnam.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB0MzZQMWJESl9zWEdJNUdPM05fQVpXSTByNWtHTTJzWmFoTEZ1UzBhVk1XekdxUDQ4SkdwT1prZ0xyTzdmSDNhbmRPcDJzV3NKNU9HUENUUHZ5eXQ4czQ2dEpITzUzc3M?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "3d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "risk"
         },
         {
           "title": "Anthropic updates its policy for Claude: Why is repeated misuse by users of AI prohibited? - Vietnam.vn",
@@ -1366,11 +1558,35 @@
           "sources": [
             "rss"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
           "watchlist_matched": "claude"
+        },
+        {
+          "title": "The US President established a task force on artificial intelligence. - Vietnam.vn",
+          "summary": "",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOWnlUMjVGOVBrUHRnTnpkY2lPTlFudDBDX1FNMFQ5UHVmQmotNkVjM0ZCTWZKR0ttMGFMSE1xQkZBOGctUHRfc2pyMEwxMW9wWjY1Z2ttN1Q0NHd6c3NheGtNREtUZVNvNGJQaUZXc3o3RFppLW9rLWZndWtCem5BR21nUkpUOTR4UUpGTzVYT2JRNW8?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "16d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Short films and AI films must comply with regulations regarding online film distribution. - Vietnam.vn",
+          "summary": "",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQQTd6NEtyQ2ZlUDVNWEpRdkgwN2ZySkF6ck9vNDB4MzVqMU1reEJpZlcxVVNMX2Fwb3lzaGNBX3JPcVhMZ21Uc2s0XzBQWTJMNXdGbjdpM2IyQk4wT18yY0VxUzY3el9TdVcyLWZVSi04TDlxOHRtWHc1ZmE1N254cktsSnZ1Qk5jQ1pMbmN1M2NCb1ZtbTAyQw?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "11d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "risk"
         },
         {
           "title": "Taming AI missiles: How MoMo uses Tesla principles and empathetic regulations to retain users. - Vietnam.vn",
@@ -1383,67 +1599,6 @@
           "score": 41,
           "velocity": "cooling",
           "tag": "risk"
-        },
-        {
-          "title": "Short films and AI films must comply with regulations regarding online film distribution. - Vietnam.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQQTd6NEtyQ2ZlUDVNWEpRdkgwN2ZySkF6ck9vNDB4MzVqMU1reEJpZlcxVVNMX2Fwb3lzaGNBX3JPcVhMZ21Uc2s0XzBQWTJMNXdGbjdpM2IyQk4wT18yY0VxUzY3el9TdVcyLWZVSi04TDlxOHRtWHc1ZmE1N254cktsSnZ1Qk5jQ1pMbmN1M2NCb1ZtbTAyQw?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "10d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "risk"
-        },
-        {
-          "title": "How do the US, China, and the EU regulate AI differently? - Vietnam.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5uY1AyYUVMd2FZRV82SW9OSXBlX1FqQmp6NUJyTFpCWUVWNFdtWFFVXzNvUVpMYnlZcDhkRkJFWXYta2pEQjdjcm5zTFpXVW1kZ3UzYUNhTnlNNkthUTM5dmVTTm5NbGFQcFlsZEpHZ1lhMjNMdzZpOHBR?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "12d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Anthropic prohibits users from mistreating Claude, a controversial rule. - Vietnam.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOeC1kaE1iNEhTTkpLdlJreTRwWlBGWUtyaGp3NkI1TDBjTjZEWDhJNEdmbDFwSUhfalBQcXktdXh4NU5rMy1DQkdWbXR4YWN2YXQzWFZoUVlfUzF3RVRsWW5lY0pLY2gxYVFIRkdDWVFQM2hZOWZ5UXhHalpSdmw1eGVtek5SZjdLdDVLWkk3XzV4MWlh?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "7d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "watchlist_matched": "claude"
-        },
-        {
-          "title": "Over 80 news organizations join forces to control AI's use of content. - Vietnam.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPR3k4TW9KWHNobi1JSTRDRGZGeUkzRVFKVTBfYnpua055V0taNGR4NHliSC1xM2wwb21MT01qUGJMZGtBTVJ4MjJHT28wVVlVVVZxajkzTHJrRG9kb1VxMzFNRVZ5M0NUb25qX0tyVXNDSnhuaVZHemlpNkJ3cDNOTzFweDVpWWhzWjhiTE5EYw?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "6d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Bill Gates warns that 'AI out of control could take the lives of 1 billion people'. - Vietnam.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdF9oZ2tNY21oekhORjVKTEx3ak51RlhscHB3UlI4VXFjemd1eTRTb3E5SnhrTF8xcDh4N2VOTW90Y0xyRHRSRXZZSENDQnZnV0xoUzV6LURWNV9RT0h6QjRxc0M5dnpOZzA3S284emJYQmpRZG13T05wS1hraUtnNVBicWVQd05mdkMtRXdlNEo5aFpNRGpoeWNnN25oUUE?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "21d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market"
         }
       ]
     }
