@@ -37,6 +37,9 @@ jobs:
           WATCHLIST_TELEGRAM_ALERT: "true"
         run: python scripts/fetch.py
 
+      - name: Run Opportunity Radar scoring
+        run: python scripts/score.py
+
       - name: Index into RAGFlow
         if: env.RAGFLOW_API_KEY != ''
         env:
