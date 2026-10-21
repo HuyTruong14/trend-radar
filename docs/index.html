@@ -480,6 +480,374 @@
       color: #ffffff;
     }
 
+    /* Opportunity Radar Styles */
+    .tab-btn-radar {
+      background: linear-gradient(135deg, rgba(45, 106, 255, 0.12), rgba(255, 107, 53, 0.12));
+      border: 1px solid rgba(255, 107, 53, 0.35);
+      color: var(--fg);
+    }
+    .tab-btn-radar:hover {
+      border-color: var(--hot);
+      color: #fff;
+    }
+    .tab-btn-radar.active {
+      background: linear-gradient(135deg, #2d6aff, #ff6b35);
+      border-color: #ff6b35;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(255, 107, 53, 0.35);
+    }
+    .tab-badge-radar {
+      background: rgba(255, 107, 53, 0.25);
+      color: #ffaa80;
+    }
+    .tab-btn-radar.active .tab-badge-radar {
+      background: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    .opp-radar-section {
+      margin-bottom: 32px;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* KPI Summary Row */
+    .opp-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 900px) {
+      .opp-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .opp-kpi-grid { grid-template-columns: 1fr; }
+    }
+
+    .opp-kpi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+    .opp-kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: var(--card-accent, var(--accent));
+    }
+    .opp-kpi-val {
+      font-family: var(--font-mono);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--fg);
+    }
+    .opp-kpi-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--fg-dim);
+    }
+    .opp-kpi-sub {
+      font-size: 11px;
+      color: var(--fg-muted);
+    }
+
+    /* Controls bar */
+    .opp-controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .opp-filter-tabs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .opp-filter-btn {
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: var(--radius-full);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--fg-dim);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .opp-filter-btn:hover {
+      color: var(--fg);
+      background: var(--bg-card-hover);
+    }
+    .opp-filter-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* Main Table Card */
+    .opp-table-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+    .opp-table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .opp-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+      min-width: 860px;
+    }
+    .opp-table th {
+      background: rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--fg-muted);
+      white-space: nowrap;
+    }
+    .opp-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      vertical-align: top;
+      color: var(--fg);
+    }
+    .opp-table tr:hover td {
+      background: var(--bg-card-hover);
+    }
+    .opp-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Column 1: Title & Summary */
+    .opp-title-cell {
+      max-width: 380px;
+      min-width: 260px;
+    }
+    .opp-title-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--fg);
+      text-decoration: none;
+      line-height: 1.4;
+      display: inline-block;
+      margin-bottom: 6px;
+      transition: color var(--transition-fast);
+    }
+    .opp-title-link:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+    .opp-summary-text {
+      font-size: 12px;
+      color: var(--fg-dim);
+      line-height: 1.5;
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .opp-meta-sub {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--fg-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .opp-meta-pill {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 1px 5px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Column 2: Signal Type Chips */
+    .opp-chips-cell {
+      min-width: 130px;
+    }
+    .opp-chips-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: flex-start;
+    }
+    .chip-signal {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+    .chip-pain {
+      background: rgba(239, 68, 68, 0.12);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    .chip-price {
+      background: rgba(245, 158, 11, 0.12);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .chip-gap {
+      background: rgba(168, 85, 247, 0.12);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+    .chip-tech {
+      background: rgba(52, 211, 153, 0.12);
+      color: #34d399;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+
+    /* Column 3: Score */
+    .opp-score-cell {
+      min-width: 100px;
+    }
+    .opp-score-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .opp-score-val {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--fg);
+    }
+    .opp-score-val.score-ready { color: #ff6b35; }
+    .opp-score-val.score-res { color: #fbbf24; }
+    .opp-score-val.score-wtch { color: #38bdf8; }
+    .opp-score-bar-bg {
+      width: 100%;
+      max-width: 80px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+    .opp-score-bar-fill {
+      height: 100%;
+      border-radius: var(--radius-full);
+      transition: width 0.3s ease;
+    }
+    .opp-score-sub {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--fg-muted);
+    }
+
+    /* Column 4: Sources */
+    .opp-sources-cell {
+      min-width: 130px;
+    }
+    .opp-sources-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    .source-count-pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--fg-dim);
+      border: 1px solid var(--border);
+      display: inline-block;
+    }
+    .opp-source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .opp-src-btn {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 7px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--fg-dim);
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      transition: all var(--transition-fast);
+    }
+    .opp-src-btn:hover {
+      background: var(--bg-card-hover);
+      color: var(--fg);
+      border-color: rgba(var(--accent-rgb), 0.4);
+    }
+
+    /* Column 5: Velocity */
+    .opp-velocity-cell {
+      min-width: 90px;
+      white-space: nowrap;
+    }
+
+    /* Column 6: Stage Flag */
+    .opp-stage-cell {
+      min-width: 120px;
+      white-space: nowrap;
+    }
+    .stage-flag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      letter-spacing: 0.02em;
+    }
+    .stage-build-ready {
+      background: rgba(255, 107, 53, 0.15);
+      color: var(--hot);
+      border: 1px solid rgba(255, 107, 53, 0.35);
+    }
+    .stage-research {
+      background: rgba(251, 191, 36, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(251, 191, 36, 0.35);
+    }
+    .stage-watch {
+      background: rgba(148, 163, 184, 0.12);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
     /* Section Headings */
     .section-title {
       font-size: 15px;
@@ -1027,8 +1395,11 @@
     <!-- Topic Tabs -->
     <nav class="topic-tabs" id="topicTabs" aria-label="Topic navigation"></nav>
 
+    <!-- Opportunity Radar Section (Phase 3 Tab) -->
+    <section class="opp-radar-section" id="opportunityRadarSection" style="display: none;"></section>
+
     <!-- Hot Today Section -->
-    <section aria-labelledby="hotTodayHeading">
+    <section id="hotSection" aria-labelledby="hotTodayHeading">
       <h2 class="section-title" id="hotTodayHeading">
         🔥 Hot Today <span class="count-pill">(Top signals by score)</span>
       </h2>
@@ -1044,7 +1415,7 @@
     </section>
 
     <!-- Recent Section -->
-    <section class="recent-section" aria-labelledby="recentHeading">
+    <section class="recent-section" id="recentSection" aria-labelledby="recentHeading">
       <h2 class="section-title" id="recentHeading">
         ⏱️ Recent Signals <span class="count-pill" id="recentCountPill"></span>
       </h2>
@@ -1148,6 +1519,8 @@
 
     // --- 2. STATE & CONFIG ---
     let DATA = {};
+    let OPPORTUNITIES_DATA = [];
+    let oppStageFilter = 'all';
     let WATCHLIST_CONFIG = {
       keywords: ["iGaming regulation", "Claude", "Vietnam tech", "Anthropic"],
       threshold: 50
@@ -1254,8 +1627,24 @@
       }
     }
 
+    async function loadOpportunities() {
+      try {
+        const res = await fetch('data/opportunities.json');
+        if (res.ok) {
+          const list = await res.json();
+          if (Array.isArray(list)) {
+            OPPORTUNITIES_DATA = list.filter(item => (item.total || 0) >= 4);
+            OPPORTUNITIES_DATA.sort((a, b) => (b.total || 0) - (a.total || 0));
+          }
+        }
+      } catch (e) {
+        console.warn('Could not load data/opportunities.json:', e);
+      }
+    }
+
     async function loadData() {
       await loadWatchlist();
+      await loadOpportunities();
       
       try {
         const res = await fetch('data/news.json');
@@ -1325,14 +1714,17 @@
     // --- 6. RENDER LOGIC ---
     function render() {
       const topicKeys = Object.keys(DATA);
-      if (topicKeys.length === 0) return;
+      if (topicKeys.length === 0 && OPPORTUNITIES_DATA.length === 0) return;
 
-      // Ensure activeTopic exists
+      // Ensure activeTopic exists (supports 'Opportunity Radar' or URL hash)
       const savedTopic = localStorage.getItem('mynews_active_topic');
-      if (savedTopic && DATA[savedTopic]) {
+      const hash = window.location.hash;
+      if (hash === '#opportunity-radar') {
+        activeTopic = 'Opportunity Radar';
+      } else if (savedTopic === 'Opportunity Radar' || (savedTopic && DATA[savedTopic])) {
         activeTopic = savedTopic;
-      } else if (!DATA[activeTopic]) {
-        activeTopic = topicKeys[0];
+      } else if (!DATA[activeTopic] && activeTopic !== 'Opportunity Radar') {
+        activeTopic = topicKeys[0] || 'Opportunity Radar';
       }
 
       // 1. Sync Status
@@ -1356,9 +1748,19 @@
       const tabsContainer = document.getElementById('topicTabs');
       if (!tabsContainer) return;
 
-      tabsContainer.innerHTML = Object.keys(DATA).map(topic => {
+      const isRadarActive = activeTopic === 'Opportunity Radar';
+      const oppCount = OPPORTUNITIES_DATA.length;
+
+      let tabsHtml = `
+        <button class="tab-btn tab-btn-radar ${isRadarActive ? 'active' : ''}" onclick="switchTopic('Opportunity Radar')">
+          <span>📡 Opportunity Radar</span>
+          <span class="tab-badge tab-badge-radar">${oppCount}</span>
+        </button>
+      `;
+
+      tabsHtml += Object.keys(DATA).map(topic => {
         const count = DATA[topic].items?.length || 0;
-        const isActive = topic === activeTopic;
+        const isActive = (topic === activeTopic) && !isRadarActive;
         return `
           <button class="tab-btn ${isActive ? 'active' : ''}" onclick="switchTopic('${topic.replace(/'/g, "\\'")}')">
             <span>${topic}</span>
@@ -1366,12 +1768,19 @@
           </button>
         `;
       }).join('');
+
+      tabsContainer.innerHTML = tabsHtml;
     }
 
     function switchTopic(topic) {
-      if (!DATA[topic]) return;
+      if (topic !== 'Opportunity Radar' && !DATA[topic]) return;
       activeTopic = topic;
       localStorage.setItem('mynews_active_topic', topic);
+      if (topic === 'Opportunity Radar') {
+        window.history.replaceState(null, '', '#opportunity-radar');
+      } else if (window.location.hash === '#opportunity-radar') {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
       renderTopicTabs();
       renderActiveTopic();
       renderStats();
@@ -1437,6 +1846,38 @@
     }
 
     function renderActiveTopic() {
+      const isRadar = activeTopic === 'Opportunity Radar';
+
+      const briefingCard = document.getElementById('briefingCard');
+      const watchlistCard = document.getElementById('watchlistCard');
+      const sourcesRow = document.getElementById('sourcesRow');
+      const hotSection = document.getElementById('hotSection');
+      const clustersSection = document.getElementById('clustersSection');
+      const recentSection = document.getElementById('recentSection');
+      const radarSection = document.getElementById('opportunityRadarSection');
+
+      if (isRadar) {
+        if (briefingCard) briefingCard.style.display = 'none';
+        if (watchlistCard) watchlistCard.style.display = 'none';
+        if (sourcesRow) sourcesRow.style.display = 'none';
+        if (hotSection) hotSection.style.display = 'none';
+        if (clustersSection) clustersSection.style.display = 'none';
+        if (recentSection) recentSection.style.display = 'none';
+        if (radarSection) {
+          radarSection.style.display = 'block';
+          renderOpportunityRadar();
+        }
+        return;
+      }
+
+      // Hide radar section and restore regular sections
+      if (radarSection) radarSection.style.display = 'none';
+      if (briefingCard) briefingCard.style.display = 'block';
+      if (sourcesRow) sourcesRow.style.display = 'flex';
+      if (hotSection) hotSection.style.display = 'block';
+      if (recentSection) recentSection.style.display = 'block';
+      renderWatchlist();
+
       const topicData = DATA[activeTopic];
       if (!topicData) return;
 
@@ -1583,7 +2024,221 @@
       }
     }
 
+    // --- OPPORTUNITY RADAR TABLE (Phase 3) ---
+    function renderOpportunityRadar() {
+      const container = document.getElementById('opportunityRadarSection');
+      if (!container) return;
+
+      const totalCount = OPPORTUNITIES_DATA.length;
+      const readyCount = OPPORTUNITIES_DATA.filter(it => it.stage === 'build_ready').length;
+      const researchCount = OPPORTUNITIES_DATA.filter(it => it.stage === 'research').length;
+      const watchCount = OPPORTUNITIES_DATA.filter(it => it.stage === 'watch').length;
+
+      // Filter based on oppStageFilter
+      let filtered = [...OPPORTUNITIES_DATA];
+      if (oppStageFilter !== 'all') {
+        filtered = filtered.filter(it => it.stage === oppStageFilter);
+      }
+
+      container.innerHTML = `
+        <!-- KPI Summary Cards -->
+        <div class="opp-kpi-grid">
+          <div class="opp-kpi-card" style="--card-accent: var(--accent)">
+            <span class="opp-kpi-val">${totalCount}</span>
+            <span class="opp-kpi-label">🎯 Qualified Signals</span>
+            <span class="opp-kpi-sub">Total score &ge; 4 (noise filtered)</span>
+          </div>
+          <div class="opp-kpi-card" style="--card-accent: var(--hot)">
+            <span class="opp-kpi-val" style="color: var(--hot)">${readyCount}</span>
+            <span class="opp-kpi-label">🔥 Build-ready (Act now)</span>
+            <span class="opp-kpi-sub">Score 9/9 &bull; Sẵn sàng triển khai</span>
+          </div>
+          <div class="opp-kpi-card" style="--card-accent: #fbbf24">
+            <span class="opp-kpi-val" style="color: #fbbf24">${researchCount}</span>
+            <span class="opp-kpi-label">⚡ Research (This week)</span>
+            <span class="opp-kpi-sub">Score 7-8/9 &bull; Nghiên cứu sâu</span>
+          </div>
+          <div class="opp-kpi-card" style="--card-accent: #94a3b8">
+            <span class="opp-kpi-val" style="color: #94a3b8">${watchCount}</span>
+            <span class="opp-kpi-label">⏱️ Watch (Can wait)</span>
+            <span class="opp-kpi-sub">Score 4-6/9 &bull; Theo dõi tín hiệu</span>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="opp-controls-bar">
+          <div class="opp-filter-tabs">
+            <button class="opp-filter-btn ${oppStageFilter === 'all' ? 'active' : ''}" onclick="setOppFilter('all')">
+              Tất cả (${totalCount})
+            </button>
+            <button class="opp-filter-btn ${oppStageFilter === 'research' ? 'active' : ''}" onclick="setOppFilter('research')">
+              ⚡ Research (${researchCount})
+            </button>
+            <button class="opp-filter-btn ${oppStageFilter === 'watch' ? 'active' : ''}" onclick="setOppFilter('watch')">
+              ⏱️ Watch (${watchCount})
+            </button>
+            <button class="opp-filter-btn ${oppStageFilter === 'build_ready' ? 'active' : ''}" onclick="setOppFilter('build_ready')">
+              🔥 Build-ready (${readyCount})
+            </button>
+          </div>
+          <div style="font-size: 12px; color: var(--fg-dim);">
+            Sắp xếp: <strong>Điểm (Total) giảm dần</strong>
+          </div>
+        </div>
+
+        <!-- Table Card -->
+        <div class="opp-table-card">
+          <div class="opp-table-wrapper">
+            <table class="opp-table">
+              <thead>
+                <tr>
+                  <th style="width: 38%;">Tiêu đề</th>
+                  <th style="width: 14%;">Loại</th>
+                  <th style="width: 12%;">Điểm</th>
+                  <th style="width: 16%;">Nguồn</th>
+                  <th style="width: 10%;">Xu hướng</th>
+                  <th style="width: 10%;">Bước</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${filtered.length === 0 ? `
+                  <tr>
+                    <td colspan="6" style="text-align: center; padding: 32px; color: var(--fg-dim);">
+                      Không có tín hiệu nào trong giai đoạn này.
+                    </td>
+                  </tr>
+                ` : filtered.map((item, idx) => {
+                  const primaryUrl = (item.sources?.[0]?.url || item.url || '#');
+                  const scoreVal = item.total || 0;
+                  const scorePercent = Math.min(100, Math.round((scoreVal / 9) * 100));
+                  let scoreColor = '#38bdf8';
+                  let scoreClass = 'score-wtch';
+                  if (scoreVal >= 9) { scoreColor = '#ff6b35'; scoreClass = 'score-ready'; }
+                  else if (scoreVal >= 7) { scoreColor = '#fbbf24'; scoreClass = 'score-res'; }
+
+                  // Stage Flag mapping
+                  let stageBadge = `<span class="stage-flag stage-watch">⏱️ Can wait</span>`;
+                  if (item.stage === 'build_ready') {
+                    stageBadge = `<span class="stage-flag stage-build-ready">🔥 Act now</span>`;
+                  } else if (item.stage === 'research') {
+                    stageBadge = `<span class="stage-flag stage-research">⚡ This week</span>`;
+                  }
+
+                  // Velocity Badge mapping
+                  const v = (item.velocity || 'steady').toLowerCase();
+                  let velocityBadge = `<span class="velocity-badge velocity-stable">→ steady</span>`;
+                  if (v === 'rising') {
+                    velocityBadge = `<span class="velocity-badge velocity-rising">↑ rising</span>`;
+                  } else if (v === 'fading' || v === 'cooling') {
+                    velocityBadge = `<span class="velocity-badge velocity-cooling">↓ fading</span>`;
+                  }
+
+                  // Signal Type Chips mapping
+                  const chipsHtml = (item.signal_type || []).map(t => {
+                    if (t === 'pain_repeat') return `<span class="chip-signal chip-pain">🔥 Pain repeat</span>`;
+                    if (t === 'price_shift') return `<span class="chip-signal chip-price">💰 Price shift</span>`;
+                    if (t === 'supply_gap') return `<span class="chip-signal chip-gap">🎯 Supply gap</span>`;
+                    if (t === 'tech_cheap') return `<span class="chip-signal chip-tech">⚡ Tech cheap</span>`;
+                    return `<span class="chip-signal chip-tech">${escapeHtml(t)}</span>`;
+                  }).join('');
+
+                  // Sources mapping
+                  const srcList = Array.isArray(item.sources) ? item.sources : [];
+                  const sourcesHtml = srcList.map(s => {
+                    const sName = typeof s === 'object' ? (s.name || 'Web') : String(s);
+                    const sUrl = typeof s === 'object' ? (s.url || '#') : '#';
+                    return `
+                      <a class="opp-src-btn" href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(sName)}">
+                        <span>${escapeHtml(sName)}</span>
+                        <span style="font-size: 10px;">↗</span>
+                      </a>
+                    `;
+                  }).join('');
+
+                  return `
+                    <tr>
+                      <td class="opp-title-cell">
+                        <a class="opp-title-link" href="${escapeHtml(primaryUrl)}" target="_blank" rel="noopener noreferrer">
+                          ${escapeHtml(item.title)}
+                        </a>
+                        <p class="opp-summary-text">${escapeHtml(item.summary || '')}</p>
+                        <div class="opp-meta-sub">
+                          <span class="opp-meta-pill">#${idx + 1}</span>
+                          <span class="opp-meta-pill">${escapeHtml(item.id || '')}</span>
+                          ${item.first_seen ? `<span class="opp-meta-pill">📅 ${escapeHtml(item.first_seen)}</span>` : ''}
+                        </div>
+                      </td>
+                      <td class="opp-chips-cell">
+                        <div class="opp-chips-wrap">
+                          ${chipsHtml || '<span style="color:var(--fg-muted)">—</span>'}
+                        </div>
+                      </td>
+                      <td class="opp-score-cell">
+                        <div class="opp-score-wrap">
+                          <span class="opp-score-val ${scoreClass}">${scoreVal}/9</span>
+                          <div class="opp-score-bar-bg">
+                            <div class="opp-score-bar-fill" style="width: ${scorePercent}%; background: ${scoreColor};"></div>
+                          </div>
+                          <span class="opp-score-sub">D:${item.scores?.durability ?? 0} A:${item.scores?.ai_support ?? 0} L:${item.scores?.your_leverage ?? 0}</span>
+                        </div>
+                      </td>
+                      <td class="opp-sources-cell">
+                        <div class="opp-sources-wrap">
+                          <span class="source-count-pill">${item.source_count || 1} nguồn</span>
+                          <div class="opp-source-links">
+                            ${sourcesHtml}
+                          </div>
+                        </div>
+                      </td>
+                      <td class="opp-velocity-cell">
+                        ${velocityBadge}
+                      </td>
+                      <td class="opp-stage-cell">
+                        ${stageBadge}
+                      </td>
+                    </tr>
+                  `;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+    }
+
+    function setOppFilter(stage) {
+      oppStageFilter = stage;
+      renderOpportunityRadar();
+    }
+
     function renderStats() {
+      const trendingCard = document.getElementById('statTrending')?.parentElement;
+      const risingCard = document.getElementById('statRising')?.parentElement;
+      const sourcesCard = document.getElementById('statSourcesCount')?.parentElement;
+
+      if (activeTopic === 'Opportunity Radar') {
+        const total = OPPORTUNITIES_DATA.length;
+        const research = OPPORTUNITIES_DATA.filter(it => it.stage === 'research').length;
+        const buildReady = OPPORTUNITIES_DATA.filter(it => it.stage === 'build_ready').length;
+        const watch = OPPORTUNITIES_DATA.filter(it => it.stage === 'watch').length;
+        const multiSource = OPPORTUNITIES_DATA.filter(it => (it.source_count || 1) >= 2).length;
+
+        document.getElementById('statTotalSignals').textContent = total;
+        document.getElementById('statTrending').textContent = research + buildReady;
+        if (trendingCard) trendingCard.querySelector('.stat-label').textContent = 'Research / Act Now';
+        document.getElementById('statRising').textContent = watch;
+        if (risingCard) risingCard.querySelector('.stat-label').textContent = 'Watch Stage';
+        document.getElementById('statMultiSource').textContent = multiSource;
+        if (sourcesCard) sourcesCard.querySelector('.stat-label').textContent = 'Multi-Source';
+        document.getElementById('statSourcesCount').textContent = total > 0 ? `${total}` : '0';
+        return;
+      }
+
+      // Reset labels for regular topics
+      if (trendingCard) trendingCard.querySelector('.stat-label').textContent = 'Trending (≥70)';
+      if (risingCard) risingCard.querySelector('.stat-label').textContent = 'Rising Now';
+      if (sourcesCard) sourcesCard.querySelector('.stat-label').textContent = 'Active Sources';
+
       const topicData = DATA[activeTopic];
       if (!topicData) return;
       const items = topicData.items || [];
