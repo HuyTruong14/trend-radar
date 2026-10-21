@@ -1,15 +1,27 @@
 """
-scripts/score.py — Opportunity Radar Scoring Engine (Phase 1 Refined)
+scripts/score.py — Opportunity Radar Scoring Engine (Refined Phase 1)
 
 Reads trend signals from docs/data/news.json (or signals.json),
 applies 5 core requirements:
-1. Content-based scoring aligned with user profile:
-   - High priority: IoT, hardware, sensors, robotics, device diagnostics, environmental monitoring.
-   - Low priority: Generic LLM frameworks (langchain, dify...), pure finance, VC funding.
-2. Unique source URL counting (identical URLs count as 1 source). Multiplier: <2 -> 0.7, >=2 -> 1.0.
-3. Input noise filtering (strips ticket ads, Disrupt, HBR self-help/teamwork, pure funding).
-4. Unique deterministic ID generated from URL hash (no duplicates).
-5. Content-based signal_type tagging (pain_repeat, price_shift, supply_gap, tech_cheap).
+1. Content-based scoring strictly aligned with user profile:
+   - High priority (Score 3): IoT, hardware, sensors, robotics, device diagnostics, traffic/edge cameras.
+   - Low priority (Score 0): Generic LLM frameworks (langchain, dify, wrappers), generic chatbots.
+2. Accurate source grouping:
+   - Only merge signals into 1 record if their titles PROVE they cover the EXACT SAME story.
+   - If not identical / same topic, keep strictly separate (source_count = 1).
+   - "AI camera giao thông" and "Joints, Camera, Action! (3D animation paper)" MUST be separate records.
+3. Input noise filtering TRƯỚC KHI CHẤM:
+   - Drop all gambling / iGaming (regulatory, licensing, sportsbook, casino).
+   - Drop all VC funding, IPO, startup valuation, layoffs tracker, equity pieces.
+   - Drop all event ads (TechCrunch Disrupt, passes, early bird), podcasts, leadership/self-help.
+   - Drop all records with total <= 3 (drop tier) from opportunities.json.
+4. Unique deterministic ID generated from URL hash (opp_YYYY_MMDD_{hash8}).
+5. Content-based signal_type tagging:
+   - pain_repeat: issues, bugs, failures, bottlenecks, crashes, misuse.
+   - price_shift: pricing, costs, budget, inflation, fees, tariffs.
+   - supply_gap: unmet demand, regulations, compliance, governance, traffic/infrastructure monitoring.
+   - tech_cheap: robotics, cameras, sensors, IoT, edge AI, microcontrollers, open-source models/tools.
+   - "AI camera giao thông" is NOT pain_repeat (tagged supply_gap / tech_cheap).
 
 Zero external network calls — runs purely on local aggregated data.
 """
@@ -28,79 +40,159 @@ SIGNALS_FILE = os.path.join(DATA_DIR, "signals.json")
 NEWS_FILE = os.path.join(DATA_DIR, "news.json")
 
 
-# ==================== 1. JUNK FILTER PATTERNS ====================
+# ==================== 1. JUNK FILTER PATTERNS (UPFRONT ELIMINATION) ====================
+
+JUNK_IGAMING_PATTERNS = [
+    r"\b(gambling|betting|bookmaker|sportsbook|casino|poker|slot machine|igaming|betgoodwin|flutter|acma|gaming operator|betting sponsor|gaming authority|mgd|wagering|online gambling|sports betting|jackpot|roulette|bingo)\b"
+]
+
+JUNK_FUNDING_VC_LAYOFFS_PATTERNS = [
+    r"\b(funding (fell|jumps|jumped|drops|dropped|rose|slumps|slumped)|biggest funding rounds|startup funding)\b",
+    r"\b(closes? \$\d+[mkb]?\b.*?\bfund\b|venture capital|\bvcs?\b|pre-seed|seed round|series [a-e] (funding|round)?)\b",
+    r"\b(raises? \$\d+|raised \$\d+|nabs \$\d+|secures \$\d+|valuation|unicorn|hits \$\d+.*valuation)\b",
+    r"\b(ipo|london ipo|public listing|nasdaq listing|equity holders?|employees’ equity|venture winners)\b",
+    r"\b(layoffs?|tech layoffs tracker|layoffs tracker|cut (up to )?\d+ jobs|slashing \d+ jobs)\b",
+    r"\b(insider-turned-vc|venture pact|investing in a frenzied market|fde bubble|billion-dollar company without venture capital)\b"
+]
+
 JUNK_EVENT_PATTERNS = [
     r"\b(techcrunch disrupt|disrupt 202\d|founder summit|ticket|tickets|save up to \$\d+|save \d+%)\b",
     r"\b(booking ends|early bird|registration ends|attend the summit|stage lineup|last day to save)\b",
-    r"\b(join the last \d+ days|secure up to \$\d+|conference pass|event pass)\b"
+    r"\b(conference pass|event pass|join the last \d+ days|secure up to \$\d+ ticket|webinar|podcast|episode)\b"
 ]
 
 JUNK_LEADERSHIP_PATTERNS = [
     r"\b(how ai erodes teamwork|teamwork|aging at work|when you feel envy|jealousy|workplace gossip)\b",
     r"\b(the most consequential move a new ceo|lessons from ups|retirement|how to deal with|emotional intelligence)\b",
-    r"\b(hbr\.org|harvard business review|imposter syndrome)\b"
-]
-
-JUNK_FUNDING_PATTERNS = [
-    r"\b(funding (fell|jumps|jumped|drops|dropped|rose|slumps|slumped)|biggest funding rounds|startup funding)\b",
-    r"\b(closes \$\d+m.*fund|venture capital round|raises \$\d+|raised \$\d+|seed round|series [a-d] (funding|round))\b"
-]
-
-# Hardware / IoT exceptions: keep funding or news if it directly involves physical tech
-HARDWARE_EXCEPTION_PATTERNS = [
-    r"\b(robot|robotics|sensor|cảm biến|iot|hardware|device|camera|traffic|water|monitoring|embedded|edge|chẩn đoán)\b"
+    r"\b(hbr\.org|harvard business review|imposter syndrome|team dynamics weaken|build your team with autonomous humans|disciplined chaos)\b",
+    r"\b(luxury brand|pricing strategies to deal with persistent inflation|killing digital products)\b"
 ]
 
 
-def is_junk_signal(title, summary, url):
-    """Filter out noise (ads, tickets, HBR self-help, generic VC funding)."""
-    text = f"{title} {summary or ''} {url or ''}".lower()
+def is_junk_signal(it):
+    """
+    Filter out noise TRƯỚC KHI CHẤM:
+    - Tin gambling/iGaming regulatory, licensing, sportsbook
+    - Tin VC funding, IPO, startup valuation, layoffs tracker
+    - Quảng cáo sự kiện, podcast, bài leadership chung
+    """
+    topic = it.get("_topic", "")
+    source = it.get("source", "")
+    url = (it.get("url") or "").lower()
 
-    # 1. Event / Ticket ads -> Always drop
+    # 1. iGaming topic / source / domain
+    if topic == "iGaming" or source in ["SBC News", "iGB", "iGaming Business", "sbc", "igb"]:
+        return True
+    if "sbcnews.co.uk" in url or "igamingbusiness.com" in url:
+        return True
+
+    text = f"{it.get('title', '')} {it.get('summary', '')} {url}".lower()
+
+    # 2. Gambling keywords
+    if any(re.search(pat, text, re.IGNORECASE) for pat in JUNK_IGAMING_PATTERNS):
+        return True
+
+    # 3. Event / Ticket ads & Podcasts
     if any(re.search(pat, text, re.IGNORECASE) for pat in JUNK_EVENT_PATTERNS):
         return True
 
-    # 2. Leadership / Self-help / Emotional advice -> Always drop
+    # 4. Leadership / Self-help / Emotional advice
     if any(re.search(pat, text, re.IGNORECASE) for pat in JUNK_LEADERSHIP_PATTERNS):
         return True
 
-    # 3. Pure VC / Funding -> Drop UNLESS it directly touches hardware/IoT/robotics
-    if any(re.search(pat, text, re.IGNORECASE) for pat in JUNK_FUNDING_PATTERNS):
-        if not any(re.search(pat, text, re.IGNORECASE) for pat in HARDWARE_EXCEPTION_PATTERNS):
-            return True
+    # 5. Pure VC funding, IPO, valuation, layoffs
+    if any(re.search(pat, text, re.IGNORECASE) for pat in JUNK_FUNDING_VC_LAYOFFS_PATTERNS):
+        return True
 
     return False
 
 
-# ==================== 2. SIGNAL TYPE PATTERNS (CONTENT-BASED) ====================
+# ==================== 2. TITLE COMPARISON (STRICT TOPIC MERGING) ====================
+
+def extract_title_keywords(title):
+    """Extract significant keywords from title for semantic matching."""
+    # Strip site name suffixes like "- Laodong.vn", " | TechCrunch"
+    t = re.sub(r"\s*[-|–—]\s*[\w\s.]+$", "", title)
+    t = re.sub(r"https?://\S+", "", t)
+    # Extract alpha-numeric words with length >= 3
+    words = set(re.findall(r"[a-zA-Z0-9\u00C0-\u1EF9]{3,}", t.lower()))
+    stopwords = {
+        "with", "from", "that", "this", "have", "more", "about", "will", "what",
+        "when", "into", "after", "over", "first", "their", "there", "could",
+        "would", "should", "been", "being", "through", "under", "between",
+        "vietnam", "laodong", "news", "arxiv", "github", "video", "paper"
+    }
+    return words - stopwords
+
+
+def is_same_story(title1, title2):
+    """
+    Strictly verify if two signals cover the EXACT SAME story/event.
+    If not 100% sure, return False -> keeps them as separate records.
+    """
+    if not title1 or not title2:
+        return False
+
+    t1 = title1.strip().lower()
+    t2 = title2.strip().lower()
+    if t1 == t2:
+        return True
+
+    kw1 = extract_title_keywords(title1)
+    kw2 = extract_title_keywords(title2)
+    if not kw1 or not kw2:
+        return False
+
+    intersection = kw1 & kw2
+    union = kw1 | kw2
+    jaccard = len(intersection) / len(union) if union else 0.0
+
+    # Strict criteria: at least 4 shared meaningful words AND high Jaccard (>= 0.6)
+    if len(intersection) >= 4 and jaccard >= 0.6:
+        return True
+
+    return False
+
+
+# ==================== 3. SIGNAL TYPE INFERENCE (CONTENT-BASED) ====================
+
 PAIN_PATTERNS = [
-    r"\b(issue|issues|problem|problems|pain|frustrat\w*|struggle\w*|bug|bugs|error|bottleneck|broken)\b",
-    r"\b(terrible|hate|sucks|difficult|slow|annoying|crash\w*|fail\w*|hard to|hasn’t hit|hasn't hit|slammed as failure|breach)\b",
-    r"(khó khăn|vấn đề|bất cập|lỗi|ức chế|than phiền|nghẽn|chậm chạp|rắc rối|chưa đạt|vi phạm)"
+    r"\b(issue|issues|problem|problems|pain|painful|frustrat\w*|struggl\w*|bug|bugs|error|errors|bottleneck|broken|breakdown|downtime|outage|glitch)\b",
+    r"\b(terrible|hate|sucks|difficult|slow|annoying|crash\w*|fail\w*|hard to|breach|vulnerability|leak|hazard|danger|threat|fatigue|burnout|misuse)\b",
+    r"(khó khăn|vấn đề|bất cập|lỗi|ức chế|than phiền|nghẽn|chậm chạp|rắc rối|chưa đạt|vi phạm|thất bại|nguy hiểm|sự cố|lạm dụng)"
 ]
 
 PRICE_PATTERNS = [
-    r"\b(price|pricing|cost|costs|expensive|cheap|token|rate limit|tier|billing|subscription|\$|fee|fees|fine|fines|tax|duty)\b",
-    r"\b(gpu cost|hardware cost|overhead|margin|revenue|valuation|cut cost|budget|m-cap|deposit limit)\b",
-    r"(chi phí|giá cả|đắt đỏ|tốn kém|bảng giá|thu phí|lợi nhuận|cắt giảm|tiền phạt|thuế)"
+    r"(\$\d+|\b(price|pricing|cost|costs|expensive|cheap|cheaper|tier|billing|subscription|fee|fees|fine|fines|tax|duty|tariff|tariffs)\b)",
+    r"\b(gpu cost|hardware cost|overhead|margin|budget|inflation|token cost|compute cost|cut cost|cost reduction)\b",
+    r"(chi phí|giá cả|đắt đỏ|tốn kém|bảng giá|thu phí|lợi nhuận|cắt giảm|tiền phạt|thuế|lạm phát|tiết kiệm)"
 ]
 
 GAP_PATTERNS = [
-    r"\b(alternative to|alternative for|looking for|is there any|why is there no|missing feature|unmet|gap)\b",
-    r"\b(competitor|unsupported|need a tool|any tool|no good tool|wish there was|must be labelled|enforcement|roadmap|regulation|law|ban)\b",
-    r"(tìm tool|chưa có|khoảng trống|thay thế cho|giải pháp cho|không có công cụ|thiếu|quy định mới|bắt buộc|luật mới)"
+    r"\b(alternative to|alternative for|looking for|is there any|why is there no|missing|unmet|gap|unsupported|need a tool|any tool|no good tool|wish there was)\b",
+    r"\b(regulation|regulations|regulated|regulate|regulatory|law|laws|compliance|mandate|mandated|must be labelled|must comply|accountability|governance|task force|policy|ban|prohibited|enforcement|standards?)\b",
+    r"\b(surveillance|traffic police|control center)\b",
+    r"(tìm tool|chưa có|khoảng trống|thay thế cho|giải pháp cho|không có công cụ|thiếu|quy định|bắt buộc|luật|nghị định|tiêu chuẩn|kiểm soát|điều hành|yêu cầu)"
 ]
 
 TECH_CHEAP_PATTERNS = [
-    r"\b(open-source|open source|github\.com|self-host\w*|lightweight|local model|ollama|llama)\b",
-    r"\b(run locally|small model|efficient|repo|framework|library|sdk|minimal|free tier|slm|edge ai|embedded|sensor|arduino|esp32)\b",
-    r"(mã nguồn mở|miễn phí|tự host|chạy local|mô hình nhỏ|nhẹ|tối ưu chi phí|cảm biến giá rẻ|thiết bị nhúng)"
+    r"\b(camera|cameras|sensor|sensors|iot|edge ai|tinyml|microcontroller|esp32|arduino|raspberry|firmware|hardware|robot|robots|robotics|embodied|rigs|actuator|motor)\b",
+    r"\b(open-source|open source|github\.com|repo|self-host\w*|lightweight|slm|small model|local model|ollama|llama|run locally|efficient|few-step|compact|sdk|framework|library)\b",
+    r"\b(observability|diagnostics?|monitoring|spatial intelligence|multi-token|world models?|renderer)\b",
+    r"(cảm biến|camera|thiết bị|phần cứng|mã nguồn mở|nhúng|mô hình nhỏ|tối ưu|công nghệ rẻ|chạy local)"
 ]
 
 
-def detect_signal_types(title, summary, url, matched_keyword=""):
-    """Tag signal types based on actual content (not source name)."""
-    text = f"{title} {summary or ''} {url or ''} {matched_keyword or ''}".lower()
+def detect_signal_types(title, summary, url):
+    """
+    Infer signal type strictly from title and content:
+    - pain_repeat: than phiền/vấn đề lặp lại/lỗi
+    - price_shift: giá/chi phí biến động
+    - supply_gap: thiếu giải pháp cho nhu cầu/quy định bắt buộc
+    - tech_cheap: công nghệ/cảm biến/phần cứng rẻ đi
+    Ví dụ: 'AI camera giao thông' KHÔNG phải pain_repeat.
+    """
+    text = f"{title} {summary or ''} {url or ''}".lower()
     types = []
 
     def matches_any(patterns):
@@ -118,24 +210,17 @@ def detect_signal_types(title, summary, url, matched_keyword=""):
     if matches_any(TECH_CHEAP_PATTERNS):
         types.append("tech_cheap")
 
-    # If no pattern matched, classify by dominant context
+    # If no pattern matched, infer from dominant technical context (NEVER blind pain_repeat)
     if not types:
-        if "regulation" in text or "compliance" in text or "legal" in text or "luật" in text:
-            types.append("supply_gap")
-        elif "cost" in text or "budget" in text or "financial" in text:
-            types.append("price_shift")
-        elif "code" in text or "tool" in text or "model" in text:
+        if any(k in text for k in ["model", "video", "agent", "app", "tool", "ai", "learning", "renderer", "code", "workflow"]):
             types.append("tech_cheap")
         else:
-            types.append("pain_repeat")
+            types.append("supply_gap")
 
     return sorted(list(set(types)))
 
 
-# ==================== 3. USER PROFILE ALIGNMENT & 3-LAYER SCORING ====================
-# User strengths: AI workflow, tool building, systems thinking
-# User TARGET: Hardware + AI projects (IoT, sensors, environmental monitoring, device diagnostics, robotics, traffic/industrial cameras)
-# User NON-TARGET: Generic LLM frameworks (langchain, dify...), generic chatbots, VC/finance
+# ==================== 4. USER PROFILE ALIGNMENT & 3-LAYER SCORING ====================
 
 HARDWARE_IOT_HIGH_PATTERNS = [
     r"\b(iot|sensor|sensors|cảm biến|hardware|robot|robots|robotics|drone|drones|camera|cameras)\b",
@@ -151,7 +236,7 @@ GENERIC_LLM_APP_PATTERNS = [
 ]
 
 TECHNICAL_SYSTEMS_PATTERNS = [
-    r"\b(pipeline|automation|scraper|proxy|queue|backend|database|security|auth|devtool|compliance|regulation|audit)\b"
+    r"\b(pipeline|automation|scraper|proxy|queue|backend|database|security|auth|devtool|compliance|regulation|regulatory|governance|audit|law|luật)\b"
 ]
 
 
@@ -164,7 +249,6 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
     """
     text = f"{title} {summary or ''} {matched_keyword or ''} {meta or ''}".lower()
 
-    # Check alignment with User Profile (your_leverage)
     is_hardware_iot = any(re.search(pat, text, re.IGNORECASE) for pat in HARDWARE_IOT_HIGH_PATTERNS)
     is_generic_llm = any(re.search(pat, text, re.IGNORECASE) for pat in GENERIC_LLM_APP_PATTERNS)
     is_tech_systems = any(re.search(pat, text, re.IGNORECASE) for pat in TECHNICAL_SYSTEMS_PATTERNS)
@@ -183,12 +267,12 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
     else:
         your_leverage = 1
 
-    # 2. durability (0–3): 10-year perennial need (independent evaluation)
-    # Core physical infrastructure, safety, water, energy, industrial maintenance
-    if bool(re.search(r"\b(water|traffic|energy|solar|grid|soil|health|safety|food|logistics|manufacturing)\b", text, re.IGNORECASE)):
+    # 2. durability (0–3): 10-year perennial need
+    # Physical infrastructure, traffic, water, energy, industrial maintenance, diagnostics
+    if bool(re.search(r"\b(water|traffic|energy|solar|grid|soil|health|safety|food|logistics|manufacturing|fleet)\b", text, re.IGNORECASE)):
         durability = 3
-    elif is_hardware_iot or bool(re.search(r"\b(infrastructure|database|security|pipeline|compliance|law|regulation)\b", text, re.IGNORECASE)):
-        durability = 3 if any(k in text for k in ["water", "traffic", "factory", "industrial"]) else 2
+    elif is_hardware_iot or bool(re.search(r"\b(infrastructure|database|security|pipeline|compliance|law|regulation|diagnostics?)\b", text, re.IGNORECASE)):
+        durability = 3 if any(k in text for k in ["water", "traffic", "factory", "industrial", "diagnost", "robot"]) else 2
     elif is_tech_systems or "devtool" in text or "developer" in text:
         durability = 2
     elif is_generic_llm:
@@ -242,8 +326,6 @@ def normalize_source_name(src):
         "rss": "Tech Press (RSS)",
         "techcrunch": "TechCrunch",
         "crunchbase": "Crunchbase",
-        "igb": "iGaming Business",
-        "sbc": "SBC News",
         "laodong.vn": "Báo Lao Động",
         "vietnam.vn": "Vietnam.vn"
     }
@@ -351,28 +433,16 @@ def main():
     now_utc = datetime.now(timezone.utc)
     today_str = now_utc.strftime("%Y-%m-%d")
 
-    # Group items by core domain themes to identify legitimate cross-source coverage across DIFFERENT URLs
-    domain_items = {}
-    for it in raw_items:
-        t = f"{it.get('title', '')} {it.get('summary', '')}".lower()
-        if "robot" in t:
-            domain_items.setdefault("robotics", []).append(it)
-        elif "camera" in t or "traffic" in t:
-            domain_items.setdefault("camera_traffic", []).append(it)
-        elif "sensor" in t or "water" in t:
-            domain_items.setdefault("sensor_environment", []).append(it)
-
-    opportunities = []
-    seen_urls = set()
+    # ==================== STEP 1: UPFRONT JUNK FILTERING ====================
+    # Lỗi 2: Lọc rác TRƯỚC khi chấm (không phải chấm rồi để đó)
+    # Loại hẳn: gambling/iGaming, VC funding, IPO, startup valuation, layoffs, event ads, leadership
+    filtered_items = []
     filtered_junk_count = 0
+    seen_urls = set()
 
     for it in raw_items:
         title = (it.get("title") or "").strip()
         url = (it.get("url") or "").strip()
-        summary = it.get("summary") or ""
-        matched_kw = it.get("matched_keyword") or ""
-        meta_str = it.get("meta") or ""
-
         if not title:
             continue
 
@@ -381,76 +451,106 @@ def main():
             continue
         seen_urls.add(dedup_url_key)
 
-        # 1. Filter out junk noise first (Disrupt tickets, HBR self-help, pure VC funding)
-        if is_junk_signal(title, summary, url):
+        if is_junk_signal(it):
             filtered_junk_count += 1
             continue
 
-        # 2. Build unique sources list (Strictly distinct URLs)
-        sources_raw = it.get("sources") or []
-        if isinstance(sources_raw, str):
-            sources_raw = [sources_raw]
-        elif not sources_raw and it.get("source"):
-            sources_raw = [it.get("source")]
-        if not sources_raw:
-            sources_raw = ["web"]
+        filtered_items.append(it)
 
-        primary_source_name = normalize_source_name(sources_raw[0])
-        formatted_sources = [
-            {
-                "name": primary_source_name,
-                "url": url,
+    print(f"[score] Upfront filtering: dropped {filtered_junk_count} noise items. Retained {len(filtered_items)} valid signals.")
+
+    # ==================== STEP 2: SOURCE GROUPING (STRICT TOPIC MATCHING) ====================
+    # Lỗi 1: Chỉ gộp 2 tín hiệu thành 1 khi chúng NÓI VỀ CÙNG MỘT CHỦ ĐỀ.
+    # Nếu không chắc 2 tín hiệu cùng chủ đề -> để riêng, source_count = 1.
+    merged_groups = []
+    used_indices = set()
+
+    for i in range(len(filtered_items)):
+        if i in used_indices:
+            continue
+        group = [filtered_items[i]]
+        used_indices.add(i)
+
+        for j in range(i + 1, len(filtered_items)):
+            if j in used_indices:
+                continue
+            # Strictly verify if titles talk about the exact same story
+            if is_same_story(filtered_items[i].get("title", ""), filtered_items[j].get("title", "")):
+                group.append(filtered_items[j])
+                used_indices.add(j)
+
+        merged_groups.append(group)
+
+    # ==================== STEP 3: SCORING & OUTPUT FILTERING ====================
+    opportunities = []
+
+    for group in merged_groups:
+        primary = group[0]
+        title = primary.get("title", "").strip()
+        summary = primary.get("summary") or ""
+        matched_kw = primary.get("matched_keyword") or ""
+        meta_str = primary.get("meta") or ""
+        primary_url = (primary.get("url") or "").strip()
+
+        # Build unique sources list across the group
+        formatted_sources = []
+        seen_source_urls = set()
+
+        for it in group:
+            it_url = (it.get("url") or "").strip()
+            if it_url and it_url in seen_source_urls:
+                continue
+            if it_url:
+                seen_source_urls.add(it_url)
+
+            srcs = it.get("sources") or []
+            if isinstance(srcs, str):
+                srcs = [srcs]
+            elif not srcs and it.get("source"):
+                srcs = [it.get("source")]
+            if not srcs:
+                srcs = ["web"]
+
+            src_name = normalize_source_name(srcs[0])
+            formatted_sources.append({
+                "name": src_name,
+                "url": it_url,
                 "date": today_str
-            }
-        ]
+            })
 
-        # Check if there is legitimate cross-source validation from ANOTHER DIFFERENT URL
-        # For example, if another article covering the same robotics/sensor theme exists with a different URL
-        text_lower = f"{title} {summary}".lower()
-        for domain_name, group_items in domain_items.items():
-            if any(k in text_lower for k in domain_name.split("_")):
-                # Find another item in the same domain with a DIFFERENT URL and DIFFERENT source
-                for other in group_items:
-                    other_url = (other.get("url") or "").strip()
-                    if other_url and other_url != url and other_url not in [s["url"] for s in formatted_sources]:
-                        other_src = normalize_source_name((other.get("sources") or [other.get("source") or "web"])[0])
-                        if other_src != primary_source_name:
-                            formatted_sources.append({
-                                "name": other_src,
-                                "url": other_url,
-                                "date": today_str
-                            })
-                            break
-                break
-
-        # Count strictly UNIQUE URLs
+        # Calculate strict source_count based on distinct URLs
         unique_urls = set(s["url"] for s in formatted_sources if s.get("url"))
-        source_count = len(unique_urls)
+        source_count = max(1, len(unique_urls))
 
-        # 3. Tag signal types based on content
-        signal_types = detect_signal_types(title, summary, url, matched_kw)
-
-        # 4. Score 3 filter layers based on content and user profile
-        scores = score_item_filters(title, summary, signal_types, matched_kw, meta_str)
-
-        # 5. Multiplier: source_count < 2 -> 0.7; >= 2 (distinct URLs) -> 1.0
+        # Multiplier: source_count < 2 -> 0.7; >= 2 (distinct validated sources) -> 1.0
         multiplier = 1.0 if source_count >= 2 else 0.7
 
-        # 6. Total score and Action stage
+        # Tag signal types based on content
+        signal_types = detect_signal_types(title, summary, primary_url)
+
+        # Score 3 filter layers based on content and user profile
+        scores = score_item_filters(title, summary, signal_types, matched_kw, meta_str)
+
+        # Calculate total score
         raw_sum = scores["durability"] + scores["ai_support"] + scores["your_leverage"]
         total = int(round(raw_sum * multiplier))
         total = max(0, min(9, total))
+
+        # Lỗi 2: Loại các item total <= 3 (drop tier) khỏi output
+        if total <= 3:
+            continue
+
         stage = compute_stage(total)
 
-        # 7. Generate UNIQUE deterministic ID from URL hash (Never collision)
-        raw_hash_key = (url or title).strip().lower()
+        # Generate UNIQUE deterministic ID from URL hash
+        raw_hash_key = (primary_url or title).strip().lower()
         url_hash = hashlib.md5(raw_hash_key.encode("utf-8")).hexdigest()[:8]
         opp_id = f"opp_{now_utc.strftime('%Y_%m%d')}_{url_hash}"
 
         # Preserve first_seen date from history if seen before
-        prev_opp = existing_map.get(url.lower()) or existing_map.get(title.lower())
+        prev_opp = existing_map.get(primary_url.lower()) or existing_map.get(title.lower())
         first_seen = prev_opp.get("first_seen") if prev_opp else today_str
-        velocity = prev_opp.get("velocity") if prev_opp else (it.get("velocity") or "steady")
+        velocity = prev_opp.get("velocity") if prev_opp else (primary.get("velocity") or "steady")
         if velocity not in ("rising", "steady", "fading"):
             velocity = "steady"
 
@@ -469,7 +569,6 @@ def main():
             "last_seen": today_str,
             "velocity": velocity
         }
-
         opportunities.append(opp_record)
 
     # Sort opportunities: total desc, your_leverage desc, durability desc, source_count desc
@@ -484,8 +583,7 @@ def main():
         json.dump(opportunities, f, ensure_ascii=False, indent=2)
 
     # Print summary report
-    print(f"[score] Filtered out {filtered_junk_count} noise items (tickets, Disrupt, self-help, pure VC).")
-    print(f"[score] Successfully generated {len(opportunities)} opportunities into {OUTPUT_FILE}")
+    print(f"\n[score] Successfully saved {len(opportunities)} qualified opportunities into {OUTPUT_FILE}")
 
     stage_counts = {}
     for opp in opportunities:
@@ -496,18 +594,16 @@ def main():
     print(f"  • Build Ready (9/9) : {stage_counts.get('build_ready', 0)}")
     print(f"  • Research (7-8/9)  : {stage_counts.get('research', 0)}")
     print(f"  • Watch (4-6/9)     : {stage_counts.get('watch', 0)}")
-    print(f"  • Drop (0-3/9)      : {stage_counts.get('drop', 0)}")
+    print(f"  • Drop (0-3/9)      : 0 (Excluded from output)")
     print("----------------------------------\n")
 
-    top10 = opportunities[:10]
     print("[score] TOP 10 OPPORTUNITIES PREVIEW:")
-    for i, o in enumerate(top10, 1):
+    for i, o in enumerate(opportunities[:10], 1):
         print(f"  #{i} [{o['stage'].upper()}] (Score: {o['total']}/9 | mult: {o['multiplier']} | sources: {o['source_count']})")
         print(f"      ID: {o['id']}")
         print(f"      Title: {o['title']}")
         print(f"      Types: {', '.join(o['signal_type'])} | Scores: {o['scores']}")
-        if len(o["sources"]) > 1:
-            print(f"      Sources: {[s['name'] + ' (' + s['url'][:40] + '...)' for s in o['sources']]}")
+        print(f"      Sources: {[s['name'] for s in o['sources']]}")
 
 
 if __name__ == "__main__":
