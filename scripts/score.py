@@ -522,8 +522,8 @@ def main():
         unique_urls = set(s["url"] for s in formatted_sources if s.get("url"))
         source_count = max(1, len(unique_urls))
 
-        # Multiplier: source_count < 2 -> 0.7; >= 2 (distinct validated sources) -> 1.0
-        multiplier = 1.0 if source_count >= 2 else 0.7
+        # Multiplier: source_count < 2 -> 0.85; >= 2 (distinct validated sources) -> 1.0
+        multiplier = 1.0 if source_count >= 2 else 0.85
 
         # Tag signal types based on content
         signal_types = detect_signal_types(title, summary, primary_url)
