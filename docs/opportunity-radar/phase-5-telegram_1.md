@@ -26,6 +26,6 @@ Nguồn: [source_count] nguồn xác nhận
 - Đừng bắn stage `research` hay `watch` qua Telegram — để trong dashboard là đủ. Telegram chỉ dành cho việc cần làm ngay.
 
 ## Done khi
-- [ ] Chỉ record điểm 9 mới bắn Telegram.
-- [ ] Không bắn lặp cùng một cơ hội.
-- [ ] Tin nhắn rõ ràng, có câu hành động.
+- [x] Chỉ record điểm 9 mới bắn Telegram.
+- [x] Không bắn lặp cùng một cơ hội.
+- [x] Tin nhắn rõ ràng, có câu hành động.

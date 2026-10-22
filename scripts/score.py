@@ -38,6 +38,16 @@ DATA_DIR = os.path.join(ROOT, "docs", "data")
 OUTPUT_FILE = os.path.join(DATA_DIR, "opportunities.json")
 SIGNALS_FILE = os.path.join(DATA_DIR, "signals.json")
 NEWS_FILE = os.path.join(DATA_DIR, "news.json")
+SENT_OPPORTUNITIES_FILE = os.path.join(DATA_DIR, "sent_opportunities.json")
+
+# Ensure scripts directory is in sys.path to reuse notify.py
+if os.path.join(ROOT, "scripts") not in sys.path:
+    sys.path.insert(0, os.path.join(ROOT, "scripts"))
+
+try:
+    import notify
+except ImportError:
+    notify = None
 
 
 # ==================== 1. JUNK FILTER PATTERNS (UPFRONT ELIMINATION) ====================
@@ -604,6 +614,156 @@ def main():
         print(f"      Title: {o['title']}")
         print(f"      Types: {', '.join(o['signal_type'])} | Scores: {o['scores']}")
         print(f"      Sources: {[s['name'] for s in o['sources']]}")
+
+    # ==================== PHASE 5: TELEGRAM ALERTS (ACT NOW / SCORE 9 ONLY) ====================
+    is_dry_run = "--dry-run" in sys.argv or "--dry-run-telegram" in sys.argv
+    is_test_mode = "--test-telegram" in sys.argv
+
+    if is_test_mode:
+        print("\n[score] Running in --test-telegram mode...")
+        # Demo score 9 opportunity to verify Phase 5 formatting and delivery
+        test_opp = {
+            "id": "opp_test_actnow_sample",
+            "title": "Hệ thống AI Camera & Cảm biến LiDAR giám sát giao thông đô thị và chẩn đoán hạ tầng vật lý",
+            "summary": "Tín hiệu tổng hợp từ 2 nguồn độc lập đạt điểm tuyệt đối 9/9. Nhu cầu vật lý trường tồn, thay thế 80% thời gian giám sát thủ công.",
+            "total": 9,
+            "stage": "build_ready",
+            "signal_type": ["supply_gap", "tech_cheap"],
+            "sources": [
+                {"name": "Báo Giao Thông", "url": "https://baogiaothong.vn", "date": today_str},
+                {"name": "IEEE Sensors", "url": "https://ieeexplore.ieee.org", "date": today_str}
+            ],
+            "source_count": 2
+        }
+        send_actnow_alerts([test_opp], dry_run=is_dry_run)
+    else:
+        send_actnow_alerts(opportunities, dry_run=is_dry_run)
+
+
+# ==================== PHASE 5 HELPER FUNCTIONS ====================
+
+SIGNAL_TYPE_LABELS = {
+    "pain_repeat": "Than phiền lặp lại",
+    "price_shift": "Biến động giá",
+    "supply_gap": "Thiếu hụt cung / Luật",
+    "tech_cheap": "Công nghệ / IoT rẻ"
+}
+
+
+def load_sent_opportunities():
+    """Load set of opportunity IDs that have already been alerted to Telegram."""
+    if os.path.exists(SENT_OPPORTUNITIES_FILE):
+        try:
+            with open(SENT_OPPORTUNITIES_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, list):
+                    return set(data)
+                elif isinstance(data, dict) and "sent_ids" in data:
+                    return set(data["sent_ids"])
+        except Exception as e:
+            print(f"[score] Note: could not load sent opportunities history: {e}")
+    return set()
+
+
+def save_sent_opportunities(sent_ids):
+    """Save set of alerted opportunity IDs to avoid duplicate Telegram notifications."""
+    try:
+        os.makedirs(DATA_DIR, exist_ok=True)
+        with open(SENT_OPPORTUNITIES_FILE, "w", encoding="utf-8") as f:
+            json.dump({
+                "sent_ids": sorted(list(sent_ids)),
+                "updated_at": datetime.now(timezone.utc).isoformat()
+            }, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"[score] Warning: could not save sent opportunities: {e}")
+
+
+def format_telegram_actnow_message(opp):
+    """
+    Format Telegram alert message according to Phase 5 spec:
+    🔴 CƠ HỘI MỚI (9/9) — Act now
+    [title]
+    [summary]
+    Loại: [signal_type]
+    Nguồn: [source_count] nguồn xác nhận
+    → Tuần này: đi hỏi 3 người thật
+    """
+    title = (opp.get("title") or "").strip()
+    summary = (opp.get("summary") or "").strip()
+    signal_types = opp.get("signal_type") or []
+    type_str = ", ".join([SIGNAL_TYPE_LABELS.get(st, st) for st in signal_types]) or "Đa nguồn"
+    source_count = opp.get("source_count", 1)
+
+    sources = opp.get("sources") or []
+    primary_url = sources[0].get("url") if sources else opp.get("url", "")
+    url_line = f"\n🔗 {primary_url}" if primary_url else ""
+
+    msg = (
+        f"🔴 CƠ HỘI MỚI (9/9) — Act now\n"
+        f"{title}\n"
+        f"{summary}\n"
+        f"Loại: {type_str}\n"
+        f"Nguồn: {source_count} nguồn xác nhận\n"
+        f"→ Tuần này: đi hỏi 3 người thật{url_line}"
+    )
+    return msg
+
+
+def send_actnow_alerts(opportunities, dry_run=False):
+    """
+    Phase 5: Filter Telegram alerts.
+    - Only send opportunities with total == 9 (build_ready).
+    - Send each opportunity ID exactly once.
+    - Never send research (7-8) or watch (4-6).
+    """
+    # 1. Filter: total == 9 or stage == 'build_ready'
+    act_now_candidates = [
+        opp for opp in opportunities
+        if (opp.get("total") or 0) >= 9 or opp.get("stage") == "build_ready"
+    ]
+
+    if not act_now_candidates:
+        print("\n[score] [Phase 5] No score 9/9 (build_ready) opportunities to alert via Telegram this run.")
+        print("[score] [Phase 5] Research (7-8) and Watch (4-6) are kept in dashboard only (no Telegram spam).")
+        return 0
+
+    sent_ids = load_sent_opportunities()
+    new_sent_count = 0
+
+    for opp in act_now_candidates:
+        opp_id = opp.get("id")
+        if not opp_id:
+            continue
+
+        if opp_id in sent_ids:
+            print(f"[score] [Phase 5] Skipping already alerted opportunity ID: {opp_id} ({opp.get('title')[:40]}...)")
+            continue
+
+        msg = format_telegram_actnow_message(opp)
+        print(f"\n[score] [Phase 5] Preparing Telegram alert for Act Now opportunity: {opp.get('title')}")
+
+        if dry_run:
+            print("[score] [Phase 5] [DRY RUN] Would send Telegram message:\n---")
+            print(msg)
+            print("---\n")
+            sent_ids.add(opp_id)
+            new_sent_count += 1
+        elif notify:
+            success = notify.send_message(msg)
+            if success:
+                print(f"[score] [Phase 5] Successfully sent Telegram alert for: {opp_id}")
+                sent_ids.add(opp_id)
+                new_sent_count += 1
+            else:
+                print(f"[score] [Phase 5] Telegram send returned False or skipped (check credentials).")
+        else:
+            print("[score] [Phase 5] notify module not available.")
+
+    if new_sent_count > 0:
+        save_sent_opportunities(sent_ids)
+        print(f"[score] [Phase 5] Saved {len(sent_ids)} sent opportunity IDs to {SENT_OPPORTUNITIES_FILE}")
+
+    return new_sent_count
 
 
 if __name__ == "__main__":
