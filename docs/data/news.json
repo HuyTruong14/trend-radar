@@ -1,1405 +1,1433 @@
 {
-  "updated": "2026-10-21T15:45:59.475212+00:00",
+  "updated": "2026-10-22T10:21:22.492521+00:00",
   "topics": {
     "AI/Tech": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>morluto/rea</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>langchain-ai/langchain</strong> (Score 45) và <strong>OpenHands/OpenHands</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 45 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>langgenius/dify</strong> (Score 80) — <em>Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams mo...</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>earendil-works/pi</strong> (Score 80): AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI và <strong>morluto/rea</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 45 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
-          "label": "Open",
+          "label": "LLM",
           "items": [
-            12,
-            44
+            10,
+            17,
+            37
+          ]
+        },
+        {
+          "label": "Agent",
+          "items": [
+            4,
+            42
+          ]
+        },
+        {
+          "label": "World Models",
+          "items": [
+            35,
+            36
           ]
         }
       ],
       "items": [
         {
-          "title": "morluto/rea",
-          "summary": "",
-          "url": "https://github.com/morluto/rea",
-          "sources": [
-            "gh"
-          ],
-          "time": "1m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "langchain-ai/langchain",
-          "summary": "",
-          "url": "https://github.com/langchain-ai/langchain",
-          "sources": [
-            "gh"
-          ],
-          "time": "1m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "OpenHands/OpenHands",
-          "summary": "",
-          "url": "https://github.com/OpenHands/OpenHands",
-          "sources": [
-            "gh"
-          ],
-          "time": "2m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "NousResearch/hermes-agent",
-          "summary": "",
-          "url": "https://github.com/NousResearch/hermes-agent",
-          "sources": [
-            "gh"
-          ],
-          "time": "6m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "paperclipai/paperclip",
-          "summary": "",
-          "url": "https://github.com/paperclipai/paperclip",
-          "sources": [
-            "gh"
-          ],
-          "time": "7m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "tetherto/qvac",
-          "summary": "",
-          "url": "https://github.com/tetherto/qvac",
-          "sources": [
-            "gh"
-          ],
-          "time": "9m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
           "title": "langgenius/dify",
-          "summary": "",
+          "summary": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
           "url": "https://github.com/langgenius/dify",
           "sources": [
             "gh"
           ],
-          "time": "11m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "AceDataCloud/Nexior",
-          "summary": "",
-          "url": "https://github.com/AceDataCloud/Nexior",
-          "sources": [
-            "gh"
-          ],
-          "time": "20m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "aqm857886159/Nomi",
-          "summary": "",
-          "url": "https://github.com/aqm857886159/Nomi",
-          "sources": [
-            "gh"
-          ],
-          "time": "51m",
-          "score": 45,
+          "time": "1m",
+          "score": 80,
           "velocity": "stable",
           "tag": "signal"
         },
         {
           "title": "earendil-works/pi",
-          "summary": "",
+          "summary": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
           "url": "https://github.com/earendil-works/pi",
           "sources": [
             "gh"
           ],
-          "time": "1h",
-          "score": 45,
+          "time": "1m",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "tool",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "morluto/rea",
+          "summary": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+          "url": "https://github.com/morluto/rea",
+          "sources": [
+            "gh"
+          ],
+          "time": "3m",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "signal"
+        },
+        {
+          "title": "OpenHands/OpenHands",
+          "summary": "🙌 OpenHands: AI-Driven Development",
+          "url": "https://github.com/OpenHands/OpenHands",
+          "sources": [
+            "gh"
+          ],
+          "time": "3m",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "signal"
+        },
+        {
+          "title": "NousResearch/hermes-agent",
+          "summary": "The agent that grows with you",
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "sources": [
+            "gh"
+          ],
+          "time": "12m",
+          "score": 80,
           "velocity": "stable",
           "tag": "signal"
         },
         {
           "title": "infiniflow/ragflow",
-          "summary": "",
+          "summary": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
           "url": "https://github.com/infiniflow/ragflow",
           "sources": [
             "gh"
           ],
-          "time": "2h",
-          "score": 45,
+          "time": "16m",
+          "score": 80,
           "velocity": "stable",
-          "tag": "signal"
+          "tag": "tool",
+          "watchlist_matched": "llm"
         },
         {
-          "title": "ZeroLu/awesome-seedance",
-          "summary": "",
-          "url": "https://github.com/ZeroLu/awesome-seedance",
+          "title": "firecrawl/firecrawl",
+          "summary": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
+          "url": "https://github.com/firecrawl/firecrawl",
           "sources": [
             "gh"
           ],
-          "time": "3h",
-          "score": 45,
+          "time": "1h",
+          "score": 80,
           "velocity": "stable",
-          "tag": "signal"
+          "tag": "tool",
+          "watchlist_matched": "ai agent"
         },
         {
-          "title": "Anil-matcha/Open-Generative-AI",
-          "summary": "",
-          "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+          "title": "langchain-ai/langchain",
+          "summary": "The agent engineering platform.",
+          "url": "https://github.com/langchain-ai/langchain",
           "sources": [
             "gh"
           ],
-          "time": "4h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "flatkey-ai/flatkey-cli",
-          "summary": "",
-          "url": "https://github.com/flatkey-ai/flatkey-cli",
-          "sources": [
-            "gh"
-          ],
-          "time": "6h",
-          "score": 45,
+          "time": "1h",
+          "score": 80,
           "velocity": "stable",
           "tag": "signal"
         },
         {
           "title": "JuliusBrussee/caveman",
-          "summary": "",
+          "summary": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
           "url": "https://github.com/JuliusBrussee/caveman",
           "sources": [
             "gh"
           ],
-          "time": "8h",
-          "score": 45,
+          "time": "2h",
+          "score": 80,
           "velocity": "stable",
           "tag": "signal"
         },
         {
-          "title": "firecrawl/firecrawl",
-          "summary": "",
-          "url": "https://github.com/firecrawl/firecrawl",
+          "title": "paperclipai/paperclip",
+          "summary": "The open-source app everyone uses to manage agents at work",
+          "url": "https://github.com/paperclipai/paperclip",
           "sources": [
             "gh"
           ],
-          "time": "8h",
-          "score": 45,
+          "time": "3h",
+          "score": 80,
           "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "affaan-m/ECC",
-          "summary": "",
-          "url": "https://github.com/affaan-m/ECC",
-          "sources": [
-            "gh"
-          ],
-          "time": "16h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28632v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "AEON: Unifying Video and 3D World Models",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28631v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "SolarRenderer: Few-Step Generative Reference Rendering",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28630v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "GBClaw: An agentic AI framework for atomistic grain boundary research and mechanistic discovery",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28629v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
           "tag": "tool"
         },
         {
-          "title": "Learning Adaptable Dexterous Skills via Hybrid Dexterous Mimicking",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28628v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "UniWALM: Unified World Action Language Model for Embodied Robot Control",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28626v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "PsycheMME: A Psychology-Informed Benchmark for Social Understanding and Interaction in Videos",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28625v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Industrial ReMEmbR: Scaling Spatiotemporal Memory to Robot Fleets",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28624v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "MindView: Benchmarking Generative Multi-View Spatial Intelligence",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28622v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Adaptive Multi-Token Prediction: How far should we go?",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28619v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "NarraSpace: Multimodal Scene-Grounded Evidence for Picture-Description Dementia Classification",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28616v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "KoalaGS: Complexity-Aware Continuous Level of Detail for Gaussian Splatting",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28615v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Semantic Observability for Autonomous Systems Diagnostics",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28611v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Benchmarking Arabic Dialects for Math Problems",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28607v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Value-Rich, Differently Organized: Measuring Value Expression and Organization in AI-Generated Debates",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2610.28604v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "21h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "notepower2k1/CapCap",
-          "summary": "",
-          "url": "https://github.com/notepower2k1/CapCap",
-          "sources": [
-            "gh"
-          ],
-          "time": "23h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "HBAI-Ltd/Toonflow-app",
-          "summary": "",
-          "url": "https://github.com/HBAI-Ltd/Toonflow-app",
-          "sources": [
-            "gh"
-          ],
-          "time": "23h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "PurpleDoubleD/locally-uncensored",
-          "summary": "",
-          "url": "https://github.com/PurpleDoubleD/locally-uncensored",
-          "sources": [
-            "gh"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "YILS-LIN/short-video-factory",
-          "summary": "",
-          "url": "https://github.com/YILS-LIN/short-video-factory",
-          "sources": [
-            "gh"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "browser-use/browser-use",
-          "summary": "",
-          "url": "https://github.com/browser-use/browser-use",
-          "sources": [
-            "gh"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Likely7/Veyra-NRVideo",
-          "summary": "",
-          "url": "https://github.com/Likely7/Veyra-NRVideo",
-          "sources": [
-            "gh"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
           "title": "Shubhamsaboo/awesome-llm-apps",
-          "summary": "",
+          "summary": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
           "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
           "sources": [
             "gh"
           ],
+          "time": "5h",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "signal",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "Anil-matcha/Open-Generative-AI",
+          "summary": "Unrestricted Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
+          "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+          "sources": [
+            "gh"
+          ],
+          "time": "23h",
+          "score": 76,
+          "velocity": "cooling",
+          "tag": "tool"
+        },
+        {
+          "title": "affaan-m/ECC",
+          "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+          "url": "https://github.com/affaan-m/ECC",
+          "sources": [
+            "gh"
+          ],
+          "time": "1d",
+          "score": 76,
+          "velocity": "cooling",
+          "tag": "risk",
+          "watchlist_matched": "claude"
+        },
+        {
+          "title": "HBAI-Ltd/Toonflow-app",
+          "summary": "短剧、漫剧制作工具 Toonflow：开源 AI 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、AI Agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、MCP 与插件扩展。Open-source AI short drama and motion comic creation tool with an infinite canvas, AI agents, storyboarding, image and video generation. Self-hosted and extensible, with a canvas-based approach similar to LibTV and TapNow.",
+          "url": "https://github.com/HBAI-Ltd/Toonflow-app",
+          "sources": [
+            "gh"
+          ],
+          "time": "1d",
+          "score": 76,
+          "velocity": "cooling",
+          "tag": "tool",
+          "watchlist_matched": "ai agent"
+        },
+        {
+          "title": "browser-use/browser-use",
+          "summary": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
+          "url": "https://github.com/browser-use/browser-use",
+          "sources": [
+            "gh"
+          ],
           "time": "2d",
-          "score": 41,
+          "score": 76,
+          "velocity": "cooling",
+          "tag": "tool"
+        },
+        {
+          "title": "DietrichGebert/ponytail",
+          "summary": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+          "url": "https://github.com/DietrichGebert/ponytail",
+          "sources": [
+            "gh"
+          ],
+          "time": "4d",
+          "score": 76,
+          "velocity": "cooling",
+          "tag": "signal",
+          "watchlist_matched": "ai agent"
+        },
+        {
+          "title": "TauricResearch/TradingAgents",
+          "summary": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+          "url": "https://github.com/TauricResearch/TradingAgents",
+          "sources": [
+            "gh"
+          ],
+          "time": "5d",
+          "score": 76,
+          "velocity": "cooling",
+          "tag": "tool",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "Quant-Arena: Benchmarking LLM Agents for Quantitative Trading Research",
+          "summary": "Quantitative research is an iterative loop: a researcher proposes a market hypothesis, implements it as an executable signal, tests it on historical data, and decides what to keep. Existing benchmarks score formulas, code, or individual trading decisions, leaving open whether large language models (",
+          "url": "https://arxiv.org/abs/2610.30113v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 60,
+          "velocity": "cooling",
+          "tag": "market",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "tetherto/qvac",
+          "summary": "Open-source local AI SDK - run AI on-device with no cloud, no API keys. Supports GGUF, RAG, image, music, and video generation, speech-to-text, P2P inference, and more. Cross-platform: Linux, macOS, Windows, Android, iOS.",
+          "url": "https://github.com/tetherto/qvac",
+          "sources": [
+            "gh"
+          ],
+          "time": "1m",
+          "score": 48,
+          "velocity": "stable",
+          "tag": "tool"
+        },
+        {
+          "title": "czg86389-hub/muse2api",
+          "summary": "把 Muse(muse.ai) 逆向封装为 OpenAI 兼容接口，支持对话、文生图、文生视频/图生视频、多账号池轮转与 48h 自动续期。OpenAI-compatible API for Muse.ai with Chat, Image & Video generation.",
+          "url": "https://github.com/czg86389-hub/muse2api",
+          "sources": [
+            "gh"
+          ],
+          "time": "4h",
+          "score": 48,
+          "velocity": "stable",
+          "tag": "tool"
+        },
+        {
+          "title": "YILS-LIN/short-video-factory",
+          "summary": "一键生成产品营销与泛内容短视频，AI批量自动剪辑，高颜值跨平台桌面端工具 One click generation of product marketing and general content short videos, AI batch automatic cliping, beautiful cross platform desktop tool",
+          "url": "https://github.com/YILS-LIN/short-video-factory",
+          "sources": [
+            "gh"
+          ],
+          "time": "7h",
+          "score": 48,
+          "velocity": "stable",
+          "tag": "signal"
+        },
+        {
+          "title": "leofan90/Awesome-World-Models",
+          "summary": "A comprehensive list of papers for the definition of World Models and using World Models for General Video Generation, Embodied AI, and Autonomous Driving, including papers, codes, and related websites.",
+          "url": "https://github.com/leofan90/Awesome-World-Models",
+          "sources": [
+            "gh"
+          ],
+          "time": "8h",
+          "score": 48,
+          "velocity": "stable",
+          "tag": "signal"
+        },
+        {
+          "title": "ZeroLu/awesome-seedance",
+          "summary": "The ultimate collection of high-fidelity Seedance 2.0 prompts and Seedance AI resources. Discover Seedance 2.0 how to use for cinematic film, anime, UGC, social media, meme and advertising. Includes Seedance API guides and advanced video generation workflows.",
+          "url": "https://github.com/ZeroLu/awesome-seedance",
+          "sources": [
+            "gh"
+          ],
+          "time": "9h",
+          "score": 48,
+          "velocity": "stable",
+          "tag": "tool"
+        },
+        {
+          "title": "PurpleDoubleD/locally-uncensored",
+          "summary": "The all-in-one local AI studio for your desktop: chat, image and video generation and a coding agent in one free, open source app. Windows and Linux. No Docker, no terminal, no cloud required.",
+          "url": "https://github.com/PurpleDoubleD/locally-uncensored",
+          "sources": [
+            "gh"
+          ],
+          "time": "15h",
+          "score": 44,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "aqm857886159/Nomi",
+          "summary": "Open-source AI video workbench. Bring any model or your local ComfyUI, and let Claude Code / Codex / Cursor direct it over MCP — storyboard, references, generation, editable first cut on a real timeline. Local-first: projects, prompts, and keys stay on your machine. No account, no telemetry.",
+          "url": "https://github.com/aqm857886159/Nomi",
+          "sources": [
+            "gh"
+          ],
+          "time": "55m",
+          "score": 35,
+          "velocity": "stable",
+          "tag": "tool",
+          "watchlist_matched": "claude"
+        },
+        {
+          "title": "AceDataCloud/Nexior",
+          "summary": "Consumer AI app for chat, image generation, video generation, and music creation powered by Ace Data Cloud APIs.",
+          "url": "https://github.com/AceDataCloud/Nexior",
+          "sources": [
+            "gh"
+          ],
+          "time": "1h",
+          "score": 32,
+          "velocity": "stable",
+          "tag": "tool"
+        },
+        {
+          "title": "vargHQ/sdk",
+          "summary": "AI video generation SDK — JSX for videos. One API for Kling, Flux, ElevenLabs, Veed. Built on Vercel AI SDK.",
+          "url": "https://github.com/vargHQ/sdk",
+          "sources": [
+            "gh"
+          ],
+          "time": "9h",
+          "score": 32,
+          "velocity": "stable",
+          "tag": "tool"
+        },
+        {
+          "title": "LongZero: Enhancing Long-Context Reasoning in LLMs from Zero Data",
+          "summary": "Reinforcement learning (RL) is an effective way to strengthen the long-context reasoning of large language models (LLMs), but it needs training data that are long, diverse, challenging, and verifiable. Human annotation of such data is expensive, naturally occurring data are too scarce to sustain RL,",
+          "url": "https://arxiv.org/abs/2610.30132v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 35,
           "velocity": "cooling",
           "tag": "signal",
           "watchlist_matched": "llm"
         },
         {
-          "title": "czg86389-hub/muse2api",
-          "summary": "",
-          "url": "https://github.com/czg86389-hub/muse2api",
+          "title": "Differentially Private Sparse Reward Estimation with Preference Feedback",
+          "summary": "Reinforcement Learning with Human Feedback (RLHF) has become a central paradigm for aligning Large Language Models with human values. However, the reliance on sensitive preference data necessitates rigorous differential privacy (DP) guarantees to prevent user information leakage. Existing private al",
+          "url": "https://arxiv.org/abs/2610.30099v1",
           "sources": [
-            "gh"
+            "arxiv"
           ],
-          "time": "3d",
-          "score": 41,
+          "time": "16h",
+          "score": 28,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
-          "title": "DietrichGebert/ponytail",
-          "summary": "",
-          "url": "https://github.com/DietrichGebert/ponytail",
+          "title": "flatkey-ai/flatkey-cli",
+          "summary": "Flatkey media generation CLI for images, videos, audio, text, credits, and model discovery.",
+          "url": "https://github.com/flatkey-ai/flatkey-cli",
           "sources": [
             "gh"
           ],
-          "time": "3d",
-          "score": 41,
+          "time": "1d",
+          "score": 28,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
-          "title": "TauricResearch/TradingAgents",
-          "summary": "",
-          "url": "https://github.com/TauricResearch/TradingAgents",
+          "title": "Likely7/Veyra-NRVideo",
+          "summary": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experience.",
+          "url": "https://github.com/Likely7/Veyra-NRVideo",
           "sources": [
             "gh"
           ],
-          "time": "4d",
-          "score": 41,
+          "time": "2d",
+          "score": 28,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
-          "title": "vargHQ/sdk",
-          "summary": "",
-          "url": "https://github.com/vargHQ/sdk",
-          "sources": [
-            "gh"
-          ],
-          "time": "5d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "tool"
-        },
-        {
-          "title": "leofan90/Awesome-World-Models",
-          "summary": "",
-          "url": "https://github.com/leofan90/Awesome-World-Models",
+          "title": "HKUSTDial/DataMagic",
+          "summary": "AI-powered data-to-video generation. Upload a table, get a narrated animated data story.",
+          "url": "https://github.com/HKUSTDial/DataMagic",
           "sources": [
             "gh"
           ],
           "time": "6d",
-          "score": 41,
+          "score": 28,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
-          "title": "sirioberati/Genjustsu-Open-Source-Workflow",
-          "summary": "",
-          "url": "https://github.com/sirioberati/Genjustsu-Open-Source-Workflow",
+          "title": "Rethinking Video Autoencoders for Interactive World Models",
+          "summary": "Video world models predict future frames from past frames and actions. They serve as simulators in which agents train, plan or are evaluated, and that humans can control interactively. They generate in the latent space of a video autoencoder, whose compression sets their cost per frame and how long ",
+          "url": "https://arxiv.org/abs/2610.30129v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Think Harder Where It Matters: Item-Level Adaptive Recursion for Sequential Recommendation",
+          "summary": "Existing sequential recommenders usually allocate a fixed computational budget to every item in a user's interaction history, regardless of the item's contribution to the final prediction. We challenge this de facto design with two diagnostic findings. (1) Non-uniform computational need: items withi",
+          "url": "https://arxiv.org/abs/2610.30128v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "VoxProg: 3D Spatial Reasoning through Voxel Programming",
+          "summary": "Language models' abilities to interpret tasks and generate programs offer a promising basis for 3D spatial reasoning. Yet following spatial instructions in 3D scenes requires programs to construct geometric references that language leaves implicit. In this work, we introduce VoxProg, which formulate",
+          "url": "https://arxiv.org/abs/2610.30127v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "PhysiCalWorld: In-Context Physics Calibration for World Models",
+          "summary": "Existing world models typically perceive a scene through current visual frame or a narrow history window. However, these observations may not reveal the physics properties that determine transition dynamics, such as an object's mass distribution, joint damping, or surface friction. Without calibrati",
+          "url": "https://arxiv.org/abs/2610.30125v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "ALPS: Visual State Encoders for World Models",
+          "summary": "World models turn visual representations into predictions and actions. We argue that their visual foundation should combine physical-state information, native language alignment, and pixel reconstruction, so that a single representation can support prediction, instruction, and inspection. However, e",
+          "url": "https://arxiv.org/abs/2610.30120v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Environment Duels: A Microcosm of LLM Co-Evolution",
+          "summary": "Through a tangle of real-world interactions, from synthetic training pipelines to data shared on the open web, frontier LLMs absorb what their predecessors and competitors create. How well does each model play its role in this ecosystem, as a creator and as a solver? We introduce Environment Duels, ",
+          "url": "https://arxiv.org/abs/2610.30116v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 35,
+          "velocity": "cooling",
+          "tag": "signal",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "The End of Consensus Research?",
+          "summary": "Consensus is a fundamental problem in distributed computing and at the core of state machine replication (SMR). Despite decades of active human research, discovering practical low-latency solutions to the problem is still open, as it requires combining protocol knowledge, correctness reasoning, impl",
+          "url": "https://arxiv.org/abs/2610.30114v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Multimodal Embodied Agents: A Unified Capability-centric Perspective from Computer-Use to Robot-Use",
+          "summary": "Multimodal agents (MMAs) sustain interaction through reasoning, memory, tools, and feedback, most visibly as computer-use agents, while robotic systems (RSs) couple sensing and actuation under physical dynamics. We define multimodal embodied agents (MMEAs) as goal-directed systems that couple multim",
+          "url": "https://arxiv.org/abs/2610.30108v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Asymmetric On-Policy Distillation Learns In-Context Exploration",
+          "summary": "Sequential decision-making under partial observability is difficult because agents must explore to infer hidden, task-relevant information before acting effectively. Learning such information-gathering behaviors tabula rasa via online reinforcement learning is sample-inefficient, whereas offline imi",
+          "url": "https://arxiv.org/abs/2610.30105v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "BatchBench: Benchmarking AI Robustness to Batch Effects and Domain Shift in Biomedical Images - A JUMP Cell Painting Leaderboard",
+          "summary": "Despite recent advances, current AI systems remain highly susceptible to domain shifts, particularly in biomedical imaging, where images are usually acquired under substantially different experimental conditions. Although recent domain adaptation methods have made substantial progress, significant p",
+          "url": "https://arxiv.org/abs/2610.30104v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Did the Problem Actually Get Harder? Testing LLMs on Paired P and NP-Complete Problems Hardened by Adversarial Multi-Agent Rewriting",
+          "summary": "Many NP-complete (NPC) problems have a polynomial-time (P) twin that differs in a single structural detail, such as 3- versus 2-colouring a graph. A model that reasons rather than recalls should notice which side of this boundary a problem falls on, yet existing benchmarks either fix the wording of ",
+          "url": "https://arxiv.org/abs/2610.30103v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 35,
+          "velocity": "cooling",
+          "tag": "signal",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "AtomicRL: Atomic Reinforcement Learning for Long-Horizon Robotic Manipulation",
+          "summary": "Vision-language-action (VLA) models have shown promise in robotic manipulation, but imitation learning (IL) alone often struggles to master complex long-horizon skills. Reinforcement learning (RL) offers an effective avenue for further improving VLA policies. However, existing VLA-RL methods typical",
+          "url": "https://arxiv.org/abs/2610.30097v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "16h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "notepower2k1/CapCap",
+          "summary": "CapCap is a Windows desktop app for short-form video localization and dubbing. It brings transcription, translation, subtitle styling, voice generation, timeline editing, preview, and export into a single project workflow for Vietnamese-focused content production.",
+          "url": "https://github.com/notepower2k1/CapCap",
           "sources": [
             "gh"
           ],
-          "time": "12d",
-          "score": 41,
+          "time": "1d",
+          "score": 15,
           "velocity": "cooling",
-          "tag": "tool"
+          "tag": "signal"
         }
       ]
     },
     "iGaming": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>UK challenger bookmaker reportedly eyeing up £80m London IPO</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>ACMA breaks down new marketing regime for Australian operators</strong> (Score 45) và <strong>Premier League’s voluntary betting sponsor ban slammed as failure</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 25 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>FIRST.bet CEO reacts to Brazil betting ban and outlines European & African goals</strong> (Score 64) — <em>When President Lula signed his provisional order to ban online sports betting and online casino in Brazil, it dealt a massive blow to a regulated sector that...</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Build versus buy: Should operators develop their own casino platform?</strong> (Score 28): Steven Valentine, chief commercial officer at Comtrade Gaming, explains to iGamingBusiness what operators should cons... và <strong>Italian retail operators call for bridging measures as land-based reform stalls</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 25 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
-          "label": "ACMA",
+          "label": "Brazil",
           "items": [
-            1,
-            20
+            0,
+            18,
+            24
+          ]
+        },
+        {
+          "label": "FIRST",
+          "items": [
+            0,
+            17
+          ]
+        },
+        {
+          "label": "Premier League",
+          "items": [
+            8,
+            13
           ]
         },
         {
           "label": "Flutter",
           "items": [
-            9,
-            12
-          ]
-        },
-        {
-          "label": "Finland",
-          "items": [
-            10,
-            18
-          ]
-        },
-        {
-          "label": "Brazil",
-          "items": [
-            15,
-            16
+            20,
+            22
           ]
         }
       ],
       "items": [
         {
-          "title": "UK challenger bookmaker reportedly eyeing up £80m London IPO",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/sportsbook/2026/10/21/betgoodwin-considers-uk-listing/",
+          "title": "FIRST.bet CEO reacts to Brazil betting ban and outlines European & African goals",
+          "summary": "When President Lula signed his provisional order to ban online sports betting and online casino in Brazil, it dealt a massive blow to a regulated sector that has steadily been growing since January 2025. For the operators who have invested significant resources in setting up local entities, hiring l",
+          "url": "https://sbcnews.co.uk/africa/2026/10/22/first-bet-ceo-brazil-betting-ban-europe-africa/",
           "sources": [
             "rss"
           ],
-          "time": "9m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "market"
-        },
-        {
-          "title": "ACMA breaks down new marketing regime for Australian operators",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/marketing/2026/10/21/australia-gambling-ads/",
-          "sources": [
-            "rss"
-          ],
-          "time": "45m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "Premier League’s voluntary betting sponsor ban slammed as failure",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/marketing/2026/10/21/premier-leagues-betting-sponsors-failure/",
-          "sources": [
-            "rss"
-          ],
-          "time": "1h",
-          "score": 45,
+          "time": "51m",
+          "score": 64,
           "velocity": "stable",
           "tag": "risk"
         },
         {
-          "title": "Greece begins recruitment drive for new enforcement unit",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/social-responsibility/2026/10/21/greece-gambling-enforcement/",
-          "sources": [
-            "rss"
-          ],
-          "time": "3h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "John Healey reportedly looking to cap MGD at 25%",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/features/2026/10/21/machine-games-duty-uk/",
-          "sources": [
-            "rss"
-          ],
-          "time": "5h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "FIRST.bet’s Tom Light: sportsbooks must be built by bettors",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/features/2026/10/21/first-bet-tom-light-sportsbook-interview/",
-          "sources": [
-            "rss"
-          ],
-          "time": "6h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "tool"
-        },
-        {
-          "title": "DGOJ presents full roadmap on Spain’s gambling deposit limits system",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/social-responsibility/2026/10/21/spain-gambling-deposits-dgoj/",
-          "sources": [
-            "rss"
-          ],
-          "time": "6h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "L&L Europe to pay £900,000 after Consumer Rights Act breach",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/igaming/2026/10/21/ll-europe-licence-breach/",
-          "sources": [
-            "rss"
-          ],
-          "time": "6h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "risk"
-        },
-        {
-          "title": "Campeón Gaming sets up shop in Cyprus",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/sportsbook/2026/10/21/campeon-gaming-bet-on-alfa/",
-          "sources": [
-            "rss"
-          ],
-          "time": "6h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "Flutter Entertainment to cut up to 1,400 UK & Ireland jobs",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/sportsbook/2026/10/20/flutter-cuts-1400-uki-jobs/",
-          "sources": [
-            "rss"
-          ],
-          "time": "23h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Wildz Group CEO reveals ambitious Finland plans after securing licence",
-          "summary": "",
-          "url": "https://igamingbusiness.com/gaming/wildz-group-finland-market-plans/",
-          "sources": [
-            "rss"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Build vs. buy: should operators develop their own casino platform?",
-          "summary": "",
+          "title": "Build versus buy: Should operators develop their own casino platform?",
+          "summary": "Steven Valentine, chief commercial officer at Comtrade Gaming, explains to iGamingBusiness what operators should consider if they are looking at building a casino platform – and the long-term costs of gaining control.",
           "url": "https://igamingbusiness.com/gaming/build-or-buy-casino/",
           "sources": [
             "rss"
           ],
           "time": "1d",
-          "score": 41,
+          "score": 28,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
+          "title": "Italian retail operators call for bridging measures as land-based reform stalls",
+          "summary": "With retail concessions due to expire in ten weeks and the reorganisation decree shelved, AGSI says gaming machines, horse racing and sports betting cannot wait for new tenders.",
+          "url": "https://igamingbusiness.com/sports-betting/italian-retail-operators-call-for-bridging-measures-as-land-based-reform-stalls/",
+          "sources": [
+            "rss"
+          ],
+          "time": "2d",
+          "score": 28,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Betsson boosted by football activity as firm reports record customers and revenue",
+          "summary": "Betsson AB has reported record revenue in Q3 2026, as the figure grew 10% year-on-year (YoY) to €326.5m (£273.7m). Total revenue for the first nine months of the year reached €922.1m, representing 3.2% growth YoY. However, EBITDA for Q3 dipped 23% to €63.4m from €82.5m as pressures such as higher be",
+          "url": "https://sbcnews.co.uk/sportsbook/2026/10/22/betsson-record-revenue-q3/",
+          "sources": [
+            "rss"
+          ],
+          "time": "25m",
+          "score": 16,
+          "velocity": "stable",
+          "tag": "market"
+        },
+        {
+          "title": "Three gambling challenges ahead of Romania’s new PM",
+          "summary": "Five months after a political stalemate and three failed attempts to set up a new administration, Romania has just elected its new Prime Minister in the face of Lula Niculescu. The PM, nominated by President Nicusor Dan, comes amid an agreed six-month truce between rival political powers the Social ",
+          "url": "https://sbcnews.co.uk/features/2026/10/22/romania-pm-gambling/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1h",
+          "score": 16,
+          "velocity": "stable",
+          "tag": "signal"
+        },
+        {
+          "title": "FDJ United’s tax bill up €62m in 2026 so far",
+          "summary": "Dutch and British headwinds are continuing to drag down FDJ United, with the group putting its faith in action plans in two nations which have emerged as two of the most troubled gambling markets in western Europe. The French gambling group detailed in its year-to-date (YTD) accounts, published foll",
+          "url": "https://sbcnews.co.uk/sportsbook/2026/10/22/fdj-united-2026-tax/",
+          "sources": [
+            "rss"
+          ],
+          "time": "2h",
+          "score": 16,
+          "velocity": "stable",
+          "tag": "market"
+        },
+        {
+          "title": "UK challenger bookmaker reportedly eyeing up £80m London IPO",
+          "summary": "A UK challenger bookmaker is rumoured to be mulling over a London IPO amid what has been a dismal time for industry operators on the London Stock Exchange (LSE). BetGoodwin, the online brand of heritage betting group Goodwin Racing, officially launched in 2022 – 25 years after the wider business est",
+          "url": "https://sbcnews.co.uk/sportsbook/2026/10/21/betgoodwin-considers-uk-listing/",
+          "sources": [
+            "rss"
+          ],
+          "time": "18h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "market"
+        },
+        {
+          "title": "ACMA breaks down new marketing regime for Australian operators",
+          "summary": "Following Australia’s latest reform package passing Parliament on 19 August, the Australian Communications and Media Authority (ACMA) has broken down the most important rules around marketing to help operators with compliance once the legislation comes into effect on 1 January 2027. Of note, any typ",
+          "url": "https://sbcnews.co.uk/marketing/2026/10/21/australia-gambling-ads/",
+          "sources": [
+            "rss"
+          ],
+          "time": "19h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "risk"
+        },
+        {
+          "title": "Premier League’s voluntary betting sponsor ban slammed as failure",
+          "summary": "The 2026/27 Premier League season has barely been underway for three months, but it’s already clear that the self-imposed ban on betting companies sponsoring team shirt-fronts has satisfied few people. This can probably be quite easily said of people on both sides of the spectrum. However, it’s the ",
+          "url": "https://sbcnews.co.uk/marketing/2026/10/21/premier-leagues-betting-sponsors-failure/",
+          "sources": [
+            "rss"
+          ],
+          "time": "20h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "risk"
+        },
+        {
+          "title": "Turkeys Gone Wild by MaxiLabs",
+          "summary": "Gobble up the action in Turkeys Gone Wild!",
+          "url": "https://igamingbusiness.com/casino-games/turkeys-gone-wild-by-maxilabs/",
+          "sources": [
+            "rss"
+          ],
+          "time": "20h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Stitchers Get Stitches by Stakelogic",
+          "summary": "Stitchers Get Stitches is a dark-comic Payways slot set inside a cursed claw machine in a toy store. During the day, cheerful, perfect plush toys sit proudly at the top of the machine, waiting to be won. But over time, the toys that are dropped, broken or forgotten fall to the lower levels, where th",
+          "url": "https://igamingbusiness.com/casino-games/stitchers-get-stitches-by-stakelogic/",
+          "sources": [
+            "rss"
+          ],
+          "time": "20h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Greece begins recruitment drive for new enforcement unit",
+          "summary": "The Hellenic Gaming Commission (EEEP) has been granted a budget to initiate a recruitment drive to spreadhead its new Inspection and Enforcement division. The Greek gambling authority will begin recruitment for its 40 positions within it’s the unit that will oversee the new enforcement of Greek laws",
+          "url": "https://sbcnews.co.uk/social-responsibility/2026/10/21/greece-gambling-enforcement/",
+          "sources": [
+            "rss"
+          ],
+          "time": "21h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Odysseus Wild Journey by ELA Games",
+          "summary": "Odysseus Wild Journey gives Greek mythology a luxury-yacht twist, combining continuous respins, doubled payouts and character-led bonus features with Free Spins and a 3x Super Free Spins multiplier.",
+          "url": "https://igamingbusiness.com/casino-games/odysseus-wild-journey-by-ela-games/",
+          "sources": [
+            "rss"
+          ],
+          "time": "22h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Premier League shirt ban cuts gambling exposure by just 10.5%, study finds",
+          "summary": "A new University of Bristol study has questioned whether football’s voluntary gambling sponsorship restrictions are making a meaningful difference.",
+          "url": "https://igamingbusiness.com/marketing-affiliates/premier-league-shirt-ban-gambling-exposure-study/",
+          "sources": [
+            "rss"
+          ],
+          "time": "22h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "risk"
+        },
+        {
+          "title": "Barbarossa: Beyond the Edge by Peter&Sons",
+          "summary": "Barbarossa: Beyond the edge of the known world, Legends speak of treasures no sailor has ever returned to claim. Barbarossa and his crew set sail into uncharted waters, where dangerous sea monsters and enchanting mermaids guard riches hidden beneath the waves - but this voyage brings an unexpected a",
+          "url": "https://igamingbusiness.com/casino-games/barbarossa-beyond-the-edge-by-petersons/",
+          "sources": [
+            "rss"
+          ],
+          "time": "23h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "BeeInfinity by Galaxsys",
+          "summary": "The core gameplay is centered on timing, as each bet locks in the current coefficient and challenges the player to anticipate whether it will increase within the next five seconds. With no manual cashout or interruptions, BeeInfinity delivers a streamlined experience where outcomes are determined au",
+          "url": "https://igamingbusiness.com/casino-games/beeinfinity-by-galaxsys/",
+          "sources": [
+            "rss"
+          ],
+          "time": "23h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "John Healey reportedly looking to cap MGD at 25%",
+          "summary": "Unnamed sources have told The Times that Chancellor of the Exchequer, John Healey, will present an Autumn Budget that puts the Machine Games Duty (MGD) up by 5%. If confirmed on the day of the Budget’s announcement, 28 October, an increase to 25% from the current 20% rate will give the land-based be",
+          "url": "https://sbcnews.co.uk/features/2026/10/21/machine-games-duty-uk/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "FIRST.bet’s Tom Light: sportsbooks must be built by bettors",
+          "summary": "The last two years have been a whirlwind for Tom Light. Following success with SBTech, he launched FIRST.bet. Since then, he has rarely looked back. The sportsbook provider has quickly cemented itself as one of the leading providers of sportsbook solutions across Latin America and Brazil, and now ha",
+          "url": "https://sbcnews.co.uk/features/2026/10/21/first-bet-tom-light-sportsbook-interview/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "tool"
+        },
+        {
+          "title": "Stake to challenge reversal of injunction against Brazil betting ban",
+          "summary": "Stake’s challenge could have significant implications for Brazil’s wider betting industry, as licensed operators seek to regain access to the market.",
+          "url": "https://igamingbusiness.com/legal-compliance/stake-to-challenge-reversal-injunction-brazil-betting-ban/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "risk"
+        },
+        {
+          "title": "Gibraltar grants DLT permission to Revolut as it pushes beyond gaming",
+          "summary": "Revolut’s new crypto subsidiary has secured a distributed ledger technology (DLT) permission in Gibraltar. The government expects three DLT permissions to be issued this week, as the territory broadens its economy beyond a gaming sector hit by UK duty rises.",
+          "url": "https://igamingbusiness.com/finance/gibraltar-grants-revolut-dlt-permission-as-it-pushes-beyond-gaming/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Flutter’s tax axe falls on Leeds and Dublin as Taylor era begins",
+          "summary": "More than 450 roles are at risk in Leeds and around 240 in Dublin, as Flutter’s new CEO opens his tenure by shrinking the group’s home markets.",
+          "url": "https://igamingbusiness.com/strategy/flutters-tax-axe-falls-on-leeds-and-dublin-as-taylor-era-begins/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "market"
+        },
+        {
+          "title": "Wildz Group CEO reveals ambitious Finland plans after securing licence",
+          "summary": "Buoyed by its successful Finland licence application, Wildz CEO Sam Brown lays out the group’s plans for the market – which include launching 11 brands.",
+          "url": "https://igamingbusiness.com/gaming/wildz-group-finland-market-plans/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "market"
+        },
+        {
           "title": "Flutter to cut up to 1,400 jobs amid UK tax pressures",
-          "summary": "",
+          "summary": "Rising gambling taxes are taking their toll on the UK betting sector, with Flutter now planning up to 1,400 redundancies.",
           "url": "https://igamingbusiness.com/people/flutter-job-cuts-uk-tax-pressures/",
           "sources": [
             "rss"
           ],
           "time": "1d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Curaçao Gaming Authority set to launch temporary licensing portal after data breach",
-          "summary": "",
+          "summary": "Curaçao’s gambling regulator is replacing its licensing portal after a data breach exposed confidential information belonging to licence holders.",
           "url": "https://igamingbusiness.com/legal-compliance/curacao-gaming-authority-launch-new-licensing-portal-data-breach/",
           "sources": [
             "rss"
           ],
           "time": "1d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "risk"
         },
         {
-          "title": "Italian retail operators call for bridging measures as land-based reform stalls",
-          "summary": "",
-          "url": "https://igamingbusiness.com/sports-betting/italian-retail-operators-call-for-bridging-measures-as-land-based-reform-stalls/",
-          "sources": [
-            "rss"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
           "title": "Kambi LatAm director warns ban on betting in Brazil threatens sports integrity",
-          "summary": "",
+          "summary": "Kambi’s Mateo Lenoble warned Brazil’s betting ban is damaging investor confidence and threatening progress in the country’s regulated gambling market.",
           "url": "https://igamingbusiness.com/legal-compliance/regulation/kambi-latam-director-warns-ban-on-betting-in-brazil-threatens-sports-integrity/",
           "sources": [
             "rss"
           ],
-          "time": "1d",
-          "score": 41,
+          "time": "2d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "risk"
-        },
-        {
-          "title": "Codere Online CEO on Brazil: ‘We dodged the bullet’",
-          "summary": "",
-          "url": "https://igamingbusiness.com/strategy/aviv-sher-codere-online-dodged-bullet-brazil/",
-          "sources": [
-            "rss"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Novig signs expanded partnership with integrity firm IC360 ahead of NBA opener",
-          "summary": "",
-          "url": "https://igamingbusiness.com/sustainable-gambling/sports-integrity/novig-signs-expanded-partnership-with-ic360-october-2026/",
-          "sources": [
-            "rss"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market"
-        },
-        {
-          "title": "Hippos ATG announces Finland licence ahead of market launch",
-          "summary": "",
-          "url": "https://igamingbusiness.com/legal-compliance/licensing/hippos-atg-announces-finland-licence/",
-          "sources": [
-            "rss"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market"
-        },
-        {
-          "title": "From niche to new vertical: The evolution of prediction markets",
-          "summary": "",
-          "url": "https://igamingbusiness.com/prediction-markets/evolution-prediction-markets/",
-          "sources": [
-            "rss"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market"
-        },
-        {
-          "title": "ACMA issues first guidance on Australia’s ban on notable people in gambling ads",
-          "summary": "",
-          "url": "https://igamingbusiness.com/marketing-affiliates/marketing-regulation/acma-issues-first-guidance-on-australias-ban-on-notable-people/",
-          "sources": [
-            "rss"
-          ],
-          "time": "2d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "risk"
-        },
-        {
-          "title": "Labour MPs call for increased tax on Category B machines",
-          "summary": "",
-          "url": "https://igamingbusiness.com/finance/tax/labour-mps-increased-tax-category-b-machines-uk-mgd/",
-          "sources": [
-            "rss"
-          ],
-          "time": "2d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "The PA agrees takeover of Racing and Sports owner RAS Technology",
-          "summary": "",
-          "url": "https://igamingbusiness.com/strategy/ma/the-pa-agrees-takeover-of-racing-and-sports-owner-ras-technology/",
-          "sources": [
-            "rss"
-          ],
-          "time": "2d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Last orders for Britain’s arcades?",
-          "summary": "",
-          "url": "https://igamingbusiness.com/finance/tax/last-orders-for-britains-arcades/",
-          "sources": [
-            "rss"
-          ],
-          "time": "2d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Prediction market roundup: Volume on 2026 US midterms approaches $1 billion",
-          "summary": "",
-          "url": "https://igamingbusiness.com/prediction-markets/prediction-market-roundup-101626/",
-          "sources": [
-            "rss"
-          ],
-          "time": "4d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market"
         }
       ]
     },
     "Business": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Foursquare co-founder says equity holders saw no returns from the company’s acquisition</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>When A Startup Sells, Its Employees’ Equity Plans Can Change Overnight</strong> (Score 45) và <strong>‘Weird And Maybe Uninvestable’: How Reach Capital Spots Its Venture Winners</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 38 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>TechCrunch Founder Summit 2026: Everything you need to know</strong> (Score 15) — <em>TechCrunch Founder Summit is a full-day gathering in Boston on November 4 where founders across all stages connect with top VCs and experienced entrepreneurs...</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Legal AI startup Legora raises $550M Series E at $8.8B valuation</strong> (Score 15): Legal AI startup Legora announced Wednesday that it raised a $550 million Series E round, valuing it at $8.8 billion. và <strong>Blacksmith hits unicorn valuation after Sequoia leads Series C</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 38 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
-          "label": "TechCrunch Disrupt",
+          "label": "TechCrunch Founder Summit",
           "items": [
-            28,
-            31,
-            35,
-            36,
-            37
+            0,
+            31
+          ]
+        },
+        {
+          "label": "Series",
+          "items": [
+            1,
+            2
           ]
         },
         {
           "label": "Silicon Valley",
           "items": [
-            4,
-            16
+            9,
+            21
           ]
         },
         {
           "label": "Work",
           "items": [
-            6,
-            24
-          ]
-        },
-        {
-          "label": "Benchmark",
-          "items": [
-            17,
-            23
+            11,
+            29
           ]
         },
         {
           "label": "San Francisco",
           "items": [
-            17,
-            31
+            22,
+            36
           ]
         }
       ],
       "items": [
         {
+          "title": "TechCrunch Founder Summit 2026: Everything you need to know",
+          "summary": "TechCrunch Founder Summit is a full-day gathering in Boston on November 4 where founders across all stages connect with top VCs and experienced entrepreneurs to gain tactical insights on building and scaling their companies.",
+          "url": "https://techcrunch.com/2026/10/21/techcrunch-founder-summit-2026-everything-you-need-to-know/",
+          "sources": [
+            "rss"
+          ],
+          "time": "13h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Legal AI startup Legora raises $550M Series E at $8.8B valuation",
+          "summary": "Legal AI startup Legora announced Wednesday that it raised a $550 million Series E round, valuing it at $8.8 billion.",
+          "url": "https://techcrunch.com/2026/10/21/legal-ai-startup-legora-raises-550m-series-e-at-8-8b-valuation/",
+          "sources": [
+            "rss"
+          ],
+          "time": "15h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "market"
+        },
+        {
+          "title": "Blacksmith hits unicorn valuation after Sequoia leads Series C",
+          "summary": "Blacksmith, a platform that lets companies build and test AI code more effectively, just announced a $66 million Series C round led by Sequoia that values the company at $1 billion.",
+          "url": "https://techcrunch.com/2026/10/21/blacksmith-hits-unicorn-valuation-after-sequoia-leads-series-c/",
+          "sources": [
+            "rss"
+          ],
+          "time": "17h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "market"
+        },
+        {
           "title": "Foursquare co-founder says equity holders saw no returns from the company’s acquisition",
-          "summary": "",
+          "summary": "Foursquare raised $411 million in funding according to PitchBook data, but its equity holders saw no returns from its final acquisition.",
           "url": "https://techcrunch.com/2026/10/21/foursquare-co-founder-says-equity-holders-saw-no-returns-from-the-companys-acquisition/",
           "sources": [
             "rss"
           ],
-          "time": "1h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "20h",
+          "score": 15,
+          "velocity": "cooling",
           "tag": "market"
         },
         {
+          "title": "When Restrictive Cybersecurity Policies Backfire",
+          "summary": "Six experiments involving more than 2,800 people show how rules meant to reduce risk can end up weakening employees’ belief in digital threats.",
+          "url": "http://hbr.org/2026/10/when-restrictive-cybersecurity-policies-backfire",
+          "sources": [
+            "rss"
+          ],
+          "time": "21h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "The Deployment Failure Holding Back Your AI Investments",
+          "summary": "New research suggests that AI systems are most valuable when rolled out across functions, not just within them.",
+          "url": "http://hbr.org/2026/10/the-deployment-failure-holding-back-your-ai-investments",
+          "sources": [
+            "rss"
+          ],
+          "time": "22h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
           "title": "When A Startup Sells, Its Employees’ Equity Plans Can Change Overnight",
-          "summary": "",
+          "summary": "Startup acquisitions can reshape employees’ finances and careers, with individual outcomes depending on a variety of conditions. Guest author Ron Honig, co-CEO and managing partner of From-Honig Family Office, suggests that before making major life changes, employees should clarify their award right",
           "url": "https://news.crunchbase.com/ma/acquired-startup-employees-equity-plans-from-honig/",
           "sources": [
             "rss"
           ],
-          "time": "4h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal"
+          "time": "23h",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "market"
         },
         {
           "title": "‘Weird And Maybe Uninvestable’: How Reach Capital Spots Its Venture Winners",
-          "summary": "",
+          "summary": "Crunchbase News spoke with James Kim, partner at Reach Capital, about how Reach’s education roots inform its broader strategy, what it saw in AI detection company GPTZero, and why some of its best investments initially divided its own team. We also discussed how ownership stakes and secondary transa",
           "url": "https://news.crunchbase.com/venture/ai-edtech-healthcare-reach-capital-qa-kim/",
           "sources": [
             "rss"
           ],
-          "time": "4h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "23h",
+          "score": 15,
+          "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "How AI Erodes Teamwork",
-          "summary": "",
+          "summary": "In this week’s Insider newsletter, HBR editor Gretchen Gavett shares the results of a new survey on “relationslipping,” invites subscribers to a roundtable event on cybersecurity, and more.",
           "url": "http://hbr.org/2026/10/how-ai-erodes-teamwork",
           "sources": [
             "rss"
           ],
           "time": "1d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Inspired Capital closes $450M fourth fund as New York pushes back on Silicon Valley’s gravitational pull",
-          "summary": "",
+          "summary": "The raise comes as venture dollars pile up on the West Coast.",
           "url": "https://techcrunch.com/2026/10/20/inspired-capital-closes-450m-fourth-fund-as-new-york-pushes-back-on-silicon-valleys-gravitational-pull/",
           "sources": [
             "rss"
           ],
           "time": "1d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
-          "tag": "signal"
+          "tag": "market"
         },
         {
           "title": "Lessons from UPS’s Transformation",
-          "summary": "",
+          "summary": "How leaders can successfully pivot a failing business model—while keeping profit margins high and teams aligned.",
           "url": "http://hbr.org/2026/10/lessons-from-upss-transformation",
           "sources": [
             "rss"
           ],
           "time": "1d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Leaders Must Speak Honestly About Aging at Work",
-          "summary": "",
+          "summary": "Avoiding candid conversations about succession and retirement can damage your organization in the long run.",
           "url": "http://hbr.org/2026/10/leaders-must-speak-honestly-about-aging-at-work",
           "sources": [
             "rss"
           ],
           "time": "1d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "How To Build A Billion-Dollar Company Without Venture Capital",
-          "summary": "",
+          "summary": "Founders can build billion-dollar businesses without venture capital by prioritizing customer revenue, pricing for quality, hiring exceptional talent and automating processes to scale efficiently, argues Nacho De Marco, who draws on his experience bootstrapping BairesDev, to emphasize financial disc",
           "url": "https://news.crunchbase.com/startups/bootstrapping-billion-dollar-company-ai-staffing-demarco-bairesdev/",
           "sources": [
             "rss"
           ],
           "time": "1d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "market"
         },
         {
           "title": "Fintech Funding Fell 21% In Q3 As Deals Grew Scarcer",
-          "summary": "",
+          "summary": "All told, fintech startups raised $10.6 billion globally in the third quarter of 2026, down 28.4% from $14.9 billion in Q2 2026 and 21.4% from $13.5 billion in Q3 2025.",
           "url": "https://news.crunchbase.com/venture/q3-2026-fintech-startup-funding-deal-count-fell-ai/",
           "sources": [
             "rss"
           ],
           "time": "1d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "market"
         },
         {
           "title": "When You Feel Envy, Turn It Into Something Productive",
-          "summary": "",
+          "summary": "A conversation with author Stacy Kim on listening to yourself and your team.",
           "url": "http://hbr.org/podcast/2026/10/when-you-feel-envy-turn-it-into-something-productive",
           "sources": [
             "rss"
           ],
-          "time": "1d",
-          "score": 41,
+          "time": "2d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Tenstorrent hits $6.2B valuation to scale open-weight AI chips",
-          "summary": "",
+          "summary": "After drawing acquisition interest earlier this year, the Nvidia challenger raised $1.5 billion to remain independent.",
           "url": "https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/",
           "sources": [
             "rss"
           ],
-          "time": "1d",
-          "score": 41,
+          "time": "2d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "market"
         },
         {
           "title": "AI assistant startup Town nabs unicorn valuation 4 months after launch",
-          "summary": "",
+          "summary": "AI assistant startup Town nabbed a unicorn valuation on Monday, announcing a $108 million Series B round co-led by Forerunner Ventures and Menlo Ventures.",
           "url": "https://techcrunch.com/2026/10/19/ai-assistant-startup-town-nabs-unicorn-valuation-four-months-after-launch/",
           "sources": [
             "rss"
           ],
-          "time": "1d",
-          "score": 41,
+          "time": "2d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "market"
         },
         {
           "title": "Accelerating Agentic AI in Production to Drive Measurable Outcomes",
-          "summary": "",
+          "summary": "Sponsor Content Webinar from AWS and Arize.",
           "url": "http://hbr.org/sponsored/2026/10/accelerating-agentic-ai-in-production-to-drive-measurable-outcomes",
           "sources": [
             "rss"
           ],
           "time": "2d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Your AI Marketing Transformation Will Get Harder Before It Gets Easier",
-          "summary": "",
+          "summary": "Here are the challenges—and benefits—you can expect.",
           "url": "http://hbr.org/2026/10/your-ai-marketing-transformation-will-get-harder-before-it-gets-easier",
           "sources": [
             "rss"
           ],
           "time": "2d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "The Loyal Customers Your Luxury Brand Is Overlooking",
-          "summary": "",
+          "summary": "How to identify and engage with enthusiasts who buy your products on secondary markets.",
           "url": "http://hbr.org/2026/10/the-loyal-customers-your-luxury-brand-is-overlooking",
           "sources": [
             "rss"
           ],
           "time": "2d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
-          "tag": "signal"
+          "tag": "market"
         },
         {
           "title": "LatAm Startup Funding Jumps 26% In Q3 As VCs Begin ‘Rediscovering’ The Region",
-          "summary": "",
+          "summary": "A continued boom in late-stage and growth funding combined with a surge in seed-stage funding helped buoy venture investment in Latin America for the third quarter of 2026, Crunchbase data shows.",
           "url": "https://news.crunchbase.com/venture/q3-2026-latam-startup-funding-jumps-ai-fintech-mexico/",
           "sources": [
             "rss"
           ],
           "time": "2d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "market"
         },
         {
           "title": "The FDE Bubble: Silicon Valley’s Most Expensive Game Of Pretend",
-          "summary": "",
+          "summary": "Enterprise AI companies relying on armies of forward deployed engineers are disguising labor-intensive services as scalable software, inflating recurring revenue and valuations while falling short of autonomy claims, argues Anurag Gurtu, co-founder and CEO of Airrived. In this guest commentary he ur",
           "url": "https://news.crunchbase.com/venture/fde-bubble-enterprise-agentic-ai-gurtu-airrived/",
           "sources": [
             "rss"
           ],
           "time": "2d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
-          "tag": "signal"
+          "tag": "market"
         },
         {
           "title": "No agenda, no rush, no leaving San Francisco: Benchmark’s partners on investing in a frenzied market",
-          "summary": "",
+          "summary": "Benchmark may have grown its funds and swapped out some partners, but onstage the five who are left sounded like friends who just happen to be running one of the Valley’s most storied firms",
           "url": "https://techcrunch.com/2026/10/18/no-agenda-no-rush-no-leaving-san-francisco-benchmarks-partners-on-investing-in-a-frenzied-market/",
           "sources": [
             "rss"
           ],
-          "time": "2d",
-          "score": 41,
+          "time": "3d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "market"
         },
         {
           "title": "The Week’s 10 Biggest Funding Rounds: Spending Contracts For Latest AI-Driven Startup Batch",
-          "summary": "",
+          "summary": "Startup investors aren’t exactly hitting pause, but they did scale back on giant rounds this past week, with just two startup financings in the multiple hundreds of millions.",
           "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-investors-scaled-back-ai-biotech-modal/",
           "sources": [
             "rss"
           ],
-          "time": "4d",
-          "score": 41,
+          "time": "5d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "market"
         },
         {
           "title": "An Nvidia insider-turned-VC on why robotics hasn’t hit its ChatGPT moment, yet",
-          "summary": "",
+          "summary": "Amulya Vishwanath, who spent seven years leading product marketing for NVIDIA’s robotics platforms, says robotics is currently in its “Lego era,” with the basic building blocks like actuators, robotic hands, software, and safety standards still being rebuilt. This view runs counter to those who beli",
           "url": "https://techcrunch.com/video/a-nvidia-insider-turned-vc-on-why-robotics-hasnt-hit-its-chatgpt-moment-yet/",
           "sources": [
             "rss"
           ],
-          "time": "4d",
-          "score": 41,
+          "time": "5d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "The Most Consequential Move a New CEO Can Make",
-          "summary": "",
+          "summary": "A false step can send the company in the wrong direction, alienate key stakeholders, and squander the credibility needed to get anything done.",
           "url": "http://hbr.org/2026/10/the-most-consequential-move-a-new-ceo-can-make",
           "sources": [
             "rss"
           ],
           "time": "5d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Turn Vibe-Coded Prototypes Into Tools Your Company Can Actually Use",
-          "summary": "",
+          "summary": "Lessons from companies that got it right.",
           "url": "http://hbr.org/2026/10/turn-vibe-coded-prototypes-into-tools-your-company-can-actually-use",
           "sources": [
             "rss"
           ],
           "time": "5d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Asia’s Startup Funding At Near Record High In Q3, Driven By AI",
-          "summary": "",
+          "summary": "Overall, investors put $38.5 billion into reported seed- through growth-stage financings for Asian startups in Q3, per Crunchbase data. Of that, a majority went to AI-focused companies, echoing the trends we’ve seen globally.",
           "url": "https://news.crunchbase.com/venture/q3-2026-asia-startup-funding-near-record-ai/",
           "sources": [
             "rss"
           ],
           "time": "5d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "market"
         },
         {
           "title": "Even Benchmark thinks AI is eroding the venture pact against backing rivals",
-          "summary": "",
+          "summary": "Benchmark says the Valley’s rule against backing rivals is getting harder to keep.",
           "url": "https://techcrunch.com/2026/10/15/even-benchmark-thinks-ai-is-eroding-the-venture-pact-against-backing-rivals/",
           "sources": [
             "rss"
           ],
-          "time": "5d",
-          "score": 41,
+          "time": "6d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "From Factory Data to Trusted Action: Putting Agentic AI to Work in Manufacturing",
-          "summary": "",
+          "summary": "Sponsor Content Webinar from AWS and 4Minds.",
           "url": "http://hbr.org/sponsored/2026/10/from-factory-data-to-trusted-action-putting-agentic-ai-to-work-in-manufacturing",
           "sources": [
             "rss"
           ],
-          "time": "5d",
-          "score": 41,
+          "time": "6d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "10 Pricing Strategies to Deal with Persistent Inflation",
-          "summary": "",
+          "summary": "Passing costs on to consumers isn’t the only—or best—option.",
           "url": "http://hbr.org/2026/10/10-pricing-strategies-to-deal-with-persistent-inflation",
           "sources": [
             "rss"
           ],
-          "time": "5d",
-          "score": 41,
+          "time": "6d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Last chance to save up to $200 on your TechCrunch Founder Summit pass: Early booking ends October 16",
-          "summary": "",
+          "summary": "Savings of up to $200 end October 16 for TechCrunch Founder Summit. These savings for Founder and Investor Passes vanish after Friday. Join 1,000 founders and investors on November 4 at Boston’s SoWa Power Station. Bring your toughest questions and make the day count for your business.",
           "url": "https://techcrunch.com/2026/10/15/last-chance-to-save-up-to-200-on-techcrunch-founder-summit-early-booking-ends-oct-16/",
           "sources": [
             "rss"
           ],
-          "time": "5d",
-          "score": 41,
+          "time": "6d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "The Crunchbase Tech Layoffs Tracker",
-          "summary": "",
+          "summary": "Over 127,000 workers at U.S.-based tech companies were laid off in mass job cuts in 2025, per a Crunchbase News tally, and the layoffs have continued into 2026. See the latest companies to cut roles.",
           "url": "https://news.crunchbase.com/startups/tech-layoffs/",
           "sources": [
             "rss"
           ],
-          "time": "5d",
-          "score": 41,
+          "time": "6d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "TechCrunch Disrupt 2026: Last day",
-          "summary": "",
+          "summary": "Last day to be part of TechCrunch Disrupt 2026. Join 10,000+ tech leaders for a day of connections and insights. Save 75% on your pass now.",
           "url": "https://techcrunch.com/2026/10/15/techcrunch-disrupt-2026-last-day/",
           "sources": [
             "rss"
           ],
           "time": "6d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Team Dynamics Weaken When Employees Turn to AI Instead of Colleagues",
-          "summary": "",
+          "summary": "Displacing teammates with AI can lead to “relationslipping”—the pernicious erosion of a team’s working relationships.",
           "url": "http://hbr.org/2026/10/team-dynamics-weaken-when-employees-turn-to-ai-instead-of-colleagues",
           "sources": [
             "rss"
           ],
           "time": "6d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "How To Build Your Team With Autonomous Humans, Not Just Autonomous Systems",
-          "summary": "",
+          "summary": "As AI enables smaller, faster teams, companies should hire curious, adaptable people who challenge established practices and can be trusted to make independent decisions, according to guest author Eric Francia, who writes that giving employees real responsibility, encouraging questions and investing",
           "url": "https://news.crunchbase.com/ai/building-autonomous-human-team-success-francia-uniplay/",
           "sources": [
             "rss"
           ],
           "time": "6d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Save 50% on your TechCrunch Disrupt 2026 ticket and join the last 2 days in San Francisco’s Moscone West",
-          "summary": "",
+          "summary": "Get a 50% discount on the last two days of TechCrunch Disrupt 2026, October 14-15, in San Francisco. Register now and join the rest of the startup ecosystem. Today, it's all about physical and software AI.",
           "url": "https://techcrunch.com/2026/10/14/save-50-on-your-techcrunch-disrupt-2026-ticket-and-join-the-last-two-days-in-san-francisco/",
           "sources": [
             "rss"
           ],
           "time": "7d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "From Bedrock to Business: The Last Mile of Agentic AI",
-          "summary": "",
+          "summary": "Sponsor Content Webinar from AWS and Workato.",
           "url": "http://hbr.org/sponsored/2026/10/from-bedrock-to-business-the-last-mile-of-agentic-ai",
           "sources": [
             "rss"
           ],
           "time": "7d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "How One Company Used Disciplined Chaos to Drive Innovation",
-          "summary": "",
-          "url": "http://hbr.org/2026/10/how-one-company-used-disciplined-chaos-to-drive-innovation",
-          "sources": [
-            "rss"
-          ],
-          "time": "7d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Managers Need to Get Better at Killing Digital Products",
-          "summary": "",
-          "url": "http://hbr.org/2026/10/managers-need-to-get-better-at-killing-digital-products",
-          "sources": [
-            "rss"
-          ],
-          "time": "7d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "The final Disrupt Stage lineup: Three days of conversations you won’t hear anywhere outside of TechCrunch Disrupt 2026",
-          "summary": "",
-          "url": "https://techcrunch.com/2026/10/13/the-final-disrupt-stage-lineup-three-days-of-conversations-you-wont-hear-anywhere-outside-of-techcrunch-disrupt-2026/",
-          "sources": [
-            "rss"
-          ],
-          "time": "8d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "TechCrunch Disrupt 2026 starts tomorrow: Your final chance to secure up to $100 ticket savings",
-          "summary": "",
-          "url": "https://techcrunch.com/2026/10/12/techcrunch-disrupt-2026-starts-tomorrow-your-final-chance-to-secure-up-to-100-ticket-savings/",
-          "sources": [
-            "rss"
-          ],
-          "time": "9d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "48 hours to TechCrunch Disrupt 2026 — hear directly from the people building what’s next",
-          "summary": "",
-          "url": "https://techcrunch.com/2026/10/11/48-hours-to-techcrunch-disrupt-2026-hear-directly-from-the-people-building-whats-next/",
-          "sources": [
-            "rss"
-          ],
-          "time": "9d",
-          "score": 41,
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         }
       ]
     },
     "News": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>AI management based on standards and accountability. - Vietnam.vn</strong> (Score 41).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Microsoft issues a warning regarding AI regulation. - Vietnam.vn</strong> (Score 41) và <strong>AI-generated images and videos must be labelled starting March 1, 2026 - LuatVietnam</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 15 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Regulations on the safety of AI applications in banking operations. - Vietnam.vn</strong> (Score 16) — <em>Regulations on the safety of AI applications in banking operations. Vietnam.vn</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>AI management based on standards and accountability. - Vietnam.vn</strong> (Score 15): AI management based on standards and accountability. Vietnam.vn và <strong>From the control center, AI camera helps Hanoi traffic police monitor every traffic span - Laodong.vn</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 15 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "Vietnam",
           "items": [
             0,
             1,
+            3,
+            4,
+            5,
             6,
             7,
             8,
@@ -1414,190 +1442,190 @@
         {
           "label": "Microsoft",
           "items": [
-            1,
-            6
+            3,
+            5
           ]
         }
       ],
       "items": [
         {
+          "title": "Regulations on the safety of AI applications in banking operations. - Vietnam.vn",
+          "summary": "Regulations on the safety of AI applications in banking operations. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQLTFDakVQaG5kZ25TNWdodEVONGkzb0pwUmx5d0lfZEEtR1pNWGRFX3VoVUM4aGREcE5jdnRram5uTE5Za2hXb1JXMHNxTDRHNWJlV2ZWNks3NngycTZqbmZEYUJxTGcxT0Zrbno2ZUhodUstb3hKd2hVMnB1NDBFYkNHNXU4bVU?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "32m",
+          "score": 16,
+          "velocity": "stable",
+          "tag": "risk"
+        },
+        {
           "title": "AI management based on standards and accountability. - Vietnam.vn",
-          "summary": "",
+          "summary": "AI management based on standards and accountability. Vietnam.vn",
           "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5QTVg0ZldEZktndzV2RG94Mklxc2RFdm1vTnFkUVY0eFdhd1hlTnpZVDZ3eDZIZWRpMUZoR2pnVkFnd1hORVNhb3VRNzRfY2FLVmVqVEFrWENsQmlZTXNnQjdYNHZiaWpESlcyS2RQaVdwbEUwa1EzTFJtMA?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "2d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Microsoft issues a warning regarding AI regulation. - Vietnam.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9vWWxHS3RvaWtiSWRBWVp4YmpDY2FCWmU3MFlfLUJfc2dKRVJyNklwZmRkc2FZb1BWb0tKQVN3R0hEWU5KTDBYRGFmSWdpMkdMajVlT1dnZndRM0Q2ZC1VclEzcFdIY1JJZThqSU9LSVpPd0gxTWphZA?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "11d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "risk"
-        },
-        {
-          "title": "AI-generated images and videos must be labelled starting March 1, 2026 - LuatVietnam",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQbFc4TUp5SFBlZ1pRQkNGbERTWEQxa19tUkNiWTNIejNsWWM1TEFhbThJVUpNQjFrNjZvNzhRWFA0NmJHMGoybjFHUl9RcEszN09UVXpIQngzTWY0LUt6bDkwLWxDeWowTlktSFZFOHJjUENzemZDUGoyc0huOHI3WHNMUjB5YVRIYzBPWlpSV3I5MFExaVUyX3B6LTlrNzNZZ2hJQnhWNmdVTjVwWExfN1VzVjBGYXYzLWxoS0ZBdnJFa1FibXRKWk5PcVgyRkhqdWxCRQ?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "232d",
-          "score": 41,
+          "time": "3d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "From the control center, AI camera helps Hanoi traffic police monitor every traffic span - Laodong.vn",
-          "summary": "",
+          "summary": "From the control center, AI camera helps Hanoi traffic police monitor every traffic span Laodong.vn",
           "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbFVqaDFPdTgzMzQ4aU1MNDBLUDU4WFc4RFJUMFZRZktpS3JyWGF0T3pMcTVOZENpY3FOMEt1YmVxUHhtNmpBbUg0MHlpOC1nYmMzUlVOX290bjlMMXNlZVZzMGl5N1lZMWQzajdVcWx4b1hONlBiZUphanJDakJWbmhIc1BGc0Rqb2VRWTZ6WFZDYTYxZFVkUTR0b3dvSUV4X1pNRjc4cjEzbnE2QzlzWjBxTmlsU2xsaWlwcWh4d2Y?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "16d",
-          "score": 41,
+          "time": "17d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
-          "title": "AI Law takes effect, anchors national governance framework - vietnamnews.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOc0Iybnh4MEpVczhNY1pBQUl0MXhUdkd2RE1rcDFIU3FlSWVUM1E4cEhta29VZjEzUjJqbExBdFJPN3pfdXdkOXp2SWxBbTdyRDZ1clFBM2pxUkZRX2gzaEppdUxSNlJoWThnaE5ES2Z6UHJJSWpRNzBrckF5dTB1X0ZJSnpuTzY0NWFnaExHWWd0ODk0djE2V1dxY1l0OFN4NWZN?oc=5",
+          "title": "Microsoft issues a warning regarding AI regulation. - Vietnam.vn",
+          "summary": "Microsoft issues a warning regarding AI regulation. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9vWWxHS3RvaWtiSWRBWVp4YmpDY2FCWmU3MFlfLUJfc2dKRVJyNklwZmRkc2FZb1BWb0tKQVN3R0hEWU5KTDBYRGFmSWdpMkdMajVlT1dnZndRM0Q2ZC1VclEzcFdIY1JJZThqSU9LSVpPd0gxTWphZA?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "230d",
-          "score": 41,
+          "time": "12d",
+          "score": 15,
           "velocity": "cooling",
-          "tag": "tool"
+          "tag": "risk"
         },
         {
-          "title": "The Law on Artificial Intelligence must ensure four key pillars - Tạp chí KH&CN Việt Nam",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNb2JHd1ZMZW92ZE9wSVhFMkIzdndRUlY5bEd3SjVpMDdYblBxal9SZGh6SXRBWmVOZW9hUWVWR0FfT0ZpVHh5OEwyeUVwbW1GbnFXVEhSRzBnOE11X2RFeFJpd2syRGNHZWRlVUNESlprOVAzbll0YUFOeGR2XzRXaGtLMmNfaE0yQW5QdnhYeU9RYXNE?oc=5",
+          "title": "Zalo has a free AI assistant that helps you look up laws and procedures. - Vietnam.vn",
+          "summary": "Zalo has a free AI assistant that helps you look up laws and procedures. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOc0ticm44amRSWUdDYlE2djNLMFh4ckVxZzZQX0Q4eENuSXZjMWtzaThDYlNvVVU4bkNXbGw3RjVBdjZab3kxU1loQUFVMzVlOGN6alo3WGJGckJBZjMtdEd4T1hHbVcwcDRxNm9uRFJVdFFXcElMQ3VwaXpWNVVDRE1WQlg?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "336d",
-          "score": 41,
+          "time": "1d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Microsoft's chairman warns: AI is being regulated more loosely than washing machines. - Vietnam.vn",
-          "summary": "",
+          "summary": "Microsoft's chairman warns: AI is being regulated more loosely than washing machines. Vietnam.vn",
           "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQWs3X3NmWW9vRS1lQ0piYnNiVks2Xzc0UXpOUVJqczJwdFg4VkoyUElVX3ZDeGYySUVNMGZJU1RiaGgybWFSbHBtZ2RmdnhhM1pVQUNLNlhuVTZ6UUQ3dEZob2U5NUdpc2RyUzE3Yk0tRzZHSVVOa3ZjWmhIVXdscG9aNk40czZHTjl6TEh1U3p0UFZ3T0JKdmlvQQ?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "8d",
-          "score": 41,
+          "time": "9d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "How do the US, China, and the EU regulate AI differently? - Vietnam.vn",
-          "summary": "",
+          "summary": "How do the US, China, and the EU regulate AI differently? Vietnam.vn",
           "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5uY1AyYUVMd2FZRV82SW9OSXBlX1FqQmp6NUJyTFpCWUVWNFdtWFFVXzNvUVpMYnlZcDhkRkJFWXYta2pEQjdjcm5zTFpXVW1kZ3UzYUNhTnlNNkthUTM5dmVTTm5NbGFQcFlsZEpHZ1lhMjNMdzZpOHBR?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "14d",
-          "score": 41,
+          "time": "15d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
-          "title": "Taming AI missiles: How MoMo uses Tesla principles and empathetic regulations to retain users. - Vietnam.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZTIzaEc1dDlHc0dGSjF4bTMwcms1Nl94VlgwcWpwZXZ5aFNXbjlpTDF4amR4UUY4bUk2c2U1R0NFbm1GbHUyUjFZOTZfc2NLS2ZuU0U0dzdvVzdjRFI5dUpuTzR3UjYxejhtZFVtbVdLbHJnOHpPYkFsTlRXcC0xckFSby1Cb1c3MG1Fbm9teUNRUFJfSjhTUDRUcFV1MDQtOFc2Z0JWQXI5UXlmYXZxdWl4eFVIaFJzeTZWVDFn?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "6d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "risk"
-        },
-        {
           "title": "Researchers are calling for increased control over AI capable of cyberattacks. - Vietnam.vn",
-          "summary": "",
+          "summary": "Researchers are calling for increased control over AI capable of cyberattacks. Vietnam.vn",
           "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVEFsSG1OYXlfcG50MjdOTnNRQW1hUnJfLUt1UnVjYzdySm1yV1h6b05KbC1rZUJCUExsQVVCczQtV185M29wSE9KN05KNGFvWnJTbnVvUnFQTGh6aTBlNG96T1k5NDk1X0hGR2NJbVU1ZVg1Vy05Sm55cV84Y1FwVDZjUm1oQXpTcVRqMzlzeFlqSVd0YWxFZGtpbHFEV2FRV2NOZQ?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "7d",
-          "score": 41,
+          "time": "8d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Google provides advanced AI models to 200 European researchers. - Vietnam.vn",
-          "summary": "",
+          "summary": "Google provides advanced AI models to 200 European researchers. Vietnam.vn",
           "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNOUg2NlJJZ3J1SWxNMUUzSjZVQ0hHSWlRWF92RjdTR1hiVk1KOXYtbU84NWNuTkM4RlZwUkQ4WVFXNWZSQU5Rcy1xNDM4NURUYjJRdWxiNWF2dGNfRng4cW5udTRXeFc1Wm82cmY3NGNNSWxaeUVnb08xUndsOVAwYXZNcUFjVFRMM3lGRUlEXzI2bHpkdV9lM3M3eEJvdw?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "7d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal"
-        },
-        {
-          "title": "Blockbuster films take two years to complete, AI can do it in just one or two months: Proposal for a separate Copyright Law. - Vietnam.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNa1h3bGdjYktUYURMTzVvWlNkVkxPMVU0aFBTZFBXek9rTEthanhLQ2s1ZGFJd3k4Y2FHdi1WS3IybExOWkNVbERNZE54b0pkTW0yQ0dSM04xci1DSHgybUdSaVUtUkU3MjlzbkJGRW0yWG1oX0xWdS1iNGVLaHdTNE9wUDllekFUcERzWlF2VEZhbHhad0RjWFpzdnE4cWprdUxWbV9KcGhfY2o4WXE4U0RBMmRsYWd2VWNIU1d1Rnc?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "6d",
-          "score": 41,
+          "time": "8d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Anthropic updates its policy for Claude: Why is repeated misuse by users of AI prohibited? - Vietnam.vn",
-          "summary": "",
+          "summary": "Anthropic updates its policy for Claude: Why is repeated misuse by users of AI prohibited? Vietnam.vn",
           "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQN0NKTWoyalpIOVFTanRXcXYteWFhb3NDRVQzTkdQeENBQlg0ZHMwdnJDbHlBaXlRTDRBVk9jMXM0YTdMTm0wOV80QlJOU3A0V3FlazF2ZHlPY09Fa01CUTB1ZGJ4QW9kS1V2NVNLRzlKOVZDZExXMVlscWoyNG9scWFjbF9WUTJNaUlMMWx4M2djLVhaYXh2aFlyNm9jbUxPb2haOHpLMzZ3bGd0d0liSjFB?oc=5",
           "sources": [
             "rss"
           ],
           "time": "9d",
-          "score": 41,
+          "score": 35,
           "velocity": "cooling",
           "tag": "signal",
           "watchlist_matched": "claude"
         },
         {
+          "title": "Blockbuster films take two years to complete, AI can do it in just one or two months: Proposal for a separate Copyright Law. - Vietnam.vn",
+          "summary": "Blockbuster films take two years to complete, AI can do it in just one or two months: Proposal for a separate Copyright Law. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNa1h3bGdjYktUYURMTzVvWlNkVkxPMVU0aFBTZFBXek9rTEthanhLQ2s1ZGFJd3k4Y2FHdi1WS3IybExOWkNVbERNZE54b0pkTW0yQ0dSM04xci1DSHgybUdSaVUtUkU3MjlzbkJGRW0yWG1oX0xWdS1iNGVLaHdTNE9wUDllekFUcERzWlF2VEZhbHhad0RjWFpzdnE4cWprdUxWbV9KcGhfY2o4WXE4U0RBMmRsYWd2VWNIU1d1Rnc?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "7d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
           "title": "The US President established a task force on artificial intelligence. - Vietnam.vn",
-          "summary": "",
+          "summary": "The US President established a task force on artificial intelligence. Vietnam.vn",
           "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOWnlUMjVGOVBrUHRnTnpkY2lPTlFudDBDX1FNMFQ5UHVmQmotNkVjM0ZCTWZKR0ttMGFMSE1xQkZBOGctUHRfc2pyMEwxMW9wWjY1Z2ttN1Q0NHd6c3NheGtNREtUZVNvNGJQaUZXc3o3RFppLW9rLWZndWtCem5BR21nUkpUOTR4UUpGTzVYT2JRNW8?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "17d",
-          "score": 41,
+          "time": "18d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "signal"
         },
         {
           "title": "Short films and AI films must comply with regulations regarding online film distribution. - Vietnam.vn",
-          "summary": "",
+          "summary": "Short films and AI films must comply with regulations regarding online film distribution. Vietnam.vn",
           "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQQTd6NEtyQ2ZlUDVNWEpRdkgwN2ZySkF6ck9vNDB4MzVqMU1reEJpZlcxVVNMX2Fwb3lzaGNBX3JPcVhMZ21Uc2s0XzBQWTJMNXdGbjdpM2IyQk4wT18yY0VxUzY3el9TdVcyLWZVSi04TDlxOHRtWHc1ZmE1N254cktsSnZ1Qk5jQ1pMbmN1M2NCb1ZtbTAyQw?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "12d",
-          "score": 41,
+          "time": "13d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "risk"
+        },
+        {
+          "title": "EY Vietnam: AI investment booms, Sacombank sets stringent standards for return on investment. - Vietnam.vn",
+          "summary": "EY Vietnam: AI investment booms, Sacombank sets stringent standards for return on investment. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNVlZNWndMUG9IMXQtN2c5VXFhZkJQOGswNm45VF9ZOFFzV2M5TXc5MXpJMlJfTGUxaTlyQ0lwQUloVkd4bVFJQjZLNU9hRW9jTzd5cmRNOWU1dnhwWHFmUVdUZTZkR2ROeG1JdkdnZ3ZWZW5WUldEZUZYTWNvb2lJZTVxMUc3cFB5T0NvanRfRXJuTlFPZzRXQXpXcEJiY2VwRk9QR1VNcUpqbmJFQTZYYzktb1BsZWlNVWR1QTF3dE9BQQ?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "17d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal"
+        },
+        {
+          "title": "Taming AI missiles: How MoMo uses Tesla principles and empathetic regulations to retain users. - Vietnam.vn",
+          "summary": "Taming AI missiles: How MoMo uses Tesla principles and empathetic regulations to retain users. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZTIzaEc1dDlHc0dGSjF4bTMwcms1Nl94VlgwcWpwZXZ5aFNXbjlpTDF4amR4UUY4bUk2c2U1R0NFbm1GbHUyUjFZOTZfc2NLS2ZuU0U0dzdvVzdjRFI5dUpuTzR3UjYxejhtZFVtbVdLbHJnOHpPYkFsTlRXcC0xckFSby1Cb1c3MG1Fbm9teUNRUFJfSjhTUDRUcFV1MDQtOFc2Z0JWQXI5UXlmYXZxdWl4eFVIaFJzeTZWVDFn?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "6d",
+          "score": 15,
           "velocity": "cooling",
           "tag": "risk"
         }
