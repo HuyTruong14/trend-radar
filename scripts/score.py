@@ -236,13 +236,16 @@ HARDWARE_IOT_HIGH_PATTERNS = [
     r"\b(iot|sensor|sensors|cảm biến|hardware|robot|robots|robotics|drone|drones|camera|cameras)\b",
     r"\b(embedded|microcontroller|esp32|raspberry|arduino|edge ai|tinyml|firmware|device|devices)\b",
     r"\b(water quality|air quality|soil|traffic|traffic police|environment|weather|energy|solar|grid)\b",
-    r"\b(diagnostic\w*|monitoring|anomaly detection|fleet|fleets|spatiotemporal|rigs|actuator|motor)\b",
+    r"\b(autonomous|autonomous systems?|diagnostics?|fault diagnosis|sensor monitoring|machine monitoring|fleet|fleets|spatiotemporal memory|actuator|motor)\b",
     r"(giám sát|chẩn đoán|thiết bị|môi trường|giao thông|cảm biến|vật lý|năng lượng)"
 ]
 
 GENERIC_LLM_APP_PATTERNS = [
     r"\b(langchain|dify|paperclip|hermes-agent|agent framework|llm agent|prompt|chatbot)\b",
-    r"\b(generative ai wrapper|text generation|ai video generation|image generation|diffusion)\b"
+    r"\b(generative ai wrapper|text generation|ai video generation|image generation|diffusion)\b",
+    r"\b(recommendation|recommender|recsys|sequential recommendation|click-through|ctr|collaborative filtering)\b",
+    r"\b(3d motion|animation|video co-generating|video generation|arbitrary rigs|character rig|rigging|motion generation)\b",
+    r"\b(perspective from computer-use|co-evolution|survey paper)\b"
 ]
 
 TECHNICAL_SYSTEMS_PATTERNS = [
@@ -255,23 +258,23 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
     Score 3 filter layers based strictly on CONTENT and USER PROFILE:
     1. durability: 10-year core physical/infrastructure need
     2. ai_support: AI handles 80% data/analysis, human/physical world holds 20% responsibility
-    3. your_leverage: High for IoT/Hardware/Sensors/Robotics; Low for generic LLM apps
+    3. your_leverage: High for IoT/Hardware/Sensors/Robotics; Low for generic LLM/pure ML papers
     """
     text = f"{title} {summary or ''} {matched_keyword or ''} {meta or ''}".lower()
 
-    is_hardware_iot = any(re.search(pat, text, re.IGNORECASE) for pat in HARDWARE_IOT_HIGH_PATTERNS)
     is_generic_llm = any(re.search(pat, text, re.IGNORECASE) for pat in GENERIC_LLM_APP_PATTERNS)
-    is_tech_systems = any(re.search(pat, text, re.IGNORECASE) for pat in TECHNICAL_SYSTEMS_PATTERNS)
+    is_hardware_iot = any(re.search(pat, text, re.IGNORECASE) for pat in HARDWARE_IOT_HIGH_PATTERNS) and not is_generic_llm
+    is_tech_systems = any(re.search(pat, text, re.IGNORECASE) for pat in TECHNICAL_SYSTEMS_PATTERNS) and not is_generic_llm
 
     # 1. your_leverage (0–3): User profile match
     # Target: IoT, hardware, sensors, robotics, device diagnostics, environmental monitoring
-    # Non-target: Generic LLM apps (langchain, dify, chatbot...), pure VC funding
+    # Non-target: Generic LLM apps, pure recommendation/animation ML papers
     if is_hardware_iot:
         your_leverage = 3
-    elif is_tech_systems and not is_generic_llm:
+    elif is_tech_systems:
         your_leverage = 2
     elif is_generic_llm:
-        your_leverage = 0
+        your_leverage = 1
     elif "tool" in text or "python" in text or "github.com" in text:
         your_leverage = 2
     else:
@@ -279,24 +282,24 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
 
     # 2. durability (0–3): 10-year perennial need
     # Physical infrastructure, traffic, water, energy, industrial maintenance, diagnostics
-    if bool(re.search(r"\b(water|traffic|energy|solar|grid|soil|health|safety|food|logistics|manufacturing|fleet)\b", text, re.IGNORECASE)):
+    if is_generic_llm:
+        durability = 1
+    elif bool(re.search(r"\b(water|traffic|energy|solar|grid|soil|health|safety|food|logistics|manufacturing|fleet)\b", text, re.IGNORECASE)):
         durability = 3
     elif is_hardware_iot or bool(re.search(r"\b(infrastructure|database|security|pipeline|compliance|law|regulation|diagnostics?)\b", text, re.IGNORECASE)):
         durability = 3 if any(k in text for k in ["water", "traffic", "factory", "industrial", "diagnost", "robot"]) else 2
     elif is_tech_systems or "devtool" in text or "developer" in text:
         durability = 2
-    elif is_generic_llm:
-        durability = 1
     else:
         durability = 1
 
     # 3. ai_support (0–3): AI does 80% perception/analysis, human/physical holds 20% responsibility
-    if bool(re.search(r"\b(camera|diagnost\w*|anomaly|monitor|inspection|audit|police|fleet|rigs|actuator|sensor)\b", text, re.IGNORECASE)):
+    if is_generic_llm:
+        ai_support = 1
+    elif bool(re.search(r"\b(camera|diagnost\w*|anomaly|monitor|inspection|audit|police|fleet|actuator|sensor)\b", text, re.IGNORECASE)):
         ai_support = 3  # Sensor/camera detection -> human operator/technician confirms and acts
     elif bool(re.search(r"\b(robot|robotics|embodied|copilot|decision support|synthes\w*|workflow|assistant)\b", text, re.IGNORECASE)):
         ai_support = 2
-    elif is_generic_llm or bool(re.search(r"\b(chat|prompt|text gen|video gen|wrapper)\b", text, re.IGNORECASE)):
-        ai_support = 1
     elif "ai" in text or "model" in text:
         ai_support = 2
     else:
@@ -635,8 +638,23 @@ def main():
         if days_inactive > 30:
             continue
 
-        # Clone and update aging velocity
+        # Clone and re-score with current profile criteria
         aged_opp = dict(prev_opp)
+        aged_scores = score_item_filters(
+            aged_opp.get("title", ""),
+            aged_opp.get("summary", ""),
+            aged_opp.get("signal_type", [])
+        )
+        aged_raw = aged_scores["durability"] + aged_scores["ai_support"] + aged_scores["your_leverage"]
+        aged_mult = aged_opp.get("multiplier", 0.85)
+        aged_total = int(round(aged_raw * aged_mult))
+        if aged_total <= 3:
+            continue
+
+        aged_opp["scores"] = aged_scores
+        aged_opp["total"] = aged_total
+        aged_opp["stage"] = compute_stage(aged_total)
+
         if days_inactive >= 7:
             aged_opp["velocity"] = "fading"
             faded_count += 1
