@@ -563,40 +563,315 @@
       color: var(--fg-muted);
     }
 
-    /* Controls bar */
-    .opp-controls-bar {
+    /* Act Now Section (Phase 4) */
+    .act-now-section {
+      margin-bottom: 24px;
+    }
+    .act-now-card {
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(26, 29, 39, 0.98));
+      border: 2px solid var(--hot);
+      border-radius: var(--radius-lg);
+      padding: 22px 24px;
+      box-shadow: 0 6px 28px -2px rgba(255, 107, 53, 0.28);
+      position: relative;
+      margin-bottom: 14px;
+      transition: all var(--transition-normal);
+    }
+    .act-now-card.is-contacted {
+      opacity: 0.75;
+      border-color: rgba(52, 211, 153, 0.5);
+      background: var(--bg-card);
+      box-shadow: none;
+    }
+    .act-now-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .act-now-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--hot);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 10px rgba(255, 107, 53, 0.4);
+    }
+    .act-now-badge.contacted-badge {
+      background: var(--score-high);
+      box-shadow: 0 2px 10px rgba(52, 211, 153, 0.4);
+    }
+    .act-now-score {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--hot);
+      background: rgba(255, 107, 53, 0.15);
+      padding: 2px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 107, 53, 0.35);
+    }
+    .act-now-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--fg);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .act-now-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    .act-now-title a:hover {
+      color: var(--hot);
+    }
+    .act-now-summary {
+      font-size: 14px;
+      color: var(--fg-dim);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .act-now-action-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed rgba(255, 107, 53, 0.45);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 16px;
     }
-    .opp-filter-tabs {
+    .act-now-prompt {
+      font-size: 13px;
+      color: var(--fg);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-mark-contacted {
+      background: var(--hot);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+      box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+    }
+    .btn-mark-contacted:hover {
+      background: #ff7d4d;
+      transform: translateY(-1px);
+    }
+    .btn-mark-contacted.is-contacted {
+      background: rgba(52, 211, 153, 0.18);
+      color: var(--score-high);
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      box-shadow: none;
+    }
+    .act-now-empty {
+      background: var(--bg-card);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .act-now-empty-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .act-now-empty-icon {
+      font-size: 26px;
+      background: rgba(255, 107, 53, 0.12);
+      padding: 10px;
+      border-radius: var(--radius-full);
+      line-height: 1;
+    }
+    .act-now-empty-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: 3px;
+    }
+    .act-now-empty-sub {
+      font-size: 12px;
+      color: var(--fg-dim);
+      line-height: 1.4;
+    }
+
+    /* Layout: Sidebar + Main Table */
+    .opp-content-layout {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .opp-sidebar {
+      width: 250px;
+      flex-shrink: 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      box-shadow: var(--shadow-card);
+      position: sticky;
+      top: 16px;
+    }
+    .opp-main-panel {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--fg);
       display: flex;
       align-items: center;
       gap: 6px;
-      flex-wrap: wrap;
     }
-    .opp-filter-btn {
-      padding: 6px 14px;
-      font-size: 12px;
+    .sidebar-reset-btn {
+      font-size: 11px;
+      color: var(--accent);
+      background: none;
+      border: none;
+      cursor: pointer;
       font-weight: 600;
-      border-radius: var(--radius-full);
-      background: var(--bg-card);
-      border: 1px solid var(--border);
+      padding: 2px 4px;
+    }
+    .sidebar-reset-btn:hover {
+      text-decoration: underline;
+    }
+
+    .sidebar-group {
+      margin-bottom: 18px;
+    }
+    .sidebar-group:last-child {
+      margin-bottom: 0;
+    }
+    .sidebar-group-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--fg-muted);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .sidebar-options {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .sidebar-filter-btn {
+      width: 100%;
+      text-align: left;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      background: transparent;
+      border: 1px solid transparent;
       color: var(--fg-dim);
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       transition: all var(--transition-fast);
     }
-    .opp-filter-btn:hover {
-      color: var(--fg);
+    .sidebar-filter-btn:hover {
       background: var(--bg-card-hover);
+      color: var(--fg);
     }
-    .opp-filter-btn.active {
+    .sidebar-filter-btn.active {
+      background: rgba(var(--accent-rgb), 0.12);
+      border-color: rgba(var(--accent-rgb), 0.35);
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .sidebar-badge-count {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 1px 6px;
+      border-radius: var(--radius-full);
+      color: var(--fg-muted);
+    }
+    .sidebar-filter-btn.active .sidebar-badge-count {
       background: var(--accent);
       color: #fff;
-      border-color: var(--accent);
+    }
+
+    /* Mobile Responsive Sidebar */
+    .mobile-filter-toggle {
+      display: none;
+      width: 100%;
+      padding: 10px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      color: var(--fg);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 14px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @media (max-width: 900px) {
+      .opp-content-layout {
+        flex-direction: column;
+      }
+      .mobile-filter-toggle {
+        display: flex;
+      }
+      .opp-sidebar {
+        width: 100%;
+        position: static;
+        display: none;
+        margin-bottom: 16px;
+      }
+      .opp-sidebar.mobile-open {
+        display: block;
+      }
+      .sidebar-options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+      }
+    }
+    @media (max-width: 500px) {
+      .sidebar-options {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Main Table Card */
@@ -1520,7 +1795,13 @@
     // --- 2. STATE & CONFIG ---
     let DATA = {};
     let OPPORTUNITIES_DATA = [];
-    let oppStageFilter = 'all';
+    let oppFilters = {
+      signalType: 'all',  // 'all', 'pain_repeat', 'price_shift', 'supply_gap', 'tech_cheap'
+      scoreRange: 'all',  // 'all', '9', '7-8', '4-6'
+      velocity: 'all',    // 'all', 'rising', 'steady', 'fading'
+      stage: 'all'        // 'all', 'build_ready', 'research', 'watch'
+    };
+    let oppShowDemoActNow = false;
     let WATCHLIST_CONFIG = {
       keywords: ["iGaming regulation", "Claude", "Vietnam tech", "Anthropic"],
       threshold: 50
@@ -1928,7 +2209,6 @@
       }
 
       // 3. Related Clusters
-      const clustersSection = document.getElementById('clustersSection');
       const clustersContainer = document.getElementById('clustersContainer');
       const clusterCountPill = document.getElementById('clusterCountPill');
       
@@ -2024,191 +2304,461 @@
       }
     }
 
-    // --- OPPORTUNITY RADAR TABLE (Phase 3) ---
+    // --- OPPORTUNITY RADAR TABLE (Phase 3 & 4) ---
     function renderOpportunityRadar() {
       const container = document.getElementById('opportunityRadarSection');
       if (!container) return;
 
       const totalCount = OPPORTUNITIES_DATA.length;
-      const readyCount = OPPORTUNITIES_DATA.filter(it => it.stage === 'build_ready').length;
-      const researchCount = OPPORTUNITIES_DATA.filter(it => it.stage === 'research').length;
-      const watchCount = OPPORTUNITIES_DATA.filter(it => it.stage === 'watch').length;
+      const readyItems = OPPORTUNITIES_DATA.filter(it => it.stage === 'build_ready' || it.total >= 9);
+      const readyCount = readyItems.length;
+      const researchCount = OPPORTUNITIES_DATA.filter(it => it.stage === 'research' || (it.total >= 7 && it.total <= 8)).length;
+      const watchCount = OPPORTUNITIES_DATA.filter(it => it.stage === 'watch' || (it.total >= 4 && it.total <= 6)).length;
 
-      // Filter based on oppStageFilter
-      let filtered = [...OPPORTUNITIES_DATA];
-      if (oppStageFilter !== 'all') {
-        filtered = filtered.filter(it => it.stage === oppStageFilter);
+      // 4-Dimensional Filtering
+      let filtered = OPPORTUNITIES_DATA.filter(item => {
+        // 1. Stage filter
+        if (oppFilters.stage !== 'all' && item.stage !== oppFilters.stage) return false;
+
+        // 2. Signal Type filter
+        if (oppFilters.signalType !== 'all') {
+          if (!item.signal_type || !item.signal_type.includes(oppFilters.signalType)) return false;
+        }
+
+        // 3. Score Range filter
+        if (oppFilters.scoreRange !== 'all') {
+          const s = item.total || 0;
+          if (oppFilters.scoreRange === '9' && s < 9) return false;
+          if (oppFilters.scoreRange === '7-8' && (s < 7 || s > 8)) return false;
+          if (oppFilters.scoreRange === '4-6' && (s < 4 || s > 6)) return false;
+        }
+
+        // 4. Velocity filter
+        if (oppFilters.velocity !== 'all') {
+          const v = (item.velocity || 'steady').toLowerCase();
+          if (oppFilters.velocity === 'rising' && v !== 'rising') return false;
+          if (oppFilters.velocity === 'steady' && v !== 'steady' && v !== 'stable') return false;
+          if (oppFilters.velocity === 'fading' && v !== 'fading' && v !== 'cooling') return false;
+        }
+
+        return true;
+      });
+
+      // Compute dynamic filter counts for sidebar badges
+      const counts = {
+        stage: {
+          all: totalCount,
+          build_ready: readyCount,
+          research: researchCount,
+          watch: watchCount
+        },
+        signalType: {
+          all: totalCount,
+          pain_repeat: OPPORTUNITIES_DATA.filter(it => (it.signal_type || []).includes('pain_repeat')).length,
+          price_shift: OPPORTUNITIES_DATA.filter(it => (it.signal_type || []).includes('price_shift')).length,
+          supply_gap: OPPORTUNITIES_DATA.filter(it => (it.signal_type || []).includes('supply_gap')).length,
+          tech_cheap: OPPORTUNITIES_DATA.filter(it => (it.signal_type || []).includes('tech_cheap')).length
+        },
+        scoreRange: {
+          all: totalCount,
+          '9': readyCount,
+          '7-8': researchCount,
+          '4-6': watchCount
+        },
+        velocity: {
+          all: totalCount,
+          rising: OPPORTUNITIES_DATA.filter(it => (it.velocity || '').toLowerCase() === 'rising').length,
+          steady: OPPORTUNITIES_DATA.filter(it => ['steady', 'stable'].includes((it.velocity || 'steady').toLowerCase())).length,
+          fading: OPPORTUNITIES_DATA.filter(it => ['fading', 'cooling'].includes((it.velocity || '').toLowerCase())).length
+        }
+      };
+
+      const hasActiveFilters = Object.values(oppFilters).some(v => v !== 'all');
+      const activeFilterCount = Object.values(oppFilters).filter(v => v !== 'all').length;
+
+      // Determine items for Act Now section (score 9 items, or demo if toggled)
+      let actNowItemsToDisplay = [...readyItems];
+      if (actNowItemsToDisplay.length === 0 && oppShowDemoActNow) {
+        actNowItemsToDisplay = [
+          {
+            id: 'opp_demo_actnow_preview',
+            title: 'Hệ thống AI Camera & Cảm biến LiDAR giám sát giao thông đô thị và chẩn đoán hạ tầng vật lý',
+            summary: 'Tín hiệu tổng hợp từ 2 nguồn độc lập (Báo Giao Thông & IEEE Sensors) đạt điểm tuyệt đối 9/9. Nhu cầu vật lý trường tồn, giải pháp thay thế con người giám sát 80% thời gian thực.',
+            total: 9,
+            stage: 'build_ready',
+            signal_type: ['supply_gap', 'tech_cheap'],
+            sources: [
+              { name: 'Báo Giao Thông', url: 'https://baogiaothong.vn', date: '2026-10-22' },
+              { name: 'IEEE Sensors', url: 'https://ieeexplore.ieee.org', date: '2026-10-22' }
+            ],
+            source_count: 2
+          }
+        ];
       }
 
       container.innerHTML = `
-        <!-- KPI Summary Cards -->
-        <div class="opp-kpi-grid">
-          <div class="opp-kpi-card" style="--card-accent: var(--accent)">
-            <span class="opp-kpi-val">${totalCount}</span>
-            <span class="opp-kpi-label">🎯 Qualified Signals</span>
-            <span class="opp-kpi-sub">Total score &ge; 4 (noise filtered)</span>
-          </div>
-          <div class="opp-kpi-card" style="--card-accent: var(--hot)">
-            <span class="opp-kpi-val" style="color: var(--hot)">${readyCount}</span>
-            <span class="opp-kpi-label">🔥 Build-ready (Act now)</span>
-            <span class="opp-kpi-sub">Score 9/9 &bull; Sẵn sàng triển khai</span>
-          </div>
-          <div class="opp-kpi-card" style="--card-accent: #fbbf24">
-            <span class="opp-kpi-val" style="color: #fbbf24">${researchCount}</span>
-            <span class="opp-kpi-label">⚡ Research (This week)</span>
-            <span class="opp-kpi-sub">Score 7-8/9 &bull; Nghiên cứu sâu</span>
-          </div>
-          <div class="opp-kpi-card" style="--card-accent: #94a3b8">
-            <span class="opp-kpi-val" style="color: #94a3b8">${watchCount}</span>
-            <span class="opp-kpi-label">⏱️ Watch (Can wait)</span>
-            <span class="opp-kpi-sub">Score 4-6/9 &bull; Theo dõi tín hiệu</span>
-          </div>
-        </div>
+        <!-- ==================== 1. PHẦN ACT NOW (TRÊN CÙNG TRANG) ==================== -->
+        <section class="act-now-section" aria-labelledby="actNowHeading">
+          ${actNowItemsToDisplay.length > 0 ? actNowItemsToDisplay.map(item => {
+            const isContacted = localStorage.getItem('opp_contacted_' + item.id) === 'true';
+            const primaryUrl = item.sources?.[0]?.url || item.url || '#';
+            return `
+              <div class="act-now-card ${isContacted ? 'is-contacted' : ''}" id="card-${item.id}">
+                <div class="act-now-top">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="act-now-badge ${isContacted ? 'contacted-badge' : ''}">
+                      ${isContacted ? '✓ Đã liên hệ' : '🔥 ACT NOW (BUILD-READY)'}
+                    </span>
+                    <span style="font-size: 12px; color: var(--fg-muted);">Cơ hội điểm 9/9 ưu tiên cao nhất</span>
+                  </div>
+                  <span class="act-now-score">${item.total}/9</span>
+                </div>
+                <h3 class="act-now-title">
+                  <a href="${escapeHtml(primaryUrl)}" target="_blank" rel="noopener noreferrer">
+                    ${escapeHtml(item.title)} ↗
+                  </a>
+                </h3>
+                <p class="act-now-summary">${escapeHtml(item.summary)}</p>
+                <div class="act-now-action-box">
+                  <div class="act-now-prompt">
+                    <span>🎯</span>
+                    <span><strong>Hành động tuần này:</strong> Đặt lịch phỏng vấn 3 khách hàng / cơ quan hạ tầng tiềm năng để xác nhận nhu cầu & giá trị trước khi dựng sản phẩm.</span>
+                  </div>
+                  <button class="btn-mark-contacted ${isContacted ? 'is-contacted' : ''}" onclick="toggleContacted('${item.id}')">
+                    <span>${isContacted ? '✓ Đã đi hỏi khách (Bấm để mở lại)' : '👉 Đánh dấu đã đi hỏi khách'}</span>
+                  </button>
+                </div>
+              </div>
+            `;
+          }).join('') : `
+            <div class="act-now-empty">
+              <div class="act-now-empty-left">
+                <span class="act-now-empty-icon">🔥</span>
+                <div>
+                  <h4 class="act-now-empty-title">Phần Act now (Điểm 9/9)</h4>
+                  <p class="act-now-empty-sub">
+                    Chưa có cơ hội đạt điểm tuyệt đối 9/9 tuần này (yêu cầu &ge; 2 nguồn độc lập xác nhận chéo).<br>
+                    👉 <strong>Hành động đề xuất:</strong> Ưu tiên đi hỏi khách hàng với <strong>5 tín hiệu Research (7-8/9)</strong> bên dưới!
+                  </p>
+                </div>
+              </div>
+              <button class="sidebar-reset-btn" style="border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 12px; font-size: 12px;" onclick="toggleDemoActNow()">
+                ${oppShowDemoActNow ? '✕ Tắt thẻ Demo' : '👁️ Xem Demo Thẻ Act Now'}
+              </button>
+            </div>
+          `}
+        </section>
 
-        <!-- Filter Bar -->
-        <div class="opp-controls-bar">
-          <div class="opp-filter-tabs">
-            <button class="opp-filter-btn ${oppStageFilter === 'all' ? 'active' : ''}" onclick="setOppFilter('all')">
-              Tất cả (${totalCount})
-            </button>
-            <button class="opp-filter-btn ${oppStageFilter === 'research' ? 'active' : ''}" onclick="setOppFilter('research')">
-              ⚡ Research (${researchCount})
-            </button>
-            <button class="opp-filter-btn ${oppStageFilter === 'watch' ? 'active' : ''}" onclick="setOppFilter('watch')">
-              ⏱️ Watch (${watchCount})
-            </button>
-            <button class="opp-filter-btn ${oppStageFilter === 'build_ready' ? 'active' : ''}" onclick="setOppFilter('build_ready')">
-              🔥 Build-ready (${readyCount})
-            </button>
-          </div>
-          <div style="font-size: 12px; color: var(--fg-dim);">
-            Sắp xếp: <strong>Điểm (Total) giảm dần</strong>
-          </div>
-        </div>
+        <!-- ==================== 2. MAIN CONTENT LAYOUT (SIDEBAR + TABLE) ==================== -->
+        <button class="mobile-filter-toggle" onclick="toggleMobileSidebar()">
+          <span>🔍 Bộ lọc cơ hội ${activeFilterCount > 0 ? `(${activeFilterCount} đang chọn)` : ''}</span>
+          <span>${hasActiveFilters ? '⚡ Đang lọc' : '☰ Mở lọc'}</span>
+        </button>
 
-        <!-- Table Card -->
-        <div class="opp-table-card">
-          <div class="opp-table-wrapper">
-            <table class="opp-table">
-              <thead>
-                <tr>
-                  <th style="width: 38%;">Tiêu đề</th>
-                  <th style="width: 14%;">Loại</th>
-                  <th style="width: 12%;">Điểm</th>
-                  <th style="width: 16%;">Nguồn</th>
-                  <th style="width: 10%;">Xu hướng</th>
-                  <th style="width: 10%;">Bước</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${filtered.length === 0 ? `
-                  <tr>
-                    <td colspan="6" style="text-align: center; padding: 32px; color: var(--fg-dim);">
-                      Không có tín hiệu nào trong giai đoạn này.
-                    </td>
-                  </tr>
-                ` : filtered.map((item, idx) => {
-                  const primaryUrl = (item.sources?.[0]?.url || item.url || '#');
-                  const scoreVal = item.total || 0;
-                  const scorePercent = Math.min(100, Math.round((scoreVal / 9) * 100));
-                  let scoreColor = '#38bdf8';
-                  let scoreClass = 'score-wtch';
-                  if (scoreVal >= 9) { scoreColor = '#ff6b35'; scoreClass = 'score-ready'; }
-                  else if (scoreVal >= 7) { scoreColor = '#fbbf24'; scoreClass = 'score-res'; }
+        <div class="opp-content-layout">
+          <!-- SIDEBAR BỘ LỌC 4 CHIỀU -->
+          <aside class="opp-sidebar">
+            <div class="sidebar-header">
+              <span class="sidebar-title">⚡ Bộ lọc cơ hội</span>
+              ${hasActiveFilters ? `<button class="sidebar-reset-btn" onclick="resetFilters()">Đặt lại</button>` : ''}
+            </div>
 
-                  // Stage Flag mapping
-                  let stageBadge = `<span class="stage-flag stage-watch">⏱️ Can wait</span>`;
-                  if (item.stage === 'build_ready') {
-                    stageBadge = `<span class="stage-flag stage-build-ready">🔥 Act now</span>`;
-                  } else if (item.stage === 'research') {
-                    stageBadge = `<span class="stage-flag stage-research">⚡ This week</span>`;
-                  }
+            <!-- 1. BƯỚC (STAGE) -->
+            <div class="sidebar-group">
+              <span class="sidebar-group-label">1. Bước (Stage)</span>
+              <div class="sidebar-options">
+                <button class="sidebar-filter-btn ${oppFilters.stage === 'all' ? 'active' : ''}" onclick="setFilter('stage', 'all')">
+                  <span>Tất cả</span>
+                  <span class="sidebar-badge-count">${counts.stage.all}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.stage === 'build_ready' ? 'active' : ''}" onclick="setFilter('stage', 'build_ready')">
+                  <span>🔥 Build-ready (9)</span>
+                  <span class="sidebar-badge-count">${counts.stage.build_ready}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.stage === 'research' ? 'active' : ''}" onclick="setFilter('stage', 'research')">
+                  <span>⚡ Research (7-8)</span>
+                  <span class="sidebar-badge-count">${counts.stage.research}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.stage === 'watch' ? 'active' : ''}" onclick="setFilter('stage', 'watch')">
+                  <span>⏱️ Watch (4-6)</span>
+                  <span class="sidebar-badge-count">${counts.stage.watch}</span>
+                </button>
+              </div>
+            </div>
 
-                  // Velocity Badge mapping
-                  const v = (item.velocity || 'steady').toLowerCase();
-                  let velocityBadge = `<span class="velocity-badge velocity-stable">→ steady</span>`;
-                  if (v === 'rising') {
-                    velocityBadge = `<span class="velocity-badge velocity-rising">↑ rising</span>`;
-                  } else if (v === 'fading' || v === 'cooling') {
-                    velocityBadge = `<span class="velocity-badge velocity-cooling">↓ fading</span>`;
-                  }
+            <!-- 2. LOẠI TÍN HIỆU (SIGNAL TYPE) -->
+            <div class="sidebar-group">
+              <span class="sidebar-group-label">2. Loại tín hiệu</span>
+              <div class="sidebar-options">
+                <button class="sidebar-filter-btn ${oppFilters.signalType === 'all' ? 'active' : ''}" onclick="setFilter('signalType', 'all')">
+                  <span>Tất cả</span>
+                  <span class="sidebar-badge-count">${counts.signalType.all}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.signalType === 'pain_repeat' ? 'active' : ''}" onclick="setFilter('signalType', 'pain_repeat')">
+                  <span>🔥 Than phiền lặp lại</span>
+                  <span class="sidebar-badge-count">${counts.signalType.pain_repeat}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.signalType === 'price_shift' ? 'active' : ''}" onclick="setFilter('signalType', 'price_shift')">
+                  <span>💰 Biến động giá</span>
+                  <span class="sidebar-badge-count">${counts.signalType.price_shift}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.signalType === 'supply_gap' ? 'active' : ''}" onclick="setFilter('signalType', 'supply_gap')">
+                  <span>🎯 Thiếu hụt cung / Luật</span>
+                  <span class="sidebar-badge-count">${counts.signalType.supply_gap}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.signalType === 'tech_cheap' ? 'active' : ''}" onclick="setFilter('signalType', 'tech_cheap')">
+                  <span>⚡ Công nghệ / IoT rẻ</span>
+                  <span class="sidebar-badge-count">${counts.signalType.tech_cheap}</span>
+                </button>
+              </div>
+            </div>
 
-                  // Signal Type Chips mapping
-                  const chipsHtml = (item.signal_type || []).map(t => {
-                    if (t === 'pain_repeat') return `<span class="chip-signal chip-pain">🔥 Pain repeat</span>`;
-                    if (t === 'price_shift') return `<span class="chip-signal chip-price">💰 Price shift</span>`;
-                    if (t === 'supply_gap') return `<span class="chip-signal chip-gap">🎯 Supply gap</span>`;
-                    if (t === 'tech_cheap') return `<span class="chip-signal chip-tech">⚡ Tech cheap</span>`;
-                    return `<span class="chip-signal chip-tech">${escapeHtml(t)}</span>`;
-                  }).join('');
+            <!-- 3. KHOẢNG ĐIỂM (SCORE RANGE) -->
+            <div class="sidebar-group">
+              <span class="sidebar-group-label">3. Khoảng điểm</span>
+              <div class="sidebar-options">
+                <button class="sidebar-filter-btn ${oppFilters.scoreRange === 'all' ? 'active' : ''}" onclick="setFilter('scoreRange', 'all')">
+                  <span>Tất cả</span>
+                  <span class="sidebar-badge-count">${counts.scoreRange.all}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.scoreRange === '9' ? 'active' : ''}" onclick="setFilter('scoreRange', '9')">
+                  <span>Điểm 9 (Tuyệt đối)</span>
+                  <span class="sidebar-badge-count">${counts.scoreRange['9']}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.scoreRange === '7-8' ? 'active' : ''}" onclick="setFilter('scoreRange', '7-8')">
+                  <span>Điểm 7–8 (Nghiên cứu)</span>
+                  <span class="sidebar-badge-count">${counts.scoreRange['7-8']}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.scoreRange === '4-6' ? 'active' : ''}" onclick="setFilter('scoreRange', '4-6')">
+                  <span>Điểm 4–6 (Theo dõi)</span>
+                  <span class="sidebar-badge-count">${counts.scoreRange['4-6']}</span>
+                </button>
+              </div>
+            </div>
 
-                  // Sources mapping
-                  const srcList = Array.isArray(item.sources) ? item.sources : [];
-                  const sourcesHtml = srcList.map(s => {
-                    const sName = typeof s === 'object' ? (s.name || 'Web') : String(s);
-                    const sUrl = typeof s === 'object' ? (s.url || '#') : '#';
-                    return `
-                      <a class="opp-src-btn" href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(sName)}">
-                        <span>${escapeHtml(sName)}</span>
-                        <span style="font-size: 10px;">↗</span>
-                      </a>
-                    `;
-                  }).join('');
+            <!-- 4. XU HƯỚNG (VELOCITY) -->
+            <div class="sidebar-group">
+              <span class="sidebar-group-label">4. Xu hướng</span>
+              <div class="sidebar-options">
+                <button class="sidebar-filter-btn ${oppFilters.velocity === 'all' ? 'active' : ''}" onclick="setFilter('velocity', 'all')">
+                  <span>Tất cả</span>
+                  <span class="sidebar-badge-count">${counts.velocity.all}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.velocity === 'rising' ? 'active' : ''}" onclick="setFilter('velocity', 'rising')">
+                  <span>↑ Rising (Tăng nhiệt)</span>
+                  <span class="sidebar-badge-count">${counts.velocity.rising}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.velocity === 'steady' ? 'active' : ''}" onclick="setFilter('velocity', 'steady')">
+                  <span>→ Steady (Ổn định)</span>
+                  <span class="sidebar-badge-count">${counts.velocity.steady}</span>
+                </button>
+                <button class="sidebar-filter-btn ${oppFilters.velocity === 'fading' ? 'active' : ''}" onclick="setFilter('velocity', 'fading')">
+                  <span>↓ Fading (Giảm nhiệt)</span>
+                  <span class="sidebar-badge-count">${counts.velocity.fading}</span>
+                </button>
+              </div>
+            </div>
+          </aside>
 
-                  return `
+          <!-- MAIN PANEL (KPIs + TABLE) -->
+          <div class="opp-main-panel">
+            <!-- KPI Summary Cards -->
+            <div class="opp-kpi-grid">
+              <div class="opp-kpi-card" style="--card-accent: var(--accent)">
+                <span class="opp-kpi-val">${totalCount}</span>
+                <span class="opp-kpi-label">🎯 Qualified Signals</span>
+                <span class="opp-kpi-sub">Total score &ge; 4 (noise filtered)</span>
+              </div>
+              <div class="opp-kpi-card" style="--card-accent: var(--hot)">
+                <span class="opp-kpi-val" style="color: var(--hot)">${readyCount}</span>
+                <span class="opp-kpi-label">🔥 Build-ready (Act now)</span>
+                <span class="opp-kpi-sub">Score 9/9 &bull; Sẵn sàng triển khai</span>
+              </div>
+              <div class="opp-kpi-card" style="--card-accent: #fbbf24">
+                <span class="opp-kpi-val" style="color: #fbbf24">${researchCount}</span>
+                <span class="opp-kpi-label">⚡ Research (This week)</span>
+                <span class="opp-kpi-sub">Score 7-8/9 &bull; Nghiên cứu sâu</span>
+              </div>
+              <div class="opp-kpi-card" style="--card-accent: #94a3b8">
+                <span class="opp-kpi-val" style="color: #94a3b8">${watchCount}</span>
+                <span class="opp-kpi-label">⏱️ Watch (Can wait)</span>
+                <span class="opp-kpi-sub">Score 4-6/9 &bull; Theo dõi tín hiệu</span>
+              </div>
+            </div>
+
+            <!-- Table Card -->
+            <div class="opp-table-card">
+              <div style="padding: 14px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                <div style="font-size: 13px; font-weight: 600; color: var(--fg); display: flex; align-items: center; gap: 8px;">
+                  <span>📋 Bảng xếp hạng cơ hội</span>
+                  <span style="font-size: 11px; color: var(--fg-muted); font-weight: 400;">
+                    (Hiển thị <strong>${filtered.length}</strong> / ${totalCount} cơ hội)
+                  </span>
+                </div>
+                ${hasActiveFilters ? `
+                  <button class="sidebar-reset-btn" onclick="resetFilters()">
+                    ✕ Xóa bộ lọc (${activeFilterCount})
+                  </button>
+                ` : `
+                  <span style="font-size: 11px; color: var(--fg-muted);">Sắp xếp: Điểm (Total) giảm dần</span>
+                `}
+              </div>
+
+              <div class="opp-table-wrapper">
+                <table class="opp-table">
+                  <thead>
                     <tr>
-                      <td class="opp-title-cell">
-                        <a class="opp-title-link" href="${escapeHtml(primaryUrl)}" target="_blank" rel="noopener noreferrer">
-                          ${escapeHtml(item.title)}
-                        </a>
-                        <p class="opp-summary-text">${escapeHtml(item.summary || '')}</p>
-                        <div class="opp-meta-sub">
-                          <span class="opp-meta-pill">#${idx + 1}</span>
-                          <span class="opp-meta-pill">${escapeHtml(item.id || '')}</span>
-                          ${item.first_seen ? `<span class="opp-meta-pill">📅 ${escapeHtml(item.first_seen)}</span>` : ''}
-                        </div>
-                      </td>
-                      <td class="opp-chips-cell">
-                        <div class="opp-chips-wrap">
-                          ${chipsHtml || '<span style="color:var(--fg-muted)">—</span>'}
-                        </div>
-                      </td>
-                      <td class="opp-score-cell">
-                        <div class="opp-score-wrap">
-                          <span class="opp-score-val ${scoreClass}">${scoreVal}/9</span>
-                          <div class="opp-score-bar-bg">
-                            <div class="opp-score-bar-fill" style="width: ${scorePercent}%; background: ${scoreColor};"></div>
-                          </div>
-                          <span class="opp-score-sub">D:${item.scores?.durability ?? 0} A:${item.scores?.ai_support ?? 0} L:${item.scores?.your_leverage ?? 0}</span>
-                        </div>
-                      </td>
-                      <td class="opp-sources-cell">
-                        <div class="opp-sources-wrap">
-                          <span class="source-count-pill">${item.source_count || 1} nguồn</span>
-                          <div class="opp-source-links">
-                            ${sourcesHtml}
-                          </div>
-                        </div>
-                      </td>
-                      <td class="opp-velocity-cell">
-                        ${velocityBadge}
-                      </td>
-                      <td class="opp-stage-cell">
-                        ${stageBadge}
-                      </td>
+                      <th style="width: 38%;">Tiêu đề</th>
+                      <th style="width: 14%;">Loại</th>
+                      <th style="width: 12%;">Điểm</th>
+                      <th style="width: 16%;">Nguồn</th>
+                      <th style="width: 10%;">Xu hướng</th>
+                      <th style="width: 10%;">Bước</th>
                     </tr>
-                  `;
-                }).join('')}
-              </tbody>
-            </table>
+                  </thead>
+                  <tbody>
+                    ${filtered.length === 0 ? `
+                      <tr>
+                        <td colspan="6" style="text-align: center; padding: 40px; color: var(--fg-dim);">
+                          <p style="font-size: 14px; margin-bottom: 8px;">Không có tín hiệu nào khớp với bộ lọc hiện tại.</p>
+                          <button class="opp-filter-btn active" onclick="resetFilters()">Đặt lại bộ lọc</button>
+                        </td>
+                      </tr>
+                    ` : filtered.map((item, idx) => {
+                      const primaryUrl = (item.sources?.[0]?.url || item.url || '#');
+                      const scoreVal = item.total || 0;
+                      const scorePercent = Math.min(100, Math.round((scoreVal / 9) * 100));
+                      let scoreColor = '#38bdf8';
+                      let scoreClass = 'score-wtch';
+                      if (scoreVal >= 9) { scoreColor = '#ff6b35'; scoreClass = 'score-ready'; }
+                      else if (scoreVal >= 7) { scoreColor = '#fbbf24'; scoreClass = 'score-res'; }
+
+                      // Stage Flag mapping
+                      let stageBadge = `<span class="stage-flag stage-watch">⏱️ Can wait</span>`;
+                      if (item.stage === 'build_ready') {
+                        stageBadge = `<span class="stage-flag stage-build-ready">🔥 Act now</span>`;
+                      } else if (item.stage === 'research') {
+                        stageBadge = `<span class="stage-flag stage-research">⚡ This week</span>`;
+                      }
+
+                      // Velocity Badge mapping
+                      const v = (item.velocity || 'steady').toLowerCase();
+                      let velocityBadge = `<span class="velocity-badge velocity-stable">→ steady</span>`;
+                      if (v === 'rising') {
+                        velocityBadge = `<span class="velocity-badge velocity-rising">↑ rising</span>`;
+                      } else if (v === 'fading' || v === 'cooling') {
+                        velocityBadge = `<span class="velocity-badge velocity-cooling">↓ fading</span>`;
+                      }
+
+                      // Signal Type Chips mapping
+                      const chipsHtml = (item.signal_type || []).map(t => {
+                        if (t === 'pain_repeat') return `<span class="chip-signal chip-pain">🔥 Pain repeat</span>`;
+                        if (t === 'price_shift') return `<span class="chip-signal chip-price">💰 Price shift</span>`;
+                        if (t === 'supply_gap') return `<span class="chip-signal chip-gap">🎯 Supply gap</span>`;
+                        if (t === 'tech_cheap') return `<span class="chip-signal chip-tech">⚡ Tech cheap</span>`;
+                        return `<span class="chip-signal chip-tech">${escapeHtml(t)}</span>`;
+                      }).join('');
+
+                      // Sources mapping
+                      const srcList = Array.isArray(item.sources) ? item.sources : [];
+                      const sourcesHtml = srcList.map(s => {
+                        const sName = typeof s === 'object' ? (s.name || 'Web') : String(s);
+                        const sUrl = typeof s === 'object' ? (s.url || '#') : '#';
+                        return `
+                          <a class="opp-src-btn" href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(sName)}">
+                            <span>${escapeHtml(sName)}</span>
+                            <span style="font-size: 10px;">↗</span>
+                          </a>
+                        `;
+                      }).join('');
+
+                      return `
+                        <tr>
+                          <td class="opp-title-cell">
+                            <a class="opp-title-link" href="${escapeHtml(primaryUrl)}" target="_blank" rel="noopener noreferrer">
+                              ${escapeHtml(item.title)}
+                            </a>
+                            <p class="opp-summary-text">${escapeHtml(item.summary || '')}</p>
+                            <div class="opp-meta-sub">
+                              <span class="opp-meta-pill">#${idx + 1}</span>
+                              <span class="opp-meta-pill">${escapeHtml(item.id || '')}</span>
+                              ${item.first_seen ? `<span class="opp-meta-pill">📅 ${escapeHtml(item.first_seen)}</span>` : ''}
+                            </div>
+                          </td>
+                          <td class="opp-chips-cell">
+                            <div class="opp-chips-wrap">
+                              ${chipsHtml || '<span style="color:var(--fg-muted)">—</span>'}
+                            </div>
+                          </td>
+                          <td class="opp-score-cell">
+                            <div class="opp-score-wrap">
+                              <span class="opp-score-val ${scoreClass}">${scoreVal}/9</span>
+                              <div class="opp-score-bar-bg">
+                                <div class="opp-score-bar-fill" style="width: ${scorePercent}%; background: ${scoreColor};"></div>
+                              </div>
+                              <span class="opp-score-sub">D:${item.scores?.durability ?? 0} A:${item.scores?.ai_support ?? 0} L:${item.scores?.your_leverage ?? 0}</span>
+                            </div>
+                          </td>
+                          <td class="opp-sources-cell">
+                            <div class="opp-sources-wrap">
+                              <span class="source-count-pill">${item.source_count || 1} nguồn</span>
+                              <div class="opp-source-links">
+                                ${sourcesHtml}
+                              </div>
+                            </div>
+                          </td>
+                          <td class="opp-velocity-cell">
+                            ${velocityBadge}
+                          </td>
+                          <td class="opp-stage-cell">
+                            ${stageBadge}
+                          </td>
+                        </tr>
+                      `;
+                    }).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       `;
     }
 
-    function setOppFilter(stage) {
-      oppStageFilter = stage;
+    function setFilter(dimension, value) {
+      if (oppFilters[dimension] === value) {
+        oppFilters[dimension] = 'all';
+      } else {
+        oppFilters[dimension] = value;
+      }
       renderOpportunityRadar();
+    }
+
+    function resetFilters() {
+      oppFilters = {
+        signalType: 'all',
+        scoreRange: 'all',
+        velocity: 'all',
+        stage: 'all'
+      };
+      renderOpportunityRadar();
+    }
+
+    function toggleContacted(id) {
+      const key = 'opp_contacted_' + id;
+      const curr = localStorage.getItem(key) === 'true';
+      localStorage.setItem(key, String(!curr));
+      renderOpportunityRadar();
+    }
+
+    function toggleDemoActNow() {
+      oppShowDemoActNow = !oppShowDemoActNow;
+      renderOpportunityRadar();
+    }
+
+    function toggleMobileSidebar() {
+      const sidebar = document.querySelector('.opp-sidebar');
+      if (sidebar) sidebar.classList.toggle('mobile-open');
     }
 
     function renderStats() {
