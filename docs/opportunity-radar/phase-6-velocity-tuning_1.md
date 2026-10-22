@@ -29,6 +29,6 @@ Sau 1 tháng, nhìn lại:
 - Nếu lệch, chỉnh trọng số 3 lớp lọc cho sát thực tế của bạn.
 
 ## Done khi
-- [ ] `velocity` tính tự động, `fading` bị hạ ưu tiên.
-- [ ] Ngưỡng điều chỉnh dựa trên dữ liệu thật, không phải phỏng đoán.
-- [ ] Hệ thống cho ra 1–3 cơ hội đáng đi hỏi khách mỗi tuần — đúng mục tiêu cuối.
+- [x] `velocity` tính tự động, `fading` bị hạ ưu tiên.
+- [x] Ngưỡng điều chỉnh dựa trên dữ liệu thật, không phải phỏng đoán.
+- [x] Hệ thống cho ra 1–3 cơ hội đáng đi hỏi khách mỗi tuần — đúng mục tiêu cuối.

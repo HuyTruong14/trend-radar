@@ -552,17 +552,35 @@ def main():
 
         stage = compute_stage(total)
 
-        # Generate UNIQUE deterministic ID from URL hash
-        raw_hash_key = (primary_url or title).strip().lower()
-        url_hash = hashlib.md5(raw_hash_key.encode("utf-8")).hexdigest()[:8]
-        opp_id = f"opp_{now_utc.strftime('%Y_%m%d')}_{url_hash}"
-
-        # Preserve first_seen date from history if seen before
+        # Preserve first_seen date and ID from history if seen before
         prev_opp = existing_map.get(primary_url.lower()) or existing_map.get(title.lower())
         first_seen = prev_opp.get("first_seen") if prev_opp else today_str
-        velocity = prev_opp.get("velocity") if prev_opp else (primary.get("velocity") or "steady")
-        if velocity not in ("rising", "steady", "fading"):
-            velocity = "steady"
+        
+        # Preserve idempotent ID if previously assigned
+        if prev_opp and prev_opp.get("id"):
+            opp_id = prev_opp["id"]
+        else:
+            raw_hash_key = (primary_url or title).strip().lower()
+            url_hash = hashlib.md5(raw_hash_key.encode("utf-8")).hexdigest()[:8]
+            opp_id = f"opp_{now_utc.strftime('%Y_%m%d')}_{url_hash}"
+
+        # Phase 6: Appearance history tracking
+        prev_history = prev_opp.get("history_dates", []) if prev_opp else []
+        if today_str not in prev_history:
+            history_dates = prev_history + [today_str]
+        else:
+            history_dates = prev_history
+
+        appearance_count = len(history_dates)
+
+        # Automatic Velocity Calculation (Phase 6)
+        velocity = compute_velocity(
+            first_seen_str=first_seen,
+            last_seen_str=today_str,
+            history_dates=history_dates,
+            source_count=source_count,
+            pipeline_velocity=primary.get("velocity")
+        )
 
         opp_record = {
             "id": opp_id,
@@ -577,13 +595,83 @@ def main():
             "stage": stage,
             "first_seen": first_seen,
             "last_seen": today_str,
+            "appearance_count": appearance_count,
+            "history_dates": history_dates[-14:],  # Keep recent 14 active appearances
             "velocity": velocity
         }
         opportunities.append(opp_record)
 
-    # Sort opportunities: total desc, your_leverage desc, durability desc, source_count desc
+    # ==================== PHASE 6: HISTORICAL OPPORTUNITY RETENTION & AGING ====================
+    # Retain opportunities from previous runs that were not captured in today's fresh batch.
+    # - If inactive > 7 days -> automatically mark as 'fading' (xu hướng đang tắt)
+    # - If inactive > 30 days -> drop (retire old signals)
+    seen_in_current_batch = set()
+    for opp in opportunities:
+        for s in opp.get("sources", []):
+            if s.get("url"):
+                seen_in_current_batch.add(s["url"].strip().lower())
+        if opp.get("title"):
+            seen_in_current_batch.add(opp["title"].strip().lower())
+        if opp.get("id"):
+            seen_in_current_batch.add(opp["id"])
+
+    retained_count = 0
+    faded_count = 0
+    for prev_key, prev_opp in existing_map.items():
+        if prev_key in seen_in_current_batch:
+            continue
+        prev_id = prev_opp.get("id")
+        if prev_id and prev_id in seen_in_current_batch:
+            continue
+
+        prev_last_seen = prev_opp.get("last_seen") or prev_opp.get("first_seen") or today_str
+        try:
+            prev_last_date = datetime.strptime(prev_last_seen, "%Y-%m-%d").date()
+            days_inactive = (now_utc.date() - prev_last_date).days
+        except Exception:
+            days_inactive = 0
+
+        # Drop old opportunities inactive for more than 30 days
+        if days_inactive > 30:
+            continue
+
+        # Clone and update aging velocity
+        aged_opp = dict(prev_opp)
+        if days_inactive >= 7:
+            aged_opp["velocity"] = "fading"
+            faded_count += 1
+        else:
+            aged_opp["velocity"] = prev_opp.get("velocity", "steady")
+
+        # Mark seen to prevent duplicate entries from multiple map keys
+        seen_in_current_batch.add(prev_key)
+        if prev_id:
+            seen_in_current_batch.add(prev_id)
+        opportunities.append(aged_opp)
+        retained_count += 1
+
+    if retained_count > 0:
+        print(f"[score] [Phase 6] Retained {retained_count} active historical opportunities ({faded_count} marked fading).")
+
+    # ==================== PHASE 6: VELOCITY-WEIGHTED SORTING ====================
+    # Rule: 'fading' items are demoted below active opportunities even if score is high.
+    # 'rising' gets top priority, followed by 'steady', with 'fading' at the bottom.
+    VELOCITY_WEIGHT = {
+        "rising": 2,
+        "steady": 1,
+        "stable": 1,
+        "fading": 0,
+        "cooling": 0
+    }
+
     opportunities.sort(
-        key=lambda x: (x["total"], x["scores"]["your_leverage"], x["scores"]["durability"], x["source_count"]),
+        key=lambda x: (
+            VELOCITY_WEIGHT.get(x.get("velocity", "steady"), 1),
+            x["total"],
+            x["scores"]["your_leverage"],
+            x["scores"]["durability"],
+            x["source_count"]
+        ),
         reverse=True
     )
 
@@ -596,16 +684,20 @@ def main():
     print(f"\n[score] Successfully saved {len(opportunities)} qualified opportunities into {OUTPUT_FILE}")
 
     stage_counts = {}
+    velocity_counts = {}
     for opp in opportunities:
         s = opp["stage"]
         stage_counts[s] = stage_counts.get(s, 0) + 1
+        v = opp.get("velocity", "steady")
+        velocity_counts[v] = velocity_counts.get(v, 0) + 1
 
-    print("\n--- OPPORTUNITY RADAR BREAKDOWN ---")
+    print("\n--- OPPORTUNITY RADAR BREAKDOWN (PHASE 6) ---")
     print(f"  • Build Ready (9/9) : {stage_counts.get('build_ready', 0)}")
     print(f"  • Research (7-8/9)  : {stage_counts.get('research', 0)}")
     print(f"  • Watch (4-6/9)     : {stage_counts.get('watch', 0)}")
     print(f"  • Drop (0-3/9)      : 0 (Excluded from output)")
-    print("----------------------------------\n")
+    print(f"  • Velocity Trends   : 🚀 {velocity_counts.get('rising', 0)} rising | ➡️ {velocity_counts.get('steady', 0)} steady | 📉 {velocity_counts.get('fading', 0)} fading")
+    print("---------------------------------------------\n")
 
     print("[score] TOP 10 OPPORTUNITIES PREVIEW:")
     for i, o in enumerate(opportunities[:10], 1):
@@ -638,6 +730,49 @@ def main():
         send_actnow_alerts([test_opp], dry_run=is_dry_run)
     else:
         send_actnow_alerts(opportunities, dry_run=is_dry_run)
+
+
+# ==================== PHASE 6 HELPER FUNCTIONS (AUTOMATIC VELOCITY) ====================
+
+def compute_velocity(first_seen_str, last_seen_str, history_dates, source_count, pipeline_velocity=None):
+    """
+    Phase 6: Automatic velocity calculation based on appearance history:
+    - 'rising': Xuất hiện ngày càng nhiều trong 2 tuần gần nhất (hoặc source_count >= 2)
+    - 'steady': Đều đặn, xuất hiện gần đây (<= 5 ngày), không tăng không giảm
+    - 'fading': Thưa dần, lâu không thấy lại (> 7 ngày kể từ lần cuối xuất hiện)
+    """
+    try:
+        last_date = datetime.strptime(last_seen_str, "%Y-%m-%d").date()
+        today = datetime.now(timezone.utc).date()
+        days_since_last = (today - last_date).days
+    except Exception:
+        days_since_last = 0
+
+    # Inactive for more than 7 days -> fading (thưa dần, lâu không thấy lại)
+    if days_since_last > 7:
+        return "fading"
+
+    # Count appearances in last 14 days
+    recent_14d_appearances = 0
+    if history_dates:
+        for d_str in history_dates:
+            try:
+                d = datetime.strptime(d_str, "%Y-%m-%d").date()
+                if (today - d).days <= 14:
+                    recent_14d_appearances += 1
+            except Exception:
+                pass
+    else:
+        recent_14d_appearances = 1
+
+    # Rising: Xuất hiện ngày càng nhiều trong 2 tuần gần nhất, hoặc >= 2 nguồn xác nhận, hoặc pipeline tag 'rising'
+    if pipeline_velocity == "rising":
+        return "rising"
+    if source_count >= 2 or recent_14d_appearances >= 3:
+        return "rising"
+
+    # Steady: Đều đặn, không tăng không giảm
+    return "steady"
 
 
 # ==================== PHASE 5 HELPER FUNCTIONS ====================

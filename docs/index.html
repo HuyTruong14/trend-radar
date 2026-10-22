@@ -1915,7 +1915,12 @@
           const list = await res.json();
           if (Array.isArray(list)) {
             OPPORTUNITIES_DATA = list.filter(item => (item.total || 0) >= 4);
-            OPPORTUNITIES_DATA.sort((a, b) => (b.total || 0) - (a.total || 0));
+            const VEL_ORDER = { 'rising': 2, 'steady': 1, 'stable': 1, 'fading': 0, 'cooling': 0 };
+            OPPORTUNITIES_DATA.sort((a, b) => {
+              const vDiff = (VEL_ORDER[b.velocity] || 1) - (VEL_ORDER[a.velocity] || 1);
+              if (vDiff !== 0) return vDiff;
+              return (b.total || 0) - (a.total || 0);
+            });
           }
         }
       } catch (e) {

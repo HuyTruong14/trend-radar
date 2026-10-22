@@ -24,7 +24,7 @@ fetch.py → aggregate.py → score.py → opportunities.json → My News (front
 | 3 | `phase-3-frontend-table.md` | Tab Opportunity Radar + bảng xếp hạng | ✅ Hoàn thành |
 | 4 | `phase-4-filters-actnow.md` | Bộ lọc + phần Act now nổi bật | ✅ Hoàn thành |
 | 5 | `phase-5-telegram.md` | Lọc Telegram chỉ bắn điểm 9 | ✅ Hoàn thành |
-| 6 | `phase-6-velocity-tuning.md` | Velocity + tinh chỉnh ngưỡng sau 1 tháng | ⏳ Tiếp theo |
+| 6 | `phase-6-velocity-tuning.md` | Velocity + tinh chỉnh ngưỡng sau 1 tháng | ✅ Hoàn thành |
 
 ## Mốc kiểm tra quan trọng
 Sau Phase 2, kiểm tra `opportunities.json` ra kết quả hợp lý **trước khi** làm frontend. Đừng xây giao diện trên dữ liệu sai.
