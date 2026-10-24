@@ -39,6 +39,9 @@ OUTPUT_FILE = os.path.join(DATA_DIR, "opportunities.json")
 SIGNALS_FILE = os.path.join(DATA_DIR, "signals.json")
 NEWS_FILE = os.path.join(DATA_DIR, "news.json")
 SENT_OPPORTUNITIES_FILE = os.path.join(DATA_DIR, "sent_opportunities.json")
+SENT_HISTORY_FILE = os.path.join(DATA_DIR, "sent_history.json")
+
+
 
 # Ensure scripts directory is in sys.path to reuse notify.py
 if os.path.join(ROOT, "scripts") not in sys.path:
@@ -1008,147 +1011,170 @@ def compute_velocity(first_seen_str, last_seen_str, history_dates, source_count,
     return "steady"
 
 
-# ==================== PHASE 5B HELPER FUNCTIONS (3 TEMPLATES) ====================
+# ==================== PHASE 5C HELPER FUNCTIONS (ANTI-SPAM & SENT HISTORY) ====================
 
-def load_sent_state():
+def load_sent_history(today_str=None, history_file=SENT_HISTORY_FILE):
     """
-    Load tracking state for sent Telegram messages.
-    Supports backwards compatibility with legacy sent_ids list.
-    """
-    default_state = {
-        "sent_build_ready": set(),
-        "sent_research_ids": set(),
-        "sent_promotions": set(),
-        "last_research_digest_date": None
+    Phase 5C: Load sent history from sent_history.json.
+    Structure per spec:
+    {
+        "<opp_id>": {
+            "first_sent": "YYYY-MM-DD",
+            "last_sent": "YYYY-MM-DD",
+            "stage_when_sent": "research",
+            "times_sent": 1
+        }
     }
-    if os.path.exists(SENT_OPPORTUNITIES_FILE):
+    Automatically prunes items older than 30 days (Requirement 5).
+    """
+    history = {}
+    if os.path.exists(history_file):
+        try:
+            with open(history_file, "r", encoding="utf-8") as f:
+                history = json.load(f)
+        except Exception as e:
+            print(f"[score] Note: could not load {history_file}: {e}")
+            history = {}
+
+    # Migration from old sent_opportunities.json if sent_history.json is not present or empty
+    if not history and history_file == SENT_HISTORY_FILE and os.path.exists(SENT_OPPORTUNITIES_FILE):
         try:
             with open(SENT_OPPORTUNITIES_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                if isinstance(data, list):
-                    default_state["sent_build_ready"] = set(data)
-                elif isinstance(data, dict):
-                    default_state["sent_build_ready"] = set(data.get("sent_build_ready") or data.get("sent_ids") or [])
-                    default_state["sent_research_ids"] = set(data.get("sent_research_ids") or [])
-                    default_state["sent_promotions"] = set(data.get("sent_promotions") or [])
-                    default_state["last_research_digest_date"] = data.get("last_research_digest_date")
-        except Exception as e:
-            print(f"[score] Note: could not load sent state: {e}")
-    return default_state
+                old_data = json.load(f)
+                if isinstance(old_data, dict):
+                    fallback_date = today_str or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+                    for oid in old_data.get("sent_build_ready", []):
+                        history[oid] = {
+                            "first_sent": fallback_date,
+                            "last_sent": fallback_date,
+                            "stage_when_sent": "build_ready",
+                            "times_sent": 1
+                        }
+                    for oid in old_data.get("sent_research_ids", []):
+                        if oid not in history:
+                            history[oid] = {
+                                "first_sent": fallback_date,
+                                "last_sent": fallback_date,
+                                "stage_when_sent": "research",
+                                "times_sent": 1
+                            }
+        except Exception:
+            pass
+
+    # Clean up entries older than 30 days (Phase 5C Requirement 5)
+    cleaned_history = {}
+    today_dt = datetime.strptime(today_str, "%Y-%m-%d").date() if today_str else datetime.now(timezone.utc).date()
+    pruned_count = 0
+
+    for oid, entry in history.items():
+        if not isinstance(entry, dict):
+            continue
+        ref_date_str = entry.get("last_sent") or entry.get("first_sent")
+        if ref_date_str:
+            try:
+                ref_dt = datetime.strptime(ref_date_str, "%Y-%m-%d").date()
+                if (today_dt - ref_dt).days > 30:
+                    pruned_count += 1
+                    continue
+            except Exception:
+                pass
+        cleaned_history[oid] = entry
+
+    if pruned_count > 0:
+        print(f"[score] [Phase 5C] Cleaned up {pruned_count} entries older than 30 days from {os.path.basename(history_file)}.")
+
+    return cleaned_history
 
 
-def save_sent_state(state):
-    """Save updated tracking state into sent_opportunities.json."""
+def save_sent_history(history, history_file=SENT_HISTORY_FILE):
+    """Save updated sent history into docs/data/sent_history.json."""
     try:
         os.makedirs(DATA_DIR, exist_ok=True)
-        with open(SENT_OPPORTUNITIES_FILE, "w", encoding="utf-8") as f:
-            json.dump({
-                "sent_ids": sorted(list(state["sent_build_ready"])),  # legacy compatibility
-                "sent_build_ready": sorted(list(state["sent_build_ready"])),
-                "sent_research_ids": sorted(list(state["sent_research_ids"])),
-                "sent_promotions": sorted(list(state["sent_promotions"])),
-                "last_research_digest_date": state.get("last_research_digest_date"),
-                "updated_at": datetime.now(timezone.utc).isoformat()
-            }, f, ensure_ascii=False, indent=2)
+        with open(history_file, "w", encoding="utf-8") as f:
+            json.dump(history, f, ensure_ascii=False, indent=2)
     except Exception as e:
-        print(f"[score] Warning: could not save sent state: {e}")
+        print(f"[score] Warning: could not save {history_file}: {e}")
 
 
-def send_phase5_alerts(opportunities, promoted_items, today_str, dry_run=False):
+def send_phase5_alerts(opportunities, promoted_items, today_str, dry_run=False, history_file=SENT_HISTORY_FILE):
     """
-    Phase 5B: Dispatch Telegram alerts according to 3 distinct templates:
-    1. Template 1: Build-ready (total = 9) -> gửi riêng từng item
-    2. Template 2: Research (total 7-8) -> gộp 1 tin/ngày (im lặng nếu không có research mới)
-    3. Template 3: Tăng hạng -> gửi riêng từng item (watch -> research, research -> build_ready)
+    Phase 5C: Smart Telegram Alert Dispatcher with Anti-Spam & Max-Send Limits.
+
+    Rules Matrix:
+    1. Item MỚI, stage = build_ready      -> ✅ Gửi riêng (Template 1)
+    2. Item MỚI, stage = research         -> ✅ Gộp vào tin hàng ngày (Template 2)
+    3. Item MỚI, stage = watch/drop       -> ❌ Không gửi (lưu stage_when_sent, times_sent = 0)
+    4. Item CŨ, tăng hạng (watch->research, research->build_ready)
+                                          -> ✅ Gửi riêng (Template 3) (nếu times_sent < 2)
+    5. Item CŨ, giữ nguyên stage          -> ❌ Không gửi
+    6. Item CŨ, giảm hạng (research->watch)
+                                          -> ❌ Không gửi
+    7. Giới hạn: Mỗi ID tối đa 2 lần gửi   -> Đã gửi 2 lần -> chặn, không gửi nữa
+    8. Hôm nay không có gì mới            -> ❌ Không gửi (Im lặng hoàn toàn)
+    9. Dọn dẹp: > 30 ngày                 -> Tự động xóa khỏi sent_history.json
     """
     if not notify:
-        print("[score] [Phase 5B] notify module is not available.")
+        print("[score] [Phase 5C] notify module is not available.")
         return 0
 
-    state = load_sent_state()
-    state_changed = False
+    STAGE_ORDER = {"drop": 0, "watch": 1, "research": 2, "build_ready": 3}
+    sent_history = load_sent_history(today_str=today_str, history_file=history_file)
+    history_changed = False
     alerts_sent = 0
+    handled_ids = set()
 
-    # ==================== 1. TEMPLATE 1: BUILD-READY (9/9) ====================
-    build_ready_candidates = [
-        opp for opp in opportunities
-        if (opp.get("total") or 0) >= 9 or opp.get("stage") == "build_ready"
-    ]
-    for opp in build_ready_candidates:
-        opp_id = opp.get("id")
-        if not opp_id or opp_id in state["sent_build_ready"]:
-            continue
+    # 1. Phát hiện tăng hạng (Template 3)
+    # Check both promoted_items and sent_history vs current opportunities
+    promo_candidates = []
+    seen_promo_ids = set()
 
-        msg = notify.format_template1_build_ready(opp)
-        print(f"\n[score] [Phase 5B] Preparing Template 1 (Build-Ready 9/9): {opp.get('title')[:60]}...")
-        if dry_run:
-            print("[score] [DRY RUN] Message:\n" + ("=" * 45) + f"\n{msg}\n" + ("=" * 45))
-            state["sent_build_ready"].add(opp_id)
-            state_changed = True
-            alerts_sent += 1
-        else:
-            if notify.send_message(msg):
-                print(f"[score] [Phase 5B] Successfully sent Template 1 for: {opp_id}")
-                state["sent_build_ready"].add(opp_id)
-                state_changed = True
-                alerts_sent += 1
-            else:
-                print(f"[score] [Phase 5B] Failed to send Template 1 for: {opp_id}")
-
-    # ==================== 2. TEMPLATE 2: RESEARCH (7-8/9) GỘP 1 TIN/NGÀY ====================
-    # Gửi sau mỗi lần pipeline chạy xong. Nếu hôm nay KHÔNG có research mới -> KHÔNG gửi tin này.
-    all_research_candidates = [
-        opp for opp in opportunities
-        if opp.get("stage") == "research" or (opp.get("total") in (7, 8) and opp.get("stage") != "build_ready")
-    ]
-
-    new_research_candidates = [
-        opp for opp in all_research_candidates
-        if opp.get("id") and opp["id"] not in state["sent_research_ids"]
-    ]
-
-    if not new_research_candidates:
-        print("\n[score] [Phase 5B] Không có cơ hội research mới hôm nay -> Telegram im lặng (không gửi tin rác).")
-    else:
-        try:
-            today_dt = datetime.strptime(today_str, "%Y-%m-%d")
-            today_display = today_dt.strftime("%d/%m/%Y")
-        except Exception:
-            today_display = datetime.now(timezone.utc).strftime("%d/%m/%Y")
-
-        digest_msg = notify.format_template2_research_digest(new_research_candidates, date_str=today_display)
-        if digest_msg:
-            print(f"\n[score] [Phase 5B] Preparing Template 2 (Research Digest, {len(new_research_candidates)} items)...")
-            if dry_run:
-                print("[score] [DRY RUN] Message:\n" + ("=" * 45) + f"\n{digest_msg}\n" + ("=" * 45))
-                for opp in new_research_candidates:
-                    state["sent_research_ids"].add(opp["id"])
-                state["last_research_digest_date"] = today_str
-                state_changed = True
-                alerts_sent += 1
-            else:
-                if notify.send_message(digest_msg):
-                    print(f"[score] [Phase 5B] Successfully sent Template 2 daily research digest.")
-                    for opp in new_research_candidates:
-                        state["sent_research_ids"].add(opp["id"])
-                    state["last_research_digest_date"] = today_str
-                    state_changed = True
-                    alerts_sent += 1
-                else:
-                    print(f"[score] [Phase 5B] Failed to send Template 2 digest.")
-
-    # ==================== 3. TEMPLATE 3: TĂNG HẠNG (PROMOTION) ====================
-    # Chỉ gửi khi 1 item đã tồn tại từ trước và vừa tăng stage (watch -> research, hoặc research -> build_ready)
     for promo in promoted_items:
         opp = promo["opp"]
-        opp_id = opp.get("id")
+        oid = opp.get("id")
+        if oid and oid not in seen_promo_ids:
+            seen_promo_ids.add(oid)
+            promo_candidates.append({
+                "opp": opp,
+                "old_stage": promo["old_stage"],
+                "old_total": promo.get("old_total", 0),
+                "new_stage": promo["new_stage"],
+                "new_total": promo.get("new_total", opp.get("total", 0))
+            })
+
+    # Also detect promotion from sent_history
+    for opp in opportunities:
+        oid = opp.get("id")
+        if not oid or oid in seen_promo_ids:
+            continue
+        hist_entry = sent_history.get(oid)
+        if hist_entry and hist_entry.get("stage_when_sent"):
+            hist_stage = hist_entry["stage_when_sent"]
+            curr_stage = opp.get("stage")
+            if STAGE_ORDER.get(curr_stage, 0) > STAGE_ORDER.get(hist_stage, 0):
+                seen_promo_ids.add(oid)
+                promo_candidates.append({
+                    "opp": opp,
+                    "old_stage": hist_stage,
+                    "old_total": opp.get("total", 0) - 1,
+                    "new_stage": curr_stage,
+                    "new_total": opp.get("total", 0)
+                })
+
+    for promo in promo_candidates:
+        opp = promo["opp"]
+        opp_id = opp["id"]
         old_stage = promo["old_stage"]
         new_stage = promo["new_stage"]
         old_total = promo["old_total"]
         new_total = promo["new_total"]
 
-        promo_key = f"{opp_id}:{old_stage}->{new_stage}"
-        if not opp_id or promo_key in state["sent_promotions"]:
+        hist_entry = sent_history.get(opp_id)
+        times_sent = hist_entry.get("times_sent", 0) if hist_entry else 0
+
+        # Giới hạn gửi: Mỗi ID gửi tối đa 2 lần (lần đầu + 1 lần tăng hạng)
+        if times_sent >= 2:
+            print(f"[score] [Phase 5C] Bỏ qua tăng hạng cho {opp_id}: Đã đạt giới hạn tối đa 2 lần gửi ({times_sent}/2).")
+            handled_ids.add(opp_id)
             continue
 
         msg = notify.format_template3_promotion(
@@ -1158,38 +1184,336 @@ def send_phase5_alerts(opportunities, promoted_items, today_str, dry_run=False):
             new_stage=new_stage,
             new_total=new_total
         )
-        print(f"\n[score] [Phase 5B] Preparing Template 3 (Promotion: {old_stage} -> {new_stage}): {opp.get('title')[:60]}...")
+        print(f"\n[score] [Phase 5C] Gửi Template 3 (TĂNG HẠNG: {old_stage} -> {new_stage}): {opp.get('title')[:60]}...")
         if dry_run:
             print("[score] [DRY RUN] Message:\n" + ("=" * 45) + f"\n{msg}\n" + ("=" * 45))
-            state["sent_promotions"].add(promo_key)
-            state_changed = True
+            first_sent = (hist_entry.get("first_sent") if hist_entry else None) or today_str
+            sent_history[opp_id] = {
+                "first_sent": first_sent,
+                "last_sent": today_str,
+                "stage_when_sent": new_stage,
+                "times_sent": times_sent + 1
+            }
+            history_changed = True
             alerts_sent += 1
+            handled_ids.add(opp_id)
         else:
             if notify.send_message(msg):
-                print(f"[score] [Phase 5B] Successfully sent Template 3 promotion for: {promo_key}")
-                state["sent_promotions"].add(promo_key)
-                state_changed = True
+                print(f"[score] [Phase 5C] Đã gửi thành công Template 3 cho: {opp_id}")
+                first_sent = (hist_entry.get("first_sent") if hist_entry else None) or today_str
+                sent_history[opp_id] = {
+                    "first_sent": first_sent,
+                    "last_sent": today_str,
+                    "stage_when_sent": new_stage,
+                    "times_sent": times_sent + 1
+                }
+                history_changed = True
+                alerts_sent += 1
+                handled_ids.add(opp_id)
+            else:
+                print(f"[score] [Phase 5C] Gửi Template 3 thất bại cho: {opp_id}")
+
+    # 2. Item MỚI, stage = build_ready (Template 1)
+    build_ready_candidates = [
+        opp for opp in opportunities
+        if (opp.get("total") or 0) >= 9 or opp.get("stage") == "build_ready"
+    ]
+    for opp in build_ready_candidates:
+        opp_id = opp.get("id")
+        if not opp_id or opp_id in handled_ids:
+            continue
+
+        hist_entry = sent_history.get(opp_id)
+        if hist_entry:
+            # Item CŨ: giữ nguyên stage hoặc đã gửi
+            if hist_entry.get("stage_when_sent") == "build_ready" and hist_entry.get("times_sent", 0) > 0:
+                continue
+            if hist_entry.get("times_sent", 0) >= 2:
+                continue
+
+        msg = notify.format_template1_build_ready(opp)
+        print(f"\n[score] [Phase 5C] Gửi Template 1 (Build-Ready 9/9): {opp.get('title')[:60]}...")
+        if dry_run:
+            print("[score] [DRY RUN] Message:\n" + ("=" * 45) + f"\n{msg}\n" + ("=" * 45))
+            times_sent = hist_entry.get("times_sent", 0) if hist_entry else 0
+            sent_history[opp_id] = {
+                "first_sent": (hist_entry.get("first_sent") if hist_entry else None) or today_str,
+                "last_sent": today_str,
+                "stage_when_sent": "build_ready",
+                "times_sent": times_sent + 1
+            }
+            history_changed = True
+            alerts_sent += 1
+            handled_ids.add(opp_id)
+        else:
+            if notify.send_message(msg):
+                print(f"[score] [Phase 5C] Đã gửi thành công Template 1 cho: {opp_id}")
+                times_sent = hist_entry.get("times_sent", 0) if hist_entry else 0
+                sent_history[opp_id] = {
+                    "first_sent": (hist_entry.get("first_sent") if hist_entry else None) or today_str,
+                    "last_sent": today_str,
+                    "stage_when_sent": "build_ready",
+                    "times_sent": times_sent + 1
+                }
+                history_changed = True
+                alerts_sent += 1
+                handled_ids.add(opp_id)
+            else:
+                print(f"[score] [Phase 5C] Gửi Template 1 thất bại cho: {opp_id}")
+
+    # 3. Item MỚI, stage = research (Template 2 - Gộp 1 tin/ngày)
+    all_research_candidates = [
+        opp for opp in opportunities
+        if opp.get("stage") == "research" and opp.get("stage") != "build_ready"
+    ]
+    new_research_candidates = []
+    for opp in all_research_candidates:
+        opp_id = opp.get("id")
+        if not opp_id or opp_id in handled_ids:
+            continue
+        hist_entry = sent_history.get(opp_id)
+        if hist_entry:
+            # Item CŨ, giữ nguyên research -> không gửi lại
+            if hist_entry.get("stage_when_sent") == "research" and hist_entry.get("times_sent", 0) > 0:
+                continue
+            if hist_entry.get("times_sent", 0) >= 2:
+                continue
+        new_research_candidates.append(opp)
+
+    if not new_research_candidates:
+        print("\n[score] [Phase 5C] Hôm nay không có cơ hội research mới -> Telegram hoàn toàn im lặng.")
+    else:
+        try:
+            today_dt = datetime.strptime(today_str, "%Y-%m-%d")
+            today_display = today_dt.strftime("%d/%m/%Y")
+        except Exception:
+            today_display = datetime.now(timezone.utc).strftime("%d/%m/%Y")
+
+        digest_msg = notify.format_template2_research_digest(new_research_candidates, date_str=today_display)
+        if digest_msg:
+            print(f"\n[score] [Phase 5C] Gửi Template 2 (Research Digest, {len(new_research_candidates)} items mới)...")
+            if dry_run:
+                print("[score] [DRY RUN] Message:\n" + ("=" * 45) + f"\n{digest_msg}\n" + ("=" * 45))
+                for opp in new_research_candidates:
+                    oid = opp["id"]
+                    he = sent_history.get(oid)
+                    ts = he.get("times_sent", 0) if he else 0
+                    sent_history[oid] = {
+                        "first_sent": (he.get("first_sent") if he else None) or today_str,
+                        "last_sent": today_str,
+                        "stage_when_sent": "research",
+                        "times_sent": ts + 1
+                    }
+                    handled_ids.add(oid)
+                history_changed = True
                 alerts_sent += 1
             else:
-                print(f"[score] [Phase 5B] Failed to send Template 3 promotion for: {promo_key}")
+                if notify.send_message(digest_msg):
+                    print(f"[score] [Phase 5C] Đã gửi thành công Template 2 daily research digest.")
+                    for opp in new_research_candidates:
+                        oid = opp["id"]
+                        he = sent_history.get(oid)
+                        ts = he.get("times_sent", 0) if he else 0
+                        sent_history[oid] = {
+                            "first_sent": (he.get("first_sent") if he else None) or today_str,
+                            "last_sent": today_str,
+                            "stage_when_sent": "research",
+                            "times_sent": ts + 1
+                        }
+                        handled_ids.add(oid)
+                    history_changed = True
+                    alerts_sent += 1
+                else:
+                    print(f"[score] [Phase 5C] Gửi Template 2 digest thất bại.")
 
-    if state_changed:
-        save_sent_state(state)
+    # 4. Item MỚI, stage = watch / drop (❌ Không gửi, ghi nhận vào sent_history với times_sent = 0)
+    for opp in opportunities:
+        opp_id = opp.get("id")
+        stage = opp.get("stage")
+        if not opp_id or stage not in ("watch", "drop"):
+            continue
+        if opp_id not in sent_history:
+            sent_history[opp_id] = {
+                "first_sent": None,
+                "last_sent": None,
+                "stage_when_sent": stage,
+                "times_sent": 0
+            }
+            history_changed = True
+
+    if history_changed:
+        save_sent_history(sent_history, history_file=history_file)
 
     return alerts_sent
 
 
+def run_phase5c_tests(opportunities, dry_run=True):
+    """
+    Run dedicated test suite for Phase 5C validating all 6 Done Criteria:
+    - [x] Gửi cùng ID 2 pipeline liên tiếp: lần 2 bị chặn (không gửi lại).
+    - [x] Item tăng từ watch → research: gửi đúng Template 3 "⬆️ TĂNG HẠNG".
+    - [x] Item giữ nguyên research: không gửi lại.
+    - [x] Hôm nay không có gì mới: Telegram im lặng hoàn toàn.
+    - [x] sent_history.json được tạo và cập nhật đúng sau mỗi lần chạy.
+    - [x] Item cũ >30 ngày bị dọn khỏi sent_history.
+    """
+    print("\n" + ("#" * 65))
+    print("[score] [Phase 5C] RUNNING AUTOMATED COMPLIANCE TEST SUITE")
+    print(("#" * 65) + "\n")
+
+    test_history_path = os.path.join(DATA_DIR, "test_sent_history.json")
+    if os.path.exists(test_history_path):
+        os.remove(test_history_path)
+
+    today = "2026-10-24"
+
+    # --- TEST 1: New items dispatch & consecutive duplicate rejection ---
+    print("--- [TEST 1/6] ITEM MỚI GỬI LẦN 1, LẦN 2 BỊ CHẶN (CHỐNG TRÙNG) ---")
+    item_res = {
+        "id": "opp_test_p5c_res",
+        "title": "Mô hình Edge AI phân tích oxy hòa tan",
+        "summary_vi": "Cảm biến đo oxy hòa tan với thuật toán biên",
+        "signal_type": ["tech_cheap"],
+        "total": 8,
+        "stage": "research"
+    }
+    sent1 = send_phase5_alerts([item_res], [], today, dry_run=True, history_file=test_history_path)
+    print(f"  -> Pipeline Lần 1: Số tin gửi = {sent1} (Kỳ vọng: 1 - Digest có 1 item)")
+    assert sent1 == 1, f"Expected 1, got {sent1}"
+
+    sent2 = send_phase5_alerts([item_res], [], today, dry_run=True, history_file=test_history_path)
+    print(f"  -> Pipeline Lần 2 (cùng item giữ nguyên stage): Số tin gửi = {sent2} (Kỳ vọng: 0 - Bị chặn)")
+    assert sent2 == 0, f"Expected 0, got {sent2}"
+    print("  ✅ PASS: Gửi cùng ID 2 lần liên tiếp bị chặn hoàn toàn.")
+
+    # --- TEST 2: Promotion watch -> research ---
+    print("\n--- [TEST 2/6] ITEM TĂNG HẠNG (watch -> research) ---")
+    item_promo = {
+        "id": "opp_test_p5c_watch",
+        "title": "Trạm cảm biến quan trắc độ mặn",
+        "summary_vi": "Thiết bị giám sát xâm nhập mặn ao nuôi",
+        "signal_type": ["supply_gap"],
+        "total": 5,
+        "stage": "watch"
+    }
+    # Initial run: stage = watch (Not sent)
+    send_phase5_alerts([item_promo], [], today, dry_run=True, history_file=test_history_path)
+    hist = load_sent_history(today, history_file=test_history_path)
+    assert hist["opp_test_p5c_watch"]["times_sent"] == 0, "Watch item should not be sent"
+    print("  -> Item mới stage watch: Đã lưu sent_history với times_sent = 0 (Không gửi tin)")
+
+    # Upgrade to research
+    item_promo["stage"] = "research"
+    item_promo["total"] = 7
+    promo_record = {
+        "opp": item_promo,
+        "old_stage": "watch",
+        "old_total": 5,
+        "new_stage": "research",
+        "new_total": 7
+    }
+    sent_promo = send_phase5_alerts([item_promo], [promo_record], today, dry_run=True, history_file=test_history_path)
+    hist = load_sent_history(today, history_file=test_history_path)
+    print(f"  -> Khi tăng hạng watch -> research: Số tin gửi = {sent_promo} (Kỳ vọng: 1 - Template 3)")
+    print(f"  -> Trạng thái trong history: stage_when_sent = '{hist['opp_test_p5c_watch']['stage_when_sent']}', times_sent = {hist['opp_test_p5c_watch']['times_sent']}")
+    assert sent_promo == 1, f"Expected 1, got {sent_promo}"
+    assert hist["opp_test_p5c_watch"]["stage_when_sent"] == "research"
+    assert hist["opp_test_p5c_watch"]["times_sent"] == 1
+    print("  ✅ PASS: Tăng hạng watch -> research gửi đúng Template 3 và cập nhật sent_history.")
+
+    # --- TEST 3: Max send limit (2/2) ---
+    print("\n--- [TEST 3/6] GIỚI HẠN GỬI TỐI ĐA 2 LẦN ---")
+    # Upgrade research -> build_ready (times_sent becomes 2)
+    item_promo["stage"] = "build_ready"
+    item_promo["total"] = 9
+    promo_record2 = {
+        "opp": item_promo,
+        "old_stage": "research",
+        "old_total": 7,
+        "new_stage": "build_ready",
+        "new_total": 9
+    }
+    sent_promo2 = send_phase5_alerts([item_promo], [promo_record2], today, dry_run=True, history_file=test_history_path)
+    hist = load_sent_history(today, history_file=test_history_path)
+    print(f"  -> Tăng hạng lần 2 (research -> build_ready): Số tin gửi = {sent_promo2}, times_sent = {hist['opp_test_p5c_watch']['times_sent']}")
+    assert sent_promo2 == 1
+    assert hist["opp_test_p5c_watch"]["times_sent"] == 2
+
+    # Attempt to send again when already at times_sent = 2
+    sent_blocked = send_phase5_alerts([item_promo], [promo_record2], today, dry_run=True, history_file=test_history_path)
+    print(f"  -> Thử gửi lần 3: Số tin gửi = {sent_blocked} (Kỳ vọng: 0 - Đã chạm trần 2/2)")
+    assert sent_blocked == 0
+    print("  ✅ PASS: Chặn đúng quy tắc mỗi ID tối đa gửi 2 lần.")
+
+    # --- TEST 4: Demotion or same stage ---
+    print("\n--- [TEST 4/6] GIỮ NGUYÊN STAGE HOẶC GIẢM HẠNG (KHÔNG GỬI) ---")
+    item_demote = {
+        "id": "opp_test_demote",
+        "title": "Hệ thống giảm hạng",
+        "stage": "research",
+        "total": 7
+    }
+    send_phase5_alerts([item_demote], [], today, dry_run=True, history_file=test_history_path)
+    # Demote to watch
+    item_demote["stage"] = "watch"
+    item_demote["total"] = 5
+    sent_demote = send_phase5_alerts([item_demote], [], today, dry_run=True, history_file=test_history_path)
+    print(f"  -> Item giảm hạng (research -> watch): Số tin gửi = {sent_demote} (Kỳ vọng: 0)")
+    assert sent_demote == 0
+    print("  ✅ PASS: Giảm hạng hoàn toàn không gửi thông báo rác.")
+
+    # --- TEST 5: Silence when nothing new ---
+    print("\n--- [TEST 5/6] HÔM NAY KHÔNG CÓ GÌ MỚI (IM LẶNG HOÀN TOÀN) ---")
+    sent_silent = send_phase5_alerts([], [], today, dry_run=True, history_file=test_history_path)
+    print(f"  -> Batch rỗng: Số tin gửi = {sent_silent} (Kỳ vọng: 0)")
+    assert sent_silent == 0
+    print("  ✅ PASS: Không có tin mới -> Telegram hoàn toàn im lặng.")
+
+    # --- TEST 6: 30-day cleanup ---
+    print("\n--- [TEST 6/6] DỌN DẸP ITEM CŨ > 30 NGÀY KHỎI SENT_HISTORY.JSON ---")
+    test_hist_data = {
+        "opp_recent": {
+            "first_sent": "2026-10-20",
+            "last_sent": "2026-10-20",
+            "stage_when_sent": "research",
+            "times_sent": 1
+        },
+        "opp_ancient": {
+            "first_sent": "2026-09-01",  # ~53 days ago
+            "last_sent": "2026-09-01",
+            "stage_when_sent": "build_ready",
+            "times_sent": 1
+        }
+    }
+    with open(test_history_path, "w", encoding="utf-8") as f:
+        json.dump(test_hist_data, f)
+
+    loaded_cleaned = load_sent_history("2026-10-24", history_file=test_history_path)
+    print(f"  -> Trước khi dọn: 2 items (opp_recent: 4 ngày trước, opp_ancient: 53 ngày trước)")
+    print(f"  -> Sau khi dọn: {len(loaded_cleaned)} items còn lại ({list(loaded_cleaned.keys())})")
+    assert "opp_recent" in loaded_cleaned, "opp_recent should be kept"
+    assert "opp_ancient" not in loaded_cleaned, "opp_ancient should be pruned"
+    print("  ✅ PASS: Item cũ >30 ngày tự động được dọn dẹp sạch sẽ.")
+
+    # Cleanup test file
+    if os.path.exists(test_history_path):
+        os.remove(test_history_path)
+
+    print("\n" + ("#" * 65))
+    print("[score] [Phase 5C] ALL 6 ACCEPTANCE CRITERIA PASSED!")
+    print(("#" * 65) + "\n")
+
+
 def run_telegram_tests(opportunities, dry_run=False):
     """
-    Run dedicated tests to verify all 4 acceptance criteria for Phase 5B:
-    1. Test Template 1 (Build-ready 9/9)
-    2. Test Template 2 (Research digest)
-    3. Test Template 2 silence when 0 new research items
-    4. Test Template 3 (Promotion)
+    Run full suite of Telegram template checks (Phase 5B) + Phase 5C compliance tests.
     """
-    print("\n" + ("#" * 60))
-    print("[score] [Phase 5B] RUNNING TELEGRAM TEMPLATE TESTS")
-    print(("#" * 60) + "\n")
+    # Run Phase 5C compliance suite first
+    run_phase5c_tests(opportunities, dry_run=True)
+
+    print("\n" + ("#" * 65))
+    print("[score] [Phase 5B/5C] DISPLAYING FORMATTED TEMPLATES")
+    print(("#" * 65) + "\n")
 
     # Sample build-ready item (Nuôi tôm / nước)
     build_ready_sample = {
@@ -1268,9 +1592,10 @@ def run_telegram_tests(opportunities, dry_run=False):
     if not dry_run and notify:
         notify.send_message(msg3)
 
-    print("\n" + ("#" * 60))
-    print("[score] [Phase 5B] COMPLETED ALL TELEGRAM TESTS")
-    print(("#" * 60) + "\n")
+    print("\n" + ("#" * 65))
+    print("[score] [Phase 5C] COMPLETED ALL TELEGRAM & COMPLIANCE TESTS")
+    print(("#" * 65) + "\n")
+
 
 
 
