@@ -52,8 +52,8 @@ def generate_score_explanations(opp):
     - Bền (durability)
     - AI hỗ trợ (ai_support)
     - Đòn bẩy (your_leverage)
-    Strict Rule: KHÔNG viết generic 'điểm cao vì phù hợp'.
-    Must directly reference the domain (water, sensor, camera, robotics, aquaculture).
+    Phase 11: Sinh động theo từng chủ đề và nội dung thực tế của item.
+    KHÔNG hardcode cố định 'nuôi tôm' hay 'thay nước'.
     """
     title = (opp.get("title") or "").lower()
     summary = (opp.get("summary") or "").lower()
@@ -64,20 +64,28 @@ def generate_score_explanations(opp):
     ai = scores.get("ai_support", 3)
     lev = scores.get("your_leverage", 3)
 
+    is_igaming = any(k in combined for k in ["igaming", "gambling", "betting", "sportsbook", "casino", "poker", "odds", "cá cược", "game platform", "game inventory", "sbc", "igb", "gr8_tech", "slot machine", "lula", "dgoj"])
+    is_robotics = any(k in combined for k in ["robot", "robotics", "humanoid", "drone", "quadruped", "amr", "agv", "manipulator", "embodied"])
+    is_water_aqua = any(k in combined for k in ["water quality", "water sensor", "thủy sản", "hồ", "ao", "nước", "shrimp", "fish", "turbidity", "salinity", "dissolved oxygen", "purif", "buoy", "phao", "aquaculture"])
+    is_hardware = any(k in combined for k in ["sensor", "cảm biến", "hardware", "esp32", "microcontroller", "camera", "embedded", "phần cứng", "thiết bị", "traffic", "giao thông", "diagnost"])
+    is_ai_tool = any(k in combined for k in ["agent", "tool", "workflow", "automation", "devtool", "developer", "pipeline", "scraper", "copilot", "cli", "assistant"])
+    is_agtech = any(k in combined for k in ["agtech", "agriculture", "farm", "crop", "soil", "nông nghiệp", "cây trồng", "roboweeder"])
+    is_energy = any(k in combined for k in ["energy", "solar", "battery", "grid", "năng lượng", "power", "thermal energy"])
+
     # 1. Bền (Durability)
-    if "tôm" in combined or "shrimp" in combined:
-        exp_dur = "nuôi tôm luôn cần nước sạch"
-    elif "cá" in combined or "fish" in combined:
-        exp_dur = "nuôi cá luôn cần nước sạch"
-    elif any(k in combined for k in ["water", "aqua", "thủy sản", "hồ", "ao", "nước", "ph", "do", "turbidity", "salinity", "purif", "buoy", "phao"]):
-        exp_dur = "chất lượng nước luôn là sống còn"
-    elif any(k in combined for k in ["traffic", "giao thông", "camera", "police", "xe"]):
-        exp_dur = "giao thông đô thị nhu cầu vĩnh cửu"
-    elif any(k in combined for k in ["diagnost", "chẩn đoán", "hỏng", "log", "fault", "sensor monitoring"]):
-        exp_dur = "thiết bị phần cứng luôn cần bảo trì"
-    elif any(k in combined for k in ["robot", "weeder", "farm", "crop", "nông nghiệp"]):
+    if is_igaming:
+        exp_dur = "ngành cá cược luôn cần nền tảng"
+    elif is_robotics:
+        exp_dur = "tự động hóa lao động thiếu hụt"
+    elif is_water_aqua:
+        exp_dur = "giám sát môi trường luôn cần thiết"
+    elif is_hardware:
+        exp_dur = "hạ tầng vật lý luôn cần vận hành"
+    elif is_ai_tool:
+        exp_dur = "nhu cầu tối ưu quy trình làm việc"
+    elif is_agtech:
         exp_dur = "nông nghiệp luôn cần tăng năng suất"
-    elif any(k in combined for k in ["energy", "solar", "battery", "năng lượng"]):
+    elif is_energy:
         exp_dur = "nhu cầu điện năng liên tục lâu dài"
     elif dur == 3:
         if "pain_repeat" in opp.get("signal_type", []):
@@ -94,44 +102,46 @@ def generate_score_explanations(opp):
         exp_dur = "nhu cầu thị trường duy trì ổn định"
 
     # 2. AI hỗ trợ (AI Support)
-    if any(k in combined for k in ["water", "aqua", "tôm", "cá", "thủy sản", "nước", "purif", "buoy"]):
-        exp_ai = "AI đọc số, người thay nước"
-    elif any(k in combined for k in ["sensor", "cảm biến", "monitor"]):
-        exp_ai = "AI đọc cảm biến, người xử lý"
-    elif any(k in combined for k in ["traffic", "camera", "giao thông"]):
-        exp_ai = "AI soi lỗi, cảnh sát xử lý"
-    elif any(k in combined for k in ["diagnost", "chẩn đoán", "log", "fault"]):
-        exp_ai = "AI đọc log, kỹ sư sửa chữa"
-    elif any(k in combined for k in ["robot", "weeder", "embodied"]):
-        exp_ai = "AI điều hướng, robot thao tác"
+    if is_igaming:
+        exp_ai = "AI phân tích odds, người ra quyết định"
+    elif is_robotics:
+        exp_ai = "AI điều khiển thị giác, kỹ sư giám sát"
+    elif is_water_aqua:
+        exp_ai = "AI đọc cảm biến, người bảo trì"
+    elif is_hardware:
+        exp_ai = "AI đọc số liệu, kỹ thuật viên xử lý"
+    elif is_ai_tool:
+        exp_ai = "AI tự động hóa tác vụ, người kiểm duyệt"
+    elif is_agtech:
+        exp_ai = "AI phân tích mùa vụ, nông dân thao tác"
+    elif is_energy:
+        exp_ai = "AI điều tiết tải, kỹ sư vận hành"
     elif ai == 3:
-        if "tech_cheap" in opp.get("signal_type", []):
-            exp_ai = "AI mã nguồn mở tối ưu phần cứng"
-        else:
-            exp_ai = "AI cảm biến nhận diện, người xác nhận"
+        exp_ai = "AI cảm biến nhận diện, người xác nhận"
     elif ai == 2:
         exp_ai = "AI phân tích, người ra quyết định"
     else:
         exp_ai = "AI hỗ trợ tự động hóa một phần"
 
     # 3. Đòn bẩy (Leverage)
-    if any(k in combined for k in ["water", "aqua", "tôm", "cá", "thủy sản", "nước", "phao"]):
-        exp_lev = "đúng ngách IoT nước của bạn"
-    elif any(k in combined for k in ["traffic", "camera", "edge ai"]):
-        exp_lev = "đúng thế mạnh camera phần cứng"
-    elif any(k in combined for k in ["sensor", "cảm biến", "hardware", "esp32", "modbus", "rs485"]):
-        exp_lev = "tận dụng bo mạch phần cứng sẵn có"
-    elif any(k in combined for k in ["robot", "weeder", "automation"]):
-        exp_lev = "hợp kỹ năng tự động hóa hệ thống"
+    if is_igaming:
+        exp_lev = "liên quan công việc hiện tại"
+    elif is_robotics:
+        exp_lev = "đúng hướng phần cứng & robotics"
+    elif is_water_aqua or is_hardware:
+        exp_lev = "đúng hướng kinh doanh phần cứng"
+    elif is_ai_tool:
+        exp_lev = "tăng năng suất công việc thực tế"
+    elif is_agtech:
+        exp_lev = "ngành sản xuất lân cận theo dõi"
+    elif is_energy:
+        exp_lev = "ngành hạ tầng năng lượng theo dõi"
     elif lev == 3:
-        if "tech_cheap" in opp.get("signal_type", []):
-            exp_lev = "chi phí công nghệ giảm sâu dễ làm"
-        else:
-            exp_lev = "đúng ngách IoT phần cứng mục tiêu"
+        exp_lev = "đúng hướng kinh doanh phần cứng mục tiêu"
     elif lev == 2:
-        exp_lev = "hợp năng lực lập trình hệ thống"
+        exp_lev = "liên quan năng lực hệ thống hiện tại"
     else:
-        exp_lev = "phù hợp khả năng triển khai thực tế"
+        exp_lev = "theo dõi thông tin ngành lân cận"
 
     return exp_dur, exp_ai, exp_lev
 

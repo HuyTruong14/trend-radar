@@ -98,6 +98,8 @@ TOPIC_LABEL_MAP = {
     "funding": "Funding",
     "aquaculture-iot": "Aquaculture & IoT",
     "aquaculture_iot": "Aquaculture & IoT",
+    "industry-news": "Industry News",
+    "industry_news": "Industry News",
 }
 
 
@@ -604,7 +606,8 @@ def build_aggregated_news(topics_data=None, out_dir=DATA_DIR):
             ("social-buzz.json", "Social Buzz"),
             ("business.json", "Business"),
             ("news.json", "News"),
-            ("igaming.json", "iGaming")
+            ("igaming.json", "iGaming"),
+            ("industry-news.json", "Industry News")
         ]
         for filename, topic_name in candidate_files:
             file_path = os.path.join(out_dir, filename)

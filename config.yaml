@@ -74,6 +74,8 @@ topics:
       - "aquaculture funding"
       - "agtech funding"
       - "iot funding"
+      - "igaming funding"
+      - "robotics funding"
     hackernews: false
     arxiv:
       categories: []
@@ -84,6 +86,44 @@ topics:
       - "https://news.crunchbase.com/feed/"
       - "https://agfundernews.com/feed"
       - "https://igrownews.com/feed/"
+      - "https://sbcnews.co.uk/feed/"
+      - "https://igamingbusiness.com/feed/"
+      - "https://iotbusinessnews.com/feed/"
+      - "https://www.therobotreport.com/feed/"
+      - "https://robohub.org/feed/"
+
+  industry-news:
+    label: "Industry News"
+    keywords:
+      - "aquaculture"
+      - "water quality"
+      - "water sensor"
+      - "iot sensor"
+      - "igaming tech"
+      - "robotics"
+    hackernews: false
+    arxiv:
+      categories: ["cs.AI", "cs.CV", "cs.RO"]
+      keywords:
+        - "aquaculture"
+        - "water quality"
+        - "robotics"
+    github_search:
+      - "aquaculture iot"
+      - "water quality sensor"
+      - "robotics"
+    rss:
+      - "https://www.fishfarmermagazine.com/feed/"
+      - "https://newsletter-en.creamermedia.com/page/aquaculture/feed"
+      - "https://aquageek.substack.com/feed"
+      - "https://thefishsite.com/feed.xml"
+      - "https://sbcnews.co.uk/feed/"
+      - "https://igamingbusiness.com/feed/"
+      - "https://iotbusinessnews.com/feed/"
+      - "https://www.therobotreport.com/feed/"
+      - "https://robohub.org/feed/"
+      - "https://spectrum.ieee.org/rss/robotics/fulltext"
+      - "https://www.hackster.io/news.rss"
 
   aquaculture-iot:
     label: "Aquaculture & IoT"

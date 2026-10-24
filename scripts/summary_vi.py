@@ -157,6 +157,26 @@ def summarize_news_article(title, summary=""):
         return t_clean[:80].strip()
 
     # Domain-specific semantic mappings
+    if any(k in combined for k in ["gambling ban", "lula", "brazil", "gr8_tech"]):
+        return "Báo cáo công nghệ B2B định hình thị trường iGaming Brazil hậu lệnh cấm"
+    if any(k in combined for k in ["illegal gambling", "gambling commission", "consumer voice"]):
+        return "Nghiên cứu hành vi người chơi cá cược và giải pháp quản trị rủi ro trực tuyến"
+    if any(k in combined for k in ["infotainment", "agcom"]):
+        return "Quy định siết chặt kiểm soát nền tảng truyền thông gắn liên kết cá cược"
+    if any(k in combined for k in ["svenska spel", "gambling operator"]):
+        return "Tái cơ cấu thương hiệu và tinh giản mô hình vận hành nhà cái trực tuyến"
+    if any(k in combined for k in ["self-assessment", "dgoj", "player portal"]):
+        return "Ra mắt cổng đánh giá rủi ro người chơi và bảo vệ người dùng cá cược"
+    if any(k in combined for k in ["namibia", "lotteries regulations"]):
+        return "Dự thảo cải cách quy định quản lý cá cược và sổ xố trực tuyến"
+    if any(k in combined for k in ["former afl players", "illegal gambling promotion", "acma"]):
+        return "Cảnh báo xử phạt người có ảnh hưởng quảng bá dịch vụ cá cược trái phép"
+    if any(k in combined for k in ["betting shops", "high streets"]):
+        return "Nghiên cứu vai trò kinh tế của chuỗi điểm cược đối với thị trường bán lẻ"
+    if any(k in combined for k in ["igaming", "sportsbook", "betting platform", "casino tech"]):
+        return f"Công nghệ và giải pháp nền tảng cá cược trực tuyến: {t_clean}"[:80]
+    if any(k in combined for k in ["robotics", "robot report", "humanoid", "drone", "quadruped"]):
+        return f"Ứng dụng robot tự hành và công nghệ điều khiển thông minh: {t_clean}"[:80]
     if "aquaponics" in combined or "water treatment" in combined:
         return "Đột phá công nghệ lọc nước và tuần hoàn aquaponics"
     if "algal bloom" in combined or "red tide" in combined:

@@ -801,6 +801,10 @@
       transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
     /* Highlighted target niche gradients */
+    .fill-igaming {
+      background: linear-gradient(90deg, #ec4899, #db2777);
+      box-shadow: 0 0 10px rgba(236, 72, 153, 0.4);
+    }
     .fill-aquatech {
       background: linear-gradient(90deg, #06b6d4, #0284c7);
       box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
@@ -813,12 +817,22 @@
       background: linear-gradient(90deg, #8b5cf6, #6366f1);
       box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
     }
-    /* Other sectors: clean muted gray */
+    .fill-robotics {
+      background: linear-gradient(90deg, #3b82f6, #2563eb);
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    }
     .fill-ai_infra {
-      background: #475569;
+      background: linear-gradient(90deg, #6366f1, #4f46e5);
+    }
+    .fill-energy {
+      background: linear-gradient(90deg, #eab308, #ca8a04);
+      box-shadow: 0 0 10px rgba(234, 179, 8, 0.3);
     }
     .fill-fintech {
-      background: #64748b;
+      background: linear-gradient(90deg, #f97316, #ea580c);
+    }
+    .fill-healthtech {
+      background: linear-gradient(90deg, #14b8a6, #0d9488);
     }
     .fill-other {
       background: #64748b;
@@ -970,6 +984,11 @@
       font-weight: 500;
       white-space: nowrap;
     }
+    .sector-chip.igaming {
+      background: rgba(236, 72, 153, 0.15);
+      color: #f472b6;
+      border: 1px solid rgba(236, 72, 153, 0.35);
+    }
     .sector-chip.aquatech {
       background: rgba(6, 182, 212, 0.15);
       color: #38bdf8;
@@ -985,15 +1004,30 @@
       color: #c084fc;
       border: 1px solid rgba(139, 92, 246, 0.35);
     }
+    .sector-chip.robotics {
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+    }
     .sector-chip.ai_infra {
-      background: rgba(59, 130, 246, 0.12);
-      color: #93c5fd;
-      border: 1px solid rgba(59, 130, 246, 0.25);
+      background: rgba(99, 102, 241, 0.15);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.35);
+    }
+    .sector-chip.energy {
+      background: rgba(234, 179, 8, 0.15);
+      color: #fde047;
+      border: 1px solid rgba(234, 179, 8, 0.35);
     }
     .sector-chip.fintech {
-      background: rgba(100, 116, 139, 0.15);
-      color: #cbd5e1;
-      border: 1px solid rgba(100, 116, 139, 0.25);
+      background: rgba(249, 115, 22, 0.15);
+      color: #fb923c;
+      border: 1px solid rgba(249, 115, 22, 0.35);
+    }
+    .sector-chip.healthtech {
+      background: rgba(20, 184, 166, 0.15);
+      color: #2dd4bf;
+      border: 1px solid rgba(20, 184, 166, 0.35);
     }
     .sector-chip.other {
       background: rgba(107, 114, 128, 0.15);
@@ -3765,11 +3799,15 @@
     };
 
     const SECTOR_CONFIG = {
-      aquatech: { label: '🐟 Thủy sản & Cảm biến nước', short: 'Thủy sản & Nước', isNiche: true, color: '#06b6d4', fillClass: 'fill-aquatech' },
-      agtech: { label: '🌱 Nông nghiệp & IoT', short: 'Nông nghiệp & IoT', isNiche: true, color: '#10b981', fillClass: 'fill-agtech' },
-      hardware: { label: '🔧 Phần cứng & Robotics', short: 'Phần cứng & Robot', isNiche: true, color: '#8b5cf6', fillClass: 'fill-hardware' },
-      ai_infra: { label: '🤖 Hạ tầng AI', short: 'Hạ tầng AI', isNiche: false, color: '#475569', fillClass: 'fill-ai_infra' },
-      fintech: { label: '💳 Fintech', short: 'Fintech', isNiche: false, color: '#64748b', fillClass: 'fill-fintech' },
+      igaming: { label: '🎮 iGaming & Betting Tech', short: 'iGaming & Betting', isNiche: true, color: '#ec4899', fillClass: 'fill-igaming' },
+      aquatech: { label: '🐟 Thủy sản & Nước', short: 'Thủy sản & Nước', isNiche: true, color: '#06b6d4', fillClass: 'fill-aquatech' },
+      agtech: { label: '🌱 Nông nghiệp', short: 'Nông nghiệp', isNiche: false, color: '#10b981', fillClass: 'fill-agtech' },
+      hardware: { label: '🔧 Phần cứng & IoT', short: 'Phần cứng & IoT', isNiche: true, color: '#8b5cf6', fillClass: 'fill-hardware' },
+      robotics: { label: '🤖 Robotics', short: 'Robotics', isNiche: false, color: '#3b82f6', fillClass: 'fill-robotics' },
+      ai_infra: { label: '🧠 Hạ tầng AI', short: 'Hạ tầng AI', isNiche: false, color: '#6366f1', fillClass: 'fill-ai_infra' },
+      energy: { label: '⚡ Năng lượng', short: 'Năng lượng', isNiche: false, color: '#eab308', fillClass: 'fill-energy' },
+      fintech: { label: '💳 Fintech', short: 'Fintech', isNiche: false, color: '#f97316', fillClass: 'fill-fintech' },
+      healthtech: { label: '🏥 Y tế', short: 'Y tế', isNiche: false, color: '#14b8a6', fillClass: 'fill-healthtech' },
       other: { label: '📦 Khác', short: 'Khác', isNiche: false, color: '#64748b', fillClass: 'fill-other' }
     };
 
@@ -3780,7 +3818,7 @@
         const text = (it.title || '').toLowerCase();
         if (!/raises|series|funding|seed|round|acquires|acquisition|investment/i.test(text)) return false;
       }
-      const hasFundingSource = (it.sources || []).some(s => /agfunder|igrow|crunchbase|venture|techcrunch/i.test((s.url || '') + (s.name || '')));
+      const hasFundingSource = (it.sources || []).some(s => /agfunder|igrow|crunchbase|venture|techcrunch|sbc|igaming|iotbusiness/i.test((s.url || '') + (s.name || '')));
       const amt = getFundingAmount(it);
       const dt = getDealType(it);
       const hasPriceShift = (it.signal_type || []).includes('price_shift');
@@ -3831,12 +3869,20 @@
     function getFundingSector(it) {
       if (it.funding_sector && SECTOR_CONFIG[it.funding_sector]) return it.funding_sector;
       const text = `${it.title || ''} ${it.summary || ''} ${it.summary_vi || ''}`.toLowerCase();
-      if (/aquaculture|fish|shrimp|seafood|marine|ocean|water quality|water sensor|dissolved oxygen|salinity|turbidity|submetering|leak|thủy sản|nuôi tôm|nuôi cá|ao nuôi|rò rỉ nước|waterwatch|purifyx/i.test(text)) return 'aquatech';
-      if (/agtech|agritech|agriculture|farm|farmer|crop|soil|weeder|roboweeder|biological|nông nghiệp|cây trồng|trang trại/i.test(text)) return 'agtech';
-      if (/robot|robotics|humanoid|drone|sensor|hardware|camera|microgrid|solar|thermal energy|storage|phần cứng|thiết bị/i.test(text)) return 'hardware';
-      if (/ai infra|datacenter|data center|gpu|supercomputer|nuclear|reactor|semiconductor/i.test(text)) return 'ai_infra';
-      if (/fintech|insurance|insuretech|bank|payment|checkout|crypto|blockchain/i.test(text)) return 'fintech';
+      if (any(k => text.includes(k), ["igaming", "gambling", "casino", "sportsbook", "betting", "poker", "slot machine", "game platform", "game inventory", "wagering", "odds", "sbc", "igb", "betmgm", "fanduel", "flutter", "pragmatic play", "gr8_tech", "lula", "dgoj", "acma", "cá cược"])) return 'igaming';
+      if (any(k => text.includes(k), ["aquaculture", "fish", "shrimp", "seafood", "marine", "ocean", "water quality", "water sensor", "dissolved oxygen", "salinity", "turbidity", "submetering", "leak", "thủy sản", "nuôi tôm", "nuôi cá", "ao nuôi", "rò rỉ nước", "waterwatch", "purifyx"])) return 'aquatech';
+      if (any(k => text.includes(k), ["agtech", "agritech", "agriculture", "farm", "farmer", "crop", "soil", "weeder", "roboweeder", "biological", "nông nghiệp", "cây trồng", "trang trại", "fertiliser", "fertilizer"])) return 'agtech';
+      if (any(k => text.includes(k), ["robot", "robotics", "humanoid", "drone", "autonomous vehicle", "autonomous mobile", "amr", "agv", "manipulator"])) return 'robotics';
+      if (any(k => text.includes(k), ["sensor", "hardware", "camera", "cảm biến", "thiết bị", "esp32", "microcontroller", "embedded", "iot"])) return 'hardware';
+      if (any(k => text.includes(k), ["ai infra", "datacenter", "data center", "gpu", "supercomputer", "nuclear", "reactor", "semiconductor", "chipmaker", "tenstorrent"])) return 'ai_infra';
+      if (any(k => text.includes(k), ["solar", "microgrid", "grid", "thermal energy", "storage", "battery", "batteries", "hydrogen", "clean energy", "renewable", "năng lượng", "power plant"])) return 'energy';
+      if (any(k => text.includes(k), ["fintech", "insurance", "insuretech", "bank", "banking", "payment", "checkout", "crypto", "blockchain", "lending"])) return 'fintech';
+      if (any(k => text.includes(k), ["health", "biotech", "medical", "pharma", "clinical", "hospital", "patient", "drug", "medicine", "y tế"])) return 'healthtech';
       return 'other';
+    }
+
+    function any(fn, arr) {
+      return arr.some(fn);
     }
 
     function getDealType(it) {
@@ -3921,7 +3967,7 @@
         ? `$${(totalMillions / 1000).toFixed(1)}B+` 
         : `$${Math.round(totalMillions)}M+`;
 
-      const nicheDeals = allFunding.filter(it => ['aquatech', 'agtech', 'hardware'].includes(getFundingSector(it)));
+      const nicheDeals = allFunding.filter(it => ['aquatech', 'hardware', 'igaming'].includes(getFundingSector(it)));
       const maDeals = allFunding.filter(it => getDealType(it) === 'M&A');
 
       // Filter funding items for the table and bar chart
@@ -3977,13 +4023,17 @@
         return FUNDING_FILTERS.sortAsc ? -res : res;
       });
 
-      // Calculate 30-day sector breakdown for Horizontal Bar Chart
+      // Calculate 30-day sector breakdown for Horizontal Bar Chart (10 sectors)
       const sectorCounts = {
+        igaming: 0,
         aquatech: 0,
         agtech: 0,
         hardware: 0,
+        robotics: 0,
         ai_infra: 0,
+        energy: 0,
         fintech: 0,
+        healthtech: 0,
         other: 0
       };
       allFunding.forEach(it => {
@@ -4010,7 +4060,7 @@
             <span class="funding-niche-pill">Act Now &amp; Live Tracking</span>
           </div>
           <p class="funding-hero-subtitle">
-            Hệ thống phân tích dòng vốn mạo hiểm, thương vụ M&amp;A và xu hướng dịch chuyển tài chính. Ưu tiên cảnh báo dòng tiền đổ vào ngách Thủy sản, Nông nghiệp thông minh &amp; Phần cứng/IoT.
+            Hệ thống phân tích dòng vốn mạo hiểm, thương vụ M&amp;A và xu hướng dịch chuyển tài chính toàn thị trường. Nổi bật các thương vụ iGaming, Thủy sản &amp; Phần cứng/IoT.
           </p>
         </div>
 
@@ -4057,14 +4107,18 @@
                 oninput="setFundingFilter('searchQuery', this.value)">
             </div>
 
-            <!-- Ngành -->
+            <!-- Ngành (10 ngành) -->
             <select class="funding-select" onchange="setFundingFilter('sector', this.value)">
               <option value="all" ${FUNDING_FILTERS.sector === 'all' ? 'selected' : ''}>🌐 Tất cả ngành</option>
-              <option value="aquatech" ${FUNDING_FILTERS.sector === 'aquatech' ? 'selected' : ''}>🐟 Thủy sản &amp; Cảm biến nước (Ngách)</option>
-              <option value="agtech" ${FUNDING_FILTERS.sector === 'agtech' ? 'selected' : ''}>🌱 Nông nghiệp &amp; IoT (Ngách)</option>
-              <option value="hardware" ${FUNDING_FILTERS.sector === 'hardware' ? 'selected' : ''}>🔧 Phần cứng &amp; Robotics (Ngách)</option>
-              <option value="ai_infra" ${FUNDING_FILTERS.sector === 'ai_infra' ? 'selected' : ''}>🤖 Hạ tầng AI</option>
+              <option value="igaming" ${FUNDING_FILTERS.sector === 'igaming' ? 'selected' : ''}>🎮 iGaming &amp; Betting Tech (Ngách)</option>
+              <option value="aquatech" ${FUNDING_FILTERS.sector === 'aquatech' ? 'selected' : ''}>🐟 Thủy sản &amp; Nước (Ngách)</option>
+              <option value="agtech" ${FUNDING_FILTERS.sector === 'agtech' ? 'selected' : ''}>🌱 Nông nghiệp</option>
+              <option value="hardware" ${FUNDING_FILTERS.sector === 'hardware' ? 'selected' : ''}>🔧 Phần cứng &amp; IoT (Ngách)</option>
+              <option value="robotics" ${FUNDING_FILTERS.sector === 'robotics' ? 'selected' : ''}>🤖 Robotics</option>
+              <option value="ai_infra" ${FUNDING_FILTERS.sector === 'ai_infra' ? 'selected' : ''}>🧠 Hạ tầng AI</option>
+              <option value="energy" ${FUNDING_FILTERS.sector === 'energy' ? 'selected' : ''}>⚡ Năng lượng</option>
               <option value="fintech" ${FUNDING_FILTERS.sector === 'fintech' ? 'selected' : ''}>💳 Fintech</option>
+              <option value="healthtech" ${FUNDING_FILTERS.sector === 'healthtech' ? 'selected' : ''}>🏥 Y tế</option>
               <option value="other" ${FUNDING_FILTERS.sector === 'other' ? 'selected' : ''}>📦 Khác</option>
             </select>
 
@@ -4112,15 +4166,15 @@
                 <div class="funding-chart-title">
                   <span>📊 Số Deal Theo Ngành</span>
                 </div>
-                <div class="funding-chart-sub">Phân bổ 30 ngày gần nhất. Nhấp vào ngành để lọc bảng.</div>
+                <div class="funding-chart-sub">Phân bổ toàn cảnh 10 ngành thị trường. Nhấp vào ngành để lọc bảng.</div>
               </div>
             </div>
             
             <div class="funding-bar-list">
       `;
 
-      // Render Bar Chart Rows
-      const sectorsList = ['aquatech', 'agtech', 'hardware', 'ai_infra', 'fintech', 'other'];
+      // Render Bar Chart Rows (10 sectors)
+      const sectorsList = ['igaming', 'aquatech', 'agtech', 'hardware', 'robotics', 'ai_infra', 'energy', 'fintech', 'healthtech', 'other'];
       sectorsList.forEach(secKey => {
         const cfg = SECTOR_CONFIG[secKey];
         const count = sectorCounts[secKey] || 0;
@@ -4792,7 +4846,7 @@
       if (activeTopic === 'Dòng Tiền' || activeTopic === 'Funding') {
         const fundingItems = getAllFundingDeals();
         const total = fundingItems.length;
-        const nicheItems = fundingItems.filter(it => ['aquatech', 'agtech', 'hardware'].includes(getFundingSector(it)));
+        const nicheItems = fundingItems.filter(it => ['aquatech', 'hardware', 'igaming'].includes(getFundingSector(it)));
         const maItems = fundingItems.filter(it => getDealType(it) === 'M&A');
         const capitalItems = fundingItems.filter(it => getFundingAmount(it) !== 'N/A');
 

@@ -112,42 +112,23 @@ def is_target_niche(text):
 
 def is_junk_signal(it):
     """
-    Filter out noise TRƯỚC KHI CHẤM:
-    - Tin gambling/iGaming regulatory, licensing, sportsbook
-    - Tin VC funding, IPO, startup valuation, layoffs tracker
-      (NGOẠI TRỪ các thương vụ/dòng tiền đầu tư vào đúng ngách IoT/Aquaculture/Hardware/Sensors)
-    - Quảng cáo sự kiện, podcast, bài leadership chung
+    Phase 11: Lọc rác chỉ dựa trên CHẤT LƯỢNG, không dựa trên NGÀNH.
+    - Loại: sự kiện, podcast, bài self-help/leadership chung, title rác kỹ thuật (< 10 ký tự).
+    - KHÔNG loại: iGaming, gambling, casino, sportsbook, betting, fintech, crypto, VC funding, layoffs.
     """
-    topic = it.get("_topic", "")
-    source = it.get("source", "")
-    url = (it.get("url") or "").lower()
-
-    # 1. iGaming topic / source / domain
-    if topic == "iGaming" or source in ["SBC News", "iGB", "iGaming Business", "sbc", "igb"]:
-        return True
-    if "sbcnews.co.uk" in url or "igamingbusiness.com" in url:
+    title = (it.get("title") or "").strip()
+    if len(title) < 10:
         return True
 
-    text = f"{it.get('title', '')} {it.get('summary', '')} {url}".lower()
+    text = f"{title} {it.get('summary', '')} {it.get('url', '')}".lower()
 
-    # 2. Gambling keywords
-    if any(re.search(pat, text, re.IGNORECASE) for pat in JUNK_IGAMING_PATTERNS):
-        return True
-
-    # 3. Event / Ticket ads & Podcasts
+    # 1. Event / Ticket ads & Podcasts (techcrunch disrupt, early bird, etc.)
     if any(re.search(pat, text, re.IGNORECASE) for pat in JUNK_EVENT_PATTERNS):
         return True
 
-    # 4. Leadership / Self-help / Emotional advice
+    # 2. Leadership / Self-help / Emotional advice
     if any(re.search(pat, text, re.IGNORECASE) for pat in JUNK_LEADERSHIP_PATTERNS):
         return True
-
-    # 5. Pure VC funding, IPO, valuation, layoffs
-    # Chỉ loại tin VC funding/layoffs chung nếu KHÔNG thuộc topic Funding và KHÔNG từ nguồn funding
-    if topic != "Funding" and not is_signal_funding(it):
-        if any(re.search(pat, text, re.IGNORECASE) for pat in JUNK_FUNDING_VC_LAYOFFS_PATTERNS):
-            if not is_target_niche(text):
-                return True
 
     return False
 
@@ -363,61 +344,98 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
         and not is_fintech_generic
     )
 
-    # Other hardware / IoT outside aquaculture
+    # Phase 11: Multi-domain classification & 2-way your_leverage evaluation
+    # Chiều 1: Hướng kinh doanh đang nhắm (IoT / cảm biến / phần cứng / robotics) -> 3
+    # Chiều 2: Công việc hiện tại (iGaming tech, game platform, betting technology) -> 2
+    # Năng suất: AI tools ứng dụng được (automation, agent) -> 2
+    # Lân cận: Nông nghiệp, năng lượng, sản xuất -> 1
+    # Không liên quan: Fintech, crypto, SaaS chung -> 0
+    # Không ứng dụng được: AI paper thuần lý thuyết -> 0
+
+    is_igaming = (
+        any(re.search(pat, primary_text, re.IGNORECASE) for pat in [
+            r"\b(igaming|gambling|betting|sportsbook|casino|poker|slot machine|game platform|odds|game inventory|wagering|slot provider|game aggregator|sports betting|betmgm|fanduel|evolution gaming|flutter|pragmatic play|sbc|sbcnews|igamingbusiness|gr8[-_\s]*tech)\b"
+        ])
+        or any(k in full_text for k in ["sbcnews.co.uk", "igamingbusiness.com", "igaming"])
+    )
+
+    has_robotics = any(re.search(pat, primary_text, re.IGNORECASE) for pat in [
+        r"\b(robot|robotics|humanoid|quadruped|manipulator|actuator|ros2?|embodied ai|autonomous mobile robot|amr|automated guided vehicle|agv|robotic)\b"
+    ])
+
     has_other_hardware = any(re.search(pat, primary_text, re.IGNORECASE) for pat in [
-        r"\b(iot|sensor|sensors|cảm biến|hardware|robot\w*|drone\w*|camera\w*|embedded|microcontroller|esp32|arduino|edge ai|tinyml)\b",
+        r"\b(iot|sensor|sensors|cảm biến|hardware|drone\w*|camera\w*|embedded|microcontroller|esp32|arduino|edge ai|tinyml)\b",
         r"\b(traffic|diagnostics?|machine monitoring|motor|actuator)\b"
     ]) and not is_generic_llm and not is_fintech_generic and not is_industry_generic
+
+    is_applied_ai_tools = (
+        any(re.search(pat, primary_text, re.IGNORECASE) for pat in [
+            r"\b(agent|automation|devtool|developer tool|workflow|cli|copilot|scraper|pipeline|assistant|rag|tool)\b"
+        ])
+        and not is_generic_llm
+        and ("github.com" in primary_text or "tool" in primary_text or "python" in primary_text or "automation" in primary_text)
+    )
+
+    is_adjacent_industry = any(re.search(pat, primary_text, re.IGNORECASE) for pat in [
+        r"\b(agriculture|agtech|farm|farmer|crop|soil|solar|energy|microgrid|thermal energy|grid|battery|manufacturing|factory|fleet|logistics)\b"
+    ])
+
+    is_pure_theory_paper = (
+        ("arxiv.org" in primary_text or "cs.ai" in primary_text or "cs.cv" in primary_text or "cs.cl" in primary_text)
+        and any(re.search(pat, primary_text, re.IGNORECASE) for pat in [
+            r"\b(theoretical|theorem|formal proof|bounds on|convergence rate|generalization bound|survey paper|perspective from|benchmark for)\b",
+            r"\b(novel view synthesis|gaussian splatting|3d reconstruction|ray field)\b"
+        ])
+        and not any(re.search(pat, primary_text, re.IGNORECASE) for pat in [
+            r"\b(tool|framework|code available|open-source|github\.com|library|implementation|system)\b"
+        ])
+    )
 
     # Phase 7: Detect if this item is a funding flow signal
     is_funding = (
         any(re.search(pat, primary_text, re.IGNORECASE) for pat in FUNDING_FLOW_PATTERNS)
-        or any(k in primary_text for k in ["agfunder", "crunchbase", "igrow", "techcrunch.com/category/venture", "aquageek.substack.com"])
+        or any(k in primary_text for k in ["agfunder", "crunchbase", "igrow", "techcrunch.com/category/venture", "aquageek.substack.com", "sbcnews", "igamingbusiness", "iotbusinessnews", "therobotreport", "robohub"])
         or ("price_shift" in signal_types and "github.com" not in primary_text and "arxiv.org" not in primary_text)
     )
 
-    # 1. your_leverage (0–3): User profile match
-    # Vision: Thiết bị IoT giám sát nước / cảm biến ao nuôi (KHÔNG phải ngành thủy sản nói chung)
-    if is_generic_llm or is_fintech_generic:
+    # 1. your_leverage (0–3): 2-way evaluation
+    if is_pure_theory_paper:
         your_leverage = 0
-    elif is_industry_generic:
-        # Quy tắc: Tin về chính sách thủy sản, hợp tác quốc tế, thức ăn cá, giải thưởng ngành, tài chính công ty cá -> your_leverage = 1
-        if has_iot_hardware_primary and any(k in eval_title.lower() for k in ["esp32", "arduino", "sensor", "cảm biến", "water quality", "dissolved oxygen", "salinity", "turbidity", "giám sát nước"]):
-            your_leverage = 3
-        else:
-            your_leverage = 1
-    elif has_iot_hardware:
-        # Quy tắc: Tin về cảm biến, IoT, ESP32, monitor, sensor, water quality, automation cho ao nuôi -> your_leverage = 3
+    elif has_iot_hardware or has_other_hardware or has_robotics:
+        # Chiều 1: IoT cảm biến nước, phần cứng, robotics -> 3 (Đúng hướng kinh doanh)
         your_leverage = 3
-    elif is_funding:
-        # Funding into specific IoT/hardware -> handled by has_iot_hardware (3)
-        # Funding into general agtech/aquaculture without IoT hardware -> 1
-        # General tech/venture funding deals -> 1
+    elif is_igaming:
+        # Chiều 2: iGaming tech, game platform, betting technology -> 2 (Liên quan công việc hiện tại)
+        your_leverage = 2
+    elif is_applied_ai_tools or is_tech_systems:
+        # AI tools ứng dụng được (automation, agent) -> 2 (Dùng được cho productivity)
+        your_leverage = 2
+    elif is_generic_llm or (is_fintech_generic and not is_igaming):
+        # Không liên quan -> 0
+        your_leverage = 0
+    elif is_adjacent_industry or is_industry_generic or is_funding:
+        # Nông nghiệp, năng lượng, sản xuất, funding ngành rộng -> 1 (Ngành lân cận, theo dõi)
         your_leverage = 1
-    elif has_other_hardware:
-        your_leverage = 3
-    elif is_tech_systems:
-        your_leverage = 2
-    elif "tool" in primary_text or "python" in primary_text or "github.com" in primary_text:
-        your_leverage = 2
     else:
         your_leverage = 1
 
-    # 2. durability (0–3): 10-year perennial need
-    # Physical infrastructure, traffic, water, energy, food, aquaculture
+    # 2. durability (0–3): 10-year perennial need (Neutral to industry)
     if is_funding:
-        if is_fintech_generic:
+        if is_fintech_generic and not is_igaming:
             durability = 1
-        elif is_target_niche(primary_text) or has_iot_hardware:
+        elif is_target_niche(primary_text) or has_iot_hardware or has_robotics or is_igaming:
             durability = 3
         else:
             durability = 2
-    elif is_generic_llm:
+    elif is_generic_llm or is_pure_theory_paper:
         durability = 1
     elif bool(re.search(r"\b(water|traffic|energy|solar|grid|soil|health|safety|food|logistics|manufacturing|fleet|aquaculture|fish farm\w*|shrimp|agriculture|agtech)\b", primary_text, re.IGNORECASE)):
         durability = 3
-    elif has_iot_hardware or has_other_hardware or bool(re.search(r"\b(infrastructure|database|security|pipeline|compliance|law|regulation|diagnostics?)\b", primary_text, re.IGNORECASE)):
+    elif has_iot_hardware or has_other_hardware or has_robotics or bool(re.search(r"\b(infrastructure|database|security|pipeline|compliance|law|regulation|diagnostics?)\b", primary_text, re.IGNORECASE)):
         durability = 3 if any(k in primary_text for k in ["water", "traffic", "factory", "industrial", "diagnost", "robot"]) else 2
+    elif is_igaming:
+        # Ngành cá cược / game platform trường tồn, nhu cầu nền tảng và tuân thủ liên tục
+        durability = 3 if any(k in primary_text for k in ["regulation", "compliance", "platform", "b2b", "ban", "law", "regulator", "security"]) else 2
     elif is_tech_systems or "devtool" in primary_text or "developer" in primary_text:
         durability = 2
     else:
@@ -433,21 +451,23 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
     if is_high_engagement and durability < 3:
         durability = min(3, durability + 1)
 
-    # 3. ai_support (0–3): AI handles 80% perception/analysis, human/physical world holds 20% responsibility
-    if is_generic_llm:
+    # 3. ai_support (0–3): AI handles perception/analysis, human/physical world holds responsibility
+    if is_generic_llm or is_pure_theory_paper:
         ai_support = 1
-    elif is_industry_generic and not has_iot_hardware_primary:
-        # Policy, financial results, awards do not involve AI perceptions
+    elif is_industry_generic and not has_iot_hardware_primary and not is_igaming:
         ai_support = 1
     elif is_funding:
-        if has_iot_hardware:
+        if has_iot_hardware or has_robotics:
             ai_support = 3
-        elif is_target_niche(primary_text) or any(k in primary_text for k in ["ai", "robot", "hardware", "chip", "semiconductor", "solar", "drone"]):
+        elif is_target_niche(primary_text) or is_igaming or any(k in primary_text for k in ["ai", "robot", "hardware", "chip", "semiconductor", "solar", "drone"]):
             ai_support = 2
         else:
             ai_support = 1
     elif bool(re.search(r"\b(camera|diagnost\w*|anomaly|monitor|inspection|audit|police|fleet|actuator|sensor)\b", primary_text, re.IGNORECASE)):
         ai_support = 3  # Sensor/camera detection -> human operator/technician confirms and acts
+    elif is_igaming:
+        # AI phân tích odds, phát hiện gian lận, mô hình hóa rủi ro -> chuyên viên/người ra quyết định
+        ai_support = 2
     elif bool(re.search(r"\b(robot|robotics|embodied|copilot|decision support|synthes\w*|workflow|assistant)\b", primary_text, re.IGNORECASE)):
         ai_support = 2
     elif "ai" in primary_text or "model" in primary_text:
@@ -616,25 +636,56 @@ def determine_deal_type(title, summary="", signal_types=None, summary_vi=""):
 
 def determine_funding_sector(title, summary="", summary_vi=""):
     """
-    Classify funding sector into 6 standard categories:
-    - aquatech: 🐟 Thủy sản & Cảm biến nước
-    - agtech: 🌱 Nông nghiệp & IoT
-    - hardware: 🔧 Phần cứng & Robotics
-    - ai_infra: 🤖 Hạ tầng AI
+    Phase 11: Classify funding sector into 10 standard categories:
+    - igaming: 🎮 iGaming & Betting Tech
+    - aquatech: 🐟 Thủy sản & Nước
+    - agtech: 🌱 Nông nghiệp
+    - hardware: 🔧 Phần cứng & IoT
+    - robotics: 🤖 Robotics
+    - ai_infra: 🧠 Hạ tầng AI
+    - energy: ⚡ Năng lượng
     - fintech: 💳 Fintech
+    - healthtech: 🏥 Y tế
     - other: 📦 Khác
     """
     text = f"{title} {summary or ''} {summary_vi or ''}".lower()
+
+    # 1. iGaming
+    if any(k in text for k in ["igaming", "gambling", "casino", "sportsbook", "betting", "poker", "slot machine", "game platform", "game inventory", "wagering", "odds", "sbc", "igb", "betmgm", "fanduel", "flutter", "pragmatic play", "gr8_tech", "lula", "dgoj", "acma", "cá cược"]):
+        return "igaming"
+
+    # 2. Aquatech
     if any(k in text for k in ["aquaculture", "fish", "shrimp", "seafood", "marine", "ocean", "water quality", "water sensor", "dissolved oxygen", "salinity", "turbidity", "submetering", "leak detection", "water treatment", "thủy sản", "nuôi tôm", "nuôi cá", "ao nuôi", "rò rỉ nước", "waterwatch", "purifyx"]):
         return "aquatech"
-    if any(k in text for k in ["agtech", "agritech", "agriculture", "farm", "farmer", "crop", "soil", "weeder", "roboweeder", "biological", "nông nghiệp", "cây trồng", "trang trại", "harvest", "dairy", "livestock"]):
+
+    # 3. Agtech
+    if any(k in text for k in ["agtech", "agritech", "agriculture", "farm", "farmer", "crop", "soil", "weeder", "roboweeder", "biological", "nông nghiệp", "cây trồng", "trang trại", "harvest", "dairy", "livestock", "fertiliser", "fertilizer"]):
         return "agtech"
-    if any(k in text for k in ["robot", "robotics", "humanoid", "drone", "sensor", "hardware", "camera", "microgrid", "solar", "thermal energy", "storage", "phần cứng", "thiết bị", "laser", "autonomous vehicle"]):
+
+    # 4. Robotics
+    if any(k in text for k in ["robot", "robotics", "humanoid", "quadruped", "manipulator", "drone", "autonomous vehicle", "autonomous mobile", "amr", "agv", "robo"]):
+        return "robotics"
+
+    # 5. Hardware & IoT
+    if any(k in text for k in ["sensor", "sensors", "hardware", "camera", "cảm biến", "thiết bị", "esp32", "microcontroller", "embedded", "iot", "laser", "semiconductor device"]):
         return "hardware"
-    if any(k in text for k in ["ai infra", "datacenter", "data center", "gpu", "supercomputer", "nuclear", "reactor", "semiconductor", "chipmaker"]):
+
+    # 6. AI Infra
+    if any(k in text for k in ["ai infra", "datacenter", "data center", "gpu", "supercomputer", "nuclear", "reactor", "semiconductor", "chipmaker", "tenstorrent"]):
         return "ai_infra"
-    if any(k in text for k in ["fintech", "insurance", "insuretech", "bank", "banking", "payment", "checkout", "crypto", "blockchain", "lending"]):
+
+    # 7. Energy
+    if any(k in text for k in ["solar", "microgrid", "grid", "thermal energy", "storage", "battery", "batteries", "hydrogen", "clean energy", "renewable", "năng lượng", "power plant", "wind turbine"]):
+        return "energy"
+
+    # 8. Fintech
+    if any(k in text for k in ["fintech", "insurance", "insuretech", "bank", "banking", "payment", "checkout", "crypto", "blockchain", "lending", "credit", "wealth"]):
         return "fintech"
+
+    # 9. Healthtech
+    if any(k in text for k in ["health", "biotech", "medical", "pharma", "clinical", "hospital", "patient", "drug", "medicine", "y tế", "genomic", "therapy"]):
+        return "healthtech"
+
     return "other"
 
 
@@ -681,7 +732,7 @@ def load_raw_items():
     items_map = {}
 
     # Gather topic metadata (matched_keyword, meta, category) from topic files
-    topic_files = ["ai-tech.json", "funding.json", "aquaculture-iot.json", "social-buzz.json", "business.json", "igaming.json"]
+    topic_files = ["ai-tech.json", "funding.json", "aquaculture-iot.json", "industry-news.json", "social-buzz.json", "business.json", "igaming.json"]
     meta_by_url = {}
     for tf in topic_files:
         fpath = os.path.join(DATA_DIR, tf)
