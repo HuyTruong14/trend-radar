@@ -667,6 +667,9 @@ def main():
 
     # ==================== STEP 3: SCORING & OUTPUT FILTERING ====================
     opportunities = []
+    promoted_items = []
+    STAGE_ORDER = {"drop": 0, "watch": 1, "research": 2, "build_ready": 3}
+
 
     for group in final_groups:
         primary = group[0]
@@ -796,6 +799,20 @@ def main():
         }
         opportunities.append(opp_record)
 
+        # Phase 5B: Track stage promotion (Template 3)
+        if prev_opp:
+            old_stage = prev_opp.get("stage", "watch")
+            old_total = prev_opp.get("total", 0)
+            if STAGE_ORDER.get(stage, 0) > STAGE_ORDER.get(old_stage, 0):
+                promoted_items.append({
+                    "opp": opp_record,
+                    "old_stage": old_stage,
+                    "old_total": old_total,
+                    "new_stage": stage,
+                    "new_total": total
+                })
+
+
     # ==================== PHASE 6: HISTORICAL OPPORTUNITY RETENTION & AGING ====================
     # Retain opportunities from previous runs that were not captured in today's fresh batch.
     # - If inactive > 7 days -> automatically mark as 'fading' (xu hướng đang tắt)
@@ -866,6 +883,19 @@ def main():
         opportunities.append(aged_opp)
         retained_count += 1
 
+        # Phase 5B: Track stage promotion for historical re-scored items
+        old_stage = prev_opp.get("stage", "watch")
+        old_total = prev_opp.get("total", 0)
+        if STAGE_ORDER.get(aged_opp["stage"], 0) > STAGE_ORDER.get(old_stage, 0):
+            promoted_items.append({
+                "opp": aged_opp,
+                "old_stage": old_stage,
+                "old_total": old_total,
+                "new_stage": aged_opp["stage"],
+                "new_total": aged_total
+            })
+
+
     if retained_count > 0:
         print(f"[score] [Phase 6] Retained {retained_count} active historical opportunities ({faded_count} marked fading).")
 
@@ -924,29 +954,15 @@ def main():
         print(f"      Types: {', '.join(o['signal_type'])} | Scores: {o['scores']}")
         print(f"      Sources: {[s['name'] for s in o['sources']]}")
 
-    # ==================== PHASE 5: TELEGRAM ALERTS (ACT NOW / SCORE 9 ONLY) ====================
+    # ==================== PHASE 5B: TELEGRAM ALERTS (3 TEMPLATES) ====================
     is_dry_run = "--dry-run" in sys.argv or "--dry-run-telegram" in sys.argv
     is_test_mode = "--test-telegram" in sys.argv
 
     if is_test_mode:
-        print("\n[score] Running in --test-telegram mode...")
-        # Demo score 9 opportunity to verify Phase 5 formatting and delivery
-        test_opp = {
-            "id": "opp_test_actnow_sample",
-            "title": "Hệ thống AI Camera & Cảm biến LiDAR giám sát giao thông đô thị và chẩn đoán hạ tầng vật lý",
-            "summary": "Tín hiệu tổng hợp từ 2 nguồn độc lập đạt điểm tuyệt đối 9/9. Nhu cầu vật lý trường tồn, thay thế 80% thời gian giám sát thủ công.",
-            "total": 9,
-            "stage": "build_ready",
-            "signal_type": ["supply_gap", "tech_cheap"],
-            "sources": [
-                {"name": "Báo Giao Thông", "url": "https://baogiaothong.vn", "date": today_str},
-                {"name": "IEEE Sensors", "url": "https://ieeexplore.ieee.org", "date": today_str}
-            ],
-            "source_count": 2
-        }
-        send_actnow_alerts([test_opp], dry_run=is_dry_run)
+        run_telegram_tests(opportunities, dry_run=is_dry_run)
     else:
-        send_actnow_alerts(opportunities, dry_run=is_dry_run)
+        send_phase5_alerts(opportunities, promoted_items, today_str, dry_run=is_dry_run)
+
 
 
 # ==================== PHASE 6 HELPER FUNCTIONS (AUTOMATIC VELOCITY) ====================
@@ -992,130 +1008,270 @@ def compute_velocity(first_seen_str, last_seen_str, history_dates, source_count,
     return "steady"
 
 
-# ==================== PHASE 5 HELPER FUNCTIONS ====================
+# ==================== PHASE 5B HELPER FUNCTIONS (3 TEMPLATES) ====================
 
-SIGNAL_TYPE_LABELS = {
-    "pain_repeat": "Than phiền lặp lại",
-    "price_shift": "Biến động giá",
-    "supply_gap": "Thiếu hụt cung / Luật",
-    "tech_cheap": "Công nghệ / IoT rẻ"
-}
-
-
-def load_sent_opportunities():
-    """Load set of opportunity IDs that have already been alerted to Telegram."""
+def load_sent_state():
+    """
+    Load tracking state for sent Telegram messages.
+    Supports backwards compatibility with legacy sent_ids list.
+    """
+    default_state = {
+        "sent_build_ready": set(),
+        "sent_research_ids": set(),
+        "sent_promotions": set(),
+        "last_research_digest_date": None
+    }
     if os.path.exists(SENT_OPPORTUNITIES_FILE):
         try:
             with open(SENT_OPPORTUNITIES_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 if isinstance(data, list):
-                    return set(data)
-                elif isinstance(data, dict) and "sent_ids" in data:
-                    return set(data["sent_ids"])
+                    default_state["sent_build_ready"] = set(data)
+                elif isinstance(data, dict):
+                    default_state["sent_build_ready"] = set(data.get("sent_build_ready") or data.get("sent_ids") or [])
+                    default_state["sent_research_ids"] = set(data.get("sent_research_ids") or [])
+                    default_state["sent_promotions"] = set(data.get("sent_promotions") or [])
+                    default_state["last_research_digest_date"] = data.get("last_research_digest_date")
         except Exception as e:
-            print(f"[score] Note: could not load sent opportunities history: {e}")
-    return set()
+            print(f"[score] Note: could not load sent state: {e}")
+    return default_state
 
 
-def save_sent_opportunities(sent_ids):
-    """Save set of alerted opportunity IDs to avoid duplicate Telegram notifications."""
+def save_sent_state(state):
+    """Save updated tracking state into sent_opportunities.json."""
     try:
         os.makedirs(DATA_DIR, exist_ok=True)
         with open(SENT_OPPORTUNITIES_FILE, "w", encoding="utf-8") as f:
             json.dump({
-                "sent_ids": sorted(list(sent_ids)),
+                "sent_ids": sorted(list(state["sent_build_ready"])),  # legacy compatibility
+                "sent_build_ready": sorted(list(state["sent_build_ready"])),
+                "sent_research_ids": sorted(list(state["sent_research_ids"])),
+                "sent_promotions": sorted(list(state["sent_promotions"])),
+                "last_research_digest_date": state.get("last_research_digest_date"),
                 "updated_at": datetime.now(timezone.utc).isoformat()
             }, f, ensure_ascii=False, indent=2)
     except Exception as e:
-        print(f"[score] Warning: could not save sent opportunities: {e}")
+        print(f"[score] Warning: could not save sent state: {e}")
 
 
-def format_telegram_actnow_message(opp):
+def send_phase5_alerts(opportunities, promoted_items, today_str, dry_run=False):
     """
-    Format Telegram alert message according to Phase 5 spec:
-    🔴 CƠ HỘI MỚI (9/9) — Act now
-    [title]
-    [summary]
-    Loại: [signal_type]
-    Nguồn: [source_count] nguồn xác nhận
-    → Tuần này: đi hỏi 3 người thật
+    Phase 5B: Dispatch Telegram alerts according to 3 distinct templates:
+    1. Template 1: Build-ready (total = 9) -> gửi riêng từng item
+    2. Template 2: Research (total 7-8) -> gộp 1 tin/ngày (im lặng nếu không có research mới)
+    3. Template 3: Tăng hạng -> gửi riêng từng item (watch -> research, research -> build_ready)
     """
-    title = (opp.get("title") or "").strip()
-    summary = (opp.get("summary") or "").strip()
-    signal_types = opp.get("signal_type") or []
-    type_str = ", ".join([SIGNAL_TYPE_LABELS.get(st, st) for st in signal_types]) or "Đa nguồn"
-    source_count = opp.get("source_count", 1)
+    if not notify:
+        print("[score] [Phase 5B] notify module is not available.")
+        return 0
 
-    sources = opp.get("sources") or []
-    primary_url = sources[0].get("url") if sources else opp.get("url", "")
-    url_line = f"\n🔗 {primary_url}" if primary_url else ""
+    state = load_sent_state()
+    state_changed = False
+    alerts_sent = 0
 
-    msg = (
-        f"🔴 CƠ HỘI MỚI (9/9) — Act now\n"
-        f"{title}\n"
-        f"{summary}\n"
-        f"Loại: {type_str}\n"
-        f"Nguồn: {source_count} nguồn xác nhận\n"
-        f"→ Tuần này: đi hỏi 3 người thật{url_line}"
-    )
-    return msg
-
-
-def send_actnow_alerts(opportunities, dry_run=False):
-    """
-    Phase 5: Filter Telegram alerts.
-    - Only send opportunities with total == 9 (build_ready).
-    - Send each opportunity ID exactly once.
-    - Never send research (7-8) or watch (4-6).
-    """
-    # 1. Filter: total == 9 or stage == 'build_ready'
-    act_now_candidates = [
+    # ==================== 1. TEMPLATE 1: BUILD-READY (9/9) ====================
+    build_ready_candidates = [
         opp for opp in opportunities
         if (opp.get("total") or 0) >= 9 or opp.get("stage") == "build_ready"
     ]
-
-    if not act_now_candidates:
-        print("\n[score] [Phase 5] No score 9/9 (build_ready) opportunities to alert via Telegram this run.")
-        print("[score] [Phase 5] Research (7-8) and Watch (4-6) are kept in dashboard only (no Telegram spam).")
-        return 0
-
-    sent_ids = load_sent_opportunities()
-    new_sent_count = 0
-
-    for opp in act_now_candidates:
+    for opp in build_ready_candidates:
         opp_id = opp.get("id")
-        if not opp_id:
+        if not opp_id or opp_id in state["sent_build_ready"]:
             continue
 
-        if opp_id in sent_ids:
-            print(f"[score] [Phase 5] Skipping already alerted opportunity ID: {opp_id} ({opp.get('title')[:40]}...)")
-            continue
-
-        msg = format_telegram_actnow_message(opp)
-        print(f"\n[score] [Phase 5] Preparing Telegram alert for Act Now opportunity: {opp.get('title')}")
-
+        msg = notify.format_template1_build_ready(opp)
+        print(f"\n[score] [Phase 5B] Preparing Template 1 (Build-Ready 9/9): {opp.get('title')[:60]}...")
         if dry_run:
-            print("[score] [Phase 5] [DRY RUN] Would send Telegram message:\n---")
-            print(msg)
-            print("---\n")
-            sent_ids.add(opp_id)
-            new_sent_count += 1
-        elif notify:
-            success = notify.send_message(msg)
-            if success:
-                print(f"[score] [Phase 5] Successfully sent Telegram alert for: {opp_id}")
-                sent_ids.add(opp_id)
-                new_sent_count += 1
-            else:
-                print(f"[score] [Phase 5] Telegram send returned False or skipped (check credentials).")
+            print("[score] [DRY RUN] Message:\n" + ("=" * 45) + f"\n{msg}\n" + ("=" * 45))
+            state["sent_build_ready"].add(opp_id)
+            state_changed = True
+            alerts_sent += 1
         else:
-            print("[score] [Phase 5] notify module not available.")
+            if notify.send_message(msg):
+                print(f"[score] [Phase 5B] Successfully sent Template 1 for: {opp_id}")
+                state["sent_build_ready"].add(opp_id)
+                state_changed = True
+                alerts_sent += 1
+            else:
+                print(f"[score] [Phase 5B] Failed to send Template 1 for: {opp_id}")
 
-    if new_sent_count > 0:
-        save_sent_opportunities(sent_ids)
-        print(f"[score] [Phase 5] Saved {len(sent_ids)} sent opportunity IDs to {SENT_OPPORTUNITIES_FILE}")
+    # ==================== 2. TEMPLATE 2: RESEARCH (7-8/9) GỘP 1 TIN/NGÀY ====================
+    # Gửi sau mỗi lần pipeline chạy xong. Nếu hôm nay KHÔNG có research mới -> KHÔNG gửi tin này.
+    all_research_candidates = [
+        opp for opp in opportunities
+        if opp.get("stage") == "research" or (opp.get("total") in (7, 8) and opp.get("stage") != "build_ready")
+    ]
 
-    return new_sent_count
+    new_research_candidates = [
+        opp for opp in all_research_candidates
+        if opp.get("id") and opp["id"] not in state["sent_research_ids"]
+    ]
+
+    if not new_research_candidates:
+        print("\n[score] [Phase 5B] Không có cơ hội research mới hôm nay -> Telegram im lặng (không gửi tin rác).")
+    else:
+        try:
+            today_dt = datetime.strptime(today_str, "%Y-%m-%d")
+            today_display = today_dt.strftime("%d/%m/%Y")
+        except Exception:
+            today_display = datetime.now(timezone.utc).strftime("%d/%m/%Y")
+
+        digest_msg = notify.format_template2_research_digest(new_research_candidates, date_str=today_display)
+        if digest_msg:
+            print(f"\n[score] [Phase 5B] Preparing Template 2 (Research Digest, {len(new_research_candidates)} items)...")
+            if dry_run:
+                print("[score] [DRY RUN] Message:\n" + ("=" * 45) + f"\n{digest_msg}\n" + ("=" * 45))
+                for opp in new_research_candidates:
+                    state["sent_research_ids"].add(opp["id"])
+                state["last_research_digest_date"] = today_str
+                state_changed = True
+                alerts_sent += 1
+            else:
+                if notify.send_message(digest_msg):
+                    print(f"[score] [Phase 5B] Successfully sent Template 2 daily research digest.")
+                    for opp in new_research_candidates:
+                        state["sent_research_ids"].add(opp["id"])
+                    state["last_research_digest_date"] = today_str
+                    state_changed = True
+                    alerts_sent += 1
+                else:
+                    print(f"[score] [Phase 5B] Failed to send Template 2 digest.")
+
+    # ==================== 3. TEMPLATE 3: TĂNG HẠNG (PROMOTION) ====================
+    # Chỉ gửi khi 1 item đã tồn tại từ trước và vừa tăng stage (watch -> research, hoặc research -> build_ready)
+    for promo in promoted_items:
+        opp = promo["opp"]
+        opp_id = opp.get("id")
+        old_stage = promo["old_stage"]
+        new_stage = promo["new_stage"]
+        old_total = promo["old_total"]
+        new_total = promo["new_total"]
+
+        promo_key = f"{opp_id}:{old_stage}->{new_stage}"
+        if not opp_id or promo_key in state["sent_promotions"]:
+            continue
+
+        msg = notify.format_template3_promotion(
+            opp=opp,
+            old_stage=old_stage,
+            old_total=old_total,
+            new_stage=new_stage,
+            new_total=new_total
+        )
+        print(f"\n[score] [Phase 5B] Preparing Template 3 (Promotion: {old_stage} -> {new_stage}): {opp.get('title')[:60]}...")
+        if dry_run:
+            print("[score] [DRY RUN] Message:\n" + ("=" * 45) + f"\n{msg}\n" + ("=" * 45))
+            state["sent_promotions"].add(promo_key)
+            state_changed = True
+            alerts_sent += 1
+        else:
+            if notify.send_message(msg):
+                print(f"[score] [Phase 5B] Successfully sent Template 3 promotion for: {promo_key}")
+                state["sent_promotions"].add(promo_key)
+                state_changed = True
+                alerts_sent += 1
+            else:
+                print(f"[score] [Phase 5B] Failed to send Template 3 promotion for: {promo_key}")
+
+    if state_changed:
+        save_sent_state(state)
+
+    return alerts_sent
+
+
+def run_telegram_tests(opportunities, dry_run=False):
+    """
+    Run dedicated tests to verify all 4 acceptance criteria for Phase 5B:
+    1. Test Template 1 (Build-ready 9/9)
+    2. Test Template 2 (Research digest)
+    3. Test Template 2 silence when 0 new research items
+    4. Test Template 3 (Promotion)
+    """
+    print("\n" + ("#" * 60))
+    print("[score] [Phase 5B] RUNNING TELEGRAM TEMPLATE TESTS")
+    print(("#" * 60) + "\n")
+
+    # Sample build-ready item (Nuôi tôm / nước)
+    build_ready_sample = {
+        "id": "opp_test_br_001",
+        "title": "Hệ thống phao cảm biến đa chỉ số nước hồ nuôi tôm (DO, pH, độ mặn, nhiệt độ)",
+        "summary": "Bộ thiết bị giám sát liên tục chất lượng nước ao nuôi tôm, cảnh báo sớm biến động oxy hòa tan và độ mặn qua LoRaWAN.",
+        "summary_vi": "Cụm phao quan trắc tự động các chỉ số nước thiết yếu cho ao tôm thâm canh.",
+        "signal_type": ["supply_gap", "tech_cheap"],
+        "scores": {"durability": 3, "ai_support": 3, "your_leverage": 3},
+        "multiplier": 1.0,
+        "total": 9,
+        "stage": "build_ready",
+        "velocity": "rising",
+        "source_count": 2,
+        "sources": [
+            {"name": "Fish Farmer Magazine", "url": "https://www.fishfarmermagazine.com/news/water-sensors-2026", "date": "2026-10-24"},
+            {"name": "AgFunder News", "url": "https://agfundernews.com/aquaculture-iot-sensors", "date": "2026-10-24"}
+        ]
+    }
+
+    # 1. Test Template 1
+    print("--- [TEST 1/4] TEMPLATE 1: BUILD-READY (9/9) ---")
+    msg1 = notify.format_template1_build_ready(build_ready_sample)
+    print(msg1)
+    if not dry_run and notify:
+        notify.send_message(msg1)
+
+    # 2. Test Template 2
+    print("\n--- [TEST 2/4] TEMPLATE 2: RESEARCH DIGEST (CÓ ITEM) ---")
+    research_samples = [
+        {
+            "id": "opp_test_res_001",
+            "title": "Cảm biến quang học đo độ đục và vi tảo thời gian thực",
+            "summary_vi": "Cảm biến quang phổ giá rẻ đo mật độ tảo và độ đục trong nuôi trồng thủy sản.",
+            "signal_type": ["tech_cheap"],
+            "total": 8
+        },
+        {
+            "id": "opp_test_res_002",
+            "title": "Mô hình Edge AI phát hiện sớm tôm bỏ ăn qua âm thanh thủy âm",
+            "summary_vi": "Thiết bị hydrophone lắng nghe âm thanh tôm bắt mồi để điều tiết thức ăn tự động.",
+            "signal_type": ["pain_repeat", "tech_cheap"],
+            "total": 7
+        }
+    ]
+    msg2 = notify.format_template2_research_digest(research_samples, date_str="24/10/2026")
+    print(msg2)
+    if not dry_run and notify:
+        notify.send_message(msg2)
+
+    # 3. Test Template 2 Silence
+    print("\n--- [TEST 3/4] TEMPLATE 2: RESEARCH DIGEST (KHÔNG CÓ ITEM -> IM LẶNG) ---")
+    msg2_empty = notify.format_template2_research_digest([])
+    if msg2_empty is None:
+        print("✅ SUCCESS: Khi danh sách research rỗng, hàm trả về None -> Telegram hoàn toàn im lặng (không gửi tin nhắn).")
+    else:
+        print("❌ FAIL: Hàm không trả về None khi danh sách rỗng.")
+
+    # 4. Test Template 3
+    print("\n--- [TEST 4/4] TEMPLATE 3: TĂNG HẠNG (PROMOTION) ---")
+    promo_sample = {
+        "id": "opp_test_promo_001",
+        "title": "Mạng cảm biến LoRaWAN quan trắc xâm nhập mặn vùng đồng bằng sông Cửu Long",
+        "summary_vi": "Trạm cảm biến quan trắc độ mặn từ xa cảnh báo xâm nhập mặn phục vụ tưới tiêu nông nghiệp.",
+        "signal_type": ["supply_gap", "price_shift"],
+        "sources": [{"name": "Báo Nông Nghiệp", "url": "https://nongnghiep.vn/xuat-hien-xam-nhap-man-som"}]
+    }
+    msg3 = notify.format_template3_promotion(
+        opp=promo_sample,
+        old_stage="watch",
+        old_total=6,
+        new_stage="research",
+        new_total=8
+    )
+    print(msg3)
+    if not dry_run and notify:
+        notify.send_message(msg3)
+
+    print("\n" + ("#" * 60))
+    print("[score] [Phase 5B] COMPLETED ALL TELEGRAM TESTS")
+    print(("#" * 60) + "\n")
+
 
 
 if __name__ == "__main__":
