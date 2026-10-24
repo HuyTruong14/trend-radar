@@ -95,6 +95,9 @@ TOPIC_LABEL_MAP = {
     "igaming": "iGaming",
     "business": "Business",
     "news": "News",
+    "funding": "Funding",
+    "aquaculture-iot": "Aquaculture & IoT",
+    "aquaculture_iot": "Aquaculture & IoT",
 }
 
 
@@ -591,9 +594,11 @@ def build_aggregated_news(topics_data=None, out_dir=DATA_DIR):
     if not collected_topics:
         candidate_files = [
             ("ai-tech.json", "AI/Tech"),
-            ("igaming.json", "iGaming"),
+            ("funding.json", "Funding"),
+            ("aquaculture-iot.json", "Aquaculture & IoT"),
             ("business.json", "Business"),
-            ("news.json", "News")
+            ("news.json", "News"),
+            ("igaming.json", "iGaming")
         ]
         for filename, topic_name in candidate_files:
             file_path = os.path.join(out_dir, filename)
@@ -615,8 +620,8 @@ def build_aggregated_news(topics_data=None, out_dir=DATA_DIR):
     all_topic_names.update(reddit_items_by_topic.keys())
     all_topic_names.update(twitter_items_by_topic.keys())
     all_topic_names.update(quora_items_by_topic.keys())
-    # Ensure canonical topic order: AI/Tech, iGaming, Business, News
-    ordered_topics = ["AI/Tech", "iGaming", "Business", "News"]
+    # Ensure canonical topic order: AI/Tech, Funding, Aquaculture & IoT, Business, News, iGaming
+    ordered_topics = ["AI/Tech", "Funding", "Aquaculture & IoT", "Business", "News", "iGaming"]
     for extra in sorted(all_topic_names):
         if extra not in ordered_topics:
             ordered_topics.append(extra)
@@ -652,7 +657,18 @@ def build_aggregated_news(topics_data=None, out_dir=DATA_DIR):
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
 
-    print(f"Aggregated {len(output_data['topics'])} topics into {out_file}")
+    # Write flat list to docs/data/signals.json for Opportunity Radar / downstream consumers
+    all_signals = []
+    for topic_name, topic_data in output_data.get("topics", {}).items():
+        for item in topic_data.get("items", []):
+            item_copy = dict(item)
+            item_copy["topic"] = topic_name
+            all_signals.append(item_copy)
+    signals_file = os.path.join(out_dir, "signals.json")
+    with open(signals_file, "w", encoding="utf-8") as f:
+        json.dump(all_signals, f, indent=2, ensure_ascii=False)
+
+    print(f"Aggregated {len(output_data['topics'])} topics into {out_file} and exported {len(all_signals)} signals to {signals_file}")
     return output_data
 
 

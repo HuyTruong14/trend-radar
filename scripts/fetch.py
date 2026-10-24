@@ -32,7 +32,7 @@ if SCRIPTS_DIR not in sys.path:
 CONFIG_PATH = os.path.join(ROOT, "config.yaml")
 OUT_DIR = os.path.join(ROOT, "docs", "data")
 HISTORY_DIR = os.path.join(OUT_DIR, "history")
-HEADERS = {"User-Agent": "trend-radar-bot/1.0 (personal research tool)"}
+HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 (trend-radar-bot/1.0)"}
 TIMEOUT = 20
 
 def _load_env():
@@ -206,9 +206,15 @@ def fetch_rss(feed_urls, max_items):
     items = []
     for feed_url in feed_urls:
         r = safe_get(feed_url)
+        if not r and "thefishsite.com" in feed_url:
+            r = safe_get("https://thefishsite.com/feed.xml")
         if not r:
             continue
         parsed = feedparser.parse(r.content)
+        if len(parsed.entries) == 0 and "thefishsite.com" in feed_url:
+            r_alt = safe_get("https://thefishsite.com/feed.xml")
+            if r_alt:
+                parsed = feedparser.parse(r_alt.content)
         # Some feeds (e.g. HBR) only give entry links relative to the
         # site's homepage, not to the feed URL itself — resolve against
         # the feed's own <link> when present, falling back to the feed URL.

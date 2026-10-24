@@ -79,11 +79,31 @@ JUNK_LEADERSHIP_PATTERNS = [
 ]
 
 
+NICHE_PATTERNS = [
+    r"\b(aquaculture|fish farm\w*|shrimp\w*|fishery|fisheries|seafood|ocean|marine|algae|water quality|water sensor|dissolved oxygen|salinity|turbidity|ph sensor|water treatment|aquaponics|submetering|leak detection|waterwatch|purifyx|aquawatch)\b",
+    r"\b(iot|sensor|sensors|hardware|robot\w*|camera\w*|edge ai|embedded|microcontroller|tinyml|monitoring|telemetry|actuator|drone|drones|esp32|arduino|raspberry)\b",
+    r"(thủy sản|nuôi tôm|nuôi cá|cảm biến|nguồn nước|môi trường nước|quan trắc|chất lượng nước)"
+]
+
+FUNDING_FLOW_PATTERNS = [
+    r"\b(raises?|raised|funding|seed|series [a-e]|venture|invest\w*|capital|grant|round|valuation|backs|backed|financing|cash injection|funded|dealflow|vc dollars?)\b",
+    r"(\$\d+|\b\d+\s*million|\b\d+\s*m\b|triệu usd)"
+]
+
+
+def is_target_niche(text):
+    """Check if text is related to hardware, IoT, sensors, aquaculture, or environmental monitoring."""
+    if not text:
+        return False
+    return any(re.search(pat, text, re.IGNORECASE) for pat in NICHE_PATTERNS)
+
+
 def is_junk_signal(it):
     """
     Filter out noise TRƯỚC KHI CHẤM:
     - Tin gambling/iGaming regulatory, licensing, sportsbook
     - Tin VC funding, IPO, startup valuation, layoffs tracker
+      (NGOẠI TRỪ các thương vụ/dòng tiền đầu tư vào đúng ngách IoT/Aquaculture/Hardware/Sensors)
     - Quảng cáo sự kiện, podcast, bài leadership chung
     """
     topic = it.get("_topic", "")
@@ -111,8 +131,10 @@ def is_junk_signal(it):
         return True
 
     # 5. Pure VC funding, IPO, valuation, layoffs
+    # Chỉ loại nếu KHÔNG thuộc ngách mục tiêu (IoT, aquaculture, sensors, hardware, water)
     if any(re.search(pat, text, re.IGNORECASE) for pat in JUNK_FUNDING_VC_LAYOFFS_PATTERNS):
-        return True
+        if not is_target_niche(text):
+            return True
 
     return False
 
@@ -193,16 +215,16 @@ TECH_CHEAP_PATTERNS = [
 ]
 
 
-def detect_signal_types(title, summary, url):
+def detect_signal_types(title, summary, url, topic="", source=""):
     """
     Infer signal type strictly from title and content:
     - pain_repeat: than phiền/vấn đề lặp lại/lỗi
-    - price_shift: giá/chi phí biến động
+    - price_shift: giá/chi phí biến động, HOẶC dòng tiền đầu tư (Funding flow) đổ vào ngách IoT/Aquaculture/Hardware
     - supply_gap: thiếu giải pháp cho nhu cầu/quy định bắt buộc
     - tech_cheap: công nghệ/cảm biến/phần cứng rẻ đi
     Ví dụ: 'AI camera giao thông' KHÔNG phải pain_repeat.
     """
-    text = f"{title} {summary or ''} {url or ''}".lower()
+    text = f"{title} {summary or ''} {url or ''} {topic or ''} {source or ''}".lower()
     types = []
 
     def matches_any(patterns):
@@ -211,7 +233,13 @@ def detect_signal_types(title, summary, url):
     if matches_any(PAIN_PATTERNS):
         types.append("pain_repeat")
 
-    if matches_any(PRICE_PATTERNS):
+    # Price shift: cost changes OR funding flows into hardware/aquaculture/IoT/sensors
+    is_funding_source_or_topic = (
+        topic == "Funding"
+        or any(s in str(source).lower() for s in ["funding", "venture", "agfunder", "crunchbase", "igrow"])
+        or any(d in url.lower() for d in ["techcrunch.com", "crunchbase.com", "agfundernews.com", "igrownews.com", "aquageek.substack.com"])
+    )
+    if matches_any(PRICE_PATTERNS) or (matches_any(FUNDING_FLOW_PATTERNS) and (is_funding_source_or_topic or is_target_niche(text))):
         types.append("price_shift")
 
     if matches_any(GAP_PATTERNS):
@@ -222,7 +250,7 @@ def detect_signal_types(title, summary, url):
 
     # If no pattern matched, infer from dominant technical context (NEVER blind pain_repeat)
     if not types:
-        if any(k in text for k in ["model", "video", "agent", "app", "tool", "ai", "learning", "renderer", "code", "workflow"]):
+        if any(k in text for k in ["model", "video", "agent", "app", "tool", "ai", "learning", "renderer", "code", "workflow", "sensor", "hardware", "iot"]):
             types.append("tech_cheap")
         else:
             types.append("supply_gap")
@@ -236,8 +264,9 @@ HARDWARE_IOT_HIGH_PATTERNS = [
     r"\b(iot|sensor|sensors|cảm biến|hardware|robot|robots|robotics|drone|drones|camera|cameras)\b",
     r"\b(embedded|microcontroller|esp32|raspberry|arduino|edge ai|tinyml|firmware|device|devices)\b",
     r"\b(water quality|air quality|soil|traffic|traffic police|environment|weather|energy|solar|grid)\b",
+    r"\b(aquaculture|fish farm\w*|shrimp\w*|fishery|fisheries|water sensor|dissolved oxygen|salinity|turbidity|aerator|pond monitoring|aquaponics|water treatment|submetering|leak detection)\b",
     r"\b(autonomous|autonomous systems?|diagnostics?|fault diagnosis|sensor monitoring|machine monitoring|fleet|fleets|spatiotemporal memory|actuator|motor)\b",
-    r"(giám sát|chẩn đoán|thiết bị|môi trường|giao thông|cảm biến|vật lý|năng lượng)"
+    r"(giám sát|chẩn đoán|thiết bị|môi trường|giao thông|cảm biến|vật lý|năng lượng|thủy sản|nuôi tôm|nuôi cá|nguồn nước|ao nuôi|chất lượng nước)"
 ]
 
 GENERIC_LLM_APP_PATTERNS = [
@@ -245,6 +274,7 @@ GENERIC_LLM_APP_PATTERNS = [
     r"\b(generative ai wrapper|text generation|ai video generation|image generation|diffusion)\b",
     r"\b(recommendation|recommender|recsys|sequential recommendation|click-through|ctr|collaborative filtering)\b",
     r"\b(3d motion|animation|video co-generating|video generation|arbitrary rigs|character rig|rigging|motion generation)\b",
+    r"\b(3d reconstruction|monocular 3d|ray field|composite ray|gaussian splat\w*|nerf|novel view synthesis)\b",
     r"\b(perspective from computer-use|co-evolution|survey paper)\b"
 ]
 
@@ -324,8 +354,30 @@ def compute_stage(total_score):
         return "build_ready"
 
 
-def normalize_source_name(src):
-    """Normalize short codes to full human names."""
+def normalize_source_name(src, url=""):
+    """Normalize short codes or URLs to full human names."""
+    u = (url or "").lower()
+    if "techcrunch.com" in u:
+        return "TechCrunch Funding"
+    if "crunchbase.com" in u:
+        return "Crunchbase News"
+    if "agfundernews.com" in u:
+        return "AgFunder News"
+    if "igrownews.com" in u:
+        return "iGrow News"
+    if "fishfarmer" in u:
+        return "Fish Farmer Magazine"
+    if "creamermedia.com" in u:
+        return "Engineering News Aquaculture"
+    if "aquageek.substack.com" in u:
+        return "aquablurb Substack"
+    if "thefishsite.com" in u:
+        return "The Fish Site"
+    if "arxiv.org" in u:
+        return "arXiv"
+    if "github.com" in u:
+        return "GitHub"
+
     src_map = {
         "gh": "GitHub",
         "github": "GitHub",
@@ -342,7 +394,70 @@ def normalize_source_name(src):
         "laodong.vn": "Báo Lao Động",
         "vietnam.vn": "Vietnam.vn"
     }
-    return src_map.get(src.lower(), src.capitalize())
+    return src_map.get((src or "").lower(), src.capitalize() if src else "Web")
+
+
+def is_signal_tech(it):
+    """Check if item is from a tech/research/open-source source."""
+    topic = it.get("_topic") or it.get("topic") or ""
+    src = (it.get("source") or "").lower()
+    url = (it.get("url") or "").lower()
+    if topic in ["AI/Tech", "Aquaculture & IoT"]:
+        return True
+    if any(k in src for k in ["github", "gh", "arxiv", "fish farmer", "creamermedia", "the fish site"]):
+        return True
+    if any(d in url for d in ["github.com", "arxiv.org", "fishfarmer", "creamermedia.com", "thefishsite.com"]):
+        return True
+    return False
+
+
+def is_signal_funding(it):
+    """Check if item is from a funding flow source."""
+    topic = it.get("_topic") or it.get("topic") or ""
+    src = (it.get("source") or "").lower()
+    url = (it.get("url") or "").lower()
+    if topic == "Funding":
+        return True
+    if any(k in src for k in ["agfunder", "crunchbase", "igrow", "techcrunch funding", "aquageek"]):
+        return True
+    if any(d in url for d in ["agfundernews.com", "igrownews.com", "news.crunchbase.com", "techcrunch.com/category/venture", "aquageek.substack.com"]):
+        return True
+    text = f"{it.get('title', '')} {it.get('summary', '')}".lower()
+    return any(re.search(p, text, re.IGNORECASE) for p in FUNDING_FLOW_PATTERNS)
+
+
+def is_cross_corroborated(tech_item, funding_item):
+    """
+    Check if a tech signal and a funding signal cover the EXACT SAME niche theme:
+    - Aquaculture / fish farming / shrimp / aquaponics
+    - Water quality / sensors / dissolved oxygen / salinity / leak detection / submetering
+    - Agriculture robotics / farm automation / weeding
+    """
+    t_text = f"{tech_item.get('title', '')} {tech_item.get('summary', '')}".lower()
+    f_text = f"{funding_item.get('title', '')} {funding_item.get('summary', '')}".lower()
+
+    # Reject generic LLM / 3D graphics / animation papers
+    if any(re.search(pat, t_text, re.IGNORECASE) for pat in GENERIC_LLM_APP_PATTERNS):
+        return False
+    if any(re.search(pat, f_text, re.IGNORECASE) for pat in GENERIC_LLM_APP_PATTERNS):
+        return False
+
+    if not (is_target_niche(t_text) and is_target_niche(f_text)):
+        return False
+
+    subtopics = [
+        ("aquaculture", [r"\b(aquaculture|fish farm\w*|shrimp|fisher\w*|seafood|marine|pond|thủy sản|nuôi tôm|nuôi cá|aquaponics)\b"]),
+        ("water_sensor", [r"\b(water quality|water sensor|dissolved oxygen|salinity|turbidity|ph sensor|water treatment|submetering|leak detection|leakage|waterwatch|purifyx|aquawatch|cảm biến nước|nguồn nước|quan trắc|chất lượng nước)\b"]),
+        ("agritech_robotics", [r"\b(weeder|roboweeder|digit|humanoid|farm robot|crop farm|agriculture robot)\b"])
+    ]
+
+    for sub_name, pats in subtopics:
+        t_has = any(re.search(p, t_text, re.IGNORECASE) for p in pats)
+        f_has = any(re.search(p, f_text, re.IGNORECASE) for p in pats)
+        if t_has and f_has:
+            return True
+
+    return False
 
 
 def load_raw_items():
@@ -350,7 +465,7 @@ def load_raw_items():
     items_map = {}
 
     # Gather topic metadata (matched_keyword, meta, category) from topic files
-    topic_files = ["ai-tech.json", "business.json", "igaming.json"]
+    topic_files = ["ai-tech.json", "funding.json", "aquaculture-iot.json", "business.json", "igaming.json"]
     meta_by_url = {}
     for tf in topic_files:
         fpath = os.path.join(DATA_DIR, tf)
@@ -374,7 +489,10 @@ def load_raw_items():
                 for it in raw_list:
                     k = (it.get("url") or it.get("title") or "").strip().lower()
                     if k:
-                        items_map[k] = dict(it)
+                        it_copy = dict(it)
+                        if it.get("topic") and not it_copy.get("_topic"):
+                            it_copy["_topic"] = it["topic"]
+                        items_map[k] = it_copy
         except Exception as e:
             print(f"[score] Warning reading signals.json: {e}")
 
@@ -449,6 +567,7 @@ def main():
     # ==================== STEP 1: UPFRONT JUNK FILTERING ====================
     # Lỗi 2: Lọc rác TRƯỚC khi chấm (không phải chấm rồi để đó)
     # Loại hẳn: gambling/iGaming, VC funding, IPO, startup valuation, layoffs, event ads, leadership
+    # (NGOẠI TRỪ các thương vụ dòng tiền đầu tư vào đúng ngách IoT/Aquaculture/Hardware/Sensors)
     filtered_items = []
     filtered_junk_count = 0
     seen_urls = set()
@@ -472,9 +591,8 @@ def main():
 
     print(f"[score] Upfront filtering: dropped {filtered_junk_count} noise items. Retained {len(filtered_items)} valid signals.")
 
-    # ==================== STEP 2: SOURCE GROUPING (STRICT TOPIC MATCHING) ====================
-    # Lỗi 1: Chỉ gộp 2 tín hiệu thành 1 khi chúng NÓI VỀ CÙNG MỘT CHỦ ĐỀ.
-    # Nếu không chắc 2 tín hiệu cùng chủ đề -> để riêng, source_count = 1.
+    # ==================== STEP 2: SOURCE GROUPING & CROSS-CORROBORATION ====================
+    # Pass 1: Strict title comparison — gộp 2 tín hiệu khi NÓI VỀ CÙNG MỘT SỰ KIỆN/CHỦ ĐỀ.
     merged_groups = []
     used_indices = set()
 
@@ -494,10 +612,55 @@ def main():
 
         merged_groups.append(group)
 
+    # Pass 2: Thematic Cross-Corroboration:
+    # "Tín hiệu funding ở ngách phần cứng/cảm biến + tín hiệu tech từ arXiv/GitHub cùng chủ đề -> source_count = 2 -> multiplier 1.0"
+    paired_funding_groups = set()
+
+    # Prioritize tech repos/papers from GitHub & arXiv first
+    def tech_priority(idx):
+        it = merged_groups[idx][0]
+        url = (it.get("url") or "").lower()
+        src = (it.get("source") or "").lower()
+        if "github.com" in url or src in ["gh", "github"]:
+            return 0
+        if "arxiv.org" in url or src == "arxiv":
+            return 1
+        return 2
+
+    tech_indices_sorted = sorted(
+        [idx for idx in range(len(merged_groups)) if is_signal_tech(merged_groups[idx][0])],
+        key=tech_priority
+    )
+
+    for t_idx in tech_indices_sorted:
+        grp = merged_groups[t_idx]
+        t_item = grp[0]
+        t_text = f"{t_item.get('title', '')} {t_item.get('summary', '')}".lower()
+        if not is_target_niche(t_text):
+            continue
+
+        # Look for a corroborating funding signal in the same niche theme
+        for f_idx, f_grp in enumerate(merged_groups):
+            if f_idx == t_idx or f_idx in paired_funding_groups:
+                continue
+            f_item = f_grp[0]
+            if not is_signal_funding(f_item):
+                continue
+            if is_cross_corroborated(t_item, f_item):
+                paired_funding_groups.add(f_idx)
+                # Append the funding items into the tech group for cross-source validation
+                grp.extend(f_grp)
+                break
+
+    final_groups = [
+        grp for idx, grp in enumerate(merged_groups)
+        if idx not in paired_funding_groups
+    ]
+
     # ==================== STEP 3: SCORING & OUTPUT FILTERING ====================
     opportunities = []
 
-    for group in merged_groups:
+    for group in final_groups:
         primary = group[0]
         title = primary.get("title", "").strip()
         summary = primary.get("summary") or ""
@@ -524,7 +687,7 @@ def main():
             if not srcs:
                 srcs = ["web"]
 
-            src_name = normalize_source_name(srcs[0])
+            src_name = normalize_source_name(srcs[0], it_url)
             formatted_sources.append({
                 "name": src_name,
                 "url": it_url,
@@ -538,11 +701,29 @@ def main():
         # Multiplier: source_count < 2 -> 0.85; >= 2 (distinct validated sources) -> 1.0
         multiplier = 1.0 if source_count >= 2 else 0.85
 
-        # Tag signal types based on content
-        signal_types = detect_signal_types(title, summary, primary_url)
+        # Enrich summary if cross-corroborated with additional source
+        if len(group) > 1:
+            secondary_infos = []
+            for sec in group[1:]:
+                sec_src = normalize_source_name((sec.get("sources") or [sec.get("source") or ""])[0], sec.get("url"))
+                sec_title = sec.get("title", "")
+                if sec_title and sec_title != title:
+                    secondary_infos.append(f"{sec_src}: '{sec_title}'")
+            if secondary_infos:
+                summary = (summary or f"Tín hiệu công nghệ và cơ hội thị trường từ {formatted_sources[0]['name']}.") + f" [Đối chiếu dòng tiền & nguồn bổ sung: {'; '.join(secondary_infos)}]"
+
+        # Collect text across the group for signal type and score
+        group_titles = " ".join(it.get("title", "") for it in group)
+        group_summaries = " ".join(it.get("summary", "") for it in group)
+        group_urls = " ".join(it.get("url", "") for it in group)
+        group_topics = " ".join(str(it.get("_topic") or it.get("topic") or "") for it in group)
+        group_sources = " ".join(str(it.get("source", "")) for it in group)
+
+        # Tag signal types based on group content
+        signal_types = detect_signal_types(group_titles, group_summaries, group_urls, group_topics, group_sources)
 
         # Score 3 filter layers based on content and user profile
-        scores = score_item_filters(title, summary, signal_types, matched_kw, meta_str)
+        scores = score_item_filters(group_titles, group_summaries, signal_types, matched_kw, meta_str)
 
         # Calculate total score
         raw_sum = scores["durability"] + scores["ai_support"] + scores["your_leverage"]

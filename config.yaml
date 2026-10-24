@@ -68,6 +68,46 @@ topics:
       - "https://news.google.com/rss/search?q=igaming+regulation&hl=vi-VN&gl=VN&ceid=VN:vi"
       - "https://news.google.com/rss/search?q=AI+regulation&hl=vi-VN&gl=VN&ceid=VN:vi"
 
+  funding:
+    label: "Funding"
+    keywords:
+      - "aquaculture funding"
+      - "agtech funding"
+      - "iot funding"
+    hackernews: false
+    arxiv:
+      categories: []
+      keywords: []
+    github_search: []
+    rss:
+      - "https://techcrunch.com/category/venture/feed/"
+      - "https://news.crunchbase.com/feed/"
+      - "https://agfundernews.com/feed"
+      - "https://igrownews.com/feed/"
+
+  aquaculture-iot:
+    label: "Aquaculture & IoT"
+    keywords:
+      - "aquaculture"
+      - "water quality"
+      - "water sensor"
+      - "fish farming"
+      - "shrimp farming"
+    hackernews: false
+    arxiv:
+      categories: ["cs.AI", "cs.CV"]
+      keywords:
+        - "aquaculture"
+        - "water quality"
+    github_search:
+      - "aquaculture iot"
+      - "water quality sensor"
+    rss:
+      - "https://www.fishfarmermagazine.com/feed/"
+      - "https://newsletter-en.creamermedia.com/page/aquaculture/feed"
+      - "https://aquageek.substack.com/feed"
+      - "https://thefishsite.com/feed.xml"
+
 # How many items to keep per source, per topic
 max_items_per_source: 15
 
