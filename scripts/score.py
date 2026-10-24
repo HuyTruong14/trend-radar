@@ -93,7 +93,8 @@ JUNK_LEADERSHIP_PATTERNS = [
 NICHE_PATTERNS = [
     r"\b(aquaculture|fish farm\w*|shrimp\w*|fishery|fisheries|seafood|ocean|marine|algae|water quality|water sensor|dissolved oxygen|salinity|turbidity|ph sensor|water treatment|aquaponics|submetering|leak detection|waterwatch|purifyx|aquawatch)\b",
     r"\b(iot|sensor|sensors|hardware|robot\w*|camera\w*|edge ai|embedded|microcontroller|tinyml|monitoring|telemetry|actuator|drone|drones|esp32|arduino|raspberry)\b",
-    r"(thủy sản|nuôi tôm|nuôi cá|cảm biến|nguồn nước|môi trường nước|quan trắc|chất lượng nước)"
+    r"\b(agtech|agritech|agriculture|farm\w*|crop\w*|soil|irrigation|weeder\w*|roboweeder|forestry|microgrid|solar|storage)\b",
+    r"(thủy sản|nuôi tôm|nuôi cá|nông nghiệp|cảm biến|nguồn nước|môi trường nước|quan trắc|chất lượng nước)"
 ]
 
 FUNDING_FLOW_PATTERNS = [
@@ -244,19 +245,35 @@ def detect_signal_types(title, summary, url, topic="", source=""):
     if matches_any(PAIN_PATTERNS):
         types.append("pain_repeat")
 
-    # Price shift: cost changes OR funding flows into hardware/aquaculture/IoT/sensors
+    # Phase 7: Strict 4-type Funding Classification
     is_funding_source_or_topic = (
         topic == "Funding"
         or any(s in str(source).lower() for s in ["funding", "venture", "agfunder", "crunchbase", "igrow"])
-        or any(d in url.lower() for d in ["techcrunch.com", "crunchbase.com", "agfundernews.com", "igrownews.com", "aquageek.substack.com"])
+        or any(d in url.lower() for d in ["techcrunch.com/category/venture", "crunchbase.com", "agfundernews.com", "igrownews.com", "aquageek.substack.com"])
+        or any(re.search(pat, text, re.IGNORECASE) for pat in FUNDING_FLOW_PATTERNS)
     )
-    if matches_any(PRICE_PATTERNS) or (matches_any(FUNDING_FLOW_PATTERNS) and (is_funding_source_or_topic or is_target_niche(text))):
+
+    if is_funding_source_or_topic:
+        # Type 3: M&A -> price_shift, supply_gap
+        if re.search(r"\b(acquires?|acquisition|merger|takeover|takes majority stake|buys|bought|letter of intent to acquire)\b", text, re.IGNORECASE):
+            types.extend(["price_shift", "supply_gap"])
+        # Type 4: Rút vốn / giảm -> price_shift
+        elif re.search(r"\b(funding (fell|falls|drops|dropped|slumps|slumped|down)|decline|cuts|slashed|funding gap|struggl\w* to raise|down by \d+%)\b", text, re.IGNORECASE):
+            types.append("price_shift")
+        # Type 1: Gọi vốn trong ngách -> price_shift, tech_cheap
+        elif is_target_niche(text) and re.search(r"\b(raises?|raised|series [a-e]|seed|\$\d+[mkb]?\b|triệu usd|venture round|backed|lands \$\d+)\b", text, re.IGNORECASE):
+            types.extend(["price_shift", "tech_cheap"])
+        # Type 2: Xu hướng đầu tư -> price_shift
+        else:
+            types.append("price_shift")
+
+    if matches_any(PRICE_PATTERNS) and "price_shift" not in types:
         types.append("price_shift")
 
-    if matches_any(GAP_PATTERNS):
+    if matches_any(GAP_PATTERNS) and "supply_gap" not in types:
         types.append("supply_gap")
 
-    if matches_any(TECH_CHEAP_PATTERNS):
+    if matches_any(TECH_CHEAP_PATTERNS) and "tech_cheap" not in types:
         types.append("tech_cheap")
 
     # If no pattern matched, infer from dominant technical context (NEVER blind pain_repeat)
@@ -273,11 +290,15 @@ def detect_signal_types(title, summary, url, topic="", source=""):
 
 HARDWARE_IOT_HIGH_PATTERNS = [
     r"\b(iot|sensor|sensors|cảm biến|hardware|robot|robots|robotics|drone|drones|camera|cameras)\b",
-    r"\b(embedded|microcontroller|esp32|raspberry|arduino|edge ai|tinyml|firmware|device|devices)\b",
+    r"\b(embedded (?:system|device|software|linux|hardware|firmware|board|sensor)|microcontroller|esp32|raspberry|arduino|edge ai|tinyml|firmware|physical device)\b",
     r"\b(water quality|air quality|soil|traffic|traffic police|environment|weather|energy|solar|grid)\b",
     r"\b(aquaculture|fish farm\w*|shrimp\w*|fishery|fisheries|water sensor|dissolved oxygen|salinity|turbidity|aerator|pond monitoring|aquaponics|water treatment|submetering|leak detection)\b",
     r"\b(autonomous|autonomous systems?|diagnostics?|fault diagnosis|sensor monitoring|machine monitoring|fleet|fleets|spatiotemporal memory|actuator|motor)\b",
     r"(giám sát|chẩn đoán|thiết bị|môi trường|giao thông|cảm biến|vật lý|năng lượng|thủy sản|nuôi tôm|nuôi cá|nguồn nước|ao nuôi|chất lượng nước)"
+]
+
+FINTECH_GENERIC_PATTERNS = [
+    r"\b(insurance|insurer|insuretech|fintech|insurtech|banking|payments?|checkout|crypto|cryptocurrency|blockchain|defi|web3|payroll|accounting|mortgage|wealth|lending|e-commerce|ecommerce|marketing tech|hr tech)\b"
 ]
 
 GENERIC_LLM_APP_PATTERNS = [
@@ -303,29 +324,51 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
     """
     text = f"{title} {summary or ''} {matched_keyword or ''} {meta or ''}".lower()
 
+    is_fintech_generic = any(re.search(pat, text, re.IGNORECASE) for pat in FINTECH_GENERIC_PATTERNS)
     is_generic_llm = any(re.search(pat, text, re.IGNORECASE) for pat in GENERIC_LLM_APP_PATTERNS)
-    is_hardware_iot = any(re.search(pat, text, re.IGNORECASE) for pat in HARDWARE_IOT_HIGH_PATTERNS) and not is_generic_llm
-    is_tech_systems = any(re.search(pat, text, re.IGNORECASE) for pat in TECHNICAL_SYSTEMS_PATTERNS) and not is_generic_llm
+    is_hardware_iot = any(re.search(pat, text, re.IGNORECASE) for pat in HARDWARE_IOT_HIGH_PATTERNS) and not is_generic_llm and not is_fintech_generic
+    is_tech_systems = any(re.search(pat, text, re.IGNORECASE) for pat in TECHNICAL_SYSTEMS_PATTERNS) and not is_generic_llm and not is_fintech_generic
+
+    # Phase 7: Detect if this item is a funding flow signal
+    is_funding = (
+        any(re.search(pat, text, re.IGNORECASE) for pat in FUNDING_FLOW_PATTERNS)
+        or any(k in text for k in ["agfunder", "crunchbase", "igrow", "techcrunch.com/category/venture", "aquageek.substack.com"])
+        or ("price_shift" in signal_types and "github.com" not in text and "arxiv.org" not in text)
+    )
 
     # 1. your_leverage (0–3): User profile match
-    # Target: IoT, hardware, sensors, robotics, device diagnostics, environmental monitoring
-    # Non-target: Generic LLM apps, pure recommendation/animation ML papers
-    if is_hardware_iot:
+    # Target: IoT, hardware, sensors, robotics, device diagnostics, environmental monitoring, aquaculture
+    # Non-target: Generic LLM apps, pure recommendation/animation ML papers, generic fintech/VC
+    if is_funding:
+        if is_fintech_generic:
+            your_leverage = 0  # Funding vào fintech/SaaS chung -> your_leverage 0 -> drop
+        elif is_target_niche(text) or is_hardware_iot:
+            your_leverage = 3
+        else:
+            your_leverage = 0  # Funding vào fintech/SaaS chung -> your_leverage 0 -> drop
+    elif is_hardware_iot:
         your_leverage = 3
     elif is_tech_systems:
         your_leverage = 2
-    elif is_generic_llm:
-        your_leverage = 1
+    elif is_generic_llm or is_fintech_generic:
+        your_leverage = 0
     elif "tool" in text or "python" in text or "github.com" in text:
         your_leverage = 2
     else:
         your_leverage = 1
 
     # 2. durability (0–3): 10-year perennial need
-    # Physical infrastructure, traffic, water, energy, industrial maintenance, diagnostics
-    if is_generic_llm:
+    # Physical infrastructure, traffic, water, energy, industrial maintenance, diagnostics, food, aquaculture
+    if is_funding:
+        if is_fintech_generic:
+            durability = 1
+        elif is_target_niche(text) or is_hardware_iot:
+            durability = 3
+        else:
+            durability = 1
+    elif is_generic_llm:
         durability = 1
-    elif bool(re.search(r"\b(water|traffic|energy|solar|grid|soil|health|safety|food|logistics|manufacturing|fleet)\b", text, re.IGNORECASE)):
+    elif bool(re.search(r"\b(water|traffic|energy|solar|grid|soil|health|safety|food|logistics|manufacturing|fleet|aquaculture|fish farm\w*|shrimp|agriculture|agtech)\b", text, re.IGNORECASE)):
         durability = 3
     elif is_hardware_iot or bool(re.search(r"\b(infrastructure|database|security|pipeline|compliance|law|regulation|diagnostics?)\b", text, re.IGNORECASE)):
         durability = 3 if any(k in text for k in ["water", "traffic", "factory", "industrial", "diagnost", "robot"]) else 2
@@ -335,7 +378,12 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
         durability = 1
 
     # 3. ai_support (0–3): AI does 80% perception/analysis, human/physical holds 20% responsibility
-    if is_generic_llm:
+    if is_funding:
+        if is_target_niche(text) or is_hardware_iot:
+            ai_support = 3
+        else:
+            ai_support = 1
+    elif is_generic_llm:
         ai_support = 1
     elif bool(re.search(r"\b(camera|diagnost\w*|anomaly|monitor|inspection|audit|police|fleet|actuator|sensor)\b", text, re.IGNORECASE)):
         ai_support = 3  # Sensor/camera detection -> human operator/technician confirms and acts
@@ -659,14 +707,13 @@ def main():
                 continue
             if is_cross_corroborated(t_item, f_item):
                 paired_funding_groups.add(f_idx)
-                # Append the funding items into the tech group for cross-source validation
-                grp.extend(f_grp)
+                # Append cloned copy of the funding items into the tech group for cross-source validation (source_count: 2)
+                grp.extend([dict(it) for it in f_grp])
                 break
 
-    final_groups = [
-        grp for idx, grp in enumerate(merged_groups)
-        if idx not in paired_funding_groups
-    ]
+    # Phase 7: Retain each funding item as an independent opportunity in opportunities.json!
+    # (Do not remove paired_funding_groups from final_groups)
+    final_groups = list(merged_groups)
 
     # ==================== STEP 3: SCORING & OUTPUT FILTERING ====================
     opportunities = []
@@ -913,13 +960,31 @@ def main():
         "cooling": 0
     }
 
+    def is_pure_funding_opp(opp):
+        """Check if opportunity is primarily a pure funding signal (not a GitHub repo or paper)."""
+        srcs = opp.get("sources", [])
+        if not srcs:
+            return False
+        primary_url = (srcs[0].get("url") or "").lower()
+        primary_name = (srcs[0].get("name") or "").lower()
+        title = (opp.get("title") or "").lower()
+        if any(k in primary_url for k in ["agfundernews.com", "igrownews.com", "crunchbase.com", "techcrunch.com/category/venture", "aquageek.substack.com"]):
+            return True
+        if any(k in primary_name for k in ["funding", "agfunder", "igrow", "crunchbase", "venture"]):
+            return True
+        if any(re.search(pat, title, re.IGNORECASE) for pat in FUNDING_FLOW_PATTERNS) and "github.com" not in primary_url and "arxiv.org" not in primary_url:
+            return True
+        return False
+
     opportunities.sort(
         key=lambda x: (
             VELOCITY_WEIGHT.get(x.get("velocity", "steady"), 1),
             x["total"],
             x["scores"]["your_leverage"],
             x["scores"]["durability"],
-            x["source_count"]
+            x["source_count"],
+            1 if is_pure_funding_opp(x) else 0,
+            x["scores"]["ai_support"]
         ),
         reverse=True
     )

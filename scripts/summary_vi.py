@@ -70,11 +70,17 @@ EXACT_MATCHES = {
     "AI Law takes effect, anchors national governance framework - vietnamnews.vn": "Luật AI có hiệu lực, thiết lập khung quản trị công nghệ quốc gia",
     "Regulations on the safety of AI applications in banking operations. - Vietnam.vn": "Quy định an toàn và quản trị rủi ro AI trong ngành ngân hàng",
     "The Law on Artificial Intelligence must ensure four key pillars - Tạp chí KH&CN Việt Nam": "Bốn trụ cột bắt buộc trong xây dựng khung pháp lý công nghệ AI",
-    "Vietnam Airlines adjusts London–HCM City flight schedules due to air traffic control issue - vietnamnews.vn": "Sự cố kiểm soát không lưu buộc điều chỉnh lịch bay quốc tế",
-    "Protecting Trade Secrets In The Age Of AI": "Giải pháp bảo vệ bí mật công nghệ trước nguy cơ rò rỉ qua AI",
-    "EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence": "Bộ benchmark đánh giá độ an toàn và chứng cứ cho AI Agent",
-    "Recent agrifood cyberattacks are ‘a wakeup call’ for the industry as ransomware incidences increase": "Cảnh báo an ninh mạng cấp bách cho hạ tầng số nông nghiệp"
+    # Phase 7 Funding Signals ([Ai] [làm gì] [bao nhiêu] [ngành gì])
+    "US aquaculture needs more than VC dollars to grow: report": "Báo cáo kêu gọi vốn dài hạn và chuẩn hóa pháp lý cho nuôi trồng thủy sản",
+    "Metron Acquires H2O Degree to Add Submetering and Leak Detection": "Metron thâu tóm H2O Degree mở rộng mảng đo đếm và phát hiện rò rỉ nước",
+    "VECKTA Raises $11 Million Series A Led by Origin Ventures for Onsite Solar and Storage": "VECKTA gọi $11M Series A phát triển hệ thống điện mặt trời và lưu trữ",
+    "IMIO raises $12m to unlock nutrients trapped in crop residues with new generation of ‘dependable ag biologicals’": "Startup IMIO gọi $12M phát triển chế phẩm sinh học cho cây trồng",
+    "Kodama nets $7m to scale physical AI for ‘intelligent forestry’": "Startup Kodama gọi $7M ứng dụng AI vật lý cho quản lý lâm nghiệp thông minh",
+    "Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions”": "Carbon Robotics cắt giảm chi phí tái cấu trúc mảng robot nông nghiệp",
+    "UK Agri-Tech Centre to slash workforce by 60% in strategic pivot to new operating model": "Trung tâm AgTech Anh cắt 60% nhân sự chuyển dịch mô hình vận hành mới",
+    "‘No acceptable offers’ for Liberation Bioindustries as firm seeks to plug $25m funding gap": "Liberation Bioindustries tìm kiếm $25M bù đắp khoảng trống vốn sinh học",
 }
+
 
 
 def summarize_github_repo(title, summary=""):
@@ -192,6 +198,64 @@ def summarize_news_article(title, summary=""):
     return f"Cơ hội công nghệ và giải pháp mới: {t_clean}"[:80]
 
 
+def summarize_funding_article(title, summary=""):
+    """
+    Generate Phase 7 Vietnamese summary for funding flow articles.
+    Format: [Ai] [làm gì] [bao nhiêu] [ngành gì]
+    """
+    t = title.strip()
+    if t in EXACT_MATCHES:
+        return EXACT_MATCHES[t]
+
+    t_clean = re.sub(r"\s*[-|–—]\s*[\w\s.]+$", "", t).strip()
+    s_clean = summary.strip() if summary else ""
+    combined = f"{t_clean} {s_clean}".lower()
+
+    # 1. M&A ([Ai] [thâu tóm] [ai] [phát triển mảng gì])
+    ma_match = re.search(r"(\b[\w\s\.-]+?)\s+(?:acquires?|to acquire|buys?)\s+([\w\s\.-]+?)(?:\s+to\s+|\s+for\s+|$)", t_clean, re.IGNORECASE)
+    if ma_match:
+        buyer = ma_match.group(1).strip()
+        target = ma_match.group(2).strip()
+        domain = "công nghệ"
+        if "submetering" in combined or "leak" in combined:
+            domain = "đo đếm và phát hiện rò rỉ nước"
+        elif "aquaculture" in combined or "fish" in combined or "shrimp" in combined:
+            domain = "công nghệ nuôi trồng thủy sản"
+        elif "food" in combined or "supply" in combined:
+            domain = "chuỗi cung ứng thực phẩm"
+        return f"{buyer} thâu tóm {target} phát triển mảng {domain}"[:80]
+
+    # 2. Capital Raise ([Ai] [gọi] [bao nhiêu] [ngành gì])
+    raise_match = re.search(r"(\b[\w\s\.-]+?)\s+(?:raises?|raised|secures?|nabs|lands|nets|closes?)\s+(\$\d+(?:\.\d+)?\s*(?:m|b|million|billion)?)", t_clean, re.IGNORECASE)
+    if raise_match:
+        startup = raise_match.group(1).strip()
+        amount = raise_match.group(2).replace("million", "M").replace("billion", "B").replace(" ", "").strip()
+        domain = "giải pháp công nghệ mới"
+        if "solar" in combined or "storage" in combined:
+            domain = "điện mặt trời và lưu trữ"
+        elif "robot" in combined or "weeder" in combined:
+            domain = "robot nông nghiệp tự hành"
+        elif "soil" in combined or "biological" in combined:
+            domain = "chế phẩm sinh học cây trồng"
+        elif "water" in combined or "aqua" in combined:
+            domain = "quan trắc chất lượng nước"
+        elif "forestry" in combined or "forest" in combined:
+            domain = "AI vật lý quản lý lâm nghiệp"
+        return f"Startup {startup} gọi {amount} phát triển {domain}"[:80]
+
+    # 3. Macro reports / Trends / Realignments
+    if "aquaculture" in combined and ("vc" in combined or "dollar" in combined or "grow" in combined or "report" in combined):
+        return "Báo cáo kêu gọi vốn dài hạn và chuẩn hóa pháp lý cho nuôi trồng thủy sản"
+    if "agtech" in combined and ("funding" in combined or "q3" in combined or "quarter" in combined):
+        return "Vốn đầu tư vào agtech có xu hướng tăng trưởng và tái cấu trúc ngách"
+    if "layoffs" in combined or "slash" in combined or "realign" in combined:
+        comp_match = re.search(r"(?:layoffs at|cuts at)\s+([\w\s\.-]+?)(?:\s+as|\s+due|$)", t_clean, re.IGNORECASE)
+        comp = comp_match.group(1).strip() if comp_match else "Doanh nghiệp công nghệ"
+        return f"{comp} cắt giảm chi phí tái cấu trúc mô hình vận hành"[:80]
+
+    return None
+
+
 def generate_summary_vi(title, summary=""):
     """
     Main entry point: Generate a strictly compliant Vietnamese summary.
@@ -207,10 +271,14 @@ def generate_summary_vi(title, summary=""):
     # 1. Exact match lookup
     if t in EXACT_MATCHES:
         summary_vi = EXACT_MATCHES[t]
-    # 2. GitHub repository
+    # 2. Funding article ([Ai] [làm gì] [bao nhiêu] [ngành gì])
+    elif any(k in t.lower() for k in ["raises", "raised", "funding", "series a", "series b", "seed", "acquires", "acquisition", "nets", "lands", "secures", "layoffs", "venture", "vc", "dollars", "capital", "stake", "invest"]):
+        funding_sum = summarize_funding_article(t, summary)
+        summary_vi = funding_sum if funding_sum else summarize_news_article(t, summary)
+    # 3. GitHub repository
     elif "/" in t and not t.startswith("http") and len(t.split("/")) == 2 and " " not in t.split("/")[0]:
         summary_vi = summarize_github_repo(t, summary)
-    # 3. News article or paper
+    # 4. News article or paper
     else:
         summary_vi = summarize_news_article(t, summary)
 

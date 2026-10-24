@@ -38,6 +38,44 @@
     "velocity": "rising"
   },
   {
+    "id": "opp_2026_1024_e713d500",
+    "title": "api-evangelist/jala",
+    "summary": "Jala — independent third-party profile of a public API surface, by API Evangelist. JALA is an Indonesian aquaculture technology company providing end-to-end solutions for the shrimp farming industry, describing itself as a fully connected system powered by data farmers can trust. [Đối chiếu dòng tiền & nguồn bổ sung: The Fish Site: 'Green hydrogen trials planned for Atlantic aquaculture']",
+    "summary_vi": "Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/api-evangelist/jala",
+        "date": "2026-10-24"
+      },
+      {
+        "name": "The Fish Site",
+        "url": "https://thefishsite.com/articles/green-hydrogen-trials-planned-for-atlantic-aquaculture",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 2,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 1.0,
+    "total": 9,
+    "stage": "build_ready",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "rising"
+  },
+  {
     "id": "opp_2026_1024_e9ce1f77",
     "title": "wissen-csi/backend_station",
     "summary": "Real-Time IoT Water Quality Backend: Event-driven backend service using Mosquitto MQTT and WebSockets. Ingests remote buoy sensor telemetry (pH, EC, DO, ORP, Temp, GPS). [Đối chiếu dòng tiền & nguồn bổ sung: iGrow News: 'Metron Acquires H2O Degree to Add Submetering and Leak Detection']",
@@ -45,6 +83,7 @@
     "signal_type": [
       "pain_repeat",
       "price_shift",
+      "supply_gap",
       "tech_cheap"
     ],
     "sources": [
@@ -56,6 +95,82 @@
       {
         "name": "iGrow News",
         "url": "https://igrownews.com/metron-latest-news/",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 2,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 1.0,
+    "total": 9,
+    "stage": "build_ready",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "rising"
+  },
+  {
+    "id": "opp_2026_1024_0125fbf3",
+    "title": "ishiniayodya610/J26-SE-351",
+    "summary": "AI-driven smart aquaculture and aquarium ecosystem integrating Edge IoT, computer vision, and mobile technology for real-time water quality monitoring, fish health analysis, and predictive risk management. [Đối chiếu dòng tiền & nguồn bổ sung: Fish Farmer Magazine: 'AE2026: Half a century of aquaculture expertise']",
+    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/ishiniayodya610/J26-SE-351",
+        "date": "2026-10-24"
+      },
+      {
+        "name": "Fish Farmer Magazine",
+        "url": "https://fishfarmer.affino.com/news/ae2026-half-a-century-of-aquaculture-expertise",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 2,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 1.0,
+    "total": 9,
+    "stage": "build_ready",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "rising"
+  },
+  {
+    "id": "opp_2026_1024_0968efcc",
+    "title": "Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
+    "summary": "Water quality prediction for aquaculture: LSTM, GRU and CNN models, a live Firebase web app and a Gemini-powered fish water conditions lookup [Đối chiếu dòng tiền & nguồn bổ sung: aquablurb Substack: 'Aquaculture Dealflow | Mar 18 - 31, 2023']",
+    "summary_vi": "Dự đoán chất lượng nước thời gian thực bằng IoT và máy học",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
+        "date": "2026-10-24"
+      },
+      {
+        "name": "aquablurb Substack",
+        "url": "https://aquageek.substack.com/p/aquaculture-dealflow-mar-18-31-2023",
         "date": "2026-10-24"
       }
     ],
@@ -115,120 +230,6 @@
     "velocity": "rising"
   },
   {
-    "id": "opp_2026_1024_0125fbf3",
-    "title": "ishiniayodya610/J26-SE-351",
-    "summary": "AI-driven smart aquaculture and aquarium ecosystem integrating Edge IoT, computer vision, and mobile technology for real-time water quality monitoring, fish health analysis, and predictive risk management. [Đối chiếu dòng tiền & nguồn bổ sung: Fish Farmer Magazine: 'AE2026: Half a century of aquaculture expertise']",
-    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
-    "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/ishiniayodya610/J26-SE-351",
-        "date": "2026-10-24"
-      },
-      {
-        "name": "Fish Farmer Magazine",
-        "url": "https://fishfarmer.affino.com/news/ae2026-half-a-century-of-aquaculture-expertise",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 2,
-    "scores": {
-      "durability": 3,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 1.0,
-    "total": 8,
-    "stage": "research",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "rising"
-  },
-  {
-    "id": "opp_2026_1024_0968efcc",
-    "title": "Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
-    "summary": "Water quality prediction for aquaculture: LSTM, GRU and CNN models, a live Firebase web app and a Gemini-powered fish water conditions lookup [Đối chiếu dòng tiền & nguồn bổ sung: aquablurb Substack: 'Aquaculture Dealflow | Mar 18 - 31, 2023']",
-    "summary_vi": "Dự đoán chất lượng nước thời gian thực bằng IoT và máy học",
-    "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
-        "date": "2026-10-24"
-      },
-      {
-        "name": "aquablurb Substack",
-        "url": "https://aquageek.substack.com/p/aquaculture-dealflow-mar-18-31-2023",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 2,
-    "scores": {
-      "durability": 3,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 1.0,
-    "total": 8,
-    "stage": "research",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "rising"
-  },
-  {
-    "id": "opp_2026_1024_e713d500",
-    "title": "api-evangelist/jala",
-    "summary": "Jala — independent third-party profile of a public API surface, by API Evangelist. JALA is an Indonesian aquaculture technology company providing end-to-end solutions for the shrimp farming industry, describing itself as a fully connected system powered by data farmers can trust. [Đối chiếu dòng tiền & nguồn bổ sung: The Fish Site: 'Green hydrogen trials planned for Atlantic aquaculture']",
-    "summary_vi": "Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp",
-    "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/api-evangelist/jala",
-        "date": "2026-10-24"
-      },
-      {
-        "name": "The Fish Site",
-        "url": "https://thefishsite.com/articles/green-hydrogen-trials-planned-for-atlantic-aquaculture",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 2,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 1.0,
-    "total": 6,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "rising"
-  },
-  {
     "id": "opp_2026_1024_a5add1c8",
     "title": "phucngvinuni/AquaSC-release",
     "summary": "AquaSC: task-oriented semantic communication for aquaculture IoT - code, configs, per-image results and reproduction scripts [Đối chiếu dòng tiền & nguồn bổ sung: aquablurb Substack: 'Aquaculture Dealflow & Notable Reads - 16']",
@@ -251,13 +252,13 @@
     ],
     "source_count": 2,
     "scores": {
-      "durability": 2,
-      "ai_support": 1,
+      "durability": 3,
+      "ai_support": 3,
       "your_leverage": 3
     },
     "multiplier": 1.0,
-    "total": 6,
-    "stage": "watch",
+    "total": 9,
+    "stage": "build_ready",
     "first_seen": "2026-10-24",
     "last_seen": "2026-10-24",
     "appearance_count": 1,
@@ -290,13 +291,13 @@
     ],
     "source_count": 2,
     "scores": {
-      "durability": 2,
-      "ai_support": 1,
+      "durability": 3,
+      "ai_support": 3,
       "your_leverage": 3
     },
     "multiplier": 1.0,
-    "total": 6,
-    "stage": "watch",
+    "total": 9,
+    "stage": "build_ready",
     "first_seen": "2026-10-24",
     "last_seen": "2026-10-24",
     "appearance_count": 1,
@@ -304,6 +305,831 @@
       "2026-10-24"
     ],
     "velocity": "rising"
+  },
+  {
+    "id": "opp_2026_1024_77883b76",
+    "title": "US aquaculture needs more than VC dollars to grow: report",
+    "summary": "Aquaculture investment firm Hatch Blue recommends more patient or risk-tolerant capital to help businesses and technologies reach milestones. The post US aquaculture needs more than VC dollars to grow: report appeared first on AgFunderNews.",
+    "summary_vi": "Báo cáo kêu gọi vốn dài hạn và chuẩn hóa pháp lý cho nuôi trồng thủy sản",
+    "signal_type": [
+      "price_shift"
+    ],
+    "sources": [
+      {
+        "name": "AgFunder News",
+        "url": "https://agfundernews.com/us-aquaculture-needs-more-than-vc-dollars-to-grow-report",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_6f42dcac",
+    "title": "AGCO and Agility Robotics to Pilot Digit Humanoid Robot at Hesston, Kansas, Plant",
+    "summary": "AGCO signed a deal with Agility Robotics to pilot the Digit humanoid robot at its Hesston, Kansas, factory from 2027 for parts sorting and tote handling. The post AGCO and Agility Robotics to Pilot Digit Humanoid Robot at Hesston, Kansas, Plant appeared first on iGrow News.",
+    "summary_vi": "Thử nghiệm robot hình người tự hành trong nhà máy sản xuất",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "iGrow News",
+        "url": "https://igrownews.com/agco-latest-news/",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_e215d300",
+    "title": "5 Interesting Startup Deals You May Have Missed: Robot Training, Space Lasers And Greener Cement",
+    "summary": "From teaching robots to do everyday household chores to using lasers to track satellites in space, this month's crop of interesting startup deals spans some decidedly different corners of tech.",
+    "summary_vi": "Dòng vốn đầu tư mới vào huấn luyện robot và vật liệu xanh",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "Crunchbase News",
+        "url": "https://news.crunchbase.com/venture/interesting-startup-deals-robots-ai-gaming-clean-tech/",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_c825c25c",
+    "title": "ADM and Concern Worldwide Expand Kenya Farmer Program to Reach 17,500 Smallholders",
+    "summary": "ADM Cares and Concern Worldwide US expanded the LEAF program in Kenya's Tana River County to 17,500 smallholder farmers in its fourth phase. The post ADM and Concern Worldwide Expand Kenya Farmer Program to Reach 17,500 Smallholders appeared first on iGrow News.",
+    "summary_vi": "Cơ hội công nghệ và giải pháp mới: ADM and Concern Worldwide Expand Kenya Farmer",
+    "signal_type": [
+      "price_shift"
+    ],
+    "sources": [
+      {
+        "name": "iGrow News",
+        "url": "https://igrownews.com/adm-latest-news/",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_4c793be3",
+    "title": "AgriFood Signals: Danone turns yogurt into renewable energy, Bison Ventures lands $160m, biochar projects",
+    "summary": "Plus: hackers at John Deere The post AgriFood Signals: Danone turns yogurt into renewable energy, Bison Ventures lands $160m, biochar projects appeared first on AgFunderNews.",
+    "summary_vi": "Xu hướng tái tạo năng lượng từ phụ phẩm nông nghiệp",
+    "signal_type": [
+      "price_shift"
+    ],
+    "sources": [
+      {
+        "name": "AgFunder News",
+        "url": "https://agfundernews.com/agrifood-signals-danone-turns-yogurt-into-renewable-energy-bison-ventures-lands-160m-biochar-projects",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_d88ee6b6",
+    "title": "Niqo Robotics Unveils 46-Foot RoboWeeder F50 for Specialty Crop Farms",
+    "summary": "Niqo Robotics unveils the RoboWeeder F50, a 46-foot hooded AI weeder for large specialty crop and turf farms, with orders open for 2027 delivery. The post Niqo Robotics Unveils 46-Foot RoboWeeder F50 for Specialty Crop Farms appeared first on iGrow News.",
+    "summary_vi": "Robot nông nghiệp tự hành phun thuốc diệt cỏ chính xác cao",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "iGrow News",
+        "url": "https://igrownews.com/niqo-robotics-latest-news/",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_ffcaca2f",
+    "title": "VECKTA Raises $11 Million Series A Led by Origin Ventures for Onsite Solar and Storage",
+    "summary": "VECKTA closed an $11 million Series A led by Origin Ventures to grow its onsite solar and storage planning and procurement platform in the U.S. The post VECKTA Raises $11 Million Series A Led by Origin Ventures for Onsite Solar and Storage appeared first on iGrow News.",
+    "summary_vi": "VECKTA gọi $11M Series A phát triển hệ thống điện mặt trời và lưu trữ",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "iGrow News",
+        "url": "https://igrownews.com/veckta-latest-news/",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_e06b568e",
+    "title": "IMIO Raises $12 Million From Sofinnova Partners and Chipotle’s Cultivate Next for Soil Biologicals",
+    "summary": "IMIO raised $12 million led by Sofinnova Partners, with Chipotle's Cultivate Next, to build a Chicago lab and plant for its Re-Gen residue biologicals. The post IMIO Raises $12 Million From Sofinnova Partners and Chipotle’s Cultivate Next for Soil Biologicals appeared first on iGrow News.",
+    "summary_vi": "Startup IMIO gọi $12M phát triển chế phẩm sinh học cây trồng",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "iGrow News",
+        "url": "https://igrownews.com/imio-latest-news/",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_f7e244cb",
+    "title": "Metron Acquires H2O Degree to Add Submetering and Leak Detection",
+    "summary": "Metron, an XPV Water Partners company, acquired H2O Degree to extend its smart water metering from the utility meter to individual residential units. The post Metron Acquires H2O Degree to Add Submetering and Leak Detection appeared first on iGrow News.",
+    "summary_vi": "Metron thâu tóm H2O Degree mở rộng mảng đo đếm và phát hiện rò rỉ nước",
+    "signal_type": [
+      "pain_repeat",
+      "price_shift",
+      "supply_gap"
+    ],
+    "sources": [
+      {
+        "name": "iGrow News",
+        "url": "https://igrownews.com/metron-latest-news/",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_21ee25d6",
+    "title": "🎥 Earth Rover bets on pulsed light to tackle weeds without chemicals",
+    "summary": "Earth Rover's CLAWS robot targets individual weeds with pulsed light to destroy the meristem without harming surrounding plants or soil. The post 🎥 Earth Rover bets on pulsed light to tackle weeds without chemicals appeared first on AgFunderNews.",
+    "summary_vi": "Robot diệt cỏ bằng xung ánh sáng không dùng hóa chất",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "AgFunder News",
+        "url": "https://agfundernews.com/%f0%9f%8e%a5-earth-rover-bets-on-pulsed-light-to-tackle-weeds-without-chemicals",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_81f2ffe6",
+    "title": "Rondo Energy and Rio Tinto Begin Design of Australia’s Largest Thermal Energy Storage Project",
+    "summary": "Rondo Energy and Rio Tinto started design work on a 360 MWh heat battery at the Yarwun alumina refinery in Queensland, backed by ARENA funding. The post Rondo Energy and Rio Tinto Begin Design of Australia’s Largest Thermal Energy Storage Project appeared first on iGrow News.",
+    "summary_vi": "Triển khai dự án lưu trữ năng lượng nhiệt quy mô lớn",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "iGrow News",
+        "url": "https://igrownews.com/rondo-energy-latest-news/",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_24b97dbd",
+    "title": "Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions”",
+    "summary": "One former employee claimed the firm had “rapidly scaled headcount only to issue a sudden massive layoff months later, with some employees let go just weeks after starting.” The post Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions” appeared first on AgFunderNews",
+    "summary_vi": "Carbon Robotics cắt giảm chi phí tái cấu trúc mảng robot nông nghiệp",
+    "signal_type": [
+      "pain_repeat",
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "AgFunder News",
+        "url": "https://agfundernews.com/layoffs-at-carbon-robotics-as-firm-realigns-costs-due-to-broader-economic-conditions",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_3ea3f0a0",
+    "title": "Reservoir Farms expands to Pacific Northwest to accelerate physical AI",
+    "summary": "Ag robotics specialist Reservoir is opening a new site in Washington State as its on-farm community for physical AI expands to tree fruit and blueberries. The post Reservoir Farms expands to Pacific Northwest to accelerate physical AI appeared first on AgFunderNews.",
+    "summary_vi": "Mở rộng trang trại thử nghiệm AI tương tác thế giới vật lý",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "AgFunder News",
+        "url": "https://agfundernews.com/reservoir-farms-expands-to-pacific-northwest-to-accelerate-physical-ai-as-membership-tops-30",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_440fa601",
+    "title": "IMIO raises $12m to unlock nutrients trapped in crop residues with new generation of ‘dependable ag biologicals’",
+    "summary": "IMIO's freeze-dried biologicals can deliver yield improvements, fertilizer savings, and tillage savings, says CEO Charles Smith. The post IMIO raises $12m to unlock nutrients trapped in crop residues with new generation of ‘dependable ag biologicals’ appeared first on AgFunderNews.",
+    "summary_vi": "Startup IMIO gọi $12M phát triển chế phẩm sinh học cho cây trồng",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "AgFunder News",
+        "url": "https://agfundernews.com/imio-raises-12m-to-unlock-nutrients-trapped-in-crop-residues-with-new-generation-of-dependable-ag-biologicals",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_f70b7800",
+    "title": "It will take more than data to improve traceability in the cotton supply chain",
+    "summary": "New research supported by Cotton Diaries explores the idea of \"relational traceability\" and making farmers a key source of intel. The post It will take more than data to improve traceability in the cotton supply chain appeared first on AgFunderNews.",
+    "summary_vi": "Cơ hội công nghệ và giải pháp mới: It will take more than data to improve tracea",
+    "signal_type": [
+      "price_shift"
+    ],
+    "sources": [
+      {
+        "name": "AgFunder News",
+        "url": "https://agfundernews.com/it-will-take-more-than-data-to-improve-traceability-in-the-cotton-supply-chain",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_c5f55eaa",
+    "title": "Kodama nets $7m to scale physical AI for ‘intelligent forestry’",
+    "summary": "Forestry contractors face growing demand for timber, forest management, and wildfire-resilience but struggle to find and retain reliable operators. The post Kodama nets $7m to scale physical AI for ‘intelligent forestry’ appeared first on AgFunderNews.",
+    "summary_vi": "Startup Kodama gọi $7M ứng dụng AI vật lý cho quản lý lâm nghiệp thông minh",
+    "signal_type": [
+      "pain_repeat",
+      "price_shift"
+    ],
+    "sources": [
+      {
+        "name": "AgFunder News",
+        "url": "https://agfundernews.com/kodama-nets-7m-to-scale-physical-ai-for-intelligent-forestry",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_0bcb8aad",
+    "title": "Aquaculture Dealflow | Mar 18 - 31, 2023",
+    "summary": "Bi-weekly roundup of investments and market movements in aquaculture",
+    "summary_vi": "Đổi mới công nghệ và xu hướng thị trường nuôi trồng thủy sản",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "aquablurb Substack",
+        "url": "https://aquageek.substack.com/p/aquaculture-dealflow-mar-18-31-2023",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_82a83ffd",
+    "title": "Aquaculture Dealflow | Feb 4 - Feb 17, 2023",
+    "summary": "Bi-weekly roundup of investments and market movements in aquaculture",
+    "summary_vi": "Đổi mới công nghệ và xu hướng thị trường nuôi trồng thủy sản",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "aquablurb Substack",
+        "url": "https://aquageek.substack.com/p/aquaculture-dealflow-feb-4-feb-17",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_43cdf624",
+    "title": "Aquaculture Dealflow & Notable Reads - 16",
+    "summary": "Bi-weekly roundup of investments and market movements in aquaculture",
+    "summary_vi": "Đổi mới công nghệ và xu hướng thị trường nuôi trồng thủy sản",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "aquablurb Substack",
+        "url": "https://aquageek.substack.com/p/aquaculture-dealflow-and-notable-981",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_17e3d4d7",
+    "title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success",
+    "summary": "Robotic foundation models are typically evaluated through costly closed-loop rollouts, which motivates cheap offline proxies for model capability. The Platonic Representation Hypothesis (PRH) suggests that as representations improve, different modalities such as vision and language converge toward a",
+    "summary_vi": "Thuật toán tối ưu tương tác cảm biến và chuyển động cho robot",
+    "signal_type": [
+      "price_shift",
+      "supply_gap",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "arXiv",
+        "url": "https://arxiv.org/abs/2610.31670v1",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_af23249d",
+    "title": "Green hydrogen trials planned for Atlantic aquaculture",
+    "summary": "The €7 million H2BLUE project will test hydrogen-powered aquaculture equipment in the Canary Islands and the Azores, while reusing oxygen from hydrogen production in onshore fish farming.",
+    "summary_vi": "Đổi mới công nghệ và xu hướng thị trường nuôi trồng thủy sản",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "The Fish Site",
+        "url": "https://thefishsite.com/articles/green-hydrogen-trials-planned-for-atlantic-aquaculture",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_af66a0c4",
+    "title": "Tanzanian startup scaling sustainable fertiliser, fish feed solutions",
+    "summary": "The high cost and inconsistent quality of feedstock for fish in Tanzania and other African countries negatively impacts on the region’s aquaculture growth landscape and competitiveness, says agriculture company NovFeed, which produces affordable and sustainable fish feed and fertiliser at scale in t",
+    "summary_vi": "Startup mở rộng thức ăn cá và phân bón hữu cơ bền vững",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "Engineering News Aquaculture",
+        "url": "https://newsletter-en.creamermedia.com/article/tanzanian-startup-scaling-sustainable-fertiliser-fish-feed-solutions-2024-11-25",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_caaed694",
+    "title": "Firm makes aquaponics, water treatment  breakthrough",
+    "summary": "Water treatment supplier Fine Bubble Technologies (FBT) is making significant strides in the agriculture and aquaculture sectors with its nano bubble system, enhancing water treatment efficiency and contributing to sustainable farming practices. The system has innovative applications, with potential",
+    "summary_vi": "Đột phá công nghệ lọc nước và tuần hoàn aquaponics",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "Engineering News Aquaculture",
+        "url": "https://newsletter-en.creamermedia.com/article/company-introduces-breakthrough-in-aquaponics-water-treatment-2024-10-18",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_1fd207f3",
+    "title": "AE2026: Half a century of aquaculture expertise",
+    "summary": "Slovenia’s charming capital, Ljubljana, will play host next month to Aquaculture Europe as the EAS celebrates its 50th birthday.",
+    "summary_vi": "Đổi mới công nghệ và xu hướng thị trường nuôi trồng thủy sản",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "Fish Farmer Magazine",
+        "url": "https://fishfarmer.affino.com/news/ae2026-half-a-century-of-aquaculture-expertise",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_bb135feb",
+    "title": "EU aquaculture vision needs numbers and dates, says FEAP",
+    "summary": "The Federation of European Aquaculture Producers has welcomed plans to simplify aquaculture regulation but warned that the EU’s new strategy lacks production targets, milestones and dedicated funding.",
+    "summary_vi": "Quy định an toàn và khung pháp lý chuẩn hóa công nghệ",
+    "signal_type": [
+      "price_shift",
+      "supply_gap",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "The Fish Site",
+        "url": "https://thefishsite.com/articles/eu-aquaculture-vision-needs-numbers-and-dates-says-feap",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
   },
   {
     "id": "opp_2026_1024_92739bcb",
@@ -660,6 +1486,39 @@
     "velocity": "steady"
   },
   {
+    "id": "opp_2026_1024_d634f3c1",
+    "title": "Rentech highlights long-term solar value for farming sector",
+    "summary": "Energy solutions company Rentech is highlighting the long-term financial and operational benefits of solar energy for the agricultural sector, despite persistent concerns among some farmers about upfront costs and system viability. Speaking to Engineering News at Nampo Harvest Day 2026, Rentech busi",
+    "summary_vi": "Ứng dụng điện mặt trời tối ưu chi phí vận hành trang trại",
+    "signal_type": [
+      "price_shift",
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "Engineering News Aquaculture",
+        "url": "https://newsletter-en.creamermedia.com/article/rentech-highlights-long-term-solar-value-for-farming-sector-2026-05-14",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 3,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 8,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
     "id": "opp_2026_1024_d8329edb",
     "title": "Sarika17-ui/AquaAI-Intelligent-Water-Guardian",
     "summary": "AI-powered water monitoring system integrating ESP32 sensors with a website dashboard for water-quality monitoring.",
@@ -758,217 +1617,49 @@
     "summary_vi": "AI đọc log thiết bị IoT, chỉ ra bộ phận hỏng trước khi sập"
   },
   {
-    "id": "opp_2026_1024_6f42dcac",
-    "title": "AGCO and Agility Robotics to Pilot Digit Humanoid Robot at Hesston, Kansas, Plant",
-    "summary": "AGCO signed a deal with Agility Robotics to pilot the Digit humanoid robot at its Hesston, Kansas, factory from 2027 for parts sorting and tote handling. The post AGCO and Agility Robotics to Pilot Digit Humanoid Robot at Hesston, Kansas, Plant appeared first on iGrow News.",
-    "summary_vi": "Thử nghiệm robot hình người tự hành trong nhà máy sản xuất",
+    "id": "opp_2026_1024_4e0df328",
+    "title": "South Africa, Chile collaborate to advance sustainable fisheries, aquaculture",
+    "summary": "The governments of South Africa and Chile have signed a memorandum of understanding to cooperate on fisheries and aquaculture. The countries will soon establish a joint technical committee to oversee the implementation of initiatives and coordinate regular bilateral meetings to ensure ongoing cooper",
+    "summary_vi": "Hợp tác quốc tế phát triển công nghệ thủy sản bền vững",
     "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "iGrow News",
-        "url": "https://igrownews.com/agco-latest-news/",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 7,
-    "stage": "research",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_e215d300",
-    "title": "5 Interesting Startup Deals You May Have Missed: Robot Training, Space Lasers And Greener Cement",
-    "summary": "From teaching robots to do everyday household chores to using lasers to track satellites in space, this month's crop of interesting startup deals spans some decidedly different corners of tech.",
-    "summary_vi": "Dòng vốn đầu tư mới vào huấn luyện robot và vật liệu xanh",
-    "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "Crunchbase News",
-        "url": "https://news.crunchbase.com/venture/interesting-startup-deals-robots-ai-gaming-clean-tech/",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 7,
-    "stage": "research",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_d88ee6b6",
-    "title": "Niqo Robotics Unveils 46-Foot RoboWeeder F50 for Specialty Crop Farms",
-    "summary": "Niqo Robotics unveils the RoboWeeder F50, a 46-foot hooded AI weeder for large specialty crop and turf farms, with orders open for 2027 delivery. The post Niqo Robotics Unveils 46-Foot RoboWeeder F50 for Specialty Crop Farms appeared first on iGrow News.",
-    "summary_vi": "Robot nông nghiệp tự hành phun thuốc diệt cỏ chính xác cao",
-    "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "iGrow News",
-        "url": "https://igrownews.com/niqo-robotics-latest-news/",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 7,
-    "stage": "research",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_21ee25d6",
-    "title": "🎥 Earth Rover bets on pulsed light to tackle weeds without chemicals",
-    "summary": "Earth Rover's CLAWS robot targets individual weeds with pulsed light to destroy the meristem without harming surrounding plants or soil. The post 🎥 Earth Rover bets on pulsed light to tackle weeds without chemicals appeared first on AgFunderNews.",
-    "summary_vi": "Robot diệt cỏ bằng xung ánh sáng không dùng hóa chất",
-    "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "AgFunder News",
-        "url": "https://agfundernews.com/%f0%9f%8e%a5-earth-rover-bets-on-pulsed-light-to-tackle-weeds-without-chemicals",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 7,
-    "stage": "research",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_24b97dbd",
-    "title": "Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions”",
-    "summary": "One former employee claimed the firm had “rapidly scaled headcount only to issue a sudden massive layoff months later, with some employees let go just weeks after starting.” The post Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions” appeared first on AgFunderNews",
-    "summary_vi": "Cơ hội công nghệ và giải pháp mới: Layoffs at Carbon Robotics as firm “realigns",
-    "signal_type": [
-      "pain_repeat",
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "AgFunder News",
-        "url": "https://agfundernews.com/layoffs-at-carbon-robotics-as-firm-realigns-costs-due-to-broader-economic-conditions",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 7,
-    "stage": "research",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_3ea3f0a0",
-    "title": "Reservoir Farms expands to Pacific Northwest to accelerate physical AI",
-    "summary": "Ag robotics specialist Reservoir is opening a new site in Washington State as its on-farm community for physical AI expands to tree fruit and blueberries. The post Reservoir Farms expands to Pacific Northwest to accelerate physical AI appeared first on AgFunderNews.",
-    "summary_vi": "Mở rộng trang trại thử nghiệm AI tương tác thế giới vật lý",
-    "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "AgFunder News",
-        "url": "https://agfundernews.com/reservoir-farms-expands-to-pacific-northwest-to-accelerate-physical-ai-as-membership-tops-30",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 7,
-    "stage": "research",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_caaed694",
-    "title": "Firm makes aquaponics, water treatment  breakthrough",
-    "summary": "Water treatment supplier Fine Bubble Technologies (FBT) is making significant strides in the agriculture and aquaculture sectors with its nano bubble system, enhancing water treatment efficiency and contributing to sustainable farming practices. The system has innovative applications, with potential",
-    "summary_vi": "Đột phá công nghệ lọc nước và tuần hoàn aquaponics",
-    "signal_type": [
-      "price_shift",
       "tech_cheap"
     ],
     "sources": [
       {
         "name": "Engineering News Aquaculture",
-        "url": "https://newsletter-en.creamermedia.com/article/company-introduces-breakthrough-in-aquaponics-water-treatment-2024-10-18",
+        "url": "https://newsletter-en.creamermedia.com/article/south-africa-chile-collaborate-to-advance-sustainable-fisheries-aquaculture-2024-11-05",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 2,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 7,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_e205e7d0",
+    "title": "Alrumi08/Neptune-aquakulture-Copilot",
+    "summary": "IoT Aquaculture Monitoring with Langflow AI & Hybrid Edge Fallback",
+    "summary_vi": "Copilot AI tư vấn kỹ thuật và kiểm soát ao nuôi thủy sản",
+    "signal_type": [
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/Alrumi08/Neptune-aquakulture-Copilot",
         "date": "2026-10-24"
       }
     ],
@@ -1001,6 +1692,70 @@
       {
         "name": "Engineering News Aquaculture",
         "url": "https://newsletter-en.creamermedia.com/article/dam-fixed-without-disrupting-crop-cycle-2026-07-03",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 2,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 7,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_eea90927",
+    "title": "MTN rolls out AI-driven IoT solutions for agriculture sector",
+    "summary": "Telecommunications firm MTN is commercialising a suite of AI-driven Internet-of-Things (IoT) solutions for the agricultural sector, while identifying private network infrastructure as an important enabler of wider digital agriculture adoption in rural areas.",
+    "summary_vi": "Nhà mạng triển khai gói giải pháp IoT và AI cho nông nghiệp",
+    "signal_type": [
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "Engineering News Aquaculture",
+        "url": "https://newsletter-en.creamermedia.com/article/mtn-rolls-out-ai-driven-iot-solutions-for-agriculture-sector-2026-05-14",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 2,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 7,
+    "stage": "research",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_e6dece15",
+    "title": "INVE and Santa Priscila partner to supply Artemia paste in Ecuador",
+    "summary": "The partnership will bring Artemia paste to Ecuador’s shrimp hatcheries, aiming to simplify feeding operations without compromising biosecurity or larval performance.",
+    "summary_vi": "Cung ứng thức ăn dinh dưỡng chuyên dụng cho ấu trùng tôm",
+    "signal_type": [
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "The Fish Site",
+        "url": "https://thefishsite.com/articles/inve-and-santa-priscila-partner-to-supply-artemia-paste-in-ecuador",
         "date": "2026-10-24"
       }
     ],
@@ -1118,49 +1873,17 @@
     "summary_vi": "Nhiều robot chia sẻ bản đồ kho bãi real-time, giảm va chạm"
   },
   {
-    "id": "opp_2026_1024_4c793be3",
-    "title": "AgriFood Signals: Danone turns yogurt into renewable energy, Bison Ventures lands $160m, biochar projects",
-    "summary": "Plus: hackers at John Deere The post AgriFood Signals: Danone turns yogurt into renewable energy, Bison Ventures lands $160m, biochar projects appeared first on AgFunderNews.",
-    "summary_vi": "Xu hướng tái tạo năng lượng từ phụ phẩm nông nghiệp",
+    "id": "opp_2026_1024_65853578",
+    "title": "Sea Harvest profit dips on low catch rates, tough market conditions",
+    "summary": "JSE-listed seafood, aquaculture and agroprocessing company Sea Harvest says last year was its toughest financial year since listing on the JSE in 2017, with its performance having been impacted on by poor hake catch rates in South Africa, as well as poor prawn catch rates in Australia. The company a",
+    "summary_vi": "Áp lực suy giảm sản lượng đánh bắt thúc đẩy chuyển dịch nuôi trồng",
     "signal_type": [
-      "price_shift"
+      "tech_cheap"
     ],
     "sources": [
       {
-        "name": "AgFunder News",
-        "url": "https://agfundernews.com/agrifood-signals-danone-turns-yogurt-into-renewable-energy-bison-ventures-lands-160m-biochar-projects",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 6,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_81f2ffe6",
-    "title": "Rondo Energy and Rio Tinto Begin Design of Australia’s Largest Thermal Energy Storage Project",
-    "summary": "Rondo Energy and Rio Tinto started design work on a 360 MWh heat battery at the Yarwun alumina refinery in Queensland, backed by ARENA funding. The post Rondo Energy and Rio Tinto Begin Design of Australia’s Largest Thermal Energy Storage Project appeared first on iGrow News.",
-    "summary_vi": "Triển khai dự án lưu trữ năng lượng nhiệt quy mô lớn",
-    "signal_type": [
-      "price_shift"
-    ],
-    "sources": [
-      {
-        "name": "iGrow News",
-        "url": "https://igrownews.com/rondo-energy-latest-news/",
+        "name": "Engineering News Aquaculture",
+        "url": "https://newsletter-en.creamermedia.com/article/sea-harvest-profit-dips-on-low-catch-rates-tough-market-conditions-2025-03-04",
         "date": "2026-10-24"
       }
     ],
@@ -1193,6 +1916,102 @@
       {
         "name": "Engineering News Aquaculture",
         "url": "https://newsletter-en.creamermedia.com/article/aquaculture-a-powerful-means-to-address-food-and-nutrition-security-across-africasingh-2024-09-10",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 1,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 6,
+    "stage": "watch",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_ade54c8d",
+    "title": "EAS Review: Facing up to global change",
+    "summary": "Resilience in the face of a shifting climate was the theme for this year’s conference of the European Aquaculture Society, held in Ljubljana",
+    "summary_vi": "Tổng kết xu hướng đổi mới công nghệ thích ứng biến đổi khí hậu",
+    "signal_type": [
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "Fish Farmer Magazine",
+        "url": "https://fishfarmer.affino.com/news/eas-review-with-steps",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 1,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 6,
+    "stage": "watch",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_93fa6937",
+    "title": "Awards at IceFish celebrate innovation in the seafood industry",
+    "summary": "Processing, fisheries and aquaculture were represented among the event’s winners",
+    "summary_vi": "Giải thưởng vinh danh các sáng kiến công nghệ chế biến thủy sản",
+    "signal_type": [
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "Fish Farmer Magazine",
+        "url": "https://fishfarmer.affino.com/news/awards-at-icefish-celebrate-innovation-in-the-seafood-industry",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 1,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 6,
+    "stage": "watch",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_1881aa41",
+    "title": "LACQUA26 announces second speaker for San Salvador conference",
+    "summary": "Leading shrimp expert David Kawahigashi will be talking about the future shape of aquaculture",
+    "summary_vi": "Hội nghị công nghệ nuôi trồng thủy sản khu vực Mỹ Latinh",
+    "signal_type": [
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "Fish Farmer Magazine",
+        "url": "https://fishfarmer.affino.com/news/lacqua26-announces-second-speaker-for-san-salvador-conference",
         "date": "2026-10-24"
       }
     ],
@@ -1247,6 +2066,134 @@
     "velocity": "steady"
   },
   {
+    "id": "opp_2026_1024_ff637fda",
+    "title": "Can fish cells replace live fish in aquaculture disease research?",
+    "summary": "A research hub south of Oslo is developing lab-based approaches to reduce reliance on live fish in infectious diseases research.",
+    "summary_vi": "Nghiên cứu bệnh thủy sản bằng tế bào nhân tạo không cần cá sống",
+    "signal_type": [
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "The Fish Site",
+        "url": "https://thefishsite.com/articles/can-aquaculture-disease-research-leave-fish-behind",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 1,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 6,
+    "stage": "watch",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_9020d316",
+    "title": "chlorcale/DACN_IoT_AquaCulture",
+    "summary": "Tín hiệu công nghệ và cơ hội thị trường từ GitHub.",
+    "summary_vi": "Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản",
+    "signal_type": [
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/chlorcale/DACN_IoT_AquaCulture",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 1,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 6,
+    "stage": "watch",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_9428fc38",
+    "title": "maxindo/aquaculture",
+    "summary": "IOT Aquaculture",
+    "summary_vi": "Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản",
+    "signal_type": [
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/maxindo/aquaculture",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 1,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 6,
+    "stage": "watch",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_a1ac1890",
+    "title": "MohamedH-Sallam/Automated-Aquaculture-IoT-System",
+    "summary": "Tín hiệu công nghệ và cơ hội thị trường từ GitHub.",
+    "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
+    "signal_type": [
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/MohamedH-Sallam/Automated-Aquaculture-IoT-System",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 1,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 6,
+    "stage": "watch",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
     "id": "opp_2026_1024_261a53a8",
     "title": "transcenddev/agwasuri",
     "summary": "A solar-powered IoT and machine-learning system that monitors water quality in real time and recommends suitable aquaculture species for fishponds.",
@@ -1279,18 +2226,81 @@
     "velocity": "steady"
   },
   {
-    "id": "opp_2026_1024_d634f3c1",
-    "title": "Rentech highlights long-term solar value for farming sector",
-    "summary": "Energy solutions company Rentech is highlighting the long-term financial and operational benefits of solar energy for the agricultural sector, despite persistent concerns among some farmers about upfront costs and system viability. Speaking to Engineering News at Nampo Harvest Day 2026, Rentech busi",
-    "summary_vi": "Ứng dụng điện mặt trời tối ưu chi phí vận hành trang trại",
+    "id": "opp_2026_1024_614d387d",
+    "title": "REAL-LEKS/farm-dashboard",
+    "summary": "Aquaculture IOT Farm web dashboard",
+    "summary_vi": "Dashboard theo dõi thời gian thực dữ liệu cảm biến nông trại",
     "signal_type": [
-      "price_shift",
       "tech_cheap"
     ],
     "sources": [
       {
-        "name": "Engineering News Aquaculture",
-        "url": "https://newsletter-en.creamermedia.com/article/rentech-highlights-long-term-solar-value-for-farming-sector-2026-05-14",
+        "name": "GitHub",
+        "url": "https://github.com/REAL-LEKS/farm-dashboard",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 1,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 6,
+    "stage": "watch",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_6da5f960",
+    "title": "jpgaaru/aquapulse-design-system",
+    "summary": "AquaPulse Design System — Enterprise Aquaculture SaaS & IoT Telemetry UI/UX",
+    "summary_vi": "Giao diện chuẩn hóa cho ứng dụng điều hành thủy sản",
+    "signal_type": [
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/jpgaaru/aquapulse-design-system",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 1,
+      "your_leverage": 3
+    },
+    "multiplier": 0.85,
+    "total": 6,
+    "stage": "watch",
+    "first_seen": "2026-10-24",
+    "last_seen": "2026-10-24",
+    "appearance_count": 1,
+    "history_dates": [
+      "2026-10-24"
+    ],
+    "velocity": "steady"
+  },
+  {
+    "id": "opp_2026_1024_6003caaa",
+    "title": "Leamon-Lee/Design-of-Enterprise-IoT-design",
+    "summary": "Enterprise IoT coursework and Smart Turtle Breeding System (STBS) design project",
+    "summary_vi": "Thiết kế kiến trúc hệ thống IoT cho quy mô trang trại lớn",
+    "signal_type": [
+      "tech_cheap"
+    ],
+    "sources": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/Leamon-Lee/Design-of-Enterprise-IoT-design",
         "date": "2026-10-24"
       }
     ],
@@ -1344,17 +2354,17 @@
     "velocity": "steady"
   },
   {
-    "id": "opp_2026_1024_e406f83d",
-    "title": "ALNezar/FishMaster",
-    "summary": "Smart aquarium monitoring system using ESP32, MQTT, Spring Boot, SSE, PostgreSQL, and React for real-time water condition tracking.",
-    "summary_vi": "Mạch ESP32 kết nối cảm biến đo pH, độ đục và nhiệt độ nước",
+    "id": "opp_2026_1024_4277d396",
+    "title": "xiaoli5201314-spec/smart-fish-farming-platform",
+    "summary": "种鱼数智管理平台 | ESP32 水质网关、树莓派 Qt 控制、多端可视化、智能问答与协议仿真",
+    "summary_vi": "Nền tảng trang trại nuôi cá thông minh kết hợp IoT",
     "signal_type": [
       "tech_cheap"
     ],
     "sources": [
       {
         "name": "GitHub",
-        "url": "https://github.com/ALNezar/FishMaster",
+        "url": "https://github.com/xiaoli5201314-spec/smart-fish-farming-platform",
         "date": "2026-10-24"
       }
     ],
@@ -1376,185 +2386,24 @@
     "velocity": "steady"
   },
   {
-    "id": "opp_2026_1024_f6a3af97",
-    "title": "Protecting Trade Secrets In The Age Of AI",
-    "summary": "AI agents create new trade secret risks by allowing employees to access expertise or inadvertently expose proprietary information through personal devices. In this guest commentary, Seth Kugler, a partner at Grellas Shah LLP, warns companies that they should adopt strict AI policies, restrict data a",
-    "summary_vi": "Giải pháp bảo vệ bí mật công nghệ trước nguy cơ rò rỉ qua AI",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "Crunchbase News",
-        "url": "https://news.crunchbase.com/ai/protecting-trade-secrets-legal-kugler-grellas-shah/",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 6,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_9ea23b9e",
-    "title": "Exclusive: Slingshot Raises $27M In Seed Funding To Build An Insurer For Those Small Policies Sold At Checkout",
-    "summary": "Slingshot Insurance, a Minneapolis-based AI-native embedded insurance startup, is emerging from stealth with $27 million in a seed funding round co-led by Rally Ventures and Skyward Group, it tells Crunchbase News exclusively.",
-    "summary_vi": "Cơ hội công nghệ và giải pháp mới: Exclusive: Slingshot Raises $27M In Seed Fund",
-    "signal_type": [
-      "price_shift"
-    ],
-    "sources": [
-      {
-        "name": "Crunchbase News",
-        "url": "https://news.crunchbase.com/fintech-ecommerce/insuretech/startup-slingshot-insurance-seed-funding-genteman/",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 6,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_af66a0c4",
-    "title": "Tanzanian startup scaling sustainable fertiliser, fish feed solutions",
-    "summary": "The high cost and inconsistent quality of feedstock for fish in Tanzania and other African countries negatively impacts on the region’s aquaculture growth landscape and competitiveness, says agriculture company NovFeed, which produces affordable and sustainable fish feed and fertiliser at scale in t",
-    "summary_vi": "Startup mở rộng thức ăn cá và phân bón hữu cơ bền vững",
-    "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "Engineering News Aquaculture",
-        "url": "https://newsletter-en.creamermedia.com/article/tanzanian-startup-scaling-sustainable-fertiliser-fish-feed-solutions-2024-11-25",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 6,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_4e0df328",
-    "title": "South Africa, Chile collaborate to advance sustainable fisheries, aquaculture",
-    "summary": "The governments of South Africa and Chile have signed a memorandum of understanding to cooperate on fisheries and aquaculture. The countries will soon establish a joint technical committee to oversee the implementation of initiatives and coordinate regular bilateral meetings to ensure ongoing cooper",
-    "summary_vi": "Hợp tác quốc tế phát triển công nghệ thủy sản bền vững",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "Engineering News Aquaculture",
-        "url": "https://newsletter-en.creamermedia.com/article/south-africa-chile-collaborate-to-advance-sustainable-fisheries-aquaculture-2024-11-05",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 6,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_e205e7d0",
-    "title": "Alrumi08/Neptune-aquakulture-Copilot",
-    "summary": "IoT Aquaculture Monitoring with Langflow AI & Hybrid Edge Fallback",
-    "summary_vi": "Copilot AI tư vấn kỹ thuật và kiểm soát ao nuôi thủy sản",
+    "id": "opp_2026_1024_e406f83d",
+    "title": "ALNezar/FishMaster",
+    "summary": "Smart aquarium monitoring system using ESP32, MQTT, Spring Boot, SSE, PostgreSQL, and React for real-time water condition tracking.",
+    "summary_vi": "Mạch ESP32 kết nối cảm biến đo pH, độ đục và nhiệt độ nước",
     "signal_type": [
       "tech_cheap"
     ],
     "sources": [
       {
         "name": "GitHub",
-        "url": "https://github.com/Alrumi08/Neptune-aquakulture-Copilot",
+        "url": "https://github.com/ALNezar/FishMaster",
         "date": "2026-10-24"
       }
     ],
     "source_count": 1,
     "scores": {
-      "durability": 2,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 6,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_eea90927",
-    "title": "MTN rolls out AI-driven IoT solutions for agriculture sector",
-    "summary": "Telecommunications firm MTN is commercialising a suite of AI-driven Internet-of-Things (IoT) solutions for the agricultural sector, while identifying private network infrastructure as an important enabler of wider digital agriculture adoption in rural areas.",
-    "summary_vi": "Nhà mạng triển khai gói giải pháp IoT và AI cho nông nghiệp",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "Engineering News Aquaculture",
-        "url": "https://newsletter-en.creamermedia.com/article/mtn-rolls-out-ai-driven-iot-solutions-for-agriculture-sector-2026-05-14",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 2,
+      "durability": 3,
+      "ai_support": 1,
       "your_leverage": 3
     },
     "multiplier": 0.85,
@@ -1601,42 +2450,10 @@
     "velocity": "steady"
   },
   {
-    "id": "opp_2026_1024_e6dece15",
-    "title": "INVE and Santa Priscila partner to supply Artemia paste in Ecuador",
-    "summary": "The partnership will bring Artemia paste to Ecuador’s shrimp hatcheries, aiming to simplify feeding operations without compromising biosecurity or larval performance.",
-    "summary_vi": "Cung ứng thức ăn dinh dưỡng chuyên dụng cho ấu trùng tôm",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "The Fish Site",
-        "url": "https://thefishsite.com/articles/inve-and-santa-priscila-partner-to-supply-artemia-paste-in-ecuador",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 2,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 6,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
     "id": "opp_2026_1024_a25f3738",
     "title": "EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence",
     "summary": "Tool-using language model agents rely on environmental facts to decide whether an action is permitted. When a tool response omits a safety-relevant fact, an agent may carry out a prohibited action even though the user request is benign and every returned statement is true. We introduce \\bench{}, an ",
-    "summary_vi": "Bộ benchmark đánh giá độ an toàn và chứng cứ cho AI Agent",
+    "summary_vi": "Cơ hội công nghệ và giải pháp mới: EpiSEM-Bench: Evaluating Safety and Evidence",
     "signal_type": [
       "supply_gap",
       "tech_cheap"
@@ -1656,390 +2473,6 @@
     },
     "multiplier": 0.85,
     "total": 6,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_65853578",
-    "title": "Sea Harvest profit dips on low catch rates, tough market conditions",
-    "summary": "JSE-listed seafood, aquaculture and agroprocessing company Sea Harvest says last year was its toughest financial year since listing on the JSE in 2017, with its performance having been impacted on by poor hake catch rates in South Africa, as well as poor prawn catch rates in Australia. The company a",
-    "summary_vi": "Áp lực suy giảm sản lượng đánh bắt thúc đẩy chuyển dịch nuôi trồng",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "Engineering News Aquaculture",
-        "url": "https://newsletter-en.creamermedia.com/article/sea-harvest-profit-dips-on-low-catch-rates-tough-market-conditions-2025-03-04",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_ade54c8d",
-    "title": "EAS Review: Facing up to global change",
-    "summary": "Resilience in the face of a shifting climate was the theme for this year’s conference of the European Aquaculture Society, held in Ljubljana",
-    "summary_vi": "Tổng kết xu hướng đổi mới công nghệ thích ứng biến đổi khí hậu",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "Fish Farmer Magazine",
-        "url": "https://fishfarmer.affino.com/news/eas-review-with-steps",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_93fa6937",
-    "title": "Awards at IceFish celebrate innovation in the seafood industry",
-    "summary": "Processing, fisheries and aquaculture were represented among the event’s winners",
-    "summary_vi": "Giải thưởng vinh danh các sáng kiến công nghệ chế biến thủy sản",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "Fish Farmer Magazine",
-        "url": "https://fishfarmer.affino.com/news/awards-at-icefish-celebrate-innovation-in-the-seafood-industry",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_1881aa41",
-    "title": "LACQUA26 announces second speaker for San Salvador conference",
-    "summary": "Leading shrimp expert David Kawahigashi will be talking about the future shape of aquaculture",
-    "summary_vi": "Hội nghị công nghệ nuôi trồng thủy sản khu vực Mỹ Latinh",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "Fish Farmer Magazine",
-        "url": "https://fishfarmer.affino.com/news/lacqua26-announces-second-speaker-for-san-salvador-conference",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_ff637fda",
-    "title": "Can fish cells replace live fish in aquaculture disease research?",
-    "summary": "A research hub south of Oslo is developing lab-based approaches to reduce reliance on live fish in infectious diseases research.",
-    "summary_vi": "Nghiên cứu bệnh thủy sản bằng tế bào nhân tạo không cần cá sống",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "The Fish Site",
-        "url": "https://thefishsite.com/articles/can-aquaculture-disease-research-leave-fish-behind",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_9020d316",
-    "title": "chlorcale/DACN_IoT_AquaCulture",
-    "summary": "Tín hiệu công nghệ và cơ hội thị trường từ GitHub.",
-    "summary_vi": "Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/chlorcale/DACN_IoT_AquaCulture",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_9428fc38",
-    "title": "maxindo/aquaculture",
-    "summary": "IOT Aquaculture",
-    "summary_vi": "Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/maxindo/aquaculture",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_a1ac1890",
-    "title": "MohamedH-Sallam/Automated-Aquaculture-IoT-System",
-    "summary": "Tín hiệu công nghệ và cơ hội thị trường từ GitHub.",
-    "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/MohamedH-Sallam/Automated-Aquaculture-IoT-System",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_614d387d",
-    "title": "REAL-LEKS/farm-dashboard",
-    "summary": "Aquaculture IOT Farm web dashboard",
-    "summary_vi": "Dashboard theo dõi thời gian thực dữ liệu cảm biến nông trại",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/REAL-LEKS/farm-dashboard",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_6da5f960",
-    "title": "jpgaaru/aquapulse-design-system",
-    "summary": "AquaPulse Design System — Enterprise Aquaculture SaaS & IoT Telemetry UI/UX",
-    "summary_vi": "Giao diện chuẩn hóa cho ứng dụng điều hành thủy sản",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/jpgaaru/aquapulse-design-system",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_6003caaa",
-    "title": "Leamon-Lee/Design-of-Enterprise-IoT-design",
-    "summary": "Enterprise IoT coursework and Smart Turtle Breeding System (STBS) design project",
-    "summary_vi": "Thiết kế kiến trúc hệ thống IoT cho quy mô trang trại lớn",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/Leamon-Lee/Design-of-Enterprise-IoT-design",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_4277d396",
-    "title": "xiaoli5201314-spec/smart-fish-farming-platform",
-    "summary": "种鱼数智管理平台 | ESP32 水质网关、树莓派 Qt 控制、多端可视化、智能问答与协议仿真",
-    "summary_vi": "Nền tảng trang trại nuôi cá thông minh kết hợp IoT",
-    "signal_type": [
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/xiaoli5201314-spec/smart-fish-farming-platform",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 1,
-      "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
     "stage": "watch",
     "first_seen": "2026-10-24",
     "last_seen": "2026-10-24",
@@ -2133,106 +2566,6 @@
       "durability": 2,
       "ai_support": 1,
       "your_leverage": 3
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_17e3d4d7",
-    "title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success",
-    "summary": "Robotic foundation models are typically evaluated through costly closed-loop rollouts, which motivates cheap offline proxies for model capability. The Platonic Representation Hypothesis (PRH) suggests that as representations improve, different modalities such as vision and language converge toward a",
-    "summary_vi": "Thuật toán tối ưu tương tác cảm biến và chuyển động cho robot",
-    "signal_type": [
-      "price_shift",
-      "supply_gap",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "arXiv",
-        "url": "https://arxiv.org/abs/2610.31670v1",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 2,
-      "your_leverage": 2
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_c9ea45c5",
-    "title": "Warhound raises $200M to engineer war dogs and arm them with Anduril gear",
-    "summary": "Warhound, the brainchild of Ben Lamm and Palmer Luckey, emerges from stealth to genetically engineer dogs for military and law enforcement.",
-    "summary_vi": "Quy định an toàn và khung pháp lý chuẩn hóa công nghệ",
-    "signal_type": [
-      "price_shift",
-      "supply_gap"
-    ],
-    "sources": [
-      {
-        "name": "TechCrunch Funding",
-        "url": "https://techcrunch.com/2026/10/22/ben-lamm-raises-200m-for-warhound-to-engineer-war-dogs-and-arm-them-with-anduril-gear/",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 2,
-      "your_leverage": 2
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_183aab00",
-    "title": "Omnia prioritises supply chain security and nutrient efficiency as global fertiliser market ...",
-    "summary": "Diversified chemicals group Omnia is using Nampo Harvest Day 2026 to highlight its response to global fertiliser market uncertainty, with the company having made significant supply chain investments to secure input availability ahead of the summer planting season. Engineering News spoke to Omnia exe",
-    "summary_vi": "Giải pháp tối ưu dinh dưỡng cây trồng trong biến động thị trường",
-    "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "Engineering News Aquaculture",
-        "url": "https://newsletter-en.creamermedia.com/article/omnia-prioritises-supply-chain-security-and-nutrient-efficiency-as-global-fertiliser-market-uncertainty-persists-2026-05-14",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 2,
-      "your_leverage": 2
     },
     "multiplier": 0.85,
     "total": 5,
@@ -2346,136 +2679,6 @@
     "summary_vi": "Luật AI có hiệu lực, thiết lập khung quản trị công nghệ quốc gia"
   },
   {
-    "id": "opp_2026_1024_6924f062",
-    "title": "USDA opened an $8 billion fuel relief program for farmers with no crop insurance required",
-    "summary": "This week on AgTech Digest: Betagro, IMIO, Kubota. Four food-chain companies changed hands in five days — and Washington dropped $8 billion on farmers' fuel bills with no crop insurance requirement attached. The post USDA opened an $8 billion fuel relief program for farmers with no crop insurance re",
-    "summary_vi": "Gói hỗ trợ tài chính nhiên liệu quy mô lớn cho ngành nông nghiệp",
-    "signal_type": [
-      "price_shift"
-    ],
-    "sources": [
-      {
-        "name": "iGrow News",
-        "url": "https://igrownews.com/usda-opened-an-8-billion-fuel-relief-program-for-farmers-with-no-crop-insurance/",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 2,
-      "your_leverage": 1
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_9c4d3ab2",
-    "title": "Betagro Takes Majority Stake in Thai Food Supply Platform Freshket",
-    "summary": "Betagro has acquired a majority stake in Freshket, a Thai digital platform supplying hotels, restaurants and caterers, through Betagro Ventures. The post Betagro Takes Majority Stake in Thai Food Supply Platform Freshket appeared first on iGrow News.",
-    "summary_vi": "Doanh nghiệp nông nghiệp thâu tóm nền tảng chuỗi cung ứng thực phẩm",
-    "signal_type": [
-      "price_shift"
-    ],
-    "sources": [
-      {
-        "name": "iGrow News",
-        "url": "https://igrownews.com/betagro-plc-latest-news/",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 2,
-      "your_leverage": 1
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_95656f2e",
-    "title": "Sea Harvest declares maiden interim dividend, reduces debt despite revenue decline",
-    "summary": "JSE-listed fishing and food business Sea Harvest has reported a 14% year-on-year increase in headline earnings a share to 97c for the six months ended June 30, while revenue from continuing operations decreased by 6% year-on-year to R3.29-billion, as double-digit price increases were offset by lower",
-    "summary_vi": "Tối ưu chi phí và dòng tiền trong ngành khai thác thủy sản",
-    "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "Engineering News Aquaculture",
-        "url": "https://newsletter-en.creamermedia.com/article/sea-harvest-declares-maiden-interim-dividend-reduces-debt-despite-revenue-decline-2026-09-01",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 2,
-      "your_leverage": 1
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1022_5c0a278d",
-    "title": "Regulations on the safety of AI applications in banking operations. - Vietnam.vn",
-    "summary": "Regulations on the safety of AI applications in banking operations. Vietnam.vn",
-    "summary_vi": "Quy định an toàn và quản trị rủi ro AI trong ngành ngân hàng",
-    "signal_type": [
-      "supply_gap"
-    ],
-    "sources": [
-      {
-        "name": "Tech Press (RSS)",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQLTFDakVQaG5kZ25TNWdodEVONGkzb0pwUmx5d0lfZEEtR1pNWGRFX3VoVUM4aGREcE5jdnRram5uTE5Za2hXb1JXMHNxTDRHNWJlV2ZWNks3NngycTZqbmZEYUJxTGcxT0Zrbno2ZUhodUstb3hKd2hVMnB1NDBFYkNHNXU4bVU?oc=5",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 2,
-      "your_leverage": 1
-    },
-    "multiplier": 0.85,
-    "total": 5,
-    "stage": "watch",
-    "first_seen": "2026-10-22",
-    "last_seen": "2026-10-24",
-    "appearance_count": 2,
-    "history_dates": [
-      "2026-10-22",
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
     "id": "opp_2026_1022_af9e5899",
     "title": "The Law on Artificial Intelligence must ensure four key pillars - Tạp chí KH&CN Việt Nam",
     "summary": "Tín hiệu công nghệ và cơ hội thị trường từ Tech Press (RSS).",
@@ -2572,104 +2775,6 @@
     "velocity": "steady"
   },
   {
-    "id": "opp_2026_1024_91ed6427",
-    "title": "Recent agrifood cyberattacks are ‘a wakeup call’ for the industry as ransomware incidences increase",
-    "summary": "No agrifood business is immune, but all of them can take precautionary steps now to secure their operations, says Food and Ag-ISAC. The post Recent agrifood cyberattacks are ‘a wakeup call’ for the industry as ransomware incidences increase appeared first on AgFunderNews.",
-    "summary_vi": "Cảnh báo an ninh mạng cấp bách cho hạ tầng số nông nghiệp",
-    "signal_type": [
-      "price_shift"
-    ],
-    "sources": [
-      {
-        "name": "AgFunder News",
-        "url": "https://agfundernews.com/recent-agrifood-cyberattacks-are-a-wakeup-call-for-the-industry-as-ransomware-incidences-increase",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 1,
-      "your_leverage": 1
-    },
-    "multiplier": 0.85,
-    "total": 4,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_6d282f9b",
-    "title": "dsm-firmenich’s Animal Nutrition &amp; Health to split in two",
-    "summary": "The sale of dsm-firmenich’s Animal Nutrition & Health business to CVC Capital Partners will create two standalone companies, with completion expected in early 2027.",
-    "summary_vi": "Tái cấu trúc mảng dinh dưỡng và sức khỏe vật nuôi toàn cầu",
-    "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "The Fish Site",
-        "url": "https://thefishsite.com/articles/dsm-firmenich-s-animal-nutrition-health-to-split-in-two",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 3,
-      "ai_support": 1,
-      "your_leverage": 1
-    },
-    "multiplier": 0.85,
-    "total": 4,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
-    "id": "opp_2026_1024_c2533dda",
-    "title": "The Week’s 10 Biggest Funding Rounds: AI Drives A Varied Lineup Of Large Financings",
-    "summary": "It was another interesting week for AI-related startup funding, with a number of large rounds and quirky companies. The largest financings went to Tenstorrent, a developer of AI processors and systems, and AI lab Flapping Airplanes. The quirkiest round, meanwhile, was undoubtedly a $200 million fina",
-    "summary_vi": "Cơ hội công nghệ và giải pháp mới: The Week’s 10 Biggest Funding Rounds: AI Driv",
-    "signal_type": [
-      "price_shift",
-      "tech_cheap"
-    ],
-    "sources": [
-      {
-        "name": "Crunchbase News",
-        "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-defense-biotech-robotics-tenstorrent/",
-        "date": "2026-10-24"
-      }
-    ],
-    "source_count": 1,
-    "scores": {
-      "durability": 2,
-      "ai_support": 2,
-      "your_leverage": 1
-    },
-    "multiplier": 0.85,
-    "total": 4,
-    "stage": "watch",
-    "first_seen": "2026-10-24",
-    "last_seen": "2026-10-24",
-    "appearance_count": 1,
-    "history_dates": [
-      "2026-10-24"
-    ],
-    "velocity": "steady"
-  },
-  {
     "id": "opp_2026_1022_603e71ba",
     "title": "ALPS: Visual State Encoders for World Models",
     "summary": "World models turn visual representations into predictions and actions. We argue that their visual foundation should combine physical-state information, native language alignment, and pixel reconstruction, so that a single representation can support prediction, instruction, and inspection. However, e",
@@ -2700,5 +2805,38 @@
     ],
     "velocity": "steady",
     "summary_vi": "Mã hóa trạng thái thị giác giúp mô hình hiểu thế giới vật lý"
+  },
+  {
+    "id": "opp_2026_1022_5c0a278d",
+    "title": "Regulations on the safety of AI applications in banking operations. - Vietnam.vn",
+    "summary": "Regulations on the safety of AI applications in banking operations. Vietnam.vn",
+    "summary_vi": "Quy định an toàn và quản trị rủi ro AI trong ngành ngân hàng",
+    "signal_type": [
+      "supply_gap"
+    ],
+    "sources": [
+      {
+        "name": "Tech Press (RSS)",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQLTFDakVQaG5kZ25TNWdodEVONGkzb0pwUmx5d0lfZEEtR1pNWGRFX3VoVUM4aGREcE5jdnRram5uTE5Za2hXb1JXMHNxTDRHNWJlV2ZWNks3NngycTZqbmZEYUJxTGcxT0Zrbno2ZUhodUstb3hKd2hVMnB1NDBFYkNHNXU4bVU?oc=5",
+        "date": "2026-10-24"
+      }
+    ],
+    "source_count": 1,
+    "scores": {
+      "durability": 3,
+      "ai_support": 2,
+      "your_leverage": 0
+    },
+    "multiplier": 0.85,
+    "total": 4,
+    "stage": "watch",
+    "first_seen": "2026-10-22",
+    "last_seen": "2026-10-24",
+    "appearance_count": 2,
+    "history_dates": [
+      "2026-10-22",
+      "2026-10-24"
+    ],
+    "velocity": "steady"
   }
 ]
