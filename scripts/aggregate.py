@@ -487,7 +487,7 @@ def process_topic_items(raw_items, now_dt):
         tag = classify_impact_tag(title, summary)
         score = calculate_item_score(temp_item, velocity)
 
-        processed.append({
+        entry = {
             "title": title,
             "summary": summary,
             "url": url,
@@ -497,7 +497,12 @@ def process_topic_items(raw_items, now_dt):
             "velocity": velocity,
             "tag": tag,
             "_raw_pub": pub_dt.isoformat() if pub_dt else None
-        })
+        }
+        for extra_field in ("source", "date", "engagement", "upvotes", "comments", "subreddit", "geo", "traffic"):
+            if extra_field in item and item[extra_field] is not None:
+                entry[extra_field] = item[extra_field]
+
+        processed.append(entry)
 
     # Sort items by score descending
     processed.sort(key=lambda x: x["score"], reverse=True)
@@ -596,6 +601,7 @@ def build_aggregated_news(topics_data=None, out_dir=DATA_DIR):
             ("ai-tech.json", "AI/Tech"),
             ("funding.json", "Funding"),
             ("aquaculture-iot.json", "Aquaculture & IoT"),
+            ("social-buzz.json", "Social Buzz"),
             ("business.json", "Business"),
             ("news.json", "News"),
             ("igaming.json", "iGaming")
@@ -620,8 +626,8 @@ def build_aggregated_news(topics_data=None, out_dir=DATA_DIR):
     all_topic_names.update(reddit_items_by_topic.keys())
     all_topic_names.update(twitter_items_by_topic.keys())
     all_topic_names.update(quora_items_by_topic.keys())
-    # Ensure canonical topic order: AI/Tech, Funding, Aquaculture & IoT, Business, News, iGaming
-    ordered_topics = ["AI/Tech", "Funding", "Aquaculture & IoT", "Business", "News", "iGaming"]
+    # Ensure canonical topic order: AI/Tech, Funding, Aquaculture & IoT, Social Buzz, Business, News, iGaming
+    ordered_topics = ["AI/Tech", "Funding", "Aquaculture & IoT", "Social Buzz", "Business", "News", "iGaming"]
     for extra in sorted(all_topic_names):
         if extra not in ordered_topics:
             ordered_topics.append(extra)

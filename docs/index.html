@@ -2182,6 +2182,317 @@
       border-radius: var(--radius-md);
       margin-bottom: 20px;
     }
+
+    /* =======================================================
+       PHASE 9: SOCIAL BUZZ & TRIPLE SIGNAL DASHBOARD
+       ======================================================= */
+    .tab-btn-buzz {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(239, 68, 68, 0.12));
+      border: 1px solid rgba(249, 115, 22, 0.35);
+      color: var(--fg);
+    }
+    .tab-btn-buzz:hover {
+      border-color: #f97316;
+      color: #fff;
+    }
+    .tab-btn-buzz.active {
+      background: linear-gradient(135deg, #ea580c, #dc2626);
+      border-color: #f97316;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(234, 88, 12, 0.4);
+    }
+    .tab-badge-buzz {
+      background: rgba(249, 115, 22, 0.25);
+      color: #fdba74;
+    }
+    .tab-btn-buzz.active .tab-badge-buzz {
+      background: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    .social-buzz-section {
+      margin-bottom: 32px;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    /* Hero Header */
+    .buzz-hero-card {
+      background: linear-gradient(135deg, rgba(234, 88, 12, 0.08), rgba(239, 68, 68, 0.05), rgba(15, 17, 23, 0.8));
+      border: 1px solid rgba(249, 115, 22, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .buzz-hero-card::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(249, 115, 22, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .buzz-hero-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .buzz-hero-subtitle {
+      color: var(--fg-dim);
+      font-size: 0.92rem;
+      max-width: 820px;
+      line-height: 1.5;
+    }
+
+    /* Triple Signal Spotlight (Phần 3) */
+    .triple-signal-spotlight {
+      margin-bottom: 24px;
+    }
+    .triple-signal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .triple-signal-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffedd5;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .triple-signal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: linear-gradient(135deg, #ea580c, #ef4444);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .triple-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 14px;
+    }
+    .triple-card {
+      background: linear-gradient(135deg, rgba(30, 20, 15, 0.7), rgba(15, 17, 23, 0.85));
+      border: 1px solid rgba(249, 115, 22, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      position: relative;
+      transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .triple-card:hover {
+      transform: translateY(-2px);
+      border-color: #f97316;
+      box-shadow: 0 8px 24px rgba(249, 115, 22, 0.2);
+    }
+    .triple-card-theme {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffedd5;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .triple-card-desc {
+      font-size: 0.88rem;
+      color: var(--fg-dim);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .triple-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .triple-pillar-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.83rem;
+      line-height: 1.4;
+      color: #cbd5e1;
+    }
+    .triple-pillar-tag {
+      font-weight: 600;
+      color: #f97316;
+      white-space: nowrap;
+    }
+    .triple-action-box {
+      background: rgba(249, 115, 22, 0.1);
+      border-left: 3px solid #f97316;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 0.83rem;
+      color: #fed7aa;
+      font-weight: 500;
+    }
+
+    /* Google Trends Grid (Phần 1) */
+    .trends-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 900px) {
+      .trends-grid { grid-template-columns: 1fr; }
+    }
+    .trends-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    .trends-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .trends-card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--fg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .trends-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+    .trends-table th {
+      text-align: left;
+      padding: 10px 12px;
+      color: var(--fg-muted);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .trends-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--fg);
+    }
+    .trends-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .trends-vol-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(56, 189, 248, 0.12);
+      color: #38bdf8;
+    }
+    .trends-change-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+    .trends-change-pos { color: #10b981; }
+    .trends-change-neu { color: #94a3b8; }
+    .trends-change-neg { color: #f43f5e; }
+
+    /* Reddit Hot Feed (Phần 2) */
+    .reddit-feed-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    .reddit-feed-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .reddit-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .reddit-pill-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--fg-dim);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .reddit-pill-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--fg);
+    }
+    .reddit-pill-btn.active {
+      background: rgba(249, 115, 22, 0.18);
+      border-color: #f97316;
+      color: #ffedd5;
+      font-weight: 600;
+    }
+
+    /* Subreddit Chips */
+    .sub-chip {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .sub-chip-aquaculture { background: rgba(6, 182, 212, 0.18); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.35); }
+    .sub-chip-aquariums { background: rgba(56, 189, 248, 0.18); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); }
+    .sub-chip-shrimptank { background: rgba(249, 115, 22, 0.18); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.35); }
+    .sub-chip-hydroponics { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }
+    .sub-chip-iot { background: rgba(99, 102, 241, 0.18); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.35); }
+    .sub-chip-arduino { background: rgba(20, 184, 166, 0.18); color: #2dd4bf; border: 1px solid rgba(20, 184, 166, 0.35); }
+    .sub-chip-embedded { background: rgba(168, 85, 247, 0.18); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.35); }
+    .sub-chip-other { background: rgba(100, 116, 139, 0.18); color: #94a3b8; border: 1px solid rgba(100, 116, 139, 0.35); }
+
+    .reddit-upvotes-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: #f97316;
+      background: rgba(249, 115, 22, 0.1);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
   </style>
 </head>
 <body>
@@ -2256,6 +2567,9 @@
 
     <!-- Funding Flow Section (Phase 8 Tab) -->
     <section class="funding-flow-section" id="fundingFlowSection" style="display: none;"></section>
+
+    <!-- Social Buzz Section (Phase 9 Tab) -->
+    <section class="social-buzz-section" id="socialBuzzSection" style="display: none;"></section>
 
     <!-- Hot Today Section -->
     <section id="hotSection" aria-labelledby="hotTodayHeading">
@@ -2379,6 +2693,16 @@
     // --- 2. STATE & CONFIG ---
     let DATA = {};
     let OPPORTUNITIES_DATA = [];
+    let SOCIAL_BUZZ_DATA = {
+      updated: '',
+      google_trends_keywords: [],
+      google_trends_rss: [],
+      reddit_posts: [],
+      triple_signals: [],
+      subreddits_covered: []
+    };
+    let buzzSelectedSub = 'all';
+    let buzzSearchQuery = '';
     let oppFilters = {
       signalType: 'all',  // 'all', 'pain_repeat', 'price_shift', 'supply_gap', 'tech_cheap'
       scoreRange: 'all',  // 'all', '9', '7-8', '4-6'
@@ -2512,9 +2836,24 @@
       }
     }
 
+    async function loadSocialBuzz() {
+      try {
+        const res = await fetch('data/social_buzz.json');
+        if (res.ok) {
+          const json = await res.json();
+          if (json && typeof json === 'object') {
+            SOCIAL_BUZZ_DATA = json;
+          }
+        }
+      } catch (e) {
+        console.warn('Could not load data/social_buzz.json:', e);
+      }
+    }
+
     async function loadData() {
       await loadWatchlist();
       await loadOpportunities();
+      await loadSocialBuzz();
       
       try {
         const res = await fetch('data/news.json');
@@ -2586,16 +2925,18 @@
       const topicKeys = Object.keys(DATA);
       if (topicKeys.length === 0 && OPPORTUNITIES_DATA.length === 0) return;
 
-      // Ensure activeTopic exists (supports 'Opportunity Radar', 'Dòng Tiền' or URL hash)
+      // Ensure activeTopic exists (supports 'Opportunity Radar', 'Dòng Tiền', 'Chủ Đề Nóng' or URL hash)
       const savedTopic = localStorage.getItem('mynews_active_topic');
       const hash = window.location.hash;
       if (hash === '#opportunity-radar') {
         activeTopic = 'Opportunity Radar';
       } else if (hash === '#dong-tien' || hash === '#funding') {
         activeTopic = 'Dòng Tiền';
-      } else if (savedTopic === 'Opportunity Radar' || savedTopic === 'Dòng Tiền' || (savedTopic && DATA[savedTopic])) {
+      } else if (hash === '#chu-de-nong' || hash === '#social-buzz' || hash === '#buzz') {
+        activeTopic = 'Chủ Đề Nóng';
+      } else if (savedTopic === 'Opportunity Radar' || savedTopic === 'Dòng Tiền' || savedTopic === 'Chủ Đề Nóng' || (savedTopic && DATA[savedTopic])) {
         activeTopic = savedTopic;
-      } else if (!DATA[activeTopic] && activeTopic !== 'Opportunity Radar' && activeTopic !== 'Dòng Tiền') {
+      } else if (!DATA[activeTopic] && activeTopic !== 'Opportunity Radar' && activeTopic !== 'Dòng Tiền' && activeTopic !== 'Chủ Đề Nóng') {
         activeTopic = topicKeys[0] || 'Opportunity Radar';
       }
 
@@ -2622,8 +2963,10 @@
 
       const isRadarActive = activeTopic === 'Opportunity Radar';
       const isFundingActive = activeTopic === 'Dòng Tiền';
+      const isBuzzActive = activeTopic === 'Chủ Đề Nóng';
       const oppCount = OPPORTUNITIES_DATA.length;
       const fundingCount = OPPORTUNITIES_DATA.filter(it => isFundingItem(it)).length;
+      const buzzCount = (SOCIAL_BUZZ_DATA.reddit_posts ? SOCIAL_BUZZ_DATA.reddit_posts.length : 0) + (SOCIAL_BUZZ_DATA.google_trends_keywords ? SOCIAL_BUZZ_DATA.google_trends_keywords.length : 0);
 
       let tabsHtml = `
         <button class="tab-btn tab-btn-radar ${isRadarActive ? 'active' : ''}" onclick="switchTopic('Opportunity Radar')">
@@ -2634,11 +2977,15 @@
           <span>💰 Dòng Tiền</span>
           <span class="tab-badge tab-badge-funding">${fundingCount}</span>
         </button>
+        <button class="tab-btn tab-btn-buzz ${isBuzzActive ? 'active' : ''}" onclick="switchTopic('Chủ Đề Nóng')">
+          <span>🔥 Chủ Đề Nóng</span>
+          <span class="tab-badge tab-badge-buzz">${buzzCount}</span>
+        </button>
       `;
 
       tabsHtml += Object.keys(DATA).map(topic => {
         const count = DATA[topic].items?.length || 0;
-        const isActive = (topic === activeTopic) && !isRadarActive && !isFundingActive;
+        const isActive = (topic === activeTopic) && !isRadarActive && !isFundingActive && !isBuzzActive;
         return `
           <button class="tab-btn ${isActive ? 'active' : ''}" onclick="switchTopic('${topic.replace(/'/g, "\\'")}')">
             <span>${topic}</span>
@@ -2651,14 +2998,16 @@
     }
 
     function switchTopic(topic) {
-      if (topic !== 'Opportunity Radar' && topic !== 'Dòng Tiền' && !DATA[topic]) return;
+      if (topic !== 'Opportunity Radar' && topic !== 'Dòng Tiền' && topic !== 'Chủ Đề Nóng' && !DATA[topic]) return;
       activeTopic = topic;
       localStorage.setItem('mynews_active_topic', topic);
       if (topic === 'Opportunity Radar') {
         window.history.replaceState(null, '', '#opportunity-radar');
       } else if (topic === 'Dòng Tiền') {
         window.history.replaceState(null, '', '#dong-tien');
-      } else if (window.location.hash === '#opportunity-radar' || window.location.hash === '#dong-tien' || window.location.hash === '#funding') {
+      } else if (topic === 'Chủ Đề Nóng') {
+        window.history.replaceState(null, '', '#chu-de-nong');
+      } else if (window.location.hash === '#opportunity-radar' || window.location.hash === '#dong-tien' || window.location.hash === '#funding' || window.location.hash === '#chu-de-nong' || window.location.hash === '#social-buzz') {
         window.history.replaceState(null, '', window.location.pathname);
       }
       renderTopicTabs();
@@ -2728,6 +3077,7 @@
     function renderActiveTopic() {
       const isRadar = activeTopic === 'Opportunity Radar';
       const isFunding = activeTopic === 'Dòng Tiền';
+      const isBuzz = activeTopic === 'Chủ Đề Nóng';
 
       const briefingCard = document.getElementById('briefingCard');
       const watchlistCard = document.getElementById('watchlistCard');
@@ -2737,6 +3087,7 @@
       const recentSection = document.getElementById('recentSection');
       const radarSection = document.getElementById('opportunityRadarSection');
       const fundingSection = document.getElementById('fundingFlowSection');
+      const buzzSection = document.getElementById('socialBuzzSection');
 
       if (isRadar) {
         if (briefingCard) briefingCard.style.display = 'none';
@@ -2746,6 +3097,7 @@
         if (clustersSection) clustersSection.style.display = 'none';
         if (recentSection) recentSection.style.display = 'none';
         if (fundingSection) fundingSection.style.display = 'none';
+        if (buzzSection) buzzSection.style.display = 'none';
         if (radarSection) {
           radarSection.style.display = 'block';
           renderOpportunityRadar();
@@ -2761,6 +3113,7 @@
         if (clustersSection) clustersSection.style.display = 'none';
         if (recentSection) recentSection.style.display = 'none';
         if (radarSection) radarSection.style.display = 'none';
+        if (buzzSection) buzzSection.style.display = 'none';
         if (fundingSection) {
           fundingSection.style.display = 'block';
           renderFundingFlow();
@@ -2768,9 +3121,26 @@
         return;
       }
 
-      // Hide both special sections and restore regular sections
+      if (isBuzz) {
+        if (briefingCard) briefingCard.style.display = 'none';
+        if (watchlistCard) watchlistCard.style.display = 'none';
+        if (sourcesRow) sourcesRow.style.display = 'none';
+        if (hotSection) hotSection.style.display = 'none';
+        if (clustersSection) clustersSection.style.display = 'none';
+        if (recentSection) recentSection.style.display = 'none';
+        if (radarSection) radarSection.style.display = 'none';
+        if (fundingSection) fundingSection.style.display = 'none';
+        if (buzzSection) {
+          buzzSection.style.display = 'block';
+          renderSocialBuzz();
+        }
+        return;
+      }
+
+      // Hide all special sections and restore regular sections
       if (radarSection) radarSection.style.display = 'none';
       if (fundingSection) fundingSection.style.display = 'none';
+      if (buzzSection) buzzSection.style.display = 'none';
       if (briefingCard) briefingCard.style.display = 'block';
       if (sourcesRow) sourcesRow.style.display = 'flex';
       if (hotSection) hotSection.style.display = 'block';
@@ -3943,6 +4313,406 @@
       container.innerHTML = html;
     }
 
+    // =======================================================
+    // PHASE 9: SOCIAL BUZZ (CHỦ ĐỀ NÓNG) RENDER LOGIC
+    // =======================================================
+    function setBuzzSubFilter(subKey) {
+      buzzSelectedSub = subKey;
+      renderSocialBuzz();
+    }
+
+    function setBuzzSearchQuery(query) {
+      buzzSearchQuery = query;
+      renderSocialBuzz();
+    }
+
+    function renderSocialBuzz() {
+      const container = document.getElementById('socialBuzzSection');
+      if (!container) return;
+
+      const keywords = SOCIAL_BUZZ_DATA.google_trends_keywords || [];
+      const trendsRss = SOCIAL_BUZZ_DATA.google_trends_rss || [];
+      let redditPosts = SOCIAL_BUZZ_DATA.reddit_posts || [];
+      const tripleSignals = SOCIAL_BUZZ_DATA.triple_signals || [];
+
+      // Combine with Triple Signal opportunities from OPPORTUNITIES_DATA if any
+      const oppTriples = OPPORTUNITIES_DATA.filter(o => o.triple_signal);
+
+      // Filter Reddit posts
+      let filteredReddit = redditPosts.filter(p => {
+        if (buzzSelectedSub !== 'all') {
+          const pSub = (p.sub_key || p.subreddit || '').toLowerCase().replace(/^r\//, '');
+          if (pSub !== buzzSelectedSub) return false;
+        }
+        if (buzzSearchQuery.trim()) {
+          const q = buzzSearchQuery.trim().toLowerCase();
+          const target = `${p.title || ''} ${p.summary || ''} ${p.subreddit || ''}`.toLowerCase();
+          if (!target.includes(q)) return false;
+        }
+        return true;
+      });
+
+      // Sort Reddit posts by upvotes descending
+      filteredReddit.sort((a, b) => (b.upvotes || b.engagement || 0) - (a.upvotes || a.engagement || 0));
+
+      const SUB_CHIPS_META = {
+        'all': { label: '🌐 Tất cả', key: 'all' },
+        'aquaculture': { label: '🐟 r/aquaculture', key: 'aquaculture' },
+        'aquariums': { label: '🐠 r/Aquariums', key: 'aquariums' },
+        'shrimptank': { label: '🦐 r/shrimptank', key: 'shrimptank' },
+        'hydroponics': { label: '🌱 r/hydroponics', key: 'hydroponics' },
+        'iot': { label: '📡 r/IOT', key: 'iot' },
+        'arduino': { label: '⚡ r/arduino', key: 'arduino' },
+        'embedded': { label: '🔧 r/embedded', key: 'embedded' }
+      };
+
+      let html = `
+        <!-- Hero Header -->
+        <div class="buzz-hero-card">
+          <div class="buzz-hero-title">
+            <span>🔥 Bản Đồ Chủ Đề Nóng &amp; Tín Hiệu Xã Hội (Social Buzz)</span>
+            <span class="triple-signal-badge">Live Multi-Network Tracking</span>
+          </div>
+          <p class="buzz-hero-subtitle">
+            Hệ thống theo dõi tự động mức độ quan tâm từ 7 cộng đồng Reddit đúng ngách và dữ liệu tìm kiếm Google Trends (VN &amp; US). Tự động kích hoạt cảnh báo <strong>Triple Signal</strong> khi Dòng tiền đầu tư, Mã nguồn công nghệ và Bàn luận xã hội hội tụ cùng một chủ đề.
+          </p>
+        </div>
+
+        <!-- Phần 3 — Trùng khớp dòng tiền + chủ đề nóng (HIGHLIGHT - TRIPLE SIGNAL) -->
+        <div class="triple-signal-spotlight">
+          <div class="triple-signal-header">
+            <div class="triple-signal-title">
+              <span>🔥 Cơ Hội Trùng Khớp 3 Lớp (Triple Signal: Funding + Tech + Social)</span>
+              <span class="triple-signal-badge">Tín Hiệu Mạnh Nhất</span>
+            </div>
+            <div style="font-size: 0.85rem; color: #fdba74; font-weight: 500;">
+              ${tripleSignals.length + (oppTriples.length > 0 ? oppTriples.length : 0)} cụm tín hiệu hội tụ
+            </div>
+          </div>
+
+          <div class="triple-card-grid">
+      `;
+
+      // Render system triple signals
+      tripleSignals.forEach(ts => {
+        html += `
+          <div class="triple-card">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span class="triple-signal-badge">🔥 Triple Signal</span>
+              <span style="font-size: 0.75rem; color: #34d399; font-weight: 700; background: rgba(16,185,129,0.15); padding: 2px 8px; border-radius: 4px;">${ts.status || 'CỰC MẠNH'}</span>
+            </div>
+            <div class="triple-card-theme">${escapeHtml(ts.theme)}</div>
+            <p class="triple-card-desc">${escapeHtml(ts.description)}</p>
+            <div class="triple-pillars">
+              <div class="triple-pillar-item">
+                <span class="triple-pillar-tag">💵 Dòng tiền:</span>
+                <span>${escapeHtml(ts.funding_proof)}</span>
+              </div>
+              <div class="triple-pillar-item">
+                <span class="triple-pillar-tag">💻 Công nghệ:</span>
+                <span>${escapeHtml(ts.tech_proof)}</span>
+              </div>
+              <div class="triple-pillar-item">
+                <span class="triple-pillar-tag">🗣️ Mạng xã hội:</span>
+                <span>${escapeHtml(ts.social_proof)}</span>
+              </div>
+            </div>
+            <div class="triple-action-box">
+              ${escapeHtml(ts.action_advice)}
+            </div>
+          </div>
+        `;
+      });
+
+      // Also render top opportunities identified as Triple Signal
+      oppTriples.slice(0, 4).forEach(opp => {
+        html += `
+          <div class="triple-card" style="border-color: rgba(6, 182, 212, 0.4);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span class="triple-signal-badge" style="background: linear-gradient(135deg, #0284c7, #06b6d4);">🔥 Opportunity Triple</span>
+              <span style="font-size: 0.75rem; color: #38bdf8; font-weight: 700; background: rgba(6,182,212,0.15); padding: 2px 8px; border-radius: 4px;">Điểm: ${opp.total}/9</span>
+            </div>
+            <div class="triple-card-theme">
+              <a href="${escapeHtml(opp.url || (opp.sources && opp.sources[0]?.url) || '#')}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                ${escapeHtml(opp.title)}
+              </a>
+            </div>
+            <p class="triple-card-desc">${escapeHtml(opp.summary_vi || opp.summary || '')}</p>
+            <div class="triple-pillars">
+              <div class="triple-pillar-item">
+                <span class="triple-pillar-tag" style="color: #38bdf8;">💵 Dòng tiền:</span>
+                <span>Đã ghi nhận vòng gọi vốn / biến động giá trị thị trường</span>
+              </div>
+              <div class="triple-pillar-item">
+                <span class="triple-pillar-tag" style="color: #38bdf8;">💻 Công nghệ:</span>
+                <span>Mã nguồn / giải pháp kỹ thuật đã xác thực qua GitHub / arXiv</span>
+              </div>
+              <div class="triple-pillar-item">
+                <span class="triple-pillar-tag" style="color: #38bdf8;">🗣️ Mạng xã hội:</span>
+                <span>Chủ đề thảo luận sôi nổi trên Reddit &amp; Google Trends</span>
+              </div>
+            </div>
+            <div class="triple-action-box" style="background: rgba(6, 182, 212, 0.1); border-left-color: #06b6d4; color: #bae6fd;">
+              → VIỆC CẦN LÀM: Khảo sát 3 người thật trong ngành về giải pháp này trong tuần.
+            </div>
+          </div>
+        `;
+      });
+
+      html += `
+          </div>
+        </div>
+
+        <!-- Phần 1 — Từ khóa đang tăng (Google Trends) -->
+        <div class="trends-grid">
+          <!-- Bảng 1: Target Niche Keywords (pytrends) -->
+          <div class="trends-card">
+            <div class="trends-card-header">
+              <div class="trends-card-title">
+                <span>📈 Từ Khóa Theo Dõi Ngách</span>
+                <span class="tab-badge">${keywords.length}</span>
+              </div>
+              <span style="font-size: 0.78rem; color: var(--fg-muted);">Dữ liệu pytrends (1 tháng)</span>
+            </div>
+            <table class="trends-table">
+              <thead>
+                <tr>
+                  <th>Từ khóa (Keyword)</th>
+                  <th style="width: 80px;">Volume</th>
+                  <th style="width: 100px;">Biến động</th>
+                  <th style="width: 90px;">Trạng thái</th>
+                  <th style="width: 60px; text-align: right;">Link</th>
+                </tr>
+              </thead>
+              <tbody>
+      `;
+
+      if (keywords.length === 0) {
+        html += `<tr><td colspan="5" style="text-align: center; color: var(--fg-muted); padding: 20px;">Đang tải dữ liệu Google Trends...</td></tr>`;
+      } else {
+        keywords.forEach(kw => {
+          const isPos = kw.change && kw.change.startsWith('+') && kw.change !== '+0%';
+          const isNeg = kw.change && kw.change.startsWith('-');
+          const changeClass = isPos ? 'trends-change-pos' : (isNeg ? 'trends-change-neg' : 'trends-change-neu');
+
+          html += `
+            <tr>
+              <td style="font-weight: 600; color: #f1f5f9;">
+                ${escapeHtml(kw.keyword)}
+              </td>
+              <td>
+                <span class="trends-vol-badge">${kw.volume}/100</span>
+              </td>
+              <td>
+                <span class="trends-change-badge ${changeClass}">${escapeHtml(kw.change)}</span>
+              </td>
+              <td>
+                <span style="font-size: 0.8rem;">${escapeHtml(kw.status || 'Ổn định ➡️')}</span>
+              </td>
+              <td style="text-align: right;">
+                <a href="${escapeHtml(kw.link)}" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-size: 0.8rem; font-weight: 500;">
+                  Xem ↗
+                </a>
+              </td>
+            </tr>
+          `;
+        });
+      }
+
+      html += `
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Bảng 2: Trending Searches (RSS VN / US) -->
+          <div class="trends-card">
+            <div class="trends-card-header">
+              <div class="trends-card-title">
+                <span>🌐 Tìm Kiếm Thịnh Hành (Trends RSS)</span>
+                <span class="tab-badge">${trendsRss.length}</span>
+              </div>
+              <span style="font-size: 0.78rem; color: var(--fg-muted);">Google Trends VN &amp; US</span>
+            </div>
+            <table class="trends-table">
+              <thead>
+                <tr>
+                  <th>Chủ đề thịnh hành</th>
+                  <th style="width: 80px;">Quốc gia</th>
+                  <th style="width: 90px;">Lượng tìm</th>
+                  <th style="width: 60px; text-align: right;">Link</th>
+                </tr>
+              </thead>
+              <tbody>
+      `;
+
+      if (trendsRss.length === 0) {
+        html += `<tr><td colspan="4" style="text-align: center; color: var(--fg-muted); padding: 20px;">Đang tải dữ liệu Trending RSS...</td></tr>`;
+      } else {
+        trendsRss.slice(0, 8).forEach(tr => {
+          html += `
+            <tr>
+              <td style="font-weight: 500;">
+                <a href="${escapeHtml(tr.url)}" target="_blank" rel="noopener noreferrer" style="color: #f1f5f9; text-decoration: none;">
+                  ${escapeHtml(tr.title)}
+                </a>
+              </td>
+              <td>
+                <span class="sub-chip ${tr.geo === 'VN' ? 'sub-chip-aquaculture' : 'sub-chip-iot'}">
+                  ${tr.geo === 'VN' ? '🇻🇳 VN' : '🇺🇸 US'}
+                </span>
+              </td>
+              <td>
+                <span class="trends-vol-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">
+                  ${escapeHtml(tr.traffic || tr.engagement || '10K+')}
+                </span>
+              </td>
+              <td style="text-align: right;">
+                <a href="${escapeHtml(tr.url)}" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-size: 0.8rem; font-weight: 500;">
+                  Xem ↗
+                </a>
+              </td>
+            </tr>
+          `;
+        });
+      }
+
+      html += `
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Phần 2 — Bài hot trên Reddit (theo ngách) -->
+        <div class="reddit-feed-card">
+          <div class="reddit-feed-header">
+            <div>
+              <div style="font-size: 1.15rem; font-weight: 700; color: var(--fg); display: flex; align-items: center; gap: 8px;">
+                <span>💬 Bài Hot Trên Reddit (7 Cộng Đồng Đúng Ngách)</span>
+                <span class="tab-badge">${filteredReddit.length}</span>
+              </div>
+              <div style="font-size: 0.82rem; color: var(--fg-muted); margin-top: 4px;">
+                Sắp xếp theo upvotes giảm dần. Bao quát các pain point, kinh nghiệm vận hành thực tế và giải pháp phần cứng.
+              </div>
+            </div>
+
+            <!-- Search box -->
+            <div class="funding-search-box" style="min-width: 260px;">
+              <span class="funding-search-icon">🔍</span>
+              <input type="text" class="funding-search-input" 
+                placeholder="Tìm bài Reddit, tác giả, cảm biến..." 
+                value="${escapeHtml(buzzSearchQuery)}"
+                oninput="setBuzzSearchQuery(this.value)">
+            </div>
+          </div>
+
+          <!-- Subreddit filter pills -->
+          <div class="reddit-pills-row" style="margin-bottom: 16px;">
+      `;
+
+      Object.keys(SUB_CHIPS_META).forEach(key => {
+        const item = SUB_CHIPS_META[key];
+        const isActive = buzzSelectedSub === key;
+        html += `
+          <button class="reddit-pill-btn ${isActive ? 'active' : ''}" onclick="setBuzzSubFilter('${key}')">
+            ${item.label}
+          </button>
+        `;
+      });
+
+      html += `
+          </div>
+
+          <!-- Reddit Posts Table -->
+          <div class="funding-table-wrapper">
+            <table class="funding-table">
+              <thead>
+                <tr>
+                  <th style="width: 140px;">Subreddit</th>
+                  <th style="min-width: 320px;">Tiêu Đề &amp; Tóm Tắt Thảo Luận</th>
+                  <th style="width: 100px; text-align: center;">Upvotes ↕</th>
+                  <th style="width: 90px; text-align: center;">Bình Luận</th>
+                  <th style="width: 100px;">Ngày</th>
+                  <th style="width: 70px; text-align: center;">Link</th>
+                </tr>
+              </thead>
+              <tbody>
+      `;
+
+      if (filteredReddit.length === 0) {
+        html += `
+          <tr>
+            <td colspan="6" style="text-align: center; padding: 40px; color: var(--fg-muted);">
+              Không có bài viết nào phù hợp với bộ lọc hiện tại.
+              <br><br>
+              <button class="funding-reset-btn" onclick="setBuzzSubFilter('all'); setBuzzSearchQuery('');">Đặt lại bộ lọc</button>
+            </td>
+          </tr>
+        `;
+      } else {
+        filteredReddit.forEach(post => {
+          const subKey = (post.sub_key || (post.subreddit || '').replace(/^r\//, '')).toLowerCase();
+          const subChipClass = `sub-chip-${subKey}` in { 'sub-chip-aquaculture':1, 'sub-chip-aquariums':1, 'sub-chip-shrimptank':1, 'sub-chip-hydroponics':1, 'sub-chip-iot':1, 'sub-chip-arduino':1, 'sub-chip-embedded':1 }
+            ? `sub-chip-${subKey}`
+            : 'sub-chip-other';
+
+          const upvotes = post.upvotes || post.engagement || 0;
+          const comments = post.comments || post.num_comments || 0;
+
+          html += `
+            <tr>
+              <!-- Subreddit -->
+              <td>
+                <span class="sub-chip ${subChipClass}">
+                  ${escapeHtml(post.subreddit || `r/${subKey}`)}
+                </span>
+              </td>
+
+              <!-- Title & Summary -->
+              <td class="deal-title-cell">
+                <a href="${escapeHtml(post.url)}" target="_blank" rel="noopener noreferrer" class="deal-title-link">
+                  ${escapeHtml(post.title)}
+                </a>
+                ${post.summary ? `<div class="deal-summary-cell" style="margin-top: 4px; padding: 0;">${escapeHtml(post.summary)}</div>` : ''}
+              </td>
+
+              <!-- Upvotes -->
+              <td style="text-align: center;">
+                <span class="reddit-upvotes-badge">
+                  ▲ ${upvotes}
+                </span>
+              </td>
+
+              <!-- Comments -->
+              <td style="text-align: center; font-family: var(--font-mono); font-size: 0.82rem; color: var(--fg-dim);">
+                💬 ${comments}
+              </td>
+
+              <!-- Date -->
+              <td style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--fg-dim); white-space: nowrap;">
+                ${escapeHtml(post.date || 'recent')}
+              </td>
+
+              <!-- Link -->
+              <td style="text-align: center;">
+                <a href="${escapeHtml(post.url)}" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-size: 0.8rem; font-weight: 600;">
+                  Reddit ↗
+                </a>
+              </td>
+            </tr>
+          `;
+        });
+      }
+
+      html += `
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+
+      container.innerHTML = html;
+    }
+
     function renderStats() {
       const trendingCard = document.getElementById('statTrending')?.parentElement;
       const risingCard = document.getElementById('statRising')?.parentElement;
@@ -3981,6 +4751,23 @@
         document.getElementById('statMultiSource').textContent = capitalItems.length;
         if (sourcesCard) sourcesCard.querySelector('.stat-label').textContent = 'Có số vốn';
         document.getElementById('statSourcesCount').textContent = total > 0 ? `${total}` : '0';
+        return;
+      }
+
+      if (activeTopic === 'Chủ Đề Nóng') {
+        const tripleCount = (SOCIAL_BUZZ_DATA.triple_signals || []).length + OPPORTUNITIES_DATA.filter(it => it.triple_signal).length;
+        const redditCount = (SOCIAL_BUZZ_DATA.reddit_posts || []).length;
+        const kwCount = (SOCIAL_BUZZ_DATA.google_trends_keywords || []).length;
+        const rssCount = (SOCIAL_BUZZ_DATA.google_trends_rss || []).length;
+
+        document.getElementById('statTotalSignals').textContent = redditCount + kwCount + rssCount;
+        document.getElementById('statTrending').textContent = tripleCount;
+        if (trendingCard) trendingCard.querySelector('.stat-label').textContent = 'Triple Signals';
+        document.getElementById('statRising').textContent = redditCount;
+        if (risingCard) risingCard.querySelector('.stat-label').textContent = 'Reddit Hot Posts';
+        document.getElementById('statMultiSource').textContent = kwCount;
+        if (sourcesCard) sourcesCard.querySelector('.stat-label').textContent = 'Google Trends';
+        document.getElementById('statSourcesCount').textContent = '7 Subs + GT';
         return;
       }
 

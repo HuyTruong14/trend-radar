@@ -923,6 +923,22 @@ def main():
     except Exception as e:
         log(f"  ! daily digest failed: {e}")
 
+    # --- Phase 9: Social Buzz (Google Trends + Reddit) ---
+    try:
+        from fetchers import social_buzz
+        buzz_signals = social_buzz.fetch_social_buzz()
+        if buzz_signals:
+            buzz_topic_key = "social-buzz"
+            buzz_label = "Social Buzz"
+            out_buzz_path = os.path.join(OUT_DIR, f"{buzz_topic_key}.json")
+            with open(out_buzz_path, "w", encoding="utf-8") as f:
+                json.dump({"label": buzz_label, "items": buzz_signals}, f, indent=2, ensure_ascii=False)
+            manifest["topics"].append({"key": buzz_topic_key, "label": buzz_label, "count": len(buzz_signals)})
+            all_results.append((buzz_topic_key, buzz_label, buzz_signals))
+            log(f"  -> Added {len(buzz_signals)} social buzz items into pipeline (topic: '{buzz_label}')")
+    except Exception as e:
+        log(f"  ! social buzz fetch failed: {e}")
+
     try:
         import aggregate
         aggregate.build_aggregated_news(all_results, OUT_DIR)

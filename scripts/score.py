@@ -315,12 +315,15 @@ TECHNICAL_SYSTEMS_PATTERNS = [
 ]
 
 
-def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""):
+def score_item_filters(title, summary, signal_types, matched_keyword="", meta="", engagement=0):
     """
     Score 3 filter layers based strictly on CONTENT and USER PROFILE:
     1. durability: 10-year core physical/infrastructure need
     2. ai_support: AI handles 80% data/analysis, human/physical world holds 20% responsibility
     3. your_leverage: High for IoT/Hardware/Sensors/Robotics; Low for generic LLM/pure ML papers
+    
+    Phase 9: High engagement (>100 upvotes on Reddit or >=100K traffic on Google Trends)
+    boosts durability by 1 level (capped at 3).
     """
     text = f"{title} {summary or ''} {matched_keyword or ''} {meta or ''}".lower()
 
@@ -376,6 +379,16 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
         durability = 2
     else:
         durability = 1
+
+    # Phase 9: High engagement boost for durability (>100 upvotes or traffic 100K+)
+    is_high_engagement = False
+    if isinstance(engagement, (int, float)) and engagement >= 100:
+        is_high_engagement = True
+    elif isinstance(engagement, str) and any(k in engagement.lower() for k in ["100k", "200k", "500k", "1m"]):
+        is_high_engagement = True
+
+    if is_high_engagement and durability < 3:
+        durability = min(3, durability + 1)
 
     # 3. ai_support (0–3): AI does 80% perception/analysis, human/physical holds 20% responsibility
     if is_funding:
@@ -577,13 +590,50 @@ def determine_funding_sector(title, summary="", summary_vi=""):
     return "other"
 
 
+def check_triple_signal(title, summary, sources, signal_types, summary_vi=""):
+    """
+    Phase 9: Triple Signal Detection
+    Triggered when a core theme appears across:
+    1. Funding (VC deal / price_shift / funding source)
+    2. Tech (GitHub repository / arXiv paper)
+    3. Social (Reddit discussions / Google Trends interest)
+    """
+    text = f"{title} {summary or ''} {summary_vi or ''}".lower()
+    src_str = " ".join((s.get("name") or s.get("source") or "") for s in sources).lower()
+
+    # Pillar 1: Funding
+    has_funding = (
+        "price_shift" in signal_types or
+        any(k in src_str for k in ["agfunder", "igrow", "crunchbase", "venture", "techcrunch"]) or
+        any(k in text for k in ["series a", "series b", "seed", "raises", "raised", "vc dollars", "$", "funding", "gọi vốn", "thương vụ", "m&a"])
+    )
+
+    # Pillar 2: Tech
+    has_tech = (
+        any(k in src_str for k in ["github", "arxiv", "hackernews", "code"]) or
+        any(k in text for k in ["github", "arxiv", "repo", "model", "algorithm", "firmware", "esp32", "lorawan", "sensor node", "edge ai", "phần cứng", "cảm biến"])
+    )
+
+    # Pillar 3: Social Buzz
+    has_social = (
+        any(k in src_str for k in ["reddit", "google trends", "twitter", "quora"]) or
+        any(k in text for k in ["water quality sensor", "aquaculture", "shrimp", "ao nuôi", "thủy sản", "smart agriculture", "robotics", "leakage", "water monitor", "ph", "dissolved oxygen"])
+    )
+
+    # Triple signal match: all 3 pillars present OR core target domain with high convergence
+    is_triple = (has_funding and has_tech and has_social) or (
+        (has_funding or has_tech) and ("aquaculture" in text or "thủy sản" in text or "ao nuôi" in text or "water quality" in text or "rò rỉ nước" in text or "robotics" in text or "smart agriculture" in text)
+    )
+
+    return is_triple, has_funding, has_tech, has_social
+
 
 def load_raw_items():
     """Load items from signals.json or news.json, enriched with topic metadata."""
     items_map = {}
 
     # Gather topic metadata (matched_keyword, meta, category) from topic files
-    topic_files = ["ai-tech.json", "funding.json", "aquaculture-iot.json", "business.json", "igaming.json"]
+    topic_files = ["ai-tech.json", "funding.json", "aquaculture-iot.json", "social-buzz.json", "business.json", "igaming.json"]
     meta_by_url = {}
     for tf in topic_files:
         fpath = os.path.join(DATA_DIR, tf)
@@ -842,8 +892,17 @@ def main():
         # Tag signal types based on group content
         signal_types = detect_signal_types(group_titles, group_summaries, group_urls, group_topics, group_sources)
 
-        # Score 3 filter layers based on content and user profile
-        scores = score_item_filters(group_titles, group_summaries, signal_types, matched_kw, meta_str)
+        # Phase 9: Extract engagement metrics from group
+        max_engagement = 0
+        for it in group:
+            eng = it.get("engagement") or it.get("upvotes") or it.get("score") or 0
+            if isinstance(eng, (int, float)) and eng > max_engagement:
+                max_engagement = eng
+            elif isinstance(eng, str) and any(k in eng.lower() for k in ["100k", "200k", "500k", "1m"]):
+                max_engagement = 100000
+
+        # Score 3 filter layers based on content, user profile, and social engagement
+        scores = score_item_filters(group_titles, group_summaries, signal_types, matched_kw, meta_str, engagement=max_engagement)
 
         # Calculate total score
         raw_sum = scores["durability"] + scores["ai_support"] + scores["your_leverage"]
@@ -893,6 +952,9 @@ def main():
         deal_type = determine_deal_type(title, summary, signal_types, summary_vi)
         funding_amount = extract_funding_amount(f"{title} {summary} {summary_vi}")
 
+        # Phase 9: Triple Signal Detection (Funding + Tech + Social)
+        is_triple, has_f, has_t, has_s = check_triple_signal(title, summary, formatted_sources, signal_types, summary_vi)
+
         opp_record = {
             "id": opp_id,
             "title": title,
@@ -912,7 +974,12 @@ def main():
             "velocity": velocity,
             "funding_sector": funding_sector,
             "deal_type": deal_type,
-            "funding_amount": funding_amount
+            "funding_amount": funding_amount,
+            "triple_signal": is_triple,
+            "triple_signal_badge": "🔥 Triple Signal" if is_triple else None,
+            "pillar_funding": has_f,
+            "pillar_tech": has_t,
+            "pillar_social": has_s
         }
         opportunities.append(opp_record)
 
@@ -991,6 +1058,20 @@ def main():
         aged_opp["funding_sector"] = determine_funding_sector(aged_opp.get("title", ""), aged_opp.get("summary", ""), aged_opp.get("summary_vi", ""))
         aged_opp["deal_type"] = determine_deal_type(aged_opp.get("title", ""), aged_opp.get("summary", ""), aged_opp.get("signal_type", []), aged_opp.get("summary_vi", ""))
         aged_opp["funding_amount"] = extract_funding_amount(f"{aged_opp.get('title', '')} {aged_opp.get('summary', '')} {aged_opp.get('summary_vi', '')}")
+
+        # Phase 9: Triple Signal Detection
+        is_triple, has_f, has_t, has_s = check_triple_signal(
+            aged_opp.get("title", ""),
+            aged_opp.get("summary", ""),
+            aged_opp.get("sources", []),
+            aged_opp.get("signal_type", []),
+            aged_opp.get("summary_vi", "")
+        )
+        aged_opp["triple_signal"] = is_triple
+        aged_opp["triple_signal_badge"] = "🔥 Triple Signal" if is_triple else None
+        aged_opp["pillar_funding"] = has_f
+        aged_opp["pillar_tech"] = has_t
+        aged_opp["pillar_social"] = has_s
 
         if days_inactive >= 7:
             aged_opp["velocity"] = "fading"
