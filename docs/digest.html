@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bản Tin Hàng Ngày — Trend Radar</title>
+  <meta name="description" content="Bản tin tổng hợp 24h qua từ Trend Radar: Cơ hội nổi bật, Dòng tiền mới, Chủ đề nóng và Số liệu toàn hệ thống.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1117;
+      --bg-card: #161922;
+      --bg-card-hover: #1e2230;
+      --fg: #e4e6ed;
+      --fg-dim: #8b8fa3;
+      --fg-muted: #5c6078;
+      --accent: #2d6aff;
+      --accent-hover: #3f79ff;
+      --hot: #ff6b35;
+      --border: #2a2e3d;
+      --score-high: #34d399;
+      --score-mid: #fbbf24;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+    }
+    :root[data-theme="light"] {
+      --bg: #f5f6f8;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f9fafb;
+      --fg: #1a1d27;
+      --fg-dim: #5c6078;
+      --fg-muted: #8b8fa3;
+      --accent: #2558d9;
+      --border: #dfe1e8;
+      --score-high: #059669;
+      --score-mid: #d97706;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      padding: 30px 16px 60px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .header-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--fg-dim);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      color: var(--fg);
+      border-color: var(--accent);
+    }
+    .digest-masthead {
+      background: linear-gradient(135deg, rgba(45, 106, 255, 0.12), rgba(255, 107, 53, 0.08));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .masthead-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(45, 106, 255, 0.2);
+      color: #93c5fd;
+      border: 1px solid rgba(45, 106, 255, 0.35);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .digest-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .digest-subtitle {
+      color: var(--fg-dim);
+      font-size: 0.92rem;
+    }
+    .quick-actions-bar {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .action-btn:hover {
+      border-color: var(--accent);
+      background: var(--bg-card-hover);
+    }
+    .action-btn.btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .action-btn.btn-primary:hover {
+      background: var(--accent-hover);
+    }
+    .section-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      margin-bottom: 22px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--fg);
+    }
+    .section-tag {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--fg-dim);
+    }
+    .opp-item-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      transition: border-color 0.2s;
+    }
+    .opp-item-card:hover {
+      border-color: rgba(45, 106, 255, 0.4);
+    }
+    .opp-item-card:last-child { margin-bottom: 0; }
+    .opp-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .opp-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--fg);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .opp-card-title:hover {
+      color: var(--accent);
+    }
+    .score-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .score-badge-9 {
+      background: rgba(239, 68, 68, 0.18);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+    }
+    .score-badge-research {
+      background: rgba(245, 158, 11, 0.18);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+    .alert-sent-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #94a3b8;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .opp-summary-vi {
+      font-size: 0.88rem;
+      color: var(--fg-dim);
+      line-height: 1.45;
+    }
+    .deal-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 10px;
+    }
+    .deal-item:last-child { margin-bottom: 0; }
+    .deal-main {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .deal-badge {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      white-space: nowrap;
+    }
+    .topic-item {
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 10px;
+    }
+    .topic-item:last-child { margin-bottom: 0; }
+    .topic-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .topic-rank-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .topic-rank-title:hover { color: var(--accent); }
+    .topic-source-pill {
+      font-size: 0.74rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(249, 115, 22, 0.15);
+      color: #f97316;
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      font-weight: 600;
+    }
+    .stats-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .stat-tile {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      text-align: center;
+    }
+    .stat-tile-val {
+      font-size: 1.35rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: var(--fg);
+    }
+    .stat-tile-lbl {
+      font-size: 0.75rem;
+      color: var(--fg-dim);
+      margin-top: 4px;
+    }
+    .triple-signal-highlight {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: rgba(255, 107, 53, 0.08);
+      border: 1px solid rgba(255, 107, 53, 0.25);
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+      display: none;
+      z-index: 9999;
+      animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-nav">
+      <a href="index.html" class="back-btn">&larr; Quay lại Dashboard</a>
+      <button class="back-btn" id="themeToggleBtn" onclick="toggleTheme()">☀️ Đổi theme</button>
+    </div>
+
+    <div class="digest-masthead">
+      <div class="masthead-badge">Bản Tin Hàng Ngày · 7:00 AM VN</div>
+      <h1 class="digest-title" id="digestTitle">📰 TREND RADAR — BẢN TIN NGÀY ...</h1>
+      <p class="digest-subtitle" id="digestSubtitle">Tổng hợp 0:00 - 23:59 hôm qua · Đọc 2 phút nắm trọn thị trường</p>
+      
+      <div class="quick-actions-bar">
+        <button class="action-btn btn-primary" onclick="copyTelegramText()">📋 Sao chép tin Telegram</button>
+        <a href="index.html#opp-radar" class="action-btn">🎯 Mở Opportunity Radar</a>
+        <a href="index.html#funding" class="action-btn">💰 Mở Dòng Tiền</a>
+        <a href="index.html#social-buzz" class="action-btn">🔥 Mở Social Buzz</a>
+      </div>
+    </div>
+
+    <!-- Quiet day notice (if quiet) -->
+    <div id="quietNotice" style="display: none;" class="section-box">
+      <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 6px;">😴 Hôm qua yên ắng — không có cơ hội mới đáng chú ý.</div>
+      <div style="color: var(--fg-dim);" id="quietStatsLine">📊 Tất cả tín hiệu ở mức watch hoặc thấp hơn.</div>
+    </div>
+
+    <!-- 1. Cơ hội nổi bật -->
+    <section class="section-box" id="oppsSection">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span style="font-size: 1.3rem;">🎯</span>
+          <h2 class="section-title">Cơ Hội Nổi Bật</h2>
+        </div>
+        <span class="section-tag" id="oppsCountTag">Top 3 cơ hội</span>
+      </div>
+      <div id="oppsContainer">Đang tải...</div>
+    </section>
+
+    <!-- 2. Dòng tiền hôm qua -->
+    <section class="section-box" id="fundingSection">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span style="font-size: 1.3rem;">💰</span>
+          <h2 class="section-title">Dòng Tiền Hôm Qua</h2>
+        </div>
+        <span class="section-tag" id="fundingCountTag">Gọi vốn & M&A</span>
+      </div>
+      <div id="fundingContainer">Đang tải...</div>
+    </section>
+
+    <!-- 3. Chủ đề nóng -->
+    <section class="section-box" id="buzzSection">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span style="font-size: 1.3rem;">🔥</span>
+          <h2 class="section-title">Chủ Đề Nóng</h2>
+        </div>
+        <span class="section-tag">Reddit · Twitter/X · Trends</span>
+      </div>
+      <div id="buzzContainer">Đang tải...</div>
+    </section>
+
+    <!-- 4. Số liệu nhanh -->
+    <section class="section-box" id="statsSection">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span style="font-size: 1.3rem;">📊</span>
+          <h2 class="section-title">Số Liệu Nhanh</h2>
+        </div>
+        <span class="section-tag">Toàn hệ thống</span>
+      </div>
+      <div class="stats-summary-grid" id="statsGrid"></div>
+      <div class="triple-signal-highlight" id="tripleSignalBox" style="display: none;"></div>
+    </section>
+  </div>
+
+  <div class="toast-msg" id="toastMsg">✅ Đã sao chép nội dung Telegram!</div>
+
+  <script>
+    let DIGEST_DATA = null;
+
+    function toggleTheme() {
+      const root = document.documentElement;
+      const current = root.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('trendradar_theme', next);
+      document.getElementById('themeToggleBtn').textContent = next === 'dark' ? '☀️ Đổi theme' : '🌙 Đổi theme';
+    }
+
+    async function loadDigest() {
+      const savedTheme = localStorage.getItem('trendradar_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('themeToggleBtn').textContent = savedTheme === 'dark' ? '☀️ Đổi theme' : '🌙 Đổi theme';
+      }
+
+      try {
+        const res = await fetch('data/digest_latest.json');
+        if (!res.ok) throw new Error('Status ' + res.status);
+        DIGEST_DATA = await res.json();
+        renderDigest(DIGEST_DATA);
+      } catch (e) {
+        console.error('Failed to load digest_latest.json:', e);
+        document.getElementById('digestTitle').textContent = '⚠️ Không thể tải bản tin hôm nay';
+      }
+    }
+
+    function renderDigest(data) {
+      if (!data) return;
+      document.getElementById('digestTitle').textContent = `📰 TREND RADAR — BẢN TIN NGÀY ${data.date_formatted || data.date}`;
+      
+      if (data.quiet_day) {
+        document.getElementById('quietNotice').style.display = 'block';
+        document.getElementById('quietStatsLine').textContent = `📊 Tín hiệu mới: ${data.stats?.total_signals || 0} | Tất cả ở mức watch hoặc thấp hơn.`;
+        document.getElementById('oppsSection').style.display = 'none';
+      } else {
+        document.getElementById('quietNotice').style.display = 'none';
+        document.getElementById('oppsSection').style.display = 'block';
+      }
+
+      // 1. Opportunities
+      const oppsCont = document.getElementById('oppsContainer');
+      const opps = data.top_opportunities || [];
+      if (opps.length === 0) {
+        oppsCont.innerHTML = '<div style="color: var(--fg-dim);">Không có cơ hội nổi bật hôm qua.</div>';
+      } else {
+        oppsCont.innerHTML = opps.map(o => `
+          <div class="opp-item-card">
+            <div class="opp-card-top">
+              <a href="${o.url || '#'}" target="_blank" class="opp-card-title">
+                <span class="score-badge ${o.total === 9 ? 'score-badge-9' : 'score-badge-research'}">
+                  ${o.total === 9 ? '🔴' : '⚡'} ${o.total}/9
+                </span>
+                <span>${o.title}</span>
+                ${o.alert_sent ? '<span class="alert-sent-tag">(đã gửi alert)</span>' : ''}
+              </a>
+            </div>
+            <div class="opp-summary-vi">→ ${o.summary_vi || 'Đang cập nhật'}</div>
+          </div>
+        `).join('');
+
+        if (data.remaining_high_tier_count > 0) {
+          oppsCont.innerHTML += `
+            <div style="margin-top: 12px; font-size: 0.85rem; color: var(--fg-dim); text-align: center;">
+              ... và ${data.remaining_high_tier_count} cơ hội khác trên dashboard.
+            </div>
+          `;
+        }
+      }
+
+      // 2. Funding Deals
+      const fundCont = document.getElementById('fundingContainer');
+      const deals = data.funding_deals || [];
+      if (deals.length === 0) {
+        document.getElementById('fundingSection').style.display = 'none';
+      } else {
+        document.getElementById('fundingSection').style.display = 'block';
+        fundCont.innerHTML = deals.map(d => `
+          <div class="deal-item">
+            <div class="deal-main">
+              <span>💰</span>
+              <a href="${d.url || '#'}" target="_blank" style="color: inherit; text-decoration: none;">
+                ${d.formatted_text.replace(/^•\s*/, '')}
+              </a>
+            </div>
+            <span class="deal-badge">${d.sector_vi || d.deal_type || 'Deal'}</span>
+          </div>
+        `).join('');
+      }
+
+      // 3. Hot Topics
+      const buzzCont = document.getElementById('buzzContainer');
+      const topics = data.hot_topics || [];
+      if (topics.length === 0) {
+        buzzCont.innerHTML = '<div style="color: var(--fg-dim);">Chưa ghi nhận chủ đề nóng.</div>';
+      } else {
+        buzzCont.innerHTML = topics.map((t, idx) => `
+          <div class="topic-item">
+            <div class="topic-top">
+              <a href="${t.url || '#'}" target="_blank" class="topic-rank-title">
+                ${idx + 1}. ${t.topic}
+              </a>
+              <span class="topic-source-pill">${t.source}</span>
+            </div>
+            <div style="font-size: 0.85rem; color: var(--fg-dim);">
+              → ${t.summary_vi}
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 4. Stats
+      const st = data.stats || {};
+      const statsGrid = document.getElementById('statsGrid');
+      statsGrid.innerHTML = `
+        <div class="stat-tile">
+          <div class="stat-tile-val">${st.total_signals || 0}</div>
+          <div class="stat-tile-lbl">Tổng tín hiệu mới</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-val" style="color: var(--accent);">${st.new_opportunities || 0}</div>
+          <div class="stat-tile-lbl">Cơ hội mới</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-val" style="color: #f87171;">${st.build_ready || 0}</div>
+          <div class="stat-tile-lbl">Build-ready</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-val" style="color: #fbbf24;">${st.research || 0}</div>
+          <div class="stat-tile-lbl">Research</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-val" style="color: var(--score-high);">${st.rising || 0} ↑</div>
+          <div class="stat-tile-lbl">Velocity Rising</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-val" style="color: #94a3b8;">${st.fading || 0} ↓</div>
+          <div class="stat-tile-lbl">Velocity Fading</div>
+        </div>
+      `;
+
+      if (st.triple_signals > 0) {
+        const tBox = document.getElementById('tripleSignalBox');
+        tBox.style.display = 'flex';
+        tBox.innerHTML = `
+          <span style="font-size: 1.2rem;">🔥</span>
+          <div>
+            <strong>Triple Signal Phát Hiện:</strong> Có (${st.triple_signals}) &rarr; <em>${st.triple_signal_theme}</em>
+          </div>
+        `;
+      }
+    }
+
+    function copyTelegramText() {
+      if (!DIGEST_DATA || !DIGEST_DATA.telegram_text) return;
+      navigator.clipboard.writeText(DIGEST_DATA.telegram_text).then(() => {
+        const toast = document.getElementById('toastMsg');
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 2600);
+      }).catch(err => {
+        alert('Không thể sao chép tự động: ' + err);
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', loadDigest);
+  </script>
+</body>
+</html>

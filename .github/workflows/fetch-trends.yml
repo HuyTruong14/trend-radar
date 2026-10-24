@@ -2,8 +2,8 @@ name: Fetch trends
 
 on:
   schedule:
-    # 07:00 UTC daily (= 14:00 Vietnam time). Edit the cron to change cadence.
-    - cron: "0 7 * * *"
+    # 00:00 UTC daily (= 07:00 Vietnam time).
+    - cron: "0 0 * * *"
   workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
 
 permissions:
@@ -39,6 +39,12 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/score.py
+
+      - name: Generate Daily Digest and send Telegram (Phase 10)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/daily_digest.py --send-telegram
 
       - name: Index into RAGFlow
         if: env.RAGFLOW_API_KEY != ''

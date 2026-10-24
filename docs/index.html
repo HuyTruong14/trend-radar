@@ -2531,6 +2531,242 @@
       border-radius: 6px;
       font-size: 0.85rem;
     }
+
+    /* Phase 10 — Daily Digest Banner */
+    .daily-digest-banner {
+      background: linear-gradient(135deg, rgba(45, 106, 255, 0.12), rgba(255, 107, 53, 0.08));
+      border: 1px solid rgba(45, 106, 255, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 20px 22px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    .digest-banner-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .digest-banner-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--fg);
+    }
+    .digest-pulse-dot {
+      width: 9px;
+      height: 9px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+      animation: digestPulse 2s infinite;
+    }
+    @keyframes digestPulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .digest-badge-status {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
+    .digest-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 768px) {
+      .digest-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .digest-stat-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform var(--transition-fast), border-color var(--transition-fast);
+      cursor: pointer;
+    }
+    .digest-stat-card:hover {
+      border-color: rgba(45, 106, 255, 0.5);
+      transform: translateY(-2px);
+    }
+    .digest-stat-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .digest-stat-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--fg);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .digest-stat-lbl {
+      font-size: 0.72rem;
+      color: var(--fg-dim);
+      white-space: nowrap;
+    }
+    .digest-banner-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .digest-open-btn {
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all var(--transition-fast);
+      cursor: pointer;
+    }
+    .digest-open-btn:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 4px 16px rgba(45, 106, 255, 0.4);
+    }
+    .digest-external-link {
+      color: var(--fg-dim);
+      font-size: 0.82rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color var(--transition-fast);
+    }
+    .digest-external-link:hover {
+      color: var(--accent);
+    }
+
+    /* Modal Overlay (Phase 10) */
+    .digest-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 16px;
+      animation: fadeInDigestOverlay 0.2s ease;
+    }
+    @keyframes fadeInDigestOverlay {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .digest-modal-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 840px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+      overflow: hidden;
+      animation: scaleInDigestModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes scaleInDigestModal {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .digest-modal-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .digest-modal-title {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--fg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .digest-modal-close-btn {
+      font-size: 1.4rem;
+      line-height: 1;
+      color: var(--fg-dim);
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition-fast);
+      background: none;
+      border: none;
+    }
+    .digest-modal-close-btn:hover {
+      color: var(--fg);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .digest-modal-body {
+      padding: 22px 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .digest-modal-section {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 18px;
+    }
+    .digest-modal-section:last-child {
+      margin-bottom: 0;
+    }
+    .digest-sec-hdr {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--fg);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .digest-copy-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 10px 18px;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      z-index: 10001;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -2567,6 +2803,56 @@
       <span>⚠️ <strong>Using cached data</strong> — check GitHub Actions workflow for fresh fetches.</span>
       <a href="https://github.com/HuyTruong14/trend-radar/actions" target="_blank" rel="noopener noreferrer">View Actions &rarr;</a>
     </div>
+
+    <!-- Phase 10 — Daily Digest Banner -->
+    <section class="daily-digest-banner" id="dailyDigestBanner">
+      <div class="digest-banner-header">
+        <div class="digest-banner-title">
+          <span class="digest-pulse-dot" aria-hidden="true"></span>
+          <span>📰 BẢN TIN HÔM NAY — <span id="digestDateBadge">...</span></span>
+        </div>
+        <span class="digest-badge-status" id="digestStatusBadge">Tổng hợp 24h qua</span>
+      </div>
+      <div class="digest-stats-grid" id="digestStatsGrid">
+        <div class="digest-stat-card" onclick="openDailyDigestModal()">
+          <div class="digest-stat-icon">🎯</div>
+          <div class="digest-stat-info">
+            <div class="digest-stat-val" id="digestTopOppsVal">Đang tải...</div>
+            <div class="digest-stat-lbl">Cơ hội nổi bật</div>
+          </div>
+        </div>
+        <div class="digest-stat-card" onclick="openDailyDigestModal()">
+          <div class="digest-stat-icon">💰</div>
+          <div class="digest-stat-info">
+            <div class="digest-stat-val" id="digestFundingVal">Đang tải...</div>
+            <div class="digest-stat-lbl">Dòng tiền hôm qua</div>
+          </div>
+        </div>
+        <div class="digest-stat-card" onclick="openDailyDigestModal()">
+          <div class="digest-stat-icon">🔥</div>
+          <div class="digest-stat-info">
+            <div class="digest-stat-val" id="digestBuzzVal">Đang tải...</div>
+            <div class="digest-stat-lbl">Chủ đề thảo luận nóng</div>
+          </div>
+        </div>
+        <div class="digest-stat-card" onclick="openDailyDigestModal()">
+          <div class="digest-stat-icon">📊</div>
+          <div class="digest-stat-info">
+            <div class="digest-stat-val" id="digestSignalsVal">Đang tải...</div>
+            <div class="digest-stat-lbl">Tín hiệu toàn hệ thống</div>
+          </div>
+        </div>
+      </div>
+      <div class="digest-banner-footer">
+        <button class="digest-open-btn" id="openDigestModalBtn" onclick="openDailyDigestModal()">
+          <span>📰 Bấm để mở bản tin đầy đủ</span>
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+        <a href="digest.html" class="digest-external-link" target="_blank" title="Mở trang bản tin riêng">
+          <span>Mở trang riêng ↗</span>
+        </a>
+      </div>
+    </section>
 
     <!-- Daily Briefing -->
     <section class="featured-card briefing-card" id="briefingCard">
@@ -2658,6 +2944,24 @@
     </footer>
   </div>
 
+  <!-- Phase 10 — Daily Digest Modal -->
+  <div class="digest-modal-overlay" id="dailyDigestModal" style="display: none;" onclick="handleDigestBackdropClick(event)">
+    <div class="digest-modal-box" role="dialog" aria-modal="true" aria-labelledby="modalDigestTitle">
+      <div class="digest-modal-header">
+        <div class="digest-modal-title" id="modalDigestTitle">
+          <span>📰 TREND RADAR — BẢN TIN NGÀY</span>
+          <span id="modalDigestDate">...</span>
+        </div>
+        <button class="digest-modal-close-btn" onclick="closeDailyDigestModal()" aria-label="Đóng bản tin">&times;</button>
+      </div>
+      <div class="digest-modal-body" id="digestModalBody">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <div class="digest-copy-toast" id="digestCopyToast">✅ Đã sao chép nội dung Telegram!</div>
+
   <script>
     // --- 1. MOCK DATA (High quality fallback) ---
     const MOCK_DATA = {
@@ -2740,6 +3044,7 @@
       triple_signals: [],
       subreddits_covered: []
     };
+    let DAILY_DIGEST_DATA = null;
     let buzzSelectedSub = 'all';
     let buzzSearchQuery = '';
     let oppFilters = {
@@ -2889,10 +3194,288 @@
       }
     }
 
+    async function loadDailyDigest() {
+      try {
+        const res = await fetch('data/digest_latest.json');
+        if (res.ok) {
+          const json = await res.json();
+          if (json && typeof json === 'object') {
+            DAILY_DIGEST_DATA = json;
+            renderDailyDigestBanner(DAILY_DIGEST_DATA);
+            if (window.location.hash === '#digest') {
+              openDailyDigestModal();
+            }
+          }
+        }
+      } catch (e) {
+        console.warn('Could not load data/digest_latest.json:', e);
+      }
+    }
+
+    function renderDailyDigestBanner(data) {
+      if (!data) return;
+      const dateEl = document.getElementById('digestDateBadge');
+      if (dateEl) dateEl.textContent = data.date_formatted || data.date || 'Hôm nay';
+
+      const topOppsEl = document.getElementById('digestTopOppsVal');
+      const fundingEl = document.getElementById('digestFundingVal');
+      const buzzEl = document.getElementById('digestBuzzVal');
+      const signalsEl = document.getElementById('digestSignalsVal');
+      const statusBadge = document.getElementById('digestStatusBadge');
+
+      if (data.quiet_day) {
+        if (topOppsEl) topOppsEl.textContent = 'Hôm qua yên ắng';
+        if (statusBadge) {
+          statusBadge.textContent = 'Hôm qua yên ắng';
+          statusBadge.style.background = 'rgba(255, 255, 255, 0.08)';
+          statusBadge.style.color = 'var(--fg-dim)';
+          statusBadge.style.borderColor = 'var(--border)';
+        }
+      } else {
+        const oppCount = (data.top_opportunities || []).length;
+        if (topOppsEl) topOppsEl.textContent = `${oppCount} cơ hội top`;
+      }
+
+      const dealCount = (data.funding_deals || []).length;
+      if (fundingEl) fundingEl.textContent = `${dealCount} deals mới`;
+
+      const topicCount = (data.hot_topics || []).length;
+      if (buzzEl) buzzEl.textContent = `${topicCount} chủ đề nóng`;
+
+      const sigCount = data.stats?.total_signals || 0;
+      if (signalsEl) signalsEl.textContent = `${sigCount} tín hiệu`;
+    }
+
+    function openDailyDigestModal() {
+      const modal = document.getElementById('dailyDigestModal');
+      const body = document.getElementById('digestModalBody');
+      const dateEl = document.getElementById('modalDigestDate');
+      if (!modal || !body) return;
+
+      const data = DAILY_DIGEST_DATA;
+      if (!data) {
+        body.innerHTML = '<div style="padding: 20px; color: var(--fg-dim); text-align: center;">Đang tải bản tin...</div>';
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        return;
+      }
+
+      if (dateEl) dateEl.textContent = data.date_formatted || data.date;
+
+      let html = '';
+
+      // Action toolbar
+      html += `
+        <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+          <button class="action-btn btn-primary" onclick="copyDailyDigestTelegram()" style="background: var(--accent); color: #fff; border-color: var(--accent); padding: 8px 16px; border-radius: var(--radius-sm); font-weight: 700; cursor: pointer;">
+            📋 Sao chép tin Telegram
+          </button>
+          <a href="digest.html" target="_blank" class="action-btn" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 8px 14px; border-radius: var(--radius-sm); font-weight: 600; color: var(--fg); text-decoration: none;">
+            Mở trang riêng biệt ↗
+          </a>
+        </div>
+      `;
+
+      if (data.quiet_day) {
+        html += `
+          <div style="padding: 20px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--radius-md); text-align: center; margin-bottom: 18px;">
+            <div style="font-size: 1.3rem; font-weight: 800; margin-bottom: 8px;">😴 Hôm qua yên ắng — không có cơ hội mới đáng chú ý.</div>
+            <div style="color: var(--fg-dim); font-size: 0.95rem;">📊 Tín hiệu mới: ${data.stats?.total_signals || 0} | Tất cả ở mức watch hoặc thấp hơn.</div>
+          </div>
+        `;
+      } else {
+        // 1. Cơ hội nổi bật
+        const opps = data.top_opportunities || [];
+        html += `
+          <div class="digest-modal-section">
+            <div class="digest-sec-hdr">
+              <span style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.2rem;">🎯</span>
+                <strong>Cơ Hội Nổi Bật Hôm Qua</strong>
+              </span>
+              <span style="font-size: 0.75rem; color: var(--fg-dim);">Top ${opps.length} cơ hội</span>
+            </div>
+            <div>
+              ${opps.map(o => `
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 12px 14px; margin-bottom: 10px;">
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 6px;">
+                    <a href="${escapeHtml(o.url || '#')}" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: var(--fg); text-decoration: none; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                      <span class="score-badge ${o.total === 9 ? 'score-badge-9' : 'score-badge-research'}" style="font-family: var(--font-mono); font-size: 0.78rem; padding: 2px 8px; border-radius: 999px; ${o.total === 9 ? 'background: rgba(239, 68, 68, 0.18); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4);' : 'background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4);'}">
+                        ${o.total === 9 ? '🔴' : '⚡'} ${o.total}/9
+                      </span>
+                      <span>${escapeHtml(o.title)}</span>
+                      ${o.alert_sent ? '<span style="font-size: 0.72rem; font-weight: 600; color: #94a3b8; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 2px 8px; border-radius: 999px;">(đã gửi alert)</span>' : ''}
+                    </a>
+                  </div>
+                  <div style="font-size: 0.88rem; color: var(--fg-dim);">→ ${escapeHtml(o.summary_vi || '')}</div>
+                </div>
+              `).join('')}
+              ${data.remaining_high_tier_count > 0 ? `
+                <div style="font-size: 0.82rem; color: var(--fg-dim); text-align: center; margin-top: 8px;">
+                  ... và ${data.remaining_high_tier_count} cơ hội khác trên dashboard.
+                </div>
+              ` : ''}
+            </div>
+          </div>
+        `;
+
+        // 2. Dòng tiền
+        const deals = data.funding_deals || [];
+        if (deals.length > 0) {
+          html += `
+            <div class="digest-modal-section">
+              <div class="digest-sec-hdr">
+                <span style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 1.2rem;">💰</span>
+                  <strong>Dòng Tiền Hôm Qua</strong>
+                </span>
+                <span style="font-size: 0.75rem; color: var(--fg-dim);">${deals.length} deals</span>
+              </div>
+              <div>
+                ${deals.map(d => `
+                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 8px;">
+                    <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600;">
+                      <span>•</span>
+                      <a href="${escapeHtml(d.url || '#')}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                        ${escapeHtml(d.formatted_text.replace(/^•\s*/, ''))}
+                      </a>
+                    </div>
+                    <span style="font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); white-space: nowrap;">
+                      ${escapeHtml(d.sector_vi || d.deal_type || 'Deal')}
+                    </span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }
+
+        // 3. Chủ đề nóng
+        const topics = data.hot_topics || [];
+        if (topics.length > 0) {
+          html += `
+            <div class="digest-modal-section">
+              <div class="digest-sec-hdr">
+                <span style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 1.2rem;">🔥</span>
+                  <strong>Chủ Đề Nóng Được Bàn Tán Nhiều Nhất</strong>
+                </span>
+                <span style="font-size: 0.75rem; color: var(--fg-dim);">Top 3 chủ đề</span>
+              </div>
+              <div>
+                ${topics.map((t, idx) => `
+                  <div style="padding: 10px 12px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 8px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                      <a href="${escapeHtml(t.url || '#')}" target="_blank" rel="noopener noreferrer" style="font-size: 0.92rem; font-weight: 700; color: var(--fg); text-decoration: none;">
+                        ${idx + 1}. ${escapeHtml(t.topic)}
+                      </a>
+                      <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; background: rgba(249, 115, 22, 0.15); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.3); font-weight: 600; white-space: nowrap;">
+                        ${escapeHtml(t.source)}
+                      </span>
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--fg-dim);">
+                      → ${escapeHtml(t.summary_vi || '')}
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      // 4. Số liệu nhanh
+      const st = data.stats || {};
+      html += `
+        <div class="digest-modal-section">
+          <div class="digest-sec-hdr">
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 1.2rem;">📊</span>
+              <strong>Số Liệu Nhanh</strong>
+            </span>
+            <span style="font-size: 0.75rem; color: var(--fg-dim);">Toàn hệ thống</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; text-align: center;">
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px;">
+              <div style="font-size: 1.25rem; font-weight: 800; font-family: var(--font-mono); color: var(--fg);">${st.total_signals || 0}</div>
+              <div style="font-size: 0.72rem; color: var(--fg-dim); margin-top: 2px;">Tín hiệu mới</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px;">
+              <div style="font-size: 1.25rem; font-weight: 800; font-family: var(--font-mono); color: var(--accent);">${st.new_opportunities || 0}</div>
+              <div style="font-size: 0.72rem; color: var(--fg-dim); margin-top: 2px;">Cơ hội mới</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px;">
+              <div style="font-size: 1.25rem; font-weight: 800; font-family: var(--font-mono); color: #f87171;">${st.build_ready || 0}</div>
+              <div style="font-size: 0.72rem; color: var(--fg-dim); margin-top: 2px;">Build-ready</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px;">
+              <div style="font-size: 1.25rem; font-weight: 800; font-family: var(--font-mono); color: #fbbf24;">${st.research || 0}</div>
+              <div style="font-size: 0.72rem; color: var(--fg-dim); margin-top: 2px;">Research</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px;">
+              <div style="font-size: 1.25rem; font-weight: 800; font-family: var(--font-mono); color: var(--score-high);">${st.rising || 0} ↑</div>
+              <div style="font-size: 0.72rem; color: var(--fg-dim); margin-top: 2px;">Rising</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px;">
+              <div style="font-size: 1.25rem; font-weight: 800; font-family: var(--font-mono); color: #94a3b8;">${st.fading || 0} ↓</div>
+              <div style="font-size: 0.72rem; color: var(--fg-dim); margin-top: 2px;">Fading</div>
+            </div>
+          </div>
+          ${st.triple_signals > 0 ? `
+            <div style="margin-top: 12px; padding: 10px 12px; background: rgba(255, 107, 53, 0.08); border: 1px solid rgba(255, 107, 53, 0.25); border-radius: var(--radius-sm); font-size: 0.84rem; display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 1.1rem;">🔥</span>
+              <div>
+                <strong>Triple Signal:</strong> Có (${st.triple_signals}) &rarr; <em>${escapeHtml(st.triple_signal_theme || '')}</em>
+              </div>
+            </div>
+          ` : ''}
+        </div>
+      `;
+
+      body.innerHTML = html;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDailyDigestModal() {
+      const modal = document.getElementById('dailyDigestModal');
+      if (modal) modal.style.display = 'none';
+      document.body.style.overflow = '';
+      if (window.location.hash === '#digest') {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+    }
+
+    function handleDigestBackdropClick(event) {
+      if (event.target && event.target.id === 'dailyDigestModal') {
+        closeDailyDigestModal();
+      }
+    }
+
+    function copyDailyDigestTelegram() {
+      if (!DAILY_DIGEST_DATA || !DAILY_DIGEST_DATA.telegram_text) return;
+      navigator.clipboard.writeText(DAILY_DIGEST_DATA.telegram_text).then(() => {
+        const toast = document.getElementById('digestCopyToast');
+        if (toast) {
+          toast.style.display = 'block';
+          setTimeout(() => { toast.style.display = 'none'; }, 2600);
+        }
+      }).catch(err => {
+        alert('Không thể sao chép tự động: ' + err);
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDailyDigestModal();
+      }
+    });
+
     async function loadData() {
       await loadWatchlist();
       await loadOpportunities();
       await loadSocialBuzz();
+      await loadDailyDigest();
       
       try {
         const res = await fetch('data/news.json');
@@ -3123,6 +3706,7 @@
       const isBuzz = activeTopic === 'Chủ Đề Nóng';
 
       const briefingCard = document.getElementById('briefingCard');
+      const digestBanner = document.getElementById('dailyDigestBanner');
       const watchlistCard = document.getElementById('watchlistCard');
       const sourcesRow = document.getElementById('sourcesRow');
       const hotSection = document.getElementById('hotSection');
@@ -3133,6 +3717,7 @@
       const buzzSection = document.getElementById('socialBuzzSection');
 
       if (isRadar) {
+        if (digestBanner) digestBanner.style.display = 'none';
         if (briefingCard) briefingCard.style.display = 'none';
         if (watchlistCard) watchlistCard.style.display = 'none';
         if (sourcesRow) sourcesRow.style.display = 'none';
@@ -3149,6 +3734,7 @@
       }
 
       if (isFunding) {
+        if (digestBanner) digestBanner.style.display = 'none';
         if (briefingCard) briefingCard.style.display = 'none';
         if (watchlistCard) watchlistCard.style.display = 'none';
         if (sourcesRow) sourcesRow.style.display = 'none';
@@ -3165,6 +3751,7 @@
       }
 
       if (isBuzz) {
+        if (digestBanner) digestBanner.style.display = 'none';
         if (briefingCard) briefingCard.style.display = 'none';
         if (watchlistCard) watchlistCard.style.display = 'none';
         if (sourcesRow) sourcesRow.style.display = 'none';
@@ -3184,6 +3771,7 @@
       if (radarSection) radarSection.style.display = 'none';
       if (fundingSection) fundingSection.style.display = 'none';
       if (buzzSection) buzzSection.style.display = 'none';
+      if (digestBanner) digestBanner.style.display = 'block';
       if (briefingCard) briefingCard.style.display = 'block';
       if (sourcesRow) sourcesRow.style.display = 'flex';
       if (hotSection) hotSection.style.display = 'block';
