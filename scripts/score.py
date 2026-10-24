@@ -1378,6 +1378,18 @@ def send_phase5_alerts(opportunities, promoted_items, today_str, dry_run=False, 
                     "new_total": opp.get("total", 0)
                 })
 
+    # Safety: Cap promotions per run at maximum 3 to prevent Telegram spamming
+    promo_candidates.sort(key=lambda x: x.get("new_total", 0), reverse=True)
+    if len(promo_candidates) > 3:
+        print(f"[score] [Phase 5C] Capping {len(promo_candidates)} promotions down to top 3 to prevent notification spam.")
+        for extra in promo_candidates[3:]:
+            e_id = extra["opp"]["id"]
+            he = sent_history.get(e_id)
+            if he:
+                he["stage_when_sent"] = extra["new_stage"]
+                history_changed = True
+        promo_candidates = promo_candidates[:3]
+
     for promo in promo_candidates:
         opp = promo["opp"]
         opp_id = opp["id"]
@@ -1431,11 +1443,13 @@ def send_phase5_alerts(opportunities, promoted_items, today_str, dry_run=False, 
             else:
                 print(f"[score] [Phase 5C] Gửi Template 3 thất bại cho: {opp_id}")
 
-    # 2. Item MỚI, stage = build_ready (Template 1)
+    # 2. Item MỚI, stage = build_ready (Template 1 - Tối đa 2 items/ngày)
     build_ready_candidates = [
         opp for opp in opportunities
         if (opp.get("total") or 0) >= 9 or opp.get("stage") == "build_ready"
     ]
+    if len(build_ready_candidates) > 2:
+        build_ready_candidates = build_ready_candidates[:2]
     for opp in build_ready_candidates:
         opp_id = opp.get("id")
         if not opp_id or opp_id in handled_ids:

@@ -865,17 +865,19 @@ def check_watchlist_and_alert(output_data, out_dir):
                     })
                     break
 
-    # Send Telegram alert if enabled
-    alert_enabled = os.environ.get("WATCHLIST_TELEGRAM_ALERT", "true").lower() in ("true", "1", "yes")
+    # Send Telegram alert only if explicitly enabled (default false to prevent spamming;
+    # Opportunity Radar Phase 5B/5C handles intelligent alerting with 3 dedicated templates).
+    alert_enabled = os.environ.get("WATCHLIST_TELEGRAM_ALERT", "false").lower() in ("true", "1", "yes")
     if alert_enabled and notify and matched_alerts:
         print(f"[aggregate] Found {len(matched_alerts)} watchlist matches with score >= {threshold}")
-        for match in matched_alerts:
-            msg = f"🔔 Watchlist alert: '{match['keyword']}' matched — {match['title']} (score: {match['score']})\n{match['url']}"
-            sent = notify.send_message(msg)
-            if sent:
-                print(f"  -> Telegram alert sent: {match['keyword']} — {match['title'][:50]}")
-            else:
-                print(f"  ! Telegram alert skipped/failed for: {match['keyword']}")
+        # Group into a single digest message instead of spamming 1 message per match
+        lines = [f"🔔 TỔNG HỢP WATCHLIST ({len(matched_alerts)} mục khớp)"]
+        for m in matched_alerts[:8]:
+            lines.append(f"• [{m['keyword']}] {m['title']} ({m['score']}đ)\n  {m['url']}")
+        if len(matched_alerts) > 8:
+            lines.append(f"... và {len(matched_alerts) - 8} mục khác.")
+        notify.send_message("\n".join(lines))
+
 
 
 if __name__ == "__main__":

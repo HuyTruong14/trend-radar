@@ -733,16 +733,91 @@
   },
   {
     "date": "2026-10-24",
-    "total_items": 15,
-    "avg_relevance_score": 1.13,
+    "total_items": 45,
+    "avg_relevance_score": 2.96,
     "cross_source_count": 0,
     "by_source": {
+      "GitHub": 30,
       "arXiv": 15
     },
     "by_keyword": {
+      "ai video generation": 15,
+      "llm agent": 15,
       "cs.AI, cs.CV, cs.CL": 15
     },
-    "top_repos": [],
-    "github_repos": []
+    "top_repos": [
+      {
+        "name": "morluto/rea",
+        "stars": 376182
+      },
+      {
+        "name": "affaan-m/ECC",
+        "stars": 287719
+      },
+      {
+        "name": "NousResearch/hermes-agent",
+        "stars": 256692
+      },
+      {
+        "name": "firecrawl/firecrawl",
+        "stars": 194845
+      },
+      {
+        "name": "DietrichGebert/ponytail",
+        "stars": 175244
+      },
+      {
+        "name": "langgenius/dify",
+        "stars": 159415
+      },
+      {
+        "name": "langchain-ai/langchain",
+        "stars": 148362
+      },
+      {
+        "name": "Shubhamsaboo/awesome-llm-apps",
+        "stars": 142899
+      },
+      {
+        "name": "browser-use/browser-use",
+        "stars": 119023
+      },
+      {
+        "name": "earendil-works/pi",
+        "stars": 117551
+      }
+    ],
+    "github_repos": [
+      "aqm857886159/Nomi",
+      "NousResearch/hermes-agent",
+      "firecrawl/firecrawl",
+      "langgenius/dify",
+      "infiniflow/ragflow",
+      "morluto/rea",
+      "paperclipai/paperclip",
+      "tetherto/qvac",
+      "OpenHands/OpenHands",
+      "earendil-works/pi",
+      "ZeroLu/awesome-seedance",
+      "PurpleDoubleD/locally-uncensored",
+      "Anil-matcha/Open-Generative-AI",
+      "langchain-ai/langchain",
+      "JuliusBrussee/caveman",
+      "browser-use/browser-use",
+      "HKUSTDial/DataMagic",
+      "Shubhamsaboo/awesome-llm-apps",
+      "AceDataCloud/Nexior",
+      "czg86389-hub/muse2api",
+      "YILS-LIN/short-video-factory",
+      "leofan90/Awesome-World-Models",
+      "vargHQ/sdk",
+      "flatkey-ai/flatkey-cli",
+      "affaan-m/ECC",
+      "notepower2k1/CapCap",
+      "HBAI-Ltd/Toonflow-app",
+      "Likely7/Veyra-NRVideo",
+      "DietrichGebert/ponytail",
+      "TauricResearch/TradingAgents"
+    ]
   }
 ]

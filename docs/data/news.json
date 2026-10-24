@@ -1,18 +1,360 @@
 {
-  "updated": "2026-10-24T13:32:54.419275+00:00",
+  "updated": "2026-10-24T13:48:26.181999+00:00",
   "topics": {
     "AI/Tech": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence</strong> (Score 28) — <em>Tool-using language model agents rely on environmental facts to decide whether an action is permitted. When a tool response omits a safety-relevant fact, an ...</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>WorldForge V2: Eliciting Camera-Trajectory Alignment in Video Diffusion Models</strong> (Score 28): Video diffusion models have learned rich 3D/4D priors, making them promising for scene generation and video re-render... và <strong>A Unified Framework for Image-to-3D Part Generation via Variable Granularity</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 15 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>NousResearch/hermes-agent</strong> (Score 80) — <em>The agent that grows with you</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>firecrawl/firecrawl</strong> (Score 80): Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥 và <strong>langgenius/dify</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 45 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "LLM",
           "items": [
-            0,
-            7
+            12,
+            25,
+            36
+          ]
+        },
+        {
+          "label": "World",
+          "items": [
+            22,
+            33
           ]
         }
       ],
       "items": [
+        {
+          "title": "NousResearch/hermes-agent",
+          "summary": "The agent that grows with you",
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "sources": [
+            "gh"
+          ],
+          "time": "3m",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "firecrawl/firecrawl",
+          "summary": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
+          "url": "https://github.com/firecrawl/firecrawl",
+          "sources": [
+            "gh"
+          ],
+          "time": "4m",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "tool",
+          "source": "GitHub",
+          "watchlist_matched": "ai agent"
+        },
+        {
+          "title": "langgenius/dify",
+          "summary": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move from prototype to production without rebuilding the stack.",
+          "url": "https://github.com/langgenius/dify",
+          "sources": [
+            "gh"
+          ],
+          "time": "22m",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "infiniflow/ragflow",
+          "summary": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
+          "url": "https://github.com/infiniflow/ragflow",
+          "sources": [
+            "gh"
+          ],
+          "time": "36m",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "tool",
+          "source": "GitHub",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "morluto/rea",
+          "summary": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+          "url": "https://github.com/morluto/rea",
+          "sources": [
+            "gh"
+          ],
+          "time": "50m",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "paperclipai/paperclip",
+          "summary": "The open-source app everyone uses to manage agents at work",
+          "url": "https://github.com/paperclipai/paperclip",
+          "sources": [
+            "gh"
+          ],
+          "time": "58m",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "tool",
+          "source": "GitHub"
+        },
+        {
+          "title": "OpenHands/OpenHands",
+          "summary": "🙌 OpenHands: AI-Driven Development",
+          "url": "https://github.com/OpenHands/OpenHands",
+          "sources": [
+            "gh"
+          ],
+          "time": "1h",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "earendil-works/pi",
+          "summary": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
+          "url": "https://github.com/earendil-works/pi",
+          "sources": [
+            "gh"
+          ],
+          "time": "1h",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "tool",
+          "source": "GitHub",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "Anil-matcha/Open-Generative-AI",
+          "summary": "Unrestricted Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No content filters. Self-hosted, MIT licensed.",
+          "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+          "sources": [
+            "gh"
+          ],
+          "time": "3h",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "tool",
+          "source": "GitHub"
+        },
+        {
+          "title": "langchain-ai/langchain",
+          "summary": "The agent engineering platform.",
+          "url": "https://github.com/langchain-ai/langchain",
+          "sources": [
+            "gh"
+          ],
+          "time": "5h",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "JuliusBrussee/caveman",
+          "summary": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "sources": [
+            "gh"
+          ],
+          "time": "5h",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "browser-use/browser-use",
+          "summary": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
+          "url": "https://github.com/browser-use/browser-use",
+          "sources": [
+            "gh"
+          ],
+          "time": "6h",
+          "score": 80,
+          "velocity": "stable",
+          "tag": "tool",
+          "source": "GitHub"
+        },
+        {
+          "title": "Shubhamsaboo/awesome-llm-apps",
+          "summary": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+          "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+          "sources": [
+            "gh"
+          ],
+          "time": "1d",
+          "score": 76,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "affaan-m/ECC",
+          "summary": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+          "url": "https://github.com/affaan-m/ECC",
+          "sources": [
+            "gh"
+          ],
+          "time": "3d",
+          "score": 76,
+          "velocity": "cooling",
+          "tag": "risk",
+          "source": "GitHub",
+          "watchlist_matched": "claude"
+        },
+        {
+          "title": "HBAI-Ltd/Toonflow-app",
+          "summary": "短剧、漫剧制作工具 Toonflow：开源 AI 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、AI Agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、MCP 与插件扩展。Open-source AI short drama and motion comic creation tool with an infinite canvas, AI agents, storyboarding, image and video generation. Self-hosted and extensible, with a canvas-based approach similar to LibTV and TapNow.",
+          "url": "https://github.com/HBAI-Ltd/Toonflow-app",
+          "sources": [
+            "gh"
+          ],
+          "time": "3d",
+          "score": 76,
+          "velocity": "cooling",
+          "tag": "tool",
+          "source": "GitHub",
+          "watchlist_matched": "ai agent"
+        },
+        {
+          "title": "DietrichGebert/ponytail",
+          "summary": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+          "url": "https://github.com/DietrichGebert/ponytail",
+          "sources": [
+            "gh"
+          ],
+          "time": "6d",
+          "score": 76,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub",
+          "watchlist_matched": "ai agent"
+        },
+        {
+          "title": "TauricResearch/TradingAgents",
+          "summary": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+          "url": "https://github.com/TauricResearch/TradingAgents",
+          "sources": [
+            "gh"
+          ],
+          "time": "7d",
+          "score": 76,
+          "velocity": "cooling",
+          "tag": "tool",
+          "source": "GitHub",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "tetherto/qvac",
+          "summary": "Open-source local AI SDK - run AI on-device with no cloud, no API keys. Supports GGUF, RAG, image, music, and video generation, speech-to-text, P2P inference, and more. Cross-platform: Linux, macOS, Windows, Android, iOS.",
+          "url": "https://github.com/tetherto/qvac",
+          "sources": [
+            "gh"
+          ],
+          "time": "1h",
+          "score": 48,
+          "velocity": "stable",
+          "tag": "tool",
+          "source": "GitHub"
+        },
+        {
+          "title": "ZeroLu/awesome-seedance",
+          "summary": "The ultimate collection of high-fidelity Seedance 2.0 prompts and Seedance AI resources. Discover Seedance 2.0 how to use for cinematic film, anime, UGC, social media, meme and advertising. Includes Seedance API guides and advanced video generation workflows.",
+          "url": "https://github.com/ZeroLu/awesome-seedance",
+          "sources": [
+            "gh"
+          ],
+          "time": "1h",
+          "score": 48,
+          "velocity": "stable",
+          "tag": "tool",
+          "source": "GitHub"
+        },
+        {
+          "title": "PurpleDoubleD/locally-uncensored",
+          "summary": "The all-in-one local AI studio for your desktop: chat, image and video generation and a coding agent in one free, open source app. Windows and Linux. No Docker, no terminal, no cloud required.",
+          "url": "https://github.com/PurpleDoubleD/locally-uncensored",
+          "sources": [
+            "gh"
+          ],
+          "time": "1h",
+          "score": 48,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "czg86389-hub/muse2api",
+          "summary": "把 Muse(muse.ai) 逆向封装为 OpenAI 兼容接口，支持对话、文生图、文生视频/图生视频、多账号池轮转与 48h 自动续期。OpenAI-compatible API for Muse.ai with Chat, Image & Video generation.",
+          "url": "https://github.com/czg86389-hub/muse2api",
+          "sources": [
+            "gh"
+          ],
+          "time": "2d",
+          "score": 44,
+          "velocity": "cooling",
+          "tag": "tool",
+          "source": "GitHub"
+        },
+        {
+          "title": "YILS-LIN/short-video-factory",
+          "summary": "一键生成产品营销与泛内容短视频，AI批量自动剪辑，高颜值跨平台桌面端工具 One click generation of product marketing and general content short videos, AI batch automatic cliping, beautiful cross platform desktop tool",
+          "url": "https://github.com/YILS-LIN/short-video-factory",
+          "sources": [
+            "gh"
+          ],
+          "time": "2d",
+          "score": 44,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "leofan90/Awesome-World-Models",
+          "summary": "A comprehensive list of papers for the definition of World Models and using World Models for General Video Generation, Embodied AI, and Autonomous Driving, including papers, codes, and related websites.",
+          "url": "https://github.com/leofan90/Awesome-World-Models",
+          "sources": [
+            "gh"
+          ],
+          "time": "2d",
+          "score": 44,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "aqm857886159/Nomi",
+          "summary": "Open-source AI video workbench. Bring any model or your local ComfyUI, and let Claude Code / Codex / Cursor direct it over MCP — storyboard, references, generation, editable first cut on a real timeline. Local-first: projects, prompts, and keys stay on your machine. No account, no telemetry.",
+          "url": "https://github.com/aqm857886159/Nomi",
+          "sources": [
+            "gh"
+          ],
+          "time": "3m",
+          "score": 35,
+          "velocity": "stable",
+          "tag": "tool",
+          "source": "GitHub",
+          "watchlist_matched": "claude"
+        },
+        {
+          "title": "HKUSTDial/DataMagic",
+          "summary": "AI-powered data-to-video generation. Upload a table, get a narrated animated data story.",
+          "url": "https://github.com/HKUSTDial/DataMagic",
+          "sources": [
+            "gh"
+          ],
+          "time": "1d",
+          "score": 28,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
+        },
         {
           "title": "EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence",
           "summary": "Tool-using language model agents rely on environmental facts to decide whether an action is permitted. When a tool response omits a safety-relevant fact, an agent may carry out a prohibited action even though the user request is benign and every returned statement is true. We introduce \\bench{}, an ",
@@ -39,6 +381,58 @@
           "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
+        },
+        {
+          "title": "AceDataCloud/Nexior",
+          "summary": "Consumer AI app for chat, image generation, video generation, and music creation powered by Ace Data Cloud APIs.",
+          "url": "https://github.com/AceDataCloud/Nexior",
+          "sources": [
+            "gh"
+          ],
+          "time": "2d",
+          "score": 28,
+          "velocity": "cooling",
+          "tag": "tool",
+          "source": "GitHub"
+        },
+        {
+          "title": "vargHQ/sdk",
+          "summary": "AI video generation SDK — JSX for videos. One API for Kling, Flux, ElevenLabs, Veed. Built on Vercel AI SDK.",
+          "url": "https://github.com/vargHQ/sdk",
+          "sources": [
+            "gh"
+          ],
+          "time": "2d",
+          "score": 28,
+          "velocity": "cooling",
+          "tag": "tool",
+          "source": "GitHub"
+        },
+        {
+          "title": "flatkey-ai/flatkey-cli",
+          "summary": "Flatkey media generation CLI for images, videos, audio, text, credits, and model discovery.",
+          "url": "https://github.com/flatkey-ai/flatkey-cli",
+          "sources": [
+            "gh"
+          ],
+          "time": "3d",
+          "score": 28,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "Likely7/Veyra-NRVideo",
+          "summary": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experience.",
+          "url": "https://github.com/Likely7/Veyra-NRVideo",
+          "sources": [
+            "gh"
+          ],
+          "time": "4d",
+          "score": 28,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
         },
         {
           "title": "A Unified Framework for Image-to-3D Part Generation via Variable Granularity",
@@ -209,6 +603,19 @@
           "velocity": "cooling",
           "tag": "tool",
           "source": "arXiv"
+        },
+        {
+          "title": "notepower2k1/CapCap",
+          "summary": "CapCap is a Windows desktop app for short-form video localization and dubbing. It brings transcription, translation, subtitle styling, voice generation, timeline editing, preview, and export into a single project workflow for Vietnamese-focused content production.",
+          "url": "https://github.com/notepower2k1/CapCap",
+          "sources": [
+            "gh"
+          ],
+          "time": "3d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
         }
       ]
     },
@@ -278,7 +685,7 @@
           "sources": [
             "rss"
           ],
-          "time": "18h",
+          "time": "19h",
           "score": 15,
           "velocity": "cooling",
           "tag": "signal",
@@ -793,7 +1200,7 @@
           "label": "Aquaculture",
           "items": [
             5,
-            16,
+            17,
             36
           ]
         },
@@ -1016,6 +1423,19 @@
           "source": "The Fish Site"
         },
         {
+          "title": "forgotmenet/Iotlab-Automation-Test",
+          "summary": "Automation test project for Model 11 - Application of industry 4.0 to monitor agriculture and aquaculture environment",
+          "url": "https://github.com/forgotmenet/Iotlab-Automation-Test",
+          "sources": [
+            "gh"
+          ],
+          "time": "36m",
+          "score": 32,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
           "title": "mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
           "summary": "AI-Powered Smart Aquaculture Assistant for fish health monitoring and water quality management using ESP32, sensors, and machine learning.",
           "url": "https://github.com/mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
@@ -1026,19 +1446,6 @@
           "score": 32,
           "velocity": "stable",
           "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "api-evangelist/jala",
-          "summary": "Jala — independent third-party profile of a public API surface, by API Evangelist. JALA is an Indonesian aquaculture technology company providing end-to-end solutions for the shrimp farming industry, describing itself as a fully connected system powered by data farmers can trust.",
-          "url": "https://github.com/api-evangelist/jala",
-          "sources": [
-            "gh"
-          ],
-          "time": "11h",
-          "score": 32,
-          "velocity": "stable",
-          "tag": "tool",
           "source": "GitHub"
         },
         {
@@ -2668,8 +3075,8 @@
           "comments": 11
         },
         {
-          "title": "Google Trends: water quality sensor (Giảm 📉 -6%)",
-          "summary": "Chỉ số tìm kiếm Google Trends: 16/100, biến động -6% so với tuần trước.",
+          "title": "Google Trends: water quality sensor (Giảm 📉 -12%)",
+          "summary": "Chỉ số tìm kiếm Google Trends: 15/100, biến động -12% so với tuần trước.",
           "url": "https://trends.google.com/trends/explore?q=water%20quality%20sensor&date=today+1-m",
           "sources": [
             "rss"
@@ -2680,7 +3087,7 @@
           "tag": "signal",
           "source": "Google Trends",
           "date": "2026-10-24",
-          "engagement": 16
+          "engagement": 15
         },
         {
           "title": "Google Trends: aquaculture IoT (Ổn định ➡️ +0%)",
@@ -2743,8 +3150,8 @@
           "engagement": 0
         },
         {
-          "title": "Google Trends: smart agriculture (Tăng 🚀 +36%)",
-          "summary": "Chỉ số tìm kiếm Google Trends: 34/100, biến động +36% so với tuần trước.",
+          "title": "Google Trends: smart agriculture (Tăng 🚀 +32%)",
+          "summary": "Chỉ số tìm kiếm Google Trends: 33/100, biến động +32% so với tuần trước.",
           "url": "https://trends.google.com/trends/explore?q=smart%20agriculture&date=today+1-m",
           "sources": [
             "rss"
@@ -2755,7 +3162,7 @@
           "tag": "signal",
           "source": "Google Trends",
           "date": "2026-10-24",
-          "engagement": 34
+          "engagement": 33
         }
       ]
     },
@@ -3313,134 +3720,67 @@
       ]
     },
     "News": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Microsoft issues a warning regarding AI regulation. - Vietnam.vn</strong> (Score 15) — <em>Microsoft issues a warning regarding AI regulation. Vietnam.vn</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>LuatVietnam brings Law AI to the ASEAN Law Forum 2026 - LuatVietnam</strong> (Score 15): LuatVietnam brings Law AI to the ASEAN Law Forum 2026 LuatVietnam và <strong>Microsoft's chairman warns: AI is being regulated more loosely than washing machines. - Vietnam.vn</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 15 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Rules tightened on foreign-only prize-winning electronic games - vietnamnews.vn</strong> (Score 15) — <em>Rules tightened on foreign-only prize-winning electronic games vietnamnews.vn</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>US banks tighten AI account access. - Vietnam.vn</strong> (Score 15): US banks tighten AI account access. Vietnam.vn và <strong>AI Law lays legal framework for Vietnam’s secure, human-centred digital future - LuatVietnam</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 16 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "Vietnam",
           "items": [
-            0,
+            1,
             2,
+            3,
+            5,
             7,
             8,
-            14
-          ]
-        },
-        {
-          "label": "LuatVietnam",
-          "items": [
-            1,
-            7,
-            11
-          ]
-        },
-        {
-          "label": "Nam",
-          "items": [
-            4,
-            5,
-            9
-          ]
-        },
-        {
-          "label": "AI Law",
-          "items": [
-            4,
-            7,
-            10
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
           ]
         },
         {
           "label": "Microsoft",
           "items": [
-            0,
-            2
+            8,
+            10
+          ]
+        },
+        {
+          "label": "Anthropic",
+          "items": [
+            14,
+            15
           ]
         }
       ],
       "items": [
         {
-          "title": "Microsoft issues a warning regarding AI regulation. - Vietnam.vn",
-          "summary": "Microsoft issues a warning regarding AI regulation. Vietnam.vn",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9vWWxHS3RvaWtiSWRBWVp4YmpDY2FCWmU3MFlfLUJfc2dKRVJyNklwZmRkc2FZb1BWb0tKQVN3R0hEWU5KTDBYRGFmSWdpMkdMajVlT1dnZndRM0Q2ZC1VclEzcFdIY1JJZThqSU9LSVpPd0gxTWphZA?oc=5",
+          "title": "Rules tightened on foreign-only prize-winning electronic games - vietnamnews.vn",
+          "summary": "Rules tightened on foreign-only prize-winning electronic games vietnamnews.vn",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQU83bFlYbUQyUkxBUTh0cFVuY01LamRUS1gzT1lFa0U2elRad18xMnBzdUV2cXl6QmJDTlNDVUV5RHNDTUNOQ2JOMHpKU1NGY3pPU3dtNW1jOFhxU3hfU3cxaDFaLUxZR3owYThjQkdRUUhtaW84ZDM5UHB0cGxMRnRoWENuZ3o4YUp0OEhrRFJsTnFHVkZtbThQV28ySjFsaUtwUjlfNmtpc2VyeVFCNTRR?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "14d",
+          "time": "210d",
           "score": 15,
-          "velocity": "stable",
-          "tag": "risk"
+          "velocity": "cooling",
+          "tag": "risk",
+          "source": "\"igaming regulation\" - Google Tin tức"
         },
         {
-          "title": "LuatVietnam brings Law AI to the ASEAN Law Forum 2026 - LuatVietnam",
-          "summary": "LuatVietnam brings Law AI to the ASEAN Law Forum 2026 LuatVietnam",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQdTlhLVl1aVA1T2d5YUx1ZXZ4UFFuNWVsUEN1VmRLb1I5T1VCZzNIQmE0aWFOdjREcWpQRVZnV1RoeXZFai1EZjBiSmVBcU9IYkZ2T1ZDVEppMkhLU2tfY0JkeVB1Z2IyVm9YYWVsRTdLaGVQT1hOdFFMUGw2SUQtc2Z1dUcwRmxkVmRfX21la0szS3YyN0pkVG1vN195SjUyZEJEeXktWXpjYVF5eWxCTW5B?oc=5",
+          "title": "US banks tighten AI account access. - Vietnam.vn",
+          "summary": "US banks tighten AI account access. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPQ1lOVU9Ib20tMF9uMndZb2Q2THU5SmkyTXBONy1WRWZITmR1RGZjc1BnbUdIb1pvLXpRdl9qdVhib0ZnRHZCOHVOb1I1emhSSENKSnpsOU5fQ19sYnR4YWtVQThCaWVyVl9ySGJydDI3TS1VOXFydUNoUVpMNThCSw?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "67d",
+          "time": "1d",
           "score": 15,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "Microsoft's chairman warns: AI is being regulated more loosely than washing machines. - Vietnam.vn",
-          "summary": "Microsoft's chairman warns: AI is being regulated more loosely than washing machines. Vietnam.vn",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQWs3X3NmWW9vRS1lQ0piYnNiVks2Xzc0UXpOUVJqczJwdFg4VkoyUElVX3ZDeGYySUVNMGZJU1RiaGgybWFSbHBtZ2RmdnhhM1pVQUNLNlhuVTZ6UUQ3dEZob2U5NUdpc2RyUzE3Yk0tRzZHSVVOa3ZjWmhIVXdscG9aNk40czZHTjl6TEh1U3p0UFZ3T0JKdmlvQQ?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "12d",
-          "score": 15,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "Ngân hàng Standard Chartered sẽ cắt hơn 7.000 việc làm khi đẩy mạnh AI - VnExpress",
-          "summary": "Ngân hàng Standard Chartered sẽ cắt hơn 7.000 việc làm khi đẩy mạnh AI VnExpress",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSnVVM0JmUmYxbHZsWDNQeFBtN2tXY1RSY3M5SkxKWGFYUy1WdFNXbmtQZkcwUjdXTlBXRnd1OGdyN1BiaHM0eG5rUTZtQ1p0NzRqaGxpMkxFWFBDYXIwY0RycHlLTVlXQ3dmb1REWlM2SjMzeklaS3RpdTZPdXZhTUpOdGhsQ2RJVkxJbXhxUXAzenBFRGhBNlExQQ?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "158d",
-          "score": 15,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "AI Law provides unified legal framework for AI deployment in Việt Nam - vietnamnews.vn",
-          "summary": "AI Law provides unified legal framework for AI deployment in Việt Nam vietnamnews.vn",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQN0RJczVNRHA4MUxpYkZoWl9jbnExeW9DTnhWOV8zamVHLUNLVWZPVE9WR0VPUVExOURJbUtXR2N0Tmd2d3Z2TGdReFpGTGFWOUktRENYbk1zRGFIam9iMTE1b0tnUEVDSmp0RzlZaFQ4N2dXb3Jvb201RkFLM0RmNVYyLWtTanVUaW5hNVlzVHhwLXZQWEdvZjZwYlNMckI3eWhjaU95bzF0SzNxQnRhNnZvdw?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "236d",
-          "score": 15,
-          "velocity": "stable",
-          "tag": "tool"
-        },
-        {
-          "title": "Law on Artificial Intelligence: Balancing regulation and fostering innovation - Tạp chí KH&CN Việt Nam",
-          "summary": "Law on Artificial Intelligence: Balancing regulation and fostering innovation Tạp chí KH&CN Việt Nam",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQcHNHczBOUzEyYi1iYnZWN1dHS2lrTm13NUs2VjNWakRsVjNvVzlFb242NkwxcjdZSlI3dUdXTmFUN3FSUHNrUXI2UXYyakxGNDZMQ0NoSVZ6ZGhid2xhQnowWUFPc1NDQ3RRVzJuUjFQRTRMcVE5RTl5OXZvZWRfdTlRMzVwT19lNFpqTXpIcHA2MlBzX0NHN3RQaEFYS0xUR1NTcDZ3?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "336d",
-          "score": 15,
-          "velocity": "stable",
-          "tag": "risk"
-        },
-        {
-          "title": "Standard Chartered cắt giảm nhân sự nhằm tăng tốc AI và tái định vị tăng trưởng - Tạp chí Doanh nghiệp và Hội nhập",
-          "summary": "Standard Chartered cắt giảm nhân sự nhằm tăng tốc AI và tái định vị tăng trưởng Tạp chí Doanh nghiệp và Hội nhập",
-          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOZmhKVTZFYm9Gb3RabmxlaHR1cVBwaEFxRXlQS04wa3FDRExQV1ZHRVlGeUxFUm11UVdYTi11VWtfUDJTd25rNUo4N0ExUlEwQ1VEMC1UQi1wNU5XMTVhXzctSHplbHpvVGp3cWlsbWJhT0Njd0FzUTFWN0hvVHo3c2Fvd2h2VU4xbGp4UVZjVDJOWGZIX01wamh4Y19scnBOQnYzMzJMX0F0WE1WR1dKd3FTbi1abkpKNk0yQ2lB?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "158d",
-          "score": 15,
-          "velocity": "stable",
-          "tag": "signal"
+          "velocity": "cooling",
+          "tag": "risk",
+          "source": "\"AI regulation\" - Google Tin tức"
         },
         {
           "title": "AI Law lays legal framework for Vietnam’s secure, human-centred digital future - LuatVietnam",
@@ -3451,8 +3791,113 @@
           ],
           "time": "236d",
           "score": 15,
-          "velocity": "stable",
-          "tag": "tool"
+          "velocity": "cooling",
+          "tag": "tool",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
+          "title": "Regulations on the safety of AI applications in banking operations. - Vietnam.vn",
+          "summary": "Regulations on the safety of AI applications in banking operations. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQLTFDakVQaG5kZ25TNWdodEVONGkzb0pwUmx5d0lfZEEtR1pNWGRFX3VoVUM4aGREcE5jdnRram5uTE5Za2hXb1JXMHNxTDRHNWJlV2ZWNks3NngycTZqbmZEYUJxTGcxT0Zrbno2ZUhodUstb3hKd2hVMnB1NDBFYkNHNXU4bVU?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "2d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "risk",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
+          "title": "Thị trường ngân hàng bán lẻ: HSBC rút khỏi 2 thị trường bán lẻ tại Úc và Ai Cập, Standard Chartered chuyển nhượng danh mục cho vay tại Singapore cho Trust Bank - thitruongtaichinhtiente.vn",
+          "summary": "Thị trường ngân hàng bán lẻ: HSBC rút khỏi 2 thị trường bán lẻ tại Úc và Ai Cập, Standard Chartered chuyển nhượng danh mục cho vay tại Singapore cho Trust Bank thitruongtaichinhtiente.vn",
+          "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOSUNENERuZHU0WGt2bEM0c1pXRjB4MTFqN2t5RVpWU1dDcmVqbEZTTnN1ajBVbXB1ZnpwMnI5ZDl1VXYzQjBxSm85dVNNdmE5N3hHcEd2OXEycklHNTVIT0Nwajcyb09mdUNBRzA5WEZoY05jc3gwRkJndEg1WVMzQWxzdVFyYWhyMGxiWmZxV2h6eXZPaWp0WHdZTDF6NEVKZ1NpXzZkcjlqWlR2R05fLVV4MDhpX0FlUHZuemloSnlnRkQwbEZ4S05DY0F3aE93elZXYXZpVEMwMmRfS2F0YmNWVzhMNXJ0dFJMNkJDUjBHVzdNTXlCTDZaam1ocHVqZ2Y3SDY2R3I2M0djZG43eW1STHFWMkpZem9iYmdoSFh1ZTIzQmU2TVFGOA?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "77d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
+          "title": "Vietnam Airlines adjusts London–HCM City flight schedules due to air traffic control issue - vietnamnews.vn",
+          "summary": "Vietnam Airlines adjusts London–HCM City flight schedules due to air traffic control issue vietnamnews.vn",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPbUtnNmxRdkVGMktJZndGZVV3ckdPTnZkOEphaFQ4aGhBcGtQWTB6OGhCNGk4cHlmbjE0aGlVRkJOWllJamhNaWF0bk5zQ29tN2RCalVrOHFJdjF2V0lIWkZGanU3OUk2TnVVZnJJd2RoWmhCbmMwUG1GaUJZYS1EdWUydUlrdXRjWmtOd0Y0a2tMNGFlTXZpT25Hc1VPVDNJc1lNZGtQM2J6cE1zcVhYZkVTYzVHdHJ0eXg3M2d3cUg0NEhTR0RkZTVNR01JZDA?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "45d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
+          "title": "From the control center, AI camera helps Hanoi traffic police monitor every traffic span - Laodong.vn",
+          "summary": "From the control center, AI camera helps Hanoi traffic police monitor every traffic span Laodong.vn",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbFVqaDFPdTgzMzQ4aU1MNDBLUDU4WFc4RFJUMFZRZktpS3JyWGF0T3pMcTVOZENpY3FOMEt1YmVxUHhtNmpBbUg0MHlpOC1nYmMzUlVOX290bjlMMXNlZVZzMGl5N1lZMWQzajdVcWx4b1hONlBiZUphanJDakJWbmhIc1BGc0Rqb2VRWTZ6WFZDYTYxZFVkUTR0b3dvSUV4X1pNRjc4cjEzbnE2QzlzWjBxTmlsU2xsaWlwcWh4d2Y?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "19d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
+          "title": "AI is \"rebelling,\" potentially taking control of bank accounts in the US. - Vietnam.vn",
+          "summary": "AI is \"rebelling,\" potentially taking control of bank accounts in the US. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNeGtnUXhpSEhKLTZtZDRNQ21LelpwdXFmWFBxVGJyTlRhNElSdGpOVmQ3MndBWm9FekZqZXdaM1A1Rmt4RXJkZS11UjRzLTk2bFNHYmxSTWVJTDhnV1RqTk10aGc3UFAwazVieXV5OUxMby1JdWMwZUFJQ0NrNnEwUERydHJPcUd6VW9iNV95dVUyamt4?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
+          "title": "Microsoft issues a warning regarding AI regulation. - Vietnam.vn",
+          "summary": "Microsoft issues a warning regarding AI regulation. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9vWWxHS3RvaWtiSWRBWVp4YmpDY2FCWmU3MFlfLUJfc2dKRVJyNklwZmRkc2FZb1BWb0tKQVN3R0hEWU5KTDBYRGFmSWdpMkdMajVlT1dnZndRM0Q2ZC1VclEzcFdIY1JJZThqSU9LSVpPd0gxTWphZA?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "14d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "risk",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
+          "title": "Zalo has a free AI assistant that helps you look up laws and procedures. - Vietnam.vn",
+          "summary": "Zalo has a free AI assistant that helps you look up laws and procedures. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOc0ticm44amRSWUdDYlE2djNLMFh4ckVxZzZQX0Q4eENuSXZjMWtzaThDYlNvVVU4bkNXbGw3RjVBdjZab3kxU1loQUFVMzVlOGN6alo3WGJGckJBZjMtdEd4T1hHbVcwcDRxNm9uRFJVdFFXcElMQ3VwaXpWNVVDRE1WQlg?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "3d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
+          "title": "Microsoft's chairman warns: AI is being regulated more loosely than washing machines. - Vietnam.vn",
+          "summary": "Microsoft's chairman warns: AI is being regulated more loosely than washing machines. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQQWs3X3NmWW9vRS1lQ0piYnNiVks2Xzc0UXpOUVJqczJwdFg4VkoyUElVX3ZDeGYySUVNMGZJU1RiaGgybWFSbHBtZ2RmdnhhM1pVQUNLNlhuVTZ6UUQ3dEZob2U5NUdpc2RyUzE3Yk0tRzZHSVVOa3ZjWmhIVXdscG9aNk40czZHTjl6TEh1U3p0UFZ3T0JKdmlvQQ?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "12d",
+          "score": 15,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
         },
         {
           "title": "How do the US, China, and the EU regulate AI differently? - Vietnam.vn",
@@ -3463,80 +3908,63 @@
           ],
           "time": "17d",
           "score": 15,
-          "velocity": "stable",
-          "tag": "signal"
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
         },
         {
-          "title": "AI Act sửa đổi của EU: Tác động và gợi mở đối với Việt Nam - Báo Đại biểu Nhân dân",
-          "summary": "AI Act sửa đổi của EU: Tác động và gợi mở đối với Việt Nam Báo Đại biểu Nhân dân",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSjVXaHR0c0ZzTTRpUFJXU1BmbkJLaWNwblpLWGZhTDhLV3FVcWhDbnNrYUhKT2RQQmgyVWtCUmItZktPV1pLMC1MTEt0cnFWZVBVYnRzajBSRGY1TmNZZGRXdURacUZPQzdINTF0QWdMWVlmRVFwZlQxRWNCYWRNdUJma2FOdl9IY2F1MFljTEd3VV8zVW95RzJrUlIwUQ?oc=5",
+          "title": "Researchers are calling for increased control over AI capable of cyberattacks. - Vietnam.vn",
+          "summary": "Researchers are calling for increased control over AI capable of cyberattacks. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVEFsSG1OYXlfcG50MjdOTnNRQW1hUnJfLUt1UnVjYzdySm1yV1h6b05KbC1rZUJCUExsQVVCczQtV185M29wSE9KN05KNGFvWnJTbnVvUnFQTGh6aTBlNG96T1k5NDk1X0hGR2NJbVU1ZVg1Vy05Sm55cV84Y1FwVDZjUm1oQXpTcVRqMzlzeFlqSVd0YWxFZGtpbHFEV2FRV2NOZQ?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "75d",
+          "time": "10d",
           "score": 15,
-          "velocity": "stable",
-          "tag": "signal"
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
         },
         {
-          "title": "AI Law takes effect, anchors national governance framework - vietnamnews.vn",
-          "summary": "AI Law takes effect, anchors national governance framework vietnamnews.vn",
-          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOc0Iybnh4MEpVczhNY1pBQUl0MXhUdkd2RE1rcDFIU3FlSWVUM1E4cEhta29VZjEzUjJqbExBdFJPN3pfdXdkOXp2SWxBbTdyRDZ1clFBM2pxUkZRX2gzaEppdUxSNlJoWThnaE5ES2Z6UHJJSWpRNzBrckF5dTB1X0ZJSnpuTzY0NWFnaExHWWd0ODk0djE2V1dxY1l0OFN4NWZN?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "233d",
-          "score": 15,
-          "velocity": "stable",
-          "tag": "tool"
-        },
-        {
-          "title": "AI-generated images and videos must be labelled starting March 1, 2026 - LuatVietnam",
-          "summary": "AI-generated images and videos must be labelled starting March 1, 2026 LuatVietnam",
-          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQMmpnZHd3S0sxZUptOXJuX0ZONTY2WWF1S04xWlU3bW5LaTJTeTd0UkRFU0NvUWphdVI4azNsS0Q1V2x6M2NJYXFZeGRvMTVGd2JOVUF2dmwtZHo0TGJ1WjFLelNSWElNR1JIUHlsejJmS1dFVU4zcXVSTDgtdUVnVkpSME9QQ3JwUm11ZEk0WnJ0Q3BNZTl6Um9fYnp1YlJtek1KbXlkSlUteUdwWnFlRzNqWFo2eVVDQUxmMENseVpIaXM0WUE0Nkl3?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "235d",
-          "score": 15,
-          "velocity": "stable",
-          "tag": "signal"
-        },
-        {
-          "title": "Nghiên cứu của Bitcoin Policy Institute cho thấy AI ưu tiên Bitcoin hơn tiền pháp định - nguoiquansat.vn",
-          "summary": "Nghiên cứu của Bitcoin Policy Institute cho thấy AI ưu tiên Bitcoin hơn tiền pháp định nguoiquansat.vn",
-          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZ0oyQkdlY3ZoalhwMm1ZM09kM3FIT2ljQjk3R3k0bng3UjhKN3lGcjNuMGMzVFN0Zy1kRlBDUjd5NGczVDZVekxjTVN0UXBTUTdxOXRMTGdVbThPc3laSmFNc2NYQmUxellQMFhpLUNoeGFkazgzdTJqRHhmYUt5OFlvZXk0UTdHSjJNdS0xaXNZSHpBNHlrbUVBRWhLMktrMk9FQUNEcmtxa2UyTFNYc2RtcEZadml4el8yOVc4WQ?oc=5",
+          "title": "Taming AI missiles: How MoMo uses Tesla principles and empathetic regulations to retain users. - Vietnam.vn",
+          "summary": "Taming AI missiles: How MoMo uses Tesla principles and empathetic regulations to retain users. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNZTIzaEc1dDlHc0dGSjF4bTMwcms1Nl94VlgwcWpwZXZ5aFNXbjlpTDF4amR4UUY4bUk2c2U1R0NFbm1GbHUyUjFZOTZfc2NLS2ZuU0U0dzdvVzdjRFI5dUpuTzR3UjYxejhtZFVtbVdLbHJnOHpPYkFsTlRXcC0xckFSby1Cb1c3MG1Fbm9teUNRUFJfSjhTUDRUcFV1MDQtOFc2Z0JWQXI5UXlmYXZxdWl4eFVIaFJzeTZWVDFn?oc=5",
           "sources": [
             "rss"
           ],
           "time": "9d",
           "score": 15,
-          "velocity": "stable",
-          "tag": "signal"
+          "velocity": "cooling",
+          "tag": "risk",
+          "source": "\"AI regulation\" - Google Tin tức"
         },
         {
-          "title": "AI Act sửa đổi của EU: Từ “luật tiên phong” tới “luật khả thi” - Báo Đại biểu Nhân dân",
-          "summary": "AI Act sửa đổi của EU: Từ “luật tiên phong” tới “luật khả thi” Báo Đại biểu Nhân dân",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNQjF3TlhlSjEwdmFxZTVaRVRkNzJGUzRvb2FDQ2s2a1lFYlF2TFFnRXplN1lTdXZ4ZmlDMGNaWVpoUUR2RThKSkJtRkZ1dUdIbVZsUTJhZWlaSGlDMFJoNE5ZSGFIXzJJYnR5OFVIWHpCOFBkVFMtdFkydFBwZ255ZVJFT0JXX1JXM3pocHFjS2pkUEJHY283aURseW41UQ?oc=5",
+          "title": "Former Anthropic expert warns of AI risks before 2030. - Vietnam.vn",
+          "summary": "Former Anthropic expert warns of AI risks before 2030. Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTDZ2bXVQcUk0QnJHdC1aa1pQZk9UcEJJS21DejZyRTdPd0RLRy10d3Flai1EemZ0cmpTTlZYS1cyV0ptM0tUWnlGanRJeWtsQkdxclpWeEZFSnBkVjlHN0xNQ1ZNZU1OS2lVbU9tOXpXNW1hZk1kSUhUajVRMm9QTmQtVUxSTUNnQzd6Uw?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "75d",
-          "score": 15,
-          "velocity": "stable",
-          "tag": "signal"
+          "time": "10d",
+          "score": 35,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức",
+          "watchlist_matched": "anthropic"
         },
         {
-          "title": "The US emphasizes businesses having self-control over AI. - Vietnam.vn",
-          "summary": "The US emphasizes businesses having self-control over AI. Vietnam.vn",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5oekZjSHpPVnJvNW1EdnZZSUpOSG1xTjdNeGVNOXMyOV90aXNBNHcycmYtVTl1YWpmR0dxMGR5VHY5WWtQbk12SUltVFdhQkJPU0VvRHVVOEhZc1VwOW1GWjg0Sk03ekhxUDVkeVJJVzVTUQ?oc=5",
+          "title": "Anthropic updates its policy for Claude: Why is repeated misuse by users of AI prohibited? - Vietnam.vn",
+          "summary": "Anthropic updates its policy for Claude: Why is repeated misuse by users of AI prohibited? Vietnam.vn",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQN0NKTWoyalpIOVFTanRXcXYteWFhb3NDRVQzTkdQeENBQlg0ZHMwdnJDbHlBaXlRTDRBVk9jMXM0YTdMTm0wOV80QlJOU3A0V3FlazF2ZHlPY09Fa01CUTB1ZGJ4QW9kS1V2NVNLRzlKOVZDZExXMVlscWoyNG9scWFjbF9WUTJNaUlMMWx4M2djLVhaYXh2aFlyNm9jbUxPb2haOHpLMzZ3bGd0d0liSjFB?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "24d",
-          "score": 15,
-          "velocity": "stable",
-          "tag": "signal"
+          "time": "12d",
+          "score": 35,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức",
+          "watchlist_matched": "claude"
         }
       ]
     },
@@ -3631,7 +4059,7 @@
           "sources": [
             "rss"
           ],
-          "time": "22h",
+          "time": "23h",
           "score": 15,
           "velocity": "cooling",
           "tag": "signal",

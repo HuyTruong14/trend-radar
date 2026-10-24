@@ -903,25 +903,9 @@ def main():
         except Exception as e:
             log(f"  ! history update failed for '{topic_key}': {e} — skipping history for this topic")
 
-        try:
-            alert_msg = build_alert_message(label, results)
-            if alert_msg:
-                if notify.send_message(alert_msg):
-                    log(f"  -> Telegram alert sent for '{topic_key}'")
-                else:
-                    log(f"  ! Telegram alert not sent for '{topic_key}' (see notify log above)")
-        except Exception as e:
-            log(f"  ! alert failed for '{topic_key}': {e} — continuing")
+        # Note: Telegram notifications are now managed exclusively by Opportunity Radar (Phase 5B & 5C in score.py)
+        # to ensure strict anti-spam rules, 3-layer templates, and avoid duplicate/raw message flooding.
 
-    try:
-        if all_results:
-            digest = build_daily_digest(all_results)
-            if notify.send_message(digest):
-                log("  -> Telegram daily digest sent")
-            else:
-                log("  ! Telegram daily digest not sent (see notify log above)")
-    except Exception as e:
-        log(f"  ! daily digest failed: {e}")
 
     # --- Phase 9: Social Buzz (Google Trends + Reddit) ---
     try:
