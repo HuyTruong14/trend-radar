@@ -689,7 +689,7 @@ def generate_ai_briefing(topic_name, top_items, api_key=None):
         models = ["gemini-2.0-flash", "gemini-1.5-flash"]
         for model in models:
             try:
-                url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={gemini_key}"
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
                 prompt = (
                     f"Bạn là chuyên gia phân tích công nghệ của Trend Radar. Hãy viết một bản tin điều hành (Executive Daily Briefing) "
                     f"khoảng 3-4 câu sắc sảo, tự nhiên bằng tiếng Việt cho chủ đề {topic_name}.\n\n"
@@ -708,7 +708,7 @@ def generate_ai_briefing(topic_name, top_items, api_key=None):
                     "contents": [{"parts": [{"text": prompt}]}],
                     "generationConfig": {"temperature": 0.3, "maxOutputTokens": 500}
                 }
-                resp = requests.post(url, json=payload, timeout=15)
+                resp = requests.post(url, headers={"x-goog-api-key": gemini_key}, json=payload, timeout=15)
                 if resp.ok:
                     data = resp.json()
                     candidates = data.get("candidates", [])

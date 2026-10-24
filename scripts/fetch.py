@@ -462,8 +462,8 @@ def score_items_with_ai(items, topic_label):
             for attempt in range(2):
                 try:
                     r = requests.post(
-                        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={gemini_key}",
-                        headers={"Content-Type": "application/json"},
+                        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                        headers={"Content-Type": "application/json", "x-goog-api-key": gemini_key},
                         json={
                             "contents": [{"parts": [{"text": prompt_text}]}],
                             "generationConfig": {"temperature": 0.2, "maxOutputTokens": 4096},
@@ -550,8 +550,8 @@ def analyze_repos_with_gemini(items):
         for attempt in range(2):
             try:
                 r = requests.post(
-                    f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}",
-                    headers={"Content-Type": "application/json"},
+                    f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                    headers={"Content-Type": "application/json", "x-goog-api-key": api_key},
                     json={
                         "contents": [{"parts": [{"text": prompt}]}],
                         "generationConfig": {"temperature": 0.2, "maxOutputTokens": 2048},
