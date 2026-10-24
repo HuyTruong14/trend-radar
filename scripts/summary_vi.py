@@ -339,6 +339,35 @@ def summarize_trends_keyword(keyword, volume=0, change="", status=""):
     return base
 
 
+TWITTER_KEYWORD_SUMMARIES = {
+    "#IoT": "Xu hướng thiết bị kết nối IoT và cảm biến thông minh đang được bàn luận sôi nổi",
+    "#robotics": "Cộng đồng công nghệ thảo luận về robot tự hành và giải pháp tự động hóa",
+    "#startup": "Cộng đồng khởi nghiệp chia sẻ sản phẩm mới và chiến lược gọi vốn",
+    "#hardware": "Đánh giá thiết kế mạch, linh kiện bán dẫn và kiến trúc phần cứng",
+    "#AI": "Làn sóng thảo luận nóng về bước tiến AI và ứng dụng vào thực tế",
+    "IoT": "Xu hướng thiết bị kết nối IoT và cảm biến thông minh đang được bàn luận sôi nổi",
+    "robotics": "Cộng đồng công nghệ thảo luận về robot tự hành và giải pháp tự động hóa",
+    "startup": "Cộng đồng khởi nghiệp chia sẻ sản phẩm mới và chiến lược gọi vốn",
+    "hardware": "Đánh giá thiết kế mạch, linh kiện bán dẫn và kiến trúc phần cứng",
+    "AI": "Làn sóng thảo luận nóng về bước tiến AI và ứng dụng vào thực tế",
+}
+
+
+def summarize_twitter_trend(keyword, tweets="10K+", change=""):
+    """
+    Generate natural Vietnamese summary (<= 100 chars) for Twitter/X trending keyword.
+    """
+    kw_clean = keyword.strip()
+    if kw_clean in TWITTER_KEYWORD_SUMMARIES:
+        return TWITTER_KEYWORD_SUMMARIES[kw_clean]
+    kw_lower = kw_clean.lower()
+    for k, v in TWITTER_KEYWORD_SUMMARIES.items():
+        if k.lower() in kw_lower:
+            return v
+    topic_name = kw_clean[1:] if kw_clean.startswith("#") else kw_clean
+    return f"Chủ đề {topic_name} đang là tâm điểm bàn luận với lượng tương tác tăng cao"
+
+
 REDDIT_SEED_SUMMARIES = {
     # startups / entrepreneur / smallbusiness
     "How we bootstrapped our hardware IoT gateway to $20k MRR without VC": "Kinh nghiệm bootstrap startup gateway IoT đạt 20k USD MRR không cần vốn VC",
@@ -445,6 +474,11 @@ def generate_summary_vi(title, summary=""):
             summary_vi = summarize_trends_keyword(kw)
         else:
             summary_vi = summarize_news_article(t, summary)
+    # 2b. Twitter Trending title pattern ("#keyword trending with X tweets")
+    elif "trending with" in t.lower() and "tweets" in t.lower():
+        kw_m = re.match(r"^([#\w\s]+?)\s+trending with", t, re.IGNORECASE)
+        kw = kw_m.group(1).strip() if kw_m else t
+        summary_vi = summarize_twitter_trend(kw)
     # 3. Funding article ([Ai] [làm gì] [bao nhiêu] [ngành gì])
     elif any(k in t.lower() for k in ["raises", "raised", "funding", "series a", "series b", "seed", "acquires", "acquisition", "nets", "lands", "secures", "layoffs", "venture", "vc", "dollars", "capital", "stake", "invest"]):
         funding_sum = summarize_funding_article(t, summary)

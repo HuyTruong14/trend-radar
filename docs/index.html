@@ -2735,6 +2735,7 @@
       updated: '',
       google_trends_keywords: [],
       google_trends_rss: [],
+      twitter_trends: [],
       reddit_posts: [],
       triple_signals: [],
       subreddits_covered: []
@@ -3004,7 +3005,7 @@
       const isBuzzActive = activeTopic === 'Chủ Đề Nóng' || activeTopic === 'Social Buzz';
       const oppCount = OPPORTUNITIES_DATA.length;
       const fundingCount = getAllFundingDeals().length;
-      const buzzCount = (SOCIAL_BUZZ_DATA.reddit_posts ? SOCIAL_BUZZ_DATA.reddit_posts.length : 0) + (SOCIAL_BUZZ_DATA.google_trends_keywords ? SOCIAL_BUZZ_DATA.google_trends_keywords.length : 0);
+      const buzzCount = (SOCIAL_BUZZ_DATA.reddit_posts ? SOCIAL_BUZZ_DATA.reddit_posts.length : 0) + (SOCIAL_BUZZ_DATA.google_trends_keywords ? SOCIAL_BUZZ_DATA.google_trends_keywords.length : 0) + (SOCIAL_BUZZ_DATA.twitter_trends ? SOCIAL_BUZZ_DATA.twitter_trends.length : 0);
 
       let tabsHtml = `
         <button class="tab-btn tab-btn-radar ${isRadarActive ? 'active' : ''}" onclick="switchTopic('Opportunity Radar')">
@@ -4443,6 +4444,7 @@
 
       const keywords = SOCIAL_BUZZ_DATA.google_trends_keywords || [];
       const trendsRss = SOCIAL_BUZZ_DATA.google_trends_rss || [];
+      const twitterTrends = SOCIAL_BUZZ_DATA.twitter_trends || [];
       let redditPosts = SOCIAL_BUZZ_DATA.reddit_posts || [];
       const tripleSignals = SOCIAL_BUZZ_DATA.triple_signals || [];
 
@@ -4696,6 +4698,82 @@
               </tbody>
             </table>
           </div>
+        </div>
+
+        <!-- Phần 1B — Thịnh hành trên Twitter/X (Phase 9C) -->
+        <div class="trends-card" style="margin-top: 24px; border-color: rgba(56, 189, 248, 0.25);">
+          <div class="trends-card-header">
+            <div class="trends-card-title">
+              <span>🐦 Thịnh Hành Trên Twitter/X (Trending Topics &amp; Hashtags)</span>
+              <span class="tab-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">${twitterTrends.length}</span>
+            </div>
+            <span style="font-size: 0.78rem; color: var(--fg-muted);">Tốc độ cao · Phản ứng thị trường (X / Trends24 / RSSHub)</span>
+          </div>
+
+          <table class="trends-table">
+            <thead>
+              <tr>
+                <th style="width: 45px; text-align: center;">#</th>
+                <th style="width: 220px;">Keyword / Hashtag</th>
+                <th style="width: 90px; text-align: center;">Tweets</th>
+                <th style="width: 110px; text-align: center;">Biến động</th>
+                <th>Tóm tắt nội dung &amp; Ý nghĩa (summary_vi)</th>
+                <th style="width: 70px; text-align: right;">Link</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+
+      if (twitterTrends.length === 0) {
+        html += `
+          <tr>
+            <td colspan="6" style="text-align: center; color: #f59e0b; padding: 25px; font-size: 0.88rem;">
+              ⚠️ Nguồn Twitter/X tạm thời gián đoạn (Rate-limited hoặc đang bảo trì). Hệ thống tiếp tục vận hành bình thường.
+            </td>
+          </tr>
+        `;
+      } else {
+        twitterTrends.forEach((tw, idx) => {
+          const isPos = tw.change && tw.change.startsWith('+') && tw.change !== '+0%';
+          const isNeg = tw.change && tw.change.startsWith('-');
+          const changeClass = isPos ? 'trends-change-pos' : (isNeg ? 'trends-change-neg' : 'trends-change-neu');
+
+          html += `
+            <tr>
+              <td style="text-align: center; color: var(--fg-muted); font-size: 0.82rem; font-family: var(--font-mono);">
+                ${idx + 1}
+              </td>
+              <td style="font-weight: 600; color: #f1f5f9;">
+                <a href="${escapeHtml(tw.url)}" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none;">
+                  ${escapeHtml(tw.keyword)}
+                </a>
+              </td>
+              <td style="text-align: center;">
+                <span class="trends-vol-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">
+                  ${escapeHtml(tw.tweets || '10K+')}
+                </span>
+              </td>
+              <td style="text-align: center;">
+                <span class="trends-change-badge ${changeClass}">
+                  ${escapeHtml(tw.change || 'Ổn định ➡️')}
+                </span>
+              </td>
+              <td style="color: #cbd5e1; font-size: 0.84rem;">
+                📝 ${escapeHtml(tw.summary_vi || '')}
+              </td>
+              <td style="text-align: right;">
+                <a href="${escapeHtml(tw.url)}" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-size: 0.8rem; font-weight: 600;">
+                  X ↗
+                </a>
+              </td>
+            </tr>
+          `;
+        });
+      }
+
+      html += `
+            </tbody>
+          </table>
         </div>
 
         <!-- Phần 2 — Bài hot trên Reddit (theo 11 subreddits rộng) -->
