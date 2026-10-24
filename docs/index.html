@@ -2506,13 +2506,17 @@
       border-radius: 999px;
       white-space: nowrap;
     }
-    .sub-chip-aquaculture { background: rgba(6, 182, 212, 0.18); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.35); }
-    .sub-chip-aquariums { background: rgba(56, 189, 248, 0.18); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); }
-    .sub-chip-shrimptank { background: rgba(249, 115, 22, 0.18); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.35); }
-    .sub-chip-hydroponics { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }
+    .sub-chip-startups { background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); }
+    .sub-chip-entrepreneur { background: rgba(234, 179, 8, 0.18); color: #fde047; border: 1px solid rgba(234, 179, 8, 0.35); }
+    .sub-chip-smallbusiness { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }
+    .sub-chip-technology { background: rgba(59, 130, 246, 0.18); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.35); }
+    .sub-chip-hardware { background: rgba(148, 163, 184, 0.18); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.35); }
     .sub-chip-iot { background: rgba(99, 102, 241, 0.18); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.35); }
+    .sub-chip-robotics { background: rgba(239, 68, 68, 0.18); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.35); }
     .sub-chip-arduino { background: rgba(20, 184, 166, 0.18); color: #2dd4bf; border: 1px solid rgba(20, 184, 166, 0.35); }
     .sub-chip-embedded { background: rgba(168, 85, 247, 0.18); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.35); }
+    .sub-chip-futurology { background: rgba(139, 92, 246, 0.18); color: #a78bfa; border: 1px solid rgba(139, 92, 246, 0.35); }
+    .sub-chip-singularity { background: rgba(236, 72, 153, 0.18); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.35); }
     .sub-chip-other { background: rgba(100, 116, 139, 0.18); color: #94a3b8; border: 1px solid rgba(100, 116, 139, 0.35); }
 
     .reddit-upvotes-badge {
@@ -4464,13 +4468,17 @@
 
       const SUB_CHIPS_META = {
         'all': { label: '🌐 Tất cả', key: 'all' },
-        'aquaculture': { label: '🐟 r/aquaculture', key: 'aquaculture' },
-        'aquariums': { label: '🐠 r/Aquariums', key: 'aquariums' },
-        'shrimptank': { label: '🦐 r/shrimptank', key: 'shrimptank' },
-        'hydroponics': { label: '🌱 r/hydroponics', key: 'hydroponics' },
+        'startups': { label: '🚀 r/startups', key: 'startups' },
+        'entrepreneur': { label: '💡 r/Entrepreneur', key: 'entrepreneur' },
+        'smallbusiness': { label: '🏪 r/smallbusiness', key: 'smallbusiness' },
+        'technology': { label: '📱 r/technology', key: 'technology' },
+        'hardware': { label: '🖥️ r/hardware', key: 'hardware' },
         'iot': { label: '📡 r/IOT', key: 'iot' },
+        'robotics': { label: '🤖 r/robotics', key: 'robotics' },
+        'embedded': { label: '🔧 r/embedded', key: 'embedded' },
         'arduino': { label: '⚡ r/arduino', key: 'arduino' },
-        'embedded': { label: '🔧 r/embedded', key: 'embedded' }
+        'futurology': { label: '🔮 r/Futurology', key: 'futurology' },
+        'singularity': { label: '🧠 r/singularity', key: 'singularity' }
       };
 
       let html = `
@@ -4481,7 +4489,7 @@
             <span class="triple-signal-badge">Live Multi-Network Tracking</span>
           </div>
           <p class="buzz-hero-subtitle">
-            Hệ thống theo dõi tự động mức độ quan tâm từ 7 cộng đồng Reddit đúng ngách và dữ liệu tìm kiếm Google Trends (VN &amp; US). Tự động kích hoạt cảnh báo <strong>Triple Signal</strong> khi Dòng tiền đầu tư, Mã nguồn công nghệ và Bàn luận xã hội hội tụ cùng một chủ đề.
+            Hệ thống theo dõi tự động mức độ quan tâm từ 11 cộng đồng Reddit thị trường rộng (Startups, Phần cứng, Robotics, AI, IoT, Công nghệ) và 15 từ khóa Google Trends. Tự động kích hoạt cảnh báo <strong>Triple Signal</strong> khi Dòng tiền đầu tư, Mã nguồn công nghệ và Bàn luận xã hội hội tụ cùng một chủ đề.
           </p>
         </div>
 
@@ -4576,7 +4584,7 @@
           <div class="trends-card">
             <div class="trends-card-header">
               <div class="trends-card-title">
-                <span>📈 Từ Khóa Theo Dõi Ngách</span>
+                <span>📈 15 Từ Khóa Theo Dõi Thị Trường Rộng</span>
                 <span class="tab-badge">${keywords.length}</span>
               </div>
               <span style="font-size: 0.78rem; color: var(--fg-muted);">Dữ liệu pytrends (1 tháng)</span>
@@ -4584,7 +4592,7 @@
             <table class="trends-table">
               <thead>
                 <tr>
-                  <th>Từ khóa (Keyword)</th>
+                  <th>Từ khóa (Keyword) &amp; Ý nghĩa</th>
                   <th style="width: 80px;">Volume</th>
                   <th style="width: 100px;">Biến động</th>
                   <th style="width: 90px;">Trạng thái</th>
@@ -4605,7 +4613,8 @@
           html += `
             <tr>
               <td style="font-weight: 600; color: #f1f5f9;">
-                ${escapeHtml(kw.keyword)}
+                <div>📌 ${escapeHtml(kw.keyword)}</div>
+                ${kw.summary_vi ? `<div style="font-size: 0.78rem; color: #94a3b8; margin-top: 3px; font-weight: normal; line-height: 1.35;">📝 ${escapeHtml(kw.summary_vi)}</div>` : ''}
               </td>
               <td>
                 <span class="trends-vol-badge">${kw.volume}/100</span>
@@ -4664,7 +4673,7 @@
                 </a>
               </td>
               <td>
-                <span class="sub-chip ${tr.geo === 'VN' ? 'sub-chip-aquaculture' : 'sub-chip-iot'}">
+                <span class="sub-chip ${tr.geo === 'VN' ? 'sub-chip-technology' : 'sub-chip-iot'}">
                   ${tr.geo === 'VN' ? '🇻🇳 VN' : '🇺🇸 US'}
                 </span>
               </td>
@@ -4689,16 +4698,16 @@
           </div>
         </div>
 
-        <!-- Phần 2 — Bài hot trên Reddit (theo ngách) -->
+        <!-- Phần 2 — Bài hot trên Reddit (theo 11 subreddits rộng) -->
         <div class="reddit-feed-card">
           <div class="reddit-feed-header">
             <div>
               <div style="font-size: 1.15rem; font-weight: 700; color: var(--fg); display: flex; align-items: center; gap: 8px;">
-                <span>💬 Bài Hot Trên Reddit (7 Cộng Đồng Đúng Ngách)</span>
+                <span>💬 Bài Hot Trên Reddit (11 Cộng Đồng Thị Trường Rộng)</span>
                 <span class="tab-badge">${filteredReddit.length}</span>
               </div>
               <div style="font-size: 0.82rem; color: var(--fg-muted); margin-top: 4px;">
-                Sắp xếp theo upvotes giảm dần. Bao quát các pain point, kinh nghiệm vận hành thực tế và giải pháp phần cứng.
+                Bao quát xu hướng kinh doanh (startups), phần cứng, robot, AI hiện thân, vi điều khiển nhúng và tương lai công nghệ.
               </div>
             </div>
 
@@ -4706,7 +4715,7 @@
             <div class="funding-search-box" style="min-width: 260px;">
               <span class="funding-search-icon">🔍</span>
               <input type="text" class="funding-search-input" 
-                placeholder="Tìm bài Reddit, tác giả, cảm biến..." 
+                placeholder="Tìm bài Reddit, tác giả, thiết bị..." 
                 value="${escapeHtml(buzzSearchQuery)}"
                 oninput="setBuzzSearchQuery(this.value)">
             </div>
@@ -4758,7 +4767,13 @@
       } else {
         filteredReddit.forEach(post => {
           const subKey = (post.sub_key || (post.subreddit || '').replace(/^r\//, '')).toLowerCase();
-          const subChipClass = `sub-chip-${subKey}` in { 'sub-chip-aquaculture':1, 'sub-chip-aquariums':1, 'sub-chip-shrimptank':1, 'sub-chip-hydroponics':1, 'sub-chip-iot':1, 'sub-chip-arduino':1, 'sub-chip-embedded':1 }
+          const validSubChips = {
+            'sub-chip-startups': 1, 'sub-chip-entrepreneur': 1, 'sub-chip-smallbusiness': 1,
+            'sub-chip-technology': 1, 'sub-chip-hardware': 1, 'sub-chip-iot': 1,
+            'sub-chip-robotics': 1, 'sub-chip-arduino': 1, 'sub-chip-embedded': 1,
+            'sub-chip-futurology': 1, 'sub-chip-singularity': 1
+          };
+          const subChipClass = `sub-chip-${subKey}` in validSubChips
             ? `sub-chip-${subKey}`
             : 'sub-chip-other';
 
@@ -4776,10 +4791,13 @@
 
               <!-- Title & Summary -->
               <td class="deal-title-cell">
-                <a href="${escapeHtml(post.url)}" target="_blank" rel="noopener noreferrer" class="deal-title-link">
-                  ${escapeHtml(post.title)}
-                </a>
-                ${post.summary ? `<div class="deal-summary-cell" style="margin-top: 4px; padding: 0;">${escapeHtml(post.summary)}</div>` : ''}
+                <div style="font-weight: 600; font-size: 0.95rem; line-height: 1.4;">
+                  <a href="${escapeHtml(post.url)}" target="_blank" rel="noopener noreferrer" class="deal-title-link">
+                    📌 ${escapeHtml(post.title)}
+                  </a>
+                </div>
+                ${post.summary_vi ? `<div style="font-size: 0.82rem; color: #38bdf8; margin-top: 4px; font-weight: 500; line-height: 1.4;">📝 ${escapeHtml(post.summary_vi)}</div>` : ''}
+                ${post.summary && post.summary !== post.title ? `<div class="deal-summary-cell" style="margin-top: 4px; padding: 0; color: #94a3b8; font-size: 0.78rem;">${escapeHtml(post.summary)}</div>` : ''}
               </td>
 
               <!-- Upvotes -->

@@ -288,24 +288,178 @@ def generate_summary_vi(title, summary=""):
 
     t = title.strip()
 
+TRENDS_KEYWORD_SUMMARIES = {
+    # Nhóm A: Thị trường lớn
+    "IoT market": "Nhu cầu thị trường thiết bị kết nối IoT toàn cầu đang tăng trưởng",
+    "AI hardware": "Làn sóng tìm kiếm chip chuyên dụng và phần cứng tăng tốc AI",
+    "robotics startup": "Sự quan tâm đến các startup robot và tự động hóa công nghiệp",
+    "edge computing": "Xu hướng tính toán biên xử lý dữ liệu trực tiếp tại thiết bị",
+    "semiconductor shortage": "Theo dõi tình hình cung ứng và biến động giá linh kiện bán dẫn",
+    "smart home devices": "Nhu cầu thiết bị nhà thông minh và tự động hóa dân dụng",
+    # Nhóm B: Ngành dọc tiềm năng
+    "smart agriculture": "Tìm kiếm về công nghệ và cảm biến nông nghiệp thông minh tăng mạnh",
+    "water technology": "Mối quan tâm về công nghệ xử lý và quan trắc nước diện rộng",
+    "renewable energy": "Xu hướng chuyển dịch năng lượng tái tạo và lưu trữ điện",
+    "3D printing market": "Ứng dụng in 3D trong chế tạo mẫu thử và sản xuất phần cứng",
+    "electric vehicle": "Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc",
+    "drone technology": "Công nghệ máy bay không người lái phục vụ khảo sát và giám sát",
+    # Nhóm C: Tín hiệu vĩ mô
+    "DRAM price": "Tín hiệu biến động chi phí linh kiện RAM và bộ nhớ phần cứng",
+    "supply chain disruption": "Theo dõi nguy cơ đứt gãy và chậm trễ chuỗi cung ứng linh kiện",
+    "startup funding trend": "Xu hướng dòng vốn đầu tư mạo hiểm vào các startup công nghệ",
+    # Legacy / Niche aliases
+    "water quality sensor": "Nhu cầu tìm kiếm cảm biến đo lường và quan trắc chất lượng nước",
+    "aquaculture IoT": "Ứng dụng giải pháp IoT tự động hóa ao nuôi thủy sản",
+    "ESP32 water monitor": "Nghiên cứu thiết bị giám sát nước tự chế dùng chip ESP32",
+    "fish tank monitor": "Thiết bị đo thông số hồ cá cảnh và cảnh báo tự động",
+    "shrimp farm sensor": "Cảm biến quan trắc môi trường đầm tôm và nồng độ oxy hòa tan",
+}
+
+
+def summarize_trends_keyword(keyword, volume=0, change="", status=""):
+    """
+    Generate natural Vietnamese summary (<= 100 chars) for Google Trends keyword.
+    """
+    kw_clean = keyword.strip()
+    # Check exact keyword mapping
+    if kw_clean in TRENDS_KEYWORD_SUMMARIES:
+        base = TRENDS_KEYWORD_SUMMARIES[kw_clean]
+    else:
+        # Fallback keyword lookup
+        kw_lower = kw_clean.lower()
+        matched = None
+        for k, v in TRENDS_KEYWORD_SUMMARIES.items():
+            if k.lower() in kw_lower:
+                matched = v
+                break
+        base = matched if matched else f"Lượng tìm kiếm trực tuyến về {kw_clean} trên thị trường"
+
+    if len(base) > 95:
+        base = base[:92].strip() + "..."
+    return base
+
+
+REDDIT_SEED_SUMMARIES = {
+    # startups / entrepreneur / smallbusiness
+    "How we bootstrapped our hardware IoT gateway to $20k MRR without VC": "Kinh nghiệm bootstrap startup gateway IoT đạt 20k USD MRR không cần vốn VC",
+    "Finding B2B customers for physical hardware products: Lessons learned": "Bài học tiếp cận và chốt hợp đồng khách hàng B2B cho sản phẩm phần cứng",
+    "Energy costs and equipment monitoring are killing our margins this quarter": "Chi phí năng lượng và bảo trì máy móc đè nặng biên lợi nhuận kinh doanh nhỏ",
+    # technology / hardware
+    "Cambridge Analytica's fallout is still costing Meta, this time $25 billion in New Mexico": "Meta đối mặt vụ kiện và áp lực pháp lý 25 tỷ USD về bảo mật dữ liệu",
+    "Ron DeSantis Floats 'Criminal Liability' for AI Executives": "Đề xuất quy trách nhiệm hình sự cho lãnh đạo các tập đoàn công nghệ AI",
+    "He Had the Know-How to Fix His Tesla. But Telsa Told Him He Couldn’t.": "Quyền tự sửa chữa thiết bị công nghệ và xe điện trước rào cản hãng",
+    "Next-gen low-power RISC-V microcontrollers entering mass production": "Vi điều khiển RISC-V tiêu thụ điện siêu thấp bắt đầu sản xuất hàng loạt",
+    # robotics / iot / embedded / arduino
+    "State of open-source ROS2 robot actuators and motor drivers in 2026": "Đánh giá driver động cơ và bộ truyền động robot mã nguồn mở ROS2",
+    "Deploying 100+ low-power environmental sensors across remote facilities with LoRaWAN": "Kinh nghiệm triển khai 100+ cảm biến môi trường LoRaWAN tầm xa",
+    "I built an RP2350 multitool that hosts its own desktop-style web UI over USB": "Thiết kế thiết bị RP2350 nhúng giao diện web trực tiếp qua cổng USB",
+    "ESP32-S3 telemetry station with solar charging and low-power deep sleep": "Trạm đo từ xa dùng ESP32-S3 tích hợp sạc pin mặt trời và deep sleep",
+    # futurology / singularity
+    "Autonomous robotics and physical AI are decoupling manufacturing from labor shortages": "Robot tự hành và AI vật lý giúp giải quyết bài toán thiếu hụt nhân lực",
+    "Embodied intelligence breakthroughs: From language models to physical world manipulation": "Đột phá AI hiện thân kết hợp mô hình ngôn ngữ với thao tác vật lý",
+}
+
+
+def summarize_reddit_post(title, summary="", subreddit=""):
+    """
+    Generate natural Vietnamese summary (<= 100 chars) for Reddit posts.
+    """
+    t = (title or "").strip()
+    if t in REDDIT_SEED_SUMMARIES:
+        return REDDIT_SEED_SUMMARIES[t]
+
+    t_lower = t.lower()
+    s_lower = (summary or "").lower()
+    sub_lower = (subreddit or "").lower().replace("r/", "").strip()
+    combined = f"{t_lower} {s_lower}"
+
+    # Check keyword patterns
+    if "meta" in combined and ("billion" in combined or "court" in combined or "sue" in combined):
+        return "Meta đối mặt áp lực pháp lý và bồi thường liên quan bảo mật dữ liệu"
+    if "tesla" in combined or "repair" in combined and "know-how" in combined:
+        return "Tranh cãi về quyền tự sửa chữa thiết bị công nghệ và xe điện"
+    if "desantis" in combined or ("criminal liability" in combined and "ai" in combined):
+        return "Đề xuất quy định trách nhiệm hình sự đối với lãnh đạo công nghệ AI"
+    if "bootstrap" in combined and ("mrr" in combined or "hardware" in combined or "iot" in combined):
+        return "Kinh nghiệm bootstrap sản phẩm phần cứng IoT đạt doanh thu định kỳ"
+    if "risc-v" in combined or ("microcontroller" in combined and "production" in combined):
+        return "Sản xuất hàng loạt chip vi điều khiển kiến trúc RISC-V điện năng thấp"
+    if "ros2" in combined or "actuator" in combined or "motor driver" in combined:
+        return "Hệ sinh thái bộ truyền động và driver điều khiển robot mã nguồn mở"
+    if "lorawan" in combined or ("sensor" in combined and "remote" in combined):
+        return "Triển khai mạng cảm biến quan trắc từ xa công nghệ LoRaWAN"
+    if "rp2350" in combined or ("web ui" in combined and "usb" in combined):
+        return "Thiết bị nhúng vi điều khiển tích hợp giao diện web qua USB"
+    if "esp32" in combined and ("solar" in combined or "telemetry" in combined or "sleep" in combined):
+        return "Trạm đo từ xa dùng vi điều khiển ESP32 và pin năng lượng mặt trời"
+    if "embodied" in combined or "manipulation" in combined:
+        return "AI hiện thân kết hợp mô hình học sâu với khả năng tương tác vật lý"
+    if "humanoid" in combined or "digit" in combined:
+        return "Thử nghiệm robot hình người tự hành trong môi trường công nghiệp"
+    if "roboweeder" in combined or ("weed" in combined and "robot" in combined):
+        return "Robot nông nghiệp tự hành nhận diện và diệt cỏ chính xác cao"
+
+    # Subreddit-based fallback
+    if sub_lower in ["startups", "entrepreneur", "smallbusiness"]:
+        return "Thảo luận kinh nghiệm phát triển mô hình kinh doanh và mở rộng thị trường"
+    if sub_lower in ["robotics"]:
+        return "Thảo luận giải pháp tự động hóa và phát triển hệ thống robot thực tế"
+    if sub_lower in ["hardware"]:
+        return "Đánh giá linh kiện phần cứng, thiết kế vi mạch và hiệu năng thiết bị"
+    if sub_lower in ["iot"]:
+        return "Ứng dụng giải pháp cảm biến IoT và mạng truyền dữ liệu từ xa"
+    if sub_lower in ["embedded", "arduino"]:
+        return "Thiết kế mạch nhúng, firmware vi điều khiển và chế tạo thiết bị"
+    if sub_lower in ["futurology", "singularity"]:
+        return "Dự báo bước tiến công nghệ trí tuệ nhân tạo và tác động xã hội"
+    if sub_lower in ["technology"]:
+        return "Xu hướng phát triển công nghệ số và chính sách quản lý mới"
+
+    # Generic fallback
+    res = f"Thảo luận cộng đồng công nghệ: {t}"
+    if len(res) > 95:
+        res = res[:92].strip() + "..."
+    return res
+
+
+def generate_summary_vi(title, summary=""):
+    """
+    Main entry point: Generate a strictly compliant Vietnamese summary.
+    - Max 80-100 characters
+    - Answering "CƠ HỘI NÀY LÀ GÌ"
+    - NEVER contains banned phrase "Tín hiệu công nghệ và cơ hội thị trường"
+    """
+    if not title:
+        return "Giải pháp công nghệ và cơ hội thị trường mới"
+
+    t = title.strip()
+
     # 1. Exact match lookup
     if t in EXACT_MATCHES:
         summary_vi = EXACT_MATCHES[t]
-    # 2. Funding article ([Ai] [làm gì] [bao nhiêu] [ngành gì])
+    # 2. Google Trends title pattern ("Google Trends: keyword (Status Change)")
+    elif t.startswith("Google Trends:"):
+        kw_m = re.match(r"^Google Trends:\s*([^(]+?)(?:\s*\((.*?)\))?$", t)
+        if kw_m:
+            kw = kw_m.group(1).strip()
+            summary_vi = summarize_trends_keyword(kw)
+        else:
+            summary_vi = summarize_news_article(t, summary)
+    # 3. Funding article ([Ai] [làm gì] [bao nhiêu] [ngành gì])
     elif any(k in t.lower() for k in ["raises", "raised", "funding", "series a", "series b", "seed", "acquires", "acquisition", "nets", "lands", "secures", "layoffs", "venture", "vc", "dollars", "capital", "stake", "invest"]):
         funding_sum = summarize_funding_article(t, summary)
         summary_vi = funding_sum if funding_sum else summarize_news_article(t, summary)
-    # 3. GitHub repository
+    # 4. GitHub repository
     elif "/" in t and not t.startswith("http") and len(t.split("/")) == 2 and " " not in t.split("/")[0]:
         summary_vi = summarize_github_repo(t, summary)
-    # 4. News article or paper
+    # 5. News article or paper
     else:
         summary_vi = summarize_news_article(t, summary)
 
-    # Clean & ensure <= 80 chars
+    # Clean & ensure <= 80 chars (or 100 for reddit/trends)
     summary_vi = summary_vi.strip()
-    if len(summary_vi) > 80:
-        summary_vi = summary_vi[:77].strip() + "..."
+    if len(summary_vi) > 85:
+        summary_vi = summary_vi[:82].strip() + "..."
 
     # Safety check: BANNED PHRASES MUST NEVER OCCUR
     banned = "tín hiệu công nghệ và cơ hội thị trường"
@@ -313,3 +467,4 @@ def generate_summary_vi(title, summary=""):
         summary_vi = summarize_news_article(t, "")
 
     return summary_vi
+
