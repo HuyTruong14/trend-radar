@@ -143,10 +143,11 @@ def is_junk_signal(it):
         return True
 
     # 5. Pure VC funding, IPO, valuation, layoffs
-    # Chỉ loại nếu KHÔNG thuộc ngách mục tiêu (IoT, aquaculture, sensors, hardware, water)
-    if any(re.search(pat, text, re.IGNORECASE) for pat in JUNK_FUNDING_VC_LAYOFFS_PATTERNS):
-        if not is_target_niche(text):
-            return True
+    # Chỉ loại tin VC funding/layoffs chung nếu KHÔNG thuộc topic Funding và KHÔNG từ nguồn funding
+    if topic != "Funding" and not is_signal_funding(it):
+        if any(re.search(pat, text, re.IGNORECASE) for pat in JUNK_FUNDING_VC_LAYOFFS_PATTERNS):
+            if not is_target_niche(text):
+                return True
 
     return False
 
@@ -391,10 +392,8 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
     elif is_funding:
         # Funding into specific IoT/hardware -> handled by has_iot_hardware (3)
         # Funding into general agtech/aquaculture without IoT hardware -> 1
-        if is_target_niche(primary_text):
-            your_leverage = 1
-        else:
-            your_leverage = 0
+        # General tech/venture funding deals -> 1
+        your_leverage = 1
     elif has_other_hardware:
         your_leverage = 3
     elif is_tech_systems:
@@ -412,7 +411,7 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
         elif is_target_niche(primary_text) or has_iot_hardware:
             durability = 3
         else:
-            durability = 1
+            durability = 2
     elif is_generic_llm:
         durability = 1
     elif bool(re.search(r"\b(water|traffic|energy|solar|grid|soil|health|safety|food|logistics|manufacturing|fleet|aquaculture|fish farm\w*|shrimp|agriculture|agtech)\b", primary_text, re.IGNORECASE)):
@@ -434,7 +433,7 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
     if is_high_engagement and durability < 3:
         durability = min(3, durability + 1)
 
-    # 3. ai_support (0–3): AI handles 80% perception/analysis, human/physical holds 20% responsibility
+    # 3. ai_support (0–3): AI handles 80% perception/analysis, human/physical world holds 20% responsibility
     if is_generic_llm:
         ai_support = 1
     elif is_industry_generic and not has_iot_hardware_primary:
@@ -443,7 +442,7 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
     elif is_funding:
         if has_iot_hardware:
             ai_support = 3
-        elif is_target_niche(primary_text):
+        elif is_target_niche(primary_text) or any(k in primary_text for k in ["ai", "robot", "hardware", "chip", "semiconductor", "solar", "drone"]):
             ai_support = 2
         else:
             ai_support = 1

@@ -2934,8 +2934,8 @@
         activeTopic = 'Dòng Tiền';
       } else if (hash === '#chu-de-nong' || hash === '#social-buzz' || hash === '#buzz') {
         activeTopic = 'Chủ Đề Nóng';
-      } else if (savedTopic === 'Opportunity Radar' || savedTopic === 'Dòng Tiền' || savedTopic === 'Chủ Đề Nóng' || (savedTopic && DATA[savedTopic])) {
-        activeTopic = savedTopic;
+      } else if (savedTopic === 'Opportunity Radar' || savedTopic === 'Dòng Tiền' || savedTopic === 'Funding' || savedTopic === 'Chủ Đề Nóng' || (savedTopic && DATA[savedTopic])) {
+        activeTopic = savedTopic === 'Funding' ? 'Dòng Tiền' : savedTopic;
       } else if (!DATA[activeTopic] && activeTopic !== 'Opportunity Radar' && activeTopic !== 'Dòng Tiền' && activeTopic !== 'Chủ Đề Nóng') {
         activeTopic = topicKeys[0] || 'Opportunity Radar';
       }
@@ -2962,10 +2962,10 @@
       if (!tabsContainer) return;
 
       const isRadarActive = activeTopic === 'Opportunity Radar';
-      const isFundingActive = activeTopic === 'Dòng Tiền';
-      const isBuzzActive = activeTopic === 'Chủ Đề Nóng';
+      const isFundingActive = activeTopic === 'Dòng Tiền' || activeTopic === 'Funding';
+      const isBuzzActive = activeTopic === 'Chủ Đề Nóng' || activeTopic === 'Social Buzz';
       const oppCount = OPPORTUNITIES_DATA.length;
-      const fundingCount = OPPORTUNITIES_DATA.filter(it => isFundingItem(it)).length;
+      const fundingCount = getAllFundingDeals().length;
       const buzzCount = (SOCIAL_BUZZ_DATA.reddit_posts ? SOCIAL_BUZZ_DATA.reddit_posts.length : 0) + (SOCIAL_BUZZ_DATA.google_trends_keywords ? SOCIAL_BUZZ_DATA.google_trends_keywords.length : 0);
 
       let tabsHtml = `
@@ -2983,21 +2983,25 @@
         </button>
       `;
 
-      tabsHtml += Object.keys(DATA).map(topic => {
-        const count = DATA[topic].items?.length || 0;
-        const isActive = (topic === activeTopic) && !isRadarActive && !isFundingActive && !isBuzzActive;
-        return `
-          <button class="tab-btn ${isActive ? 'active' : ''}" onclick="switchTopic('${topic.replace(/'/g, "\\'")}')">
-            <span>${topic}</span>
-            <span class="tab-badge">${count}</span>
-          </button>
-        `;
-      }).join('');
+      tabsHtml += Object.keys(DATA)
+        .filter(topic => topic !== 'Funding' && topic !== 'Social Buzz' && topic !== 'Dòng Tiền' && topic !== 'Opportunity Radar' && topic !== 'Chủ Đề Nóng')
+        .map(topic => {
+          const count = DATA[topic].items?.length || 0;
+          const isActive = (topic === activeTopic) && !isRadarActive && !isFundingActive && !isBuzzActive;
+          return `
+            <button class="tab-btn ${isActive ? 'active' : ''}" onclick="switchTopic('${topic.replace(/'/g, "\\'")}')">
+              <span>${topic}</span>
+              <span class="tab-badge">${count}</span>
+            </button>
+          `;
+        }).join('');
 
       tabsContainer.innerHTML = tabsHtml;
     }
 
     function switchTopic(topic) {
+      if (topic === 'Funding') topic = 'Dòng Tiền';
+      if (topic === 'Social Buzz') topic = 'Chủ Đề Nóng';
       if (topic !== 'Opportunity Radar' && topic !== 'Dòng Tiền' && topic !== 'Chủ Đề Nóng' && !DATA[topic]) return;
       activeTopic = topic;
       localStorage.setItem('mynews_active_topic', topic);
@@ -3771,8 +3775,57 @@
 
     function isFundingItem(it) {
       if (!it) return false;
-      return (it.signal_type || []).includes('price_shift') ||
-        (it.sources || []).some(s => /agfunder|igrow|crunchbase|venture|techcrunch/i.test(s.url || s.name || ''));
+      const url = it.url || (it.sources && it.sources[0] && it.sources[0].url) || '';
+      if (/github\.com|arxiv\.org/i.test(url)) {
+        const text = (it.title || '').toLowerCase();
+        if (!/raises|series|funding|seed|round|acquires|acquisition|investment/i.test(text)) return false;
+      }
+      const hasFundingSource = (it.sources || []).some(s => /agfunder|igrow|crunchbase|venture|techcrunch/i.test((s.url || '') + (s.name || '')));
+      const amt = getFundingAmount(it);
+      const dt = getDealType(it);
+      const hasPriceShift = (it.signal_type || []).includes('price_shift');
+      return hasFundingSource || amt !== 'N/A' || ['Gọi vốn', 'M&A', 'Rút vốn'].includes(dt) || hasPriceShift;
+    }
+
+    function getAllFundingDeals() {
+      const oppFunding = OPPORTUNITIES_DATA.filter(isFundingItem);
+      const newsFunding = (DATA && DATA['Funding'] && DATA['Funding'].items) || [];
+      const seen = new Set();
+      const merged = [];
+
+      oppFunding.forEach(it => {
+        const key = (it.url || it.title || '').toLowerCase().trim();
+        if (key && !seen.has(key)) {
+          seen.add(key);
+          merged.push(it);
+        }
+      });
+
+      newsFunding.forEach((it, idx) => {
+        const key = (it.url || it.title || '').toLowerCase().trim();
+        if (key && !seen.has(key)) {
+          seen.add(key);
+          merged.push({
+            id: it.id || `news_funding_${idx}`,
+            title: it.title,
+            summary: it.summary,
+            summary_vi: it.summary_vi || it.summary,
+            url: it.url,
+            sources: [{ name: it.source || 'Funding Feed', url: it.url }],
+            stage: it.stage || (it.score >= 7 ? 'research' : 'watch'),
+            total: it.score || 5,
+            score: it.score || 5,
+            source_count: 1,
+            first_seen: it.date || '2026-10-24',
+            last_seen: it.date || '2026-10-24',
+            funding_amount: getFundingAmount(it),
+            deal_type: getDealType(it),
+            funding_sector: getFundingSector(it)
+          });
+        }
+      });
+
+      return merged;
     }
 
     function getFundingSector(it) {
@@ -3850,7 +3903,7 @@
       const container = document.getElementById('fundingFlowSection');
       if (!container) return;
 
-      const allFunding = OPPORTUNITIES_DATA.filter(it => isFundingItem(it));
+      const allFunding = getAllFundingDeals();
       const totalAllDeals = allFunding.length;
 
       // Extract raw amounts and stats
@@ -4736,8 +4789,8 @@
         return;
       }
 
-      if (activeTopic === 'Dòng Tiền') {
-        const fundingItems = OPPORTUNITIES_DATA.filter(it => isFundingItem(it));
+      if (activeTopic === 'Dòng Tiền' || activeTopic === 'Funding') {
+        const fundingItems = getAllFundingDeals();
         const total = fundingItems.length;
         const nicheItems = fundingItems.filter(it => ['aquatech', 'agtech', 'hardware'].includes(getFundingSector(it)));
         const maItems = fundingItems.filter(it => getDealType(it) === 'M&A');
