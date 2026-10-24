@@ -519,6 +519,65 @@ def is_cross_corroborated(tech_item, funding_item):
     return False
 
 
+def extract_funding_amount(text):
+    """Extract funding dollar/currency amount from text if present, else N/A."""
+    m = re.search(r"[\$€£]\d+(?:\.\d+)?\s*(?:billion|million|[kmb])\b", text, re.IGNORECASE)
+    if m:
+        return m.group(0).upper().replace("MILLION", "M").replace("BILLION", "B").replace(" ", "")
+    m2 = re.search(r"\b(\d+(?:\.\d+)?)\s*(?:million|billion)\s*(?:dollars?|usd|euro)?\b", text, re.IGNORECASE)
+    if m2:
+        unit = "B" if "billion" in m2.group(0).lower() else "M"
+        return f"${m2.group(1)}{unit}"
+    return "N/A"
+
+
+def determine_deal_type(title, summary="", signal_types=None, summary_vi=""):
+    """
+    Classify funding deal type into 4 categories:
+    - Gọi vốn
+    - M&A
+    - Xu hướng
+    - Rút vốn
+    """
+    text = f"{title} {summary or ''} {summary_vi or ''}".lower()
+    if any(k in text for k in ["acquires", "acquisition", "merger", "thâu tóm", "sáp nhập", "takes majority stake", "letter of intent to acquire"]):
+        return "M&A"
+    if any(k in text for k in ["funding fell", "decline", "cuts", "slash", "layoffs", "realign", "cắt giảm", "rút vốn", "funding gap", "plug"]):
+        return "Rút vốn"
+    if any(k in text for k in ["needs more than", "investment trends", "funding report", "report:", ": report", "biggest funding rounds", "vc dollars"]):
+        return "Xu hướng"
+    if any(k in text for k in ["raises", "raised", "series a", "series b", "series c", "series d", "seed round", "seed funding", "gọi vốn", "nabs", "secures", "lands", "closes", "financing round", "gọi $"]):
+        return "Gọi vốn"
+    if "$" in text or re.search(r"\b\d+\s*m\b", text):
+        return "Gọi vốn"
+    return "Xu hướng"
+
+
+def determine_funding_sector(title, summary="", summary_vi=""):
+    """
+    Classify funding sector into 6 standard categories:
+    - aquatech: 🐟 Thủy sản & Cảm biến nước
+    - agtech: 🌱 Nông nghiệp & IoT
+    - hardware: 🔧 Phần cứng & Robotics
+    - ai_infra: 🤖 Hạ tầng AI
+    - fintech: 💳 Fintech
+    - other: 📦 Khác
+    """
+    text = f"{title} {summary or ''} {summary_vi or ''}".lower()
+    if any(k in text for k in ["aquaculture", "fish", "shrimp", "seafood", "marine", "ocean", "water quality", "water sensor", "dissolved oxygen", "salinity", "turbidity", "submetering", "leak detection", "water treatment", "thủy sản", "nuôi tôm", "nuôi cá", "ao nuôi", "rò rỉ nước", "waterwatch", "purifyx"]):
+        return "aquatech"
+    if any(k in text for k in ["agtech", "agritech", "agriculture", "farm", "farmer", "crop", "soil", "weeder", "roboweeder", "biological", "nông nghiệp", "cây trồng", "trang trại", "harvest", "dairy", "livestock"]):
+        return "agtech"
+    if any(k in text for k in ["robot", "robotics", "humanoid", "drone", "sensor", "hardware", "camera", "microgrid", "solar", "thermal energy", "storage", "phần cứng", "thiết bị", "laser", "autonomous vehicle"]):
+        return "hardware"
+    if any(k in text for k in ["ai infra", "datacenter", "data center", "gpu", "supercomputer", "nuclear", "reactor", "semiconductor", "chipmaker"]):
+        return "ai_infra"
+    if any(k in text for k in ["fintech", "insurance", "insuretech", "bank", "banking", "payment", "checkout", "crypto", "blockchain", "lending"]):
+        return "fintech"
+    return "other"
+
+
+
 def load_raw_items():
     """Load items from signals.json or news.json, enriched with topic metadata."""
     items_map = {}
@@ -829,6 +888,11 @@ def main():
 
         summary_vi = generate_summary_vi(title, summary) if generate_summary_vi else title[:80]
 
+        # Phase 8: Funding intelligence metadata
+        funding_sector = determine_funding_sector(title, summary, summary_vi)
+        deal_type = determine_deal_type(title, summary, signal_types, summary_vi)
+        funding_amount = extract_funding_amount(f"{title} {summary} {summary_vi}")
+
         opp_record = {
             "id": opp_id,
             "title": title,
@@ -845,7 +909,10 @@ def main():
             "last_seen": today_str,
             "appearance_count": appearance_count,
             "history_dates": history_dates[-14:],  # Keep recent 14 active appearances
-            "velocity": velocity
+            "velocity": velocity,
+            "funding_sector": funding_sector,
+            "deal_type": deal_type,
+            "funding_amount": funding_amount
         }
         opportunities.append(opp_record)
 
@@ -919,6 +986,11 @@ def main():
         aged_opp["stage"] = compute_stage(aged_total)
         if not aged_opp.get("summary_vi") or "tín hiệu công nghệ và cơ hội thị trường" in aged_opp.get("summary_vi", "").lower():
             aged_opp["summary_vi"] = generate_summary_vi(aged_opp.get("title", ""), aged_opp.get("summary", "")) if generate_summary_vi else aged_opp.get("title", "")[:80]
+
+        # Phase 8: Funding intelligence metadata
+        aged_opp["funding_sector"] = determine_funding_sector(aged_opp.get("title", ""), aged_opp.get("summary", ""), aged_opp.get("summary_vi", ""))
+        aged_opp["deal_type"] = determine_deal_type(aged_opp.get("title", ""), aged_opp.get("summary", ""), aged_opp.get("signal_type", []), aged_opp.get("summary_vi", ""))
+        aged_opp["funding_amount"] = extract_funding_amount(f"{aged_opp.get('title', '')} {aged_opp.get('summary', '')} {aged_opp.get('summary_vi', '')}")
 
         if days_inactive >= 7:
             aged_opp["velocity"] = "fading"
