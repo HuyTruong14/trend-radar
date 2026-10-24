@@ -49,6 +49,14 @@ try:
 except ImportError:
     notify = None
 
+try:
+    from summary_vi import generate_summary_vi
+except ImportError:
+    try:
+        from scripts.summary_vi import generate_summary_vi
+    except ImportError:
+        generate_summary_vi = None
+
 
 # ==================== 1. JUNK FILTER PATTERNS (UPFRONT ELIMINATION) ====================
 
@@ -766,10 +774,13 @@ def main():
             pipeline_velocity=primary.get("velocity")
         )
 
+        summary_vi = generate_summary_vi(title, summary) if generate_summary_vi else title[:80]
+
         opp_record = {
             "id": opp_id,
             "title": title,
             "summary": summary if summary else f"Tín hiệu công nghệ và cơ hội thị trường từ {formatted_sources[0]['name']}.",
+            "summary_vi": summary_vi,
             "signal_type": signal_types,
             "sources": formatted_sources,
             "source_count": source_count,
@@ -808,6 +819,10 @@ def main():
         if prev_id and prev_id in seen_in_current_batch:
             continue
 
+        # Drop old opportunities that are junk or inactive for more than 30 days
+        if is_junk_signal(prev_opp):
+            continue
+
         prev_last_seen = prev_opp.get("last_seen") or prev_opp.get("first_seen") or today_str
         try:
             prev_last_date = datetime.strptime(prev_last_seen, "%Y-%m-%d").date()
@@ -835,6 +850,8 @@ def main():
         aged_opp["scores"] = aged_scores
         aged_opp["total"] = aged_total
         aged_opp["stage"] = compute_stage(aged_total)
+        if not aged_opp.get("summary_vi") or "tín hiệu công nghệ và cơ hội thị trường" in aged_opp.get("summary_vi", "").lower():
+            aged_opp["summary_vi"] = generate_summary_vi(aged_opp.get("title", ""), aged_opp.get("summary", "")) if generate_summary_vi else aged_opp.get("title", "")[:80]
 
         if days_inactive >= 7:
             aged_opp["velocity"] = "fading"
@@ -903,6 +920,7 @@ def main():
         print(f"  #{i} [{o['stage'].upper()}] (Score: {o['total']}/9 | mult: {o['multiplier']} | sources: {o['source_count']})")
         print(f"      ID: {o['id']}")
         print(f"      Title: {o['title']}")
+        print(f"      Summary_VI: {o.get('summary_vi')}")
         print(f"      Types: {', '.join(o['signal_type'])} | Scores: {o['scores']}")
         print(f"      Sources: {[s['name'] for s in o['sources']]}")
 

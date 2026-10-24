@@ -22,20 +22,20 @@
 
 ---
 
-## 2. Bảng xếp hạng Top 10 cơ hội (Điểm cao nhất)
+## 2. Bảng xếp hạng Top 10 cơ hội (Điểm cao nhất) & Tóm tắt tiếng Việt (Phase 5A)
 
-| # | Tiêu đề | Loại tín hiệu | Durability | AI Support | Leverage | Sources | Tổng | Bước | Nguồn đối chiếu |
-| :-: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **1** | **mohamedsadhathj-techwork/Smart-Aquaculture-Assistant** | `price_shift`, `tech_cheap` | 3 | 3 | 3 | 2 | **9** | `build_ready` | GitHub + AgFunder News |
-| **2** | **wissen-csi/backend_station** | `pain_repeat`, `price_shift`, `tech_cheap` | 3 | 3 | 3 | 2 | **9** | `build_ready` | GitHub + iGrow News |
-| **3** | **Afrina-B/WaterWatch** | `price_shift`, `tech_cheap` | 3 | 3 | 3 | 2 | **9** | `build_ready` | GitHub + aquablurb Substack |
-| **4** | **ishiniayodya610/J26-SE-351** | `price_shift`, `tech_cheap` | 3 | 2 | 3 | 2 | **8** | `research` | GitHub + Fish Farmer Magazine |
-| **5** | **Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-** | `price_shift`, `tech_cheap` | 3 | 2 | 3 | 2 | **8** | `research` | GitHub + aquablurb Substack |
-| **6** | **Firm makes aquaponics, water treatment breakthrough** | `pain_repeat`, `price_shift`, `tech_cheap` | 3 | 2 | 3 | 2 | **8** | `research` | Engineering News + iGrow News |
-| **7** | **zgordon-source/WaterQualityConfiguration** | `tech_cheap` | 3 | 3 | 3 | 1 | **8** | `research` | GitHub |
-| **8** | **Aakashaash/SmartWaterNet-Edge-AI-Based-Leakage-Prediction** | `pain_repeat`, `tech_cheap` | 3 | 3 | 3 | 1 | **8** | `research` | GitHub |
-| **9** | **DileepaNayanajith/esp32-water-quality-monitor** | `tech_cheap` | 3 | 3 | 3 | 1 | **8** | `research` | GitHub |
-| **10** | **LowCostSensor/DOMino-sensor** | `tech_cheap` | 3 | 3 | 3 | 1 | **8** | `research` | GitHub |
+| # | Tiêu đề | Tóm tắt cơ hội (`summary_vi`) | Loại | Dur | AI | Lev | Src | Tổng | Bước | Nguồn đối chiếu |
+| :-: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **1** | **mohamedsadhathj-techwork/Smart-Aquaculture-Assistant** | Trợ lý AI quản lý ao nuôi và chất lượng nước thủy sản | `price_shift`, `tech_cheap` | 3 | 3 | 3 | 2 | **9** | `build_ready` | GitHub + AgFunder News |
+| **2** | **wissen-csi/backend_station** | Backend IoT thu thập cảm biến chất lượng nước phao nổi | `pain_repeat`, `price_shift`, `tech_cheap` | 3 | 3 | 3 | 2 | **9** | `build_ready` | GitHub + iGrow News |
+| **3** | **Afrina-B/WaterWatch** | Hệ thống IoT giám sát và cảnh báo chất lượng nước ao nuôi | `price_shift`, `tech_cheap` | 3 | 3 | 3 | 2 | **9** | `build_ready` | GitHub + aquablurb Substack |
+| **4** | **ishiniayodya610/J26-SE-351** | Hệ thống quan trắc chất lượng nước đa thông số qua IoT | `price_shift`, `tech_cheap` | 3 | 2 | 3 | 2 | **8** | `research` | GitHub + Fish Farmer Magazine |
+| **5** | **Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-** | Dự đoán chất lượng nước thời gian thực bằng IoT và máy học | `price_shift`, `tech_cheap` | 3 | 2 | 3 | 2 | **8** | `research` | GitHub + aquablurb Substack |
+| **6** | **api-evangelist/jala** | Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp | `price_shift`, `tech_cheap` | 2 | 1 | 3 | 2 | **6** | `watch` | GitHub + The Fish Site |
+| **7** | **phucngvinuni/AquaSC-release** | Mô hình AI kiểm soát tự động chất lượng nước ao nuôi tôm | `price_shift`, `tech_cheap` | 2 | 1 | 3 | 2 | **6** | `watch` | GitHub + aquablurb Substack |
+| **8** | **zgordon-source/WaterQualityConfiguration** | Hệ thống quan trắc chất lượng nước đa thông số qua IoT | `tech_cheap` | 3 | 3 | 3 | 1 | **8** | `research` | GitHub |
+| **9** | **Aakashaash/SmartWaterNet-Edge-AI-Based-Leakage-Prediction** | Edge AI phát hiện rò rỉ và giám sát chất lượng nước qua IoT | `pain_repeat`, `tech_cheap` | 3 | 3 | 3 | 1 | **8** | `research` | GitHub |
+| **10** | **TonucciGiovanni/Aquawatch** | Thiết bị IoT giám sát và cảnh báo thông số nước tự động | `tech_cheap` | 3 | 3 | 3 | 1 | **8** | `research` | GitHub |
 
 ---
 
