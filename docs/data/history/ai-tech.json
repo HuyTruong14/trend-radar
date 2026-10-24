@@ -734,68 +734,69 @@
   {
     "date": "2026-10-24",
     "total_items": 45,
-    "avg_relevance_score": 2.96,
+    "avg_relevance_score": null,
     "cross_source_count": 0,
     "by_source": {
       "GitHub": 30,
       "arXiv": 15
     },
     "by_keyword": {
-      "llm agent": 15,
       "ai video generation": 15,
+      "llm agent": 15,
       "cs.AI, cs.CV, cs.CL": 15
     },
     "top_repos": [
       {
         "name": "morluto/rea",
-        "stars": 375302
+        "stars": 375631
       },
       {
         "name": "affaan-m/ECC",
-        "stars": 287602
+        "stars": 287643
       },
       {
         "name": "NousResearch/hermes-agent",
-        "stars": 256646
+        "stars": 256662
       },
       {
         "name": "firecrawl/firecrawl",
-        "stars": 194789
+        "stars": 194805
       },
       {
         "name": "DietrichGebert/ponytail",
-        "stars": 175104
+        "stars": 175152
       },
       {
         "name": "langgenius/dify",
-        "stars": 159403
+        "stars": 159407
       },
       {
         "name": "langchain-ai/langchain",
-        "stars": 148351
+        "stars": 148354
       },
       {
         "name": "Shubhamsaboo/awesome-llm-apps",
-        "stars": 142873
+        "stars": 142879
       },
       {
         "name": "browser-use/browser-use",
-        "stars": 119012
+        "stars": 119017
       },
       {
         "name": "earendil-works/pi",
-        "stars": 117525
+        "stars": 117530
       }
     ],
     "github_repos": [
-      "earendil-works/pi",
       "aqm857886159/Nomi",
       "morluto/rea",
-      "tetherto/qvac",
       "paperclipai/paperclip",
       "NousResearch/hermes-agent",
-      "OpenHands/OpenHands",
+      "tetherto/qvac",
       "langgenius/dify",
+      "Anil-matcha/Open-Generative-AI",
+      "earendil-works/pi",
+      "OpenHands/OpenHands",
       "langchain-ai/langchain",
       "JuliusBrussee/caveman",
       "browser-use/browser-use",
@@ -805,7 +806,6 @@
       "HKUSTDial/DataMagic",
       "PurpleDoubleD/locally-uncensored",
       "Shubhamsaboo/awesome-llm-apps",
-      "Anil-matcha/Open-Generative-AI",
       "AceDataCloud/Nexior",
       "czg86389-hub/muse2api",
       "YILS-LIN/short-video-factory",
