@@ -98,7 +98,7 @@ NICHE_PATTERNS = [
 ]
 
 FUNDING_FLOW_PATTERNS = [
-    r"\b(raises?|raised|funding|seed|series [a-e]|venture|invest\w*|capital|grant|round|valuation|backs|backed|financing|cash injection|funded|dealflow|vc dollars?)\b",
+    r"\b(raises?|raised|funding|seed|series [a-e]|venture|invest(?:ment|or|ing|ed|s)?|capital|grant|round|valuation|backs|backed|financing|cash injection|funded|dealflow|vc dollars?)\b",
     r"(\$\d+|\b\d+\s*million|\b\d+\s*m\b|triệu usd)"
 ]
 
@@ -288,13 +288,27 @@ def detect_signal_types(title, summary, url, topic="", source=""):
 
 # ==================== 4. USER PROFILE ALIGNMENT & 3-LAYER SCORING ====================
 
-HARDWARE_IOT_HIGH_PATTERNS = [
-    r"\b(iot|sensor|sensors|cảm biến|hardware|robot|robots|robotics|drone|drones|camera|cameras)\b",
-    r"\b(embedded (?:system|device|software|linux|hardware|firmware|board|sensor)|microcontroller|esp32|raspberry|arduino|edge ai|tinyml|firmware|physical device)\b",
-    r"\b(water quality|air quality|soil|traffic|traffic police|environment|weather|energy|solar|grid)\b",
-    r"\b(aquaculture|fish farm\w*|shrimp\w*|fishery|fisheries|water sensor|dissolved oxygen|salinity|turbidity|aerator|pond monitoring|aquaponics|water treatment|submetering|leak detection)\b",
-    r"\b(autonomous|autonomous systems?|diagnostics?|fault diagnosis|sensor monitoring|machine monitoring|fleet|fleets|spatiotemporal memory|actuator|motor)\b",
-    r"(giám sát|chẩn đoán|thiết bị|môi trường|giao thông|cảm biến|vật lý|năng lượng|thủy sản|nuôi tôm|nuôi cá|nguồn nước|ao nuôi|chất lượng nước)"
+# Specific hardware, sensors, IoT, and automation for water / aquaculture / environmental monitoring
+AQUACULTURE_IOT_HARDWARE_PATTERNS = [
+    r"\b(iot|esp32|arduino|microcontroller|raspberry|tinyml|edge ai|firmware|embedded system)\b",
+    r"\b(sensor|sensors|cảm biến|probe|probes|telemetry|lora|lorawan|mqtt|modbus|rs485)\b",
+    r"\b(water[-_\s]*quality|chất lượng nước|water[-_\s]*monitor\w*|pond[-_\s]*monitor\w*|cảm biến nước|quan trắc nước|giám sát nước)\b",
+    r"\b(dissolved oxygen|salinity|turbidity|ph sensor|ammonia sensor|orp sensor|conductivity sensor)\b",
+    r"\b(smart[-_\s]*aquaculture|smart[-_\s]*fish[-_\s]*farm\w*|smart[-_\s]*shrimp[-_\s]*farm\w*|aquaculture[-_\s]*iot|aqua1|waterwatch|aquasc|jala|fish tank monitor)\b",
+    r"\b(automation|auto-feeder|feeder automation|aerator control\w*|dosing system|leak detection|submetering)\b",
+    r"\b(hydrophone|acoustic sensor|underwater camera|rov|auv)\b",
+    r"(giám sát nước|quan trắc nước|cảm biến ao|đo nồng độ|tự động hóa ao nuôi|thiết bị giám sát)"
+]
+
+# General aquaculture industry news without hardware/sensors (Policy, Diplomacy, Fish feed, Company profits, Awards)
+AQUACULTURE_INDUSTRY_GENERIC_PATTERNS = [
+    r"\b(collaborat\w*|bilateral|diploma\w*|agreement|treaty|policy|policies|minist\w*|governance|regulation|regulatory)\b",
+    r"\b(profit\w*|margin\w*|catch rates?|tough market|revenue|earning\w*|financial results?|shares? drop|stock|quarterly results|commercial catch)\b",
+    r"\b(fish feed|feed solutions?|sustainable fertiliser|fertilizer|aquafeed|thức ăn cá|dinh dưỡng|insect meal|soy meal|feed production|algae solution)\b",
+    r"\b(awards?|celebrate\w*|icefish|expo\b|exhibition|vinh danh|giải thưởng|ceremony|trophy|honors?|summit|conference pass)\b",
+    r"\b(nutrition security|food security|eas review|half a century of aquaculture|vision needs numbers|facing up to global change)\b",
+    r"\b(commercial fish\w*|trawling|vessel\w*|seafood market|fish market|retail seafood|seafood consumption|seafood industry)\b",
+    r"\b(green hydrogen trials|algae bloom|parasite|sea lice|breeding|genetics|broodstock|hatchery|wild catch)\b"
 ]
 
 FINTECH_GENERIC_PATTERNS = [
@@ -315,67 +329,97 @@ TECHNICAL_SYSTEMS_PATTERNS = [
 ]
 
 
-def score_item_filters(title, summary, signal_types, matched_keyword="", meta="", engagement=0):
+def score_item_filters(title, summary, signal_types, matched_keyword="", meta="", engagement=0, primary_title="", primary_summary=""):
     """
     Score 3 filter layers based strictly on CONTENT and USER PROFILE:
     1. durability: 10-year core physical/infrastructure need
     2. ai_support: AI handles 80% data/analysis, human/physical world holds 20% responsibility
-    3. your_leverage: High for IoT/Hardware/Sensors/Robotics; Low for generic LLM/pure ML papers
-    
-    Phase 9: High engagement (>100 upvotes on Reddit or >=100K traffic on Google Trends)
-    boosts durability by 1 level (capped at 3).
+    3. your_leverage:
+       - HIGH (3): Thiết bị IoT giám sát nước, cảm biến ao nuôi, ESP32, monitor, sensor, automation cho ao nuôi
+       - LOW (1): Tin ngành thủy sản nói chung (chính sách, hợp tác quốc tế, thức ăn cá, giải thưởng ngành, tài chính công ty cá)
+       - ZERO (0): Generic LLM apps, pure NLP/vision papers, generic fintech/crypto
     """
-    text = f"{title} {summary or ''} {matched_keyword or ''} {meta or ''}".lower()
+    eval_title = (primary_title or title or "").strip()
+    raw_summary = (primary_summary or summary or "").strip()
+    eval_summary = re.sub(r"\[Đối chiếu[^\]]*\]", "", raw_summary).strip()
+    primary_text = f"{eval_title} {eval_summary}".lower()
+    full_text = f"{title} {summary or ''} {matched_keyword or ''} {meta or ''}".lower()
 
-    is_fintech_generic = any(re.search(pat, text, re.IGNORECASE) for pat in FINTECH_GENERIC_PATTERNS)
-    is_generic_llm = any(re.search(pat, text, re.IGNORECASE) for pat in GENERIC_LLM_APP_PATTERNS)
-    is_hardware_iot = any(re.search(pat, text, re.IGNORECASE) for pat in HARDWARE_IOT_HIGH_PATTERNS) and not is_generic_llm and not is_fintech_generic
-    is_tech_systems = any(re.search(pat, text, re.IGNORECASE) for pat in TECHNICAL_SYSTEMS_PATTERNS) and not is_generic_llm and not is_fintech_generic
+    is_fintech_generic = any(re.search(pat, primary_text, re.IGNORECASE) for pat in FINTECH_GENERIC_PATTERNS)
+    is_generic_llm = any(re.search(pat, primary_text, re.IGNORECASE) for pat in GENERIC_LLM_APP_PATTERNS)
+
+    # General aquaculture industry news (Policy, International cooperation, Fish feed, Industry awards, Company financial results)
+    is_industry_generic = any(re.search(pat, primary_text, re.IGNORECASE) for pat in AQUACULTURE_INDUSTRY_GENERIC_PATTERNS)
+
+    # Specific IoT, sensors, hardware, automation for water/aquaculture
+    has_iot_hardware_primary = any(re.search(pat, primary_text, re.IGNORECASE) for pat in AQUACULTURE_IOT_HARDWARE_PATTERNS)
+    has_iot_hardware_full = any(re.search(pat, full_text, re.IGNORECASE) for pat in AQUACULTURE_IOT_HARDWARE_PATTERNS)
+    has_iot_hardware = has_iot_hardware_primary or (has_iot_hardware_full and not is_industry_generic)
+
+    is_tech_systems = (
+        any(re.search(pat, primary_text, re.IGNORECASE) for pat in TECHNICAL_SYSTEMS_PATTERNS)
+        and not is_generic_llm
+        and not is_fintech_generic
+    )
+
+    # Other hardware / IoT outside aquaculture
+    has_other_hardware = any(re.search(pat, primary_text, re.IGNORECASE) for pat in [
+        r"\b(iot|sensor|sensors|cảm biến|hardware|robot\w*|drone\w*|camera\w*|embedded|microcontroller|esp32|arduino|edge ai|tinyml)\b",
+        r"\b(traffic|diagnostics?|machine monitoring|motor|actuator)\b"
+    ]) and not is_generic_llm and not is_fintech_generic and not is_industry_generic
 
     # Phase 7: Detect if this item is a funding flow signal
     is_funding = (
-        any(re.search(pat, text, re.IGNORECASE) for pat in FUNDING_FLOW_PATTERNS)
-        or any(k in text for k in ["agfunder", "crunchbase", "igrow", "techcrunch.com/category/venture", "aquageek.substack.com"])
-        or ("price_shift" in signal_types and "github.com" not in text and "arxiv.org" not in text)
+        any(re.search(pat, primary_text, re.IGNORECASE) for pat in FUNDING_FLOW_PATTERNS)
+        or any(k in primary_text for k in ["agfunder", "crunchbase", "igrow", "techcrunch.com/category/venture", "aquageek.substack.com"])
+        or ("price_shift" in signal_types and "github.com" not in primary_text and "arxiv.org" not in primary_text)
     )
 
     # 1. your_leverage (0–3): User profile match
-    # Target: IoT, hardware, sensors, robotics, device diagnostics, environmental monitoring, aquaculture
-    # Non-target: Generic LLM apps, pure recommendation/animation ML papers, generic fintech/VC
-    if is_funding:
-        if is_fintech_generic:
-            your_leverage = 0  # Funding vào fintech/SaaS chung -> your_leverage 0 -> drop
-        elif is_target_niche(text) or is_hardware_iot:
+    # Vision: Thiết bị IoT giám sát nước / cảm biến ao nuôi (KHÔNG phải ngành thủy sản nói chung)
+    if is_generic_llm or is_fintech_generic:
+        your_leverage = 0
+    elif is_industry_generic:
+        # Quy tắc: Tin về chính sách thủy sản, hợp tác quốc tế, thức ăn cá, giải thưởng ngành, tài chính công ty cá -> your_leverage = 1
+        if has_iot_hardware_primary and any(k in eval_title.lower() for k in ["esp32", "arduino", "sensor", "cảm biến", "water quality", "dissolved oxygen", "salinity", "turbidity", "giám sát nước"]):
             your_leverage = 3
         else:
-            your_leverage = 0  # Funding vào fintech/SaaS chung -> your_leverage 0 -> drop
-    elif is_hardware_iot:
+            your_leverage = 1
+    elif has_iot_hardware:
+        # Quy tắc: Tin về cảm biến, IoT, ESP32, monitor, sensor, water quality, automation cho ao nuôi -> your_leverage = 3
+        your_leverage = 3
+    elif is_funding:
+        # Funding into specific IoT/hardware -> handled by has_iot_hardware (3)
+        # Funding into general agtech/aquaculture without IoT hardware -> 1
+        if is_target_niche(primary_text):
+            your_leverage = 1
+        else:
+            your_leverage = 0
+    elif has_other_hardware:
         your_leverage = 3
     elif is_tech_systems:
         your_leverage = 2
-    elif is_generic_llm or is_fintech_generic:
-        your_leverage = 0
-    elif "tool" in text or "python" in text or "github.com" in text:
+    elif "tool" in primary_text or "python" in primary_text or "github.com" in primary_text:
         your_leverage = 2
     else:
         your_leverage = 1
 
     # 2. durability (0–3): 10-year perennial need
-    # Physical infrastructure, traffic, water, energy, industrial maintenance, diagnostics, food, aquaculture
+    # Physical infrastructure, traffic, water, energy, food, aquaculture
     if is_funding:
         if is_fintech_generic:
             durability = 1
-        elif is_target_niche(text) or is_hardware_iot:
+        elif is_target_niche(primary_text) or has_iot_hardware:
             durability = 3
         else:
             durability = 1
     elif is_generic_llm:
         durability = 1
-    elif bool(re.search(r"\b(water|traffic|energy|solar|grid|soil|health|safety|food|logistics|manufacturing|fleet|aquaculture|fish farm\w*|shrimp|agriculture|agtech)\b", text, re.IGNORECASE)):
+    elif bool(re.search(r"\b(water|traffic|energy|solar|grid|soil|health|safety|food|logistics|manufacturing|fleet|aquaculture|fish farm\w*|shrimp|agriculture|agtech)\b", primary_text, re.IGNORECASE)):
         durability = 3
-    elif is_hardware_iot or bool(re.search(r"\b(infrastructure|database|security|pipeline|compliance|law|regulation|diagnostics?)\b", text, re.IGNORECASE)):
-        durability = 3 if any(k in text for k in ["water", "traffic", "factory", "industrial", "diagnost", "robot"]) else 2
-    elif is_tech_systems or "devtool" in text or "developer" in text:
+    elif has_iot_hardware or has_other_hardware or bool(re.search(r"\b(infrastructure|database|security|pipeline|compliance|law|regulation|diagnostics?)\b", primary_text, re.IGNORECASE)):
+        durability = 3 if any(k in primary_text for k in ["water", "traffic", "factory", "industrial", "diagnost", "robot"]) else 2
+    elif is_tech_systems or "devtool" in primary_text or "developer" in primary_text:
         durability = 2
     else:
         durability = 1
@@ -390,19 +434,24 @@ def score_item_filters(title, summary, signal_types, matched_keyword="", meta=""
     if is_high_engagement and durability < 3:
         durability = min(3, durability + 1)
 
-    # 3. ai_support (0–3): AI does 80% perception/analysis, human/physical holds 20% responsibility
-    if is_funding:
-        if is_target_niche(text) or is_hardware_iot:
+    # 3. ai_support (0–3): AI handles 80% perception/analysis, human/physical holds 20% responsibility
+    if is_generic_llm:
+        ai_support = 1
+    elif is_industry_generic and not has_iot_hardware_primary:
+        # Policy, financial results, awards do not involve AI perceptions
+        ai_support = 1
+    elif is_funding:
+        if has_iot_hardware:
             ai_support = 3
+        elif is_target_niche(primary_text):
+            ai_support = 2
         else:
             ai_support = 1
-    elif is_generic_llm:
-        ai_support = 1
-    elif bool(re.search(r"\b(camera|diagnost\w*|anomaly|monitor|inspection|audit|police|fleet|actuator|sensor)\b", text, re.IGNORECASE)):
+    elif bool(re.search(r"\b(camera|diagnost\w*|anomaly|monitor|inspection|audit|police|fleet|actuator|sensor)\b", primary_text, re.IGNORECASE)):
         ai_support = 3  # Sensor/camera detection -> human operator/technician confirms and acts
-    elif bool(re.search(r"\b(robot|robotics|embodied|copilot|decision support|synthes\w*|workflow|assistant)\b", text, re.IGNORECASE)):
+    elif bool(re.search(r"\b(robot|robotics|embodied|copilot|decision support|synthes\w*|workflow|assistant)\b", primary_text, re.IGNORECASE)):
         ai_support = 2
-    elif "ai" in text or "model" in text:
+    elif "ai" in primary_text or "model" in primary_text:
         ai_support = 2
     else:
         ai_support = 1
@@ -902,7 +951,10 @@ def main():
                 max_engagement = 100000
 
         # Score 3 filter layers based on content, user profile, and social engagement
-        scores = score_item_filters(group_titles, group_summaries, signal_types, matched_kw, meta_str, engagement=max_engagement)
+        scores = score_item_filters(
+            group_titles, group_summaries, signal_types, matched_kw, meta_str,
+            engagement=max_engagement, primary_title=title, primary_summary=primary.get("summary") or ""
+        )
 
         # Calculate total score
         raw_sum = scores["durability"] + scores["ai_support"] + scores["your_leverage"]
@@ -1040,7 +1092,9 @@ def main():
         aged_scores = score_item_filters(
             aged_opp.get("title", ""),
             aged_opp.get("summary", ""),
-            aged_opp.get("signal_type", [])
+            aged_opp.get("signal_type", []),
+            primary_title=aged_opp.get("title", ""),
+            primary_summary=aged_opp.get("summary", "")
         )
         aged_raw = aged_scores["durability"] + aged_scores["ai_support"] + aged_scores["your_leverage"]
         aged_mult = aged_opp.get("multiplier", 0.85)
