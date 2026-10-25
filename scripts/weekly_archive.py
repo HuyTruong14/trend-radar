@@ -311,11 +311,54 @@ def generate_weekly_archive(week=None, start_date=None, end_date=None):
         except Exception:
             pass
 
+    # 8. AI Disruption Snapshot (Phase 16)
     disruption_snapshot = {
-        "most_disrupted_skill": "Viết firmware cơ bản & driver vi điều khiển",
-        "ai_pct": 60,
-        "change": "+3%"
+        "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",
+        "ai_pct": 88,
+        "change": "+4%",
+        "safe_count": 16,
+        "opportunity_count": 12,
+        "avoid_count": 2,
+        "new_roles": []
     }
+    disruption_file = os.path.join(DATA_DIR, "disruption_current.json")
+    insights_file = os.path.join(DATA_DIR, "disruption_insights.json")
+    new_roles_file = os.path.join(DATA_DIR, "new_roles.json")
+
+    if os.path.exists(disruption_file):
+        try:
+            with open(disruption_file, "r", encoding="utf-8") as f:
+                d_curr = json.load(f)
+            sorted_d = sorted(
+                [(k, v) for k, v in d_curr.items() if isinstance(v, dict)],
+                key=lambda x: (x[1].get("ai_pct", 0), x[1].get("mentions_this_week", 0)),
+                reverse=True
+            )
+            if sorted_d:
+                top_k, top_v = sorted_d[0]
+                disruption_snapshot["most_disrupted_skill"] = top_v.get("name_vi", top_k)
+                disruption_snapshot["ai_pct"] = top_v.get("ai_pct", 88)
+        except Exception:
+            pass
+
+    if os.path.exists(insights_file):
+        try:
+            with open(insights_file, "r", encoding="utf-8") as f:
+                ins_data = json.load(f)
+            s_info = ins_data.get("summary", {})
+            disruption_snapshot["safe_count"] = s_info.get("safe_count", 16)
+            disruption_snapshot["opportunity_count"] = s_info.get("opportunity_count", 12)
+            disruption_snapshot["avoid_count"] = s_info.get("avoid_count", 2)
+        except Exception:
+            pass
+
+    if os.path.exists(new_roles_file):
+        try:
+            with open(new_roles_file, "r", encoding="utf-8") as f:
+                nr_data = json.load(f)
+            disruption_snapshot["new_roles"] = [r.get("name") for r in nr_data[:4]]
+        except Exception:
+            pass
 
     # Assemble raw JSON payload
     weekly_payload = {
@@ -476,11 +519,13 @@ def format_markdown_report(data):
         f"",
         f"---",
         f"",
-        f"## 7. AI Disruption Snapshot",
+        f"## 7. AI Disruption Snapshot (Chuyển Dịch & Thay Thế Kỹ Năng)",
         f"",
-        f"- **Kỹ năng bị AI can thiệp mạnh nhất:** `{disruption.get('most_disrupted_skill')}`",
+        f"- **Kỹ năng bị AI can thiệp mạnh nhất:** `{disruption.get('most_disrupted_skill')}` ({disruption.get('ai_pct')}%)",
         f"- **Tỷ lệ mã nguồn / tác vụ AI hỗ trợ:** **{disruption.get('ai_pct')}%** (Thay đổi so với tuần trước: `{disruption.get('change')}`)",
-        f"- **Đánh giá chuyển dịch:** AI Agent đã có thể tự động sinh mã driver ngoại vi và firmware kiểm thử (như ESP-Mosaico). Lợi thế cạnh tranh chuyển dịch từ người *viết code driver* sang người *am hiểu phần cứng thực tế và kiểm chuẩn cảm biến môi trường*.",
+        f"- **Phân bổ 30 kỹ năng theo dõi:** 🟢 An toàn: **{disruption.get('safe_count', 16)}** skills (<30%) | 🟡 Cơ hội cầu nối: **{disruption.get('opportunity_count', 12)}** skills (30-80%) | 🔴 Cần tránh: **{disruption.get('avoid_count', 2)}** skills (>80%)",
+        f"- **Vị trí công việc mới nổi bật:** {', '.join([f'`{r}`' for r in disruption.get('new_roles', [])]) if disruption.get('new_roles') else '`AI Hardware Integrator`, `Embodied AI Specialist`'}",
+        f"- **Đánh giá chuyển dịch:** AI Agent đã có thể tự động sinh mã boilerplate và hỗ trợ layout mạch. Lợi thế cạnh tranh chuyển dịch từ người *viết code boilerplate* sang người *am hiểu phần cứng thực tế, tích hợp TinyML và làm cầu nối kiến trúc hệ thống*.",
         f"",
         f"---",
         f"",

@@ -48,6 +48,9 @@ jobs:
       - name: Generate Repo Combos and Product Ideas (Phase 12)
         run: python scripts/repo_combos.py
 
+      - name: Analyze AI Disruption Radar (Phase 16)
+        run: python scripts/ai_disruption.py
+
       - name: Generate Daily Digest and send Telegram (Phase 10)
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

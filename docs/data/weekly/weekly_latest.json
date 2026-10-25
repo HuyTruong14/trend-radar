@@ -2,14 +2,14 @@
   "week": "W43",
   "start_date": "2026-10-21",
   "end_date": "2026-10-27",
-  "created_at": "2026-10-25T13:25:37.791272+07:00",
+  "created_at": "2026-10-25T13:57:13.401327+07:00",
   "previous_week": "W42",
   "stats": {
-    "total_signals": 563,
-    "total_opportunities": 234,
-    "build_ready": 1,
-    "research": 57,
-    "watch": 176
+    "total_signals": 748,
+    "total_opportunities": 285,
+    "build_ready": 7,
+    "research": 80,
+    "watch": 198
   },
   "prev_stats": {
     "total_signals": 482,
@@ -19,6 +19,30 @@
     "watch": 134
   },
   "top_opportunities": [
+    {
+      "id": "opp_2026_1024_0125fbf3",
+      "title": "ishiniayodya610/J26-SE-351",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+      "url": "https://github.com/ishiniayodya610/J26-SE-351"
+    },
+    {
+      "id": "opp_2026_1024_90a589f8",
+      "title": "forgotmenet/Iotlab-Automation-Test",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
+      "url": "https://github.com/forgotmenet/Iotlab-Automation-Test"
+    },
     {
       "id": "opp_2026_1024_499128aa",
       "title": "mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
@@ -32,55 +56,39 @@
       "url": "https://github.com/mohamedsadhathj-techwork/Smart-Aquaculture-Assistant"
     },
     {
-      "id": "opp_2026_1025_1008f4c5",
-      "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
-      "total": 8,
-      "stage": "research",
+      "id": "opp_2026_1024_e713d500",
+      "title": "api-evangelist/jala",
+      "total": 9,
+      "stage": "build_ready",
       "signal_type": [
         "price_shift",
         "tech_cheap"
       ],
-      "summary_vi": "Startup Eka Robotics gọi $150M phát triển robot nông nghiệp tự hành",
-      "url": "https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/"
+      "summary_vi": "Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp",
+      "url": "https://github.com/api-evangelist/jala"
     },
     {
-      "id": "opp_2026_1024_6f42dcac",
-      "title": "AGCO and Agility Robotics to Pilot Digit Humanoid Robot at Hesston, Kansas, Plant",
-      "total": 8,
-      "stage": "research",
+      "id": "opp_2026_1024_0968efcc",
+      "title": "Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
+      "total": 9,
+      "stage": "build_ready",
       "signal_type": [
         "price_shift",
         "tech_cheap"
       ],
-      "summary_vi": "Thử nghiệm robot hình người tự hành trong nhà máy sản xuất",
-      "url": "https://igrownews.com/agco-latest-news/"
-    },
-    {
-      "id": "opp_2026_1024_e215d300",
-      "title": "5 Interesting Startup Deals You May Have Missed: Robot Training, Space Lasers And Greener Cement",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Dòng vốn đầu tư mới vào huấn luyện robot và vật liệu xanh",
-      "url": "https://news.crunchbase.com/venture/interesting-startup-deals-robots-ai-gaming-clean-tech/"
-    },
-    {
-      "id": "opp_2026_1024_d88ee6b6",
-      "title": "Niqo Robotics Unveils 46-Foot RoboWeeder F50 for Specialty Crop Farms",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Robot nông nghiệp tự hành phun thuốc diệt cỏ chính xác cao",
-      "url": "https://igrownews.com/niqo-robotics-latest-news/"
+      "summary_vi": "Dự đoán chất lượng nước thời gian thực bằng IoT và máy học",
+      "url": "https://github.com/Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-"
     }
   ],
   "funding_deals": [
+    {
+      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
+      "type": "Gọi vốn",
+      "amount": "$20K",
+      "sector": "hardware",
+      "sector_vi": "Phần cứng & IoT",
+      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
+    },
     {
       "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
       "type": "Gọi vốn",
@@ -106,14 +114,6 @@
       "url": "https://www.therobotreport.com/kodama-raises-7m-bring-robotics-forestry/"
     },
     {
-      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
-      "type": "Gọi vốn",
-      "amount": "$20K",
-      "sector": "hardware",
-      "sector_vi": "Phần cứng & IoT",
-      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
-    },
-    {
       "title": "Metron Acquires H2O Degree to Add Submetering and Leak Detection",
       "type": "M&A",
       "amount": "N/A",
@@ -125,48 +125,48 @@
   "hot_topics": {
     "reddit_top3": [
       {
+        "title": "Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM",
+        "subreddit": "r/LocalLLaMA",
+        "upvotes": 720,
+        "summary_vi": "Chạy mô hình LLM 70B tối ưu trên phần cứng cá nhân với KV cache 4-bit",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xe_70b_quant/"
+      },
+      {
+        "title": "Best workflows for automated code refactoring and multi-file project architecture in 2026",
+        "subreddit": "r/ChatGPT",
+        "upvotes": 650,
+        "summary_vi": "Quy trình ứng dụng AI tự động hóa rà soát code và tái cấu trúc dự án",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1xe_code_workflow/"
+      },
+      {
         "title": "Embodied intelligence breakthroughs: From language models to physical world manipulation",
         "subreddit": "r/singularity",
         "upvotes": 640,
         "summary_vi": "Đột phá AI hiện thân kết hợp mô hình ngôn ngữ với thao tác vật lý",
         "url": "https://www.reddit.com/r/singularity/comments/1xe_embodied_ai/"
-      },
-      {
-        "title": "Autonomous robotics and physical AI are decoupling manufacturing from labor shortages",
-        "subreddit": "r/Futurology",
-        "upvotes": 580,
-        "summary_vi": "Robot tự hành và AI vật lý giúp giải quyết bài toán thiếu hụt nhân lực",
-        "url": "https://www.reddit.com/r/Futurology/comments/1xe_robotics_labor/"
-      },
-      {
-        "title": "Cambridge Analytica's fallout is still costing Meta, this time $25 billion in New Mexico",
-        "subreddit": "r/technology",
-        "upvotes": 520,
-        "summary_vi": "Meta đối mặt vụ kiện và áp lực pháp lý 25 tỷ USD về bảo mật dữ liệu",
-        "url": "https://www.reddit.com/r/technology/comments/1xdlpex/cambridge_analyticas_fallout_is_still_costing/"
       }
     ],
     "google_trends_top3": [
       {
         "keyword": "electric vehicle",
-        "volume": 72,
-        "change": "+18%",
+        "volume": 37,
+        "change": "-8%",
         "summary_vi": "Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc",
         "link": "https://trends.google.com/trends/explore?q=electric%20vehicle&date=today+1-m"
       },
       {
-        "keyword": "AI hardware",
-        "volume": 65,
-        "change": "+42%",
-        "summary_vi": "Làn sóng tìm kiếm chip chuyên dụng và phần cứng tăng tốc AI",
-        "link": "https://trends.google.com/trends/explore?q=AI%20hardware&date=today+1-m"
-      },
-      {
         "keyword": "renewable energy",
-        "volume": 58,
-        "change": "+15%",
+        "volume": 24,
+        "change": "-40%",
         "summary_vi": "Xu hướng chuyển dịch năng lượng tái tạo và lưu trữ điện",
         "link": "https://trends.google.com/trends/explore?q=renewable%20energy&date=today+1-m"
+      },
+      {
+        "keyword": "AI hardware",
+        "volume": 23,
+        "change": "-12%",
+        "summary_vi": "Làn sóng tìm kiếm chip chuyên dụng và phần cứng tăng tốc AI",
+        "link": "https://trends.google.com/trends/explore?q=AI%20hardware&date=today+1-m"
       }
     ],
     "twitter_top3": [
@@ -192,9 +192,9 @@
   },
   "tech_frequency": {
     "ESP32": {
-      "count": 23,
+      "count": 28,
       "prev_week": 15,
-      "change_pct": 53
+      "change_pct": 87
     },
     "TinyML": {
       "count": 15,
@@ -232,9 +232,9 @@
       "change_pct": 36
     },
     "Computer Vision": {
-      "count": 0,
+      "count": 2,
       "prev_week": 1,
-      "change_pct": -100
+      "change_pct": 100
     },
     "BLE": {
       "count": 0,
@@ -242,39 +242,48 @@
       "change_pct": -100
     },
     "MQTT": {
-      "count": 5,
-      "prev_week": 3,
-      "change_pct": 67
+      "count": 7,
+      "prev_week": 4,
+      "change_pct": 75
     },
     "Humanoid": {
-      "count": 8,
-      "prev_week": 5,
-      "change_pct": 60
+      "count": 10,
+      "prev_week": 7,
+      "change_pct": 43
     },
     "Robotics": {
-      "count": 41,
+      "count": 62,
       "prev_week": 18,
-      "change_pct": 128
+      "change_pct": 244
     },
     "Sensor": {
-      "count": 21,
+      "count": 29,
       "prev_week": 25,
-      "change_pct": -16
+      "change_pct": 16
     }
   },
   "new_terms": [
-    "LR2021",
-    "RoboBusiness",
-    "SpectralCanary",
-    "EpiSEM",
+    "OpenAI",
+    "ChatGPT",
     "GR8_TECH",
-    "BeagleBoard",
-    "PocketBeagle",
-    "BrickWright"
+    "RoboWeeder",
+    "SenseUP",
+    "LR2021",
+    "DeepMind",
+    "DeepSeek"
   ],
   "disruption_snapshot": {
-    "most_disrupted_skill": "Viết firmware cơ bản & driver vi điều khiển",
-    "ai_pct": 60,
-    "change": "+3%"
+    "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",
+    "ai_pct": 88,
+    "change": "+4%",
+    "safe_count": 16,
+    "opportunity_count": 12,
+    "avoid_count": 2,
+    "new_roles": [
+      "AI Hardware Integrator",
+      "AI iGaming Experience Architect",
+      "AI Agent Engineer",
+      "Embodied AI Specialist"
+    ]
   }
 }

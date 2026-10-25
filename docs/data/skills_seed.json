@@ -1,0 +1,279 @@
+{
+  "sectors": {
+    "hardware_iot": {
+      "name_vi": "Phần cứng & IoT",
+      "positions": {
+        "iot_hardware_engineer": {
+          "name_vi": "IoT Hardware Engineer",
+          "is_new": false,
+          "replaces": null,
+          "skills": {
+            "pcb_design": {
+              "name_vi": "Thiết kế mạch PCB",
+              "base_ai_pct": 48,
+              "keywords": ["AI PCB", "Flux.ai", "Quilter", "automated layout", "pcb routing", "kicad", "circuit design", "altium"],
+              "learn_resources": ["KiCad 8.0 Tutorial", "Flux.ai Web EDA", "Quilter AI PCB Layout"]
+            },
+            "firmware_dev": {
+              "name_vi": "Lập trình nhúng & Driver phần cứng",
+              "base_ai_pct": 42,
+              "keywords": ["firmware copilot", "driver generation", "C embedded", "esp32 driver", "embedded C++", "hal driver", "mcu firmware"],
+              "learn_resources": ["ESP-IDF Programming Guide", "Embedded Systems with ARM Cortex-M", "Modern C++ for Embedded"]
+            },
+            "soldering_assembly": {
+              "name_vi": "Hàn linh kiện & Lắp ráp bo mạch",
+              "base_ai_pct": 5,
+              "keywords": ["soldering", "soldering iron", "manual assembly", "smt hand soldering", "rework station", "physical soldering"],
+              "learn_resources": ["PACE Soldering Lessons", "SMD Soldering Masterclass YouTube"]
+            }
+          }
+        },
+        "ai_hardware_integrator": {
+          "name_vi": "AI Hardware Integrator",
+          "is_new": true,
+          "replaces": "Embedded Engineer truyền thống",
+          "skills": {
+            "tinyml_deploy": {
+              "name_vi": "Tích hợp TinyML vào vi điều khiển",
+              "base_ai_pct": 20,
+              "keywords": ["TinyML", "Edge AI deploy", "ONNX on MCU", "tflite micro", "quantized model", "tinyml mcu", "edge impulse"],
+              "learn_resources": ["Harvard TinyML edX", "TensorFlow Lite for Microcontrollers", "Edge Impulse Academy"]
+            },
+            "sensor_fusion_ai": {
+              "name_vi": "Kết hợp cảm biến đa luồng với AI",
+              "base_ai_pct": 24,
+              "keywords": ["sensor fusion", "kalman filter", "anomaly detection edge", "vibration analysis", "imu ai", "multimodal sensor"],
+              "learn_resources": ["Applied Sensor Fusion Course", "Edge AI Anomaly Detection Handbook"]
+            },
+            "npu_acceleration": {
+              "name_vi": "Tối ưu hóa mô hình trên NPU biên",
+              "base_ai_pct": 16,
+              "keywords": ["NPU edge", "RK3588", "Hailo", "microcontroller vector", "kendryte", "edge tpu", "ai acceleration mcu"],
+              "learn_resources": ["Edge NPU Architecture & Quantization", "Hailo-8 AI Acceleration Toolkit"]
+            }
+          }
+        }
+      }
+    },
+    "igaming_betting": {
+      "name_vi": "iGaming & Betting Tech",
+      "positions": {
+        "odds_compiler": {
+          "name_vi": "Chuyên viên định tỷ lệ cược (Odds Compiler)",
+          "is_new": false,
+          "replaces": null,
+          "skills": {
+            "manual_odds_pricing": {
+              "name_vi": "Tính toán tỷ lệ kèo thủ công",
+              "base_ai_pct": 84,
+              "keywords": ["automated odds", "ai pricing", "dynamic odds", "sportsbook automation", "pricing model", "odds algorithm"],
+              "learn_resources": ["Quantitative Sports Modelling", "Algorithmic Trading & Pricing Basics"]
+            },
+            "risk_management": {
+              "name_vi": "Quản trị rủi ro & Phát hiện gian lận cược",
+              "base_ai_pct": 62,
+              "keywords": ["betting risk", "fraud detection betting", "syndicate detection", "oddsmaking risk", "arbitrage betting ai"],
+              "learn_resources": ["Sportsbook Risk Engineering", "Graph Analytics for Fraud Detection"]
+            },
+            "compliance_reporting": {
+              "name_vi": "Báo cáo tuân thủ & Giấy phép cờ bạc",
+              "base_ai_pct": 58,
+              "keywords": ["igaming compliance", "anti-money laundering", "regulatory reporting", "kyc automation", "gambling license audit"],
+              "learn_resources": ["iGaming Regulatory Standards Course", "AML & Responsible Gaming Frameworks"]
+            }
+          }
+        },
+        "ai_casino_experience_designer": {
+          "name_vi": "AI iGaming Experience Architect",
+          "is_new": true,
+          "replaces": "Game Content Coordinator",
+          "skills": {
+            "personalized_game_feed": {
+              "name_vi": "Cá nhân hóa sảnh game thời gian thực",
+              "base_ai_pct": 38,
+              "keywords": ["personalized lobby", "recommendation engine casino", "realtime game feed", "player personalization", "contextual bandit"],
+              "learn_resources": ["Real-time Recommendation Systems", "Reinforcement Learning for Personalization"]
+            },
+            "dynamic_math_model": {
+              "name_vi": "Thiết kế mô hình toán học & RTP động",
+              "base_ai_pct": 34,
+              "keywords": ["dynamic rtp", "slot math model", "game volatility", "payout optimization", "monte carlo game simulation"],
+              "learn_resources": ["Advanced Casino Mathematics", "Monte Carlo Simulation for Slots"]
+            },
+            "responsible_gaming_ai": {
+              "name_vi": "AI phát hiện sớm hành vi chơi mất kiểm soát",
+              "base_ai_pct": 28,
+              "keywords": ["responsible gaming ai", "harm minimization", "player behavior analytics", "problem gambling detection"],
+              "learn_resources": ["Behavioral Analytics in Gaming", "Ethical AI & Player Protection Standards"]
+            }
+          }
+        }
+      }
+    },
+    "software_it": {
+      "name_vi": "IT / Phần mềm",
+      "positions": {
+        "fullstack_developer": {
+          "name_vi": "Kỹ sư Fullstack Web",
+          "is_new": false,
+          "replaces": null,
+          "skills": {
+            "boilerplate_crud": {
+              "name_vi": "Viết mã Boilerplate CRUD & API cơ bản",
+              "base_ai_pct": 88,
+              "keywords": ["crud boilerplate", "copilot write api", "generate backend code", "cursor ai crud", "scaffolding api", "rest boilerplate"],
+              "learn_resources": ["Modern Code Generation with LLMs", "Schema-first API Design"]
+            },
+            "system_architecture": {
+              "name_vi": "Thiết kế kiến trúc hệ thống phân tán",
+              "base_ai_pct": 32,
+              "keywords": ["system architecture", "distributed system", "microservices architecture", "scalability design", "event driven architecture"],
+              "learn_resources": ["Designing Data-Intensive Applications", "System Design Primer"]
+            },
+            "debugging_performance": {
+              "name_vi": "Tối ưu hiệu năng & Xử lý lỗi phức tạp",
+              "base_ai_pct": 38,
+              "keywords": ["memory leak", "profiling performance", "distributed tracing", "concurrency bug", "database query optimization"],
+              "learn_resources": ["Systems Performance: Enterprise and the Cloud", "Linux Observability with BPF"]
+            }
+          }
+        },
+        "ai_agent_engineer": {
+          "name_vi": "AI Agent Engineer",
+          "is_new": true,
+          "replaces": "Traditional Backend API Developer",
+          "skills": {
+            "agent_workflow_orchestration": {
+              "name_vi": "Điều phối luồng công việc AI Agent đa bước",
+              "base_ai_pct": 22,
+              "keywords": ["agent orchestration", "langgraph", "crewai", "multi-agent system", "autogen", "agent workflow", "hermes agent"],
+              "learn_resources": ["LangGraph in Production", "Multi-Agent System Architecture Deep Dive"]
+            },
+            "rag_context_engineering": {
+              "name_vi": "Kỹ thuật tối ưu ngữ cảnh & RAG nâng cao",
+              "base_ai_pct": 28,
+              "keywords": ["advanced rag", "vector database retrieval", "context window", "reranking", "hybrid search", "chunking strategy"],
+              "learn_resources": ["Building Advanced RAG Systems", "Vector Search & Retrieval Mechanics"]
+            },
+            "eval_guardrails_dev": {
+              "name_vi": "Xây dựng bộ kiểm chuẩn & rào chắn an toàn (Guardrails)",
+              "base_ai_pct": 18,
+              "keywords": ["agent evaluations", "guardrails ai", "prompt injection", "eval harness", "ai safety testing", "llm benchmark"],
+              "learn_resources": ["Evaluating LLM Systems in Production", "NeMo Guardrails & Llama Guard"]
+            }
+          }
+        }
+      }
+    },
+    "manufacturing_robotics": {
+      "name_vi": "Sản xuất / Robotics",
+      "positions": {
+        "robotics_automation_engineer": {
+          "name_vi": "Kỹ sư tự động hóa Robotics",
+          "is_new": false,
+          "replaces": null,
+          "skills": {
+            "plc_programming": {
+              "name_vi": "Lập trình PLC & Giao tiếp dây chuyền",
+              "base_ai_pct": 44,
+              "keywords": ["plc programming", "structured text ai", "scada automation", "ladder logic", "factory automation code", "modbus plc"],
+              "learn_resources": ["Industrial Automation & PLC Programming", "Beckhoff TwinCAT 3 Guide"]
+            },
+            "motion_planning": {
+              "name_vi": "Quy hoạch quỹ đạo chuyển động robot",
+              "base_ai_pct": 38,
+              "keywords": ["motion planning", "trajectory optimization", "obstacle avoidance", "ros2 navigation", "moveit2", "inverse kinematics"],
+              "learn_resources": ["Modern Robotics: Mechanics & Motion", "ROS2 Nav2 & MoveIt2 Masterclass"]
+            },
+            "mechanical_calibration": {
+              "name_vi": "Cân chỉnh cơ khí & Bảo trì tay gắp",
+              "base_ai_pct": 8,
+              "keywords": ["robot calibration", "mechanical alignment", "gripper maintenance", "gearbox servicing", "backlash tuning", "hands-on robot"],
+              "learn_resources": ["Industrial Robot Maintenance Manuals", "Precision Mechanics & Drive Alignment"]
+            }
+          }
+        },
+        "embodied_ai_specialist": {
+          "name_vi": "Embodied AI Specialist",
+          "is_new": true,
+          "replaces": "Robot Vision Programmer truyền thống",
+          "skills": {
+            "vla_model_adaptation": {
+              "name_vi": "Tùy biến mô hình Vision-Language-Action (VLA)",
+              "base_ai_pct": 24,
+              "keywords": ["vision language action", "VLA model", "openvla", "octo robot", "robot policy", "embodied ai", "spatial intelligence"],
+              "learn_resources": ["OpenVLA: An Open-Source Vision-Language-Action Model", "Embodied Intelligence Foundations"]
+            },
+            "sim2real_transfer": {
+              "name_vi": "Chuyển giao từ mô phỏng sang robot thực (Sim2Real)",
+              "base_ai_pct": 28,
+              "keywords": ["sim2real", "isaac sim", "reinforcement learning robot", "domain randomization", "mujoco", "genesis physics"],
+              "learn_resources": ["NVIDIA Isaac Sim Robotics Workflows", "Domain Randomization in Robot Learning"]
+            },
+            "tactile_feedback_tuning": {
+              "name_vi": "Hiệu chỉnh phản hồi xúc giác & Cảm biến lực",
+              "base_ai_pct": 14,
+              "keywords": ["tactile sensor", "force torque feedback", "slip detection", "haptic tuning", "gelsight", "robot touch sensor"],
+              "learn_resources": ["Tactile Sensing for Robotic Manipulation", "Force-Controlled Manipulation Handbook"]
+            }
+          }
+        }
+      }
+    },
+    "agtech_aquaculture": {
+      "name_vi": "Nông nghiệp / Thủy sản",
+      "positions": {
+        "aquaculture_technician": {
+          "name_vi": "Kỹ thuật viên quản lý ao nuôi thủy sản",
+          "is_new": false,
+          "replaces": null,
+          "skills": {
+            "manual_water_sampling": {
+              "name_vi": "Lấy mẫu nước & Đo chỉ số thủ công",
+              "base_ai_pct": 68,
+              "keywords": ["automated water test", "continuous probe monitoring", "water sensor replaces manual", "telemetry replaces sampling", "optical dissolved oxygen"],
+              "learn_resources": ["Aquaculture Water Quality Handbook", "Modern Sensor Technologies in Pond Farming"]
+            },
+            "disease_inspection": {
+              "name_vi": "Nhận diện mầm bệnh thủy sản bằng mắt",
+              "base_ai_pct": 52,
+              "keywords": ["computer vision shrimp", "ai shrimp health", "image classification aquaculture", "shrimp pathology ai", "algae bloom vision"],
+              "learn_resources": ["Shrimp Pathology Guide", "Computer Vision for Aquaculture Inspection"]
+            },
+            "pond_aeration_maintenance": {
+              "name_vi": "Bảo dưỡng cơ điện quạt nước ao nuôi",
+              "base_ai_pct": 6,
+              "keywords": ["aerator maintenance", "paddlewheel repair", "pond motor electrical", "hands-on pond", "submersible pump repair"],
+              "learn_resources": ["Pond Aeration Mechanics & Efficiency", "Farm Electro-Mechanical Maintenance"]
+            }
+          }
+        },
+        "smart_farm_systems_architect": {
+          "name_vi": "Kiến trúc sư hệ thống nông nghiệp thông minh",
+          "is_new": true,
+          "replaces": "Cán bộ nông nghiệp ghi chép truyền thống",
+          "skills": {
+            "iot_network_planning": {
+              "name_vi": "Quy hoạch mạng cảm biến không dây trang trại",
+              "base_ai_pct": 18,
+              "keywords": ["farm wireless network", "lorawan farm", "sensor node topology", "solar telemetry node", "mesh sensor network"],
+              "learn_resources": ["LoRaWAN in Agriculture Planning Guide", "Remote Environmental Telemetry Design"]
+            },
+            "predictive_growth_modeling": {
+              "name_vi": "Mô hình hóa sinh trưởng & Dự báo sản lượng",
+              "base_ai_pct": 28,
+              "keywords": ["biomass estimation", "growth curve prediction", "feed conversion ratio", "yield forecasting ai", "aquaculture prediction model"],
+              "learn_resources": ["Predictive Analytics for Precision Aquaculture", "Bio-energetic Growth Modeling"]
+            },
+            "automated_dosing_control": {
+              "name_vi": "Lập trình hệ thống châm dinh dưỡng & Vi sinh tự động",
+              "base_ai_pct": 22,
+              "keywords": ["automated dosing", "ph do feedback loop", "peristaltic pump controller", "auto feeder control", "chemical dosing automation"],
+              "learn_resources": ["Closed-Loop Chemical Dosing Systems", "Automation in Precision Aquaculture"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

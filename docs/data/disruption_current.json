@@ -1,0 +1,485 @@
+{
+  "pcb_design": {
+    "skill_key": "pcb_design",
+    "name_vi": "Thiết kế mạch PCB",
+    "sector": "Phần cứng & IoT",
+    "sector_key": "hardware_iot",
+    "position": "IoT Hardware Engineer",
+    "position_key": "iot_hardware_engineer",
+    "ai_pct": 48,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "opportunity",
+    "learn_resources": [
+      "KiCad 8.0 Tutorial",
+      "Flux.ai Web EDA",
+      "Quilter AI PCB Layout"
+    ]
+  },
+  "firmware_dev": {
+    "skill_key": "firmware_dev",
+    "name_vi": "Lập trình nhúng & Driver phần cứng",
+    "sector": "Phần cứng & IoT",
+    "sector_key": "hardware_iot",
+    "position": "IoT Hardware Engineer",
+    "position_key": "iot_hardware_engineer",
+    "ai_pct": 42,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "opportunity",
+    "learn_resources": [
+      "ESP-IDF Programming Guide",
+      "Embedded Systems with ARM Cortex-M",
+      "Modern C++ for Embedded"
+    ]
+  },
+  "soldering_assembly": {
+    "skill_key": "soldering_assembly",
+    "name_vi": "Hàn linh kiện & Lắp ráp bo mạch",
+    "sector": "Phần cứng & IoT",
+    "sector_key": "hardware_iot",
+    "position": "IoT Hardware Engineer",
+    "position_key": "iot_hardware_engineer",
+    "ai_pct": 5,
+    "mentions_this_week": 0,
+    "trend": "stable",
+    "level": "safe",
+    "learn_resources": [
+      "PACE Soldering Lessons",
+      "SMD Soldering Masterclass YouTube"
+    ]
+  },
+  "tinyml_deploy": {
+    "skill_key": "tinyml_deploy",
+    "name_vi": "Tích hợp TinyML vào vi điều khiển",
+    "sector": "Phần cứng & IoT",
+    "sector_key": "hardware_iot",
+    "position": "AI Hardware Integrator",
+    "position_key": "ai_hardware_integrator",
+    "ai_pct": 20,
+    "mentions_this_week": 0,
+    "trend": "stable",
+    "level": "safe",
+    "learn_resources": [
+      "Harvard TinyML edX",
+      "TensorFlow Lite for Microcontrollers",
+      "Edge Impulse Academy"
+    ]
+  },
+  "sensor_fusion_ai": {
+    "skill_key": "sensor_fusion_ai",
+    "name_vi": "Kết hợp cảm biến đa luồng với AI",
+    "sector": "Phần cứng & IoT",
+    "sector_key": "hardware_iot",
+    "position": "AI Hardware Integrator",
+    "position_key": "ai_hardware_integrator",
+    "ai_pct": 24,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "safe",
+    "learn_resources": [
+      "Applied Sensor Fusion Course",
+      "Edge AI Anomaly Detection Handbook"
+    ]
+  },
+  "npu_acceleration": {
+    "skill_key": "npu_acceleration",
+    "name_vi": "Tối ưu hóa mô hình trên NPU biên",
+    "sector": "Phần cứng & IoT",
+    "sector_key": "hardware_iot",
+    "position": "AI Hardware Integrator",
+    "position_key": "ai_hardware_integrator",
+    "ai_pct": 16,
+    "mentions_this_week": 0,
+    "trend": "stable",
+    "level": "safe",
+    "learn_resources": [
+      "Edge NPU Architecture & Quantization",
+      "Hailo-8 AI Acceleration Toolkit"
+    ]
+  },
+  "manual_odds_pricing": {
+    "skill_key": "manual_odds_pricing",
+    "name_vi": "Tính toán tỷ lệ kèo thủ công",
+    "sector": "iGaming & Betting Tech",
+    "sector_key": "igaming_betting",
+    "position": "Chuyên viên định tỷ lệ cược (Odds Compiler)",
+    "position_key": "odds_compiler",
+    "ai_pct": 84,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "avoid",
+    "learn_resources": [
+      "Quantitative Sports Modelling",
+      "Algorithmic Trading & Pricing Basics"
+    ]
+  },
+  "risk_management": {
+    "skill_key": "risk_management",
+    "name_vi": "Quản trị rủi ro & Phát hiện gian lận cược",
+    "sector": "iGaming & Betting Tech",
+    "sector_key": "igaming_betting",
+    "position": "Chuyên viên định tỷ lệ cược (Odds Compiler)",
+    "position_key": "odds_compiler",
+    "ai_pct": 62,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "opportunity",
+    "learn_resources": [
+      "Sportsbook Risk Engineering",
+      "Graph Analytics for Fraud Detection"
+    ]
+  },
+  "compliance_reporting": {
+    "skill_key": "compliance_reporting",
+    "name_vi": "Báo cáo tuân thủ & Giấy phép cờ bạc",
+    "sector": "iGaming & Betting Tech",
+    "sector_key": "igaming_betting",
+    "position": "Chuyên viên định tỷ lệ cược (Odds Compiler)",
+    "position_key": "odds_compiler",
+    "ai_pct": 58,
+    "mentions_this_week": 3,
+    "trend": "rising",
+    "level": "opportunity",
+    "learn_resources": [
+      "iGaming Regulatory Standards Course",
+      "AML & Responsible Gaming Frameworks"
+    ]
+  },
+  "personalized_game_feed": {
+    "skill_key": "personalized_game_feed",
+    "name_vi": "Cá nhân hóa sảnh game thời gian thực",
+    "sector": "iGaming & Betting Tech",
+    "sector_key": "igaming_betting",
+    "position": "AI iGaming Experience Architect",
+    "position_key": "ai_casino_experience_designer",
+    "ai_pct": 38,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "opportunity",
+    "learn_resources": [
+      "Real-time Recommendation Systems",
+      "Reinforcement Learning for Personalization"
+    ]
+  },
+  "dynamic_math_model": {
+    "skill_key": "dynamic_math_model",
+    "name_vi": "Thiết kế mô hình toán học & RTP động",
+    "sector": "iGaming & Betting Tech",
+    "sector_key": "igaming_betting",
+    "position": "AI iGaming Experience Architect",
+    "position_key": "ai_casino_experience_designer",
+    "ai_pct": 34,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "opportunity",
+    "learn_resources": [
+      "Advanced Casino Mathematics",
+      "Monte Carlo Simulation for Slots"
+    ]
+  },
+  "responsible_gaming_ai": {
+    "skill_key": "responsible_gaming_ai",
+    "name_vi": "AI phát hiện sớm hành vi chơi mất kiểm soát",
+    "sector": "iGaming & Betting Tech",
+    "sector_key": "igaming_betting",
+    "position": "AI iGaming Experience Architect",
+    "position_key": "ai_casino_experience_designer",
+    "ai_pct": 28,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "safe",
+    "learn_resources": [
+      "Behavioral Analytics in Gaming",
+      "Ethical AI & Player Protection Standards"
+    ]
+  },
+  "boilerplate_crud": {
+    "skill_key": "boilerplate_crud",
+    "name_vi": "Viết mã Boilerplate CRUD & API cơ bản",
+    "sector": "IT / Phần mềm",
+    "sector_key": "software_it",
+    "position": "Kỹ sư Fullstack Web",
+    "position_key": "fullstack_developer",
+    "ai_pct": 88,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "avoid",
+    "learn_resources": [
+      "Modern Code Generation with LLMs",
+      "Schema-first API Design"
+    ]
+  },
+  "system_architecture": {
+    "skill_key": "system_architecture",
+    "name_vi": "Thiết kế kiến trúc hệ thống phân tán",
+    "sector": "IT / Phần mềm",
+    "sector_key": "software_it",
+    "position": "Kỹ sư Fullstack Web",
+    "position_key": "fullstack_developer",
+    "ai_pct": 32,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "opportunity",
+    "learn_resources": [
+      "Designing Data-Intensive Applications",
+      "System Design Primer"
+    ]
+  },
+  "debugging_performance": {
+    "skill_key": "debugging_performance",
+    "name_vi": "Tối ưu hiệu năng & Xử lý lỗi phức tạp",
+    "sector": "IT / Phần mềm",
+    "sector_key": "software_it",
+    "position": "Kỹ sư Fullstack Web",
+    "position_key": "fullstack_developer",
+    "ai_pct": 38,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "opportunity",
+    "learn_resources": [
+      "Systems Performance: Enterprise and the Cloud",
+      "Linux Observability with BPF"
+    ]
+  },
+  "agent_workflow_orchestration": {
+    "skill_key": "agent_workflow_orchestration",
+    "name_vi": "Điều phối luồng công việc AI Agent đa bước",
+    "sector": "IT / Phần mềm",
+    "sector_key": "software_it",
+    "position": "AI Agent Engineer",
+    "position_key": "ai_agent_engineer",
+    "ai_pct": 23,
+    "mentions_this_week": 1,
+    "trend": "rising",
+    "level": "safe",
+    "learn_resources": [
+      "LangGraph in Production",
+      "Multi-Agent System Architecture Deep Dive"
+    ]
+  },
+  "rag_context_engineering": {
+    "skill_key": "rag_context_engineering",
+    "name_vi": "Kỹ thuật tối ưu ngữ cảnh & RAG nâng cao",
+    "sector": "IT / Phần mềm",
+    "sector_key": "software_it",
+    "position": "AI Agent Engineer",
+    "position_key": "ai_agent_engineer",
+    "ai_pct": 28,
+    "mentions_this_week": 3,
+    "trend": "rising",
+    "level": "safe",
+    "learn_resources": [
+      "Building Advanced RAG Systems",
+      "Vector Search & Retrieval Mechanics"
+    ]
+  },
+  "eval_guardrails_dev": {
+    "skill_key": "eval_guardrails_dev",
+    "name_vi": "Xây dựng bộ kiểm chuẩn & rào chắn an toàn (Guardrails)",
+    "sector": "IT / Phần mềm",
+    "sector_key": "software_it",
+    "position": "AI Agent Engineer",
+    "position_key": "ai_agent_engineer",
+    "ai_pct": 18,
+    "mentions_this_week": 0,
+    "trend": "stable",
+    "level": "safe",
+    "learn_resources": [
+      "Evaluating LLM Systems in Production",
+      "NeMo Guardrails & Llama Guard"
+    ]
+  },
+  "plc_programming": {
+    "skill_key": "plc_programming",
+    "name_vi": "Lập trình PLC & Giao tiếp dây chuyền",
+    "sector": "Sản xuất / Robotics",
+    "sector_key": "manufacturing_robotics",
+    "position": "Kỹ sư tự động hóa Robotics",
+    "position_key": "robotics_automation_engineer",
+    "ai_pct": 44,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "opportunity",
+    "learn_resources": [
+      "Industrial Automation & PLC Programming",
+      "Beckhoff TwinCAT 3 Guide"
+    ]
+  },
+  "motion_planning": {
+    "skill_key": "motion_planning",
+    "name_vi": "Quy hoạch quỹ đạo chuyển động robot",
+    "sector": "Sản xuất / Robotics",
+    "sector_key": "manufacturing_robotics",
+    "position": "Kỹ sư tự động hóa Robotics",
+    "position_key": "robotics_automation_engineer",
+    "ai_pct": 38,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "opportunity",
+    "learn_resources": [
+      "Modern Robotics: Mechanics & Motion",
+      "ROS2 Nav2 & MoveIt2 Masterclass"
+    ]
+  },
+  "mechanical_calibration": {
+    "skill_key": "mechanical_calibration",
+    "name_vi": "Cân chỉnh cơ khí & Bảo trì tay gắp",
+    "sector": "Sản xuất / Robotics",
+    "sector_key": "manufacturing_robotics",
+    "position": "Kỹ sư tự động hóa Robotics",
+    "position_key": "robotics_automation_engineer",
+    "ai_pct": 8,
+    "mentions_this_week": 0,
+    "trend": "stable",
+    "level": "safe",
+    "learn_resources": [
+      "Industrial Robot Maintenance Manuals",
+      "Precision Mechanics & Drive Alignment"
+    ]
+  },
+  "vla_model_adaptation": {
+    "skill_key": "vla_model_adaptation",
+    "name_vi": "Tùy biến mô hình Vision-Language-Action (VLA)",
+    "sector": "Sản xuất / Robotics",
+    "sector_key": "manufacturing_robotics",
+    "position": "Embodied AI Specialist",
+    "position_key": "embodied_ai_specialist",
+    "ai_pct": 24,
+    "mentions_this_week": 4,
+    "trend": "rising",
+    "level": "safe",
+    "learn_resources": [
+      "OpenVLA: An Open-Source Vision-Language-Action Model",
+      "Embodied Intelligence Foundations"
+    ]
+  },
+  "sim2real_transfer": {
+    "skill_key": "sim2real_transfer",
+    "name_vi": "Chuyển giao từ mô phỏng sang robot thực (Sim2Real)",
+    "sector": "Sản xuất / Robotics",
+    "sector_key": "manufacturing_robotics",
+    "position": "Embodied AI Specialist",
+    "position_key": "embodied_ai_specialist",
+    "ai_pct": 28,
+    "mentions_this_week": 1,
+    "trend": "rising",
+    "level": "safe",
+    "learn_resources": [
+      "NVIDIA Isaac Sim Robotics Workflows",
+      "Domain Randomization in Robot Learning"
+    ]
+  },
+  "tactile_feedback_tuning": {
+    "skill_key": "tactile_feedback_tuning",
+    "name_vi": "Hiệu chỉnh phản hồi xúc giác & Cảm biến lực",
+    "sector": "Sản xuất / Robotics",
+    "sector_key": "manufacturing_robotics",
+    "position": "Embodied AI Specialist",
+    "position_key": "embodied_ai_specialist",
+    "ai_pct": 14,
+    "mentions_this_week": 0,
+    "trend": "stable",
+    "level": "safe",
+    "learn_resources": [
+      "Tactile Sensing for Robotic Manipulation",
+      "Force-Controlled Manipulation Handbook"
+    ]
+  },
+  "manual_water_sampling": {
+    "skill_key": "manual_water_sampling",
+    "name_vi": "Lấy mẫu nước & Đo chỉ số thủ công",
+    "sector": "Nông nghiệp / Thủy sản",
+    "sector_key": "agtech_aquaculture",
+    "position": "Kỹ thuật viên quản lý ao nuôi thủy sản",
+    "position_key": "aquaculture_technician",
+    "ai_pct": 68,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "opportunity",
+    "learn_resources": [
+      "Aquaculture Water Quality Handbook",
+      "Modern Sensor Technologies in Pond Farming"
+    ]
+  },
+  "disease_inspection": {
+    "skill_key": "disease_inspection",
+    "name_vi": "Nhận diện mầm bệnh thủy sản bằng mắt",
+    "sector": "Nông nghiệp / Thủy sản",
+    "sector_key": "agtech_aquaculture",
+    "position": "Kỹ thuật viên quản lý ao nuôi thủy sản",
+    "position_key": "aquaculture_technician",
+    "ai_pct": 52,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "opportunity",
+    "learn_resources": [
+      "Shrimp Pathology Guide",
+      "Computer Vision for Aquaculture Inspection"
+    ]
+  },
+  "pond_aeration_maintenance": {
+    "skill_key": "pond_aeration_maintenance",
+    "name_vi": "Bảo dưỡng cơ điện quạt nước ao nuôi",
+    "sector": "Nông nghiệp / Thủy sản",
+    "sector_key": "agtech_aquaculture",
+    "position": "Kỹ thuật viên quản lý ao nuôi thủy sản",
+    "position_key": "aquaculture_technician",
+    "ai_pct": 6,
+    "mentions_this_week": 0,
+    "trend": "stable",
+    "level": "safe",
+    "learn_resources": [
+      "Pond Aeration Mechanics & Efficiency",
+      "Farm Electro-Mechanical Maintenance"
+    ]
+  },
+  "iot_network_planning": {
+    "skill_key": "iot_network_planning",
+    "name_vi": "Quy hoạch mạng cảm biến không dây trang trại",
+    "sector": "Nông nghiệp / Thủy sản",
+    "sector_key": "agtech_aquaculture",
+    "position": "Kiến trúc sư hệ thống nông nghiệp thông minh",
+    "position_key": "smart_farm_systems_architect",
+    "ai_pct": 18,
+    "mentions_this_week": 0,
+    "trend": "stable",
+    "level": "safe",
+    "learn_resources": [
+      "LoRaWAN in Agriculture Planning Guide",
+      "Remote Environmental Telemetry Design"
+    ]
+  },
+  "predictive_growth_modeling": {
+    "skill_key": "predictive_growth_modeling",
+    "name_vi": "Mô hình hóa sinh trưởng & Dự báo sản lượng",
+    "sector": "Nông nghiệp / Thủy sản",
+    "sector_key": "agtech_aquaculture",
+    "position": "Kiến trúc sư hệ thống nông nghiệp thông minh",
+    "position_key": "smart_farm_systems_architect",
+    "ai_pct": 28,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "safe",
+    "learn_resources": [
+      "Predictive Analytics for Precision Aquaculture",
+      "Bio-energetic Growth Modeling"
+    ]
+  },
+  "automated_dosing_control": {
+    "skill_key": "automated_dosing_control",
+    "name_vi": "Lập trình hệ thống châm dinh dưỡng & Vi sinh tự động",
+    "sector": "Nông nghiệp / Thủy sản",
+    "sector_key": "agtech_aquaculture",
+    "position": "Kiến trúc sư hệ thống nông nghiệp thông minh",
+    "position_key": "smart_farm_systems_architect",
+    "ai_pct": 22,
+    "mentions_this_week": 0,
+    "trend": "rising",
+    "level": "safe",
+    "learn_resources": [
+      "Closed-Loop Chemical Dosing Systems",
+      "Automation in Precision Aquaculture"
+    ]
+  }
+}

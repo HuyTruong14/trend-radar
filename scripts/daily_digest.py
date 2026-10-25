@@ -397,6 +397,23 @@ def compile_daily_digest(target_date=None, dashboard_url=DEFAULT_DASHBOARD_URL):
             except Exception:
                 pass
 
+        # Phase 16: AI Disruption Highlight
+        disruption_file = os.path.join(DATA_DIR, "disruption_current.json")
+        if os.path.exists(disruption_file):
+            try:
+                with open(disruption_file, "r", encoding="utf-8") as f:
+                    disruption_data = json.load(f)
+                sorted_disrupt = sorted(
+                    [(k, v) for k, v in disruption_data.items() if isinstance(v, dict)],
+                    key=lambda x: (x[1].get("ai_pct", 0), x[1].get("mentions_this_week", 0)),
+                    reverse=True
+                )
+                if sorted_disrupt:
+                    top_k, top_v = sorted_disrupt[0]
+                    lines.append(f"• Skill bị can thiệp mạnh nhất: {top_v.get('name_vi', top_k)} ({top_v.get('ai_pct')}%)")
+            except Exception:
+                pass
+
         lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━")
         lines.append(f"\n🔗 Xem chi tiết: {dashboard_url}")
 
