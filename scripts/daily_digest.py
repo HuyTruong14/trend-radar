@@ -382,6 +382,21 @@ def compile_daily_digest(target_date=None, dashboard_url=DEFAULT_DASHBOARD_URL):
             lines.append("• Triple Signal: Không")
         lines.append(f"• Velocity: {rising_count} rising ↑ | {fading_count} fading ↓")
 
+        # Phase 13: Tech Glossary Highlight
+        tech_glossary_file = os.path.join(DATA_DIR, "tech_glossary.json")
+        if os.path.exists(tech_glossary_file):
+            try:
+                with open(tech_glossary_file, "r", encoding="utf-8") as f:
+                    glossary_data = json.load(f)
+                rising_techs = [(k, v) for k, v in glossary_data.items() if v.get("trend") == "rising"]
+                if rising_techs:
+                    rising_techs.sort(key=lambda x: (x[1].get("mentions_this_week", 0) >= 5, x[1].get("change_pct", 0), x[1].get("mentions_this_week", 0)), reverse=True)
+                    top_t, top_info = rising_techs[0]
+                    pct = top_info.get("change_pct", 0)
+                    lines.append(f"• Công nghệ nổi bật: {top_t} (↑+{pct}%)")
+            except Exception:
+                pass
+
         lines.append("\n━━━━━━━━━━━━━━━━━━━━━━━━")
         lines.append(f"\n🔗 Xem chi tiết: {dashboard_url}")
 

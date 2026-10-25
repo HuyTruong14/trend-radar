@@ -42,6 +42,9 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/score.py
 
+      - name: Extract Tech Glossary and Trends (Phase 13)
+        run: python scripts/tech_glossary.py
+
       - name: Generate Daily Digest and send Telegram (Phase 10)
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

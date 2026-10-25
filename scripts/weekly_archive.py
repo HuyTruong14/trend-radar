@@ -297,8 +297,20 @@ def generate_weekly_archive(week=None, start_date=None, end_date=None):
             "change_pct": change_pct
         }
 
-    # 8. New terms & Disruption snapshot
+    # 8. New terms & Disruption snapshot (Phase 13 Tech Glossary connection)
     new_terms = ["RP2350", "AquaSC", "RoboWeeder", "UniWALM", "Legora"]
+    tech_new_terms_file = os.path.join(DATA_DIR, "tech_new_terms.json")
+    if os.path.exists(tech_new_terms_file):
+        try:
+            with open(tech_new_terms_file, "r", encoding="utf-8") as f:
+                detected_terms = json.load(f)
+            if detected_terms and isinstance(detected_terms, list):
+                extracted = [item["term"] for item in detected_terms if "term" in item]
+                if extracted:
+                    new_terms = extracted[:8]
+        except Exception:
+            pass
+
     disruption_snapshot = {
         "most_disrupted_skill": "Viết firmware cơ bản & driver vi điều khiển",
         "ai_pct": 60,

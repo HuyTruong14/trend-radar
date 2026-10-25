@@ -1,0 +1,374 @@
+{
+  "ESP32": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển WiFi/BLE giá rẻ, phổ biến nhất cho IoT và thiết bị thông minh",
+    "aliases": ["esp32", "esp-32", "espressif esp32", "esp32-wroom", "esp32-cam"],
+    "sectors": ["IoT", "Hardware"]
+  },
+  "ESP32-S3": {
+    "type": "Hardware",
+    "description_vi": "Chip ESP32 chuyên xử lý AI tăng tốc vector và giao tiếp camera/màn hình",
+    "aliases": ["esp32-s3", "esp32s3", "esp32 s3"],
+    "sectors": ["Hardware", "Edge AI", "IoT"]
+  },
+  "ESP32-C6": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển RISC-V hỗ trợ WiFi 6, Zigbee, Thread và Matter",
+    "aliases": ["esp32-c6", "esp32c6", "esp32 c6"],
+    "sectors": ["Hardware", "IoT", "Matter"]
+  },
+  "RP2040": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển lõi kép Cortex-M0+ đầu tiên do Raspberry Pi tự thiết kế",
+    "aliases": ["rp2040", "rp-2040", "raspberry pi pico", "pi pico"],
+    "sectors": ["Hardware", "Embedded"]
+  },
+  "RP2350": {
+    "type": "Hardware",
+    "description_vi": "Thế hệ vi điều khiển kép ARM Cortex-M33 và Hazard3 RISC-V mới của Raspberry Pi",
+    "aliases": ["rp2350", "rp-2350", "raspberry pi pico 2", "pico 2"],
+    "sectors": ["Hardware", "Embedded", "RISC-V"]
+  },
+  "STM32": {
+    "type": "Hardware",
+    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
+    "aliases": ["stm32", "stm-32", "stmicroelectronics", "stm32f4", "stm32h7", "stm32f1"],
+    "sectors": ["Hardware", "Industrial", "Embedded"]
+  },
+  "Arduino": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
+    "aliases": ["arduino", "arduino uno", "arduino mega", "arduino nano", "arduino pro"],
+    "sectors": ["Hardware", "Prototyping"]
+  },
+  "Raspberry Pi": {
+    "type": "Hardware",
+    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
+    "aliases": ["raspberry pi", "rpi", "raspi", "raspberry-pi", "raspberry pi 5", "raspberry pi 4"],
+    "sectors": ["Hardware", "Linux", "IoT"]
+  },
+  "Jetson": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng máy tính nhúng tăng tốc GPU của NVIDIA cho AI thị giác và robot",
+    "aliases": ["jetson", "nvidia jetson", "jetson nano", "jetson orin", "jetson xavier"],
+    "sectors": ["Hardware", "Robotics", "Edge AI"]
+  },
+  "FPGA": {
+    "type": "Hardware",
+    "description_vi": "Mạch logic khả trình có độ trễ cực thấp cho xử lý tín hiệu và tăng tốc phần cứng",
+    "aliases": ["fpga", "xilinx", "altera", "verilog", "vhdl", "lattice fpga"],
+    "sectors": ["Hardware", "Semiconductor"]
+  },
+  "RISC-V": {
+    "type": "Hardware",
+    "description_vi": "Kiến trúc tập lệnh (ISA) mở cho phép tự do thiết kế chip không phụ thuộc bản quyền",
+    "aliases": ["risc-v", "riscv", "risc v", "hazard3"],
+    "sectors": ["Hardware", "Semiconductor"]
+  },
+  "Coral": {
+    "type": "Hardware",
+    "description_vi": "Module tăng tốc Edge TPU của Google để suy luận mô hình học sâu tại biên",
+    "aliases": ["coral", "google coral", "edge tpu"],
+    "sectors": ["Hardware", "Edge AI"]
+  },
+  "Nordic nRF52": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
+    "aliases": ["nrf52", "nrf52840", "nrf52832", "nordic semiconductor"],
+    "sectors": ["Hardware", "Wireless", "IoT"]
+  },
+  "MQTT": {
+    "type": "Protocol",
+    "description_vi": "Giao thức truyền tin publish/subscribe nhẹ tối ưu cho mạng IoT băng thông thấp",
+    "aliases": ["mqtt", "mqtt broker", "mosquitto", "emqx", "mqtts"],
+    "sectors": ["Protocols", "IoT"]
+  },
+  "LoRaWAN": {
+    "type": "Protocol",
+    "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
+    "aliases": ["lorawan", "lora", "lora-wan", "the things network", "ttn"],
+    "sectors": ["Protocols", "Wireless", "IoT"]
+  },
+  "BLE": {
+    "type": "Protocol",
+    "description_vi": "Bluetooth năng lượng thấp (Bluetooth Low Energy) kết nối tầm gần tiết kiệm pin",
+    "aliases": ["ble", "bluetooth low energy", "bluetooth le", "bluetooth 5"],
+    "sectors": ["Protocols", "Wireless"]
+  },
+  "Matter": {
+    "type": "Protocol",
+    "description_vi": "Tiêu chuẩn kết nối nhà thông minh hợp nhất trên nền tảng IPv6, Thread và WiFi",
+    "aliases": ["matter", "matter protocol", "project chid"],
+    "sectors": ["Protocols", "Smart Home", "IoT"]
+  },
+  "Zigbee": {
+    "type": "Protocol",
+    "description_vi": "Tiêu chuẩn mạng lưới không dây (mesh) bảo mật cao cho tự động hóa gia đình",
+    "aliases": ["zigbee", "zig-bee", "zigbee2mqtt"],
+    "sectors": ["Protocols", "Smart Home"]
+  },
+  "Modbus": {
+    "type": "Protocol",
+    "description_vi": "Giao thức truyền thông công nghiệp chuẩn mực nối PLC, cảm biến và thiết bị đo",
+    "aliases": ["modbus", "modbus rtu", "modbus tcp", "rs485"],
+    "sectors": ["Protocols", "Industrial"]
+  },
+  "CAN bus": {
+    "type": "Protocol",
+    "description_vi": "Mạng truyền thông vi sai chống nhiễu chuyên dùng trong ô tô và tự động hóa",
+    "aliases": ["can bus", "canbus", "can-bus", "controller area network"],
+    "sectors": ["Protocols", "Automotive", "Industrial"]
+  },
+  "CoAP": {
+    "type": "Protocol",
+    "description_vi": "Giao thức ứng dụng tối giản dựa trên UDP cho các nút cảm biến cực nhỏ",
+    "aliases": ["coap", "constrained application protocol"],
+    "sectors": ["Protocols", "IoT"]
+  },
+  "WebSockets": {
+    "type": "Protocol",
+    "description_vi": "Kênh liên lạc song công thời gian thực giữa máy chủ và trình duyệt hoặc gateway",
+    "aliases": ["websocket", "websockets", "wss"],
+    "sectors": ["Protocols", "Web"]
+  },
+  "NB-IoT": {
+    "type": "Protocol",
+    "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
+    "aliases": ["nb-iot", "nbiot", "lte-m", "cat-m1", "cellular iot"],
+    "sectors": ["Protocols", "Telecom", "IoT"]
+  },
+  "TinyML": {
+    "type": "AI/ML",
+    "description_vi": "Kỹ thuật chạy mô hình máy học trực tiếp trên vi điều khiển không cần điện toán đám mây",
+    "aliases": ["tinyml", "tiny ml", "edge impulse", "embedded ml"],
+    "sectors": ["AI", "Edge", "Embedded"]
+  },
+  "Edge AI": {
+    "type": "AI/ML",
+    "description_vi": "Trí tuệ nhân tạo xử lý trực tiếp tại thiết bị biên (on-device) giảm độ trễ và bảo mật",
+    "aliases": ["edge ai", "edge-ai", "on-device ai", "edge computing"],
+    "sectors": ["AI", "Edge", "Hardware"]
+  },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "aliases": ["llm", "large language model", "llms"],
+    "sectors": ["AI", "NLP"]
+  },
+  "RAG": {
+    "type": "AI/ML",
+    "description_vi": "Kỹ thuật kết hợp truy xuất tri thức ngoài (Retrieval) với mô hình tạo sinh (Generation)",
+    "aliases": ["rag", "retrieval augmented generation", "retrieval-augmented"],
+    "sectors": ["AI", "NLP", "Search"]
+  },
+  "LoRA": {
+    "type": "AI/ML",
+    "description_vi": "Phương pháp tinh chỉnh mô hình ngôn ngữ bằng ma trận rank thấp siêu tiết kiệm bộ nhớ",
+    "aliases": ["lora", "low-rank adaptation", "lora fine-tuning", "peft"],
+    "sectors": ["AI", "Fine-tuning"]
+  },
+  "Computer Vision": {
+    "type": "AI/ML",
+    "description_vi": "Thị giác máy tính trích xuất thông tin, nhận dạng vật thể và hành vi từ hình ảnh/video",
+    "aliases": ["computer vision", "vision ai", "cv", "opencv"],
+    "sectors": ["AI", "Robotics"]
+  },
+  "YOLO": {
+    "type": "AI/ML",
+    "description_vi": "Họ mô hình phát hiện vật thể thời gian thực tốc độ cao và độ chính xác vượt trội",
+    "aliases": ["yolo", "yolov8", "yolov9", "yolov10", "yolov11", "ultralytics"],
+    "sectors": ["AI", "Computer Vision"]
+  },
+  "SLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ nhỏ (<7B tham số) tối ưu để chạy offline trên máy tính cá nhân hoặc chip biên",
+    "aliases": ["slm", "small language model", "small language models"],
+    "sectors": ["AI", "Edge AI"]
+  },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "aliases": ["transformer", "transformers", "hugging face", "attention mechanism"],
+    "sectors": ["AI", "Deep Learning"]
+  },
+  "LangChain": {
+    "type": "AI/ML",
+    "description_vi": "Framework kết nối LLM với cơ sở dữ liệu ngoài, công cụ thực thi và chuỗi tác vụ AI",
+    "aliases": ["langchain", "langgraph"],
+    "sectors": ["AI", "Framework"]
+  },
+  "Ollama": {
+    "type": "AI/ML",
+    "description_vi": "Công cụ chạy mô hình ngôn ngữ lớn cục bộ (local LLM) nhanh chóng và nhẹ nhàng",
+    "aliases": ["ollama"],
+    "sectors": ["AI", "Tools"]
+  },
+  "Whisper": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình nhận dạng giọng nói tự động (ASR) đa ngôn ngữ độ chính xác cao của OpenAI",
+    "aliases": ["whisper", "whisper.cpp", "openai whisper"],
+    "sectors": ["AI", "Audio"]
+  },
+  "TensorFlow Lite": {
+    "type": "AI/ML",
+    "description_vi": "Bộ thư viện tối ưu hóa suy luận mô hình TensorFlow cho thiết bị di động và nhúng",
+    "aliases": ["tflite", "tensorflow lite", "tflite micro"],
+    "sectors": ["AI", "Embedded"]
+  },
+  "PyTorch": {
+    "type": "AI/ML",
+    "description_vi": "Khung làm việc học sâu phổ biến hàng đầu trong nghiên cứu và triển khai mô hình AI",
+    "aliases": ["pytorch", "torch"],
+    "sectors": ["AI", "Framework"]
+  },
+  "ROS2": {
+    "type": "Platform",
+    "description_vi": "Hệ điều hành robot thế hệ 2 có tính phân tán, bảo mật và hỗ trợ thời gian thực",
+    "aliases": ["ros2", "ros 2", "robot operating system", "rclpy", "rclcpp"],
+    "sectors": ["Robotics", "Software"]
+  },
+  "Node-RED": {
+    "type": "Platform",
+    "description_vi": "Công cụ lập trình trực quan luồng dữ liệu dựa trên Node.js cho kết nối thiết bị phần cứng",
+    "aliases": ["node-red", "nodered", "node red"],
+    "sectors": ["Platform", "IoT"]
+  },
+  "PlatformIO": {
+    "type": "Platform",
+    "description_vi": "Môi trường phát triển và quản lý thư viện chuyên nghiệp cho lập trình vi điều khiển",
+    "aliases": ["platformio", "platform-io", "pio"],
+    "sectors": ["Tools", "Embedded"]
+  },
+  "FreeRTOS": {
+    "type": "Platform",
+    "description_vi": "Hệ điều hành thời gian thực (RTOS) siêu nhẹ và phổ biến nhất cho vi điều khiển",
+    "aliases": ["freertos", "free-rtos"],
+    "sectors": ["OS", "Embedded"]
+  },
+  "Zephyr": {
+    "type": "Platform",
+    "description_vi": "Hệ điều hành RTOS bảo mật mã nguồn mở của Linux Foundation hỗ trợ đa kiến trúc",
+    "aliases": ["zephyr", "zephyr rtos", "zephyr os"],
+    "sectors": ["OS", "Embedded"]
+  },
+  "MicroPython": {
+    "type": "Platform",
+    "description_vi": "Bản triển khai ngôn ngữ Python 3 tối giản chạy trực tiếp trên vi điều khiển trần",
+    "aliases": ["micropython", "circuitpython"],
+    "sectors": ["Language", "Embedded"]
+  },
+  "Docker": {
+    "type": "Platform",
+    "description_vi": "Nền tảng ảo hóa container đóng gói ứng dụng chạy đồng nhất từ máy tính đến edge gateway",
+    "aliases": ["docker", "docker-compose", "container"],
+    "sectors": ["Platform", "DevOps"]
+  },
+  "Grafana": {
+    "type": "Platform",
+    "description_vi": "Nền tảng trực quan hóa số liệu và dashboard cảnh báo số đo thời gian thực",
+    "aliases": ["grafana"],
+    "sectors": ["Analytics", "Monitoring"]
+  },
+  "InfluxDB": {
+    "type": "Platform",
+    "description_vi": "Cơ sở dữ liệu chuỗi thời gian (time-series) tối ưu để ghi nhận và truy vấn dữ liệu cảm biến",
+    "aliases": ["influxdb", "influx"],
+    "sectors": ["Database", "IoT"]
+  },
+  "pH Sensor": {
+    "type": "Sensor",
+    "description_vi": "Đầu dò điện hóa đo độ kiềm/axit của nước, chỉ số sinh tồn trong nuôi trồng thủy sản",
+    "aliases": ["ph sensor", "ph probe", "ph meter", "cam bien ph"],
+    "sectors": ["Sensors", "Aquaculture", "Water"]
+  },
+  "DO (Dissolved Oxygen)": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến oxy hòa tan (quang học hoặc galvanic) giám sát mức dưỡng khí trong nước ao",
+    "aliases": ["dissolved oxygen", "do sensor", "do probe", "oxy hoa tan"],
+    "sectors": ["Sensors", "Aquaculture", "Water"]
+  },
+  "Turbidity": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến quang học đo độ đục của nước để đánh giá chất lượng và phù sa lơ lửng",
+    "aliases": ["turbidity", "turbidity sensor", "do duc"],
+    "sectors": ["Sensors", "Water", "Aquaculture"]
+  },
+  "TDS": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến đo tổng chất rắn hòa tan trong nước (Total Dissolved Solids)",
+    "aliases": ["tds", "tds sensor", "total dissolved solids"],
+    "sectors": ["Sensors", "Water"]
+  },
+  "EC (Electrical Conductivity)": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến đo độ dẫn điện của dung dịch để xác định hàm lượng ion và độ mặn",
+    "aliases": ["ec sensor", "electrical conductivity", "do dan dien"],
+    "sectors": ["Sensors", "Water", "Agriculture"]
+  },
+  "Salinity": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến đo độ mặn của nước lợ và nước biển trong ao tôm cá",
+    "aliases": ["salinity", "salinity sensor", "do man"],
+    "sectors": ["Sensors", "Aquaculture"]
+  },
+  "IMU": {
+    "type": "Sensor",
+    "description_vi": "Khối đo quán tính (gia tốc kế + con quay hồi chuyển) định vị góc nghiêng và chuyển động",
+    "aliases": ["imu", "inertial measurement unit", "accelerometer", "gyroscope", "mpu6050", "bno055"],
+    "sectors": ["Sensors", "Robotics", "Hardware"]
+  },
+  "LiDAR": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến quét laser đo khoảng cách tạo bản đồ không gian 3D cho xe tự hành và robot",
+    "aliases": ["lidar", "lidar sensor", "light detection and ranging"],
+    "sectors": ["Sensors", "Robotics", "Automotive"]
+  },
+  "Ultrasonic": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến sóng siêu âm đo khoảng cách và mực nước bồn chứa/ao nuôi không tiếp xúc",
+    "aliases": ["ultrasonic", "ultrasonic sensor", "hc-sr04", "song sieu am"],
+    "sectors": ["Sensors", "IoT"]
+  },
+  "Temperature Sensor": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến nhiệt độ công nghiệp (DS18B20 chống nước hoặc PT100) giám sát nhiệt môi trường",
+    "aliases": ["ds18b20", "dht22", "temperature sensor", "pt100", "cam bien nhiet"],
+    "sectors": ["Sensors", "Environment"]
+  },
+  "Flow Meter": {
+    "type": "Sensor",
+    "description_vi": "Lưu lượng kế đo thể tích dòng chảy nước và hóa chất theo thời gian",
+    "aliases": ["flow meter", "water flow sensor", "luu luong ke"],
+    "sectors": ["Sensors", "Water", "Industrial"]
+  },
+  "Water Level": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến giám sát mức nước và cảnh báo tràn ngập hoặc cạn ao",
+    "aliases": ["water level", "water level sensor", "muc nuoc"],
+    "sectors": ["Sensors", "Water", "Aquaculture"]
+  },
+  "Humanoid": {
+    "type": "Robotics",
+    "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
+    "aliases": ["humanoid", "humanoid robot", "bipedal robot"],
+    "sectors": ["Robotics", "AI"]
+  },
+  "Drone": {
+    "type": "Robotics",
+    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
+    "aliases": ["drone", "uav", "quadcopter", "thiet bi bay"],
+    "sectors": ["Robotics", "Agriculture"]
+  },
+  "AMR": {
+    "type": "Robotics",
+    "description_vi": "Robot di động tự hành (Autonomous Mobile Robot) vận chuyển hàng trong kho và trang trại",
+    "aliases": ["amr", "agv", "autonomous mobile robot", "mobile robot"],
+    "sectors": ["Robotics", "Logistics", "Industrial"]
+  },
+  "Actuator": {
+    "type": "Hardware",
+    "description_vi": "Cơ cấu chấp hành (động cơ servo, van điện từ, relay) thực hiện hành vi vật lý",
+    "aliases": ["actuator", "servo motor", "stepper motor", "bldc", "solenoid valve", "co cau chap hanh"],
+    "sectors": ["Hardware", "Robotics", "Industrial"]
+  }
+}

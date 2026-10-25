@@ -2964,6 +2964,28 @@
       flex-wrap: wrap;
       gap: 10px;
     }
+
+    /* Phase 13 - Tech Glossary Navigation Button */
+    .glossary-nav-btn {
+      padding: 6px 12px;
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(59, 130, 246, 0.15));
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      border-radius: var(--radius-full);
+      color: #a78bfa;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition-fast);
+    }
+    .glossary-nav-btn:hover {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(59, 130, 246, 0.25));
+      border-color: #a78bfa;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(139, 92, 246, 0.3);
+    }
   </style>
 </head>
 <body>
@@ -2983,6 +3005,9 @@
           <span class="sync-indicator"></span>
           <span id="syncText">Syncing...</span>
         </div>
+        <button class="glossary-nav-btn" id="glossaryNavBtn" onclick="openGlossaryModal()" title="Mở bản đồ thuật ngữ công nghệ (Phase 13 Tech Glossary)">
+          <span>🔬 Tech Glossary</span>
+        </button>
         <button class="bookmarks-nav-btn" id="bookmarksNavBtn" onclick="openBookmarksModal()" title="Mở danh sách Bookmarks nghiên cứu (Phase 14)">
           <span>📌 Bookmarks (<span id="bookmarkHeaderCount">0</span>)</span>
         </button>
@@ -3193,6 +3218,40 @@
         <div style="display: flex; gap: 8px;">
           <button class="btn-export-bm" onclick="copyBookmarksJson()" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer;">📋 Copy JSON</button>
           <button class="btn-download-bm" onclick="downloadBookmarksJson()" style="background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600;">💾 Tải bookmarks.json</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 13 — Tech Glossary Modal -->
+  <div class="digest-modal-overlay" id="glossaryModal" style="display: none;" onclick="handleGlossaryBackdropClick(event)">
+    <div class="bookmarks-modal-box" role="dialog" aria-modal="true" aria-labelledby="modalGlossaryTitle" style="max-width: 900px;">
+      <div class="digest-modal-header">
+        <div class="digest-modal-title" id="modalGlossaryTitle">
+          <span>🔬 TECH GLOSSARY & TRÍCH XUẤT THUẬT NGỮ</span>
+          <span id="glossaryModalBadge" style="font-size: 11px; padding: 2px 8px; border-radius: 999px; background: rgba(139, 92, 246, 0.2); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, 0.4);">62 thuật ngữ</span>
+        </div>
+        <button class="digest-modal-close-btn" onclick="closeGlossaryModal()" aria-label="Đóng">&times;</button>
+      </div>
+
+      <div class="bookmarks-filter-bar">
+        <button class="bm-filter-btn active" id="tabGlossaryTerms" onclick="switchGlossaryTab('terms')">🔥 Bảng thuật ngữ & Liên kết (<span id="tabCountTerms">0</span>)</button>
+        <button class="bm-filter-btn" id="tabGlossaryTimeline" onclick="switchGlossaryTab('timeline')">📈 Dòng thời gian tuần (Timeline)</button>
+        <button class="bm-filter-btn" id="tabGlossaryNew" onclick="switchGlossaryTab('new_terms')">✨ Thuật ngữ mới phát hiện (<span id="tabCountNewTerms">0</span>)</button>
+      </div>
+
+      <div class="bookmarks-list" id="glossaryContentArea">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="bookmarks-footer-bar">
+        <div style="font-size: 12px; color: var(--fg-dim);">
+          <span>💡 Dữ liệu tự động trích xuất: <code>docs/data/tech_glossary.json</code></span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <a href="data/tech_glossary.json" target="_blank" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none;">📄 tech_glossary.json</a>
+          <a href="data/tech_timeline.json" target="_blank" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none;">📄 tech_timeline.json</a>
+          <a href="data/tech_new_terms.json" target="_blank" style="background: rgba(139, 92, 246, 0.2); border: 1px solid rgba(139, 92, 246, 0.4); color: #c4b5fd; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">📄 tech_new_terms.json</a>
         </div>
       </div>
     </div>
@@ -3558,6 +3617,187 @@
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+    }
+
+    // --- Phase 13: Tech Glossary & Term Extraction Handlers ---
+    let TECH_GLOSSARY_DATA = null;
+    let TECH_TIMELINE_DATA = null;
+    let TECH_NEW_TERMS_DATA = [];
+    let activeGlossaryTab = 'terms';
+
+    async function loadTechGlossary() {
+      try {
+        const [resG, resT, resN] = await Promise.allSettled([
+          fetch('data/tech_glossary.json').then(r => r.ok ? r.json() : null),
+          fetch('data/tech_timeline.json').then(r => r.ok ? r.json() : null),
+          fetch('data/tech_new_terms.json').then(r => r.ok ? r.json() : [])
+        ]);
+
+        if (resG.status === 'fulfilled' && resG.value) TECH_GLOSSARY_DATA = resG.value;
+        if (resT.status === 'fulfilled' && resT.value) TECH_TIMELINE_DATA = resT.value;
+        if (resN.status === 'fulfilled' && resN.value) TECH_NEW_TERMS_DATA = resN.value;
+
+        updateGlossaryBadges();
+
+        if (window.location.hash === '#glossary' || window.location.hash === '#tech') {
+          openGlossaryModal();
+        }
+      } catch (e) {
+        console.warn('Could not load Tech Glossary data:', e);
+      }
+    }
+
+    function updateGlossaryBadges() {
+      const termCount = TECH_GLOSSARY_DATA ? Object.keys(TECH_GLOSSARY_DATA).length : 0;
+      const newTermsCount = Array.isArray(TECH_NEW_TERMS_DATA) ? TECH_NEW_TERMS_DATA.length : 0;
+
+      const badge = document.getElementById('glossaryModalBadge');
+      if (badge) badge.textContent = `${termCount} thuật ngữ`;
+
+      const tabTerms = document.getElementById('tabCountTerms');
+      if (tabTerms) tabTerms.textContent = termCount;
+
+      const tabNew = document.getElementById('tabCountNewTerms');
+      if (tabNew) tabNew.textContent = newTermsCount;
+    }
+
+    function openGlossaryModal() {
+      const modal = document.getElementById('glossaryModal');
+      if (!modal) return;
+      modal.style.display = 'flex';
+      renderGlossaryModal();
+    }
+
+    function closeGlossaryModal() {
+      const modal = document.getElementById('glossaryModal');
+      if (modal) modal.style.display = 'none';
+      if (window.location.hash === '#glossary' || window.location.hash === '#tech') {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+    }
+
+    function handleGlossaryBackdropClick(event) {
+      if (event.target && event.target.id === 'glossaryModal') {
+        closeGlossaryModal();
+      }
+    }
+
+    function switchGlossaryTab(tab) {
+      activeGlossaryTab = tab;
+      document.querySelectorAll('#glossaryModal .bm-filter-btn').forEach(btn => btn.classList.remove('active'));
+      if (tab === 'terms') document.getElementById('tabGlossaryTerms')?.classList.add('active');
+      if (tab === 'timeline') document.getElementById('tabGlossaryTimeline')?.classList.add('active');
+      if (tab === 'new_terms') document.getElementById('tabGlossaryNew')?.classList.add('active');
+      renderGlossaryModal();
+    }
+
+    function renderGlossaryModal() {
+      const container = document.getElementById('glossaryContentArea');
+      if (!container) return;
+      updateGlossaryBadges();
+
+      if (activeGlossaryTab === 'terms') {
+        if (!TECH_GLOSSARY_DATA || Object.keys(TECH_GLOSSARY_DATA).length === 0) {
+          container.innerHTML = '<div style="padding:30px; text-align:center; color:var(--fg-dim);">Chưa tải được dữ liệu tech_glossary.json</div>';
+          return;
+        }
+
+        const items = Object.entries(TECH_GLOSSARY_DATA);
+        container.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            ${items.map(([term, info]) => {
+              let trendBadge = '<span class="stage-flag stage-watch">→ stable</span>';
+              if (info.trend === 'rising') trendBadge = '<span class="stage-flag stage-build-ready">↑ rising (+' + info.change_pct + '%)</span>';
+              else if (info.trend === 'fading') trendBadge = '<span class="stage-flag" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4);">↓ fading (' + info.change_pct + '%)</span>';
+              else if (info.trend === 'new') trendBadge = '<span class="stage-flag stage-research">✨ new</span>';
+
+              const coPills = Object.entries(info.co_occurs_with || {}).map(([cTerm, cnt]) => 
+                `<span class="chip-signal chip-tech" style="font-size:10px; padding:2px 6px;">🔗 ${escapeHtml(cTerm)} (${cnt})</span>`
+              ).join('');
+
+              return `
+                <div class="bookmark-item-card" style="border-left: 3px solid ${info.trend === 'rising' ? '#ff6b35' : (info.trend === 'new' ? '#38bdf8' : 'var(--border)')};">
+                  <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:4px;">
+                    <div>
+                      <span style="font-weight:800; font-size:15px; color:var(--fg);">${escapeHtml(term)}</span>
+                      <span style="font-size:11px; color:var(--fg-muted); margin-left:8px; padding:1px 6px; border-radius:4px; background:rgba(255,255,255,0.06);">${escapeHtml(info.type || 'Tech')}</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:8px;">
+                      <span style="font-size:12px; font-weight:700; color:var(--accent);">${info.mentions_this_week} nhắc</span>
+                      ${trendBadge}
+                    </div>
+                  </div>
+                  <div style="font-size:12px; color:var(--fg-dim); margin-bottom:6px;">${escapeHtml(info.description_vi || '')}</div>
+                  ${coPills ? `
+                    <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:11px; color:var(--fg-muted);">
+                      <span>Đi cùng:</span>
+                      ${coPills}
+                    </div>
+                  ` : ''}
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `;
+      } else if (activeGlossaryTab === 'timeline') {
+        if (!TECH_TIMELINE_DATA || Object.keys(TECH_TIMELINE_DATA).length === 0) {
+          container.innerHTML = '<div style="padding:30px; text-align:center; color:var(--fg-dim);">Chưa tải được dữ liệu tech_timeline.json</div>';
+          return;
+        }
+
+        const entries = Object.entries(TECH_TIMELINE_DATA).filter(([_, v]) => (v.total_mentions || 0) > 0);
+        container.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            ${entries.map(([term, data]) => {
+              const weeklyCols = (data.weekly || []).map(w => 
+                `<div style="display:flex; flex-direction:column; align-items:center; background:rgba(255,255,255,0.04); padding:4px 8px; border-radius:4px; min-width:48px;">
+                  <span style="font-size:10px; color:var(--fg-muted);">${escapeHtml(w.week)}</span>
+                  <span style="font-size:12px; font-weight:700; color:var(--fg);">${w.count}</span>
+                </div>`
+              ).join('');
+
+              return `
+                <div class="bookmark-item-card">
+                  <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+                    <div>
+                      <span style="font-weight:700; font-size:14px; color:var(--fg);">${escapeHtml(term)}</span>
+                      <span style="font-size:11px; color:var(--fg-muted); margin-left:8px;">Tổng: <strong>${data.total_mentions}</strong> lượt</span>
+                      ${data.consecutive_rising_weeks > 0 ? `<span style="font-size:11px; color:#10b981; margin-left:8px; font-weight:600;">🔥 Tăng ${data.consecutive_rising_weeks} tuần liên tiếp</span>` : ''}
+                    </div>
+                    <div style="display:flex; gap:6px;">
+                      ${weeklyCols}
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `;
+      } else if (activeGlossaryTab === 'new_terms') {
+        if (!Array.isArray(TECH_NEW_TERMS_DATA) || TECH_NEW_TERMS_DATA.length === 0) {
+          container.innerHTML = '<div style="padding:30px; text-align:center; color:var(--fg-dim);">Chưa phát hiện thuật ngữ mới nào trong tuần này.</div>';
+          return;
+        }
+
+        container.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            ${TECH_NEW_TERMS_DATA.map(item => `
+              <div class="bookmark-item-card" style="border-left: 3px solid #38bdf8;">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px;">
+                  <div style="font-weight:800; font-size:14px; color:#38bdf8;">⚡ ${escapeHtml(item.term)}</div>
+                  <div style="display:flex; gap:8px; align-items:center;">
+                    <span style="font-size:11px; color:var(--fg-muted); background:rgba(255,255,255,0.06); padding:2px 6px; border-radius:4px;">Ghi nhận: ${escapeHtml(item.first_seen || '')}</span>
+                    <span style="font-size:11px; color:var(--fg); font-weight:700;">${item.count} lần</span>
+                  </div>
+                </div>
+                <div style="font-size:12px; color:var(--fg-dim); margin-top:4px; font-style:italic;">
+                  ${escapeHtml(item.context || '')}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
     }
 
     // --- 3. THEME TOGGLE LOGIC ---
@@ -3968,6 +4208,7 @@
       if (e.key === 'Escape') {
         closeDailyDigestModal();
         closeBookmarksModal();
+        closeGlossaryModal();
       }
     });
 
@@ -3978,6 +4219,7 @@
       await loadDailyDigest();
       await loadBookmarks();
       await loadLastUpdated();
+      await loadTechGlossary();
       
       try {
         const res = await fetch('data/news.json');
