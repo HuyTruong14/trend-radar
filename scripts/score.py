@@ -1057,6 +1057,16 @@ def main():
         # Phase 9: Triple Signal Detection (Funding + Tech + Social)
         is_triple, has_f, has_t, has_s = check_triple_signal(title, summary, formatted_sources, signal_types, summary_vi)
 
+        # Phase 14: Item > 7 days old -> attach flag "stale"
+        is_stale = False
+        if first_seen:
+            try:
+                fs_d = datetime.strptime(first_seen, "%Y-%m-%d").date()
+                if (datetime.now(timezone.utc).date() - fs_d).days > 7:
+                    is_stale = True
+            except Exception:
+                pass
+
         opp_record = {
             "id": opp_id,
             "title": title,
@@ -1074,6 +1084,7 @@ def main():
             "appearance_count": appearance_count,
             "history_dates": history_dates[-14:],  # Keep recent 14 active appearances
             "velocity": velocity,
+            "stale": is_stale,
             "funding_sector": funding_sector,
             "deal_type": deal_type,
             "funding_amount": funding_amount,
@@ -1177,6 +1188,18 @@ def main():
         aged_opp["pillar_tech"] = has_t
         aged_opp["pillar_social"] = has_s
 
+        # Phase 14: Item > 7 days old -> attach flag "stale"
+        aged_fs = aged_opp.get("first_seen")
+        aged_is_stale = False
+        if aged_fs:
+            try:
+                fs_d = datetime.strptime(aged_fs, "%Y-%m-%d").date()
+                if (datetime.now(timezone.utc).date() - fs_d).days > 7:
+                    aged_is_stale = True
+            except Exception:
+                pass
+        aged_opp["stale"] = aged_is_stale
+
         if days_inactive >= 7:
             aged_opp["velocity"] = "fading"
             faded_count += 1
@@ -1250,6 +1273,13 @@ def main():
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(opportunities, f, ensure_ascii=False, indent=2)
+
+    # Phase 14: Update last_updated.json
+    try:
+        import last_updated
+        last_updated.update_last_updated(signals_count=len(candidate_signals), status="success")
+    except Exception as e:
+        print(f"[score] Warning: could not update last_updated: {e}")
 
     # Print summary report
     print(f"\n[score] Successfully saved {len(opportunities)} qualified opportunities into {OUTPUT_FILE}")
@@ -1532,7 +1562,8 @@ def send_phase5_alerts(opportunities, promoted_items, today_str, dry_run=False, 
             alerts_sent += 1
             handled_ids.add(opp_id)
         else:
-            if notify.send_message(msg):
+            reply_kb = notify.get_bookmark_inline_keyboard(opp_id=opp_id)
+            if notify.send_message(msg, reply_markup=reply_kb):
                 print(f"[score] [Phase 5C] Đã gửi thành công Template 3 cho: {opp_id}")
                 first_sent = (hist_entry.get("first_sent") if hist_entry else None) or today_str
                 sent_history[opp_id] = {
@@ -1582,7 +1613,8 @@ def send_phase5_alerts(opportunities, promoted_items, today_str, dry_run=False, 
             alerts_sent += 1
             handled_ids.add(opp_id)
         else:
-            if notify.send_message(msg):
+            reply_kb = notify.get_bookmark_inline_keyboard(opp_id=opp_id)
+            if notify.send_message(msg, reply_markup=reply_kb):
                 print(f"[score] [Phase 5C] Đã gửi thành công Template 1 cho: {opp_id}")
                 times_sent = hist_entry.get("times_sent", 0) if hist_entry else 0
                 sent_history[opp_id] = {
@@ -1644,7 +1676,8 @@ def send_phase5_alerts(opportunities, promoted_items, today_str, dry_run=False, 
                 history_changed = True
                 alerts_sent += 1
             else:
-                if notify.send_message(digest_msg):
+                reply_kb = notify.get_bookmark_inline_keyboard()
+                if notify.send_message(digest_msg, reply_markup=reply_kb):
                     print(f"[score] [Phase 5C] Đã gửi thành công Template 2 daily research digest.")
                     for opp in new_research_candidates:
                         oid = opp["id"]

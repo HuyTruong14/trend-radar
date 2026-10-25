@@ -1,10 +1,11 @@
 [
   {
     "date": "2026-10-24",
-    "total_items": 133,
-    "avg_relevance_score": 1.5,
+    "total_items": 178,
+    "avg_relevance_score": 1.8,
     "cross_source_count": 0,
     "by_source": {
+      "GitHub": 45,
       "IoT Business News": 15,
       "Hackster News - Hackster.io": 15,
       "SBC News": 10,
@@ -18,70 +19,44 @@
       "The Fish Site": 15
     },
     "by_keyword": {
-      "": 118,
-      "cs.AI, cs.CV, cs.RO": 15
-    },
-    "top_repos": [],
-    "github_repos": []
-  },
-  {
-    "date": "2026-10-25",
-    "total_items": 184,
-    "avg_relevance_score": null,
-    "cross_source_count": 0,
-    "by_source": {
-      "GitHub": 45,
-      "The Robot Report": 14,
-      "IoT Business News": 15,
-      "Hackster News - Hackster.io": 15,
-      "iGB": 15,
-      "SBC News": 10,
-      "IEEE Spectrum": 4,
-      "Robohub": 6,
-      "arXiv": 15,
-      "Fish Farmer Magazine RSS Feed": 15,
-      "Engineering News | Aquaculture": 15,
-      "The Fish Site": 15
-    },
-    "by_keyword": {
       "robotics": 15,
-      "water quality sensor": 15,
       "aquaculture iot": 15,
-      "": 124,
+      "": 118,
+      "water quality sensor": 15,
       "cs.AI, cs.CV, cs.RO": 15
     },
     "top_repos": [
       {
         "name": "Developer-Y/cs-video-courses",
-        "stars": 83763
+        "stars": 83757
       },
       {
         "name": "commaai/openpilot",
-        "stars": 63988
+        "stars": 63987
       },
       {
         "name": "NaiboWang/EasySpider",
-        "stars": 44736
+        "stars": 44735
       },
       {
         "name": "AtsushiSakai/PythonRobotics",
-        "stars": 30792
+        "stars": 30785
       },
       {
         "name": "Genesis-Embodied-AI/genesis-world",
-        "stars": 30117
+        "stars": 30113
       },
       {
         "name": "harvard-edge/cs249r_book",
-        "stars": 29532
+        "stars": 29482
       },
       {
         "name": "huggingface/lerobot",
-        "stars": 28446
+        "stars": 28441
       },
       {
         "name": "earthtojake/text-to-cad",
-        "stars": 22949
+        "stars": 22890
       },
       {
         "name": "questdb/questdb",
@@ -93,26 +68,26 @@
       }
     ],
     "github_repos": [
-      "earthtojake/text-to-cad",
-      "commaai/openpilot",
       "harvard-edge/cs249r_book",
+      "earthtojake/text-to-cad",
       "questdb/questdb",
-      "rknightion/meraki-dashboard-ha",
-      "Genesis-Embodied-AI/genesis-world",
       "forgotmenet/Iotlab-Automation-Test",
-      "huggingface/lerobot",
-      "AtsushiSakai/PythonRobotics",
+      "Genesis-Embodied-AI/genesis-world",
       "google-deepmind/mujoco",
       "Leamon-Lee/Design-of-Enterprise-IoT-design",
+      "commaai/openpilot",
       "zauberzeug/nicegui",
       "mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
       "Developer-Y/cs-video-courses",
-      "api-evangelist/jala",
+      "rknightion/meraki-dashboard-ha",
+      "huggingface/lerobot",
+      "wissen-csi/backend_station",
       "ArduPilot/ardupilot",
       "ishiniayodya610/J26-SE-351",
       "zgordon-source/WaterQualityConfiguration",
       "Aakashaash/SmartWaterNet-Edge-AI-Based-Leakage-Prediction-and-Water-Quality-Monitoring-Using-IoT",
       "TonucciGiovanni/Aquawatch",
+      "AtsushiSakai/PythonRobotics",
       "harshsharma1447-gif/PurifyX",
       "DileepaNayanajith/esp32-water-quality-monitor",
       "LowCostSensor/DOMino-sensor",
@@ -124,7 +99,6 @@
       "phucngvinuni/AquaSC-release",
       "chlorcale/DACN_IoT_AquaCulture",
       "Sarika17-ui/AquaAI-Intelligent-Water-Guardian",
-      "rudhran11/poultry-water-monitoring-dashboard",
       "xiaoli5201314-spec/smart-fish-farming-platform",
       "Rohith00755/Smart-Water-Purifier-Monitoring",
       "ALNezar/FishMaster",
@@ -137,7 +111,8 @@
       "MohamedH-Sallam/Automated-Aquaculture-IoT-System",
       "transcenddev/agwasuri",
       "REAL-LEKS/farm-dashboard",
-      "jpgaaru/aquapulse-design-system"
+      "jpgaaru/aquapulse-design-system",
+      "Alrumi08/Neptune-aquakulture-Copilot"
     ]
   }
 ]

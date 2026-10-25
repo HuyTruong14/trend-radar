@@ -2767,6 +2767,203 @@
       z-index: 10001;
       display: none;
     }
+
+    /* Phase 14 - Bookmarks & Weekly Archive & Freshness */
+    .bookmarks-nav-btn {
+      padding: 6px 12px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(234, 88, 12, 0.15));
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: var(--radius-full);
+      color: #fbbf24;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition-fast);
+    }
+    .bookmarks-nav-btn:hover {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(234, 88, 12, 0.25));
+      border-color: #fbbf24;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .weekly-nav-btn {
+      padding: 6px 12px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.15));
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: var(--radius-full);
+      color: #34d399;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition-fast);
+    }
+    .weekly-nav-btn:hover {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(5, 150, 105, 0.25));
+      border-color: #34d399;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .badge-stale {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      background: rgba(148, 163, 184, 0.15);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      vertical-align: middle;
+    }
+
+    .btn-bookmark-action {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 11px;
+      color: var(--fg-dim);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all var(--transition-fast);
+      margin-left: 6px;
+    }
+    .btn-bookmark-action:hover {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.5);
+      color: #fbbf24;
+    }
+    .btn-bookmark-action.is-bookmarked {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: #fbbf24;
+      color: #fbbf24;
+      font-weight: 600;
+    }
+
+    .bookmark-status-chip {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+    .bookmark-status-new { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
+    .bookmark-status-researching { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+    .bookmark-status-done { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .bookmark-status-skipped { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+
+    .bookmarks-modal-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 860px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+      overflow: hidden;
+      animation: scaleInDigestModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bookmarks-filter-bar {
+      display: flex;
+      gap: 8px;
+      padding: 12px 24px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.02);
+      flex-wrap: wrap;
+    }
+    .bm-filter-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      padding: 4px 12px;
+      font-size: 12px;
+      color: var(--fg-dim);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .bm-filter-btn.active, .bm-filter-btn:hover {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: #fbbf24;
+      color: #fbbf24;
+    }
+    .bookmarks-list {
+      padding: 16px 24px;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .bookmark-item-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: border-color var(--transition-fast);
+    }
+    .bookmark-item-card:hover {
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+    .bookmark-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .bookmark-title-link {
+      color: var(--fg);
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .bookmark-title-link:hover {
+      color: #fbbf24;
+      text-decoration: underline;
+    }
+    .bookmark-notes-area {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 12px;
+      color: var(--fg);
+      resize: vertical;
+      min-height: 44px;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    .bookmark-notes-area:focus {
+      outline: none;
+      border-color: #fbbf24;
+    }
+    .bookmarks-footer-bar {
+      padding: 14px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.02);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
   </style>
 </head>
 <body>
@@ -2786,6 +2983,12 @@
           <span class="sync-indicator"></span>
           <span id="syncText">Syncing...</span>
         </div>
+        <button class="bookmarks-nav-btn" id="bookmarksNavBtn" onclick="openBookmarksModal()" title="Mở danh sách Bookmarks nghiên cứu (Phase 14)">
+          <span>📌 Bookmarks (<span id="bookmarkHeaderCount">0</span>)</span>
+        </button>
+        <a href="data/weekly/weekly_latest.md" target="_blank" class="weekly-nav-btn" title="Xem báo cáo tổng hợp tuần mới nhất (Weekly Archive)">
+          <span>📊 Báo cáo tuần</span>
+        </a>
         <a href="workflow.html" class="workflow-hub-btn" title="Mở Workflow Hub & Telemetry Monitor">
           <span>⚡ Workflow Hub</span>
         </a>
@@ -2960,7 +3163,43 @@
     </div>
   </div>
 
+  <!-- Phase 14 — Bookmarks Modal -->
+  <div class="digest-modal-overlay" id="bookmarksModal" style="display: none;" onclick="handleBookmarksBackdropClick(event)">
+    <div class="bookmarks-modal-box" role="dialog" aria-modal="true" aria-labelledby="modalBookmarksTitle">
+      <div class="digest-modal-header">
+        <div class="digest-modal-title" id="modalBookmarksTitle">
+          <span>📌 BOOKMARKS NGHIÊN CỨU</span>
+          <span id="bookmarksModalCountBadge" style="font-size: 11px; padding: 2px 8px; border-radius: 999px; background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4);">0 mục</span>
+        </div>
+        <button class="digest-modal-close-btn" onclick="closeBookmarksModal()" aria-label="Đóng">&times;</button>
+      </div>
+
+      <div class="bookmarks-filter-bar">
+        <button class="bm-filter-btn active" data-filter="all" onclick="setBookmarkFilter('all')">Tất cả (<span id="bmCountAll">0</span>)</button>
+        <button class="bm-filter-btn" data-filter="new" onclick="setBookmarkFilter('new')">📌 Mới (<span id="bmCountNew">0</span>)</button>
+        <button class="bm-filter-btn" data-filter="researching" onclick="setBookmarkFilter('researching')">🔍 Đang nghiên cứu (<span id="bmCountResearching">0</span>)</button>
+        <button class="bm-filter-btn" data-filter="done" onclick="setBookmarkFilter('done')">✅ Hoàn thành (<span id="bmCountDone">0</span>)</button>
+        <button class="bm-filter-btn" data-filter="skipped" onclick="setBookmarkFilter('skipped')">❌ Bỏ qua (<span id="bmCountSkipped">0</span>)</button>
+      </div>
+
+      <div class="bookmarks-list" id="bookmarksListContainer">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="bookmarks-footer-bar">
+        <div style="font-size: 12px; color: var(--fg-dim);">
+          <span>💡 Dữ liệu gốc: <code>docs/data/bookmarks.json</code></span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-export-bm" onclick="copyBookmarksJson()" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer;">📋 Copy JSON</button>
+          <button class="btn-download-bm" onclick="downloadBookmarksJson()" style="background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.4); color: #fbbf24; padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600;">💾 Tải bookmarks.json</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="digest-copy-toast" id="digestCopyToast">✅ Đã sao chép nội dung Telegram!</div>
+  <div class="digest-copy-toast" id="bookmarkCopyToast" style="background: #f59e0b; color: #1e1e1e;">✅ Đã sao chép Bookmarks JSON!</div>
 
   <script>
     // --- 1. MOCK DATA (High quality fallback) ---
@@ -3060,6 +3299,266 @@
     };
     let activeTopic = "AI/Tech";
     let lastUpdatedIso = null;
+    let LAST_UPDATED_DATA = null;
+    let BOOKMARKS_DATA = [];
+    let bookmarkFilter = 'all';
+
+    // --- Phase 14: Bookmarks & Last Updated Handlers ---
+    async function loadLastUpdated() {
+      try {
+        const res = await fetch('data/last_updated.json');
+        if (res.ok) {
+          const data = await res.json();
+          LAST_UPDATED_DATA = data;
+          const syncEl = document.getElementById('syncText');
+          if (syncEl && data.last_run) {
+            const d = new Date(data.last_run);
+            const timeStr = !isNaN(d) ? d.toLocaleDateString('vi-VN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : data.last_run;
+            syncEl.innerHTML = `Đã sync: <strong>${timeStr}</strong> &bull; <strong>${data.signals_count || 0}</strong> signals`;
+          }
+        }
+      } catch (e) {
+        console.warn('Could not load data/last_updated.json:', e);
+      }
+    }
+
+    async function loadBookmarks() {
+      try {
+        let remoteList = [];
+        try {
+          const res = await fetch('data/bookmarks.json');
+          if (res.ok) {
+            remoteList = await res.json();
+          }
+        } catch (e) {
+          console.warn('Could not fetch data/bookmarks.json:', e);
+        }
+
+        const localSaved = localStorage.getItem('trendradar_bookmarks');
+        let localList = [];
+        if (localSaved) {
+          try { localList = JSON.parse(localSaved); } catch (e) {}
+        }
+
+        const map = new Map();
+        if (Array.isArray(remoteList)) {
+          remoteList.forEach(item => { if (item && item.opp_id) map.set(item.opp_id, item); });
+        }
+        if (Array.isArray(localList)) {
+          localList.forEach(item => { if (item && item.opp_id) map.set(item.opp_id, item); });
+        }
+
+        BOOKMARKS_DATA = Array.from(map.values());
+        updateBookmarkCounts();
+        if (window.location.hash === '#bookmarks') {
+          openBookmarksModal();
+        }
+      } catch (e) {
+        console.warn('loadBookmarks error:', e);
+      }
+    }
+
+    function saveBookmarksLocal() {
+      localStorage.setItem('trendradar_bookmarks', JSON.stringify(BOOKMARKS_DATA));
+      updateBookmarkCounts();
+      renderBookmarksModal();
+      renderOpportunityRadar();
+    }
+
+    function updateBookmarkCounts() {
+      const total = BOOKMARKS_DATA.length;
+      const newCount = BOOKMARKS_DATA.filter(b => b.status === 'new').length;
+      const resCount = BOOKMARKS_DATA.filter(b => b.status === 'researching').length;
+      const doneCount = BOOKMARKS_DATA.filter(b => b.status === 'done').length;
+      const skipCount = BOOKMARKS_DATA.filter(b => b.status === 'skipped').length;
+
+      const headerCountEl = document.getElementById('bookmarkHeaderCount');
+      if (headerCountEl) headerCountEl.textContent = total;
+
+      const modalBadge = document.getElementById('bookmarksModalCountBadge');
+      if (modalBadge) modalBadge.textContent = `${total} mục`;
+
+      const elAll = document.getElementById('bmCountAll');
+      if (elAll) elAll.textContent = total;
+      const elNew = document.getElementById('bmCountNew');
+      if (elNew) elNew.textContent = newCount;
+      const elRes = document.getElementById('bmCountResearching');
+      if (elRes) elRes.textContent = resCount;
+      const elDone = document.getElementById('bmCountDone');
+      if (elDone) elDone.textContent = doneCount;
+      const elSkip = document.getElementById('bmCountSkipped');
+      if (elSkip) elSkip.textContent = skipCount;
+    }
+
+    function getBookmark(oppId) {
+      return BOOKMARKS_DATA.find(b => b.opp_id === oppId);
+    }
+
+    function getBookmarkStatusLabel(status) {
+      if (status === 'new') return '📌 Mới';
+      if (status === 'researching') return '🔍 Nghiên cứu';
+      if (status === 'done') return '✅ Xong';
+      if (status === 'skipped') return '❌ Bỏ qua';
+      return status || 'Đánh dấu';
+    }
+
+    function quickToggleBookmark(oppId, title, score) {
+      const existing = BOOKMARKS_DATA.find(b => b.opp_id === oppId);
+      if (existing) {
+        openBookmarksModal();
+        return;
+      }
+      BOOKMARKS_DATA.push({
+        opp_id: oppId,
+        title: title || oppId,
+        bookmarked_at: new Date().toISOString(),
+        status: 'new',
+        notes: '',
+        score: typeof score === 'number' ? score : 0
+      });
+      saveBookmarksLocal();
+      const toast = document.getElementById('bookmarkCopyToast');
+      if (toast) {
+        toast.textContent = '📌 Đã thêm vào Bookmarks nghiên cứu!';
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 2400);
+      }
+    }
+
+    function openBookmarksModal() {
+      const modal = document.getElementById('bookmarksModal');
+      if (!modal) return;
+      modal.style.display = 'flex';
+      renderBookmarksModal();
+    }
+
+    function closeBookmarksModal() {
+      const modal = document.getElementById('bookmarksModal');
+      if (modal) modal.style.display = 'none';
+      if (window.location.hash === '#bookmarks') {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+    }
+
+    function handleBookmarksBackdropClick(event) {
+      if (event.target && event.target.id === 'bookmarksModal') {
+        closeBookmarksModal();
+      }
+    }
+
+    function setBookmarkFilter(filter) {
+      bookmarkFilter = filter;
+      document.querySelectorAll('.bm-filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-filter') === filter);
+      });
+      renderBookmarksModal();
+    }
+
+    function renderBookmarksModal() {
+      const container = document.getElementById('bookmarksListContainer');
+      if (!container) return;
+      updateBookmarkCounts();
+
+      let list = BOOKMARKS_DATA;
+      if (bookmarkFilter !== 'all') {
+        list = list.filter(b => b.status === bookmarkFilter);
+      }
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 40px; color: var(--fg-dim);">
+            <p style="font-size: 15px; margin-bottom: 6px;">Chưa có chủ đề nào được đánh dấu${bookmarkFilter !== 'all' ? ' với bộ lọc này' : ''}.</p>
+            <p style="font-size: 12px; color: var(--fg-muted);">Bấm vào nút <strong>📌 Đánh dấu</strong> trên bảng cơ hội hoặc alert Telegram để lưu.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = list.map(item => {
+        const opp = OPPORTUNITIES_DATA.find(o => o.id === item.opp_id);
+        const url = opp?.sources?.[0]?.url || opp?.url || '#';
+        const dateStr = item.bookmarked_at ? new Date(item.bookmarked_at).toLocaleDateString('vi-VN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+        return `
+          <div class="bookmark-item-card" id="bm-card-${item.opp_id}">
+            <div class="bookmark-header-row">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap;">
+                  <span class="bookmark-status-chip bookmark-status-${item.status}">${getBookmarkStatusLabel(item.status)}</span>
+                  <span style="font-size: 11px; color: var(--accent); font-weight: 700;">Score: ${item.score}/9</span>
+                  <span style="font-size: 11px; color: var(--fg-muted);">ID: ${item.opp_id}</span>
+                  ${dateStr ? `<span style="font-size: 11px; color: var(--fg-muted);">📅 ${dateStr}</span>` : ''}
+                </div>
+                <a class="bookmark-title-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
+                  ${escapeHtml(item.title)} ↗
+                </a>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <select onchange="updateBookmarkStatus('${item.opp_id}', this.value)" style="background: rgba(0,0,0,0.3); color: var(--fg); border: 1px solid var(--border); padding: 4px 8px; border-radius: 6px; font-size: 12px; cursor: pointer;">
+                  <option value="new" ${item.status === 'new' ? 'selected' : ''}>📌 new</option>
+                  <option value="researching" ${item.status === 'researching' ? 'selected' : ''}>🔍 researching</option>
+                  <option value="done" ${item.status === 'done' ? 'selected' : ''}>✅ done</option>
+                  <option value="skipped" ${item.status === 'skipped' ? 'selected' : ''}>❌ skipped</option>
+                </select>
+                <button onclick="removeBookmark('${item.opp_id}')" title="Xóa bookmark này" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 6px; padding: 4px 8px; font-size: 11px; cursor: pointer;">🗑️</button>
+              </div>
+            </div>
+            <div>
+              <textarea class="bookmark-notes-area" placeholder="Ghi chú nghiên cứu (VD: Xem code repo, so sánh giải pháp...)" onchange="updateBookmarkNotes('${item.opp_id}', this.value)">${escapeHtml(item.notes || '')}</textarea>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function updateBookmarkStatus(oppId, newStatus) {
+      const item = BOOKMARKS_DATA.find(b => b.opp_id === oppId);
+      if (item) {
+        item.status = newStatus;
+        saveBookmarksLocal();
+      }
+    }
+
+    function updateBookmarkNotes(oppId, notes) {
+      const item = BOOKMARKS_DATA.find(b => b.opp_id === oppId);
+      if (item) {
+        item.notes = notes;
+        saveBookmarksLocal();
+      }
+    }
+
+    function removeBookmark(oppId) {
+      if (confirm('Xóa chủ đề này khỏi danh sách bookmarks?')) {
+        BOOKMARKS_DATA = BOOKMARKS_DATA.filter(b => b.opp_id !== oppId);
+        saveBookmarksLocal();
+      }
+    }
+
+    function copyBookmarksJson() {
+      const jsonStr = JSON.stringify(BOOKMARKS_DATA, null, 2);
+      navigator.clipboard.writeText(jsonStr).then(() => {
+        const toast = document.getElementById('bookmarkCopyToast');
+        if (toast) {
+          toast.textContent = '✅ Đã sao chép Bookmarks JSON vào clipboard!';
+          toast.style.display = 'block';
+          setTimeout(() => { toast.style.display = 'none'; }, 2400);
+        }
+      }).catch(e => {
+        alert('Lỗi copy: ' + e);
+      });
+    }
+
+    function downloadBookmarksJson() {
+      const jsonStr = JSON.stringify(BOOKMARKS_DATA, null, 2);
+      const blob = new Blob([jsonStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'bookmarks.json';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
 
     // --- 3. THEME TOGGLE LOGIC ---
     function initTheme() {
@@ -3468,6 +3967,7 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeDailyDigestModal();
+        closeBookmarksModal();
       }
     });
 
@@ -3476,6 +3976,8 @@
       await loadOpportunities();
       await loadSocialBuzz();
       await loadDailyDigest();
+      await loadBookmarks();
+      await loadLastUpdated();
       
       try {
         const res = await fetch('data/news.json');
@@ -4291,6 +4793,11 @@
                         `;
                       }).join('');
 
+                      const isStale = item.stale === true;
+                      const bm = getBookmark(item.id);
+                      const isBm = !!bm;
+                      const bmStatus = bm ? bm.status : '';
+
                       return `
                         <tr>
                           <td class="opp-title-cell">
@@ -4302,6 +4809,11 @@
                               <span class="opp-meta-pill">#${idx + 1}</span>
                               <span class="opp-meta-pill">${escapeHtml(item.id || '')}</span>
                               ${item.first_seen ? `<span class="opp-meta-pill">📅 ${escapeHtml(item.first_seen)}</span>` : ''}
+                              ${isStale ? `<span class="badge-stale" title="Tín hiệu > 7 ngày tuổi">⏳ Cũ (>7d)</span>` : ''}
+                              <button class="btn-bookmark-action ${isBm ? 'is-bookmarked' : ''}" onclick="quickToggleBookmark('${escapeHtml(item.id)}', '${escapeHtml((item.title || '').replace(/'/g, "\\'"))}', ${scoreVal})" title="${isBm ? 'Trạng thái: ' + bmStatus + ' (Bấm để xem/sửa)' : 'Đánh dấu nghiên cứu'}">
+                                <span>📌</span>
+                                <span>${isBm ? getBookmarkStatusLabel(bmStatus) : 'Đánh dấu'}</span>
+                              </button>
                             </div>
                           </td>
                           <td class="opp-chips-cell">

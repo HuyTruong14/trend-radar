@@ -1,0 +1,111 @@
+{
+  "week": "W42",
+  "start_date": "2026-10-14",
+  "end_date": "2026-10-20",
+  "stats": {
+    "total_signals": 482,
+    "total_opportunities": 188,
+    "build_ready": 6,
+    "research": 48,
+    "watch": 134
+  },
+  "top_opportunities": [
+    {
+      "id": "opp_2026_1018_sample1",
+      "title": "Afrina-B/WaterWatch",
+      "total": 9,
+      "summary_vi": "Hệ thống IoT giám sát và cảnh báo chất lượng nước ao nuôi"
+    },
+    {
+      "id": "opp_2026_1018_sample2",
+      "title": "Showrish/Smart-Water-Quality-Prediction",
+      "total": 9,
+      "summary_vi": "Dự đoán chất lượng nước thời gian thực bằng IoT và máy học"
+    }
+  ],
+  "funding_deals": [
+    {
+      "title": "Pivot Energy Secures $500 Million Credit Facility",
+      "type": "Gọi vốn",
+      "amount": "$500M",
+      "sector": "energy"
+    }
+  ],
+  "hot_topics": {
+    "reddit_top3": [
+      {
+        "title": "Autonomous robotics decoupling labor",
+        "source": "r/Futurology",
+        "upvotes": 510
+      }
+    ],
+    "google_trends_top3": [
+      {
+        "keyword": "electric vehicle",
+        "volume": 38
+      }
+    ],
+    "twitter_top3": [
+      {
+        "keyword": "#AI",
+        "tweets": "110K"
+      }
+    ]
+  },
+  "tech_frequency": {
+    "ESP32": {
+      "count": 15,
+      "prev_week": 11,
+      "change_pct": 36
+    },
+    "TinyML": {
+      "count": 10,
+      "prev_week": 8,
+      "change_pct": 25
+    },
+    "LoRaWAN": {
+      "count": 9,
+      "prev_week": 7,
+      "change_pct": 28
+    },
+    "RP2350": {
+      "count": 5,
+      "prev_week": 3,
+      "change_pct": 67
+    },
+    "RISC-V": {
+      "count": 8,
+      "prev_week": 7,
+      "change_pct": 14
+    },
+    "ROS2": {
+      "count": 7,
+      "prev_week": 6,
+      "change_pct": 16
+    },
+    "Edge AI": {
+      "count": 14,
+      "prev_week": 11,
+      "change_pct": 27
+    },
+    "Robotics": {
+      "count": 18,
+      "prev_week": 14,
+      "change_pct": 28
+    },
+    "Sensor": {
+      "count": 25,
+      "prev_week": 21,
+      "change_pct": 19
+    }
+  },
+  "new_terms": [
+    "SmartWaterNet",
+    "RP2350"
+  ],
+  "disruption_snapshot": {
+    "most_disrupted_skill": "Viết firmware cơ bản & driver vi điều khiển",
+    "ai_pct": 57,
+    "change": "+2%"
+  }
+}

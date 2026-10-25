@@ -668,16 +668,35 @@ def build_aggregated_news(topics_data=None, out_dir=DATA_DIR):
 
     # Write flat list to docs/data/signals.json for Opportunity Radar / downstream consumers
     all_signals = []
+    now_utc = datetime.now(timezone.utc)
     for topic_name, topic_data in output_data.get("topics", {}).items():
         for item in topic_data.get("items", []):
             item_copy = dict(item)
             item_copy["topic"] = topic_name
+            pub = item.get("published")
+            is_stale = False
+            if pub:
+                try:
+                    dt = parse_dt(pub)
+                    if dt and (now_utc - dt).days > 7:
+                        is_stale = True
+                except Exception:
+                    pass
+            item_copy["stale"] = is_stale
             all_signals.append(item_copy)
     signals_file = os.path.join(out_dir, "signals.json")
     with open(signals_file, "w", encoding="utf-8") as f:
         json.dump(all_signals, f, indent=2, ensure_ascii=False)
 
     print(f"Aggregated {len(output_data['topics'])} topics into {out_file} and exported {len(all_signals)} signals to {signals_file}")
+
+    # Phase 14: Update last_updated.json
+    try:
+        import last_updated
+        last_updated.update_last_updated(signals_count=len(all_signals), status="success")
+    except Exception as e:
+        print(f"[aggregate] Warning: could not update last_updated: {e}")
+
     return output_data
 
 

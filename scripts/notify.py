@@ -240,8 +240,23 @@ def format_template3_promotion(opp, old_stage, old_total, new_stage, new_total, 
     )
 
 
-def send_message(text):
-    """Send a Telegram message. Never raises — failures are logged only."""
+def get_bookmark_inline_keyboard(opp_id=None, dashboard_url=DEFAULT_DASHBOARD_URL):
+    """Generate Telegram inline keyboard for bookmarking an opportunity."""
+    url = f"{dashboard_url}#bookmarks"
+    if opp_id:
+        url += f"?id={opp_id}"
+    return {
+        "inline_keyboard": [
+            [
+                {"text": "📌 Đánh dấu nghiên cứu", "url": url}
+            ]
+        ]
+    }
+
+
+def send_message(text, reply_markup=None):
+    """Send a Telegram message with optional inline keyboard. Never raises — failures are logged only."""
+    import json
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
     if not token or not chat_id:
@@ -251,10 +266,14 @@ def send_message(text):
     if len(text) > TELEGRAM_MAX_LEN:
         text = text[: TELEGRAM_MAX_LEN - 20].rstrip() + "\n… (cắt bớt)"
 
+    data = {"chat_id": chat_id, "text": text}
+    if reply_markup:
+        data["reply_markup"] = json.dumps(reply_markup) if isinstance(reply_markup, dict) else str(reply_markup)
+
     try:
         r = requests.post(
             f"{TELEGRAM_API_BASE}/bot{token}/sendMessage",
-            data={"chat_id": chat_id, "text": text},
+            data=data,
             timeout=TIMEOUT,
         )
         if not r.ok:

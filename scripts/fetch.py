@@ -843,10 +843,20 @@ def build_topic(topic_key, cfg, max_items, freshness_days):
 
     # attach parsed datetime for sorting/filtering, then drop stale items
     fresh = []
+    now_utc = datetime.now(timezone.utc)
     for it in items:
         dt = parse_dt(it.get("published"))
         it["_dt"] = dt.isoformat() if dt else None
-        if within_freshness(dt, freshness_days):
+        
+        # Check Hacker News special rule (up to 30 days or points >= 100)
+        is_hn_popular = (it.get("source") == "Hacker News" and (it.get("score", 0) >= 100 or within_freshness(dt, 30)))
+        
+        if within_freshness(dt, freshness_days) or is_hn_popular:
+            # Phase 14: Item > 7 days old -> attach flag "stale"
+            if dt and (now_utc - dt).days > 7:
+                it["stale"] = True
+            else:
+                it["stale"] = False
             fresh.append(it)
 
     fresh.sort(key=lambda x: x["_dt"] or "", reverse=True)
