@@ -1391,6 +1391,338 @@
       line-height: 1.4;
     }
 
+    /* --- Refactor #3: Compact Opportunity Cards --- */
+    .opp-cards-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+      padding: 4px 2px;
+    }
+    .opp-cards-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .opp-cards-header-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--fg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .opp-cards-tier-tabs {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .opp-cards-tier-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--fg-dim);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .opp-cards-tier-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--fg);
+    }
+    .opp-cards-tier-btn.active {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.4);
+      color: #93c5fd;
+    }
+    .opp-cards-header-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .opp-view-mode-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--fg-dim);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .opp-view-mode-toggle:hover {
+      border-color: var(--border-hover);
+      color: var(--fg);
+    }
+    .opp-view-mode-toggle.is-active {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--fg);
+    }
+
+    .opp-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .opp-card-compact {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+    .opp-card-compact:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.16);
+      transform: translateY(-1px);
+    }
+
+    /* Tier left borders */
+    .opp-card-compact.tier-actnow {
+      border-left: 4px solid var(--hot);
+    }
+    .opp-card-compact.tier-research {
+      border-left: 4px solid var(--score-mid);
+    }
+    .opp-card-compact.tier-watch {
+      border-left: 4px solid var(--score-low);
+    }
+
+    .opp-card-compact.is-contacted {
+      opacity: 0.8;
+      border-left-color: var(--score-high) !important;
+    }
+
+    /* Preview row (1-2 lines, ~56-64px height) */
+    .opp-card-preview {
+      padding: 10px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .opp-card-preview-row1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .opp-card-left-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      flex: 1;
+    }
+    .opp-score-badge-inline {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .tier-actnow .opp-score-badge-inline {
+      background: rgba(255, 107, 53, 0.18);
+      color: var(--hot);
+      border: 1px solid rgba(255, 107, 53, 0.4);
+    }
+    .tier-research .opp-score-badge-inline {
+      background: rgba(245, 158, 11, 0.18);
+      color: var(--score-mid);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+    .tier-watch .opp-score-badge-inline {
+      background: rgba(148, 163, 184, 0.15);
+      color: var(--score-low);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .opp-card-title-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--fg);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .opp-card-title-text a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .opp-card-title-text a:hover {
+      color: var(--accent);
+    }
+
+    .opp-card-right-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .opp-bm-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      opacity: 0.6;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: all var(--transition-fast);
+      color: var(--fg-dim);
+    }
+    .opp-bm-btn:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fbbf24;
+    }
+    .opp-bm-btn.active {
+      opacity: 1;
+      color: #fbbf24;
+    }
+
+    .opp-chevron {
+      font-size: 11px;
+      color: var(--fg-muted);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-block;
+      user-select: none;
+    }
+    .opp-card-compact.expanded .opp-chevron {
+      transform: rotate(90deg);
+      color: var(--accent);
+    }
+
+    .opp-card-preview-row2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .opp-card-summary-snippet {
+      font-size: 12px;
+      color: var(--fg-dim);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex: 1;
+      min-width: 0;
+    }
+    .opp-card-pills-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .opp-pill {
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+    }
+    .opp-pill-src {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--fg-muted);
+      border: 1px solid var(--border);
+    }
+    .opp-pill-contacted {
+      background: rgba(52, 211, 153, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+
+    /* Detail container (Smooth transition accordion) */
+    .opp-card-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.24s ease;
+      opacity: 0;
+      border-top: 1px solid transparent;
+    }
+    .opp-card-compact.expanded .opp-card-detail {
+      max-height: 800px;
+      opacity: 1;
+      border-top-color: var(--border);
+    }
+    .opp-card-detail-content {
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: rgba(0, 0, 0, 0.12);
+    }
+    .opp-detail-summary-full {
+      font-size: 13px;
+      color: var(--fg);
+      line-height: 1.6;
+    }
+    .opp-detail-summary-vi {
+      font-size: 13px;
+      color: #93c5fd;
+      line-height: 1.5;
+      font-weight: 500;
+      background: rgba(59, 130, 246, 0.08);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      border-left: 3px solid #3b82f6;
+    }
+    .opp-score-breakdown-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+    .opp-score-chip {
+      font-size: 11px;
+      color: var(--fg-dim);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .opp-score-chip strong {
+      font-family: var(--font-mono);
+      color: var(--fg);
+    }
+    .opp-signal-types-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .opp-sources-list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+    .opp-card-compact .act-now-action-box {
+      margin-top: 4px;
+      padding: 10px 14px;
+    }
+
     /* Layout: Sidebar + Main Table */
     .opp-content-layout {
       display: flex;
@@ -3711,6 +4043,9 @@
       stage: 'all'        // 'all', 'build_ready', 'research', 'watch'
     };
     let oppShowDemoActNow = false;
+    let oppViewMode = localStorage.getItem('opp-view-mode') || 'compact';
+    let oppActiveExpandedCardId = null;
+    let oppCardsTierFilter = 'build_ready';
     let WATCHLIST_CONFIG = {
       keywords: ["iGaming regulation", "Claude", "Vietnam tech", "Anthropic"],
       threshold: 50
@@ -6205,14 +6540,25 @@
       const hasActiveFilters = Object.values(oppFilters).some(v => v !== 'all');
       const activeFilterCount = Object.values(oppFilters).filter(v => v !== 'all').length;
 
-      // Determine items for Act Now section (score 9 items, or demo if toggled)
-      let actNowItemsToDisplay = [...readyItems];
-      if (actNowItemsToDisplay.length === 0 && oppShowDemoActNow) {
-        actNowItemsToDisplay = [
+      // Determine items for Opportunity Cards section based on selected tier filter
+      let cardsToDisplay = [];
+      if (oppCardsTierFilter === 'build_ready') {
+        cardsToDisplay = [...readyItems];
+      } else if (oppCardsTierFilter === 'research') {
+        cardsToDisplay = OPPORTUNITIES_DATA.filter(it => it.stage === 'research' || (it.total >= 7 && it.total <= 8));
+      } else if (oppCardsTierFilter === 'watch') {
+        cardsToDisplay = OPPORTUNITIES_DATA.filter(it => it.stage === 'watch' || (it.total >= 4 && it.total <= 6));
+      } else {
+        cardsToDisplay = [...OPPORTUNITIES_DATA];
+      }
+
+      if (cardsToDisplay.length === 0 && oppShowDemoActNow && oppCardsTierFilter === 'build_ready') {
+        cardsToDisplay = [
           {
             id: 'opp_demo_actnow_preview',
             title: 'Hệ thống AI Camera & Cảm biến LiDAR giám sát giao thông đô thị và chẩn đoán hạ tầng vật lý',
             summary: 'Tín hiệu tổng hợp từ 2 nguồn độc lập (Báo Giao Thông & IEEE Sensors) đạt điểm tuyệt đối 9/9. Nhu cầu vật lý trường tồn, giải pháp thay thế con người giám sát 80% thời gian thực.',
+            summary_vi: 'Camera AI & LiDAR giám sát hạ tầng đô thị thời gian thực',
             total: 9,
             stage: 'build_ready',
             signal_type: ['supply_gap', 'tech_cheap'],
@@ -6220,54 +6566,192 @@
               { name: 'Báo Giao Thông', url: 'https://baogiaothong.vn', date: '2026-10-22' },
               { name: 'IEEE Sensors', url: 'https://ieeexplore.ieee.org', date: '2026-10-22' }
             ],
-            source_count: 2
+            source_count: 2,
+            scores: { durability: 3, ai_support: 3, your_leverage: 3 },
+            velocity: 'rising',
+            triple_signal_badge: '🔥 Triple Signal'
           }
         ];
       }
 
       container.innerHTML = `
-        <!-- ==================== 1. PHẦN ACT NOW (TRÊN CÙNG TRANG) ==================== -->
+        <!-- ==================== 1. PHẦN OPPORTUNITY CARDS (COMPACT / EXPANDED - REFACTOR #3) ==================== -->
         <section class="act-now-section" aria-labelledby="actNowHeading">
-          ${actNowItemsToDisplay.length > 0 ? actNowItemsToDisplay.map(item => {
-            const isContacted = localStorage.getItem('opp_contacted_' + item.id) === 'true';
-            const primaryUrl = item.sources?.[0]?.url || item.url || '#';
-            return `
-              <div class="act-now-card ${isContacted ? 'is-contacted' : ''}" id="card-${item.id}">
-                <div class="act-now-top">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <span class="act-now-badge ${isContacted ? 'contacted-badge' : ''}">
-                      ${isContacted ? '✓ Đã liên hệ' : '🔥 ACT NOW (BUILD-READY)'}
-                    </span>
-                    <span style="font-size: 12px; color: var(--fg-muted);">Cơ hội điểm 9/9 ưu tiên cao nhất</span>
-                  </div>
-                  <span class="act-now-score">${item.total}/9</span>
-                </div>
-                <h3 class="act-now-title">
-                  <a href="${escapeHtml(primaryUrl)}" target="_blank" rel="noopener noreferrer">
-                    ${escapeHtml(item.title)} ↗
-                  </a>
-                </h3>
-                <p class="act-now-summary">${escapeHtml(item.summary)}</p>
-                <div class="act-now-action-box">
-                  <div class="act-now-prompt">
-                    <span>🎯</span>
-                    <span><strong>Hành động tuần này:</strong> Đặt lịch phỏng vấn 3 khách hàng / cơ quan hạ tầng tiềm năng để xác nhận nhu cầu & giá trị trước khi dựng sản phẩm.</span>
-                  </div>
-                  <button class="btn-mark-contacted ${isContacted ? 'is-contacted' : ''}" onclick="toggleContacted('${item.id}')">
-                    <span>${isContacted ? '✓ Đã đi hỏi khách (Bấm để mở lại)' : '👉 Đánh dấu đã đi hỏi khách'}</span>
-                  </button>
-                </div>
+          <div class="opp-cards-section-header">
+            <div class="opp-cards-header-left">
+              <div class="opp-cards-header-title">
+                <span id="actNowHeading">🎯 Cơ hội theo dõi & Hành động</span>
+                <span class="opp-pill" style="background: rgba(255,255,255,0.06); color: var(--fg-dim); border: 1px solid var(--border);">
+                  ${cardsToDisplay.length} cơ hội
+                </span>
               </div>
-            `;
-          }).join('') : `
+              <div class="opp-cards-tier-tabs" role="tablist" aria-label="Lọc theo cấp độ">
+                <button class="opp-cards-tier-btn ${oppCardsTierFilter === 'build_ready' ? 'active' : ''}" onclick="setOppCardsTierFilter('build_ready')">
+                  <span>🔥 Act now (9/9)</span>
+                  <span style="opacity: 0.8;">(${readyCount})</span>
+                </button>
+                <button class="opp-cards-tier-btn ${oppCardsTierFilter === 'research' ? 'active' : ''}" onclick="setOppCardsTierFilter('research')">
+                  <span>⚡ Research (7-8)</span>
+                  <span style="opacity: 0.8;">(${researchCount})</span>
+                </button>
+                <button class="opp-cards-tier-btn ${oppCardsTierFilter === 'watch' ? 'active' : ''}" onclick="setOppCardsTierFilter('watch')">
+                  <span>⏱️ Watch (4-6)</span>
+                  <span style="opacity: 0.8;">(${watchCount})</span>
+                </button>
+                <button class="opp-cards-tier-btn ${oppCardsTierFilter === 'all' ? 'active' : ''}" onclick="setOppCardsTierFilter('all')">
+                  <span>Tất cả</span>
+                  <span style="opacity: 0.8;">(${totalCount})</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="opp-cards-header-right">
+              <button class="opp-view-mode-toggle ${oppViewMode === 'expanded' ? 'is-active' : ''}" onclick="toggleOppViewMode()" title="Chuyển đổi giữa chế độ Thu gọn (Compact) và Mở rộng (Expanded)">
+                <span>${oppViewMode === 'compact' ? '☰ Compact' : '▤ Expanded'}</span>
+              </button>
+            </div>
+          </div>
+
+          ${cardsToDisplay.length > 0 ? `
+            <div class="opp-cards-container">
+              ${cardsToDisplay.map(item => {
+                const isContacted = localStorage.getItem('opp_contacted_' + item.id) === 'true';
+                const primaryUrl = item.sources?.[0]?.url || item.url || '#';
+                const s = item.total || 0;
+                
+                let tierClass = 'tier-watch';
+                if (s >= 9 || item.stage === 'build_ready') {
+                  tierClass = 'tier-actnow';
+                } else if (s >= 7 || item.stage === 'research') {
+                  tierClass = 'tier-research';
+                }
+
+                const isExpanded = oppViewMode === 'expanded' || oppActiveExpandedCardId === item.id;
+                const bm = typeof getBookmark === 'function' ? getBookmark(item.id) : null;
+                const isBm = !!bm;
+
+                const v = (item.velocity || 'steady').toLowerCase();
+                let velocityIcon = '→';
+                let velocityText = 'steady';
+                if (v === 'rising') { velocityIcon = '↑'; velocityText = 'rising'; }
+                else if (v === 'fading' || v === 'cooling') { velocityIcon = '↓'; velocityText = 'fading'; }
+
+                const srcCount = Array.isArray(item.sources) ? item.sources.length : (item.source_count || 1);
+                const srcList = Array.isArray(item.sources) ? item.sources : [];
+
+                return `
+                  <div class="opp-card-compact ${tierClass} ${isContacted ? 'is-contacted' : ''} ${isExpanded ? 'expanded' : ''}" id="card-${item.id}" onclick="toggleOppCardAccordion('${item.id}', event)">
+                    <!-- Dòng 1 & 2 Preview (Luôn hiển thị, ~56-64px height) -->
+                    <div class="opp-card-preview">
+                      <div class="opp-card-preview-row1">
+                        <div class="opp-card-left-group">
+                          <span class="opp-score-badge-inline">${s}/9</span>
+                          <span class="opp-card-title-text" title="${escapeHtml(item.title)}">
+                            <a href="${escapeHtml(primaryUrl)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">
+                              ${escapeHtml(item.title)} ↗
+                            </a>
+                          </span>
+                        </div>
+                        <div class="opp-card-right-group">
+                          <button class="opp-bm-btn ${isBm ? 'active' : ''}" onclick="toggleBookmark('${item.id}', '${escapeHtml(item.title).replace(/'/g, "\\'")}', 'opportunity'); event.stopPropagation();" title="${isBm ? 'Bỏ lưu bookmark' : 'Lưu bookmark'}">
+                            ${isBm ? '★' : '☆'}
+                          </button>
+                          <span class="opp-chevron">▸</span>
+                        </div>
+                      </div>
+
+                      <div class="opp-card-preview-row2">
+                        <div class="opp-card-summary-snippet" title="${escapeHtml(item.summary_vi || item.summary || '')}">
+                          ${escapeHtml(item.summary_vi || item.summary || '')}
+                        </div>
+                        <div class="opp-card-pills-row">
+                          <span class="opp-pill opp-pill-src" title="Xu hướng tín hiệu: ${velocityText}">[${velocityIcon} ${velocityText}]</span>
+                          <span class="opp-pill opp-pill-src" title="${srcCount} nguồn đối chiếu độc lập">[${srcCount} src]</span>
+                          ${isContacted ? `<span class="opp-pill opp-pill-contacted">✓ Đã hỏi</span>` : ''}
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Phần Mở Rộng Chi Tiết (Smooth accordion) -->
+                    <div class="opp-card-detail">
+                      <div class="opp-card-detail-content">
+                        ${item.summary_vi ? `
+                          <div class="opp-detail-summary-vi">
+                            <strong>Tóm tắt tiếng Việt:</strong> ${escapeHtml(item.summary_vi)}
+                          </div>
+                        ` : ''}
+
+                        <div class="opp-detail-summary-full">
+                          ${escapeHtml(item.summary || '')}
+                        </div>
+
+                        <!-- Score breakdown (Bền / AI hỗ trợ / Đòn bẩy) -->
+                        <div class="opp-score-breakdown-row">
+                          <span class="opp-score-chip">🛡️ Bền vững: <strong>${item.scores?.durability || 3}/3</strong></span>
+                          <span class="opp-score-chip">🤖 AI hỗ trợ: <strong>${item.scores?.ai_support || 3}/3</strong></span>
+                          <span class="opp-score-chip">🚀 Đòn bẩy: <strong>${item.scores?.your_leverage || 3}/3</strong></span>
+                          ${item.triple_signal_badge ? `
+                            <span style="margin-left: auto; font-size: 11px; padding: 2px 8px; border-radius: 4px; background: rgba(255, 107, 53, 0.15); color: #ff6b35; font-weight: 700;">
+                              ${escapeHtml(item.triple_signal_badge)}
+                            </span>
+                          ` : ''}
+                        </div>
+
+                        <!-- Signal type chips -->
+                        <div class="opp-signal-types-row">
+                          <span style="font-size: 11px; color: var(--fg-muted);">Tín hiệu nhận diện:</span>
+                          ${(item.signal_type || []).map(t => {
+                            let chipLabel = t;
+                            if (t === 'pain_repeat') chipLabel = '🔥 Than phiền lặp lại';
+                            else if (t === 'price_shift') chipLabel = '💰 Biến động giá';
+                            else if (t === 'supply_gap') chipLabel = '🎯 Thiếu hụt cung / Luật';
+                            else if (t === 'tech_cheap') chipLabel = '⚡ Công nghệ / IoT rẻ';
+                            return `<span class="chip-signal chip-tech" style="font-size: 10px; padding: 2px 6px;">#${escapeHtml(chipLabel)}</span>`;
+                          }).join('')}
+                        </div>
+
+                        <!-- Action box -->
+                        <div class="act-now-action-box">
+                          <div class="act-now-prompt">
+                            <span>🎯</span>
+                            <span><strong>Hành động tuần này:</strong> Đặt lịch phỏng vấn 3 khách hàng / chuyên gia trong ngành để xác nhận nhu cầu & giá trị trước khi dựng sản phẩm.</span>
+                          </div>
+                          <button class="btn-mark-contacted ${isContacted ? 'is-contacted' : ''}" onclick="toggleContacted('${item.id}'); event.stopPropagation();">
+                            <span>${isContacted ? '✓ Đã đi hỏi khách (Bấm để mở lại)' : '👉 Đánh dấu đã đi hỏi khách'}</span>
+                          </button>
+                        </div>
+
+                        <!-- Source links -->
+                        ${srcList.length > 0 ? `
+                          <div class="opp-sources-list">
+                            <span style="font-size: 11px; color: var(--fg-muted);">Nguồn đối chiếu:</span>
+                            ${srcList.map(s => {
+                              const sName = typeof s === 'object' ? (s.name || 'Web') : String(s);
+                              const sUrl = typeof s === 'object' ? (s.url || '#') : '#';
+                              return `
+                                <a class="opp-src-btn" href="${escapeHtml(sUrl)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="${escapeHtml(sName)}">
+                                  <span>${escapeHtml(sName)}</span>
+                                  <span style="font-size: 10px;">↗</span>
+                                </a>
+                              `;
+                            }).join('')}
+                          </div>
+                        ` : ''}
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          ` : `
             <div class="act-now-empty">
               <div class="act-now-empty-left">
                 <span class="act-now-empty-icon">🔥</span>
                 <div>
-                  <h4 class="act-now-empty-title">Phần Act now (Điểm 9/9)</h4>
+                  <h4 class="act-now-empty-title">Chưa có cơ hội trong cấp độ này</h4>
                   <p class="act-now-empty-sub">
-                    Chưa có cơ hội đạt điểm tuyệt đối 9/9 tuần này (yêu cầu &ge; 2 nguồn độc lập xác nhận chéo).<br>
-                    👉 <strong>Hành động đề xuất:</strong> Ưu tiên đi hỏi khách hàng với <strong>5 tín hiệu Research (7-8/9)</strong> bên dưới!
+                    Hiện chưa có tín hiệu đạt tiêu chí lựa chọn cho mục này.<br>
+                    👉 <strong>Gợi ý:</strong> Bạn có thể chuyển sang xem tab <strong>Research (7-8/9)</strong> hoặc bấm xem Demo bên dưới!
                   </p>
                 </div>
               </div>
@@ -6593,6 +7077,42 @@
     function toggleDemoActNow() {
       oppShowDemoActNow = !oppShowDemoActNow;
       renderOpportunityRadar();
+    }
+
+    function toggleOppViewMode() {
+      oppViewMode = oppViewMode === 'compact' ? 'expanded' : 'compact';
+      try {
+        localStorage.setItem('opp-view-mode', oppViewMode);
+      } catch (e) {}
+      renderOpportunityRadar();
+    }
+
+    function setOppCardsTierFilter(tier) {
+      oppCardsTierFilter = tier;
+      renderOpportunityRadar();
+    }
+
+    function toggleOppCardAccordion(cardId, event) {
+      if (event && event.target && event.target.closest('a, button, input, textarea, select')) {
+        return;
+      }
+      const card = document.getElementById('card-' + cardId);
+      if (!card) return;
+
+      if (oppViewMode === 'expanded') {
+        card.classList.toggle('expanded');
+        return;
+      }
+
+      const isExpanded = card.classList.contains('expanded');
+      document.querySelectorAll('.opp-card-compact').forEach(c => c.classList.remove('expanded'));
+
+      if (!isExpanded) {
+        card.classList.add('expanded');
+        oppActiveExpandedCardId = cardId;
+      } else {
+        oppActiveExpandedCardId = null;
+      }
     }
 
     function toggleMobileSidebar() {
