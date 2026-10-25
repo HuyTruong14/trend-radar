@@ -2986,6 +2986,58 @@
       color: #ffffff;
       box-shadow: 0 0 12px rgba(139, 92, 246, 0.3);
     }
+
+    /* Phase 12 - Repo Combos Navigation Button & Role Chips */
+    .combos-nav-btn {
+      padding: 6px 12px;
+      background: linear-gradient(135deg, rgba(234, 179, 8, 0.15), rgba(249, 115, 22, 0.15));
+      border: 1px solid rgba(234, 179, 8, 0.4);
+      border-radius: var(--radius-full);
+      color: #facc15;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition-fast);
+    }
+    .combos-nav-btn:hover {
+      background: linear-gradient(135deg, rgba(234, 179, 8, 0.25), rgba(249, 115, 22, 0.25));
+      border-color: #fde047;
+      color: #ffffff;
+      box-shadow: 0 0 12px rgba(234, 179, 8, 0.3);
+    }
+    .role-chip {
+      display: inline-flex;
+      align-items: center;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .role-chip-hw {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.35);
+    }
+    .role-chip-ai {
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.35);
+    }
+    .role-chip-pf {
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+    }
+    .role-chip-inf {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+    }
   </style>
 </head>
 <body>
@@ -3005,6 +3057,9 @@
           <span class="sync-indicator"></span>
           <span id="syncText">Syncing...</span>
         </div>
+        <button class="combos-nav-btn" id="combosNavBtn" onclick="openCombosModal()" title="Mở danh sách Repo Combos & Ý tưởng sản phẩm (Phase 12)">
+          <span>💡 Repo Combos (<span id="combosHeaderCount">5</span>)</span>
+        </button>
         <button class="glossary-nav-btn" id="glossaryNavBtn" onclick="openGlossaryModal()" title="Mở bản đồ thuật ngữ công nghệ (Phase 13 Tech Glossary)">
           <span>🔬 Tech Glossary</span>
         </button>
@@ -3252,6 +3307,39 @@
           <a href="data/tech_glossary.json" target="_blank" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none;">📄 tech_glossary.json</a>
           <a href="data/tech_timeline.json" target="_blank" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none;">📄 tech_timeline.json</a>
           <a href="data/tech_new_terms.json" target="_blank" style="background: rgba(139, 92, 246, 0.2); border: 1px solid rgba(139, 92, 246, 0.4); color: #c4b5fd; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">📄 tech_new_terms.json</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 12 — Repo Combos & Trending Repos Modal -->
+  <div class="digest-modal-overlay" id="combosModal" style="display: none;" onclick="handleCombosBackdropClick(event)">
+    <div class="bookmarks-modal-box" role="dialog" aria-modal="true" aria-labelledby="modalCombosTitle" style="max-width: 900px;">
+      <div class="digest-modal-header">
+        <div class="digest-modal-title" id="modalCombosTitle">
+          <span>💡 REPO COMBOS & SẢN PHẨM GHÉP MÃ NGUỒN</span>
+          <span id="combosModalBadge" style="font-size: 11px; padding: 2px 8px; border-radius: 999px; background: rgba(234, 179, 8, 0.2); color: #fde047; border: 1px solid rgba(234, 179, 8, 0.4);">5 combos</span>
+        </div>
+        <button class="digest-modal-close-btn" onclick="closeCombosModal()" aria-label="Đóng">&times;</button>
+      </div>
+
+      <div class="bookmarks-filter-bar">
+        <button class="bm-filter-btn active" id="tabCombosMain" onclick="switchCombosTab('combos')">💡 Ý tưởng ghép Repo (Combos) (<span id="tabCountCombos">5</span>)</button>
+        <button class="bm-filter-btn" id="tabCombosTrending" onclick="switchCombosTab('trending')">⭐ Repos thịnh hành (Trending) (<span id="tabCountTrending">0</span>)</button>
+      </div>
+
+      <div class="bookmarks-list" id="combosContentArea">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="bookmarks-footer-bar">
+        <div style="font-size: 12px; color: var(--fg-dim);">
+          <span>💡 Dữ liệu trích xuất & ghép tự động: <code>docs/data/repo_combos.json</code></span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <a href="data/repo_combos.json" target="_blank" style="background: rgba(234, 179, 8, 0.2); border: 1px solid rgba(234, 179, 8, 0.4); color: #fde047; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">📄 repo_combos.json</a>
+          <a href="data/repo_trending.json" target="_blank" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none;">📄 repo_trending.json</a>
+          <a href="data/repo_history.json" target="_blank" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none;">📄 repo_history.json</a>
         </div>
       </div>
     </div>
@@ -3800,6 +3888,209 @@
       }
     }
 
+    // --- Phase 12: Repo Combos & Trending Repos Handlers ---
+    let REPO_COMBOS_DATA = [];
+    let REPO_TRENDING_DATA = [];
+    let activeCombosTab = 'combos';
+
+    async function loadRepoCombos() {
+      try {
+        const [resC, resT] = await Promise.allSettled([
+          fetch('data/repo_combos.json').then(r => r.ok ? r.json() : []),
+          fetch('data/repo_trending.json').then(r => r.ok ? r.json() : [])
+        ]);
+
+        if (resC.status === 'fulfilled' && Array.isArray(resC.value)) REPO_COMBOS_DATA = resC.value;
+        if (resT.status === 'fulfilled' && Array.isArray(resT.value)) REPO_TRENDING_DATA = resT.value;
+
+        updateCombosBadges();
+
+        if (window.location.hash === '#combos' || window.location.hash === '#repo-combos') {
+          openCombosModal();
+        }
+      } catch (e) {
+        console.warn('Could not load Repo Combos data:', e);
+      }
+    }
+
+    function updateCombosBadges() {
+      const cCount = REPO_COMBOS_DATA ? REPO_COMBOS_DATA.length : 0;
+      const tCount = REPO_TRENDING_DATA ? REPO_TRENDING_DATA.length : 0;
+
+      const headerCount = document.getElementById('combosHeaderCount');
+      if (headerCount) headerCount.textContent = cCount;
+
+      const badge = document.getElementById('combosModalBadge');
+      if (badge) badge.textContent = `${cCount} combos`;
+
+      const tabCombos = document.getElementById('tabCountCombos');
+      if (tabCombos) tabCombos.textContent = cCount;
+
+      const tabTrending = document.getElementById('tabCountTrending');
+      if (tabTrending) tabTrending.textContent = tCount;
+    }
+
+    function openCombosModal() {
+      const modal = document.getElementById('combosModal');
+      if (!modal) return;
+      modal.style.display = 'flex';
+      renderCombosModal();
+    }
+
+    function closeCombosModal() {
+      const modal = document.getElementById('combosModal');
+      if (modal) modal.style.display = 'none';
+      if (window.location.hash === '#combos' || window.location.hash === '#repo-combos') {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+    }
+
+    function handleCombosBackdropClick(event) {
+      if (event.target && event.target.id === 'combosModal') {
+        closeCombosModal();
+      }
+    }
+
+    function switchCombosTab(tab) {
+      activeCombosTab = tab;
+      document.querySelectorAll('#combosModal .bm-filter-btn').forEach(btn => btn.classList.remove('active'));
+      if (tab === 'combos') document.getElementById('tabCombosMain')?.classList.add('active');
+      if (tab === 'trending') document.getElementById('tabCombosTrending')?.classList.add('active');
+      renderCombosModal();
+    }
+
+    function getRoleBadge(role) {
+      const r = (role || 'other').toLowerCase();
+      if (r === 'hardware') return '<span class="role-chip role-chip-hw">Hardware</span>';
+      if (r === 'ai' || r === 'ml') return '<span class="role-chip role-chip-ai">AI / ML</span>';
+      if (r === 'platform') return '<span class="role-chip role-chip-pf">Platform</span>';
+      if (r === 'infra') return '<span class="role-chip role-chip-inf">Infra</span>';
+      return `<span class="role-chip" style="background:rgba(255,255,255,0.08); color:var(--fg-dim); border:1px solid var(--border);">${escapeHtml(role)}</span>`;
+    }
+
+    function renderCombosModal() {
+      const container = document.getElementById('combosContentArea');
+      if (!container) return;
+      updateCombosBadges();
+
+      if (activeCombosTab === 'combos') {
+        if (!REPO_COMBOS_DATA || REPO_COMBOS_DATA.length === 0) {
+          container.innerHTML = '<div style="padding:30px; text-align:center; color:var(--fg-dim);">Chưa có đề xuất combo nào trong <code>data/repo_combos.json</code>.</div>';
+          return;
+        }
+
+        container.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            ${REPO_COMBOS_DATA.map(combo => {
+              const tagPills = (combo.tags || []).map(t => 
+                `<span class="chip-signal chip-tech" style="font-size:10px; padding:2px 7px;">#${escapeHtml(t)}</span>`
+              ).join('');
+
+              const reposList = (combo.repos || []).map(r => `
+                <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); padding:8px 12px; border-radius:6px;">
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    ${getRoleBadge(r.role)}
+                    <a href="https://github.com/${escapeHtml(r.repo)}" target="_blank" rel="noopener noreferrer" style="font-weight:700; color:#38bdf8; text-decoration:none; font-size:13px; font-family:monospace;">
+                      ${escapeHtml(r.repo)} ↗
+                    </a>
+                  </div>
+                  <div style="font-size:12px; font-weight:700; color:#fbbf24;">
+                    +${r.velocity} ★/tuần
+                  </div>
+                </div>
+              `).join('');
+
+              return `
+                <div class="bookmark-item-card" style="border-left: 3px solid #f59e0b; padding:16px;">
+                  <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:10px;">
+                    <div>
+                      <h4 style="margin:0; font-size:16px; font-weight:800; color:var(--fg); display:flex; align-items:center; gap:6px;">
+                        <span>💡</span> ${escapeHtml(combo.combo_name)}
+                      </h4>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
+                      <span class="stage-flag stage-build-ready" style="font-size:11px;">
+                        ⚡ Tổng velocity: +${combo.total_velocity} ★/tuần
+                      </span>
+                    </div>
+                  </div>
+
+                  <div style="background:rgba(245, 158, 11, 0.08); border:1px solid rgba(245, 158, 11, 0.25); border-radius:6px; padding:10px 14px; margin-bottom:12px;">
+                    <div style="font-size:11px; text-transform:uppercase; font-weight:800; color:#fbbf24; letter-spacing:0.5px; margin-bottom:3px;">
+                      🎯 Ý tưởng sản phẩm khi ghép:
+                    </div>
+                    <div style="font-size:13px; font-weight:600; color:var(--fg); line-height:1.5;">
+                      ${escapeHtml(combo.product_idea_vi || '')}
+                    </div>
+                  </div>
+
+                  <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:10px;">
+                    <div style="font-size:11px; font-weight:700; color:var(--fg-muted); text-transform:uppercase;">
+                      Mã nguồn ghép nối (${(combo.repos || []).length} repos bổ sung nhau):
+                    </div>
+                    ${reposList}
+                  </div>
+
+                  ${tagPills ? `
+                    <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-top:8px;">
+                      ${tagPills}
+                    </div>
+                  ` : ''}
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `;
+      } else if (activeCombosTab === 'trending') {
+        if (!REPO_TRENDING_DATA || REPO_TRENDING_DATA.length === 0) {
+          container.innerHTML = '<div style="padding:30px; text-align:center; color:var(--fg-dim);">Chưa có dữ liệu repos thịnh hành trong <code>data/repo_trending.json</code>.</div>';
+          return;
+        }
+
+        container.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            ${REPO_TRENDING_DATA.map(item => {
+              const tagsHtml = (item.tags || []).map(t => 
+                `<span class="chip-signal chip-tech" style="font-size:10px; padding:1px 6px;">#${escapeHtml(t)}</span>`
+              ).join('');
+
+              return `
+                <div class="bookmark-item-card" style="border-left: 3px solid #38bdf8;">
+                  <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:6px;">
+                    <div>
+                      <div style="display:flex; align-items:center; gap:8px;">
+                        ${getRoleBadge(item.role)}
+                        <a href="https://github.com/${escapeHtml(item.repo)}" target="_blank" rel="noopener noreferrer" style="font-weight:700; font-size:14px; color:#38bdf8; text-decoration:none; font-family:monospace;">
+                          ${escapeHtml(item.repo)} ↗
+                        </a>
+                        ${item.language ? `<span style="font-size:10px; padding:1px 6px; border-radius:4px; background:rgba(255,255,255,0.06); color:var(--fg-muted);">${escapeHtml(item.language)}</span>` : ''}
+                      </div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+                      <span style="font-size:11px; color:var(--fg-muted);">⭐ ${item.stars.toLocaleString()}</span>
+                      <span style="font-size:11px; font-weight:800; color:#34d399; background:rgba(16, 185, 129, 0.15); padding:2px 7px; border-radius:4px; border:1px solid rgba(16, 185, 129, 0.3);">
+                        +${item.velocity} ★/tuần
+                      </span>
+                    </div>
+                  </div>
+
+                  <div style="font-size:12px; color:var(--fg-dim); margin-bottom:6px; line-height:1.4;">
+                    ${escapeHtml(item.summary_vi || '')}
+                  </div>
+
+                  ${tagsHtml ? `
+                    <div style="display:flex; align-items:center; gap:5px; flex-wrap:wrap;">
+                      ${tagsHtml}
+                    </div>
+                  ` : ''}
+                </div>
+              `;
+            }).join('')}
+          </div>
+        `;
+      }
+    }
+
     // --- 3. THEME TOGGLE LOGIC ---
     function initTheme() {
       const storedTheme = localStorage.getItem('mynews_theme');
@@ -4209,6 +4500,7 @@
         closeDailyDigestModal();
         closeBookmarksModal();
         closeGlossaryModal();
+        closeCombosModal();
       }
     });
 
@@ -4220,6 +4512,7 @@
       await loadBookmarks();
       await loadLastUpdated();
       await loadTechGlossary();
+      await loadRepoCombos();
       
       try {
         const res = await fetch('data/news.json');

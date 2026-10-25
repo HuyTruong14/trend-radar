@@ -1,0 +1,147 @@
+[
+  {
+    "combo_name": "Thiết bị giám sát ao tôm thông minh",
+    "repos": [
+      {
+        "repo": "DileepaNayanajith/esp32-water-quality-monitor",
+        "role": "hardware",
+        "velocity": 260
+      },
+      {
+        "repo": "mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
+        "role": "ai",
+        "velocity": 285
+      },
+      {
+        "repo": "wissen-csi/backend_station",
+        "role": "platform",
+        "velocity": 175
+      }
+    ],
+    "total_velocity": 720,
+    "product_idea_vi": "Hộp cảm biến cắm ao tôm tự đo pH/DO qua ESP32, tích hợp AI dự đoán bùng phát tảo và cảnh báo tức thời trên ứng dụng di động",
+    "tags": [
+      "IoT",
+      "Aquaculture",
+      "ESP32",
+      "Edge AI",
+      "Water Quality"
+    ]
+  },
+  {
+    "combo_name": "Trợ lý giọng nói Edge AI bảo mật nội bộ",
+    "repos": [
+      {
+        "repo": "raspberrypi/pico-sdk",
+        "role": "hardware",
+        "velocity": 150
+      },
+      {
+        "repo": "NousResearch/hermes-agent",
+        "role": "ai",
+        "velocity": 310
+      },
+      {
+        "repo": "langgenius/dify",
+        "role": "platform",
+        "velocity": 260
+      }
+    ],
+    "total_velocity": 720,
+    "product_idea_vi": "Thiết bị loa thông minh phần cứng mở chạy mô hình LLM cục bộ, điều khiển nhà thông minh và trả lời câu hỏi bảo mật 100% không qua đám mây",
+    "tags": [
+      "Edge AI",
+      "LLM",
+      "Hardware",
+      "Smart Home",
+      "Privacy"
+    ]
+  },
+  {
+    "combo_name": "Mạng lưới vi khí hậu và tự động tưới nhà màng",
+    "repos": [
+      {
+        "repo": "Afrina-B/WaterWatch",
+        "role": "hardware",
+        "velocity": 170
+      },
+      {
+        "repo": "Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
+        "role": "ai",
+        "velocity": 205
+      },
+      {
+        "repo": "firecrawl/firecrawl",
+        "role": "infra",
+        "velocity": 250
+      }
+    ],
+    "total_velocity": 625,
+    "product_idea_vi": "Hệ thống trạm đo không dây LoRaWAN cắm khắp trang trại, máy học dự báo độ ẩm đất và tự kích hoạt tưới nhỏ giọt theo chu kỳ",
+    "tags": [
+      "LoRaWAN",
+      "AgTech",
+      "IoT",
+      "Machine Learning",
+      "Greenhouse"
+    ]
+  },
+  {
+    "combo_name": "Hệ thống phát hiện rò rỉ và chống thất thoát nước đô thị",
+    "repos": [
+      {
+        "repo": "ishiniayodya610/J26-SE-351",
+        "role": "hardware",
+        "velocity": 190
+      },
+      {
+        "repo": "Aakashaash/SmartWaterNet-Edge-AI-Based-Leakage-Prediction-and-Water-Quality-Monitoring-Using-IoT",
+        "role": "ai",
+        "velocity": 240
+      },
+      {
+        "repo": "morluto/rea",
+        "role": "platform",
+        "velocity": 160
+      }
+    ],
+    "total_velocity": 590,
+    "product_idea_vi": "Cảm biến kẹp ngoài đường ống nước đo áp suất & lưu lượng, Edge AI khoanh vùng rò rỉ ngầm và tự động đóng van ngắt",
+    "tags": [
+      "Smart Water",
+      "Edge AI",
+      "Sensors",
+      "IoT",
+      "Infrastructure"
+    ]
+  },
+  {
+    "combo_name": "Robot nông nghiệp thông minh tự hành diệt cỏ",
+    "repos": [
+      {
+        "repo": "NiqoRobotics/RoboWeeder",
+        "role": "platform",
+        "velocity": 150
+      },
+      {
+        "repo": "ultralytics/yolov11",
+        "role": "ai",
+        "velocity": 150
+      },
+      {
+        "repo": "forgotmenet/Iotlab-Automation-Test",
+        "role": "infra",
+        "velocity": 130
+      }
+    ],
+    "total_velocity": 430,
+    "product_idea_vi": "Xe robot tự hành chạy giữa các luống rau, camera YOLO nhận diện cỏ dại và chiếu xung ánh sáng tiêu diệt không dùng hóa chất",
+    "tags": [
+      "Robotics",
+      "Computer Vision",
+      "AgTech",
+      "AI",
+      "Automation"
+    ]
+  }
+]
