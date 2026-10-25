@@ -7,11 +7,11 @@
       },
       {
         "week": "W43",
-        "count": 26
+        "count": 28
       }
     ],
     "consecutive_rising_weeks": 1,
-    "total_mentions": 41
+    "total_mentions": 43
   },
   "Edge AI": {
     "weekly": [
@@ -55,6 +55,20 @@
     "consecutive_rising_weeks": 1,
     "total_mentions": 23
   },
+  "LLM": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 22
+      }
+    ],
+    "consecutive_rising_weeks": 1,
+    "total_mentions": 22
+  },
   "RISC-V": {
     "weekly": [
       {
@@ -97,7 +111,35 @@
     "consecutive_rising_weeks": 1,
     "total_mentions": 13
   },
-  "MQTT": {
+  "Humanoid": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 9
+      }
+    ],
+    "consecutive_rising_weeks": 1,
+    "total_mentions": 9
+  },
+  "TDS": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 9
+      }
+    ],
+    "consecutive_rising_weeks": 1,
+    "total_mentions": 9
+  },
+  "Arduino": {
     "weekly": [
       {
         "week": "W42",
@@ -111,7 +153,35 @@
     "consecutive_rising_weeks": 1,
     "total_mentions": 8
   },
-  "Humanoid": {
+  "ESP32-S3": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 8
+      }
+    ],
+    "consecutive_rising_weeks": 1,
+    "total_mentions": 8
+  },
+  "Turbidity": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 8
+      }
+    ],
+    "consecutive_rising_weeks": 1,
+    "total_mentions": 8
+  },
+  "MQTT": {
     "weekly": [
       {
         "week": "W42",
@@ -124,48 +194,6 @@
     ],
     "consecutive_rising_weeks": 1,
     "total_mentions": 7
-  },
-  "Arduino": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 5
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 5
-  },
-  "LLM": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 5
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 5
-  },
-  "ESP32-S3": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 4
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 4
   },
   "Modbus": {
     "weekly": [
@@ -195,6 +223,62 @@
     "consecutive_rising_weeks": 1,
     "total_mentions": 4
   },
+  "Raspberry Pi": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 4
+      }
+    ],
+    "consecutive_rising_weeks": 1,
+    "total_mentions": 4
+  },
+  "LoRA": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 4
+      }
+    ],
+    "consecutive_rising_weeks": 1,
+    "total_mentions": 4
+  },
+  "RAG": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 4
+      }
+    ],
+    "consecutive_rising_weeks": 1,
+    "total_mentions": 4
+  },
+  "Transformers": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 4
+      }
+    ],
+    "consecutive_rising_weeks": 1,
+    "total_mentions": 4
+  },
   "DO (Dissolved Oxygen)": {
     "weekly": [
       {
@@ -210,20 +294,6 @@
     "total_mentions": 3
   },
   "RP2040": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 2
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 2
-  },
-  "Raspberry Pi": {
     "weekly": [
       {
         "week": "W42",
@@ -279,34 +349,6 @@
     "consecutive_rising_weeks": 1,
     "total_mentions": 2
   },
-  "LoRA": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 2
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 2
-  },
-  "Turbidity": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 2
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 2
-  },
   "Actuator": {
     "weekly": [
       {
@@ -343,13 +385,13 @@
       },
       {
         "week": "W43",
-        "count": 1
+        "count": 2
       }
     ],
     "consecutive_rising_weeks": 1,
-    "total_mentions": 1
+    "total_mentions": 2
   },
-  "LangChain": {
+  "MicroPython": {
     "weekly": [
       {
         "week": "W42",
@@ -357,13 +399,41 @@
       },
       {
         "week": "W43",
-        "count": 1
+        "count": 2
       }
     ],
     "consecutive_rising_weeks": 1,
-    "total_mentions": 1
+    "total_mentions": 2
   },
-  "TDS": {
+  "Docker": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 2
+      }
+    ],
+    "consecutive_rising_weeks": 1,
+    "total_mentions": 2
+  },
+  "Temperature Sensor": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 2
+      }
+    ],
+    "consecutive_rising_weeks": 1,
+    "total_mentions": 2
+  },
+  "LangChain": {
     "weekly": [
       {
         "week": "W42",
@@ -406,6 +476,20 @@
     "total_mentions": 1
   },
   "Drone": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 1
+      }
+    ],
+    "consecutive_rising_weeks": 1,
+    "total_mentions": 1
+  },
+  "PyTorch": {
     "weekly": [
       {
         "week": "W42",
@@ -545,20 +629,6 @@
     "consecutive_rising_weeks": 0,
     "total_mentions": 0
   },
-  "RAG": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 0
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 0
-  },
   "YOLO": {
     "weekly": [
       {
@@ -574,20 +644,6 @@
     "total_mentions": 0
   },
   "SLM": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 0
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 0
-  },
-  "Transformers": {
     "weekly": [
       {
         "week": "W42",
@@ -630,20 +686,6 @@
     "total_mentions": 0
   },
   "TensorFlow Lite": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 0
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 0
-  },
-  "PyTorch": {
     "weekly": [
       {
         "week": "W42",
@@ -700,34 +742,6 @@
     "total_mentions": 0
   },
   "Zephyr": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 0
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 0
-  },
-  "MicroPython": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 0
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 0
-  },
-  "Docker": {
     "weekly": [
       {
         "week": "W42",
@@ -812,20 +826,6 @@
     "total_mentions": 0
   },
   "LiDAR": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 0
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 0
-  },
-  "Temperature Sensor": {
     "weekly": [
       {
         "week": "W42",

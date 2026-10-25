@@ -148,6 +148,41 @@ topics:
       - "https://aquageek.substack.com/feed"
       - "https://thefishsite.com/feed.xml"
 
+  ai-ecosystem:
+    label: "AI Ecosystem"
+    keywords:
+      - "open source AI"
+      - "local LLM"
+      - "AI agent"
+      - "multimodal"
+      - "reasoning model"
+      - "AI developer tool"
+    hackernews: false
+    arxiv:
+      categories: []
+      keywords: []
+    github_search: []
+    rss:
+      # Nhóm A — Blog chính thức các công ty AI
+      - "https://openai.com/blog/rss.xml"
+      - "https://www.anthropic.com/feed"
+      - "https://blog.google/technology/ai/rss/"
+      - "https://ai.meta.com/blog/rss/"
+      - "https://about.fb.com/news/category/technology-and-innovation/feed/"
+      - "https://huggingface.co/blog/feed.xml"
+      - "https://blogs.nvidia.com/feed/"
+      # Nhóm B — Newsletter tóm tắt AI
+      - "https://www.deeplearning.ai/the-batch/feed/"
+      - "http://localhost:1200/deeplearning/the-batch"
+      - "https://tldr.tech/ai/rss"
+      - "https://importai.substack.com/feed"
+      # Nhóm D — Sản phẩm AI mới
+      - "https://www.producthunt.com/feed?category=artificial-intelligence"
+      - "https://theresanaiforthat.com/rss/"
+      # Nhóm E — Blog cá nhân chọn lọc
+      - "https://simonwillison.net/atom/everything/"
+      - "https://lilianweng.github.io/index.xml"
+
 # How many items to keep per source, per topic
 max_items_per_source: 15
 

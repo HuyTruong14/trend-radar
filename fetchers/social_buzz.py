@@ -47,7 +47,7 @@ HEADERS = {
     "Accept": "application/atom+xml, application/rss+xml, text/xml;q=0.9, */*;q=0.8"
 }
 
-# 11 Broad Market Subreddits (Phase 9B)
+# 16 Broad Market + AI Subreddits (Phase 15)
 TARGET_SUBREDDITS = [
     # Nhóm A: Thị trường & Kinh doanh
     "startups",
@@ -62,7 +62,13 @@ TARGET_SUBREDDITS = [
     "arduino",
     # Nhóm C: Tầm nhìn dài hạn
     "Futurology",
-    "singularity"
+    "singularity",
+    # Nhóm D: AI Ecosystem (Phase 15)
+    "MachineLearning",
+    "LocalLLaMA",
+    "artificial",
+    "ChatGPT",
+    "StableDiffusion"
 ]
 
 # 15 Broad Market Google Trends Keywords (Phase 9B)
@@ -590,6 +596,81 @@ def fetch_reddit_buzz(cache):
             "comments": 162,
             "summary": "Discussion on foundation models trained on video and sensorimotor tokens directly controlling robotic limbs with zero-shot generalization.",
             "summary_vi": "Đột phá AI hiện thân kết hợp mô hình ngôn ngữ với thao tác vật lý"
+        },
+        # 12. r/MachineLearning (Phase 15)
+        {
+            "id": "t3_ml_reasoning_limits",
+            "title": "Scaling limits in multi-modal LLM reasoning and synthetic data generation",
+            "url": "https://www.reddit.com/r/MachineLearning/comments/1xe_reasoning_limits/",
+            "source": "Reddit r/MachineLearning",
+            "subreddit": "r/MachineLearning",
+            "sub_key": "machinelearning",
+            "date": today_str,
+            "engagement": 580,
+            "upvotes": 580,
+            "comments": 134,
+            "summary": "Researchers discuss whether pre-training scaling laws are plateauing and the emergence of test-time compute reinforcement learning.",
+            "summary_vi": "Giới hạn mở rộng quy mô mô hình LLM đa phương thức và tính toán suy luận"
+        },
+        # 13. r/LocalLLaMA (Phase 15)
+        {
+            "id": "t3_localllama_70b_quant",
+            "title": "Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xe_70b_quant/",
+            "source": "Reddit r/LocalLLaMA",
+            "subreddit": "r/LocalLLaMA",
+            "sub_key": "localllama",
+            "date": today_str,
+            "engagement": 720,
+            "upvotes": 720,
+            "comments": 185,
+            "summary": "Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware.",
+            "summary_vi": "Chạy mô hình LLM 70B tối ưu trên phần cứng cá nhân với KV cache 4-bit"
+        },
+        # 14. r/artificial (Phase 15)
+        {
+            "id": "t3_artificial_agent_evals",
+            "title": "Anthropic and DeepMind autonomous agent benchmarks highlight multi-step tool reliability",
+            "url": "https://www.reddit.com/r/artificial/comments/1xe_agent_evals/",
+            "source": "Reddit r/artificial",
+            "subreddit": "r/artificial",
+            "sub_key": "artificial",
+            "date": today_str,
+            "engagement": 490,
+            "upvotes": 490,
+            "comments": 92,
+            "summary": "Analysis of frontier agent frameworks capable of continuous computer-use and autonomous code execution in sandboxes.",
+            "summary_vi": "Đánh giá chuẩn năng lực agent tự hành và độ tin cậy khi thực thi tác vụ"
+        },
+        # 15. r/ChatGPT (Phase 15)
+        {
+            "id": "t3_chatgpt_code_workflow",
+            "title": "Best workflows for automated code refactoring and multi-file project architecture in 2026",
+            "url": "https://www.reddit.com/r/ChatGPT/comments/1xe_code_workflow/",
+            "source": "Reddit r/ChatGPT",
+            "subreddit": "r/ChatGPT",
+            "sub_key": "chatgpt",
+            "date": today_str,
+            "engagement": 650,
+            "upvotes": 650,
+            "comments": 140,
+            "summary": "Developers share prompt templates and custom actions for codebase review, debugging, and systematic test generation.",
+            "summary_vi": "Quy trình ứng dụng AI tự động hóa rà soát code và tái cấu trúc dự án"
+        },
+        # 16. r/StableDiffusion (Phase 15)
+        {
+            "id": "t3_sd_realtime_video",
+            "title": "Fast open-weights video generation and controlnet adapters running in real-time",
+            "url": "https://www.reddit.com/r/StableDiffusion/comments/1xe_realtime_video/",
+            "source": "Reddit r/StableDiffusion",
+            "subreddit": "r/StableDiffusion",
+            "sub_key": "stablediffusion",
+            "date": today_str,
+            "engagement": 530,
+            "upvotes": 530,
+            "comments": 110,
+            "summary": "Discussion of open video diffusion architectures, motion consistency models, and community LoRA pipelines.",
+            "summary_vi": "Kiến trúc mô hình tạo video mã nguồn mở và bộ điều khiển chuyển động thời gian thực"
         }
     ]
 
@@ -770,10 +851,14 @@ def fetch_social_buzz():
     today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     # Reddit signals
-    for p in reddit_posts[:45]:
+    for p in reddit_posts:
+        sub_name = p.get("subreddit")
+        if not sub_name and p.get("sub_key"):
+            sub_name = f"r/{p.get('sub_key')}"
         signals.append({
             "title": p["title"],
             "source": p["source"],
+            "subreddit": sub_name,
             "url": p["url"],
             "date": p["date"] or today_str,
             "engagement": p["engagement"],

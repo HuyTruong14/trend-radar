@@ -1,23 +1,9 @@
 {
   "date": "2026-10-24",
   "date_formatted": "24/10/2026",
-  "generated_at": "2026-10-25T13:25:37.682118+07:00",
+  "generated_at": "2026-10-25T13:47:56.989607+07:00",
   "quiet_day": false,
   "top_opportunities": [
-    {
-      "id": "opp_2026_1024_21ee25d6",
-      "title": "🎥 Earth Rover bets on pulsed light to tackle weeds without chemicals",
-      "total": 8,
-      "stage": "research",
-      "summary_vi": "Robot diệt cỏ bằng xung ánh sáng không dùng hóa chất",
-      "alert_sent": true,
-      "url": "https://agfundernews.com/%f0%9f%8e%a5-earth-rover-bets-on-pulsed-light-to-tackle-weeds-without-chemicals",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "velocity": "steady"
-    },
     {
       "id": "opp_2026_1024_f7e244cb",
       "title": "Metron Acquires H2O Degree to Add Submetering and Leak Detection",
@@ -45,20 +31,25 @@
         "tech_cheap"
       ],
       "velocity": "steady"
+    },
+    {
+      "id": "opp_2026_1024_6329d67c",
+      "title": "Farmers, what's missing from your water monitoring setup?",
+      "total": 8,
+      "stage": "research",
+      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Farmers, what's missi",
+      "alert_sent": true,
+      "url": "https://www.reddit.com/r/Aquaculture/comments/1wsfy7v/",
+      "signal_type": [
+        "price_shift",
+        "supply_gap",
+        "tech_cheap"
+      ],
+      "velocity": "steady"
     }
   ],
-  "remaining_high_tier_count": 18,
+  "remaining_high_tier_count": 8,
   "funding_deals": [
-    {
-      "title": "Pivot Energy Secures $500 Million Credit Facility From Nuveen Energy Infrastructure Capital",
-      "deal_type": "Gọi vốn",
-      "amount": "$500M",
-      "funding_amount": "$500M",
-      "sector": "energy",
-      "url": "https://igrownews.com/pivot-energy-latest-news/",
-      "formatted_text": "• Pivot Energy gọi $500M — Năng lượng",
-      "sector_vi": "Năng lượng"
-    },
     {
       "title": "VECKTA Raises $11 Million Series A Led by Origin Ventures for Onsite Solar and Storage",
       "deal_type": "Gọi vốn",
@@ -78,15 +69,25 @@
       "url": "https://igrownews.com/imio-latest-news/",
       "formatted_text": "• IMIO gọi $12M — Nông nghiệp",
       "sector_vi": "Nông nghiệp"
+    },
+    {
+      "title": "Metron Acquires H2O Degree to Add Submetering and Leak Detection",
+      "deal_type": "M&A",
+      "amount": "N/A",
+      "funding_amount": "N/A",
+      "sector": "aquatech",
+      "url": "https://igrownews.com/metron-latest-news/",
+      "formatted_text": "• Metron mua H2O Degree — Thủy sản & Nước",
+      "sector_vi": "Thủy sản & Nước"
     }
   ],
   "hot_topics": [
     {
-      "topic": "Embodied intelligence breakthroughs: From language models to physical world manipulation",
-      "source": "Reddit r/singularity",
-      "summary_vi": "Đột phá AI hiện thân kết hợp mô hình ngôn ngữ với thao tác vật lý",
-      "engagement": "640 upvotes",
-      "url": "https://www.reddit.com/r/singularity/comments/1xe_embodied_ai/"
+      "topic": "Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM",
+      "source": "Reddit r/LocalLLaMA",
+      "summary_vi": "Chạy mô hình LLM 70B tối ưu trên phần cứng cá nhân với KV cache 4-bit",
+      "engagement": "720 upvotes",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xe_70b_quant/"
     },
     {
       "topic": "#AI",
@@ -99,21 +100,21 @@
       "topic": "electric vehicle",
       "source": "Google Trends",
       "summary_vi": "Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc",
-      "engagement": "+18%",
+      "engagement": "-8%",
       "url": "https://trends.google.com/trends/explore?q=electric%20vehicle&date=today+1-m"
     }
   ],
   "stats": {
-    "total_signals": 563,
-    "new_opportunities": 82,
+    "total_signals": 748,
+    "new_opportunities": 32,
     "build_ready": 0,
-    "research": 21,
-    "watch": 61,
+    "research": 11,
+    "watch": 21,
     "triple_signals": 3,
     "triple_signal_theme": "Robot tự hành & AI vật lý (Robotics & Embodied AI)",
     "rising": 0,
     "fading": 0
   },
   "dashboard_url": "https://huytruong14.github.io/trend-radar/",
-  "telegram_text": "📰 TREND RADAR — BẢN TIN NGÀY 24/10/2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🎯 CƠ HỘI NỔI BẬT\n\n⚡ 8/9 · 🎥 Earth Rover bets on pulsed light to tackle weeds without chemicals (đã gửi alert)\n→ Robot diệt cỏ bằng xung ánh sáng không dùng hóa chất\n\n⚡ 8/9 · Metron Acquires H2O Degree to Add Submetering and Leak Detection (đã gửi alert)\n→ Metron thâu tóm H2O Degree mở rộng mảng đo đếm và phát hiện rò rỉ nước\n\n⚡ 8/9 · wissen-csi/backend_station (đã gửi alert)\n→ Backend IoT thu thập cảm biến chất lượng nước phao nổi\n\n(và 18 cơ hội khác trên dashboard)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n💰 DÒNG TIỀN HÔM QUA\n• Pivot Energy gọi $500M — Năng lượng\n• VECKTA gọi $11M — Năng lượng\n• IMIO gọi $12M — Nông nghiệp\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔥 CHỦ ĐỀ NÓNG\n\n1. Embodied intelligence breakthroughs: From language models to physical world manipulation — Reddit r/singularity\n   → Đột phá AI hiện thân kết hợp mô hình ngôn ngữ với thao tác vật lý\n\n2. #AI — Twitter/X\n   → Làn sóng thảo luận nóng về bước tiến AI và ứng dụng vào thực tế\n\n3. electric vehicle — Google Trends\n   → Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n📊 SỐ LIỆU NHANH\n• Tổng tín hiệu mới: 563 | Cơ hội mới: 82\n• Build-ready: 0 | Research: 21 | Watch: 61\n• Triple Signal: Có (3) → Robot tự hành & AI vật lý (Robotics & Embodied AI)\n• Velocity: 0 rising ↑ | 0 fading ↓\n• Công nghệ nổi bật: Humanoid (↑+75%)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔗 Xem chi tiết: https://huytruong14.github.io/trend-radar/"
+  "telegram_text": "📰 TREND RADAR — BẢN TIN NGÀY 24/10/2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🎯 CƠ HỘI NỔI BẬT\n\n⚡ 8/9 · Metron Acquires H2O Degree to Add Submetering and Leak Detection (đã gửi alert)\n→ Metron thâu tóm H2O Degree mở rộng mảng đo đếm và phát hiện rò rỉ nước\n\n⚡ 8/9 · wissen-csi/backend_station (đã gửi alert)\n→ Backend IoT thu thập cảm biến chất lượng nước phao nổi\n\n⚡ 8/9 · Farmers, what's missing from your water monitoring setup? (đã gửi alert)\n→ Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Farmers, what's missi\n\n(và 8 cơ hội khác trên dashboard)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n💰 DÒNG TIỀN HÔM QUA\n• VECKTA gọi $11M — Năng lượng\n• IMIO gọi $12M — Nông nghiệp\n• Metron mua H2O Degree — Thủy sản & Nước\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔥 CHỦ ĐỀ NÓNG\n\n1. Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM — Reddit r/LocalLLaMA\n   → Chạy mô hình LLM 70B tối ưu trên phần cứng cá nhân với KV cache 4-bit\n\n2. #AI — Twitter/X\n   → Làn sóng thảo luận nóng về bước tiến AI và ứng dụng vào thực tế\n\n3. electric vehicle — Google Trends\n   → Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n📊 SỐ LIỆU NHANH\n• Tổng tín hiệu mới: 748 | Cơ hội mới: 32\n• Build-ready: 0 | Research: 11 | Watch: 21\n• Triple Signal: Có (3) → Robot tự hành & AI vật lý (Robotics & Embodied AI)\n• Velocity: 0 rising ↑ | 0 fading ↓\n• Công nghệ nổi bật: MQTT (↑+133%)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔗 Xem chi tiết: https://huytruong14.github.io/trend-radar/"
 }

@@ -2,18 +2,30 @@
   "ESP32": {
     "type": "Hardware",
     "description_vi": "Vi điều khiển WiFi/BLE giá rẻ, phổ biến nhất cho IoT và thiết bị thông minh",
-    "mentions_this_week": 26,
+    "mentions_this_week": 28,
     "mentions_prev_week": 15,
-    "change_pct": 73,
+    "change_pct": 87,
     "trend": "rising",
     "co_occurs_with": {
       "MQTT": 15,
+      "ESP32-S3": 8,
       "TinyML": 8,
+      "Turbidity": 6,
+      "TDS": 6,
       "LoRaWAN": 6,
-      "ESP32-S3": 4,
-      "Turbidity": 3,
       "Ultrasonic": 2,
-      "Water Level": 1
+      "Modbus": 2
+    }
+  },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 22,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RAG": 2
     }
   },
   "Edge AI": {
@@ -24,7 +36,8 @@
     "change_pct": 36,
     "trend": "rising",
     "co_occurs_with": {
-      "TinyML": 9
+      "TinyML": 9,
+      "Turbidity": 2
     }
   },
   "TinyML": {
@@ -49,7 +62,7 @@
     "co_occurs_with": {
       "ESP32": 6,
       "DO (Dissolved Oxygen)": 5,
-      "LoRA": 2
+      "LoRA": 4
     }
   },
   "RISC-V": {
@@ -75,6 +88,49 @@
       "LiDAR": 4
     }
   },
+  "TDS": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến đo tổng chất rắn hòa tan trong nước (Total Dissolved Solids)",
+    "mentions_this_week": 9,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 6,
+      "Turbidity": 4,
+      "Arduino": 2,
+      "Temperature Sensor": 2,
+      "ESP32-S3": 2,
+      "Salinity": 1
+    }
+  },
+  "Humanoid": {
+    "type": "Robotics",
+    "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
+    "mentions_this_week": 9,
+    "mentions_prev_week": 5,
+    "change_pct": 80,
+    "trend": "rising",
+    "co_occurs_with": {
+      "ROS2": 5
+    }
+  },
+  "ESP32-S3": {
+    "type": "Hardware",
+    "description_vi": "Chip ESP32 chuyên xử lý AI tăng tốc vector và giao tiếp camera/màn hình",
+    "mentions_this_week": 8,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 8,
+      "MQTT": 4,
+      "Turbidity": 2,
+      "Ultrasonic": 2,
+      "TDS": 2,
+      "Modbus": 2
+    }
+  },
   "RP2350": {
     "type": "Hardware",
     "description_vi": "Thế hệ vi điều khiển kép ARM Cortex-M33 và Hazard3 RISC-V mới của Raspberry Pi",
@@ -84,15 +140,44 @@
     "trend": "rising",
     "co_occurs_with": {
       "RP2040": 4,
-      "Raspberry Pi": 4
+      "Raspberry Pi": 4,
+      "MicroPython": 2
+    }
+  },
+  "Arduino": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
+    "mentions_this_week": 8,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "TDS": 2,
+      "Temperature Sensor": 2
+    }
+  },
+  "Turbidity": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến quang học đo độ đục của nước để đánh giá chất lượng và phù sa lơ lửng",
+    "mentions_this_week": 8,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 6,
+      "TDS": 4,
+      "ESP32-S3": 2,
+      "MQTT": 2,
+      "Ultrasonic": 2,
+      "Edge AI": 2
     }
   },
   "MQTT": {
     "type": "Protocol",
     "description_vi": "Giao thức truyền tin publish/subscribe nhẹ tối ưu cho mạng IoT băng thông thấp",
-    "mentions_this_week": 8,
-    "mentions_prev_week": 5,
-    "change_pct": 60,
+    "mentions_this_week": 7,
+    "mentions_prev_week": 3,
+    "change_pct": 133,
     "trend": "rising",
     "co_occurs_with": {
       "ESP32": 15,
@@ -102,52 +187,56 @@
       "WebSockets": 1
     }
   },
-  "Humanoid": {
-    "type": "Robotics",
-    "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 7,
-    "mentions_prev_week": 4,
-    "change_pct": 75,
-    "trend": "rising",
-    "co_occurs_with": {
-      "ROS2": 5
-    }
-  },
-  "Arduino": {
+  "Raspberry Pi": {
     "type": "Hardware",
-    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
-    "mentions_this_week": 5,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 5,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
-  "ESP32-S3": {
-    "type": "Hardware",
-    "description_vi": "Chip ESP32 chuyên xử lý AI tăng tốc vector và giao tiếp camera/màn hình",
+    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
     "mentions_this_week": 4,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
     "co_occurs_with": {
-      "ESP32": 4,
-      "MQTT": 4,
-      "Turbidity": 2,
-      "Ultrasonic": 2
+      "RP2350": 4,
+      "RP2040": 2,
+      "MicroPython": 2
     }
   },
   "Modbus": {
     "type": "Protocol",
     "description_vi": "Giao thức truyền thông công nghiệp chuẩn mực nối PLC, cảm biến và thiết bị đo",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 2,
+      "ESP32-S3": 2
+    }
+  },
+  "RAG": {
+    "type": "AI/ML",
+    "description_vi": "Kỹ thuật kết hợp truy xuất tri thức ngoài (Retrieval) với mô hình tạo sinh (Generation)",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "LLM": 2
+    }
+  },
+  "LoRA": {
+    "type": "AI/ML",
+    "description_vi": "Phương pháp tinh chỉnh mô hình ngôn ngữ bằng ma trận rank thấp siêu tiết kiệm bộ nhớ",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "LoRaWAN": 4
+    }
+  },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
     "mentions_this_week": 4,
     "mentions_prev_week": 0,
     "change_pct": 100,
@@ -192,18 +281,6 @@
       "Raspberry Pi": 2
     }
   },
-  "Raspberry Pi": {
-    "type": "Hardware",
-    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2350": 4,
-      "RP2040": 2
-    }
-  },
   "BLE": {
     "type": "Protocol",
     "description_vi": "Bluetooth năng lượng thấp (Bluetooth Low Energy) kết nối tầm gần tiết kiệm pin",
@@ -224,6 +301,17 @@
     "trend": "new",
     "co_occurs_with": {}
   },
+  "WebSockets": {
+    "type": "Protocol",
+    "description_vi": "Kênh liên lạc song công thời gian thực giữa máy chủ và trình duyệt hoặc gateway",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "MQTT": 1
+    }
+  },
   "NB-IoT": {
     "type": "Protocol",
     "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
@@ -232,17 +320,6 @@
     "change_pct": 100,
     "trend": "new",
     "co_occurs_with": {}
-  },
-  "LoRA": {
-    "type": "AI/ML",
-    "description_vi": "Phương pháp tinh chỉnh mô hình ngôn ngữ bằng ma trận rank thấp siêu tiết kiệm bộ nhớ",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "LoRaWAN": 2
-    }
   },
   "Computer Vision": {
     "type": "AI/ML",
@@ -253,18 +330,37 @@
     "trend": "rising",
     "co_occurs_with": {}
   },
-  "Turbidity": {
-    "type": "Sensor",
-    "description_vi": "Cảm biến quang học đo độ đục của nước để đánh giá chất lượng và phù sa lơ lửng",
+  "MicroPython": {
+    "type": "Platform",
+    "description_vi": "Bản triển khai ngôn ngữ Python 3 tối giản chạy trực tiếp trên vi điều khiển trần",
     "mentions_this_week": 2,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
     "co_occurs_with": {
-      "ESP32": 3,
-      "ESP32-S3": 2,
-      "MQTT": 2,
-      "Ultrasonic": 2
+      "RP2350": 2,
+      "Raspberry Pi": 2
+    }
+  },
+  "Docker": {
+    "type": "Platform",
+    "description_vi": "Nền tảng ảo hóa container đóng gói ứng dụng chạy đồng nhất từ máy tính đến edge gateway",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "Temperature Sensor": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến nhiệt độ công nghiệp (DS18B20 chống nước hoặc PT100) giám sát nhiệt môi trường",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "Arduino": 2,
+      "TDS": 2
     }
   },
   "Actuator": {
@@ -278,17 +374,6 @@
       "Ultrasonic": 2
     }
   },
-  "WebSockets": {
-    "type": "Protocol",
-    "description_vi": "Kênh liên lạc song công thời gian thực giữa máy chủ và trình duyệt hoặc gateway",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "MQTT": 1
-    }
-  },
   "LangChain": {
     "type": "AI/ML",
     "description_vi": "Framework kết nối LLM với cơ sở dữ liệu ngoài, công cụ thực thi và chuỗi tác vụ AI",
@@ -298,16 +383,14 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "TDS": {
-    "type": "Sensor",
-    "description_vi": "Cảm biến đo tổng chất rắn hòa tan trong nước (Total Dissolved Solids)",
+  "PyTorch": {
+    "type": "AI/ML",
+    "description_vi": "Khung làm việc học sâu phổ biến hàng đầu trong nghiên cứu và triển khai mô hình AI",
     "mentions_this_week": 1,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
-    "co_occurs_with": {
-      "Salinity": 1
-    }
+    "co_occurs_with": {}
   },
   "Salinity": {
     "type": "Sensor",
@@ -421,15 +504,6 @@
     "trend": "stable",
     "co_occurs_with": {}
   },
-  "RAG": {
-    "type": "AI/ML",
-    "description_vi": "Kỹ thuật kết hợp truy xuất tri thức ngoài (Retrieval) với mô hình tạo sinh (Generation)",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
-  },
   "YOLO": {
     "type": "AI/ML",
     "description_vi": "Họ mô hình phát hiện vật thể thời gian thực tốc độ cao và độ chính xác vượt trội",
@@ -442,15 +516,6 @@
   "SLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ nhỏ (<7B tham số) tối ưu để chạy offline trên máy tính cá nhân hoặc chip biên",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,
@@ -478,15 +543,6 @@
   "TensorFlow Lite": {
     "type": "AI/ML",
     "description_vi": "Bộ thư viện tối ưu hóa suy luận mô hình TensorFlow cho thiết bị di động và nhúng",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "PyTorch": {
-    "type": "AI/ML",
-    "description_vi": "Khung làm việc học sâu phổ biến hàng đầu trong nghiên cứu và triển khai mô hình AI",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,
@@ -523,24 +579,6 @@
   "Zephyr": {
     "type": "Platform",
     "description_vi": "Hệ điều hành RTOS bảo mật mã nguồn mở của Linux Foundation hỗ trợ đa kiến trúc",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "MicroPython": {
-    "type": "Platform",
-    "description_vi": "Bản triển khai ngôn ngữ Python 3 tối giản chạy trực tiếp trên vi điều khiển trần",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "Docker": {
-    "type": "Platform",
-    "description_vi": "Nền tảng ảo hóa container đóng gói ứng dụng chạy đồng nhất từ máy tính đến edge gateway",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,
@@ -602,15 +640,6 @@
     "co_occurs_with": {
       "ROS2": 4
     }
-  },
-  "Temperature Sensor": {
-    "type": "Sensor",
-    "description_vi": "Cảm biến nhiệt độ công nghiệp (DS18B20 chống nước hoặc PT100) giám sát nhiệt môi trường",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
   },
   "Flow Meter": {
     "type": "Sensor",

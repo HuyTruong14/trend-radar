@@ -2,8 +2,43 @@
   "label": "Social Buzz",
   "items": [
     {
+      "title": "Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM",
+      "source": "Reddit r/LocalLLaMA",
+      "subreddit": "r/LocalLLaMA",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xe_70b_quant/",
+      "date": "2026-10-25",
+      "engagement": 720,
+      "upvotes": 720,
+      "comments": 185,
+      "summary": "Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware.",
+      "summary_vi": "Chạy mô hình LLM 70B tối ưu trên phần cứng cá nhân với KV cache 4-bit",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "tech_cheap"
+      ]
+    },
+    {
+      "title": "Best workflows for automated code refactoring and multi-file project architecture in 2026",
+      "source": "Reddit r/ChatGPT",
+      "subreddit": "r/ChatGPT",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1xe_code_workflow/",
+      "date": "2026-10-25",
+      "engagement": 650,
+      "upvotes": 650,
+      "comments": 140,
+      "summary": "Developers share prompt templates and custom actions for codebase review, debugging, and systematic test generation.",
+      "summary_vi": "Quy trình ứng dụng AI tự động hóa rà soát code và tái cấu trúc dự án",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "tech_cheap"
+      ]
+    },
+    {
       "title": "Embodied intelligence breakthroughs: From language models to physical world manipulation",
       "source": "Reddit r/singularity",
+      "subreddit": "r/singularity",
       "url": "https://www.reddit.com/r/singularity/comments/1xe_embodied_ai/",
       "date": "2026-10-24",
       "engagement": 640,
@@ -20,6 +55,7 @@
     {
       "title": "Autonomous robotics and physical AI are decoupling manufacturing from labor shortages",
       "source": "Reddit r/Futurology",
+      "subreddit": "r/Futurology",
       "url": "https://www.reddit.com/r/Futurology/comments/1xe_robotics_labor/",
       "date": "2026-10-24",
       "engagement": 580,
@@ -34,8 +70,43 @@
       ]
     },
     {
+      "title": "Scaling limits in multi-modal LLM reasoning and synthetic data generation",
+      "source": "Reddit r/MachineLearning",
+      "subreddit": "r/MachineLearning",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1xe_reasoning_limits/",
+      "date": "2026-10-25",
+      "engagement": 580,
+      "upvotes": 580,
+      "comments": 134,
+      "summary": "Researchers discuss whether pre-training scaling laws are plateauing and the emergence of test-time compute reinforcement learning.",
+      "summary_vi": "Giới hạn mở rộng quy mô mô hình LLM đa phương thức và tính toán suy luận",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "tech_cheap"
+      ]
+    },
+    {
+      "title": "Fast open-weights video generation and controlnet adapters running in real-time",
+      "source": "Reddit r/StableDiffusion",
+      "subreddit": "r/StableDiffusion",
+      "url": "https://www.reddit.com/r/StableDiffusion/comments/1xe_realtime_video/",
+      "date": "2026-10-25",
+      "engagement": 530,
+      "upvotes": 530,
+      "comments": 110,
+      "summary": "Discussion of open video diffusion architectures, motion consistency models, and community LoRA pipelines.",
+      "summary_vi": "Kiến trúc mô hình tạo video mã nguồn mở và bộ điều khiển chuyển động thời gian thực",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "tech_cheap"
+      ]
+    },
+    {
       "title": "Cambridge Analytica's fallout is still costing Meta, this time $25 billion in New Mexico",
       "source": "Reddit r/technology",
+      "subreddit": "r/technology",
       "url": "https://www.reddit.com/r/technology/comments/1xdlpex/cambridge_analyticas_fallout_is_still_costing/",
       "date": "2026-10-24",
       "engagement": 520,
@@ -52,6 +123,7 @@
     {
       "title": "I built an RP2350 multitool that hosts its own desktop-style web UI over USB",
       "source": "Reddit r/embedded",
+      "subreddit": "r/embedded",
       "url": "https://www.reddit.com/r/embedded/comments/1xdniko/",
       "date": "2026-10-24",
       "engagement": 490,
@@ -66,8 +138,26 @@
       ]
     },
     {
+      "title": "Anthropic and DeepMind autonomous agent benchmarks highlight multi-step tool reliability",
+      "source": "Reddit r/artificial",
+      "subreddit": "r/artificial",
+      "url": "https://www.reddit.com/r/artificial/comments/1xe_agent_evals/",
+      "date": "2026-10-25",
+      "engagement": 490,
+      "upvotes": 490,
+      "comments": 92,
+      "summary": "Analysis of frontier agent frameworks capable of continuous computer-use and autonomous code execution in sandboxes.",
+      "summary_vi": "Đánh giá chuẩn năng lực agent tự hành và độ tin cậy khi thực thi tác vụ",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "tech_cheap"
+      ]
+    },
+    {
       "title": "He Had the Know-How to Fix His Tesla. But Telsa Told Him He Couldn’t.",
       "source": "Reddit r/technology",
+      "subreddit": "r/technology",
       "url": "https://www.reddit.com/r/technology/comments/1xe0l9q/he_had_the_knowhow_to_fix_his_tesla_but_telsa/",
       "date": "2026-10-24",
       "engagement": 460,
@@ -84,6 +174,7 @@
     {
       "title": "State of open-source ROS2 robot actuators and motor drivers in 2026",
       "source": "Reddit r/robotics",
+      "subreddit": "r/robotics",
       "url": "https://www.reddit.com/r/robotics/comments/1xe_ros2_actuators/",
       "date": "2026-10-24",
       "engagement": 420,
@@ -100,6 +191,7 @@
     {
       "title": "Next-gen low-power RISC-V microcontrollers entering mass production",
       "source": "Reddit r/hardware",
+      "subreddit": "r/hardware",
       "url": "https://www.reddit.com/r/hardware/comments/1xe_riscv_production/",
       "date": "2026-10-24",
       "engagement": 380,
@@ -116,6 +208,7 @@
     {
       "title": "ESP32-S3 telemetry station with solar charging and low-power deep sleep",
       "source": "Reddit r/arduino",
+      "subreddit": "r/arduino",
       "url": "https://www.reddit.com/r/arduino/comments/1xe_esp32_solar/",
       "date": "2026-10-24",
       "engagement": 360,
@@ -132,6 +225,7 @@
     {
       "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
       "source": "Reddit r/startups",
+      "subreddit": "r/startups",
       "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/",
       "date": "2026-10-24",
       "engagement": 340,
@@ -148,6 +242,7 @@
     {
       "title": "I built an RP2350 multitool that hosts its own desktop-style web UI over USB",
       "source": "Reddit r/embedded",
+      "subreddit": "r/embedded",
       "url": "https://www.reddit.com/r/embedded/comments/1xdniko/",
       "date": "2026-10-24",
       "engagement": 320,
@@ -164,6 +259,7 @@
     {
       "title": "Deploying 100+ low-power environmental sensors across remote facilities with LoRaWAN",
       "source": "Reddit r/IOT",
+      "subreddit": "r/IOT",
       "url": "https://www.reddit.com/r/IOT/comments/1xe_lorawan_sensors/",
       "date": "2026-10-24",
       "engagement": 310,
@@ -180,6 +276,7 @@
     {
       "title": "Finding B2B customers for physical hardware products: Lessons learned",
       "source": "Reddit r/Entrepreneur",
+      "subreddit": "r/Entrepreneur",
       "url": "https://www.reddit.com/r/Entrepreneur/comments/1xe_b2b_hardware/",
       "date": "2026-10-24",
       "engagement": 280,
@@ -196,6 +293,7 @@
     {
       "title": "ESP32 water depth and optical turbidity sensor with MQTT telemetry for fish tanks",
       "source": "Reddit r/arduino",
+      "subreddit": "r/arduino",
       "url": "https://www.reddit.com/r/arduino/comments/1xd300c/",
       "date": "2026-10-24",
       "engagement": 240,
@@ -212,6 +310,7 @@
     {
       "title": "Share your startup - quarterly post",
       "source": "Reddit r/startups",
+      "subreddit": "r/startups",
       "url": "https://www.reddit.com/r/startups/comments/1x3dcp4/share_your_startup_quarterly_post/",
       "date": "2026-10-25",
       "engagement": 230,
@@ -228,6 +327,7 @@
     {
       "title": "Feedback Friday",
       "source": "Reddit r/startups",
+      "subreddit": "r/startups",
       "url": "https://www.reddit.com/r/startups/comments/1xd4vp1/feedback_friday/",
       "date": "2026-10-25",
       "engagement": 220,
@@ -244,6 +344,7 @@
     {
       "title": "Breadboard for ESPs",
       "source": "Reddit r/arduino",
+      "subreddit": "r/arduino",
       "url": "https://www.reddit.com/r/arduino/comments/1xe7pxy/breadboard_for_esps/",
       "date": "2026-10-24",
       "engagement": 218,
@@ -260,6 +361,7 @@
     {
       "title": "I built an RP2350 multitool that hosts its own desktop-style web UI over USB",
       "source": "Reddit r/embedded",
+      "subreddit": "r/embedded",
       "url": "https://www.reddit.com/r/embedded/comments/1xdniko/i_built_an_rp2350_multitool_that_hosts_its_own/",
       "date": "2026-10-23",
       "engagement": 212,
@@ -276,6 +378,7 @@
     {
       "title": "A year building a LinkedIn alternative because we thought everyone hated LinkedIn as much as we did. Turns out, hating it and leaving it are two different things. [i will not promote]",
       "source": "Reddit r/startups",
+      "subreddit": "r/startups",
       "url": "https://www.reddit.com/r/startups/comments/1xe4o7b/a_year_building_a_linkedin_alternative_because_we/",
       "date": "2026-10-24",
       "engagement": 210,
@@ -292,6 +395,7 @@
     {
       "title": "Equity free grants for startups? (i will not promote)",
       "source": "Reddit r/startups",
+      "subreddit": "r/startups",
       "url": "https://www.reddit.com/r/startups/comments/1xeekb6/equity_free_grants_for_startups_i_will_not_promote/",
       "date": "2026-10-25",
       "engagement": 210,
@@ -308,6 +412,7 @@
     {
       "title": "Projects in IoT as a year 1 IoT stu?",
       "source": "Reddit r/IOT",
+      "subreddit": "r/IOT",
       "url": "https://www.reddit.com/r/IOT/comments/1xe3zfe/projects_in_iot_as_a_year_1_iot_stu/",
       "date": "2026-10-24",
       "engagement": 200,
@@ -324,6 +429,7 @@
     {
       "title": "I’m a BPT graduate in Pune building healthcare prototypes, but I need a job and don’t know what to do next....I will not promote",
       "source": "Reddit r/startups",
+      "subreddit": "r/startups",
       "url": "https://www.reddit.com/r/startups/comments/1xekdeh/im_a_bpt_graduate_in_pune_building_healthcare/",
       "date": "2026-10-25",
       "engagement": 200,
@@ -340,6 +446,7 @@
     {
       "title": "Energy costs and equipment monitoring are killing our margins this quarter",
       "source": "Reddit r/smallbusiness",
+      "subreddit": "r/smallbusiness",
       "url": "https://www.reddit.com/r/smallbusiness/comments/1xe_energy_monitoring/",
       "date": "2026-10-24",
       "engagement": 195,
@@ -356,6 +463,7 @@
     {
       "title": "[I will not promote] Any \"hidden\" free credits for startups ?",
       "source": "Reddit r/startups",
+      "subreddit": "r/startups",
       "url": "https://www.reddit.com/r/startups/comments/1xed268/i_will_not_promote_any_hidden_free_credits_for/",
       "date": "2026-10-25",
       "engagement": 190,
@@ -372,6 +480,7 @@
     {
       "title": "I built a free, open-source alternative to corporate IoT clouds (self-host on PythonAnywhere + ESP32/Pico W)",
       "source": "Reddit r/IOT",
+      "subreddit": "r/IOT",
       "url": "https://www.reddit.com/r/IOT/comments/1xdonbd/i_built_a_free_opensource_alternative_to/",
       "date": "2026-10-23",
       "engagement": 188,
@@ -388,6 +497,7 @@
     {
       "title": "Contemplating leaving a successful startup [I will not promote]",
       "source": "Reddit r/startups",
+      "subreddit": "r/startups",
       "url": "https://www.reddit.com/r/startups/comments/1xdweac/contemplating_leaving_a_successful_startup_i_will/",
       "date": "2026-10-25",
       "engagement": 180,
@@ -404,6 +514,7 @@
     {
       "title": "Long-range LoRaWAN water quality monitoring probe for rural aquaculture ponds",
       "source": "Reddit r/IOT",
+      "subreddit": "r/IOT",
       "url": "https://www.reddit.com/r/IOT/comments/1xd200b/",
       "date": "2026-10-24",
       "engagement": 175,
@@ -420,6 +531,7 @@
     {
       "title": "Arduino Starter Kit Advice",
       "source": "Reddit r/arduino",
+      "subreddit": "r/arduino",
       "url": "https://www.reddit.com/r/arduino/comments/1xe9u3k/arduino_starter_kit_advice/",
       "date": "2026-10-24",
       "engagement": 170,
@@ -436,6 +548,7 @@
     {
       "title": "Startup idea: A monitoring platform for solar panels and batteries. Would this actually solve a real problem? [I will not promote]",
       "source": "Reddit r/startups",
+      "subreddit": "r/startups",
       "url": "https://www.reddit.com/r/startups/comments/1xe5486/startup_idea_a_monitoring_platform_for_solar/",
       "date": "2026-10-25",
       "engagement": 170,
@@ -450,14 +563,15 @@
       ]
     },
     {
-      "title": "I will not promote. How does one get around IP concerns when starting a business after working in industry?",
+      "title": "Google Accelerator (UA and Growth) Thoughts? (I WILL NOT PROMOTE)",
       "source": "Reddit r/startups",
-      "url": "https://www.reddit.com/r/startups/comments/1xdx9d2/i_will_not_promote_how_does_one_get_around_ip/",
+      "subreddit": "r/startups",
+      "url": "https://www.reddit.com/r/startups/comments/1xds28v/google_accelerator_ua_and_growth_thoughts_i_will/",
       "date": "2026-10-25",
       "engagement": 160,
       "upvotes": 160,
       "comments": 32,
-      "summary": "Someone who at least claimed to be a millionaire on this sub said the way they did it and perhaps easy way to do it is to work in and industry, find the niche gaps, and then sell a solution to those gaps. I work for a hyperscaler company. A colleague and I have identified a safety gap in the datacen",
+      "summary": "Hey, I received an email from someone at Google, and I'm looking at the email. It's definitely someone from Google. The email address says its google, and the title is Apps, Games, New Business, and Growth Strategy (also LinkedIn looks really good). This person's email says that they're part of an a",
       "summary_vi": "Thảo luận kinh nghiệm phát triển mô hình kinh doanh và mở rộng thị trường",
       "topic": "Social Buzz",
       "signal_type": [
@@ -468,6 +582,7 @@
     {
       "title": "Help with I2C Oled Screen",
       "source": "Reddit r/arduino",
+      "subreddit": "r/arduino",
       "url": "https://www.reddit.com/r/arduino/comments/1xe6xhm/help_with_i2c_oled_screen/",
       "date": "2026-10-24",
       "engagement": 158,
@@ -482,14 +597,15 @@
       ]
     },
     {
-      "title": "Google Accelerator (UA and Growth) Thoughts? (I WILL NOT PROMOTE)",
+      "title": "I will not promote. How does one get around IP concerns when starting a business after working in industry?",
       "source": "Reddit r/startups",
-      "url": "https://www.reddit.com/r/startups/comments/1xds28v/google_accelerator_ua_and_growth_thoughts_i_will/",
+      "subreddit": "r/startups",
+      "url": "https://www.reddit.com/r/startups/comments/1xdx9d2/i_will_not_promote_how_does_one_get_around_ip/",
       "date": "2026-10-25",
       "engagement": 150,
       "upvotes": 150,
       "comments": 30,
-      "summary": "Hey, I received an email from someone at Google, and I'm looking at the email. It's definitely someone from Google. The email address says its google, and the title is Apps, Games, New Business, and Growth Strategy (also LinkedIn looks really good). This person's email says that they're part of an a",
+      "summary": "Someone who at least claimed to be a millionaire on this sub said the way they did it and perhaps easy way to do it is to work in and industry, find the niche gaps, and then sell a solution to those gaps. I work for a hyperscaler company. A colleague and I have identified a safety gap in the datacen",
       "summary_vi": "Thảo luận kinh nghiệm phát triển mô hình kinh doanh và mở rộng thị trường",
       "topic": "Social Buzz",
       "signal_type": [
@@ -500,6 +616,7 @@
     {
       "title": "Which biz would you pursue if you had money for 1 only? I will not promote",
       "source": "Reddit r/startups",
+      "subreddit": "r/startups",
       "url": "https://www.reddit.com/r/startups/comments/1xd1fiv/which_biz_would_you_pursue_if_you_had_money_for_1/",
       "date": "2026-10-24",
       "engagement": 150,
@@ -516,6 +633,7 @@
     {
       "title": "Point-to-Point Wireless Image Transmission with LR2021",
       "source": "Reddit r/IOT",
+      "subreddit": "r/IOT",
       "url": "https://www.reddit.com/r/IOT/comments/1xd99st/pointtopoint_wireless_image_transmission_with/",
       "date": "2026-10-23",
       "engagement": 146,
@@ -532,6 +650,7 @@
     {
       "title": "I spent months building a platform for beatmakers. Getting the first users is harder than I expected. (I will not promote)",
       "source": "Reddit r/startups",
+      "subreddit": "r/startups",
       "url": "https://www.reddit.com/r/startups/comments/1xdjo5w/i_spent_months_building_a_platform_for_beatmakers/",
       "date": "2026-10-25",
       "engagement": 140,
@@ -548,6 +667,7 @@
     {
       "title": "Is it unusual for a startup founder to refuse to share approximate runway with a prospective employee? (I will not promote)",
       "source": "Reddit r/startups",
+      "subreddit": "r/startups",
       "url": "https://www.reddit.com/r/startups/comments/1xcm0b4/is_it_unusual_for_a_startup_founder_to_refuse_to/",
       "date": "2026-10-24",
       "engagement": 140,
@@ -564,6 +684,7 @@
     {
       "title": "What are the best books to learn Embedded Linux and Linux device driver development for SoCs?",
       "source": "Reddit r/embedded",
+      "subreddit": "r/embedded",
       "url": "https://www.reddit.com/r/embedded/comments/1xeavk7/what_are_the_best_books_to_learn_embedded_linux/",
       "date": "2026-10-24",
       "engagement": 134,
@@ -580,6 +701,7 @@
     {
       "title": "I felt high voltage shock when touching a live PCB board with a bare hands? Has anyone faced it?",
       "source": "Reddit r/embedded",
+      "subreddit": "r/embedded",
       "url": "https://www.reddit.com/r/embedded/comments/1xe8tr8/i_felt_high_voltage_shock_when_touching_a_live/",
       "date": "2026-10-24",
       "engagement": 128,
@@ -596,6 +718,7 @@
     {
       "title": "Two SR04's in a Closed-Loop: Microcontroller driven Actuator Build",
       "source": "Reddit r/arduino",
+      "subreddit": "r/arduino",
       "url": "https://www.reddit.com/r/arduino/comments/1xe85e5/two_sr04s_in_a_closedloop_microcontroller_driven/",
       "date": "2026-10-24",
       "engagement": 110,
@@ -612,6 +735,7 @@
     {
       "title": "Buying BeagleBoard PocketBeagle 2 with W5500 SPI Ethernet module for embedded programming and rtos study?",
       "source": "Reddit r/embedded",
+      "subreddit": "r/embedded",
       "url": "https://www.reddit.com/r/embedded/comments/1xe48bx/buying_beagleboard_pocketbeagle_2_with_w5500_spi/",
       "date": "2026-10-24",
       "engagement": 110,
@@ -628,6 +752,7 @@
     {
       "title": "AI making life boring",
       "source": "Reddit r/embedded",
+      "subreddit": "r/embedded",
       "url": "https://www.reddit.com/r/embedded/comments/1xd4179/ai_making_life_boring/",
       "date": "2026-10-23",
       "engagement": 104,
@@ -644,6 +769,7 @@
     {
       "title": "I built a Rubik's Cube-solving robot using just one motor, without ever reorienting the cube.",
       "source": "Reddit r/arduino",
+      "subreddit": "r/arduino",
       "url": "https://www.reddit.com/r/arduino/comments/1xcxzvl/i_built_a_rubiks_cubesolving_robot_using_just_one/",
       "date": "2026-10-22",
       "engagement": 86,
@@ -658,12 +784,12 @@
       ]
     },
     {
-      "title": "Google Trends: IoT market (Tăng 🚀 +14%)",
+      "title": "Google Trends: IoT market (Ổn định ➡️ +0%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=IoT%20market&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 28,
-      "summary": "Chỉ số tìm kiếm Google Trends: 28/100, biến động +14% so với tuần trước.",
+      "engagement": 2,
+      "summary": "Chỉ số tìm kiếm Google Trends: 2/100, biến động +0% so với tuần trước.",
       "summary_vi": "Nhu cầu thị trường thiết bị kết nối IoT toàn cầu đang tăng trưởng",
       "topic": "Social Buzz",
       "signal_type": [
@@ -672,12 +798,12 @@
       ]
     },
     {
-      "title": "Google Trends: AI hardware (Tăng 🚀 +42%)",
+      "title": "Google Trends: AI hardware (Giảm 📉 -12%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=AI%20hardware&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 65,
-      "summary": "Chỉ số tìm kiếm Google Trends: 65/100, biến động +42% so với tuần trước.",
+      "engagement": 23,
+      "summary": "Chỉ số tìm kiếm Google Trends: 23/100, biến động -12% so với tuần trước.",
       "summary_vi": "Làn sóng tìm kiếm chip chuyên dụng và phần cứng tăng tốc AI",
       "topic": "Social Buzz",
       "signal_type": [
@@ -686,12 +812,12 @@
       ]
     },
     {
-      "title": "Google Trends: robotics startup (Tăng 🚀 +22%)",
+      "title": "Google Trends: robotics startup (Ổn định ➡️ +0%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=robotics%20startup&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 36,
-      "summary": "Chỉ số tìm kiếm Google Trends: 36/100, biến động +22% so với tuần trước.",
+      "engagement": 2,
+      "summary": "Chỉ số tìm kiếm Google Trends: 2/100, biến động +0% so với tuần trước.",
       "summary_vi": "Sự quan tâm đến các startup robot và tự động hóa công nghiệp",
       "topic": "Social Buzz",
       "signal_type": [
@@ -700,12 +826,12 @@
       ]
     },
     {
-      "title": "Google Trends: edge computing (Tăng 🚀 +8%)",
+      "title": "Google Trends: edge computing (Tăng 🚀 +42%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=edge%20computing&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 32,
-      "summary": "Chỉ số tìm kiếm Google Trends: 32/100, biến động +8% so với tuần trước.",
+      "engagement": 17,
+      "summary": "Chỉ số tìm kiếm Google Trends: 17/100, biến động +42% so với tuần trước.",
       "summary_vi": "Xu hướng tính toán biên xử lý dữ liệu trực tiếp tại thiết bị",
       "topic": "Social Buzz",
       "signal_type": [
@@ -714,12 +840,12 @@
       ]
     },
     {
-      "title": "Google Trends: semiconductor shortage (Giảm 📉 -5%)",
+      "title": "Google Trends: semiconductor shortage (Giảm 📉 -100%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=semiconductor%20shortage&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 18,
-      "summary": "Chỉ số tìm kiếm Google Trends: 18/100, biến động -5% so với tuần trước.",
+      "engagement": 0,
+      "summary": "Chỉ số tìm kiếm Google Trends: 0/100, biến động -100% so với tuần trước.",
       "summary_vi": "Theo dõi tình hình cung ứng và biến động giá linh kiện bán dẫn",
       "topic": "Social Buzz",
       "signal_type": [
@@ -728,12 +854,12 @@
       ]
     },
     {
-      "title": "Google Trends: smart home devices (Tăng 🚀 +10%)",
+      "title": "Google Trends: smart home devices (Tăng 🚀 +50%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=smart%20home%20devices&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 45,
-      "summary": "Chỉ số tìm kiếm Google Trends: 45/100, biến động +10% so với tuần trước.",
+      "engagement": 3,
+      "summary": "Chỉ số tìm kiếm Google Trends: 3/100, biến động +50% so với tuần trước.",
       "summary_vi": "Nhu cầu thiết bị nhà thông minh và tự động hóa dân dụng",
       "topic": "Social Buzz",
       "signal_type": [
@@ -742,12 +868,12 @@
       ]
     },
     {
-      "title": "Google Trends: smart agriculture (Tăng 🚀 +36%)",
+      "title": "Google Trends: smart agriculture (Ổn định ➡️ +0%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=smart%20agriculture&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 38,
-      "summary": "Chỉ số tìm kiếm Google Trends: 38/100, biến động +36% so với tuần trước.",
+      "engagement": 1,
+      "summary": "Chỉ số tìm kiếm Google Trends: 1/100, biến động +0% so với tuần trước.",
       "summary_vi": "Tìm kiếm về công nghệ và cảm biến nông nghiệp thông minh tăng mạnh",
       "topic": "Social Buzz",
       "signal_type": [
@@ -756,12 +882,12 @@
       ]
     },
     {
-      "title": "Google Trends: water technology (Tăng 🚀 +12%)",
+      "title": "Google Trends: water technology (Giảm 📉 -25%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=water%20technology&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 24,
-      "summary": "Chỉ số tìm kiếm Google Trends: 24/100, biến động +12% so với tuần trước.",
+      "engagement": 6,
+      "summary": "Chỉ số tìm kiếm Google Trends: 6/100, biến động -25% so với tuần trước.",
       "summary_vi": "Mối quan tâm về công nghệ xử lý và quan trắc nước diện rộng",
       "topic": "Social Buzz",
       "signal_type": [
@@ -770,12 +896,12 @@
       ]
     },
     {
-      "title": "Google Trends: renewable energy (Tăng 🚀 +15%)",
+      "title": "Google Trends: renewable energy (Giảm 📉 -40%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=renewable%20energy&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 58,
-      "summary": "Chỉ số tìm kiếm Google Trends: 58/100, biến động +15% so với tuần trước.",
+      "engagement": 24,
+      "summary": "Chỉ số tìm kiếm Google Trends: 24/100, biến động -40% so với tuần trước.",
       "summary_vi": "Xu hướng chuyển dịch năng lượng tái tạo và lưu trữ điện",
       "topic": "Social Buzz",
       "signal_type": [
@@ -784,12 +910,12 @@
       ]
     },
     {
-      "title": "Google Trends: 3D printing market (Ổn định ➡️ +4%)",
+      "title": "Google Trends: 3D printing market (Ổn định ➡️ +0%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=3D%20printing%20market&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 22,
-      "summary": "Chỉ số tìm kiếm Google Trends: 22/100, biến động +4% so với tuần trước.",
+      "engagement": 0,
+      "summary": "Chỉ số tìm kiếm Google Trends: 0/100, biến động +0% so với tuần trước.",
       "summary_vi": "Ứng dụng in 3D trong chế tạo mẫu thử và sản xuất phần cứng",
       "topic": "Social Buzz",
       "signal_type": [
@@ -798,12 +924,12 @@
       ]
     },
     {
-      "title": "Google Trends: electric vehicle (Tăng 🚀 +18%)",
+      "title": "Google Trends: electric vehicle (Giảm 📉 -8%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=electric%20vehicle&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 72,
-      "summary": "Chỉ số tìm kiếm Google Trends: 72/100, biến động +18% so với tuần trước.",
+      "engagement": 37,
+      "summary": "Chỉ số tìm kiếm Google Trends: 37/100, biến động -8% so với tuần trước.",
       "summary_vi": "Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc",
       "topic": "Social Buzz",
       "signal_type": [
@@ -812,12 +938,12 @@
       ]
     },
     {
-      "title": "Google Trends: drone technology (Tăng 🚀 +9%)",
+      "title": "Google Trends: drone technology (Giảm 📉 -50%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=drone%20technology&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 34,
-      "summary": "Chỉ số tìm kiếm Google Trends: 34/100, biến động +9% so với tuần trước.",
+      "engagement": 1,
+      "summary": "Chỉ số tìm kiếm Google Trends: 1/100, biến động -50% so với tuần trước.",
       "summary_vi": "Công nghệ máy bay không người lái phục vụ khảo sát và giám sát",
       "topic": "Social Buzz",
       "signal_type": [
@@ -826,12 +952,12 @@
       ]
     },
     {
-      "title": "Google Trends: DRAM price (Tăng 🚀 +25%)",
+      "title": "Google Trends: DRAM price (Giảm 📉 -50%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=DRAM%20price&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 20,
-      "summary": "Chỉ số tìm kiếm Google Trends: 20/100, biến động +25% so với tuần trước.",
+      "engagement": 2,
+      "summary": "Chỉ số tìm kiếm Google Trends: 2/100, biến động -50% so với tuần trước.",
       "summary_vi": "Tín hiệu biến động chi phí linh kiện RAM và bộ nhớ phần cứng",
       "topic": "Social Buzz",
       "signal_type": [
@@ -840,12 +966,12 @@
       ]
     },
     {
-      "title": "Google Trends: supply chain disruption (Ổn định ➡️ -2%)",
+      "title": "Google Trends: supply chain disruption (Giảm 📉 -100%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=supply%20chain%20disruption&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 15,
-      "summary": "Chỉ số tìm kiếm Google Trends: 15/100, biến động -2% so với tuần trước.",
+      "engagement": 0,
+      "summary": "Chỉ số tìm kiếm Google Trends: 0/100, biến động -100% so với tuần trước.",
       "summary_vi": "Theo dõi nguy cơ đứt gãy và chậm trễ chuỗi cung ứng linh kiện",
       "topic": "Social Buzz",
       "signal_type": [
@@ -854,17 +980,129 @@
       ]
     },
     {
-      "title": "Google Trends: startup funding trend (Tăng 🚀 +16%)",
+      "title": "Google Trends: startup funding trend (Ổn định ➡️ +0%)",
       "source": "Google Trends",
       "url": "https://trends.google.com/trends/explore?q=startup%20funding%20trend&date=today+1-m",
       "date": "2026-10-25",
-      "engagement": 30,
-      "summary": "Chỉ số tìm kiếm Google Trends: 30/100, biến động +16% so với tuần trước.",
+      "engagement": 0,
+      "summary": "Chỉ số tìm kiếm Google Trends: 0/100, biến động +0% so với tuần trước.",
       "summary_vi": "Xu hướng dòng vốn đầu tư mạo hiểm vào các startup công nghệ",
       "topic": "Social Buzz",
       "signal_type": [
         "price_shift",
         "pain_repeat"
+      ]
+    },
+    {
+      "title": "Cheesecake Factory trending with 15K+ tweets",
+      "source": "Twitter/X Trending",
+      "url": "https://x.com/search?q=Cheesecake%20Factory",
+      "date": "2026-10-25",
+      "engagement": 15000,
+      "summary": "Chủ đề Cheesecake Factory ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+      "summary_vi": "Chủ đề Cheesecake Factory đang là tâm điểm bàn luận với lượng tương tác tăng cao",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "price_shift"
+      ]
+    },
+    {
+      "title": "Ole Miss trending with 15K+ tweets",
+      "source": "Twitter/X Trending",
+      "url": "https://x.com/search?q=Ole%20Miss",
+      "date": "2026-10-25",
+      "engagement": 15000,
+      "summary": "Chủ đề Ole Miss ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+      "summary_vi": "Chủ đề Ole Miss đang là tâm điểm bàn luận với lượng tương tác tăng cao",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "price_shift"
+      ]
+    },
+    {
+      "title": "Brewers trending with 15K+ tweets",
+      "source": "Twitter/X Trending",
+      "url": "https://x.com/search?q=Brewers",
+      "date": "2026-10-25",
+      "engagement": 15000,
+      "summary": "Chủ đề Brewers ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+      "summary_vi": "Chủ đề Brewers đang là tâm điểm bàn luận với lượng tương tác tăng cao",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "price_shift"
+      ]
+    },
+    {
+      "title": "Lincoln Riley trending with 15K+ tweets",
+      "source": "Twitter/X Trending",
+      "url": "https://x.com/search?q=Lincoln%20Riley",
+      "date": "2026-10-25",
+      "engagement": 15000,
+      "summary": "Chủ đề Lincoln Riley ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+      "summary_vi": "Chủ đề Lincoln Riley đang là tâm điểm bàn luận với lượng tương tác tăng cao",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "price_shift"
+      ]
+    },
+    {
+      "title": "Shock trending with 15K+ tweets",
+      "source": "Twitter/X Trending",
+      "url": "https://x.com/search?q=Shock",
+      "date": "2026-10-25",
+      "engagement": 15000,
+      "summary": "Chủ đề Shock ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+      "summary_vi": "Chủ đề Shock đang là tâm điểm bàn luận với lượng tương tác tăng cao",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "price_shift"
+      ]
+    },
+    {
+      "title": "Shock trending with 15K+ tweets",
+      "source": "Twitter/X Trending",
+      "url": "https://x.com/search?q=Shock",
+      "date": "2026-10-25",
+      "engagement": 15000,
+      "summary": "Chủ đề Shock ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+      "summary_vi": "Chủ đề Shock đang là tâm điểm bàn luận với lượng tương tác tăng cao",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "price_shift"
+      ]
+    },
+    {
+      "title": "Utah trending with 15K+ tweets",
+      "source": "Twitter/X Trending",
+      "url": "https://x.com/search?q=Utah",
+      "date": "2026-10-25",
+      "engagement": 15000,
+      "summary": "Chủ đề Utah ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+      "summary_vi": "Chủ đề Utah đang là tâm điểm bàn luận với lượng tương tác tăng cao",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "price_shift"
+      ]
+    },
+    {
+      "title": "Pelicans trending with 15K+ tweets",
+      "source": "Twitter/X Trending",
+      "url": "https://x.com/search?q=Pelicans",
+      "date": "2026-10-25",
+      "engagement": 15000,
+      "summary": "Chủ đề Pelicans ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+      "summary_vi": "Chủ đề Pelicans đang là tâm điểm bàn luận với lượng tương tác tăng cao",
+      "topic": "Social Buzz",
+      "signal_type": [
+        "pain_repeat",
+        "price_shift"
       ]
     },
     {

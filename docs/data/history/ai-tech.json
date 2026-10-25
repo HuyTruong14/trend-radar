@@ -822,76 +822,85 @@
   },
   {
     "date": "2026-10-25",
-    "total_items": 45,
-    "avg_relevance_score": null,
+    "total_items": 124,
+    "avg_relevance_score": 3.86,
     "cross_source_count": 0,
     "by_source": {
       "GitHub": 30,
-      "arXiv": 15
+      "arXiv": 15,
+      "Hacker News": 74,
+      "reddit": 5
     },
     "by_keyword": {
       "llm agent": 15,
       "ai video generation": 15,
-      "cs.AI, cs.CV, cs.CL": 15
+      "cs.AI, cs.CV, cs.CL": 15,
+      "AI agent": 15,
+      "generative AI": 15,
+      "AI video": 15,
+      "large language model": 14,
+      "video generation": 15,
+      "": 5
     },
     "top_repos": [
       {
         "name": "morluto/rea",
-        "stars": 379003
+        "stars": 379967
       },
       {
         "name": "affaan-m/ECC",
-        "stars": 288123
+        "stars": 288266
       },
       {
         "name": "NousResearch/hermes-agent",
-        "stars": 256829
+        "stars": 256869
       },
       {
         "name": "firecrawl/firecrawl",
-        "stars": 195032
+        "stars": 195083
       },
       {
         "name": "DietrichGebert/ponytail",
-        "stars": 175555
+        "stars": 175659
       },
       {
         "name": "langgenius/dify",
-        "stars": 159442
+        "stars": 159462
       },
       {
         "name": "langchain-ai/langchain",
-        "stars": 148395
+        "stars": 148401
       },
       {
         "name": "Shubhamsaboo/awesome-llm-apps",
-        "stars": 142957
+        "stars": 142977
       },
       {
         "name": "browser-use/browser-use",
-        "stars": 119063
+        "stars": 119075
       },
       {
         "name": "earendil-works/pi",
-        "stars": 117622
+        "stars": 117656
       }
     ],
     "github_repos": [
       "paperclipai/paperclip",
-      "NousResearch/hermes-agent",
-      "morluto/rea",
-      "firecrawl/firecrawl",
-      "aqm857886159/Nomi",
       "langgenius/dify",
-      "OpenHands/OpenHands",
-      "ZeroLu/awesome-seedance",
+      "morluto/rea",
+      "aqm857886159/Nomi",
+      "infiniflow/ragflow",
+      "NousResearch/hermes-agent",
+      "JuliusBrussee/caveman",
       "langchain-ai/langchain",
+      "OpenHands/OpenHands",
+      "Likely7/Veyra-NRVideo",
+      "firecrawl/firecrawl",
+      "ZeroLu/awesome-seedance",
       "earendil-works/pi",
       "tetherto/qvac",
       "PurpleDoubleD/locally-uncensored",
-      "infiniflow/ragflow",
       "Anil-matcha/Open-Generative-AI",
-      "JuliusBrussee/caveman",
       "browser-use/browser-use",
       "HKUSTDial/DataMagic",
       "Shubhamsaboo/awesome-llm-apps",
@@ -904,7 +913,6 @@
       "affaan-m/ECC",
       "notepower2k1/CapCap",
       "HBAI-Ltd/Toonflow-app",
-      "Likely7/Veyra-NRVideo",
       "DietrichGebert/ponytail",
       "TauricResearch/TradingAgents"
     ]

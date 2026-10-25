@@ -208,6 +208,10 @@ def fetch_rss(feed_urls, max_items):
         r = safe_get(feed_url)
         if not r and "thefishsite.com" in feed_url:
             r = safe_get("https://thefishsite.com/feed.xml")
+        elif not r and "ai.meta.com" in feed_url:
+            r = safe_get("https://about.fb.com/news/category/technology-and-innovation/feed/")
+        elif not r and "deeplearning.ai/the-batch" in feed_url:
+            r = safe_get("http://localhost:1200/deeplearning/the-batch")
         if not r:
             continue
         parsed = feedparser.parse(r.content)
@@ -215,10 +219,48 @@ def fetch_rss(feed_urls, max_items):
             r_alt = safe_get("https://thefishsite.com/feed.xml")
             if r_alt:
                 parsed = feedparser.parse(r_alt.content)
+        elif len(parsed.entries) == 0 and "ai.meta.com" in feed_url:
+            r_alt = safe_get("https://about.fb.com/news/category/technology-and-innovation/feed/")
+            if r_alt:
+                parsed = feedparser.parse(r_alt.content)
         # Some feeds (e.g. HBR) only give entry links relative to the
         # site's homepage, not to the feed URL itself — resolve against
         # the feed's own <link> when present, falling back to the feed URL.
         base_url = parsed.feed.get("link") or feed_url
+
+        # Clean source branding
+        feed_title = parsed.feed.get("title") or ""
+        src_name = feed_title
+        f_lower = feed_url.lower()
+        if "openai" in f_lower:
+            src_name = "OpenAI Blog"
+        elif "anthropic" in f_lower:
+            src_name = "Anthropic Blog"
+        elif "blog.google" in f_lower:
+            src_name = "Google AI Blog"
+        elif "meta" in f_lower or "fb.com" in f_lower:
+            src_name = "Meta AI Blog"
+        elif "huggingface" in f_lower:
+            src_name = "Hugging Face Blog"
+        elif "nvidia" in f_lower:
+            src_name = "NVIDIA AI Blog"
+        elif "the-batch" in f_lower:
+            src_name = "The Batch"
+        elif "tldr.tech" in f_lower:
+            src_name = "TLDR AI"
+        elif "importai" in f_lower:
+            src_name = "Import AI"
+        elif "producthunt" in f_lower:
+            src_name = "Product Hunt AI"
+        elif "theresanaiforthat" in f_lower:
+            src_name = "There's an AI for That"
+        elif "simonwillison" in f_lower:
+            src_name = "Simon Willison"
+        elif "lilianweng" in f_lower:
+            src_name = "Lilian Weng"
+        elif not src_name:
+            src_name = feed_url
+
         for entry in parsed.entries[:max_items]:
             raw_link = entry.get("link")
             desc = entry.get("summary") or entry.get("description") or ""
@@ -227,7 +269,7 @@ def fetch_rss(feed_urls, max_items):
             desc = re.sub(r"\s+", " ", desc)
             items.append(
                 {
-                    "source": parsed.feed.get("title", feed_url),
+                    "source": src_name,
                     "title": entry.get("title", "(no title)"),
                     "url": urljoin(base_url, raw_link) if raw_link else None,
                     "matched_keyword": "",
@@ -786,6 +828,7 @@ def build_topic(topic_key, cfg, max_items, freshness_days):
 
     LABEL_TO_FETCHER_TOPIC = {
         "AI & Technology": "AI/Tech",
+        "AI Ecosystem": "AI/Tech",
         "iGaming & Gaming": "iGaming",
         "Business & Funding": "Business",
         "News (theo từ khóa)": "News",
