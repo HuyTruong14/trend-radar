@@ -399,10 +399,45 @@ def generate_weekly_archive(week=None, start_date=None, end_date=None):
     print(f"[weekly] ✅ Generated {json_path}")
     print(f"[weekly] ✅ Generated {md_path}")
 
-    # 11. Cleanup retention (Keep 52 weeks max)
+    # 11. Generate weeks_index.json for UI selectors
+    update_weeks_index()
+
+    # 12. Cleanup retention (Keep 52 weeks max)
     cleanup_retention_52_weeks()
 
     return weekly_payload, md_content
+
+
+def update_weeks_index():
+    """Build weeks_index.json listing all available weekly archives."""
+    if not os.path.exists(WEEKLY_DIR):
+        return
+
+    weeks = []
+    for fname in os.listdir(WEEKLY_DIR):
+        if fname.startswith("W") and fname.endswith(".json") and "latest" not in fname:
+            filepath = os.path.join(WEEKLY_DIR, fname)
+            try:
+                with open(filepath, "r", encoding="utf-8") as f:
+                    wdata = json.load(f)
+                    weeks.append({
+                        "week": wdata.get("week", fname.split("_")[0]),
+                        "filename": fname,
+                        "start_date": wdata.get("start_date", ""),
+                        "end_date": wdata.get("end_date", ""),
+                        "total_signals": wdata.get("stats", {}).get("total_signals", 0),
+                        "total_opportunities": wdata.get("stats", {}).get("total_opportunities", 0),
+                        "build_ready": wdata.get("stats", {}).get("build_ready", 0)
+                    })
+            except Exception as e:
+                print(f"[weekly] Warning reading {fname} for index: {e}")
+
+    # Sort descending by week
+    weeks.sort(key=lambda x: x["week"], reverse=True)
+    index_path = os.path.join(WEEKLY_DIR, "weeks_index.json")
+    with open(index_path, "w", encoding="utf-8") as f:
+        json.dump(weeks, f, ensure_ascii=False, indent=2)
+    print(f"[weekly] ✅ Updated weeks_index.json ({len(weeks)} archives)")
 
 
 def format_markdown_report(data):

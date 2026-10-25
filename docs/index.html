@@ -3250,8 +3250,11 @@
           </button>
         </div>
         <div class="header-links-group" aria-label="External Views">
-          <a href="data/weekly/weekly_latest.md" target="_blank" class="weekly-nav-btn" title="Xem báo cáo tổng hợp tuần mới nhất (Weekly Archive)">
-            <span>📊 Báo cáo tuần</span>
+          <button class="weekly-nav-btn" id="weeklyNavBtn" onclick="openWeeklyModal()" title="Mở Báo cáo tổng hợp tuần (Weekly Archive)">
+            <span>📊 Báo cáo tuần (<span id="weeklyHeaderWeek">W43</span>)</span>
+          </button>
+          <a href="weekly.html" target="_blank" class="weekly-nav-btn" title="Mở trang báo cáo tuần độc lập">
+            <span>↗ Trang tuần</span>
           </a>
           <a href="workflow.html" class="workflow-hub-btn" title="Mở Workflow Hub & Telemetry Monitor">
             <span>⚡ Workflow Hub</span>
@@ -3567,8 +3570,54 @@
     </div>
   </div>
 
+  <!-- Weekly Archive Modal (Báo cáo tổng hợp tuần) -->
+  <div class="digest-modal-overlay" id="weeklyModal" style="display: none;" onclick="handleWeeklyBackdropClick(event)">
+    <div class="bookmarks-modal-box" role="dialog" aria-modal="true" aria-labelledby="modalWeeklyTitle" style="max-width: 960px;">
+      <div class="digest-modal-header" style="flex-wrap: wrap; gap: 10px;">
+        <div class="digest-modal-title" id="modalWeeklyTitle" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <span>📊 BÁO CÁO TỔNG HỢP TUẦN</span>
+          <span id="weeklyModalBadge" style="font-size: 11px; padding: 3px 10px; border-radius: 999px; background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); font-weight: 700;">W43</span>
+          <div style="display: inline-flex; align-items: center; gap: 6px; margin-left: 6px;">
+            <label for="weeklyModalWeekSelect" style="font-size: 11px; color: var(--fg-dim); font-weight: 500;">Chọn tuần:</label>
+            <select id="weeklyModalWeekSelect" onchange="onWeeklyModalSelectWeek(this.value)" style="background: rgba(15, 23, 42, 0.85); color: var(--fg); border: 1px solid var(--border); border-radius: 6px; padding: 3px 8px; font-size: 11px; font-family: var(--font-mono); outline: none; cursor: pointer;">
+              <option value="weekly_latest.json">W43 (Mới nhất)</option>
+            </select>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="weekly.html" target="_blank" style="font-size: 12px; color: var(--accent); padding: 4px 10px; border: 1px solid rgba(59,130,246,0.3); border-radius: 6px; text-decoration: none; background: rgba(59,130,246,0.1); font-weight: 600;">↗ Mở toàn màn hình</a>
+          <button class="digest-modal-close-btn" onclick="closeWeeklyModal()" aria-label="Đóng">&times;</button>
+        </div>
+      </div>
+
+      <div class="bookmarks-filter-bar" style="flex-wrap: wrap;">
+        <button class="bm-filter-btn active" id="tabWeeklyOverview" onclick="switchWeeklyTab('overview')">📊 Tổng quan & KPI</button>
+        <button class="bm-filter-btn" id="tabWeeklyOpps" onclick="switchWeeklyTab('opps')">💰 Top Cơ hội & Deals</button>
+        <button class="bm-filter-btn" id="tabWeeklyTech" onclick="switchWeeklyTab('tech')">🔬 Chủ đề & Công nghệ</button>
+        <button class="bm-filter-btn" id="tabWeeklyDisruption" onclick="switchWeeklyTab('disruption')">⚡ AI Disruption</button>
+        <button class="bm-filter-btn" id="tabWeeklyChecklist" onclick="switchWeeklyTab('checklist')">✅ Checklist & Ghi chú</button>
+      </div>
+
+      <div class="bookmarks-list" id="weeklyContentArea" style="max-height: calc(85vh - 200px); overflow-y: auto; padding: 18px 20px;">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="bookmarks-footer-bar">
+        <div style="font-size: 12px; color: var(--fg-dim);">
+          <span>💡 Báo cáo tự động lưu trữ tại: <code>docs/data/weekly/</code></span>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="btn-export-bm" onclick="copyWeeklyModalMarkdown()" style="background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--fg); padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer;">📋 Copy Markdown</button>
+          <button class="btn-export-bm" onclick="downloadWeeklyModalJson()" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.4); color: #93c5fd; padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600;">💾 Tải JSON</button>
+          <button class="btn-download-bm" onclick="downloadWeeklyModalMd()" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600;">📥 Tải .MD</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="digest-copy-toast" id="digestCopyToast">✅ Đã sao chép nội dung Telegram!</div>
   <div class="digest-copy-toast" id="bookmarkCopyToast" style="background: #f59e0b; color: #1e1e1e;">✅ Đã sao chép Bookmarks JSON!</div>
+  <div class="digest-copy-toast" id="weeklyCopyToast" style="background: #2563eb; color: #ffffff;">✅ Đã sao chép nội dung Báo Cáo Tuần!</div>
 
   <script>
     // --- 1. MOCK DATA (High quality fallback) ---
@@ -5058,6 +5107,563 @@
       });
     }
 
+    // --- Phase 10 / Weekly Archive Handlers ---
+    let WEEKLY_ARCHIVE_DATA = null;
+    let WEEKS_INDEX_DATA = [];
+    let activeWeeklyTab = 'overview';
+
+    async function loadWeeklyArchive() {
+      try {
+        const [indexRes, latestRes] = await Promise.allSettled([
+          fetch('data/weekly/weeks_index.json').then(r => r.ok ? r.json() : []),
+          fetch('data/weekly/weekly_latest.json').then(r => r.ok ? r.json() : null)
+        ]);
+
+        if (indexRes.status === 'fulfilled' && Array.isArray(indexRes.value)) {
+          WEEKS_INDEX_DATA = indexRes.value;
+        }
+        if (latestRes.status === 'fulfilled' && latestRes.value) {
+          WEEKLY_ARCHIVE_DATA = latestRes.value;
+        }
+
+        updateWeeklyHeaderBadges();
+        populateWeeklySelectOptions();
+
+        if (window.location.hash === '#weekly' || window.location.hash === '#weekly-report') {
+          openWeeklyModal();
+        }
+      } catch (e) {
+        console.warn('Could not load weekly archive data:', e);
+      }
+    }
+
+    function updateWeeklyHeaderBadges() {
+      const weekLabel = (WEEKLY_ARCHIVE_DATA && WEEKLY_ARCHIVE_DATA.week) ? WEEKLY_ARCHIVE_DATA.week : 'W43';
+      const headerWeek = document.getElementById('weeklyHeaderWeek');
+      if (headerWeek) headerWeek.textContent = weekLabel;
+      const modalBadge = document.getElementById('weeklyModalBadge');
+      if (modalBadge) modalBadge.textContent = weekLabel;
+    }
+
+    function populateWeeklySelectOptions() {
+      const select = document.getElementById('weeklyModalWeekSelect');
+      if (!select) return;
+      if (!WEEKS_INDEX_DATA || WEEKS_INDEX_DATA.length === 0) {
+        select.innerHTML = '<option value="weekly_latest.json">Tuần mới nhất (W43)</option>';
+        return;
+      }
+      select.innerHTML = WEEKS_INDEX_DATA.map((w, idx) => {
+        const isLatest = idx === 0;
+        return `<option value="${escapeHtml(w.filename || 'weekly_latest.json')}">${escapeHtml(w.week)} (${escapeHtml(w.start_date || '')} ~ ${escapeHtml(w.end_date || '')})${isLatest ? ' — Mới nhất' : ''}</option>`;
+      }).join('');
+    }
+
+    async function onWeeklyModalSelectWeek(filename) {
+      if (!filename) return;
+      try {
+        const res = await fetch(`data/weekly/${filename}`);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        WEEKLY_ARCHIVE_DATA = await res.json();
+        updateWeeklyHeaderBadges();
+        renderWeeklyModal();
+      } catch (err) {
+        console.error('Error switching weekly archive file:', err);
+      }
+    }
+
+    function openWeeklyModal() {
+      const modal = document.getElementById('weeklyModal');
+      if (!modal) return;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      renderWeeklyModal();
+    }
+
+    function closeWeeklyModal() {
+      const modal = document.getElementById('weeklyModal');
+      if (modal) modal.style.display = 'none';
+      document.body.style.overflow = '';
+      if (window.location.hash === '#weekly' || window.location.hash === '#weekly-report') {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
+    }
+
+    function handleWeeklyBackdropClick(event) {
+      if (event.target && event.target.id === 'weeklyModal') {
+        closeWeeklyModal();
+      }
+    }
+
+    function switchWeeklyTab(tabKey) {
+      activeWeeklyTab = tabKey;
+      document.querySelectorAll('#weeklyModal .bm-filter-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtnMap = {
+        'overview': 'tabWeeklyOverview',
+        'opps': 'tabWeeklyOpps',
+        'tech': 'tabWeeklyTech',
+        'disruption': 'tabWeeklyDisruption',
+        'checklist': 'tabWeeklyChecklist'
+      };
+      const btnId = activeBtnMap[tabKey];
+      if (btnId) document.getElementById(btnId)?.classList.add('active');
+      renderWeeklyModal();
+    }
+
+    function renderWeeklyModal() {
+      const container = document.getElementById('weeklyContentArea');
+      if (!container) return;
+
+      if (!WEEKLY_ARCHIVE_DATA) {
+        container.innerHTML = `
+          <div style="padding: 40px; text-align: center; color: var(--fg-dim);">
+            <div style="font-size: 32px; margin-bottom: 12px;">⏳</div>
+            <div style="font-size: 15px; font-weight: 600;">Đang tải dữ liệu Báo cáo tuần...</div>
+            <div style="font-size: 12px; margin-top: 6px; color: var(--fg-muted);">Vui lòng kiểm tra file <code>docs/data/weekly/weekly_latest.json</code></div>
+          </div>
+        `;
+        return;
+      }
+
+      const d = WEEKLY_ARCHIVE_DATA;
+      const stats = d.stats || {};
+      const prev = d.prev_stats || {};
+
+      if (activeWeeklyTab === 'overview') {
+        const sigDiff = (stats.total_signals || 0) - (prev.total_signals || 0);
+        const oppDiff = (stats.total_opportunities || 0) - (prev.total_opportunities || 0);
+        const bldDiff = (stats.build_ready || 0) - (prev.build_ready || 0);
+        const resDiff = (stats.research || 0) - (prev.research || 0);
+        const wtcDiff = (stats.watch || 0) - (prev.watch || 0);
+
+        const formatDiff = (num) => {
+          if (num > 0) return `<span style="color: #10b981; font-weight:700;">+${num}</span>`;
+          if (num < 0) return `<span style="color: #ef4444; font-weight:700;">${num}</span>`;
+          return `<span style="color: var(--fg-muted);">= 0</span>`;
+        };
+
+        container.innerHTML = `
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div style="background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 12px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <span style="font-weight: 700; color: #93c5fd; font-size: 14px;">📅 Chu kỳ báo cáo:</span>
+                <span style="font-size: 13px; color: var(--fg); font-family: var(--font-mono); font-weight: 600; margin-left: 6px;">${escapeHtml(d.start_date || '')} → ${escapeHtml(d.end_date || '')}</span>
+                <span style="font-size: 11px; color: var(--fg-muted); margin-left: 8px;">(So sánh với ${escapeHtml(d.previous_week || 'Tuần trước')})</span>
+              </div>
+              <div style="font-size: 11px; color: var(--fg-dim);">
+                Đồng bộ lúc: ${escapeHtml((d.created_at || '').substring(0, 19).replace('T', ' '))}
+              </div>
+            </div>
+
+            <!-- Metric Cards -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px;">
+              <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px;">
+                <div style="font-size: 12px; color: var(--fg-dim); margin-bottom: 4px;">📡 Tổng tín hiệu</div>
+                <div style="font-size: 26px; font-weight: 800; color: #38bdf8;">${stats.total_signals || 0}</div>
+                <div style="font-size: 11px; margin-top: 4px;">vs tuần trước: ${formatDiff(sigDiff)}</div>
+              </div>
+              <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px;">
+                <div style="font-size: 12px; color: var(--fg-dim); margin-bottom: 4px;">💡 Cơ hội phát hiện</div>
+                <div style="font-size: 26px; font-weight: 800; color: #a78bfa;">${stats.total_opportunities || 0}</div>
+                <div style="font-size: 11px; margin-top: 4px;">vs tuần trước: ${formatDiff(oppDiff)}</div>
+              </div>
+              <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 14px 16px;">
+                <div style="font-size: 12px; color: #6ee7b7; margin-bottom: 4px; font-weight: 600;">🚀 Build-Ready</div>
+                <div style="font-size: 26px; font-weight: 800; color: #10b981;">${stats.build_ready || 0}</div>
+                <div style="font-size: 11px; margin-top: 4px;">vs tuần trước: ${formatDiff(bldDiff)}</div>
+              </div>
+              <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px;">
+                <div style="font-size: 12px; color: var(--fg-dim); margin-bottom: 4px;">🔬 Research</div>
+                <div style="font-size: 26px; font-weight: 800; color: #fbbf24;">${stats.research || 0}</div>
+                <div style="font-size: 11px; margin-top: 4px;">vs tuần trước: ${formatDiff(resDiff)}</div>
+              </div>
+              <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px;">
+                <div style="font-size: 12px; color: var(--fg-dim); margin-bottom: 4px;">👀 Watch</div>
+                <div style="font-size: 26px; font-weight: 800; color: #94a3b8;">${stats.watch || 0}</div>
+                <div style="font-size: 11px; margin-top: 4px;">vs tuần trước: ${formatDiff(wtcDiff)}</div>
+              </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;">
+              <div style="padding: 12px 16px; background: rgba(255, 255, 255, 0.03); border-bottom: 1px solid var(--border); font-weight: 700; font-size: 13px;">
+                📊 Bảng đối chiếu số liệu tuần (${escapeHtml(d.week)} vs ${escapeHtml(d.previous_week || 'Tuần trước')})
+              </div>
+              <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--border); color: var(--fg-dim); text-align: left;">
+                    <th style="padding: 10px 16px;">Chỉ số phân tích</th>
+                    <th style="padding: 10px 16px; text-align: right;">${escapeHtml(d.previous_week || 'Tuần trước')}</th>
+                    <th style="padding: 10px 16px; text-align: right; color: #60a5fa;">${escapeHtml(d.week || 'Tuần này')}</th>
+                    <th style="padding: 10px 16px; text-align: right;">Biến động</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.04);">
+                    <td style="padding: 10px 16px; font-weight: 600;">Tổng tín hiệu thu thập (Signals)</td>
+                    <td style="padding: 10px 16px; text-align: right; font-family: var(--font-mono);">${prev.total_signals || 0}</td>
+                    <td style="padding: 10px 16px; text-align: right; font-family: var(--font-mono); font-weight: 700; color: #38bdf8;">${stats.total_signals || 0}</td>
+                    <td style="padding: 10px 16px; text-align: right;">${formatDiff(sigDiff)}</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.04);">
+                    <td style="padding: 10px 16px; font-weight: 600;">Tổng cơ hội được chấm điểm (Opportunities)</td>
+                    <td style="padding: 10px 16px; text-align: right; font-family: var(--font-mono);">${prev.total_opportunities || 0}</td>
+                    <td style="padding: 10px 16px; text-align: right; font-family: var(--font-mono); font-weight: 700; color: #a78bfa;">${stats.total_opportunities || 0}</td>
+                    <td style="padding: 10px 16px; text-align: right;">${formatDiff(oppDiff)}</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.04);">
+                    <td style="padding: 10px 16px; font-weight: 600;">Dự án Sẵn sàng triển khai (Build-Ready)</td>
+                    <td style="padding: 10px 16px; text-align: right; font-family: var(--font-mono);">${prev.build_ready || 0}</td>
+                    <td style="padding: 10px 16px; text-align: right; font-family: var(--font-mono); font-weight: 700; color: #10b981;">${stats.build_ready || 0}</td>
+                    <td style="padding: 10px 16px; text-align: right;">${formatDiff(bldDiff)}</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.04);">
+                    <td style="padding: 10px 16px; font-weight: 600;">Dự án cần nghiên cứu sâu (Research)</td>
+                    <td style="padding: 10px 16px; text-align: right; font-family: var(--font-mono);">${prev.research || 0}</td>
+                    <td style="padding: 10px 16px; text-align: right; font-family: var(--font-mono); font-weight: 700; color: #fbbf24;">${stats.research || 0}</td>
+                    <td style="padding: 10px 16px; text-align: right;">${formatDiff(resDiff)}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 10px 16px; font-weight: 600;">Dự án theo dõi dài hạn (Watch)</td>
+                    <td style="padding: 10px 16px; text-align: right; font-family: var(--font-mono);">${prev.watch || 0}</td>
+                    <td style="padding: 10px 16px; text-align: right; font-family: var(--font-mono); font-weight: 700; color: #94a3b8;">${stats.watch || 0}</td>
+                    <td style="padding: 10px 16px; text-align: right;">${formatDiff(wtcDiff)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      } else if (activeWeeklyTab === 'opps') {
+        const opps = d.top_opportunities || [];
+        const deals = d.funding_deals || [];
+
+        container.innerHTML = `
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div>
+              <div style="font-weight: 700; font-size: 14px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                <span>🚀 Top Cơ Hội Tiềm Năng Cao (${opps.length})</span>
+                <span style="font-size: 11px; padding: 2px 8px; border-radius: 999px; background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4);">Build-Ready</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                ${opps.map(op => `
+                  <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap;">
+                      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <span style="font-family: var(--font-mono); font-weight: 700; font-size: 14px; color: #38bdf8;">
+                          <a href="${escapeHtml(op.url || '#')}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">${escapeHtml(op.title)} ↗</a>
+                        </span>
+                        <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 11px; padding: 2px 7px; border-radius: 4px; font-weight: 700;">Điểm: ${op.total}/10</span>
+                        ${(op.signal_type || []).map(st => `<span style="background: rgba(255, 255, 255, 0.06); color: var(--fg-dim); font-size: 10px; padding: 2px 6px; border-radius: 4px;">#${escapeHtml(st)}</span>`).join('')}
+                      </div>
+                    </div>
+                    <div style="font-size: 13px; color: var(--fg-dim); margin-top: 6px; line-height: 1.4;">
+                      → ${escapeHtml(op.summary_vi || '')}
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <div>
+              <div style="font-weight: 700; font-size: 14px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                <span>💰 Dòng Tiền & Thương Vụ Gọi Vốn (${deals.length})</span>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                ${deals.map(dl => `
+                  <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 250px;">
+                      <a href="${escapeHtml(dl.url || '#')}" target="_blank" rel="noopener noreferrer" style="font-size: 13px; font-weight: 600; color: var(--fg); text-decoration: none;">
+                        ${escapeHtml(dl.title)} ↗
+                      </a>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                      <span style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 700;">${escapeHtml(dl.amount || 'N/A')}</span>
+                      <span style="background: rgba(59, 130, 246, 0.15); color: #93c5fd; font-size: 11px; padding: 2px 8px; border-radius: 4px;">${escapeHtml(dl.type || 'Deal')}</span>
+                      <span style="background: rgba(255, 255, 255, 0.06); color: var(--fg-dim); font-size: 11px; padding: 2px 8px; border-radius: 4px;">${escapeHtml(dl.sector_vi || dl.sector || '')}</span>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (activeWeeklyTab === 'tech') {
+        const topics = d.hot_topics || {};
+        const reddit = topics.reddit_top3 || [];
+        const google = topics.google_trends_top3 || [];
+        const twitter = topics.twitter_top3 || [];
+        const techFreq = d.tech_frequency || {};
+        const newTerms = d.new_terms || [];
+
+        container.innerHTML = `
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <!-- 3 Columns for Hot Topics -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;">
+              <!-- Reddit -->
+              <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px;">
+                <div style="font-weight: 700; font-size: 13px; color: #f97316; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                  <span>👾 Reddit Nổi Bật</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  ${reddit.map(r => `
+                    <div style="font-size: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 8px;">
+                      <a href="${escapeHtml(r.url || '#')}" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--fg); text-decoration: none;">${escapeHtml(r.title)} ↗</a>
+                      <div style="color: var(--fg-muted); font-size: 11px; margin-top: 3px;">${escapeHtml(r.subreddit || '')} • ⬆️ ${r.upvotes || 0}</div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+
+              <!-- Google Trends -->
+              <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px;">
+                <div style="font-weight: 700; font-size: 13px; color: #3b82f6; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                  <span>📈 Google Trends</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  ${google.map(g => `
+                    <div style="font-size: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 8px;">
+                      <a href="${escapeHtml(g.link || '#')}" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--fg); text-decoration: none;">${escapeHtml(g.keyword)} ↗</a>
+                      <div style="color: var(--fg-muted); font-size: 11px; margin-top: 3px;">Volume: ${g.volume || 0} • Biến động: ${escapeHtml(g.change || '')}</div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+
+              <!-- Twitter -->
+              <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px;">
+                <div style="font-weight: 700; font-size: 13px; color: #a855f7; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                  <span>🐦 Mạng Xã Hội X (Twitter)</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                  ${twitter.map(t => `
+                    <div style="font-size: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 8px;">
+                      <a href="${escapeHtml(t.url || '#')}" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--fg); text-decoration: none;">${escapeHtml(t.keyword)} ↗</a>
+                      <div style="color: var(--fg-muted); font-size: 11px; margin-top: 3px;">Lượng thảo luận: ${escapeHtml(t.tweets || '')} tweets</div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Frequency Table -->
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;">
+              <div style="padding: 12px 16px; background: rgba(255, 255, 255, 0.03); border-bottom: 1px solid var(--border); font-weight: 700; font-size: 13px;">
+                🔬 Tần suất công nghệ xuất hiện trong tuần (Tech Frequency)
+              </div>
+              <div style="max-height: 240px; overflow-y: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                  <thead>
+                    <tr style="border-bottom: 1px solid var(--border); color: var(--fg-dim); text-align: left; position: sticky; top: 0; background: var(--bg-card);">
+                      <th style="padding: 8px 14px;">Công nghệ / Thuật ngữ</th>
+                      <th style="padding: 8px 14px; text-align: right;">Tuần này</th>
+                      <th style="padding: 8px 14px; text-align: right;">Tuần trước</th>
+                      <th style="padding: 8px 14px; text-align: right;">Biến động</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${Object.entries(techFreq).map(([tKey, tVal]) => {
+                      const chg = tVal.change_pct;
+                      const chgColor = chg > 0 ? '#10b981' : (chg < 0 ? '#ef4444' : 'var(--fg-muted)');
+                      return `
+                        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.03);">
+                          <td style="padding: 8px 14px; font-weight: 700; font-family: var(--font-mono); color: #60a5fa;">${escapeHtml(tKey)}</td>
+                          <td style="padding: 8px 14px; text-align: right; font-family: var(--font-mono); font-weight: 700;">${tVal.count}</td>
+                          <td style="padding: 8px 14px; text-align: right; font-family: var(--font-mono); color: var(--fg-muted);">${tVal.prev_week}</td>
+                          <td style="padding: 8px 14px; text-align: right; font-family: var(--font-mono); font-weight: 700; color: ${chgColor};">
+                            ${chg > 0 ? '+' : ''}${chg}%
+                          </td>
+                        </tr>
+                      `;
+                    }).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- New Terms Tag Cloud -->
+            <div>
+              <div style="font-weight: 700; font-size: 13px; margin-bottom: 8px;">✨ Thuật ngữ mới xuất hiện (${newTerms.length})</div>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                ${newTerms.map(nt => `<span style="background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); color: #c4b5fd; font-size: 12px; padding: 4px 10px; border-radius: 999px; font-family: var(--font-mono); font-weight: 600;">⚡ ${escapeHtml(nt)}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (activeWeeklyTab === 'disruption') {
+        const dis = d.disruption_snapshot || {};
+        const newRoles = dis.new_roles || [];
+
+        container.innerHTML = `
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <!-- Most Disrupted Skill Banner -->
+            <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 16px 20px;">
+              <div style="font-size: 12px; color: #fca5a5; font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">
+                ⚠️ Kỹ năng bị thay thế nhiều nhất tuần
+              </div>
+              <div style="font-size: 16px; font-weight: 800; color: var(--fg); margin-bottom: 10px;">
+                ${escapeHtml(dis.most_disrupted_skill || 'N/A')}
+              </div>
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <div style="flex: 1; height: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 999px; overflow: hidden;">
+                  <div style="width: ${dis.ai_pct || 0}%; height: 100%; background: linear-gradient(90deg, #f59e0b, #ef4444); border-radius: 999px;"></div>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 14px; font-weight: 800; color: #f87171;">
+                  ${dis.ai_pct || 0}% (${escapeHtml(dis.change || '')})
+                </div>
+              </div>
+            </div>
+
+            <!-- Quadrant Counts -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
+              <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px;">
+                <div style="font-size: 12px; color: var(--fg-dim);">🛡️ Kỹ năng an toàn (Safe)</div>
+                <div style="font-size: 24px; font-weight: 800; color: #10b981; margin-top: 4px;">${dis.safe_count || 0}</div>
+              </div>
+              <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px;">
+                <div style="font-size: 12px; color: var(--fg-dim);">🚀 Kỹ năng cơ hội (Opportunity)</div>
+                <div style="font-size: 24px; font-weight: 800; color: #38bdf8; margin-top: 4px;">${dis.opportunity_count || 0}</div>
+              </div>
+              <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px;">
+                <div style="font-size: 12px; color: var(--fg-dim);">⚠️ Kỹ năng nên tránh (Avoid)</div>
+                <div style="font-size: 24px; font-weight: 800; color: #f87171; margin-top: 4px;">${dis.avoid_count || 0}</div>
+              </div>
+            </div>
+
+            <!-- New Roles -->
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 16px;">
+              <div style="font-weight: 700; font-size: 13px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;">
+                <span>✨ Vị trí công việc mới nổi bật (${newRoles.length})</span>
+                <button onclick="closeWeeklyModal(); openDisruptionModal();" style="font-size: 11px; color: #c084fc; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); padding: 3px 8px; border-radius: 6px; cursor: pointer;">Mở AI Disruption Matrix ↗</button>
+              </div>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                ${newRoles.map(nr => `<span style="background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.35); color: #d8b4fe; font-size: 12px; padding: 4px 10px; border-radius: 6px; font-weight: 600;">💼 ${escapeHtml(nr)}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (activeWeeklyTab === 'checklist') {
+        const weekKey = d.week || 'latest';
+        const notesStorageKey = `weekly_notes_${weekKey}`;
+        const savedNotes = localStorage.getItem(notesStorageKey) || '';
+
+        container.innerHTML = `
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 16px;">
+              <div style="font-weight: 700; font-size: 14px; margin-bottom: 12px;">✅ Khuyến nghị hành động tuần (${escapeHtml(d.week || 'W43')})</div>
+              <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="checkbox" checked style="margin-top: 3px; accent-color: #3b82f6;">
+                  <span>Rà soát <strong>${stats.build_ready || 7} cơ hội Build-Ready</strong> hàng đầu để đưa vào Sprint thử nghiệm PoC</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="checkbox" checked style="margin-top: 3px; accent-color: #3b82f6;">
+                  <span>Đánh giá cụm công nghệ tăng trưởng nóng: <strong>ESP32, TinyML, LoRaWAN</strong></span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="checkbox" style="margin-top: 3px; accent-color: #3b82f6;">
+                  <span>Kiểm tra pipeline tự động thu thập từ 6 blog AI lớn và 3 kênh newsletter</span>
+                </label>
+                <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+                  <input type="checkbox" style="margin-top: 3px; accent-color: #3b82f6;">
+                  <span>Cập nhật danh sách Bookmarks và chia sẻ tóm tắt tuần qua Telegram Bot</span>
+                </label>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <div style="font-weight: 700; font-size: 14px;">📝 Ghi chú & Kế hoạch tuần (Tự động lưu)</div>
+                <span id="weeklyNotesSaveStatus" style="font-size: 11px; color: var(--fg-muted);">Đã lưu vào bộ nhớ trình duyệt</span>
+              </div>
+              <textarea 
+                id="weeklyModalNotesArea"
+                oninput="saveWeeklyModalNotes('${weekKey}', this.value)"
+                placeholder="Nhập kế hoạch công việc, suy nghĩ về xu hướng, ghi chú hành động..."
+                style="width: 100%; min-height: 140px; background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border); border-radius: 8px; color: var(--fg); padding: 12px; font-family: var(--font-sans); font-size: 13px; line-height: 1.5; resize: vertical; outline: none; box-sizing: border-box;"
+              >${escapeHtml(savedNotes)}</textarea>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function saveWeeklyModalNotes(weekKey, text) {
+      try {
+        localStorage.setItem(`weekly_notes_${weekKey}`, text);
+        const status = document.getElementById('weeklyNotesSaveStatus');
+        if (status) {
+          status.textContent = 'Đã lưu ✓';
+          status.style.color = '#10b981';
+          setTimeout(() => {
+            status.textContent = 'Đã lưu vào bộ nhớ trình duyệt';
+            status.style.color = 'var(--fg-muted)';
+          }, 1500);
+        }
+      } catch (e) {
+        console.warn('Could not save weekly notes:', e);
+      }
+    }
+
+    async function copyWeeklyModalMarkdown() {
+      try {
+        let mdText = '';
+        const week = (WEEKLY_ARCHIVE_DATA && WEEKLY_ARCHIVE_DATA.week) ? WEEKLY_ARCHIVE_DATA.week : 'W43';
+        const targetFilename = (WEEKLY_ARCHIVE_DATA && WEEKLY_ARCHIVE_DATA.start_date && WEEKLY_ARCHIVE_DATA.end_date)
+          ? `${week}_${WEEKLY_ARCHIVE_DATA.start_date}_to_${WEEKLY_ARCHIVE_DATA.end_date}.md`
+          : 'weekly_latest.md';
+
+        const res = await fetch(`data/weekly/${targetFilename}`).catch(() => null);
+        if (res && res.ok) {
+          mdText = await res.text();
+        } else {
+          const resLatest = await fetch('data/weekly/weekly_latest.md').catch(() => null);
+          if (resLatest && resLatest.ok) {
+            mdText = await resLatest.text();
+          }
+        }
+
+        if (!mdText && WEEKLY_ARCHIVE_DATA) {
+          mdText = `# BÁO CÁO TỔNG HỢP TUẦN ${WEEKLY_ARCHIVE_DATA.week}\n\n- Chu kỳ: ${WEEKLY_ARCHIVE_DATA.start_date} -> ${WEEKLY_ARCHIVE_DATA.end_date}\n- Tổng tín hiệu: ${WEEKLY_ARCHIVE_DATA.stats?.total_signals || 0}\n- Cơ hội phát hiện: ${WEEKLY_ARCHIVE_DATA.stats?.total_opportunities || 0}\n- Build-Ready: ${WEEKLY_ARCHIVE_DATA.stats?.build_ready || 0}\n`;
+        }
+
+        if (mdText) {
+          await navigator.clipboard.writeText(mdText);
+          const toast = document.getElementById('weeklyCopyToast');
+          if (toast) {
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 2600);
+          }
+        }
+      } catch (err) {
+        alert('Không thể sao chép Markdown: ' + err);
+      }
+    }
+
+    function downloadWeeklyModalJson() {
+      if (!WEEKLY_ARCHIVE_DATA) return;
+      const week = WEEKLY_ARCHIVE_DATA.week || 'W43';
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(WEEKLY_ARCHIVE_DATA, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", `weekly_${week}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    }
+
+    function downloadWeeklyModalMd() {
+      const week = (WEEKLY_ARCHIVE_DATA && WEEKLY_ARCHIVE_DATA.week) ? WEEKLY_ARCHIVE_DATA.week : 'W43';
+      const targetFilename = (WEEKLY_ARCHIVE_DATA && WEEKLY_ARCHIVE_DATA.start_date && WEEKLY_ARCHIVE_DATA.end_date)
+        ? `${week}_${WEEKLY_ARCHIVE_DATA.start_date}_to_${WEEKLY_ARCHIVE_DATA.end_date}.md`
+        : 'weekly_latest.md';
+      const a = document.createElement('a');
+      a.href = `data/weekly/${targetFilename}`;
+      a.download = targetFilename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeDailyDigestModal();
@@ -5065,6 +5671,7 @@
         closeGlossaryModal();
         closeCombosModal();
         closeDisruptionModal();
+        closeWeeklyModal();
       }
     });
 
@@ -5078,6 +5685,7 @@
       await loadTechGlossary();
       await loadRepoCombos();
       await loadDisruptionData();
+      await loadWeeklyArchive();
       
       try {
         const res = await fetch('data/news.json');
