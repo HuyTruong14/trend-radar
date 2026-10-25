@@ -8,10 +8,14 @@
       {
         "week": "W43",
         "count": 28
+      },
+      {
+        "week": "W44",
+        "count": 28
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 43
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 71
   },
   "Edge AI": {
     "weekly": [
@@ -22,10 +26,14 @@
       {
         "week": "W43",
         "count": 19
+      },
+      {
+        "week": "W44",
+        "count": 19
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 33
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 52
   },
   "TinyML": {
     "weekly": [
@@ -36,10 +44,14 @@
       {
         "week": "W43",
         "count": 15
+      },
+      {
+        "week": "W44",
+        "count": 15
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 25
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 40
   },
   "LoRaWAN": {
     "weekly": [
@@ -50,10 +62,14 @@
       {
         "week": "W43",
         "count": 14
+      },
+      {
+        "week": "W44",
+        "count": 14
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 23
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 37
   },
   "LLM": {
     "weekly": [
@@ -64,10 +80,14 @@
       {
         "week": "W43",
         "count": 22
+      },
+      {
+        "week": "W44",
+        "count": 15
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 22
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 37
   },
   "RISC-V": {
     "weekly": [
@@ -78,10 +98,14 @@
       {
         "week": "W43",
         "count": 11
+      },
+      {
+        "week": "W44",
+        "count": 11
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 19
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 30
   },
   "ROS2": {
     "weekly": [
@@ -92,10 +116,14 @@
       {
         "week": "W43",
         "count": 9
+      },
+      {
+        "week": "W44",
+        "count": 9
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 16
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 25
   },
   "RP2350": {
     "weekly": [
@@ -106,10 +134,14 @@
       {
         "week": "W43",
         "count": 8
+      },
+      {
+        "week": "W44",
+        "count": 8
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 13
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 21
   },
   "Humanoid": {
     "weekly": [
@@ -120,66 +152,14 @@
       {
         "week": "W43",
         "count": 9
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 9
-  },
-  "TDS": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
       },
       {
-        "week": "W43",
-        "count": 9
+        "week": "W44",
+        "count": 10
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 9
-  },
-  "Arduino": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 8
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 8
-  },
-  "ESP32-S3": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 8
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 8
-  },
-  "Turbidity": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 8
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 8
+    "consecutive_rising_weeks": 2,
+    "total_mentions": 19
   },
   "MQTT": {
     "weekly": [
@@ -190,10 +170,86 @@
       {
         "week": "W43",
         "count": 7
+      },
+      {
+        "week": "W44",
+        "count": 7
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 7
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 14
+  },
+  "Arduino": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 8
+      },
+      {
+        "week": "W44",
+        "count": 5
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 13
+  },
+  "ESP32-S3": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 8
+      },
+      {
+        "week": "W44",
+        "count": 4
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 12
+  },
+  "TDS": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 9
+      },
+      {
+        "week": "W44",
+        "count": 1
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 10
+  },
+  "Turbidity": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 8
+      },
+      {
+        "week": "W44",
+        "count": 2
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 10
   },
   "Modbus": {
     "weekly": [
@@ -204,10 +260,14 @@
       {
         "week": "W43",
         "count": 4
+      },
+      {
+        "week": "W44",
+        "count": 4
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 4
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 8
   },
   "Ultrasonic": {
     "weekly": [
@@ -218,24 +278,14 @@
       {
         "week": "W43",
         "count": 4
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 4
-  },
-  "Raspberry Pi": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
       },
       {
-        "week": "W43",
+        "week": "W44",
         "count": 4
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 4
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 8
   },
   "LoRA": {
     "weekly": [
@@ -246,12 +296,16 @@
       {
         "week": "W43",
         "count": 4
+      },
+      {
+        "week": "W44",
+        "count": 4
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 4
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 8
   },
-  "RAG": {
+  "Raspberry Pi": {
     "weekly": [
       {
         "week": "W42",
@@ -260,24 +314,14 @@
       {
         "week": "W43",
         "count": 4
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 4
-  },
-  "Transformers": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
       },
       {
-        "week": "W43",
-        "count": 4
+        "week": "W44",
+        "count": 2
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 4
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 6
   },
   "DO (Dissolved Oxygen)": {
     "weekly": [
@@ -288,10 +332,50 @@
       {
         "week": "W43",
         "count": 3
+      },
+      {
+        "week": "W44",
+        "count": 3
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 3
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 6
+  },
+  "Transformers": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 4
+      },
+      {
+        "week": "W44",
+        "count": 1
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 5
+  },
+  "RAG": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 4
+      },
+      {
+        "week": "W44",
+        "count": 0
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 4
   },
   "RP2040": {
     "weekly": [
@@ -302,10 +386,14 @@
       {
         "week": "W43",
         "count": 2
+      },
+      {
+        "week": "W44",
+        "count": 2
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 2
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 4
   },
   "BLE": {
     "weekly": [
@@ -316,10 +404,14 @@
       {
         "week": "W43",
         "count": 2
+      },
+      {
+        "week": "W44",
+        "count": 2
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 2
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 4
   },
   "Matter": {
     "weekly": [
@@ -330,10 +422,14 @@
       {
         "week": "W43",
         "count": 2
+      },
+      {
+        "week": "W44",
+        "count": 2
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 2
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 4
   },
   "NB-IoT": {
     "weekly": [
@@ -344,10 +440,14 @@
       {
         "week": "W43",
         "count": 2
+      },
+      {
+        "week": "W44",
+        "count": 2
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 2
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 4
   },
   "Actuator": {
     "weekly": [
@@ -358,10 +458,14 @@
       {
         "week": "W43",
         "count": 2
+      },
+      {
+        "week": "W44",
+        "count": 2
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 2
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 4
   },
   "Computer Vision": {
     "weekly": [
@@ -372,10 +476,14 @@
       {
         "week": "W43",
         "count": 2
+      },
+      {
+        "week": "W44",
+        "count": 2
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 2
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 4
   },
   "WebSockets": {
     "weekly": [
@@ -386,24 +494,14 @@
       {
         "week": "W43",
         "count": 2
-      }
-    ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 2
-  },
-  "MicroPython": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
       },
       {
-        "week": "W43",
-        "count": 2
+        "week": "W44",
+        "count": 1
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 2
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 3
   },
   "Docker": {
     "weekly": [
@@ -414,9 +512,31 @@
       {
         "week": "W43",
         "count": 2
+      },
+      {
+        "week": "W44",
+        "count": 1
       }
     ],
-    "consecutive_rising_weeks": 1,
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 3
+  },
+  "MicroPython": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 2
+      },
+      {
+        "week": "W44",
+        "count": 0
+      }
+    ],
+    "consecutive_rising_weeks": 0,
     "total_mentions": 2
   },
   "Temperature Sensor": {
@@ -428,9 +548,13 @@
       {
         "week": "W43",
         "count": 2
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
-    "consecutive_rising_weeks": 1,
+    "consecutive_rising_weeks": 0,
     "total_mentions": 2
   },
   "LangChain": {
@@ -442,10 +566,14 @@
       {
         "week": "W43",
         "count": 1
+      },
+      {
+        "week": "W44",
+        "count": 1
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 1
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 2
   },
   "Salinity": {
     "weekly": [
@@ -456,10 +584,14 @@
       {
         "week": "W43",
         "count": 1
+      },
+      {
+        "week": "W44",
+        "count": 1
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 1
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 2
   },
   "Water Level": {
     "weekly": [
@@ -470,10 +602,14 @@
       {
         "week": "W43",
         "count": 1
+      },
+      {
+        "week": "W44",
+        "count": 1
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 1
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 2
   },
   "Drone": {
     "weekly": [
@@ -484,10 +620,14 @@
       {
         "week": "W43",
         "count": 1
+      },
+      {
+        "week": "W44",
+        "count": 1
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 1
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 2
   },
   "PyTorch": {
     "weekly": [
@@ -498,10 +638,14 @@
       {
         "week": "W43",
         "count": 1
+      },
+      {
+        "week": "W44",
+        "count": 1
       }
     ],
-    "consecutive_rising_weeks": 1,
-    "total_mentions": 1
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 2
   },
   "ESP32-C6": {
     "weekly": [
@@ -511,6 +655,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],
@@ -526,6 +674,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -539,6 +691,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],
@@ -554,6 +710,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -567,6 +727,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],
@@ -582,6 +746,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -595,6 +763,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],
@@ -610,6 +782,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -623,6 +799,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],
@@ -638,6 +818,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -651,6 +835,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],
@@ -666,6 +854,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -679,6 +871,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],
@@ -694,6 +890,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -707,6 +907,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],
@@ -722,6 +926,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -735,6 +943,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],
@@ -750,6 +962,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -763,6 +979,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],
@@ -778,6 +998,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -791,6 +1015,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],
@@ -806,6 +1034,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -819,6 +1051,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],
@@ -834,6 +1070,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -848,6 +1088,10 @@
       {
         "week": "W43",
         "count": 0
+      },
+      {
+        "week": "W44",
+        "count": 0
       }
     ],
     "consecutive_rising_weeks": 0,
@@ -861,6 +1105,10 @@
       },
       {
         "week": "W43",
+        "count": 0
+      },
+      {
+        "week": "W44",
         "count": 0
       }
     ],

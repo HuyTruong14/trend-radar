@@ -1,84 +1,83 @@
 {
-  "date": "2026-10-24",
-  "date_formatted": "24/10/2026",
-  "generated_at": "2026-10-25T13:57:09.616126+07:00",
+  "date": "2026-10-25",
+  "date_formatted": "25/10/2026",
+  "generated_at": "2026-10-26T00:02:17.499483+07:00",
   "quiet_day": false,
   "top_opportunities": [
     {
-      "id": "opp_2026_1024_f7e244cb",
-      "title": "Metron Acquires H2O Degree to Add Submetering and Leak Detection",
-      "total": 8,
-      "stage": "research",
-      "summary_vi": "Metron thâu tóm H2O Degree mở rộng mảng đo đếm và phát hiện rò rỉ nước",
+      "id": "opp_2026_1024_499128aa",
+      "title": "mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
+      "total": 9,
+      "stage": "build_ready",
+      "summary_vi": "Trợ lý AI quản lý ao nuôi và chất lượng nước thủy sản",
       "alert_sent": true,
-      "url": "https://igrownews.com/metron-latest-news/",
+      "url": "https://github.com/mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
       "signal_type": [
-        "pain_repeat",
         "price_shift",
-        "supply_gap"
-      ],
-      "velocity": "steady"
-    },
-    {
-      "id": "opp_2026_1024_e9ce1f77",
-      "title": "wissen-csi/backend_station",
-      "total": 8,
-      "stage": "research",
-      "summary_vi": "Backend IoT thu thập cảm biến chất lượng nước phao nổi",
-      "alert_sent": true,
-      "url": "https://github.com/wissen-csi/backend_station",
-      "signal_type": [
         "tech_cheap"
       ],
-      "velocity": "steady"
+      "velocity": "rising"
     },
     {
-      "id": "opp_2026_1024_6329d67c",
-      "title": "Farmers, what's missing from your water monitoring setup?",
-      "total": 8,
-      "stage": "research",
-      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Farmers, what's missi",
+      "id": "opp_2026_1024_e713d500",
+      "title": "api-evangelist/jala",
+      "total": 9,
+      "stage": "build_ready",
+      "summary_vi": "Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp",
       "alert_sent": true,
-      "url": "https://www.reddit.com/r/Aquaculture/comments/1wsfy7v/",
+      "url": "https://github.com/api-evangelist/jala",
       "signal_type": [
         "price_shift",
-        "supply_gap",
+        "tech_cheap"
+      ],
+      "velocity": "rising"
+    },
+    {
+      "id": "opp_2026_1025_1008f4c5",
+      "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
+      "total": 8,
+      "stage": "research",
+      "summary_vi": "Startup Eka Robotics gọi $150M phát triển robot nông nghiệp tự hành",
+      "alert_sent": true,
+      "url": "https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/",
+      "signal_type": [
+        "price_shift",
         "tech_cheap"
       ],
       "velocity": "steady"
     }
   ],
-  "remaining_high_tier_count": 8,
+  "remaining_high_tier_count": 60,
   "funding_deals": [
     {
-      "title": "VECKTA Raises $11 Million Series A Led by Origin Ventures for Onsite Solar and Storage",
+      "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
       "deal_type": "Gọi vốn",
-      "amount": "$11M",
-      "funding_amount": "$11M",
-      "sector": "energy",
-      "url": "https://igrownews.com/veckta-latest-news/",
-      "formatted_text": "• VECKTA gọi $11M — Năng lượng",
-      "sector_vi": "Năng lượng"
-    },
-    {
-      "title": "IMIO Raises $12 Million From Sofinnova Partners and Chipotle’s Cultivate Next for Soil Biologicals",
-      "deal_type": "Gọi vốn",
-      "amount": "$12M",
-      "funding_amount": "$12M",
+      "amount": "$150M",
+      "funding_amount": "$150M",
       "sector": "agtech",
-      "url": "https://igrownews.com/imio-latest-news/",
-      "formatted_text": "• IMIO gọi $12M — Nông nghiệp",
+      "url": "https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/",
+      "formatted_text": "• Eka Robotics gọi $150M — Nông nghiệp",
       "sector_vi": "Nông nghiệp"
     },
     {
-      "title": "Metron Acquires H2O Degree to Add Submetering and Leak Detection",
-      "deal_type": "M&A",
-      "amount": "N/A",
-      "funding_amount": "N/A",
-      "sector": "aquatech",
-      "url": "https://igrownews.com/metron-latest-news/",
-      "formatted_text": "• Metron mua H2O Degree — Thủy sản & Nước",
-      "sector_vi": "Thủy sản & Nước"
+      "title": "Gecko Robotics secures $300M contract with the U.S. Navy",
+      "deal_type": "Gọi vốn",
+      "amount": "$300M",
+      "funding_amount": "$300M",
+      "sector": "agtech",
+      "url": "https://www.therobotreport.com/gecko-robotics-earns-300m-contract-with-the-u-s-navy/",
+      "formatted_text": "• Gecko Robotics gọi $300M — Nông nghiệp",
+      "sector_vi": "Nông nghiệp"
+    },
+    {
+      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
+      "deal_type": "Gọi vốn",
+      "amount": "$20K",
+      "funding_amount": "$20K",
+      "sector": "hardware",
+      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/",
+      "formatted_text": "• How we bootstrapped our hardware IoT gateway to $20k MRR wit — gọi $20K (Phần cứng & IoT)",
+      "sector_vi": "Phần cứng & IoT"
     }
   ],
   "hot_topics": [
@@ -100,21 +99,21 @@
       "topic": "electric vehicle",
       "source": "Google Trends",
       "summary_vi": "Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc",
-      "engagement": "-8%",
+      "engagement": "+18%",
       "url": "https://trends.google.com/trends/explore?q=electric%20vehicle&date=today+1-m"
     }
   ],
   "stats": {
-    "total_signals": 748,
-    "new_opportunities": 32,
-    "build_ready": 0,
-    "research": 11,
-    "watch": 21,
+    "total_signals": 758,
+    "new_opportunities": 258,
+    "build_ready": 2,
+    "research": 61,
+    "watch": 195,
     "triple_signals": 3,
     "triple_signal_theme": "Robot tự hành & AI vật lý (Robotics & Embodied AI)",
-    "rising": 0,
+    "rising": 5,
     "fading": 0
   },
   "dashboard_url": "https://huytruong14.github.io/trend-radar/",
-  "telegram_text": "📰 TREND RADAR — BẢN TIN NGÀY 24/10/2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🎯 CƠ HỘI NỔI BẬT\n\n⚡ 8/9 · Metron Acquires H2O Degree to Add Submetering and Leak Detection (đã gửi alert)\n→ Metron thâu tóm H2O Degree mở rộng mảng đo đếm và phát hiện rò rỉ nước\n\n⚡ 8/9 · wissen-csi/backend_station (đã gửi alert)\n→ Backend IoT thu thập cảm biến chất lượng nước phao nổi\n\n⚡ 8/9 · Farmers, what's missing from your water monitoring setup? (đã gửi alert)\n→ Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Farmers, what's missi\n\n(và 8 cơ hội khác trên dashboard)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n💰 DÒNG TIỀN HÔM QUA\n• VECKTA gọi $11M — Năng lượng\n• IMIO gọi $12M — Nông nghiệp\n• Metron mua H2O Degree — Thủy sản & Nước\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔥 CHỦ ĐỀ NÓNG\n\n1. Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM — Reddit r/LocalLLaMA\n   → Chạy mô hình LLM 70B tối ưu trên phần cứng cá nhân với KV cache 4-bit\n\n2. #AI — Twitter/X\n   → Làn sóng thảo luận nóng về bước tiến AI và ứng dụng vào thực tế\n\n3. electric vehicle — Google Trends\n   → Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n📊 SỐ LIỆU NHANH\n• Tổng tín hiệu mới: 748 | Cơ hội mới: 32\n• Build-ready: 0 | Research: 11 | Watch: 21\n• Triple Signal: Có (3) → Robot tự hành & AI vật lý (Robotics & Embodied AI)\n• Velocity: 0 rising ↑ | 0 fading ↓\n• Công nghệ nổi bật: MQTT (↑+133%)\n• Skill bị can thiệp mạnh nhất: Viết mã Boilerplate CRUD & API cơ bản (88%)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔗 Xem chi tiết: https://huytruong14.github.io/trend-radar/"
+  "telegram_text": "📰 TREND RADAR — BẢN TIN NGÀY 25/10/2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🎯 CƠ HỘI NỔI BẬT\n\n🔴 9/9 · mohamedsadhathj-techwork/Smart-Aquaculture-Assistant (đã gửi alert)\n→ Trợ lý AI quản lý ao nuôi và chất lượng nước thủy sản\n\n🔴 9/9 · api-evangelist/jala (đã gửi alert)\n→ Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp\n\n⚡ 8/9 · Eka Robotics raises $150M to scale its vision-force-action model for robots (đã gửi alert)\n→ Startup Eka Robotics gọi $150M phát triển robot nông nghiệp tự hành\n\n(và 60 cơ hội khác trên dashboard)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n💰 DÒNG TIỀN HÔM QUA\n• Eka Robotics gọi $150M — Nông nghiệp\n• Gecko Robotics gọi $300M — Nông nghiệp\n• How we bootstrapped our hardware IoT gateway to $20k MRR wit — gọi $20K (Phần cứng & IoT)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔥 CHỦ ĐỀ NÓNG\n\n1. Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM — Reddit r/LocalLLaMA\n   → Chạy mô hình LLM 70B tối ưu trên phần cứng cá nhân với KV cache 4-bit\n\n2. #AI — Twitter/X\n   → Làn sóng thảo luận nóng về bước tiến AI và ứng dụng vào thực tế\n\n3. electric vehicle — Google Trends\n   → Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n📊 SỐ LIỆU NHANH\n• Tổng tín hiệu mới: 758 | Cơ hội mới: 258\n• Build-ready: 2 | Research: 61 | Watch: 195\n• Triple Signal: Có (3) → Robot tự hành & AI vật lý (Robotics & Embodied AI)\n• Velocity: 5 rising ↑ | 0 fading ↓\n• Công nghệ nổi bật: ESP32 (↑+87%)\n• Skill bị can thiệp mạnh nhất: Viết mã Boilerplate CRUD & API cơ bản (88%)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔗 Xem chi tiết: https://huytruong14.github.io/trend-radar/"
 }

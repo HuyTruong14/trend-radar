@@ -1,48 +1,24 @@
 {
-  "week": "W43",
-  "start_date": "2026-10-21",
-  "end_date": "2026-10-27",
-  "created_at": "2026-10-25T22:46:12.107132+07:00",
-  "previous_week": "W42",
+  "week": "W44",
+  "start_date": "2026-10-20",
+  "end_date": "2026-10-26",
+  "created_at": "2026-10-26T00:02:18.099279+07:00",
+  "previous_week": "W43",
   "stats": {
+    "total_signals": 758,
+    "total_opportunities": 290,
+    "build_ready": 2,
+    "research": 72,
+    "watch": 216
+  },
+  "prev_stats": {
     "total_signals": 748,
     "total_opportunities": 285,
     "build_ready": 7,
     "research": 80,
     "watch": 198
   },
-  "prev_stats": {
-    "total_signals": 482,
-    "total_opportunities": 188,
-    "build_ready": 6,
-    "research": 48,
-    "watch": 134
-  },
   "top_opportunities": [
-    {
-      "id": "opp_2026_1024_0125fbf3",
-      "title": "ishiniayodya610/J26-SE-351",
-      "total": 9,
-      "stage": "build_ready",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
-      "url": "https://github.com/ishiniayodya610/J26-SE-351"
-    },
-    {
-      "id": "opp_2026_1024_90a589f8",
-      "title": "forgotmenet/Iotlab-Automation-Test",
-      "total": 9,
-      "stage": "build_ready",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
-      "url": "https://github.com/forgotmenet/Iotlab-Automation-Test"
-    },
     {
       "id": "opp_2026_1024_499128aa",
       "title": "mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
@@ -68,27 +44,43 @@
       "url": "https://github.com/api-evangelist/jala"
     },
     {
-      "id": "opp_2026_1024_0968efcc",
-      "title": "Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
-      "total": 9,
-      "stage": "build_ready",
+      "id": "opp_2026_1025_1008f4c5",
+      "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
+      "total": 8,
+      "stage": "research",
       "signal_type": [
         "price_shift",
         "tech_cheap"
       ],
-      "summary_vi": "Dự đoán chất lượng nước thời gian thực bằng IoT và máy học",
-      "url": "https://github.com/Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-"
+      "summary_vi": "Startup Eka Robotics gọi $150M phát triển robot nông nghiệp tự hành",
+      "url": "https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/"
+    },
+    {
+      "id": "opp_2026_1024_6f42dcac",
+      "title": "AGCO and Agility Robotics to Pilot Digit Humanoid Robot at Hesston, Kansas, Plant",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Thử nghiệm robot hình người tự hành trong nhà máy sản xuất",
+      "url": "https://igrownews.com/agco-latest-news/"
+    },
+    {
+      "id": "opp_2026_1024_e215d300",
+      "title": "5 Interesting Startup Deals You May Have Missed: Robot Training, Space Lasers And Greener Cement",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Dòng vốn đầu tư mới vào huấn luyện robot và vật liệu xanh",
+      "url": "https://news.crunchbase.com/venture/interesting-startup-deals-robots-ai-gaming-clean-tech/"
     }
   ],
   "funding_deals": [
-    {
-      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
-      "type": "Gọi vốn",
-      "amount": "$20K",
-      "sector": "hardware",
-      "sector_vi": "Phần cứng & IoT",
-      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
-    },
     {
       "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
       "type": "Gọi vốn",
@@ -104,6 +96,14 @@
       "sector": "agtech",
       "sector_vi": "Nông nghiệp",
       "url": "https://www.therobotreport.com/gecko-robotics-earns-300m-contract-with-the-u-s-navy/"
+    },
+    {
+      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
+      "type": "Gọi vốn",
+      "amount": "$20K",
+      "sector": "hardware",
+      "sector_vi": "Phần cứng & IoT",
+      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
     },
     {
       "title": "Kodama raises $7M to bring robotics to forestry",
@@ -149,24 +149,24 @@
     "google_trends_top3": [
       {
         "keyword": "electric vehicle",
-        "volume": 37,
-        "change": "-8%",
+        "volume": 72,
+        "change": "+18%",
         "summary_vi": "Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc",
         "link": "https://trends.google.com/trends/explore?q=electric%20vehicle&date=today+1-m"
       },
       {
-        "keyword": "renewable energy",
-        "volume": 24,
-        "change": "-40%",
-        "summary_vi": "Xu hướng chuyển dịch năng lượng tái tạo và lưu trữ điện",
-        "link": "https://trends.google.com/trends/explore?q=renewable%20energy&date=today+1-m"
-      },
-      {
         "keyword": "AI hardware",
-        "volume": 23,
-        "change": "-12%",
+        "volume": 65,
+        "change": "+42%",
         "summary_vi": "Làn sóng tìm kiếm chip chuyên dụng và phần cứng tăng tốc AI",
         "link": "https://trends.google.com/trends/explore?q=AI%20hardware&date=today+1-m"
+      },
+      {
+        "keyword": "renewable energy",
+        "volume": 58,
+        "change": "+15%",
+        "summary_vi": "Xu hướng chuyển dịch năng lượng tái tạo và lưu trữ điện",
+        "link": "https://trends.google.com/trends/explore?q=renewable%20energy&date=today+1-m"
       }
     ],
     "twitter_top3": [
@@ -192,85 +192,85 @@
   },
   "tech_frequency": {
     "ESP32": {
-      "count": 28,
-      "prev_week": 15,
-      "change_pct": 87
+      "count": 23,
+      "prev_week": 28,
+      "change_pct": -18
     },
     "TinyML": {
       "count": 15,
-      "prev_week": 10,
-      "change_pct": 50
+      "prev_week": 15,
+      "change_pct": 0
     },
     "LoRaWAN": {
       "count": 14,
-      "prev_week": 9,
-      "change_pct": 56
+      "prev_week": 14,
+      "change_pct": 0
     },
     "RP2350": {
       "count": 8,
-      "prev_week": 5,
-      "change_pct": 60
+      "prev_week": 8,
+      "change_pct": 0
     },
     "RISC-V": {
       "count": 11,
-      "prev_week": 8,
-      "change_pct": 38
+      "prev_week": 11,
+      "change_pct": 0
     },
     "STM32": {
       "count": 0,
-      "prev_week": 1,
-      "change_pct": -100
+      "prev_week": 0,
+      "change_pct": 0
     },
     "ROS2": {
       "count": 9,
-      "prev_week": 7,
-      "change_pct": 29
+      "prev_week": 9,
+      "change_pct": 0
     },
     "Edge AI": {
       "count": 19,
-      "prev_week": 14,
-      "change_pct": 36
+      "prev_week": 19,
+      "change_pct": 0
     },
     "Computer Vision": {
-      "count": 2,
-      "prev_week": 1,
-      "change_pct": 100
+      "count": 0,
+      "prev_week": 2,
+      "change_pct": -100
     },
     "BLE": {
       "count": 0,
-      "prev_week": 1,
-      "change_pct": -100
+      "prev_week": 0,
+      "change_pct": 0
     },
     "MQTT": {
-      "count": 7,
-      "prev_week": 4,
-      "change_pct": 75
+      "count": 5,
+      "prev_week": 7,
+      "change_pct": -29
     },
     "Humanoid": {
-      "count": 10,
-      "prev_week": 7,
-      "change_pct": 43
+      "count": 9,
+      "prev_week": 10,
+      "change_pct": -10
     },
     "Robotics": {
-      "count": 62,
-      "prev_week": 18,
-      "change_pct": 244
+      "count": 52,
+      "prev_week": 62,
+      "change_pct": -16
     },
     "Sensor": {
-      "count": 29,
-      "prev_week": 25,
-      "change_pct": 16
+      "count": 21,
+      "prev_week": 29,
+      "change_pct": -28
     }
   },
   "new_terms": [
     "OpenAI",
-    "ChatGPT",
-    "GR8_TECH",
-    "RoboWeeder",
-    "SenseUP",
     "LR2021",
-    "DeepMind",
-    "DeepSeek"
+    "ChatGPT",
+    "RoboBusiness",
+    "SpectralCanary",
+    "EpiSEM",
+    "GR8_TECH",
+    "BeagleBoard"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",

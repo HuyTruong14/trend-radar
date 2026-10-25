@@ -20,9 +20,7 @@
     "language": "Python",
     "tags": [
       "Aquaculture",
-      "ESP32",
       "Edge AI",
-      "IoT",
       "Water Quality"
     ],
     "summary_vi": "Trợ lý AI quản lý ao nuôi và chất lượng nước thủy sản",
@@ -35,8 +33,8 @@
     "velocity": 260,
     "language": "TypeScript",
     "tags": [
-      "Edge AI",
-      "RAG"
+      "IoT",
+      "Open Source"
     ],
     "summary_vi": "Nền tảng phát triển ứng dụng LLM và giao diện quản trị luồng xử lý AI",
     "role": "platform"
@@ -51,8 +49,7 @@
       "Aquaculture",
       "ESP32",
       "IoT",
-      "TDS",
-      "Turbidity"
+      "Water Quality"
     ],
     "summary_vi": "Hệ thống đo chất lượng nước đa thông số qua vi điều khiển ESP32 và cảm biến",
     "role": "hardware"
@@ -64,7 +61,8 @@
     "velocity": 250,
     "language": "TypeScript",
     "tags": [
-      "Edge AI"
+      "IoT",
+      "Open Source"
     ],
     "summary_vi": "Hạ tầng trích xuất và đồng bộ dữ liệu web sạch phục vụ huấn luyện và cảnh báo",
     "role": "infra"
@@ -79,7 +77,6 @@
       "Aquaculture",
       "Edge AI",
       "IoT",
-      "Turbidity",
       "Water Quality"
     ],
     "summary_vi": "Mô hình Edge AI phân tích âm thanh và dữ liệu đo để phát hiện rò rỉ nước ngầm",
@@ -107,11 +104,8 @@
     "velocity": 190,
     "language": "C++",
     "tags": [
-      "Aquaculture",
-      "Computer Vision",
-      "Edge AI",
       "IoT",
-      "Water Quality"
+      "Open Source"
     ],
     "summary_vi": "Module cảm biến áp suất và lưu lượng dòng chảy qua vi điều khiển nhúng",
     "role": "hardware"
@@ -140,10 +134,7 @@
     "language": "C++",
     "tags": [
       "Aquaculture",
-      "ESP32",
-      "IoT",
-      "TDS",
-      "Turbidity"
+      "Water Quality"
     ],
     "summary_vi": "Hệ thống trạm đo phao nổi không dây giám sát mực nước và nhiệt độ môi trường",
     "role": "hardware"
@@ -162,118 +153,16 @@
     "role": "platform"
   },
   {
-    "repo": "matplotlib/matplotlib",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán matplotlib",
-    "role": "ai"
-  },
-  {
-    "repo": "character-ai/Ovi",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Ovi",
-    "role": "ai"
-  },
-  {
-    "repo": "Tencent-Hunyuan/HunyuanWorld-Voyager",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán HunyuanWorld Voyager",
-    "role": "ai"
-  },
-  {
-    "repo": "apple/ml-ferret",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "Edge AI",
-      "LLM"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán ml ferret",
-    "role": "ai"
-  },
-  {
-    "repo": "Ying1123/FlexGen",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán FlexGen",
-    "role": "ai"
-  },
-  {
     "repo": "forgotmenet/Iotlab-Automation-Test",
     "stars": 690,
     "stars_prev_week": 560,
     "velocity": 130,
     "language": "Python",
     "tags": [
-      "AgTech",
-      "Aquaculture",
-      "Edge AI",
-      "IoT",
-      "Water Quality"
+      "IoT"
     ],
     "summary_vi": "Hạ tầng kiểm thử tự động thiết bị IoT và mô phỏng giao thức truyền thông",
     "role": "infra"
-  },
-  {
-    "repo": "fikrikarim/parlor",
-    "stars": 720,
-    "stars_prev_week": 613,
-    "velocity": 107,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán parlor",
-    "role": "ai"
-  },
-  {
-    "repo": "fal-ai-community/video-starter-kit",
-    "stars": 720,
-    "stars_prev_week": 613,
-    "velocity": 107,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán video starter kit",
-    "role": "ai"
-  },
-  {
-    "repo": "fudan-generative-vision/hallo",
-    "stars": 720,
-    "stars_prev_week": 613,
-    "velocity": 107,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán hallo",
-    "role": "ai"
   },
   {
     "repo": "paperclipai/paperclip",
@@ -284,8 +173,21 @@
     "tags": [
       "Edge AI"
     ],
-    "summary_vi": "The open-source app everyone uses to manage agents at work",
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
     "role": "ai"
+  },
+  {
+    "repo": "tetherto/qvac",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
+    "role": "platform"
   },
   {
     "repo": "langchain-ai/langchain",
@@ -297,8 +199,47 @@
       "Edge AI",
       "LangChain"
     ],
-    "summary_vi": "The agent engineering platform.",
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
     "role": "ai"
+  },
+  {
+    "repo": "infiniflow/ragflow",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ragflow",
+    "role": "platform"
+  },
+  {
+    "repo": "aqm857886159/Nomi",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Nomi",
+    "role": "platform"
+  },
+  {
+    "repo": "ZeroLu/awesome-seedance",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho awesome seedance",
+    "role": "platform"
   },
   {
     "repo": "OpenHands/OpenHands",
@@ -307,10 +248,37 @@
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "Edge AI"
+      "IoT",
+      "Open Source"
     ],
-    "summary_vi": "🙌 OpenHands: AI-Driven Development",
-    "role": "ai"
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
+    "role": "platform"
+  },
+  {
+    "repo": "JuliusBrussee/caveman",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: caveman",
+    "role": "platform"
+  },
+  {
+    "repo": "AceDataCloud/Nexior",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho Nexior",
+    "role": "platform"
   },
   {
     "repo": "earendil-works/pi",
@@ -319,125 +287,36 @@
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "Edge AI",
-      "LLM"
+      "IoT",
+      "Open Source"
     ],
-    "summary_vi": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
-    "role": "ai"
-  },
-  {
-    "repo": "ZeroLu/awesome-seedance",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "TypeScript",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho awesome seedance",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
     "role": "platform"
   },
   {
-    "repo": "tetherto/qvac",
+    "repo": "Leamon-Lee/Design-of-Enterprise-IoT-design",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "Edge AI",
-      "RAG"
+      "IoT"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán qvac",
-    "role": "ai"
-  },
-  {
-    "repo": "PurpleDoubleD/locally-uncensored",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Docker",
-      "Edge AI"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho locally uncensored",
+    "summary_vi": "Thiết kế kiến trúc hệ thống IoT cho quy mô trang trại lớn",
     "role": "platform"
   },
   {
-    "repo": "aqm857886159/Nomi",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "TypeScript",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Nomi",
-    "role": "ai"
-  },
-  {
-    "repo": "Genesis-Embodied-AI/genesis-world",
+    "repo": "Drwae/TinyFeeder",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "Edge AI",
-      "Robotics"
+      "IoT",
+      "Open Source"
     ],
-    "summary_vi": "Simulation platform for general-purpose robotics & embodied AI learning.",
-    "role": "ai"
-  },
-  {
-    "repo": "huggingface/lerobot",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI",
-      "Robotics"
-    ],
-    "summary_vi": "🤗 LeRobot: Making AI for Robotics more accessible with end-to-end learning",
-    "role": "ai"
-  },
-  {
-    "repo": "commaai/openpilot",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "C++",
-    "tags": [
-      "Edge AI",
-      "Robotics"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán openpilot",
-    "role": "ai"
-  },
-  {
-    "repo": "AtsushiSakai/PythonRobotics",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI",
-      "Robotics"
-    ],
-    "summary_vi": "Python sample codes and textbook for robotics algorithms.",
-    "role": "ai"
-  },
-  {
-    "repo": "harvard-edge/cs249r_book",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán cs249r book",
-    "role": "ai"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: TinyFeeder",
+    "role": "platform"
   },
   {
     "repo": "earthtojake/text-to-cad",
@@ -449,8 +328,8 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Give your agent CAD superpowers.",
-    "role": "ai"
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho text to cad",
+    "role": "platform"
   },
   {
     "repo": "questdb/questdb",
@@ -462,39 +341,111 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "QuestDB is a high performance, open-source, time-series database",
-    "role": "infra"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
+    "role": "platform"
   },
   {
-    "repo": "rknightion/meraki-dashboard-ha",
+    "repo": "zauberzeug/nicegui",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
-    "language": "C++",
+    "language": "TypeScript",
     "tags": [
-      "Aquaculture",
-      "Edge AI",
       "IoT",
-      "Water Quality"
+      "Open Source"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán meraki dashboard ha",
-    "role": "ai"
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho nicegui",
+    "role": "platform"
   },
   {
-    "repo": "infiniflow/ragflow",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
+    "repo": "commaai/openpilot",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
     "language": "Python",
     "tags": [
-      "LLM",
-      "RAG"
+      "Edge AI"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán ragflow",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: openpilot",
     "role": "ai"
   },
   {
-    "repo": "JuliusBrussee/caveman",
+    "repo": "google-deepmind/mujoco",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
+    "role": "platform"
+  },
+  {
+    "repo": "ArduPilot/ardupilot",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
+    "role": "platform"
+  },
+  {
+    "repo": "harvard-edge/cs249r_book",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "role": "platform"
+  },
+  {
+    "repo": "Genesis-Embodied-AI/genesis-world",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: genesis world",
+    "role": "ai"
+  },
+  {
+    "repo": "huggingface/lerobot",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Robotics"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
+    "role": "platform"
+  },
+  {
+    "repo": "TianxingChen/Embodied-AI-Guide",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "TypeScript",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Embodied AI Guide",
+    "role": "ai"
+  },
+  {
+    "repo": "Likely7/Veyra-NRVideo",
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
@@ -503,8 +454,21 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán caveman",
-    "role": "ai"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Veyra NRVideo",
+    "role": "platform"
+  },
+  {
+    "repo": "PurpleDoubleD/locally-uncensored",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho locally uncensored",
+    "role": "platform"
   },
   {
     "repo": "Anil-matcha/Open-Generative-AI",
@@ -525,10 +489,24 @@
     "velocity": 73,
     "language": "Python",
     "tags": [
-      "Edge AI"
+      "IoT",
+      "Open Source"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán browser use",
-    "role": "ai"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: browser use",
+    "role": "platform"
+  },
+  {
+    "repo": "HKUSTDial/DataMagic",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho DataMagic",
+    "role": "platform"
   },
   {
     "repo": "Shubhamsaboo/awesome-llm-apps",
@@ -537,11 +515,72 @@
     "velocity": 73,
     "language": "Python",
     "tags": [
-      "Edge AI",
-      "LLM",
-      "RAG"
+      "LLM"
     ],
-    "summary_vi": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán awesome llm apps",
+    "role": "ai"
+  },
+  {
+    "repo": "czg86389-hub/muse2api",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho muse2api",
+    "role": "platform"
+  },
+  {
+    "repo": "YILS-LIN/short-video-factory",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: short video factory",
+    "role": "platform"
+  },
+  {
+    "repo": "leofan90/Awesome-World-Models",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Awesome World Models",
+    "role": "ai"
+  },
+  {
+    "repo": "vargHQ/sdk",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho sdk",
+    "role": "platform"
+  },
+  {
+    "repo": "flatkey-ai/flatkey-cli",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán flatkey cli",
     "role": "ai"
   },
   {
@@ -554,8 +593,21 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán ECC",
-    "role": "ai"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: ECC",
+    "role": "platform"
+  },
+  {
+    "repo": "notepower2k1/CapCap",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho CapCap",
+    "role": "platform"
   },
   {
     "repo": "HBAI-Ltd/Toonflow-app",
@@ -588,13 +640,100 @@
     "velocity": 73,
     "language": "Python",
     "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán TradingAgents",
+    "role": "ai"
+  },
+  {
+    "repo": "fikrikarim/parlor",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán parlor",
+    "role": "ai"
+  },
+  {
+    "repo": "matplotlib/matplotlib",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán matplotlib",
+    "role": "ai"
+  },
+  {
+    "repo": "character-ai/Ovi",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Ovi",
+    "role": "ai"
+  },
+  {
+    "repo": "Tencent-Hunyuan/HunyuanWorld-Voyager",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán HunyuanWorld Voyager",
+    "role": "ai"
+  },
+  {
+    "repo": "fal-ai-community/video-starter-kit",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán video starter kit",
+    "role": "ai"
+  },
+  {
+    "repo": "fudan-generative-vision/hallo",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán hallo",
+    "role": "ai"
+  },
+  {
+    "repo": "apple/ml-ferret",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Edge AI",
       "LLM"
     ],
-    "summary_vi": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán ml ferret",
     "role": "ai"
   },
   {
-    "repo": "czg86389-hub/muse2api",
+    "repo": "Ying1123/FlexGen",
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
@@ -602,219 +741,20 @@
     "tags": [
       "Edge AI"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán muse2api",
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán FlexGen",
     "role": "ai"
   },
   {
-    "repo": "YILS-LIN/short-video-factory",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán short video factory",
-    "role": "ai"
-  },
-  {
-    "repo": "leofan90/Awesome-World-Models",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Edge AI",
-      "Robotics"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Awesome World Models",
-    "role": "ai"
-  },
-  {
-    "repo": "Likely7/Veyra-NRVideo",
+    "repo": "rknightion/meraki-dashboard-ha",
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
     "language": "TypeScript",
     "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Veyra NRVideo",
-    "role": "ai"
-  },
-  {
-    "repo": "HKUSTDial/DataMagic",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "AI-powered data-to-video generation. Upload a table, get a narrated animated data story.",
-    "role": "ai"
-  },
-  {
-    "repo": "AceDataCloud/Nexior",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho Nexior",
-    "role": "platform"
-  },
-  {
-    "repo": "vargHQ/sdk",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "TypeScript",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho sdk",
-    "role": "platform"
-  },
-  {
-    "repo": "flatkey-ai/flatkey-cli",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán flatkey cli",
-    "role": "ai"
-  },
-  {
-    "repo": "notepower2k1/CapCap",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho CapCap",
-    "role": "platform"
-  },
-  {
-    "repo": "Developer-Y/cs-video-courses",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "List of Computer Science courses with video lectures.",
-    "role": "platform"
-  },
-  {
-    "repo": "google-deepmind/mujoco",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
-    "role": "platform"
-  },
-  {
-    "repo": "zauberzeug/nicegui",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Create web-based user interfaces with Python. The nice way.",
-    "role": "platform"
-  },
-  {
-    "repo": "ArduPilot/ardupilot",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Robotics"
-    ],
-    "summary_vi": "ArduPlane, ArduCopter, ArduRover, ArduSub source",
-    "role": "platform"
-  },
-  {
-    "repo": "NaiboWang/EasySpider",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho EasySpider",
-    "role": "platform"
-  },
-  {
-    "repo": "cactus-compute/needle",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Edge AI",
-      "Robotics"
-    ],
-    "summary_vi": "Phần cứng và mã nguồn điều khiển thiết bị needle",
-    "role": "hardware"
-  },
-  {
-    "repo": "TianxingChen/Embodied-AI-Guide",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "TypeScript",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "[Lumina具身智能社区] 具身智能技术指南 Embodied-AI-Guide",
-    "role": "ai"
-  },
-  {
-    "repo": "hubotio/hubot",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Robotics"
-    ],
-    "summary_vi": "A customizable life embetterment robot.",
-    "role": "platform"
-  },
-  {
-    "repo": "api-evangelist/jala",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Rust",
-    "tags": [
-      "AgTech",
-      "Aquaculture",
-      "Water Quality"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho jala",
+    "summary_vi": "Tích hợp dashboard quản lý thiết bị mạng và cảm biến IoT",
     "role": "platform"
   },
   {
@@ -822,27 +762,25 @@
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
-    "language": "C++",
+    "language": "Python",
     "tags": [
       "Aquaculture",
-      "IoT",
       "Water Quality"
     ],
-    "summary_vi": "Used to connect to and calibrate Yosemitech water quality sensors.",
-    "role": "hardware"
+    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+    "role": "platform"
   },
   {
     "repo": "TonucciGiovanni/Aquawatch",
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
-    "language": "C++",
+    "language": "Python",
     "tags": [
-      "Aquaculture",
       "IoT",
-      "Water Quality"
+      "Open Source"
     ],
-    "summary_vi": "Mobile app for monitoring water quality sensors",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Aquawatch",
     "role": "platform"
   },
   {
@@ -850,15 +788,13 @@
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
-    "language": "C++",
+    "language": "Python",
     "tags": [
-      "Aquaculture",
-      "Edge AI",
       "IoT",
-      "Water Quality"
+      "Open Source"
     ],
-    "summary_vi": "Phần cứng và mã nguồn điều khiển thiết bị PurifyX",
-    "role": "hardware"
+    "summary_vi": "Giám sát máy lọc nước thông minh qua cảm biến IoT",
+    "role": "platform"
   },
   {
     "repo": "LowCostSensor/DOMino-sensor",
@@ -867,11 +803,9 @@
     "velocity": 73,
     "language": "C++",
     "tags": [
-      "Aquaculture",
-      "IoT",
-      "Water Quality"
+      "IoT"
     ],
-    "summary_vi": "A low-cost and open-source fDOM sensor for water quality monitoring",
+    "summary_vi": "Cảm biến quang học đo oxy hòa tan giá rẻ cho ao nuôi",
     "role": "hardware"
   },
   {
@@ -879,15 +813,12 @@
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
-    "language": "C++",
+    "language": "Python",
     "tags": [
       "Aquaculture",
-      "Arduino",
-      "IoT",
-      "TDS",
-      "Temperature Sensor"
+      "Water Quality"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho water quality monitoring system",
+    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
     "role": "platform"
   },
   {
@@ -897,11 +828,10 @@
     "velocity": 73,
     "language": "Python",
     "tags": [
-      "Aquaculture",
       "IoT",
-      "Water Quality"
+      "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho AquaSC release",
+    "summary_vi": "Mô hình AI kiểm soát tự động chất lượng nước ao nuôi tôm",
     "role": "platform"
   },
   {
@@ -919,36 +849,71 @@
     "role": "platform"
   },
   {
+    "repo": "Sarika17-ui/AquaAI-Intelligent-Water-Guardian",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "TypeScript",
+    "tags": [
+      "Aquaculture",
+      "Edge AI",
+      "Water Quality"
+    ],
+    "summary_vi": "AI giám sát và cảnh báo bất thường trong môi trường nước",
+    "role": "ai"
+  },
+  {
     "repo": "rudhran11/poultry-water-monitoring-dashboard",
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
-    "language": "C++",
+    "language": "TypeScript",
     "tags": [
       "Aquaculture",
-      "ESP32",
-      "Edge AI",
-      "IoT",
       "Water Quality"
     ],
-    "summary_vi": "Phần cứng và mã nguồn điều khiển thiết bị poultry water monitoring dashboard",
-    "role": "hardware"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: poultry water monitoring dashboard",
+    "role": "platform"
+  },
+  {
+    "repo": "xiaoli5201314-spec/smart-fish-farming-platform",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "AgTech",
+      "Aquaculture",
+      "Water Quality"
+    ],
+    "summary_vi": "Nền tảng trang trại nuôi cá thông minh kết hợp IoT",
+    "role": "platform"
   },
   {
     "repo": "Rohith00755/Smart-Water-Purifier-Monitoring",
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
-    "language": "C++",
+    "language": "Python",
     "tags": [
       "Aquaculture",
-      "ESP32",
-      "ESP32-S3",
-      "IoT",
-      "TDS"
+      "Water Quality"
     ],
-    "summary_vi": "Phần cứng và mã nguồn điều khiển thiết bị Smart Water Purifier Monitoring",
-    "role": "hardware"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Smart Water Purifier Monitoring",
+    "role": "platform"
+  },
+  {
+    "repo": "ALNezar/FishMaster",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Aquaculture",
+      "Water Quality"
+    ],
+    "summary_vi": "Hệ thống tự động hóa quản lý và cho cá ăn thông minh",
+    "role": "platform"
   },
   {
     "repo": "nininehaa/aq1-secure-aquaculture-iot",
@@ -972,10 +937,9 @@
     "language": "Python",
     "tags": [
       "Aquaculture",
-      "IoT",
       "Water Quality"
     ],
-    "summary_vi": "IOT Aquaculture",
+    "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
     "role": "platform"
   },
   {
@@ -983,31 +947,26 @@
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
-    "language": "C++",
+    "language": "Python",
     "tags": [
-      "Aquaculture",
-      "ESP32",
-      "ESP32-S3",
-      "IoT",
       "Modbus"
     ],
-    "summary_vi": "Phần cứng và mã nguồn điều khiển thiết bị hsy 250617 ph ec rs485 modbus",
-    "role": "hardware"
+    "summary_vi": "Mạch đọc cảm biến pH/EC chuẩn công nghiệp Modbus RS485",
+    "role": "platform"
   },
   {
     "repo": "sampreethaise25-max/Water-Quality-Monitoring-System",
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
-    "language": "C++",
+    "language": "Python",
     "tags": [
       "Aquaculture",
       "Edge AI",
-      "IoT",
       "Water Quality"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho Water Quality Monitoring System",
-    "role": "platform"
+    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+    "role": "ai"
   },
   {
     "repo": "MohamedH-Sallam/Automated-Aquaculture-IoT-System",
@@ -1028,13 +987,12 @@
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
-    "language": "TypeScript",
+    "language": "Python",
     "tags": [
-      "Aquaculture",
       "IoT",
-      "Water Quality"
+      "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho agwasuri",
+    "summary_vi": "Phần mềm quản lý nông nghiệp và giám sát tưới tiêu thông minh",
     "role": "platform"
   },
   {
@@ -1044,12 +1002,9 @@
     "velocity": 73,
     "language": "TypeScript",
     "tags": [
-      "AgTech",
-      "Aquaculture",
-      "IoT",
-      "Water Quality"
+      "AgTech"
     ],
-    "summary_vi": "Aquaculture IOT Farm web dashboard",
+    "summary_vi": "Dashboard theo dõi thời gian thực dữ liệu cảm biến nông trại",
     "role": "platform"
   },
   {
@@ -1057,74 +1012,91 @@
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
-    "language": "TypeScript",
+    "language": "Python",
     "tags": [
-      "Aquaculture",
       "IoT",
-      "Water Quality"
+      "Open Source"
     ],
-    "summary_vi": "AquaPulse Design System — Enterprise Aquaculture SaaS & IoT Telemetry UI/UX",
+    "summary_vi": "Giao diện chuẩn hóa cho ứng dụng điều hành thủy sản",
     "role": "platform"
   },
   {
-    "repo": "Leamon-Lee/Design-of-Enterprise-IoT-design",
+    "repo": "AtsushiSakai/PythonRobotics",
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
     "language": "Python",
     "tags": [
-      "IoT"
-    ],
-    "summary_vi": "Enterprise IoT coursework and Smart Turtle Breeding System (STBS) design project",
-    "role": "platform"
-  },
-  {
-    "repo": "Sarika17-ui/AquaAI-Intelligent-Water-Guardian",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "C++",
-    "tags": [
-      "Aquaculture",
-      "ESP32",
       "Edge AI",
-      "IoT",
-      "Water Quality"
+      "Robotics"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho AquaAI Intelligent Water Guardian",
-    "role": "platform"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: PythonRobotics",
+    "role": "ai"
   },
   {
-    "repo": "xiaoli5201314-spec/smart-fish-farming-platform",
+    "repo": "Developer-Y/cs-video-courses",
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
-    "language": "C++",
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs video courses",
+    "role": "platform"
+  },
+  {
+    "repo": "NaiboWang/EasySpider",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán EasySpider",
+    "role": "ai"
+  },
+  {
+    "repo": "cactus-compute/needle",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: needle",
+    "role": "platform"
+  },
+  {
+    "repo": "hubotio/hubot",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: hubot",
+    "role": "platform"
+  },
+  {
+    "repo": "api-evangelist/jala",
+    "stars": 120,
+    "stars_prev_week": 73,
+    "velocity": 47,
+    "language": "Rust",
     "tags": [
       "AgTech",
       "Aquaculture",
-      "ESP32",
-      "IoT",
       "Water Quality"
     ],
-    "summary_vi": "种鱼数智管理平台 | ESP32 水质网关、树莓派 Qt 控制、多端可视化、智能问答与协议仿真",
-    "role": "hardware"
-  },
-  {
-    "repo": "ALNezar/FishMaster",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "C++",
-    "tags": [
-      "Aquaculture",
-      "ESP32",
-      "IoT",
-      "MQTT",
-      "Water Quality"
-    ],
-    "summary_vi": "Phần cứng và mã nguồn điều khiển thiết bị FishMaster",
-    "role": "hardware"
+    "summary_vi": "Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp",
+    "role": "platform"
   },
   {
     "repo": "Alrumi08/Neptune-aquakulture-Copilot",
