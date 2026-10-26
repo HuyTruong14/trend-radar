@@ -2,14 +2,14 @@
   "week": "W44",
   "start_date": "2026-10-20",
   "end_date": "2026-10-26",
-  "created_at": "2026-10-26T00:02:18.099279+07:00",
+  "created_at": "2026-10-26T09:09:10.040773+07:00",
   "previous_week": "W43",
   "stats": {
-    "total_signals": 758,
-    "total_opportunities": 290,
-    "build_ready": 2,
+    "total_signals": 744,
+    "total_opportunities": 294,
+    "build_ready": 1,
     "research": 72,
-    "watch": 216
+    "watch": 221
   },
   "prev_stats": {
     "total_signals": 748,
@@ -30,30 +30,6 @@
       ],
       "summary_vi": "Trợ lý AI quản lý ao nuôi và chất lượng nước thủy sản",
       "url": "https://github.com/mohamedsadhathj-techwork/Smart-Aquaculture-Assistant"
-    },
-    {
-      "id": "opp_2026_1024_e713d500",
-      "title": "api-evangelist/jala",
-      "total": 9,
-      "stage": "build_ready",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp",
-      "url": "https://github.com/api-evangelist/jala"
-    },
-    {
-      "id": "opp_2026_1025_1008f4c5",
-      "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Startup Eka Robotics gọi $150M phát triển robot nông nghiệp tự hành",
-      "url": "https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/"
     },
     {
       "id": "opp_2026_1024_6f42dcac",
@@ -78,25 +54,33 @@
       ],
       "summary_vi": "Dòng vốn đầu tư mới vào huấn luyện robot và vật liệu xanh",
       "url": "https://news.crunchbase.com/venture/interesting-startup-deals-robots-ai-gaming-clean-tech/"
+    },
+    {
+      "id": "opp_2026_1024_24b97dbd",
+      "title": "Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions”",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Carbon Robotics cắt giảm chi phí tái cấu trúc mảng robot nông nghiệp",
+      "url": "https://agfundernews.com/layoffs-at-carbon-robotics-as-firm-realigns-costs-due-to-broader-economic-conditions"
+    },
+    {
+      "id": "opp_2026_1024_55c0af0b",
+      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway",
+      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
     }
   ],
   "funding_deals": [
-    {
-      "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
-      "type": "Gọi vốn",
-      "amount": "$150M",
-      "sector": "agtech",
-      "sector_vi": "Nông nghiệp",
-      "url": "https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/"
-    },
-    {
-      "title": "Gecko Robotics secures $300M contract with the U.S. Navy",
-      "type": "Gọi vốn",
-      "amount": "$300M",
-      "sector": "agtech",
-      "sector_vi": "Nông nghiệp",
-      "url": "https://www.therobotreport.com/gecko-robotics-earns-300m-contract-with-the-u-s-navy/"
-    },
     {
       "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
       "type": "Gọi vốn",
@@ -106,20 +90,36 @@
       "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
     },
     {
-      "title": "Kodama raises $7M to bring robotics to forestry",
+      "title": "Cambridge Analytica's fallout is still costing Meta, this time $25 billion in New Mexico",
       "type": "Gọi vốn",
-      "amount": "$7M",
-      "sector": "agtech",
-      "sector_vi": "Nông nghiệp",
-      "url": "https://www.therobotreport.com/kodama-raises-7m-bring-robotics-forestry/"
+      "amount": "$25B",
+      "sector": "other",
+      "sector_vi": "Công nghệ & Startup",
+      "url": "https://www.reddit.com/r/technology/comments/1xdlpex/cambridge_analyticas_fallout_is_still_costing/"
     },
     {
-      "title": "Metron Acquires H2O Degree to Add Submetering and Leak Detection",
-      "type": "M&A",
-      "amount": "N/A",
-      "sector": "aquatech",
-      "sector_vi": "Thủy sản & Nước",
-      "url": "https://igrownews.com/metron-latest-news/"
+      "title": "Connected Home Medical Monitoring Devices to Reach 160 Million by 2030",
+      "type": "Xu hướng",
+      "amount": "$160M",
+      "sector": "healthtech",
+      "sector_vi": "Y tế",
+      "url": "https://iotbusinessnews.com/2026/10/23/connected-home-medical-monitoring-devices-to-reach-160-million-by-2030/"
+    },
+    {
+      "title": "IMIO raises $12m to unlock nutrients trapped in crop residues with new generation of ‘dependable ag biologicals’",
+      "type": "Gọi vốn",
+      "amount": "$12M",
+      "sector": "agtech",
+      "sector_vi": "Nông nghiệp",
+      "url": "https://agfundernews.com/imio-raises-12m-to-unlock-nutrients-trapped-in-crop-residues-with-new-generation-of-dependable-ag-biologicals"
+    },
+    {
+      "title": "Kodama nets $7m to scale physical AI for ‘intelligent forestry’",
+      "type": "Gọi vốn",
+      "amount": "$7M",
+      "sector": "other",
+      "sector_vi": "Công nghệ & Startup",
+      "url": "https://agfundernews.com/kodama-nets-7m-to-scale-physical-ai-for-intelligent-forestry"
     }
   ],
   "hot_topics": {
@@ -247,9 +247,9 @@
       "change_pct": -29
     },
     "Humanoid": {
-      "count": 9,
+      "count": 12,
       "prev_week": 10,
-      "change_pct": -10
+      "change_pct": 20
     },
     "Robotics": {
       "count": 52,
@@ -267,10 +267,10 @@
     "LR2021",
     "ChatGPT",
     "RoboBusiness",
-    "SpectralCanary",
-    "EpiSEM",
     "GR8_TECH",
-    "BeagleBoard"
+    "BeagleBoard",
+    "PocketBeagle",
+    "DeepMind"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",
