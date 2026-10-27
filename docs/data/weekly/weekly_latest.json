@@ -1,47 +1,47 @@
 {
   "week": "W44",
-  "start_date": "2026-10-20",
-  "end_date": "2026-10-26",
-  "created_at": "2026-10-26T09:09:10.040773+07:00",
-  "previous_week": "W43",
+  "start_date": "2026-10-21",
+  "end_date": "2026-10-27",
+  "created_at": "2026-10-27T09:46:27.950178+07:00",
+  "previous_week": "W44",
   "stats": {
+    "total_signals": 755,
+    "total_opportunities": 323,
+    "build_ready": 1,
+    "research": 75,
+    "watch": 247
+  },
+  "prev_stats": {
     "total_signals": 744,
     "total_opportunities": 294,
     "build_ready": 1,
     "research": 72,
     "watch": 221
   },
-  "prev_stats": {
-    "total_signals": 748,
-    "total_opportunities": 285,
-    "build_ready": 7,
-    "research": 80,
-    "watch": 198
-  },
   "top_opportunities": [
     {
-      "id": "opp_2026_1024_499128aa",
-      "title": "mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
+      "id": "opp_2026_1027_d64676ce",
+      "title": "Gaganmn7353/aquaculture-iot",
       "total": 9,
       "stage": "build_ready",
       "signal_type": [
         "price_shift",
         "tech_cheap"
       ],
-      "summary_vi": "Trợ lý AI quản lý ao nuôi và chất lượng nước thủy sản",
-      "url": "https://github.com/mohamedsadhathj-techwork/Smart-Aquaculture-Assistant"
+      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
+      "url": "https://github.com/Gaganmn7353/aquaculture-iot"
     },
     {
-      "id": "opp_2026_1024_6f42dcac",
-      "title": "AGCO and Agility Robotics to Pilot Digit Humanoid Robot at Hesston, Kansas, Plant",
+      "id": "opp_2026_1025_1008f4c5",
+      "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
       "total": 8,
       "stage": "research",
       "signal_type": [
         "price_shift",
         "tech_cheap"
       ],
-      "summary_vi": "Thử nghiệm robot hình người tự hành trong nhà máy sản xuất",
-      "url": "https://igrownews.com/agco-latest-news/"
+      "summary_vi": "Startup Eka Robotics gọi $150M phát triển robot nông nghiệp tự hành",
+      "url": "https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/"
     },
     {
       "id": "opp_2026_1024_e215d300",
@@ -82,6 +82,14 @@
   ],
   "funding_deals": [
     {
+      "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
+      "type": "Gọi vốn",
+      "amount": "$150M",
+      "sector": "agtech",
+      "sector_vi": "Nông nghiệp",
+      "url": "https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/"
+    },
+    {
       "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
       "type": "Gọi vốn",
       "amount": "$20K",
@@ -112,14 +120,6 @@
       "sector": "agtech",
       "sector_vi": "Nông nghiệp",
       "url": "https://agfundernews.com/imio-raises-12m-to-unlock-nutrients-trapped-in-crop-residues-with-new-generation-of-dependable-ag-biologicals"
-    },
-    {
-      "title": "Kodama nets $7m to scale physical AI for ‘intelligent forestry’",
-      "type": "Gọi vốn",
-      "amount": "$7M",
-      "sector": "other",
-      "sector_vi": "Công nghệ & Startup",
-      "url": "https://agfundernews.com/kodama-nets-7m-to-scale-physical-ai-for-intelligent-forestry"
     }
   ],
   "hot_topics": {
@@ -193,8 +193,8 @@
   "tech_frequency": {
     "ESP32": {
       "count": 23,
-      "prev_week": 28,
-      "change_pct": -18
+      "prev_week": 23,
+      "change_pct": 0
     },
     "TinyML": {
       "count": 15,
@@ -233,8 +233,8 @@
     },
     "Computer Vision": {
       "count": 0,
-      "prev_week": 2,
-      "change_pct": -100
+      "prev_week": 0,
+      "change_pct": 0
     },
     "BLE": {
       "count": 0,
@@ -243,34 +243,34 @@
     },
     "MQTT": {
       "count": 5,
-      "prev_week": 7,
-      "change_pct": -29
+      "prev_week": 5,
+      "change_pct": 0
     },
     "Humanoid": {
-      "count": 12,
-      "prev_week": 10,
-      "change_pct": 20
+      "count": 14,
+      "prev_week": 12,
+      "change_pct": 17
     },
     "Robotics": {
-      "count": 52,
-      "prev_week": 62,
-      "change_pct": -16
+      "count": 50,
+      "prev_week": 52,
+      "change_pct": -4
     },
     "Sensor": {
       "count": 21,
-      "prev_week": 29,
-      "change_pct": -28
+      "prev_week": 21,
+      "change_pct": 0
     }
   },
   "new_terms": [
     "OpenAI",
+    "AquaMindAI",
     "LR2021",
-    "ChatGPT",
     "RoboBusiness",
+    "ChatGPT",
     "GR8_TECH",
     "BeagleBoard",
-    "PocketBeagle",
-    "DeepMind"
+    "PocketBeagle"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",

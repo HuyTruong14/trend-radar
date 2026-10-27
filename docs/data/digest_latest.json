@@ -1,17 +1,31 @@
 {
-  "date": "2026-10-25",
-  "date_formatted": "25/10/2026",
-  "generated_at": "2026-10-26T09:09:09.345063+07:00",
+  "date": "2026-10-26",
+  "date_formatted": "26/10/2026",
+  "generated_at": "2026-10-27T09:46:27.292177+07:00",
   "quiet_day": false,
   "top_opportunities": [
     {
-      "id": "opp_2026_1024_d88ee6b6",
-      "title": "Niqo Robotics Unveils 46-Foot RoboWeeder F50 for Specialty Crop Farms",
+      "id": "opp_2026_1024_6f42dcac",
+      "title": "AGCO and Agility Robotics to Pilot Digit Humanoid Robot at Hesston, Kansas, Plant",
       "total": 8,
       "stage": "research",
-      "summary_vi": "Robot nông nghiệp tự hành phun thuốc diệt cỏ chính xác cao",
+      "summary_vi": "Thử nghiệm robot hình người tự hành trong nhà máy sản xuất",
       "alert_sent": true,
-      "url": "https://igrownews.com/niqo-robotics-latest-news/",
+      "url": "https://igrownews.com/agco-latest-news/",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "velocity": "rising"
+    },
+    {
+      "id": "opp_2026_1025_7bc8ede5",
+      "title": "Gecko Robotics secures $300M contract with the U.S. Navy",
+      "total": 8,
+      "stage": "research",
+      "summary_vi": "Startup Gecko Robotics gọi $300M phát triển robot nông nghiệp tự hành",
+      "alert_sent": true,
+      "url": "https://www.therobotreport.com/gecko-robotics-earns-300m-contract-with-the-u-s-navy/",
       "signal_type": [
         "price_shift",
         "tech_cheap"
@@ -19,64 +33,49 @@
       "velocity": "steady"
     },
     {
-      "id": "opp_2026_1024_21ee25d6",
-      "title": "🎥 Earth Rover bets on pulsed light to tackle weeds without chemicals",
-      "total": 8,
+      "id": "opp_2026_1024_400f82ff",
+      "title": "sampreethaise25-max/Water-Quality-Monitoring-System",
+      "total": 7,
       "stage": "research",
-      "summary_vi": "Robot diệt cỏ bằng xung ánh sáng không dùng hóa chất",
+      "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
       "alert_sent": true,
-      "url": "https://agfundernews.com/%f0%9f%8e%a5-earth-rover-bets-on-pulsed-light-to-tackle-weeds-without-chemicals",
+      "url": "https://github.com/sampreethaise25-max/Water-Quality-Monitoring-System",
       "signal_type": [
-        "price_shift",
         "tech_cheap"
       ],
-      "velocity": "steady"
-    },
-    {
-      "id": "opp_2026_1025_7c8645e1",
-      "title": "Kodama raises $7M to bring robotics to forestry",
-      "total": 8,
-      "stage": "research",
-      "summary_vi": "Startup Kodama gọi $7M phát triển robot nông nghiệp tự hành",
-      "alert_sent": true,
-      "url": "https://www.therobotreport.com/kodama-raises-7m-bring-robotics-forestry/",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "velocity": "steady"
+      "velocity": "rising"
     }
   ],
-  "remaining_high_tier_count": 17,
+  "remaining_high_tier_count": 1,
   "funding_deals": [
     {
-      "title": "Kodama raises $7M to bring robotics to forestry",
+      "title": "Kodama nets $7m to scale physical AI for ‘intelligent forestry’",
       "deal_type": "Gọi vốn",
       "amount": "$7M",
       "funding_amount": "$7M",
+      "sector": "other",
+      "url": "https://agfundernews.com/kodama-nets-7m-to-scale-physical-ai-for-intelligent-forestry",
+      "formatted_text": "• Kodama nets $7m to scale physical AI for ‘intelligent forest — gọi $7M (Công nghệ & Startup)",
+      "sector_vi": "Công nghệ & Startup"
+    },
+    {
+      "title": "Gecko Robotics secures $300M contract with the U.S. Navy",
+      "deal_type": "Gọi vốn",
+      "amount": "$300M",
+      "funding_amount": "$300M",
       "sector": "agtech",
-      "url": "https://www.therobotreport.com/kodama-raises-7m-bring-robotics-forestry/",
-      "formatted_text": "• Kodama gọi $7M — Nông nghiệp",
+      "url": "https://www.therobotreport.com/gecko-robotics-earns-300m-contract-with-the-u-s-navy/",
+      "formatted_text": "• Gecko Robotics gọi $300M — Nông nghiệp",
       "sector_vi": "Nông nghiệp"
     },
     {
-      "title": "Pivot Energy Secures $500 Million Credit Facility From Nuveen Energy Infrastructure Capital",
+      "title": "Valmont Reports Q3 2026 Results, Raises Full-Year Adjusted EPS Guidance",
       "deal_type": "Gọi vốn",
-      "amount": "$500M",
-      "funding_amount": "$500M",
-      "sector": "energy",
-      "url": "https://igrownews.com/pivot-energy-latest-news/",
-      "formatted_text": "• Pivot Energy gọi $500M — Năng lượng",
-      "sector_vi": "Năng lượng"
-    },
-    {
-      "title": "Blacksmith hits unicorn valuation after Sequoia leads Series C",
-      "deal_type": "Gọi vốn",
-      "amount": "$66M",
-      "funding_amount": "$66M",
+      "amount": "N/A",
+      "funding_amount": "N/A",
       "sector": "other",
-      "url": "https://techcrunch.com/2026/10/21/blacksmith-hits-unicorn-valuation-after-sequoia-leads-series-c/",
-      "formatted_text": "• Blacksmith hits unicorn valuation after Sequoia leads Series — gọi $66M (Công nghệ & Startup)",
+      "url": "https://igrownews.com/valmont-industries-latest-news/",
+      "formatted_text": "• Valmont Reports Q3 2026 Results, gọi Full-Year Adjusted EPS Guidance — Công nghệ & Startup",
       "sector_vi": "Công nghệ & Startup"
     }
   ],
@@ -104,16 +103,16 @@
     }
   ],
   "stats": {
-    "total_signals": 744,
-    "new_opportunities": 87,
+    "total_signals": 755,
+    "new_opportunities": 25,
     "build_ready": 0,
-    "research": 20,
-    "watch": 67,
+    "research": 4,
+    "watch": 21,
     "triple_signals": 3,
     "triple_signal_theme": "Robot tự hành & AI vật lý (Robotics & Embodied AI)",
-    "rising": 0,
+    "rising": 18,
     "fading": 0
   },
   "dashboard_url": "https://huytruong14.github.io/trend-radar/",
-  "telegram_text": "📰 TREND RADAR — BẢN TIN NGÀY 25/10/2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🎯 CƠ HỘI NỔI BẬT\n\n⚡ 8/9 · Niqo Robotics Unveils 46-Foot RoboWeeder F50 for Specialty Crop Farms (đã gửi alert)\n→ Robot nông nghiệp tự hành phun thuốc diệt cỏ chính xác cao\n\n⚡ 8/9 · 🎥 Earth Rover bets on pulsed light to tackle weeds without chemicals (đã gửi alert)\n→ Robot diệt cỏ bằng xung ánh sáng không dùng hóa chất\n\n⚡ 8/9 · Kodama raises $7M to bring robotics to forestry (đã gửi alert)\n→ Startup Kodama gọi $7M phát triển robot nông nghiệp tự hành\n\n(và 17 cơ hội khác trên dashboard)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n💰 DÒNG TIỀN HÔM QUA\n• Kodama gọi $7M — Nông nghiệp\n• Pivot Energy gọi $500M — Năng lượng\n• Blacksmith hits unicorn valuation after Sequoia leads Series — gọi $66M (Công nghệ & Startup)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔥 CHỦ ĐỀ NÓNG\n\n1. Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM — Reddit r/LocalLLaMA\n   → Chạy mô hình LLM 70B tối ưu trên phần cứng cá nhân với KV cache 4-bit\n\n2. #AI — Twitter/X\n   → Làn sóng thảo luận nóng về bước tiến AI và ứng dụng vào thực tế\n\n3. electric vehicle — Google Trends\n   → Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n📊 SỐ LIỆU NHANH\n• Tổng tín hiệu mới: 744 | Cơ hội mới: 87\n• Build-ready: 0 | Research: 20 | Watch: 67\n• Triple Signal: Có (3) → Robot tự hành & AI vật lý (Robotics & Embodied AI)\n• Velocity: 0 rising ↑ | 0 fading ↓\n• Công nghệ nổi bật: ESP32 (↑+87%)\n• Skill bị can thiệp mạnh nhất: Viết mã Boilerplate CRUD & API cơ bản (88%)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔗 Xem chi tiết: https://huytruong14.github.io/trend-radar/"
+  "telegram_text": "📰 TREND RADAR — BẢN TIN NGÀY 26/10/2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🎯 CƠ HỘI NỔI BẬT\n\n⚡ 8/9 · AGCO and Agility Robotics to Pilot Digit Humanoid Robot at Hesston, Kansas, Plant (đã gửi alert)\n→ Thử nghiệm robot hình người tự hành trong nhà máy sản xuất\n\n⚡ 8/9 · Gecko Robotics secures $300M contract with the U.S. Navy (đã gửi alert)\n→ Startup Gecko Robotics gọi $300M phát triển robot nông nghiệp tự hành\n\n⚡ 7/9 · sampreethaise25-max/Water-Quality-Monitoring-System (đã gửi alert)\n→ Hệ thống quan trắc chất lượng nước đa thông số qua IoT\n\n(và 1 cơ hội khác trên dashboard)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n💰 DÒNG TIỀN HÔM QUA\n• Kodama nets $7m to scale physical AI for ‘intelligent forest — gọi $7M (Công nghệ & Startup)\n• Gecko Robotics gọi $300M — Nông nghiệp\n• Valmont Reports Q3 2026 Results, gọi Full-Year Adjusted EPS Guidance — Công nghệ & Startup\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔥 CHỦ ĐỀ NÓNG\n\n1. Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM — Reddit r/LocalLLaMA\n   → Chạy mô hình LLM 70B tối ưu trên phần cứng cá nhân với KV cache 4-bit\n\n2. #AI — Twitter/X\n   → Làn sóng thảo luận nóng về bước tiến AI và ứng dụng vào thực tế\n\n3. electric vehicle — Google Trends\n   → Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n📊 SỐ LIỆU NHANH\n• Tổng tín hiệu mới: 755 | Cơ hội mới: 25\n• Build-ready: 0 | Research: 4 | Watch: 21\n• Triple Signal: Có (3) → Robot tự hành & AI vật lý (Robotics & Embodied AI)\n• Velocity: 18 rising ↑ | 0 fading ↓\n• Công nghệ nổi bật: ESP32 (↑+87%)\n• Skill bị can thiệp mạnh nhất: Viết mã Boilerplate CRUD & API cơ bản (88%)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔗 Xem chi tiết: https://huytruong14.github.io/trend-radar/"
 }

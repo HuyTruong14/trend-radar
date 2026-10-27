@@ -27,15 +27,6 @@
       "TinyML": 9
     }
   },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 16,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "TinyML": {
     "type": "AI/ML",
     "description_vi": "Kỹ thuật chạy mô hình máy học trực tiếp trên vi điều khiển không cần điện toán đám mây",
@@ -61,6 +52,15 @@
       "LoRA": 4
     }
   },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 12,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "RISC-V": {
     "type": "Hardware",
     "description_vi": "Kiến trúc tập lệnh (ISA) mở cho phép tự do thiết kế chip không phụ thuộc bản quyền",
@@ -75,9 +75,9 @@
   "Humanoid": {
     "type": "Robotics",
     "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 10,
+    "mentions_this_week": 11,
     "mentions_prev_week": 7,
-    "change_pct": 43,
+    "change_pct": 57,
     "trend": "rising",
     "co_occurs_with": {
       "ROS2": 5
@@ -265,6 +265,17 @@
       "ESP32-S3": 2,
       "MQTT": 2,
       "Ultrasonic": 2
+    }
+  },
+  "LiDAR": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến quét laser đo khoảng cách tạo bản đồ không gian 3D cho xe tự hành và robot",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ROS2": 4
     }
   },
   "Actuator": {
@@ -591,17 +602,6 @@
     "change_pct": 0,
     "trend": "stable",
     "co_occurs_with": {}
-  },
-  "LiDAR": {
-    "type": "Sensor",
-    "description_vi": "Cảm biến quét laser đo khoảng cách tạo bản đồ không gian 3D cho xe tự hành và robot",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {
-      "ROS2": 4
-    }
   },
   "Temperature Sensor": {
     "type": "Sensor",
