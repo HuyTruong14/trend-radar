@@ -438,6 +438,9 @@ def run_repo_combos():
     # 3. Build Repo Combos (>= 3 combos with >= 2 roles each)
     combos = generate_repo_combos(trending_repos)
     save_json(combos, REPO_COMBOS_FILE)
+    opps_dir = os.path.join(DATA_DIR, "opportunities")
+    os.makedirs(opps_dir, exist_ok=True)
+    save_json(combos, os.path.join(opps_dir, "repo_combos.json"))
 
     print("-" * 60)
     print(f"✅ Generated {len(trending_repos)} trending repos in {REPO_TRENDING_FILE}")

@@ -32,7 +32,7 @@ import json
 import os
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -673,6 +673,21 @@ def build_aggregated_news(topics_data=None, out_dir=DATA_DIR):
         for item in topic_data.get("items", []):
             item_copy = dict(item)
             item_copy["topic"] = topic_name
+
+            # Phase 17 A3: Normalize Reddit URLs to ensure browser-friendly web links
+            raw_url = item_copy.get("url") or ""
+            if "reddit.com" in raw_url or raw_url.startswith("/r/"):
+                u = re.sub(r"\.json(\?.*)?$", "", raw_url).strip()
+                if u.startswith("/r/"):
+                    u = f"https://www.reddit.com{u}"
+                elif u.startswith("https://reddit.com"):
+                    u = u.replace("https://reddit.com", "https://www.reddit.com")
+                elif u.startswith("http://reddit.com"):
+                    u = u.replace("http://reddit.com", "https://www.reddit.com")
+                elif u.startswith("http://www.reddit.com"):
+                    u = u.replace("http://www.reddit.com", "https://www.reddit.com")
+                item_copy["url"] = u
+
             pub = item.get("published")
             is_stale = False
             if pub:
@@ -684,13 +699,75 @@ def build_aggregated_news(topics_data=None, out_dir=DATA_DIR):
                     pass
             item_copy["stale"] = is_stale
             all_signals.append(item_copy)
+
     signals_file = os.path.join(out_dir, "signals.json")
     with open(signals_file, "w", encoding="utf-8") as f:
         json.dump(all_signals, f, indent=2, ensure_ascii=False)
 
-    print(f"Aggregated {len(output_data['topics'])} topics into {out_file} and exported {len(all_signals)} signals to {signals_file}")
+    # Phase 17 A1: Append to signals_archive.json with 30-day retention and read_status
+    vn_tz = timezone(timedelta(hours=7))
+    vn_now = datetime.now(vn_tz)
+    archived_date = vn_now.strftime("%Y-%m-%d")
+    batch_id = vn_now.strftime("run_%Y%m%d_%H%M")
+    
+    archive_file = os.path.join(out_dir, "signals_archive.json")
+    existing_archive = []
+    if os.path.exists(archive_file):
+        try:
+            with open(archive_file, "r", encoding="utf-8") as f:
+                existing_archive = json.load(f)
+                if not isinstance(existing_archive, list):
+                    existing_archive = []
+        except Exception as e:
+            print(f"[aggregate] Warning reading signals_archive.json: {e}")
+            existing_archive = []
 
-    # Phase 14: Update last_updated.json
+    # Map existing items by unique key to preserve read_status
+    archive_map = {}
+    for it in existing_archive:
+        k = it.get("url") or it.get("title") or it.get("id")
+        if k:
+            archive_map[k] = it
+
+    # Merge new signals
+    for sig in all_signals:
+        k = sig.get("url") or sig.get("title") or sig.get("id")
+        if k in archive_map:
+            existing_item = archive_map[k]
+            sig_arch = dict(sig)
+            sig_arch["archived_date"] = existing_item.get("archived_date", archived_date)
+            sig_arch["batch_id"] = existing_item.get("batch_id", batch_id)
+            sig_arch["read_status"] = existing_item.get("read_status", "unread")
+            archive_map[k] = sig_arch
+        else:
+            sig_arch = dict(sig)
+            sig_arch["archived_date"] = archived_date
+            sig_arch["batch_id"] = batch_id
+            sig_arch["read_status"] = "unread"
+            archive_map[k] = sig_arch
+
+    # 30-day retention cleanup
+    cutoff_date = (vn_now - timedelta(days=30)).strftime("%Y-%m-%d")
+    updated_archive = [
+        it for it in archive_map.values()
+        if it.get("archived_date", archived_date) >= cutoff_date
+    ]
+    updated_archive.sort(key=lambda x: x.get("published") or x.get("archived_date") or "", reverse=True)
+
+    with open(archive_file, "w", encoding="utf-8") as f:
+        json.dump(updated_archive, f, indent=2, ensure_ascii=False)
+
+    # Phase 17 D2: Output to structured subfolders
+    news_dir = os.path.join(out_dir, "news")
+    os.makedirs(news_dir, exist_ok=True)
+    with open(os.path.join(news_dir, "signals_current.json"), "w", encoding="utf-8") as f:
+        json.dump(all_signals, f, indent=2, ensure_ascii=False)
+    with open(os.path.join(news_dir, "signals_archive.json"), "w", encoding="utf-8") as f:
+        json.dump(updated_archive, f, indent=2, ensure_ascii=False)
+
+    print(f"Aggregated {len(output_data['topics'])} topics into {out_file}, {len(all_signals)} signals into {signals_file}, and archived {len(updated_archive)} signals into {archive_file}")
+
+    # Phase 14 / 17: Update last_updated.json
     try:
         import last_updated
         last_updated.update_last_updated(signals_count=len(all_signals), status="success")

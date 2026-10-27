@@ -500,5 +500,115 @@ def generate_summary_vi(title, summary=""):
     if banned in summary_vi.lower():
         summary_vi = summarize_news_article(t, "")
 
+    # Requirement B2: If summary_vi is empty or < 20 chars
+    if not summary_vi or len(summary_vi) < 20:
+        summary_vi = "Chưa có mô tả — nhấn link để xem chi tiết"
+
     return summary_vi
+
+
+TITLE_VI_EXACT = {
+    "Sea Harvest profit dips on low catch rates": "Sea Harvest lợi nhuận giảm do sản lượng đánh bắt thấp",
+    "Sea Harvest profit dips on low catch rates, tough market conditions": "Sea Harvest lợi nhuận giảm do sản lượng đánh bắt thấp và thị trường khó khăn",
+    "Metron Acquires H2O Degree to Add Submetering and Leak Detection": "Metron thâu tóm H2O Degree để bổ sung đo đếm và phát hiện rò rỉ",
+    "VECKTA Raises $11 Million Series A Led by Origin Ventures for Onsite Solar and Storage": "VECKTA huy động $11M Series A do Origin Ventures dẫn đầu cho điện mặt trời & lưu trữ",
+    "IMIO raises $12m to unlock nutrients trapped in crop residues with new generation of ‘dependable ag biologicals’": "IMIO huy động $12M phát triển chế phẩm sinh học từ phụ phẩm cây trồng",
+    "Kodama nets $7m to scale physical AI for ‘intelligent forestry’": "Kodama gọi vốn $7M ứng dụng AI vật lý cho quản lý lâm nghiệp thông minh",
+    "Farmers, what's missing from your water monitoring setup?": "Nông dân chia sẻ: Hệ thống quan trắc nước của bạn còn thiếu gì?",
+    "US aquaculture needs more than VC dollars to grow: report": "Báo cáo: Ngành nuôi trồng thủy sản Mỹ cần nhiều hơn vốn đầu tư mạo hiểm",
+    "Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions”": "Carbon Robotics cắt giảm nhân sự để tái cơ cấu chi phí mảng robot",
+    "UK Agri-Tech Centre to slash workforce by 60% in strategic pivot to new operating model": "Trung tâm AgTech Anh cắt 60% nhân sự chuyển dịch mô hình vận hành mới",
+    "‘No acceptable offers’ for Liberation Bioindustries as firm seeks to plug $25m funding gap": "Liberation Bioindustries tìm kiếm $25M bù đắp khoảng trống vốn sinh học",
+    "Semantic Observability for Autonomous Systems Diagnostics": "Khả năng quan sát ngữ nghĩa phục vụ chẩn đoán hệ thống tự hành",
+    "From the control center, AI camera helps Hanoi traffic police monitor every traffic span - Laodong.vn": "Từ trung tâm điều khiển, camera AI giúp CSGT Hà Nội giám sát giao thông",
+    "UniWALM: Unified World Action Language Model for Embodied Robot Control": "UniWALM: Mô hình ngôn ngữ hành động thế giới hợp nhất điều khiển robot",
+    "Industrial ReMEmbR: Scaling Spatiotemporal Memory to Robot Fleets": "Industrial ReMEmbR: Mở rộng bộ nhớ không-thời gian cho đội ngũ robot",
+    "AGCO and Agility Robotics to Pilot Digit Humanoid Robot at Hesston, Kansas, Plant": "AGCO và Agility Robotics thử nghiệm robot hình người Digit trong nhà máy",
+    "Niqo Robotics Unveils 46-Foot RoboWeeder F50 for Specialty Crop Farms": "Niqo Robotics ra mắt robot diệt cỏ RoboWeeder F50 cho nông trại",
+    "🎥 Earth Rover bets on pulsed light to tackle weeds without chemicals": "Earth Rover ứng dụng xung ánh sáng diệt cỏ không dùng hóa chất",
+    "Rondo Energy and Rio Tinto Begin Design of Australia’s Largest Thermal Energy Storage Project": "Rondo Energy và Rio Tinto thiết kế dự án lưu trữ năng lượng nhiệt lớn nhất Australia",
+    "Firm makes aquaponics, water treatment  breakthrough": "Doanh nghiệp đột phá công nghệ lọc nước và nuôi trồng aquaponics",
+    "Firm makes aquaponics, water treatment breakthrough": "Doanh nghiệp đột phá công nghệ lọc nước và nuôi trồng aquaponics",
+    "Tanzanian startup scaling sustainable fertiliser, fish feed solutions": "Startup Tanzania mở rộng phân bón hữu cơ và thức ăn cá bền vững",
+    "South Africa, Chile collaborate to advance sustainable fisheries, aquaculture": "Nam Phi và Chile hợp tác phát triển thủy sản bền vững",
+    "Microsoft issues a warning regarding AI regulation. - Vietnam.vn": "Microsoft cảnh báo về việc quản lý và ban hành luật AI",
+    "Blockbuster films take two years to complete, AI can do it in just one or two months: Proposal for a separate Copyright Law. - Vietnam.vn": "Phim bom tấn cần 2 năm, AI làm trong 1-2 tháng: Đề xuất luật bản quyền riêng",
+    "AI Law takes effect, anchors national governance framework - vietnamnews.vn": "Luật AI có hiệu lực, thiết lập khung quản trị quốc gia",
+    "Regulations on the safety of AI applications in banking operations. - Vietnam.vn": "Quy định an toàn ứng dụng AI trong hoạt động ngân hàng",
+    "The Law on Artificial Intelligence must ensure four key pillars - Tạp chí KH&CN Việt Nam": "Luật Trí tuệ nhân tạo phải đảm bảo 4 trụ cột chính",
+}
+
+
+def translate_title_vi(title, summary=""):
+    """
+    Translates or formats an English/raw title into a natural, reader-friendly Vietnamese title (Phase 17 - B1).
+    """
+    if not title:
+        return "Tín hiệu công nghệ mới"
+
+    t = title.strip()
+
+    # 1. Exact match dictionary
+    if t in TITLE_VI_EXACT:
+        return TITLE_VI_EXACT[t]
+
+    # Clean suffixes like ' - Vietnam.vn', ' | TechCrunch'
+    t_clean = re.sub(r"\s*[-|–—]\s*[\w\s.]+$", "", t).strip()
+
+    # 2. If title is already Vietnamese (contains tone marks)
+    if bool(re.search(r"[àáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ]", t_clean, re.IGNORECASE)):
+        return t_clean
+
+    # 3. Google Trends
+    if t.startswith("Google Trends:"):
+        kw = t.replace("Google Trends:", "").strip()
+        kw = re.sub(r"\(.*?\)", "", kw).strip()
+        return f"Xu hướng tìm kiếm đột biến: {kw}"
+
+    # 4. Twitter Trends
+    if "trending with" in t.lower() and "tweets" in t.lower():
+        m = re.match(r"^([#\w\s]+?)\s+trending with\s*(\d+[KkMm]?)\s*tweets", t, re.IGNORECASE)
+        if m:
+            return f"Chủ đề hot X: {m.group(1).strip()} ({m.group(2)} thảo luận)"
+
+    # 5. GitHub repository ('owner/repo')
+    if "/" in t and not t.startswith("http") and len(t.split("/")) == 2 and " " not in t.split("/")[0]:
+        owner, repo = t.split("/", 1)
+        clean_repo = repo.replace("-", " ").replace("_", " ").title()
+        return f"Dự án mã nguồn mở {clean_repo} ({owner})"
+
+    # 6. Pattern-based translations
+    # X acquires Y to add Z
+    m_acq = re.search(r"^(.*?)\s+(?:acquires|to acquire|buys)\s+(.*?)(?:\s+to\s+add\s+(.*?))?$", t_clean, re.IGNORECASE)
+    if m_acq:
+        buyer = m_acq.group(1).strip()
+        target = m_acq.group(2).strip()
+        feat = m_acq.group(3).strip() if m_acq.group(3) else ""
+        if feat:
+            return f"{buyer} thâu tóm {target} để bổ sung {feat}"
+        return f"{buyer} thâu tóm {target}"
+
+    # X raises $Y for Z
+    m_raise = re.search(r"^(.*?)\s+(?:raises|raised|secures|nets|lands)\s+(\$[\d.]+[MBmb]?|\d+\s*million|\d+\s*billion)(?:\s+(?:for|to|in)\s+(.*?))?$", t_clean, re.IGNORECASE)
+    if m_raise:
+        who = m_raise.group(1).strip()
+        amt = m_raise.group(2).strip()
+        purpose = m_raise.group(3).strip() if m_raise.group(3) else ""
+        if purpose:
+            return f"{who} huy động vốn {amt} cho {purpose}"
+        return f"{who} huy động vốn {amt}"
+
+    # Profit dips / drops
+    m_dip = re.search(r"^(.*?)\s+(?:profit dips|revenue falls|profit drops)\s+(?:on|due to)\s+(.*?)$", t_clean, re.IGNORECASE)
+    if m_dip:
+        who = m_dip.group(1).strip()
+        reason = m_dip.group(2).strip()
+        return f"{who} lợi nhuận sụt giảm do {reason}"
+
+    # Fallback: if summary_vi exists and is good, we can build from summary_vi
+    sum_vi = generate_summary_vi(t, summary)
+    if sum_vi and len(sum_vi) >= 15 and "Chưa có mô tả" not in sum_vi:
+        return sum_vi
+
+    return t_clean
 

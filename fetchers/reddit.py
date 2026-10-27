@@ -149,11 +149,21 @@ def fetch_subreddit_posts(subreddit, topic="News", min_score=50, max_age_hours=2
         permalink = post.get("permalink") or ""
         post_url = post.get("url") or ""
         
-        # Use external link if not a self-post/internal reddit link, otherwise permalink
-        if not post_url or post_url.startswith("/r/") or "reddit.com" in post_url:
-            resolved_url = f"https://reddit.com{permalink}" if permalink else post_url
+        # Clean Reddit URL: ensure browser-friendly https://www.reddit.com/r/.../comments/...
+        if permalink:
+            p_clean = re.sub(r"\.json(\?.*)?$", "", permalink).strip()
+            if not p_clean.startswith("/"):
+                p_clean = "/" + p_clean
+            resolved_url = f"https://www.reddit.com{p_clean}"
+        elif post_url:
+            clean_url = re.sub(r"\.json(\?.*)?$", "", post_url).strip()
+            if clean_url.startswith("/r/"):
+                clean_url = f"https://www.reddit.com{clean_url}"
+            elif "reddit.com" in clean_url and not clean_url.startswith("http"):
+                clean_url = f"https://www.{clean_url.lstrip('www.')}"
+            resolved_url = clean_url
         else:
-            resolved_url = post_url
+            resolved_url = "https://www.reddit.com"
 
         iso_timestamp = datetime.fromtimestamp(created_utc, tz=timezone.utc).isoformat()
         selftext = (post.get("selftext") or "").strip()

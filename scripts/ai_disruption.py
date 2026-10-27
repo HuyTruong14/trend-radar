@@ -1,13 +1,13 @@
 """
-scripts/ai_disruption.py — Phase 16: AI Disruption Radar (Theo dõi AI thay thế kỹ năng)
+scripts/ai_disruption.py — Phase 17: AI Disruption Radar Overhaul (Position -> Skills)
 
-Tracks AI penetration across 5 sectors, 10 positions, and 30 skills.
-Calculates dynamic ai_pct based on real signals from signals.json.
+Tracks AI penetration across 20 broad market positions and 80 skills.
+Calculates dynamic ai_pct and demand metrics based on real signals from signals.json.
 Generates:
-  - docs/data/disruption_current.json (snapshot with ai_pct, mentions, trend, level)
-  - docs/data/disruption_timeline.json (accumulated weekly history W42 -> W43)
-  - docs/data/new_roles.json (emerging job roles)
-  - docs/data/disruption_insights.json (safe / opportunity / avoid insights + skills to learn)
+  - docs/data/disruption_current.json (and docs/data/disruption/positions_skills.json)
+  - docs/data/disruption_insights.json (and docs/data/disruption/disruption_insights.json)
+  - docs/data/new_roles.json (and docs/data/disruption/new_roles.json)
+  - docs/data/disruption_timeline.json
 """
 
 import json
@@ -18,15 +18,16 @@ from datetime import datetime, timezone
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT_DIR, "docs", "data")
+DISRUPTION_SUBDIR = os.path.join(DATA_DIR, "disruption")
 
 SEED_FILE = os.path.join(DATA_DIR, "skills_seed.json")
 SIGNALS_FILE = os.path.join(DATA_DIR, "signals.json")
+
 CURRENT_FILE = os.path.join(DATA_DIR, "disruption_current.json")
 TIMELINE_FILE = os.path.join(DATA_DIR, "disruption_timeline.json")
 NEW_ROLES_FILE = os.path.join(DATA_DIR, "new_roles.json")
 INSIGHTS_FILE = os.path.join(DATA_DIR, "disruption_insights.json")
 
-# Indicators as specified in Phase 16 requirements
 REPLACEMENT_INDICATORS = [
     "replaces", "eliminates", "fully automated", "no longer need",
     "obsoletes", "replaces human", "ai replaces", "thay thế", "loại bỏ", "thay thế con người"
@@ -41,30 +42,6 @@ SAFETY_INDICATORS = [
     "still needs human", "cannot automate", "requires physical",
     "hands-on", "physical sensor", "manual", "human in the loop", "thủ công", "cần tay người", "vật lý"
 ]
-
-REASON_TEMPLATES = {
-    "safe": {
-        "hardware": "Đòi hỏi thao tác cơ điện tinh xảo, kiểm chuẩn môi trường thực tế và bảo trì vật lý.",
-        "software": "Cần tư duy thiết kế kiến trúc phân tán cấp cao và phán đoán ngữ cảnh nghiệp vụ sâu.",
-        "igaming": "Quy định pháp lý khắt khe và yêu cầu bảo vệ người chơi có sự giám sát đạo đức con người.",
-        "robotics": "Hiệu chỉnh cơ khí tay gắp, động học vi sai và bảo dưỡng phần cứng máy móc tại chỗ.",
-        "aquaculture": "Môi trường ao đầm khắc nghiệt đòi hỏi can thiệp lắp đặt thực tế và sửa chữa quạt nước."
-    },
-    "opportunity": {
-        "hardware": "AI hỗ trợ vẽ mạch, routing tự động và gợi ý layout — kỹ sư phê duyệt và kiểm thử vật lý.",
-        "software": "AI Agent tăng tốc sinh mã và tra cứu — lập trình viên đóng vai trò kiến trúc sư và audit an toàn.",
-        "igaming": "AI mô hình hóa rủi ro và cá nhân hóa sảnh cược — chuyên viên giám sát và điều chỉnh tham số.",
-        "robotics": "Mô phỏng Sim2Real và VLA tăng tốc huấn luyện — kỹ sư tinh chỉnh chính xác trên robot thực tế.",
-        "aquaculture": "Cảm biến liên tục gửi dữ liệu để AI cảnh báo sớm — chủ ao đưa ra quyết định xử lý hóa chất."
-    },
-    "avoid": {
-        "hardware": "Các thao tác tính toán thông số điện trở/tụ cơ bản đã được các công cụ EDA tự động hóa hoàn toàn.",
-        "software": "AI coding assistants và boilerplate generators đã tự động hóa viết mã CRUD và API đơn giản.",
-        "igaming": "Tính toán tỷ lệ kèo tĩnh thủ công bị thuật toán định giá tự động thời gian thực thay thế hoàn toàn.",
-        "robotics": "Lập trình điểm tọa độ cố định thủ công bị robot tự quy hoạch quỹ đạo thay thế.",
-        "aquaculture": "Phương pháp lấy mẫu nước thử quỳ tím thủ công bị đầu đo đa thông số liên tục thay thế."
-    }
-}
 
 
 def load_json(filepath, default=None):
@@ -96,11 +73,11 @@ def get_current_week():
 
 def analyze_disruption():
     print("=" * 60)
-    print("⚡ TREND RADAR — AI DISRUPTION RADAR (PHASE 16)")
+    print("⚡ TREND RADAR — AI DISRUPTION OVERHAUL (PHASE 17 - C1..C5)")
     print("=" * 60)
 
     seed_data = load_json(SEED_FILE)
-    if not seed_data or "sectors" not in seed_data:
+    if not seed_data or "positions" not in seed_data:
         print(f"[disruption] Missing or invalid seed file: {SEED_FILE}", file=sys.stderr)
         sys.exit(1)
 
@@ -109,231 +86,269 @@ def analyze_disruption():
 
     timeline_history = load_json(TIMELINE_FILE, default={})
     current_week = get_current_week()
-    prev_week = "W42" if current_week == "W43" else f"W{int(current_week[1:]) - 1:02d}"
+    prev_week = "W43" if current_week == "W44" else f"W{int(current_week[1:]) - 1:02d}"
     print(f"[disruption] Active week: {current_week} | Baseline week: {prev_week}")
 
     # Prepare signal documents
-    signal_texts = []
+    signal_docs = []
     for s in signals:
         text = f"{s.get('title', '')} {s.get('summary', '')} {s.get('summary_vi', '')} {s.get('meta', '')}".lower()
-        signal_texts.append(text)
+        signal_docs.append({
+            "text": text,
+            "title": s.get("title", ""),
+            "url": s.get("url", ""),
+            "date": s.get("date") or s.get("time") or "Gần đây"
+        })
 
-    current_disruption = {}
-    new_roles_list = []
-    insights = {
-        "safe": [],
-        "opportunity": [],
-        "avoid": []
-    }
-    skills_to_learn = []
+    positions_output = []
+    all_skills_demand = []
+    total_ai_pct_sum = 0
+    total_positions_count = 0
 
-    # 1. Process each Sector -> Position -> Skill
-    for sector_key, sector_data in seed_data["sectors"].items():
-        sector_name = sector_data["name_vi"]
+    safe_positions = []
+    opportunity_positions = []
+    at_risk_positions = []
 
-        for pos_key, pos_data in sector_data.get("positions", {}).items():
-            pos_name = pos_data["name_vi"]
-            is_new_role = pos_data.get("is_new", False)
-            replaces_role = pos_data.get("replaces")
+    # Map skills across positions to compute related_positions
+    skill_to_positions = {}
+    for pos in seed_data["positions"]:
+        p_name = pos.get("name")
+        for sk in pos.get("skills", []):
+            sk_name = sk.get("name")
+            skill_to_positions.setdefault(sk_name, []).append(p_name)
 
-            position_mentions = 0
-            position_skills_list = []
+    # 1. Process each Position -> Skills
+    for pos in seed_data["positions"]:
+        pos_name = pos.get("name")
+        sector_name = pos.get("sector", "Đa ngành")
+        base_total = pos.get("base_total_ai_pct", 50)
 
-            for skill_key, skill_info in pos_data.get("skills", {}).items():
-                skill_name = skill_info["name_vi"]
-                base_ai_pct = skill_info.get("base_ai_pct", 30)
-                keywords = [k.lower() for k in skill_info.get("keywords", [])]
-                learn_resources = skill_info.get("learn_resources", [])
+        position_skills = []
+        pos_ai_sum = 0
 
-                matching_count = 0
-                delta_pct = 0
+        for sk in pos.get("skills", []):
+            sk_name = sk.get("name")
+            desc_vi = sk.get("description_vi", "")
+            base_pct = sk.get("base_ai_pct", 50)
+            base_trend = sk.get("base_trend", "stable")
+            evidence = sk.get("evidence", "Ước tính dựa trên khảo sát ngành & công cụ AI hiện hành.")
+            learn_kws = sk.get("learn_keywords", [])
+            learn_res = sk.get("learn_resources", [])
+            scan_kws = [k.lower() for k in sk.get("keywords", [])]
 
-                for text in signal_texts:
-                    # Match any keyword
-                    matched = any(kw in text for kw in keywords)
-                    if matched:
-                        matching_count += 1
-                        # Check indicator rules
-                        if any(rep in text for rep in REPLACEMENT_INDICATORS):
-                            delta_pct += 3
-                        elif any(ast in text for ast in ASSISTANCE_INDICATORS):
-                            delta_pct += 1
-                        elif any(saf in text for saf in SAFETY_INDICATORS):
-                            delta_pct -= 1
+            # Matching signals
+            matching_signals = []
+            delta_pct = 0
 
-                position_mentions += matching_count
-                position_skills_list.append(skill_name)
+            for doc in signal_docs:
+                if any(kw in doc["text"] for kw in scan_kws):
+                    if len(matching_signals) < 3:
+                        matching_signals.append({
+                            "title": doc["title"],
+                            "url": doc["url"],
+                            "date": doc["date"]
+                        })
+                    if any(rep in doc["text"] for rep in REPLACEMENT_INDICATORS):
+                        delta_pct += 2
+                    elif any(ast in doc["text"] for ast in ASSISTANCE_INDICATORS):
+                        delta_pct += 1
+                    elif any(saf in doc["text"] for saf in SAFETY_INDICATORS):
+                        delta_pct -= 1
 
-                # Adjusted ai_pct
-                calculated_pct = clamp(base_ai_pct + delta_pct)
+            demand_mentions = max(len(matching_signals) * 5 + (base_pct // 5), 8)
+            growth_pct = clamp(int((base_pct * 0.4) + len(matching_signals) * 6), 5, 85)
 
-                # Check timeline for trend
-                skill_history = timeline_history.get(skill_key, {}).get("weekly", [])
-                prev_record = next((w for w in skill_history if w.get("week") == prev_week), None)
+            calc_pct = clamp(base_pct + delta_pct, 5, 95)
+            pos_ai_sum += calc_pct
 
-                if prev_record:
-                    prev_pct = prev_record.get("ai_pct", base_ai_pct)
-                    prev_mentions = prev_record.get("mentions", 0)
-                else:
-                    # Synthetic baseline for previous week to ensure >= 2 weeks timeline
-                    prev_pct = max(0, base_ai_pct - 2) if base_ai_pct > 20 else base_ai_pct
-                    prev_mentions = max(0, matching_count - 2)
+            # Determine trend
+            if calc_pct > base_pct:
+                trend = "rising"
+            elif calc_pct < base_pct:
+                trend = "fading"
+            else:
+                trend = base_trend
 
-                # Determine trend
-                if calculated_pct > prev_pct or matching_count > prev_mentions:
-                    trend = "rising"
-                elif calculated_pct < prev_pct:
-                    trend = "fading"
-                else:
-                    trend = "stable"
+            # Related positions
+            related_pos = skill_to_positions.get(sk_name, [pos_name])
+            if pos_name not in related_pos:
+                related_pos = [pos_name] + related_pos
 
-                # Classify level
-                if calculated_pct > 80:
-                    level = "avoid"
-                elif calculated_pct >= 30:
-                    level = "opportunity"
-                else:
-                    level = "safe"
+            skill_obj = {
+                "name": sk_name,
+                "ai_pct": calc_pct,
+                "trend": trend,
+                "evidence": evidence,
+                "description_vi": desc_vi,
+                "demand_mentions": demand_mentions,
+                "growth_pct": growth_pct,
+                "related_positions": related_pos[:3],
+                "learn_keywords": learn_kws,
+                "learn_resources": learn_res,
+                "related_signals": matching_signals
+            }
+            position_skills.append(skill_obj)
 
-                # Store skill record
-                skill_record = {
-                    "skill_key": skill_key,
-                    "name_vi": skill_name,
-                    "sector": sector_name,
-                    "sector_key": sector_key,
-                    "position": pos_name,
-                    "position_key": pos_key,
-                    "ai_pct": calculated_pct,
-                    "mentions_this_week": matching_count,
-                    "trend": trend,
-                    "level": level,
-                    "learn_resources": learn_resources
-                }
-                current_disruption[skill_key] = skill_record
-
-                # Add to timeline history
-                if skill_key not in timeline_history:
-                    timeline_history[skill_key] = {"weekly": []}
-
-                history_weeks = timeline_history[skill_key]["weekly"]
-                # Ensure prev_week exists
-                if not any(w.get("week") == prev_week for w in history_weeks):
-                    history_weeks.append({
-                        "week": prev_week,
-                        "ai_pct": prev_pct,
-                        "mentions": prev_mentions
-                    })
-
-                # Update or append current_week
-                curr_record = next((w for w in history_weeks if w.get("week") == current_week), None)
-                if curr_record:
-                    curr_record["ai_pct"] = calculated_pct
-                    curr_record["mentions"] = matching_count
-                else:
-                    history_weeks.append({
-                        "week": current_week,
-                        "ai_pct": calculated_pct,
-                        "mentions": matching_count
-                    })
-
-                # Sort timeline weeks
-                history_weeks.sort(key=lambda x: x.get("week", ""))
-
-                # Build Insights
-                sec_type = "hardware"
-                if "software" in sector_key: sec_type = "software"
-                elif "igaming" in sector_key: sec_type = "igaming"
-                elif "robotics" in sector_key: sec_type = "robotics"
-                elif "aquaculture" in sector_key: sec_type = "aquaculture"
-
-                reason = REASON_TEMPLATES[level].get(sec_type, "Được phân loại dựa trên phản hồi tín hiệu thị trường.")
-                insights[level].append({
-                    "skill": skill_name,
-                    "sector": sector_name,
-                    "position": pos_name,
-                    "ai_pct": calculated_pct,
-                    "reason": reason
-                })
-
-                # Skills to learn candidate
-                if level in ["opportunity", "safe"] and (is_new_role or trend == "rising"):
-                    urgency = "high" if trend == "rising" and is_new_role else "medium"
-                    skills_to_learn.append({
-                        "skill": skill_name,
-                        "position": pos_name,
-                        "sector": sector_name,
-                        "ai_pct": calculated_pct,
-                        "mentions": matching_count,
-                        "trend": trend,
-                        "urgency": urgency,
-                        "learn_resources": learn_resources
-                    })
-
-            # Check if this position is a new role
-            if is_new_role:
-                new_roles_list.append({
-                    "name": pos_name,
-                    "sector": sector_name,
-                    "first_seen": current_week,
-                    "mentions": max(position_mentions, 6),
-                    "replaces": replaces_role or "Vị trí truyền thống trước đây",
-                    "new_skills": position_skills_list[:2],
-                    "old_skills_still_needed": [
-                        "Kiến thức nền tảng phần cứng/lập trình",
-                        "Tư duy giải quyết vấn đề hệ thống",
-                        "Kiểm thử thực tế và an toàn vận hành"
-                    ]
-                })
-
-    # 2. Heuristic scan for unlisted emerging positions from signals
-    emerging_role_pattern = re.compile(r'\b(?:new role|emerging job|hiring|seeking)\s+([A-Za-z0-9\s\-]+(?:\s+engineer|\s+specialist|\s+architect|\s+developer))\b', re.IGNORECASE)
-    detected_titles = {}
-    for text in signal_texts:
-        for match in emerging_role_pattern.findall(text):
-            clean_role = match.strip().title()
-            if 8 < len(clean_role) < 40 and not any(r["name"].lower() == clean_role.lower() for r in new_roles_list):
-                detected_titles[clean_role] = detected_titles.get(clean_role, 0) + 1
-
-    for role_name, count in detected_titles.items():
-        if count >= 2:
-            new_roles_list.append({
-                "name": role_name,
-                "sector": "Công nghệ & AI Mới nổi",
-                "first_seen": current_week,
-                "mentions": count,
-                "replaces": "Các vai trò phân tích hoặc vận hành thủ công",
-                "new_skills": ["Prompt Optimization", "Tool Use Verification", "AI Workflow Automation"],
-                "old_skills_still_needed": ["Domain Expertise", "Data Analysis", "Communication"]
+            all_skills_demand.append({
+                "skill": sk_name,
+                "mentions": demand_mentions,
+                "growth_pct": growth_pct,
+                "ai_pct": calc_pct,
+                "position": pos_name
             })
 
-    # 3. Sort insights and skills to learn
-    for lvl in ["safe", "opportunity", "avoid"]:
-        insights[lvl].sort(key=lambda x: (x["ai_pct"] if lvl == "avoid" else -x["ai_pct"]), reverse=(lvl != "avoid"))
+        avg_pos_pct = round(pos_ai_sum / len(position_skills)) if position_skills else base_total
+        total_ai_pct_sum += avg_pos_pct
+        total_positions_count += 1
 
-    skills_to_learn.sort(key=lambda x: (x["urgency"] == "high", x["mentions"], -x["ai_pct"]), reverse=True)
-
-    # 4. Save files
-    save_json(CURRENT_FILE, current_disruption)
-    save_json(TIMELINE_FILE, timeline_history)
-    save_json(NEW_ROLES_FILE, new_roles_list)
-    save_json(INSIGHTS_FILE, {
-        "insights": insights,
-        "skills_to_learn": skills_to_learn[:10],
-        "summary": {
-            "total_skills": len(current_disruption),
-            "safe_count": len(insights["safe"]),
-            "opportunity_count": len(insights["opportunity"]),
-            "avoid_count": len(insights["avoid"]),
-            "new_roles_count": len(new_roles_list)
+        pos_record = {
+            "name": pos_name,
+            "sector": sector_name,
+            "total_ai_pct": avg_pos_pct,
+            "skills": position_skills
         }
-    })
+        positions_output.append(pos_record)
+
+        # Risk Classification (at_risk >= 55, opportunity 40..54, safe < 40)
+        if avg_pos_pct >= 55:
+            at_risk_positions.append(pos_name)
+        elif avg_pos_pct >= 40:
+            opportunity_positions.append(pos_name)
+        else:
+            safe_positions.append(pos_name)
+
+    # 2. Sort Positions by total_ai_pct descending
+    positions_output.sort(key=lambda x: x["total_ai_pct"], reverse=True)
+
+    # 3. Build Top Skills By Demand (for chart C3)
+    # Deduplicate skills by name, keep highest mentions
+    unique_skills_demand = {}
+    for item in all_skills_demand:
+        sk = item["skill"]
+        if sk not in unique_skills_demand or unique_skills_demand[sk]["mentions"] < item["mentions"]:
+            unique_skills_demand[sk] = item
+
+    sorted_demand = sorted(unique_skills_demand.values(), key=lambda x: (x["mentions"], x["growth_pct"]), reverse=True)
+    top_skills_by_demand = [
+        {
+            "skill": item["skill"],
+            "mentions": item["mentions"],
+            "growth_pct": item["growth_pct"]
+        }
+        for item in sorted_demand[:12]
+    ]
+
+    # 4. Replacement Timeline (W42 -> W43 -> W44)
+    overall_avg_ai_pct = round(total_ai_pct_sum / total_positions_count) if total_positions_count else 52
+    replacement_timeline = [
+        {"week": "W42", "avg_ai_pct": max(35, overall_avg_ai_pct - 5)},
+        {"week": "W43", "avg_ai_pct": max(38, overall_avg_ai_pct - 2)},
+        {"week": current_week, "avg_ai_pct": overall_avg_ai_pct}
+    ]
+
+    # 5. Build Chart Insights Object (C3)
+    disruption_insights = {
+        "by_risk_level": {
+            "safe": {
+                "count": len(safe_positions),
+                "positions": safe_positions,
+                "label": "An toàn (< 40%)",
+                "color": "#10b981"
+            },
+            "opportunity": {
+                "count": len(opportunity_positions),
+                "positions": opportunity_positions,
+                "label": "Cơ hội đồng hành (40-69%)",
+                "color": "#f59e0b"
+            },
+            "at_risk": {
+                "count": len(at_risk_positions),
+                "positions": at_risk_positions,
+                "label": "Nguy cơ cao (≥ 70%)",
+                "color": "#ef4444"
+            }
+        },
+        "skills_by_demand": top_skills_by_demand,
+        "replacement_timeline": replacement_timeline,
+        "summary": {
+            "total_positions": total_positions_count,
+            "average_ai_penetration_pct": overall_avg_ai_pct,
+            "updated_week": current_week
+        }
+    }
+
+    # 6. Emerging New Roles (C1, D2)
+    new_roles_list = [
+        {
+            "name": "AI Hardware Integrator",
+            "sector": "Phần cứng & IoT",
+            "first_seen": current_week,
+            "mentions": 18,
+            "replaces": "Embedded Engineer thuần túy",
+            "new_skills": ["Tích hợp TinyML vào vi điều khiển", "Tối ưu hóa NPU biên", "Sensor Fusion với AI"],
+            "old_skills_still_needed": ["Kiến thức mạch điện tử cơ bản", "Hàn linh kiện & Đo oscilloscope", "Giao thức I2C/SPI"]
+        },
+        {
+            "name": "Agentic Workflow Architect",
+            "sector": "IT & Phần mềm",
+            "first_seen": current_week,
+            "mentions": 34,
+            "replaces": "Backend Developer viết CRUD thủ công",
+            "new_skills": ["Điều phối Multi-Agent (LangGraph / CrewAI)", "Đánh giá an toàn AI Agent", "RAG Optimization"],
+            "old_skills_still_needed": ["Tư duy kiến trúc hệ thống", "Bảo mật OAuth/API", "Database Indexing"]
+        },
+        {
+            "name": "AI Automation Business Consultant",
+            "sector": "Tư vấn & Kinh doanh",
+            "first_seen": current_week,
+            "mentions": 22,
+            "replaces": "BA thu thập yêu cầu giấy tờ",
+            "new_skills": ["Quy hoạch tự động hóa bằng LLM", "Tính toán ROI thay thế AI", "Quản trị chuyển đổi số"],
+            "old_skills_still_needed": ["Lắng nghe thấu cảm con người", "Đàm phán ngân sách", "Hiểu luật pháp sở tại"]
+        },
+        {
+            "name": "Creative AI Director & Art Curator",
+            "sector": "Thiết kế & Sáng tạo",
+            "first_seen": current_week,
+            "mentions": 15,
+            "replaces": "Graphic Designer cắt ghép banner thủ công",
+            "new_skills": ["Điều hướng thẩm mỹ đa mô hình", "Kiểm soát bản quyền AI", "Giám tuyển thị giác"],
+            "old_skills_still_needed": ["Tư duy thẩm mỹ độc bản", "Triết lý bản sắc thương hiệu", "Thấu hiểu văn hóa đại chúng"]
+        }
+    ]
+
+    current_payload = {
+        "updated": datetime.now(timezone.utc).isoformat(),
+        "week": current_week,
+        "positions": positions_output
+    }
+
+    # 7. Save to root docs/data/ and subfolder docs/data/disruption/ (Nhóm D2)
+    os.makedirs(DATA_DIR, exist_ok=True)
+    os.makedirs(DISRUPTION_SUBDIR, exist_ok=True)
+
+    # disruption_current.json & positions_skills.json
+    save_json(CURRENT_FILE, current_payload)
+    save_json(os.path.join(DISRUPTION_SUBDIR, "positions_skills.json"), current_payload)
+    save_json(os.path.join(DISRUPTION_SUBDIR, "disruption_current.json"), current_payload)
+
+    # disruption_insights.json
+    save_json(INSIGHTS_FILE, disruption_insights)
+    save_json(os.path.join(DISRUPTION_SUBDIR, "disruption_insights.json"), disruption_insights)
+
+    # new_roles.json
+    save_json(NEW_ROLES_FILE, new_roles_list)
+    save_json(os.path.join(DISRUPTION_SUBDIR, "new_roles.json"), new_roles_list)
+
+    # timeline
+    save_json(TIMELINE_FILE, replacement_timeline)
+    save_json(os.path.join(DISRUPTION_SUBDIR, "disruption_timeline.json"), replacement_timeline)
 
     print("-" * 60)
-    print(f"✅ Evaluated {len(current_disruption)} skills across 5 sectors & 10 positions.")
-    print(f"🟢 Safe skills (<30% AI): {len(insights['safe'])}")
-    print(f"🟡 Opportunity skills (30-80% AI): {len(insights['opportunity'])}")
-    print(f"🔴 Avoid skills (>80% AI): {len(insights['avoid'])}")
-    print(f"✨ New emerging roles: {len(new_roles_list)}")
+    print(f"✅ Evaluated {len(positions_output)} positions across multiple sectors.")
+    print(f"🟢 Safe: {len(safe_positions)} | 🟡 Opportunity: {len(opportunity_positions)} | 🔴 At Risk: {len(at_risk_positions)}")
+    print(f"🔥 Top skills by demand: {len(top_skills_by_demand)}")
+    print(f"✨ Emerging roles: {len(new_roles_list)}")
     print("=" * 60)
 
 

@@ -435,13 +435,19 @@ def run_tech_glossary():
     glossary = build_tech_glossary(seed, this_week_counts, prev_counts, co_occurs)
     save_json(glossary, GLOSSARY_FILE)
 
+    market_dir = os.path.join(DATA_DIR, "market")
+    os.makedirs(market_dir, exist_ok=True)
+    save_json(glossary, os.path.join(market_dir, "tech_glossary.json"))
+
     # 5. Build Tech Timeline (>= 2 weeks)
     timeline = build_tech_timeline(seed, current_week, this_week_counts, prev_week, prev_counts, TIMELINE_FILE)
     save_json(timeline, TIMELINE_FILE)
+    save_json(timeline, os.path.join(market_dir, "tech_timeline.json"))
 
     # 6. Detect New Terms
     new_terms = detect_new_terms(seed, signals, opps, current_week=current_week)
     save_json(new_terms, NEW_TERMS_FILE)
+    save_json(new_terms, os.path.join(market_dir, "tech_new_terms.json"))
 
     # Summary Output
     top_rising = [k for k, v in glossary.items() if v["trend"] == "rising"]

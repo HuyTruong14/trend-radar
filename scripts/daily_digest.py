@@ -29,6 +29,14 @@ if SCRIPT_DIR not in sys.path:
 
 import notify
 
+try:
+    from summary_vi import translate_title_vi
+except ImportError:
+    try:
+        from scripts.summary_vi import translate_title_vi
+    except ImportError:
+        translate_title_vi = None
+
 BASE_DIR = os.path.dirname(SCRIPT_DIR)
 DATA_DIR = os.path.join(BASE_DIR, "docs", "data")
 DEFAULT_DASHBOARD_URL = os.environ.get("DASHBOARD_URL", "https://huytruong14.github.io/trend-radar/")
@@ -171,6 +179,7 @@ def compile_daily_digest(target_date=None, dashboard_url=DEFAULT_DASHBOARD_URL):
         top_opportunities.append({
             "id": oid,
             "title": opp.get("title", "").strip(),
+            "title_vi": opp.get("title_vi") or (translate_title_vi(opp.get("title", ""), opp.get("summary", "")) if translate_title_vi else opp.get("title", "").strip()),
             "total": opp.get("total", 0),
             "stage": opp.get("stage", "watch"),
             "summary_vi": (opp.get("summary_vi") or opp.get("summary") or "").strip(),
@@ -233,6 +242,7 @@ def compile_daily_digest(target_date=None, dashboard_url=DEFAULT_DASHBOARD_URL):
         d_copy = dict(d)
         d_copy["formatted_text"] = line
         d_copy["sector_vi"] = SECTOR_MAP_VI.get(d.get("sector"), "Công nghệ")
+        d_copy["title_vi"] = translate_title_vi(d.get("title", ""), "") if translate_title_vi else d.get("title", "")
         funding_deals.append(d_copy)
 
     # 6. Pillar 3: Chủ đề nóng (Top 3 across Reddit, Twitter, Google Trends)
@@ -323,7 +333,17 @@ def compile_daily_digest(target_date=None, dashboard_url=DEFAULT_DASHBOARD_URL):
         "triple_signals": triple_count,
         "triple_signal_theme": triple_theme,
         "rising": rising_count,
-        "fading": fading_count
+        "fading": fading_count,
+        "labels_vi": {
+            "total_signals": "Tổng tín hiệu mới",
+            "new_opportunities": "Cơ hội mới",
+            "build_ready": "Sẵn sàng triển khai",
+            "research": "Cần nghiên cứu",
+            "watch": "Theo dõi",
+            "triple_signals": "Tín hiệu 3 chiều",
+            "rising": "Tăng trưởng nhanh",
+            "fading": "Hạ nhiệt"
+        }
     }
 
     # 8. Render Telegram Text strictly according to specification
@@ -451,6 +471,12 @@ def save_digest_files(digest_payload):
     with open(latest_filepath, "w", encoding="utf-8") as f:
         json.dump(digest_payload, f, ensure_ascii=False, indent=2)
     print(f"[daily_digest] Wrote latest digest to {latest_filepath}")
+
+    # Also save to docs/data/news/digest_latest.json (Phase 17 - Nhóm D2)
+    news_dir = os.path.join(DATA_DIR, "news")
+    os.makedirs(news_dir, exist_ok=True)
+    with open(os.path.join(news_dir, "digest_latest.json"), "w", encoding="utf-8") as f:
+        json.dump(digest_payload, f, ensure_ascii=False, indent=2)
 
     return dated_filepath, latest_filepath
 

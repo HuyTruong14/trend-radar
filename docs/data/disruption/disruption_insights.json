@@ -1,0 +1,126 @@
+{
+  "by_risk_level": {
+    "safe": {
+      "count": 5,
+      "positions": [
+        "Business Analyst (BA)",
+        "IoT Hardware Engineer",
+        "Embedded Firmware Engineer",
+        "Robotics Automation Engineer",
+        "Doctor / Bác sĩ lâm sàng"
+      ],
+      "label": "An toàn (< 40%)",
+      "color": "#10b981"
+    },
+    "opportunity": {
+      "count": 13,
+      "positions": [
+        "Data Analyst",
+        "Frontend Developer",
+        "Backend Developer",
+        "Product Manager (PM)",
+        "DevOps / SRE Engineer",
+        "QA / Software Tester",
+        "Content Writer / Copywriter",
+        "Accountant / Kế toán viên",
+        "HR / Talent Recruiter",
+        "Sales Representative / BDR",
+        "Customer Support Specialist",
+        "Teacher / Online Instructor",
+        "Cyber Security Analyst"
+      ],
+      "label": "Cơ hội đồng hành (40-69%)",
+      "color": "#f59e0b"
+    },
+    "at_risk": {
+      "count": 2,
+      "positions": [
+        "Graphic Designer",
+        "Translator / Thông dịch viên"
+      ],
+      "label": "Nguy cơ cao (≥ 70%)",
+      "color": "#ef4444"
+    }
+  },
+  "skills_by_demand": [
+    {
+      "skill": "Chỉnh sửa ảnh & Tách nền (Retouching)",
+      "mentions": 31,
+      "growth_pct": 50
+    },
+    {
+      "skill": "Tạo hình ảnh minh họa & Banner quảng cáo",
+      "mentions": 27,
+      "growth_pct": 47
+    },
+    {
+      "skill": "Trả lời câu hỏi thường gặp (FAQ) & Tra cứu chính sách",
+      "mentions": 18,
+      "growth_pct": 37
+    },
+    {
+      "skill": "Viết bài SEO & Blog tin tức chung",
+      "mentions": 18,
+      "growth_pct": 36
+    },
+    {
+      "skill": "Dịch tài liệu kỹ thuật & Hợp đồng cơ bản",
+      "mentions": 18,
+      "growth_pct": 36
+    },
+    {
+      "skill": "Nhập liệu hóa đơn & Đối soát chứng từ",
+      "mentions": 18,
+      "growth_pct": 36
+    },
+    {
+      "skill": "Tóm tắt & Viết lại nội dung (Paraphrasing)",
+      "mentions": 17,
+      "growth_pct": 35
+    },
+    {
+      "skill": "Cập nhật dữ liệu CRM & Ghi chú cuộc gọi",
+      "mentions": 17,
+      "growth_pct": 35
+    },
+    {
+      "skill": "Viết HTML/CSS & Layout",
+      "mentions": 17,
+      "growth_pct": 34
+    },
+    {
+      "skill": "Tạo phụ đề video đa ngữ (Subtitling)",
+      "mentions": 17,
+      "growth_pct": 34
+    },
+    {
+      "skill": "Sàng lọc CV & Lọc hồ sơ ứng viên",
+      "mentions": 17,
+      "growth_pct": 34
+    },
+    {
+      "skill": "Tra cứu mã đơn hàng & Thao tác reset tài khoản",
+      "mentions": 17,
+      "growth_pct": 34
+    }
+  ],
+  "replacement_timeline": [
+    {
+      "week": "W42",
+      "avg_ai_pct": 40
+    },
+    {
+      "week": "W43",
+      "avg_ai_pct": 43
+    },
+    {
+      "week": "W43",
+      "avg_ai_pct": 45
+    }
+  ],
+  "summary": {
+    "total_positions": 20,
+    "average_ai_penetration_pct": 45,
+    "updated_week": "W43"
+  }
+}

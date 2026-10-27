@@ -20,10 +20,13 @@ DATA_DIR = os.path.join(BASE_DIR, "docs", "data")
 LAST_UPDATED_FILE = os.path.join(DATA_DIR, "last_updated.json")
 
 
-def update_last_updated(signals_count=None, status="success"):
-    """Update docs/data/last_updated.json with current VN timestamp and signals count."""
+def update_last_updated(signals_count=None, status="success", schedule="every_6_hours"):
+    """Update docs/data/last_updated.json with schedule, current VN timestamp, and next run."""
     os.makedirs(DATA_DIR, exist_ok=True)
-    vn_now = datetime.now(timezone(timedelta(hours=7))).isoformat()
+    vn_tz = timezone(timedelta(hours=7))
+    vn_now_dt = datetime.now(vn_tz)
+    vn_now = vn_now_dt.isoformat()
+    vn_next = (vn_now_dt + timedelta(hours=6)).isoformat()
 
     if signals_count is None:
         try:
@@ -38,7 +41,9 @@ def update_last_updated(signals_count=None, status="success"):
             signals_count = 0
 
     payload = {
+        "schedule": schedule,
         "last_run": vn_now,
+        "next_run": vn_next,
         "signals_count": signals_count,
         "status": status
     }

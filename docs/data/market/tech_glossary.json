@@ -1,0 +1,662 @@
+{
+  "ESP32": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển WiFi/BLE giá rẻ, phổ biến nhất cho IoT và thiết bị thông minh",
+    "mentions_this_week": 28,
+    "mentions_prev_week": 15,
+    "change_pct": 87,
+    "trend": "rising",
+    "co_occurs_with": {
+      "MQTT": 15,
+      "ESP32-S3": 8,
+      "TinyML": 8,
+      "Turbidity": 6,
+      "TDS": 6,
+      "LoRaWAN": 6,
+      "Ultrasonic": 2,
+      "Modbus": 2
+    }
+  },
+  "Edge AI": {
+    "type": "AI/ML",
+    "description_vi": "Trí tuệ nhân tạo xử lý trực tiếp tại thiết bị biên (on-device) giảm độ trễ và bảo mật",
+    "mentions_this_week": 19,
+    "mentions_prev_week": 14,
+    "change_pct": 36,
+    "trend": "rising",
+    "co_occurs_with": {
+      "TinyML": 9,
+      "Turbidity": 2
+    }
+  },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 16,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RAG": 2
+    }
+  },
+  "TinyML": {
+    "type": "AI/ML",
+    "description_vi": "Kỹ thuật chạy mô hình máy học trực tiếp trên vi điều khiển không cần điện toán đám mây",
+    "mentions_this_week": 15,
+    "mentions_prev_week": 10,
+    "change_pct": 50,
+    "trend": "rising",
+    "co_occurs_with": {
+      "Edge AI": 9,
+      "ESP32": 8
+    }
+  },
+  "LoRaWAN": {
+    "type": "Protocol",
+    "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
+    "mentions_this_week": 14,
+    "mentions_prev_week": 9,
+    "change_pct": 56,
+    "trend": "rising",
+    "co_occurs_with": {
+      "ESP32": 6,
+      "DO (Dissolved Oxygen)": 5,
+      "LoRA": 4
+    }
+  },
+  "RISC-V": {
+    "type": "Hardware",
+    "description_vi": "Kiến trúc tập lệnh (ISA) mở cho phép tự do thiết kế chip không phụ thuộc bản quyền",
+    "mentions_this_week": 11,
+    "mentions_prev_week": 8,
+    "change_pct": 38,
+    "trend": "rising",
+    "co_occurs_with": {
+      "BLE": 2
+    }
+  },
+  "Humanoid": {
+    "type": "Robotics",
+    "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
+    "mentions_this_week": 10,
+    "mentions_prev_week": 7,
+    "change_pct": 43,
+    "trend": "rising",
+    "co_occurs_with": {
+      "ROS2": 5
+    }
+  },
+  "ROS2": {
+    "type": "Platform",
+    "description_vi": "Hệ điều hành robot thế hệ 2 có tính phân tán, bảo mật và hỗ trợ thời gian thực",
+    "mentions_this_week": 9,
+    "mentions_prev_week": 7,
+    "change_pct": 29,
+    "trend": "stable",
+    "co_occurs_with": {
+      "Humanoid": 5,
+      "LiDAR": 4
+    }
+  },
+  "TDS": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến đo tổng chất rắn hòa tan trong nước (Total Dissolved Solids)",
+    "mentions_this_week": 9,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 6,
+      "Turbidity": 4,
+      "Arduino": 2,
+      "Temperature Sensor": 2,
+      "ESP32-S3": 2,
+      "Salinity": 1
+    }
+  },
+  "ESP32-S3": {
+    "type": "Hardware",
+    "description_vi": "Chip ESP32 chuyên xử lý AI tăng tốc vector và giao tiếp camera/màn hình",
+    "mentions_this_week": 8,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 8,
+      "MQTT": 4,
+      "Turbidity": 2,
+      "Ultrasonic": 2,
+      "TDS": 2,
+      "Modbus": 2
+    }
+  },
+  "RP2350": {
+    "type": "Hardware",
+    "description_vi": "Thế hệ vi điều khiển kép ARM Cortex-M33 và Hazard3 RISC-V mới của Raspberry Pi",
+    "mentions_this_week": 8,
+    "mentions_prev_week": 5,
+    "change_pct": 60,
+    "trend": "rising",
+    "co_occurs_with": {
+      "RP2040": 4,
+      "Raspberry Pi": 4,
+      "MicroPython": 2
+    }
+  },
+  "Arduino": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
+    "mentions_this_week": 8,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "TDS": 2,
+      "Temperature Sensor": 2
+    }
+  },
+  "Turbidity": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến quang học đo độ đục của nước để đánh giá chất lượng và phù sa lơ lửng",
+    "mentions_this_week": 8,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 6,
+      "TDS": 4,
+      "ESP32-S3": 2,
+      "MQTT": 2,
+      "Ultrasonic": 2,
+      "Edge AI": 2
+    }
+  },
+  "MQTT": {
+    "type": "Protocol",
+    "description_vi": "Giao thức truyền tin publish/subscribe nhẹ tối ưu cho mạng IoT băng thông thấp",
+    "mentions_this_week": 7,
+    "mentions_prev_week": 4,
+    "change_pct": 75,
+    "trend": "rising",
+    "co_occurs_with": {
+      "ESP32": 15,
+      "ESP32-S3": 4,
+      "Turbidity": 2,
+      "Ultrasonic": 2,
+      "WebSockets": 1
+    }
+  },
+  "Raspberry Pi": {
+    "type": "Hardware",
+    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2350": 4,
+      "RP2040": 2,
+      "MicroPython": 2
+    }
+  },
+  "Modbus": {
+    "type": "Protocol",
+    "description_vi": "Giao thức truyền thông công nghiệp chuẩn mực nối PLC, cảm biến và thiết bị đo",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 2,
+      "ESP32-S3": 2
+    }
+  },
+  "RAG": {
+    "type": "AI/ML",
+    "description_vi": "Kỹ thuật kết hợp truy xuất tri thức ngoài (Retrieval) với mô hình tạo sinh (Generation)",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "LLM": 2
+    }
+  },
+  "LoRA": {
+    "type": "AI/ML",
+    "description_vi": "Phương pháp tinh chỉnh mô hình ngôn ngữ bằng ma trận rank thấp siêu tiết kiệm bộ nhớ",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "LoRaWAN": 4
+    }
+  },
+  "Ultrasonic": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến sóng siêu âm đo khoảng cách và mực nước bồn chứa/ao nuôi không tiếp xúc",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 2,
+      "ESP32-S3": 2,
+      "MQTT": 2,
+      "Turbidity": 2,
+      "Actuator": 2
+    }
+  },
+  "DO (Dissolved Oxygen)": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến oxy hòa tan (quang học hoặc galvanic) giám sát mức dưỡng khí trong nước ao",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "LoRaWAN": 5
+    }
+  },
+  "RP2040": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển lõi kép Cortex-M0+ đầu tiên do Raspberry Pi tự thiết kế",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2350": 4,
+      "Raspberry Pi": 2
+    }
+  },
+  "BLE": {
+    "type": "Protocol",
+    "description_vi": "Bluetooth năng lượng thấp (Bluetooth Low Energy) kết nối tầm gần tiết kiệm pin",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 1,
+    "change_pct": 100,
+    "trend": "rising",
+    "co_occurs_with": {
+      "RISC-V": 2
+    }
+  },
+  "Matter": {
+    "type": "Protocol",
+    "description_vi": "Tiêu chuẩn kết nối nhà thông minh hợp nhất trên nền tảng IPv6, Thread và WiFi",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "NB-IoT": {
+    "type": "Protocol",
+    "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "Computer Vision": {
+    "type": "AI/ML",
+    "description_vi": "Thị giác máy tính trích xuất thông tin, nhận dạng vật thể và hành vi từ hình ảnh/video",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 1,
+    "change_pct": 100,
+    "trend": "rising",
+    "co_occurs_with": {}
+  },
+  "MicroPython": {
+    "type": "Platform",
+    "description_vi": "Bản triển khai ngôn ngữ Python 3 tối giản chạy trực tiếp trên vi điều khiển trần",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2350": 2,
+      "Raspberry Pi": 2
+    }
+  },
+  "Docker": {
+    "type": "Platform",
+    "description_vi": "Nền tảng ảo hóa container đóng gói ứng dụng chạy đồng nhất từ máy tính đến edge gateway",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "Temperature Sensor": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến nhiệt độ công nghiệp (DS18B20 chống nước hoặc PT100) giám sát nhiệt môi trường",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "Arduino": 2,
+      "TDS": 2
+    }
+  },
+  "Actuator": {
+    "type": "Hardware",
+    "description_vi": "Cơ cấu chấp hành (động cơ servo, van điện từ, relay) thực hiện hành vi vật lý",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "Ultrasonic": 2
+    }
+  },
+  "WebSockets": {
+    "type": "Protocol",
+    "description_vi": "Kênh liên lạc song công thời gian thực giữa máy chủ và trình duyệt hoặc gateway",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "MQTT": 1
+    }
+  },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "LangChain": {
+    "type": "AI/ML",
+    "description_vi": "Framework kết nối LLM với cơ sở dữ liệu ngoài, công cụ thực thi và chuỗi tác vụ AI",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "Salinity": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến đo độ mặn của nước lợ và nước biển trong ao tôm cá",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "TDS": 1
+    }
+  },
+  "Water Level": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến giám sát mức nước và cảnh báo tràn ngập hoặc cạn ao",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 1
+    }
+  },
+  "Drone": {
+    "type": "Robotics",
+    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "ESP32-C6": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển RISC-V hỗ trợ WiFi 6, Zigbee, Thread và Matter",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "STM32": {
+    "type": "Hardware",
+    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 1,
+    "change_pct": -100,
+    "trend": "fading",
+    "co_occurs_with": {}
+  },
+  "Jetson": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng máy tính nhúng tăng tốc GPU của NVIDIA cho AI thị giác và robot",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "FPGA": {
+    "type": "Hardware",
+    "description_vi": "Mạch logic khả trình có độ trễ cực thấp cho xử lý tín hiệu và tăng tốc phần cứng",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "Coral": {
+    "type": "Hardware",
+    "description_vi": "Module tăng tốc Edge TPU của Google để suy luận mô hình học sâu tại biên",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "Nordic nRF52": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "Zigbee": {
+    "type": "Protocol",
+    "description_vi": "Tiêu chuẩn mạng lưới không dây (mesh) bảo mật cao cho tự động hóa gia đình",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "CAN bus": {
+    "type": "Protocol",
+    "description_vi": "Mạng truyền thông vi sai chống nhiễu chuyên dùng trong ô tô và tự động hóa",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "CoAP": {
+    "type": "Protocol",
+    "description_vi": "Giao thức ứng dụng tối giản dựa trên UDP cho các nút cảm biến cực nhỏ",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "YOLO": {
+    "type": "AI/ML",
+    "description_vi": "Họ mô hình phát hiện vật thể thời gian thực tốc độ cao và độ chính xác vượt trội",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "SLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ nhỏ (<7B tham số) tối ưu để chạy offline trên máy tính cá nhân hoặc chip biên",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "Ollama": {
+    "type": "AI/ML",
+    "description_vi": "Công cụ chạy mô hình ngôn ngữ lớn cục bộ (local LLM) nhanh chóng và nhẹ nhàng",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "Whisper": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình nhận dạng giọng nói tự động (ASR) đa ngôn ngữ độ chính xác cao của OpenAI",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "TensorFlow Lite": {
+    "type": "AI/ML",
+    "description_vi": "Bộ thư viện tối ưu hóa suy luận mô hình TensorFlow cho thiết bị di động và nhúng",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "PyTorch": {
+    "type": "AI/ML",
+    "description_vi": "Khung làm việc học sâu phổ biến hàng đầu trong nghiên cứu và triển khai mô hình AI",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "Node-RED": {
+    "type": "Platform",
+    "description_vi": "Công cụ lập trình trực quan luồng dữ liệu dựa trên Node.js cho kết nối thiết bị phần cứng",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "PlatformIO": {
+    "type": "Platform",
+    "description_vi": "Môi trường phát triển và quản lý thư viện chuyên nghiệp cho lập trình vi điều khiển",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "FreeRTOS": {
+    "type": "Platform",
+    "description_vi": "Hệ điều hành thời gian thực (RTOS) siêu nhẹ và phổ biến nhất cho vi điều khiển",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "Zephyr": {
+    "type": "Platform",
+    "description_vi": "Hệ điều hành RTOS bảo mật mã nguồn mở của Linux Foundation hỗ trợ đa kiến trúc",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "Grafana": {
+    "type": "Platform",
+    "description_vi": "Nền tảng trực quan hóa số liệu và dashboard cảnh báo số đo thời gian thực",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "InfluxDB": {
+    "type": "Platform",
+    "description_vi": "Cơ sở dữ liệu chuỗi thời gian (time-series) tối ưu để ghi nhận và truy vấn dữ liệu cảm biến",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "pH Sensor": {
+    "type": "Sensor",
+    "description_vi": "Đầu dò điện hóa đo độ kiềm/axit của nước, chỉ số sinh tồn trong nuôi trồng thủy sản",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "EC (Electrical Conductivity)": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến đo độ dẫn điện của dung dịch để xác định hàm lượng ion và độ mặn",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "IMU": {
+    "type": "Sensor",
+    "description_vi": "Khối đo quán tính (gia tốc kế + con quay hồi chuyển) định vị góc nghiêng và chuyển động",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "LiDAR": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến quét laser đo khoảng cách tạo bản đồ không gian 3D cho xe tự hành và robot",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {
+      "ROS2": 4
+    }
+  },
+  "Flow Meter": {
+    "type": "Sensor",
+    "description_vi": "Lưu lượng kế đo thể tích dòng chảy nước và hóa chất theo thời gian",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "AMR": {
+    "type": "Robotics",
+    "description_vi": "Robot di động tự hành (Autonomous Mobile Robot) vận chuyển hàng trong kho và trang trại",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  }
+}

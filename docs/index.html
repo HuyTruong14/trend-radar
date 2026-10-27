@@ -3523,6 +3523,7 @@
       color: #ffffff;
       box-shadow: 0 0 14px rgba(239, 68, 68, 0.3);
       transform: translateY(-1px);
+    }
     .level-badge {
       display: inline-flex;
       align-items: center;
@@ -3547,6 +3548,284 @@
       background: rgba(16, 185, 129, 0.2);
       color: #34d399;
       border: 1px solid rgba(16, 185, 129, 0.4);
+    }
+
+    /* Phase 17 — 4 Main Navigation Tabs */
+    .main-nav-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px;
+      margin-bottom: 24px;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      position: sticky;
+      top: 76px;
+      z-index: 90;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .main-nav-tabs::-webkit-scrollbar { display: none; }
+    .main-nav-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: var(--radius-full);
+      color: var(--fg-dim);
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition-fast);
+    }
+    .main-nav-tab:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--fg);
+    }
+    .main-nav-tab.active {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(168, 85, 247, 0.25));
+      border-color: rgba(129, 140, 248, 0.45);
+      color: #ffffff;
+      box-shadow: 0 2px 14px rgba(99, 102, 241, 0.3);
+    }
+
+    /* Read Status & Archive Toolbar */
+    .signals-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+    }
+    .status-filter-pills {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .status-pill-btn {
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid transparent;
+      color: var(--fg-dim);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .status-pill-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--fg);
+    }
+    .status-pill-btn.active {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: rgba(99, 102, 241, 0.45);
+      color: #c7d2fe;
+    }
+    .archive-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-md);
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .archive-btn:hover {
+      background: rgba(16, 185, 129, 0.22);
+      border-color: rgba(16, 185, 129, 0.5);
+      color: #fff;
+    }
+
+    /* Read Status Badges and Item Dimming */
+    .read-item {
+      opacity: 0.62;
+      transition: opacity var(--transition-fast);
+    }
+    .read-item:hover {
+      opacity: 0.95;
+    }
+    .read-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      transition: all var(--transition-fast);
+    }
+    .read-badge.unread {
+      background: rgba(59, 130, 246, 0.18);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+    }
+    .read-badge.read {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--fg-dim);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .read-badge.bookmarked {
+      background: rgba(245, 158, 11, 0.18);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+
+    /* Topic Accordion */
+    .topic-accordion {
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.35);
+      overflow: hidden;
+      transition: border-color var(--transition-fast);
+    }
+    .topic-accordion:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+    .topic-acc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.02);
+      cursor: pointer;
+      user-select: none;
+      transition: background var(--transition-fast);
+    }
+    .topic-acc-header:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .topic-acc-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--fg);
+    }
+    .topic-acc-body {
+      padding: 8px 12px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .topic-acc-body.collapsed {
+      display: none;
+    }
+    .topic-acc-chevron {
+      font-size: 12px;
+      color: var(--fg-dim);
+      transition: transform var(--transition-fast);
+    }
+    .topic-acc-chevron.open {
+      transform: rotate(180deg);
+    }
+
+    /* AI Disruption Overhaul Styles */
+    .disruption-charts-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .disruption-chart-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 18px;
+    }
+    .disruption-chart-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--fg-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .positions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .position-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 16px;
+      transition: all var(--transition-fast);
+    }
+    .position-card:hover {
+      border-color: rgba(99, 102, 241, 0.45);
+      box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+    }
+    .position-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .position-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--fg);
+    }
+    .position-sector-badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--fg-dim);
+    }
+    .skill-card-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 8px 10px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      margin-bottom: 6px;
+    }
+    .skill-card-row:hover {
+      background: rgba(99, 102, 241, 0.09);
+      border-color: rgba(99, 102, 241, 0.35);
+      transform: translateX(2px);
+    }
+    .skill-evidence-text {
+      font-size: 11px;
+      color: var(--fg-dim);
+      font-style: italic;
+      line-height: 1.4;
+      margin-top: 2px;
     }
   </style>
 </head>
@@ -3607,120 +3886,248 @@
       <a href="https://github.com/HuyTruong14/trend-radar/actions" target="_blank" rel="noopener noreferrer">View Actions &rarr;</a>
     </div>
 
-    <!-- Phase 10 — Daily Digest Banner -->
-    <section class="daily-digest-banner" id="dailyDigestBanner">
-      <div class="digest-banner-header">
-        <div class="digest-banner-title">
-          <span class="digest-pulse-dot" aria-hidden="true"></span>
-          <span>📰 BẢN TIN HÔM NAY — <span id="digestDateBadge">...</span></span>
-        </div>
-        <span class="digest-badge-status" id="digestStatusBadge">Tổng hợp 24h qua</span>
-      </div>
-      <div class="digest-stats-grid" id="digestStatsGrid">
-        <div class="digest-stat-card" onclick="openDailyDigestModal()">
-          <div class="digest-stat-icon">🎯</div>
-          <div class="digest-stat-info">
-            <div class="digest-stat-val" id="digestTopOppsVal">Đang tải...</div>
-            <div class="digest-stat-lbl">Cơ hội nổi bật</div>
-          </div>
-        </div>
-        <div class="digest-stat-card" onclick="openDailyDigestModal()">
-          <div class="digest-stat-icon">💰</div>
-          <div class="digest-stat-info">
-            <div class="digest-stat-val" id="digestFundingVal">Đang tải...</div>
-            <div class="digest-stat-lbl">Dòng tiền hôm qua</div>
-          </div>
-        </div>
-        <div class="digest-stat-card" onclick="openDailyDigestModal()">
-          <div class="digest-stat-icon">🔥</div>
-          <div class="digest-stat-info">
-            <div class="digest-stat-val" id="digestBuzzVal">Đang tải...</div>
-            <div class="digest-stat-lbl">Chủ đề thảo luận nóng</div>
-          </div>
-        </div>
-        <div class="digest-stat-card" onclick="openDailyDigestModal()">
-          <div class="digest-stat-icon">📊</div>
-          <div class="digest-stat-info">
-            <div class="digest-stat-val" id="digestSignalsVal">Đang tải...</div>
-            <div class="digest-stat-lbl">Tín hiệu toàn hệ thống</div>
-          </div>
-        </div>
-      </div>
-      <div class="digest-banner-footer">
-        <button class="digest-open-btn" id="openDigestModalBtn" onclick="openDailyDigestModal()">
-          <span>📰 Bấm để mở bản tin đầy đủ</span>
-          <span aria-hidden="true">&rarr;</span>
-        </button>
-        <a href="digest.html" class="digest-external-link" target="_blank" title="Mở trang bản tin riêng">
-          <span>Mở trang riêng ↗</span>
-        </a>
-      </div>
-    </section>
+    <!-- 4 Main Navigation Tabs (Phase 17 - Nhóm D1) -->
+    <nav class="main-nav-tabs" id="mainNavTabs" aria-label="Main navigation">
+      <button class="main-nav-tab active" id="tabNavNews" onclick="switchMainTab('news')">
+        <span>📰 Bản Tin</span>
+        <span class="tab-badge" id="badgeNavNews">0</span>
+      </button>
+      <button class="main-nav-tab" id="tabNavOpportunities" onclick="switchMainTab('opportunities')">
+        <span>🎯 Cơ Hội</span>
+        <span class="tab-badge" id="badgeNavOpportunities">0</span>
+      </button>
+      <button class="main-nav-tab" id="tabNavMarket" onclick="switchMainTab('market')">
+        <span>📡 Thị Trường</span>
+        <span class="tab-badge" id="badgeNavMarket">0</span>
+      </button>
+      <button class="main-nav-tab" id="tabNavDisruption" onclick="switchMainTab('disruption')">
+        <span>🤖 AI & Skills</span>
+        <span class="tab-badge" id="badgeNavDisruption">20</span>
+      </button>
+    </nav>
 
-    <!-- Daily Briefing -->
-    <section class="featured-card briefing-card" id="briefingCard">
-      <div class="card-label briefing-label">
-        <span>⚡ Daily Briefing — <span id="briefingTopicTitle">AI/Tech</span></span>
-      </div>
-      <div class="briefing-text" id="briefingContent">Loading briefing...</div>
-    </section>
+    <!-- VIEW 1: 📰 BẢN TIN -->
+    <div id="tabViewNews" class="tab-view">
+      <!-- Daily Digest Banner -->
+      <section class="daily-digest-banner" id="dailyDigestBanner">
+        <div class="digest-banner-header">
+          <div class="digest-banner-title">
+            <span class="digest-pulse-dot" aria-hidden="true"></span>
+            <span>📰 BẢN TIN HÔM NAY — <span id="digestDateBadge">...</span></span>
+          </div>
+          <span class="digest-badge-status" id="digestStatusBadge">Tổng hợp 24h qua</span>
+        </div>
+        <div class="digest-stats-grid" id="digestStatsGrid">
+          <div class="digest-stat-card" onclick="openDailyDigestModal()">
+            <div class="digest-stat-icon">🎯</div>
+            <div class="digest-stat-info">
+              <div class="digest-stat-val" id="digestTopOppsVal">Đang tải...</div>
+              <div class="digest-stat-lbl">Cơ hội nổi bật</div>
+            </div>
+          </div>
+          <div class="digest-stat-card" onclick="openDailyDigestModal()">
+            <div class="digest-stat-icon">💰</div>
+            <div class="digest-stat-info">
+              <div class="digest-stat-val" id="digestFundingVal">Đang tải...</div>
+              <div class="digest-stat-lbl">Dòng tiền hôm qua</div>
+            </div>
+          </div>
+          <div class="digest-stat-card" onclick="openDailyDigestModal()">
+            <div class="digest-stat-icon">🔥</div>
+            <div class="digest-stat-info">
+              <div class="digest-stat-val" id="digestBuzzVal">Đang tải...</div>
+              <div class="digest-stat-lbl">Chủ đề thảo luận nóng</div>
+            </div>
+          </div>
+          <div class="digest-stat-card" onclick="openDailyDigestModal()">
+            <div class="digest-stat-icon">📊</div>
+            <div class="digest-stat-info">
+              <div class="digest-stat-val" id="digestSignalsVal">Đang tải...</div>
+              <div class="digest-stat-lbl">Tín hiệu toàn hệ thống</div>
+            </div>
+          </div>
+        </div>
+        <div class="digest-banner-footer">
+          <button class="digest-open-btn" id="openDigestModalBtn" onclick="openDailyDigestModal()">
+            <span>📰 Bấm để mở bản tin đầy đủ</span>
+            <span aria-hidden="true">&rarr;</span>
+          </button>
+          <a href="digest.html" class="digest-external-link" target="_blank" title="Mở trang bản tin riêng">
+            <span>Mở trang riêng ↗</span>
+          </a>
+        </div>
+      </section>
 
-    <!-- Watchlist Alerts (Only visible if matches exist) -->
-    <section class="featured-card watchlist-card" id="watchlistCard">
-      <div class="card-label watchlist-label">
-        <span>🎯 Watchlist Alerts</span>
-        <span id="watchlistCountPill" class="tab-badge" style="background: rgba(var(--hot-rgb), 0.2); color: var(--hot)">0 matches</span>
-      </div>
-      <div class="watchlist-keywords" id="watchlistKeywords"></div>
-      <div class="watchlist-items-list" id="watchlistItems"></div>
-    </section>
+      <!-- Daily Briefing -->
+      <section class="featured-card briefing-card" id="briefingCard">
+        <div class="card-label briefing-label">
+          <span>⚡ Daily Briefing — <span id="briefingTopicTitle">Tổng hợp tin thị trường</span></span>
+        </div>
+        <div class="briefing-text" id="briefingContent">Đang tải tóm tắt bản tin...</div>
+      </section>
 
-    <!-- Source Pills Row -->
-    <div class="sources-row" id="sourcesRow">
-      <div class="source-pill"><span class="source-dot dot-hn"></span> Hacker News</div>
-      <div class="source-pill"><span class="source-dot dot-rss"></span> RSS Feeds</div>
-      <div class="source-pill"><span class="source-dot dot-gh"></span> GitHub</div>
-      <div class="source-pill"><span class="source-dot dot-arxiv"></span> arXiv</div>
-      <div class="source-pill"><span class="source-dot dot-reddit"></span> Reddit</div>
-      <div class="source-pill"><span class="source-dot dot-x"></span> X / Twitter</div>
-      <div class="source-pill"><span class="source-dot dot-quora"></span> Quora</div>
+      <!-- Watchlist Alerts -->
+      <section class="featured-card watchlist-card" id="watchlistCard">
+        <div class="card-label watchlist-label">
+          <span>🎯 Watchlist Alerts</span>
+          <span id="watchlistCountPill" class="tab-badge" style="background: rgba(var(--hot-rgb), 0.2); color: var(--hot)">0 matches</span>
+        </div>
+        <div class="watchlist-keywords" id="watchlistKeywords"></div>
+        <div class="watchlist-items-list" id="watchlistItems"></div>
+      </section>
+
+      <!-- Source Pills Row -->
+      <div class="sources-row" id="sourcesRow">
+        <div class="source-pill"><span class="source-dot dot-hn"></span> Hacker News</div>
+        <div class="source-pill"><span class="source-dot dot-rss"></span> RSS Feeds</div>
+        <div class="source-pill"><span class="source-dot dot-gh"></span> GitHub</div>
+        <div class="source-pill"><span class="source-dot dot-arxiv"></span> arXiv</div>
+        <div class="source-pill"><span class="source-dot dot-reddit"></span> Reddit</div>
+        <div class="source-pill"><span class="source-dot dot-x"></span> X / Twitter</div>
+        <div class="source-pill"><span class="source-dot dot-quora"></span> Quora</div>
+      </div>
+
+      <!-- Toolbar: Read Status Filters & 30-Day Archive (A1, B3) -->
+      <div class="signals-toolbar">
+        <div class="status-filter-pills">
+          <button class="status-pill-btn active" id="filterStatusAll" onclick="filterSignalsByStatus('all')">Tất cả (<span id="countStatusAll">0</span>)</button>
+          <button class="status-pill-btn" id="filterStatusUnread" onclick="filterSignalsByStatus('unread')">● Chưa đọc (<span id="countStatusUnread">0</span>)</button>
+          <button class="status-pill-btn" id="filterStatusRead" onclick="filterSignalsByStatus('read')">✓ Đã đọc (<span id="countStatusRead">0</span>)</button>
+          <button class="status-pill-btn" id="filterStatusBookmarked" onclick="filterSignalsByStatus('bookmarked')">⭐ Đã lưu (<span id="countStatusBookmarked">0</span>)</button>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <input type="text" id="signalsSearchInput" placeholder="Tìm kiếm tin tức..." oninput="onSignalsSearch(this.value)" style="background: rgba(15, 23, 42, 0.7); color: var(--fg); border: 1px solid var(--border); border-radius: var(--radius-full); padding: 5px 12px; font-size: 12px; outline: none; width: 160px;">
+          <button class="archive-btn" onclick="openArchiveModal()" title="Xem lại các tin trong 30 ngày qua (Nhóm A1)">
+            <span>📂 Xem tin cũ (30 ngày)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hot Today Section -->
+      <section id="hotSection" aria-labelledby="hotTodayHeading">
+        <h2 class="section-title" id="hotTodayHeading">
+          🔥 Hot Today <span class="count-pill">(Top tín hiệu nổi bật)</span>
+        </h2>
+        <div class="hot-grid" id="hotGrid"></div>
+      </section>
+
+      <!-- Related Clusters Section -->
+      <section class="clusters-section" id="clustersSection" aria-labelledby="clustersHeading" style="display: none;">
+        <h2 class="section-title" id="clustersHeading">
+          🔗 Related Clusters <span class="count-pill" id="clusterCountPill"></span>
+        </h2>
+        <div id="clustersContainer"></div>
+      </section>
+
+      <!-- Recent Signals Grouped by Topic (Nhóm B3) -->
+      <section class="recent-section" id="recentSection" aria-labelledby="recentHeading">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+          <h2 class="section-title" id="recentHeading" style="margin: 0;">
+            ⏱️ Recent Signals <span class="count-pill" id="recentCountPill"></span>
+          </h2>
+          <div style="display: flex; gap: 6px;">
+            <button class="status-pill-btn" onclick="toggleAllAccordions(true)" style="font-size: 11px;">Mở tất cả</button>
+            <button class="status-pill-btn" onclick="toggleAllAccordions(false)" style="font-size: 11px;">Thu gọn</button>
+          </div>
+        </div>
+        <!-- Grouped Accordion Container -->
+        <div class="recent-list" id="recentList"></div>
+      </section>
     </div>
 
-    <!-- Topic Tabs -->
-    <nav class="topic-tabs" id="topicTabs" aria-label="Topic navigation"></nav>
+    <!-- VIEW 2: 🎯 CƠ HỘI -->
+    <div id="tabViewOpportunities" class="tab-view" style="display: none;">
+      <div class="signals-toolbar" style="margin-bottom: 16px;">
+        <div class="status-filter-pills" id="oppSubNav">
+          <button class="status-pill-btn active" id="oppSubRadar" onclick="switchOppSubView('radar')">🎯 Tất cả cơ hội (Radar)</button>
+          <button class="status-pill-btn" id="oppSubFunding" onclick="switchOppSubView('funding')">💰 Dòng tiền đầu tư (Funding)</button>
+          <button class="status-pill-btn" id="oppSubCombos" onclick="switchOppSubView('combos')">🧩 Ghép Repo (Repo Combos)</button>
+        </div>
+      </div>
+      <section class="opp-radar-section" id="opportunityRadarSection"></section>
+      <section class="funding-flow-section" id="fundingFlowSection" style="display: none;"></section>
+      <section class="combos-flow-section" id="combosFlowSection" style="display: none;"></section>
+    </div>
 
-    <!-- Opportunity Radar Section (Phase 3 Tab) -->
-    <section class="opp-radar-section" id="opportunityRadarSection" style="display: none;"></section>
+    <!-- VIEW 3: 📡 THỊ TRƯỜNG -->
+    <div id="tabViewMarket" class="tab-view" style="display: none;">
+      <div class="signals-toolbar" style="margin-bottom: 16px;">
+        <div class="status-filter-pills" id="marketSubNav">
+          <button class="status-pill-btn active" id="marketSubBuzz" onclick="switchMarketSubView('buzz')">🔥 Thảo luận mạng xã hội (Social Buzz)</button>
+          <button class="status-pill-btn" id="marketSubGlossary" onclick="switchMarketSubView('glossary')">🔬 Bản đồ công nghệ (Tech Glossary)</button>
+          <button class="status-pill-btn" id="marketSubTimeline" onclick="switchMarketSubView('timeline')">📈 Lịch sử xu hướng (Timeline)</button>
+        </div>
+      </div>
+      <section class="social-buzz-section" id="socialBuzzSection"></section>
+      <div id="marketGlossaryContainer" style="display: none;"></div>
+      <div id="marketTimelineContainer" style="display: none;"></div>
+    </div>
 
-    <!-- Funding Flow Section (Phase 8 Tab) -->
-    <section class="funding-flow-section" id="fundingFlowSection" style="display: none;"></section>
+    <!-- VIEW 4: 🤖 AI & SKILLS (Nhóm C) -->
+    <div id="tabViewDisruption" class="tab-view" style="display: none;">
+      <div id="disruptionMainView">
+        <!-- AI Disruption Charts Row (C3) -->
+        <div class="disruption-charts-row" id="disruptionChartsRow">
+          <!-- Chart 1: Risk Level Distribution -->
+          <div class="disruption-chart-card" id="cardRiskLevel">
+            <div class="disruption-chart-title">
+              <span>🎯 Phân bố mức độ rủi ro</span>
+            </div>
+            <div id="riskLevelChartArea" style="display: flex; flex-direction: column; gap: 8px;">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+          <!-- Chart 2: Top Skills by Demand -->
+          <div class="disruption-chart-card" id="cardSkillsDemand">
+            <div class="disruption-chart-title">
+              <span>🔥 Top kỹ năng nhu cầu tăng cao</span>
+            </div>
+            <div id="skillsDemandChartArea" style="display: flex; flex-direction: column; gap: 6px;">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+          <!-- Chart 3: AI Replacement Timeline -->
+          <div class="disruption-chart-card" id="cardReplacementTimeline">
+            <div class="disruption-chart-title">
+              <span>📈 Tiến trình can thiệp AI theo tuần</span>
+            </div>
+            <div id="replacementTimelineChartArea" style="display: flex; flex-direction: column; gap: 8px;">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
 
-    <!-- Social Buzz Section (Phase 9 Tab) -->
-    <section class="social-buzz-section" id="socialBuzzSection" style="display: none;"></section>
+        <!-- Position -> Skills Filter & Search Bar (C1, C5) -->
+        <div class="signals-toolbar">
+          <div class="status-filter-pills" id="disruptionSectorFilters">
+            <button class="status-pill-btn active" onclick="filterDisruptionSector('all')">Tất cả ngành (<span id="countDisruptAll">20</span>)</button>
+            <button class="status-pill-btn" onclick="filterDisruptionSector('IT')">IT & Phần mềm</button>
+            <button class="status-pill-btn" onclick="filterDisruptionSector('Kinh doanh')">Kinh doanh & BA</button>
+            <button class="status-pill-btn" onclick="filterDisruptionSector('Phần cứng')">Phần cứng & IoT</button>
+            <button class="status-pill-btn" onclick="filterDisruptionSector('Thiết kế')">Sáng tạo & Nội dung</button>
+            <button class="status-pill-btn" onclick="filterDisruptionSector('Y tế')">Y tế & Giáo dục</button>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <input type="text" id="disruptionSearchInput" placeholder="Tìm vị trí hoặc kỹ năng..." oninput="onDisruptionSearch(this.value)" style="background: rgba(15, 23, 42, 0.7); color: var(--fg); border: 1px solid var(--border); border-radius: var(--radius-full); padding: 5px 12px; font-size: 12px; outline: none; width: 180px;">
+          </div>
+        </div>
 
-    <!-- Hot Today Section -->
-    <section id="hotSection" aria-labelledby="hotTodayHeading">
-      <h2 class="section-title" id="hotTodayHeading">
-        🔥 Hot Today <span class="count-pill">(Top signals by score)</span>
-      </h2>
-      <div class="hot-grid" id="hotGrid"></div>
-    </section>
+        <!-- Positions Grid (20 Positions) -->
+        <div class="positions-grid" id="disruptionPositionsGrid">
+          <!-- Rendered dynamically -->
+        </div>
 
-    <!-- Related Clusters Section -->
-    <section class="clusters-section" id="clustersSection" aria-labelledby="clustersHeading">
-      <h2 class="section-title" id="clustersHeading">
-        🔗 Related Clusters <span class="count-pill" id="clusterCountPill"></span>
-      </h2>
-      <div id="clustersContainer"></div>
-    </section>
-
-    <!-- Recent Section -->
-    <section class="recent-section" id="recentSection" aria-labelledby="recentHeading">
-      <h2 class="section-title" id="recentHeading">
-        ⏱️ Recent Signals <span class="count-pill" id="recentCountPill"></span>
-      </h2>
-      <div class="recent-list" id="recentList"></div>
-    </section>
+        <!-- Emerging Roles Section -->
+        <div style="margin-top: 32px;" id="disruptionNewRolesSection">
+          <h3 style="font-size: 15px; font-weight: 700; color: var(--fg); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+            <span>✨ Vị trí công việc mới nổi (Emerging Roles)</span>
+          </h3>
+          <div class="positions-grid" id="disruptionNewRolesGrid">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Stats Footer -->
     <footer class="stats-footer">
@@ -3900,6 +4307,58 @@
         </div>
       </div>
     </div>
+  <!-- Phase 17 — Signals Archive Modal (30 Days Retention) -->
+  <div class="digest-modal-overlay" id="archiveModal" style="display: none;" onclick="handleArchiveBackdropClick(event)">
+    <div class="bookmarks-modal-box" role="dialog" aria-modal="true" aria-labelledby="modalArchiveTitle" style="max-width: 960px;">
+      <div class="digest-modal-header" style="flex-wrap: wrap; gap: 10px;">
+        <div class="digest-modal-title" id="modalArchiveTitle" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <span>📂 KHO LƯU TRỮ TIN TỨC (30 NGÀY)</span>
+          <span id="archiveTotalCountBadge" style="font-size: 11px; padding: 3px 10px; border-radius: 999px; background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); font-weight: 700;">Đang tải...</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <input type="text" id="archiveSearchInput" placeholder="Tìm trong kho lưu trữ..." oninput="onArchiveSearch(this.value)" style="background: rgba(15, 23, 42, 0.85); color: var(--fg); border: 1px solid var(--border); border-radius: 6px; padding: 5px 10px; font-size: 12px; outline: none; width: 180px;">
+          <button class="digest-modal-close-btn" onclick="closeArchiveModal()" aria-label="Đóng">&times;</button>
+        </div>
+      </div>
+
+      <div class="bookmarks-filter-bar" style="flex-wrap: wrap; gap: 8px;">
+        <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;" id="archiveDateFilters">
+          <span style="font-size: 12px; color: var(--fg-dim);">Lọc theo ngày:</span>
+          <button class="bm-filter-btn active" onclick="filterArchiveByDate('all')">Tất cả ngày</button>
+        </div>
+      </div>
+
+      <div class="bookmarks-list" id="archiveContentArea" style="max-height: calc(85vh - 200px); overflow-y: auto; padding: 14px 18px;">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="bookmarks-footer-bar">
+        <div style="font-size: 12px; color: var(--fg-dim);">
+          <span>📂 Dữ liệu tự động append & lưu trữ 30 ngày: <code>docs/data/signals_archive.json</code></span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <a href="data/signals_archive.json" target="_blank" style="background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.4); color: #6ee7b7; padding: 6px 12px; border-radius: 6px; font-size: 12px; text-decoration: none; font-weight: 600;">📄 signals_archive.json</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 17 — Skill Detail Modal (Nhóm C4) -->
+  <div class="digest-modal-overlay" id="skillDetailModal" style="display: none;" onclick="handleSkillDetailBackdropClick(event)">
+    <div class="bookmarks-modal-box" role="dialog" aria-modal="true" aria-labelledby="skillDetailTitle" style="max-width: 720px;">
+      <div class="digest-modal-header">
+        <div class="digest-modal-title" id="skillDetailTitle" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <span id="skillDetailName">Tên kỹ năng</span>
+          <span id="skillDetailAiBadge" style="font-size: 11px; padding: 3px 10px; border-radius: 999px; background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); font-weight: 700;">50% AI</span>
+          <span id="skillDetailTrendBadge" style="font-size: 11px; padding: 3px 8px; border-radius: 999px; background: rgba(59, 130, 246, 0.2); color: #93c5fd;">Tăng trưởng</span>
+        </div>
+        <button class="digest-modal-close-btn" onclick="closeSkillDetailModal()" aria-label="Đóng">&times;</button>
+      </div>
+
+      <div id="skillDetailBody" style="padding: 18px 22px; overflow-y: auto; max-height: calc(85vh - 160px); display: flex; flex-direction: column; gap: 14px;">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
   </div>
 
   <!-- Weekly Archive Modal (Báo cáo tổng hợp tuần) -->
@@ -4055,6 +4514,16 @@
     let LAST_UPDATED_DATA = null;
     let BOOKMARKS_DATA = [];
     let bookmarkFilter = 'all';
+    let SIGNALS_CURRENT_DATA = [];
+    let SIGNALS_ARCHIVE_DATA = [];
+    let activeMainTab = 'news';
+    let currentSignalsStatusFilter = 'all';
+    let currentSignalsSearch = '';
+    let currentDisruptionSectorFilter = 'all';
+    let disruptionSearchQuery = '';
+    let archiveCurrentDateFilter = 'all';
+    let archiveSearchTerm = '';
+    let accordionState = {};
 
     // --- Phase 14: Bookmarks & Last Updated Handlers ---
     async function loadLastUpdated() {
@@ -4067,7 +4536,12 @@
           if (syncEl && data.last_run) {
             const d = new Date(data.last_run);
             const timeStr = !isNaN(d) ? d.toLocaleDateString('vi-VN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : data.last_run;
-            syncEl.innerHTML = `Đã sync: <strong>${timeStr}</strong> &bull; <strong>${data.signals_count || 0}</strong> signals`;
+            let nextStr = '';
+            if (data.next_run) {
+              const nd = new Date(data.next_run);
+              nextStr = !isNaN(nd) ? nd.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }) : data.next_run;
+            }
+            syncEl.innerHTML = `Đã sync: <strong>${timeStr}</strong> &bull; Lần tới: <strong>${nextStr || 'mỗi 6h'}</strong> &bull; <strong>${data.signals_count || 0}</strong> signals`;
           }
         }
       } catch (e) {
@@ -5280,7 +5754,8 @@
                       <span class="score-badge ${o.total === 9 ? 'score-badge-9' : 'score-badge-research'}" style="font-family: var(--font-mono); font-size: 0.78rem; padding: 2px 8px; border-radius: 999px; ${o.total === 9 ? 'background: rgba(239, 68, 68, 0.18); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4);' : 'background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4);'}">
                         ${o.total === 9 ? '🔴' : '⚡'} ${o.total}/9
                       </span>
-                      <span>${escapeHtml(o.title)}</span>
+                      <span>${escapeHtml(o.title_vi || o.title)}</span>
+                      ${o.title_vi ? `<span style="font-size: 0.75rem; color: var(--fg-muted); font-family: monospace;">(${escapeHtml(o.title)})</span>` : ''}
                       ${o.alert_sent ? '<span style="font-size: 0.72rem; font-weight: 600; color: #94a3b8; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); padding: 2px 8px; border-radius: 999px;">(đã gửi alert)</span>' : ''}
                     </a>
                   </div>
@@ -5999,6 +6474,1046 @@
       a.remove();
     }
 
+    // --- PHASE 17 HANDLERS: 4-TAB NAVIGATION & CONTROLLERS (Nhóm D1) ---
+    function switchMainTab(tabName) {
+      activeMainTab = tabName;
+      
+      const tabKeys = ['news', 'opportunities', 'market', 'disruption'];
+      tabKeys.forEach(t => {
+        const navBtn = document.getElementById(`tabNav${t.charAt(0).toUpperCase() + t.slice(1)}`);
+        const viewEl = document.getElementById(`tabView${t.charAt(0).toUpperCase() + t.slice(1)}`);
+        if (navBtn) navBtn.classList.toggle('active', t === tabName);
+        if (viewEl) viewEl.style.display = (t === tabName) ? 'block' : 'none';
+      });
+
+      const hash = tabName === 'news' ? '#ban-tin' : (tabName === 'opportunities' ? '#co-hoi' : (tabName === 'market' ? '#thi-truong' : '#ai-skills'));
+      window.history.replaceState(null, '', hash);
+
+      if (tabName === 'news') {
+        renderTopicTabs();
+        renderRecentSignalsGrouped();
+        renderStats();
+      } else if (tabName === 'opportunities') {
+        switchOppSubView('radar');
+      } else if (tabName === 'market') {
+        switchMarketSubView('buzz');
+      } else if (tabName === 'disruption') {
+        renderDisruptionView();
+      }
+      updateNavBadges();
+    }
+
+    function switchOppSubView(sub) {
+      const radarBtn = document.getElementById('oppSubRadar');
+      const fundBtn = document.getElementById('oppSubFunding');
+      const combosBtn = document.getElementById('oppSubCombos');
+
+      const radarSec = document.getElementById('opportunityRadarSection');
+      const fundSec = document.getElementById('fundingFlowSection');
+      const combosSec = document.getElementById('combosFlowSection');
+
+      if (radarBtn) radarBtn.classList.toggle('active', sub === 'radar');
+      if (fundBtn) fundBtn.classList.toggle('active', sub === 'funding');
+      if (combosBtn) combosBtn.classList.toggle('active', sub === 'combos');
+
+      if (radarSec) radarSec.style.display = sub === 'radar' ? 'block' : 'none';
+      if (fundSec) fundSec.style.display = sub === 'funding' ? 'block' : 'none';
+      if (combosSec) combosSec.style.display = sub === 'combos' ? 'block' : 'none';
+
+      if (sub === 'radar') {
+        renderOpportunityRadar();
+      } else if (sub === 'funding') {
+        renderFundingFlow();
+      } else if (sub === 'combos') {
+        renderCombosInTab();
+      }
+    }
+
+    function switchMarketSubView(sub) {
+      const buzzBtn = document.getElementById('marketSubBuzz');
+      const glossBtn = document.getElementById('marketSubGlossary');
+      const timeBtn = document.getElementById('marketSubTimeline');
+
+      const buzzSec = document.getElementById('socialBuzzSection');
+      const glossCont = document.getElementById('marketGlossaryContainer');
+      const timeCont = document.getElementById('marketTimelineContainer');
+
+      if (buzzBtn) buzzBtn.classList.toggle('active', sub === 'buzz');
+      if (glossBtn) glossBtn.classList.toggle('active', sub === 'glossary');
+      if (timeBtn) timeBtn.classList.toggle('active', sub === 'timeline');
+
+      if (buzzSec) buzzSec.style.display = sub === 'buzz' ? 'block' : 'none';
+      if (glossCont) glossCont.style.display = sub === 'glossary' ? 'block' : 'none';
+      if (timeCont) timeCont.style.display = sub === 'timeline' ? 'block' : 'none';
+
+      if (sub === 'buzz') {
+        renderSocialBuzz();
+      } else if (sub === 'glossary') {
+        renderGlossaryInTab();
+      } else if (sub === 'timeline') {
+        renderTimelineInTab();
+      }
+    }
+
+    function renderCombosInTab() {
+      const container = document.getElementById('combosFlowSection');
+      if (!container) return;
+      if (!REPO_COMBOS_DATA || REPO_COMBOS_DATA.length === 0) {
+        container.innerHTML = '<div style="padding:30px; text-align:center; color:var(--fg-dim);">Chưa có đề xuất combo nào trong <code>data/repo_combos.json</code>.</div>';
+        return;
+      }
+
+      container.innerHTML = `
+        <div style="margin-bottom: 16px;">
+          <h3 style="font-size: 16px; font-weight: 800; color: var(--fg); margin-bottom: 6px;">
+            💡 Ý Tưởng Ghép Mã Nguồn Mở (Repo Combos)
+          </h3>
+          <p style="font-size: 12px; color: var(--fg-dim); margin: 0;">
+            Tận dụng velocity của 2-3 repositories bổ sung cho nhau để tạo thành sản phẩm hoàn chỉnh.
+          </p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          ${REPO_COMBOS_DATA.map(combo => {
+            const tagPills = (combo.tags || []).map(t => 
+              `<span class="chip-signal chip-tech" style="font-size:10px; padding:2px 7px;">#${escapeHtml(t)}</span>`
+            ).join('');
+
+            const reposList = (combo.repos || []).map(r => `
+              <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); padding:8px 12px; border-radius:6px;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  ${getRoleBadge(r.role)}
+                  <a href="https://github.com/${escapeHtml(r.repo)}" target="_blank" rel="noopener noreferrer" style="font-weight:700; color:#38bdf8; text-decoration:none; font-size:13px; font-family:monospace;">
+                    ${escapeHtml(r.repo)} ↗
+                  </a>
+                </div>
+                <div style="font-size:12px; font-weight:700; color:#fbbf24;">
+                  +${r.velocity} ★/tuần
+                </div>
+              </div>
+            `).join('');
+
+            return `
+              <div class="bookmark-item-card" style="border-left: 3px solid #f59e0b; padding:16px;">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:10px;">
+                  <div>
+                    <h4 style="margin:0; font-size:16px; font-weight:800; color:var(--fg); display:flex; align-items:center; gap:6px;">
+                      <span>💡</span> ${escapeHtml(combo.combo_name)}
+                    </h4>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
+                    <span class="stage-flag stage-build-ready" style="font-size:11px;">
+                      ⚡ Tổng velocity: +${combo.total_velocity} ★/tuần
+                    </span>
+                  </div>
+                </div>
+
+                <div style="background:rgba(245, 158, 11, 0.08); border:1px solid rgba(245, 158, 11, 0.25); border-radius:6px; padding:10px 14px; margin-bottom:12px;">
+                  <div style="font-size:11px; text-transform:uppercase; font-weight:800; color:#fbbf24; letter-spacing:0.5px; margin-bottom:3px;">
+                    🎯 Ý tưởng sản phẩm khi ghép:
+                  </div>
+                  <div style="font-size:13px; font-weight:600; color:var(--fg); line-height:1.5;">
+                    ${escapeHtml(combo.product_idea_vi || '')}
+                  </div>
+                </div>
+
+                <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:10px;">
+                  <div style="font-size:11px; font-weight:700; color:var(--fg-muted); text-transform:uppercase;">
+                    Mã nguồn ghép nối (${(combo.repos || []).length} repos bổ sung nhau):
+                  </div>
+                  ${reposList}
+                </div>
+
+                ${tagPills ? `
+                  <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-top:8px;">
+                    ${tagPills}
+                  </div>
+                ` : ''}
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
+    function renderGlossaryInTab() {
+      const container = document.getElementById('marketGlossaryContainer');
+      if (!container) return;
+      if (!TECH_GLOSSARY_DATA || Object.keys(TECH_GLOSSARY_DATA).length === 0) {
+        container.innerHTML = '<div style="padding:30px; text-align:center; color:var(--fg-dim);">Chưa tải được dữ liệu tech_glossary.json</div>';
+        return;
+      }
+
+      const items = Object.entries(TECH_GLOSSARY_DATA);
+      container.innerHTML = `
+        <div style="margin-bottom: 14px;">
+          <h3 style="font-size: 16px; font-weight: 800; color: var(--fg); margin-bottom: 4px;">
+            🔬 Bản Đồ Thuật Ngữ & Công Nghệ Đang Nổi
+          </h3>
+          <p style="font-size: 12px; color: var(--fg-dim); margin: 0;">
+            Các thuật ngữ có tần suất xuất hiện cao và độ tăng trưởng mạnh nhất qua signals.
+          </p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          ${items.map(([term, info]) => {
+            let trendBadge = '<span class="stage-flag stage-watch">→ stable</span>';
+            if (info.trend === 'rising') trendBadge = '<span class="stage-flag stage-build-ready">↑ rising (+' + info.change_pct + '%)</span>';
+            else if (info.trend === 'fading') trendBadge = '<span class="stage-flag" style="background:rgba(239,68,68,0.2);color:#f87171;border:1px solid rgba(239,68,68,0.4);">↓ fading (' + info.change_pct + '%)</span>';
+            else if (info.trend === 'new') trendBadge = '<span class="stage-flag stage-research">✨ new</span>';
+
+            const coPills = Object.entries(info.co_occurs_with || {}).map(([cTerm, cnt]) => 
+              `<span class="chip-signal chip-tech" style="font-size:10px; padding:2px 6px;">🔗 ${escapeHtml(cTerm)} (${cnt})</span>`
+            ).join('');
+
+            return `
+              <div class="bookmark-item-card" style="border-left: 3px solid ${info.trend === 'rising' ? '#ff6b35' : (info.trend === 'new' ? '#38bdf8' : 'var(--border)')};">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:4px;">
+                  <div>
+                    <span style="font-weight:800; font-size:15px; color:var(--fg);">${escapeHtml(term)}</span>
+                    <span style="font-size:11px; color:var(--fg-muted); margin-left:8px; padding:1px 6px; border-radius:4px; background:rgba(255,255,255,0.06);">${escapeHtml(info.type || 'Tech')}</span>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="font-size:12px; font-weight:700; color:var(--accent);">${info.mentions_this_week} nhắc</span>
+                    ${trendBadge}
+                  </div>
+                </div>
+                <div style="font-size:12px; color:var(--fg-dim); margin-bottom:6px;">${escapeHtml(info.description_vi || '')}</div>
+                ${coPills ? `
+                  <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:11px; color:var(--fg-muted);">
+                    <span>Đi cùng:</span>
+                    ${coPills}
+                  </div>
+                ` : ''}
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
+    function renderTimelineInTab() {
+      const container = document.getElementById('marketTimelineContainer');
+      if (!container) return;
+      if (!TECH_TIMELINE_DATA || Object.keys(TECH_TIMELINE_DATA).length === 0) {
+        container.innerHTML = '<div style="padding:30px; text-align:center; color:var(--fg-dim);">Chưa tải được dữ liệu tech_timeline.json</div>';
+        return;
+      }
+
+      const entries = Object.entries(TECH_TIMELINE_DATA).filter(([_, v]) => (v.total_mentions || 0) > 0);
+      container.innerHTML = `
+        <div style="margin-bottom: 14px;">
+          <h3 style="font-size: 16px; font-weight: 800; color: var(--fg); margin-bottom: 4px;">
+            📈 Dòng Thời Gian Xu Hướng Công Nghệ (Weekly Timeline)
+          </h3>
+          <p style="font-size: 12px; color: var(--fg-dim); margin: 0;">
+            Lịch sử tần suất xuất hiện theo từng tuần để nắm bắt chu kỳ tăng nhiệt hoặc bão hòa.
+          </p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          ${entries.map(([term, data]) => {
+            const weeklyCols = (data.weekly || []).map(w => 
+              `<div style="display:flex; flex-direction:column; align-items:center; background:rgba(255,255,255,0.04); padding:4px 8px; border-radius:4px; min-width:48px;">
+                <span style="font-size:10px; color:var(--fg-muted);">${escapeHtml(w.week)}</span>
+                <span style="font-size:12px; font-weight:700; color:#38bdf8;">${w.mentions}</span>
+              </div>`
+            ).join('');
+
+            return `
+              <div class="bookmark-item-card">
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+                  <div>
+                    <span style="font-weight:700; font-size:14px; color:var(--fg);">${escapeHtml(term)}</span>
+                    <span style="font-size:11px; color:var(--fg-muted); margin-left:8px;">Tổng: <strong>${data.total_mentions}</strong> lần</span>
+                  </div>
+                  <div style="display:flex; gap:6px;">
+                    ${weeklyCols}
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
+    // --- PHASE 17 HANDLERS: READ STATUS & ARCHIVE (Nhóm A1) ---
+    function getSignalReadStatus(url) {
+      if (!url) return 'unread';
+      const saved = localStorage.getItem('trend_radar_read_statuses');
+      if (saved) {
+        try {
+          const map = JSON.parse(saved);
+          if (map[url]) return map[url];
+        } catch (e) {}
+      }
+      return 'unread';
+    }
+
+    function setSignalReadStatus(url, status) {
+      if (!url) return;
+      let map = {};
+      const saved = localStorage.getItem('trend_radar_read_statuses');
+      if (saved) {
+        try { map = JSON.parse(saved); } catch (e) {}
+      }
+      map[url] = status;
+      localStorage.setItem('trend_radar_read_statuses', JSON.stringify(map));
+      updateSignalsFilterCounts();
+      renderRecentSignalsGrouped();
+    }
+
+    function toggleSignalRead(url, event) {
+      if (event) event.stopPropagation();
+      const current = getSignalReadStatus(url);
+      const next = current === 'read' ? 'unread' : 'read';
+      setSignalReadStatus(url, next);
+    }
+
+    function toggleSignalBookmark(url, title, summary, event) {
+      if (event) event.stopPropagation();
+      const current = getSignalReadStatus(url);
+      const next = current === 'bookmarked' ? 'unread' : 'bookmarked';
+      setSignalReadStatus(url, next);
+    }
+
+    function filterSignalsByStatus(status) {
+      currentSignalsStatusFilter = status;
+      document.querySelectorAll('#tabViewNews .status-pill-btn').forEach(b => {
+        if (b.id && b.id.startsWith('filterStatus')) {
+          b.classList.toggle('active', b.id === `filterStatus${status.charAt(0).toUpperCase() + status.slice(1)}`);
+        }
+      });
+      renderRecentSignalsGrouped();
+    }
+
+    function onSignalsSearch(val) {
+      currentSignalsSearch = (val || '').toLowerCase().trim();
+      renderRecentSignalsGrouped();
+    }
+
+    function getActiveSignalsList() {
+      if (Array.isArray(SIGNALS_CURRENT_DATA) && SIGNALS_CURRENT_DATA.length > 0) {
+        return SIGNALS_CURRENT_DATA;
+      }
+      const all = [];
+      Object.values(DATA).forEach(top => {
+        (top.items || []).forEach(it => all.push(it));
+      });
+      return all;
+    }
+
+    function updateSignalsFilterCounts() {
+      const allSignals = getActiveSignalsList();
+      let unread = 0, read = 0, bookmarked = 0;
+      allSignals.forEach(it => {
+        const st = getSignalReadStatus(it.url);
+        if (st === 'read') read++;
+        else if (st === 'bookmarked') bookmarked++;
+        else unread++;
+      });
+
+      const elAll = document.getElementById('countStatusAll');
+      const elUnread = document.getElementById('countStatusUnread');
+      const elRead = document.getElementById('countStatusRead');
+      const elBm = document.getElementById('countStatusBookmarked');
+
+      if (elAll) elAll.textContent = allSignals.length;
+      if (elUnread) elUnread.textContent = unread;
+      if (elRead) elRead.textContent = read;
+      if (elBm) elBm.textContent = bookmarked;
+    }
+
+    function updateNavBadges() {
+      const newsCount = SIGNALS_CURRENT_DATA.length || Object.values(DATA).reduce((acc, t) => acc + (t.items ? t.items.length : 0), 0);
+      const oppCount = OPPORTUNITIES_DATA.length;
+      const marketCount = (SOCIAL_BUZZ_DATA.reddit_posts ? SOCIAL_BUZZ_DATA.reddit_posts.length : 0) + (SOCIAL_BUZZ_DATA.google_trends_keywords ? SOCIAL_BUZZ_DATA.google_trends_keywords.length : 0) + (SOCIAL_BUZZ_DATA.twitter_trends ? SOCIAL_BUZZ_DATA.twitter_trends.length : 0) + (TECH_GLOSSARY_DATA ? Object.keys(TECH_GLOSSARY_DATA).length : 0);
+      const disruptCount = (DISRUPTION_CURRENT_DATA && DISRUPTION_CURRENT_DATA.positions) ? DISRUPTION_CURRENT_DATA.positions.length : 20;
+
+      const bNews = document.getElementById('badgeNavNews');
+      const bOpp = document.getElementById('badgeNavOpportunities');
+      const bMarket = document.getElementById('badgeNavMarket');
+      const bDisrupt = document.getElementById('badgeNavDisruption');
+
+      if (bNews) bNews.textContent = newsCount;
+      if (bOpp) bOpp.textContent = oppCount;
+      if (bMarket) bMarket.textContent = marketCount;
+      if (bDisrupt) bDisrupt.textContent = disruptCount;
+    }
+
+    // --- PHASE 17 HANDLERS: TOPIC ACCORDIONS (Nhóm B3) ---
+    function getSignalGroupTopic(item) {
+      const top = (item.topic || '').toLowerCase();
+      const src = (Array.isArray(item.sources) ? item.sources.join(' ') : (item.source || '')).toLowerCase();
+      const text = `${item.title || ''} ${item.summary || ''} ${item.url || ''}`.toLowerCase();
+
+      if (top.includes('ai') || top.includes('tech') || text.includes('llm') || text.includes('gpt') || text.includes('claude') || text.includes('openai') || text.includes('deepmind') || text.includes('anthropic') || text.includes('machine learning')) {
+        if (src.includes('gh') || src.includes('github') || src.includes('arxiv') || src.includes('huggingface')) {
+          return 'AI Ecosystem & Mã nguồn mở';
+        }
+        return 'AI & Tech';
+      }
+      if (top.includes('funding') || top.includes('dòng tiền') || text.includes('series ') || text.includes('valuation') || text.includes('funding round') || text.includes('acquires') || text.includes('m&a') || text.includes('investor') || text.includes('triệu usd') || text.includes('tỷ usd')) {
+        return 'Funding & Dòng tiền';
+      }
+      if (top.includes('aquaculture') || top.includes('hardware') || top.includes('iot') || text.includes('tôm') || text.includes('cá ') || text.includes('thủy sản') || text.includes('aquaculture') || text.includes('sensor') || text.includes('cảm biến') || text.includes('stm32') || text.includes('esp32') || text.includes('water quality') || text.includes('chất lượng nước')) {
+        return 'Aquaculture & IoT';
+      }
+      if (top.includes('social') || top.includes('buzz') || src.includes('reddit') || src.includes('twitter') || src.includes('x') || src.includes('google trends') || src.includes('hn') || src.includes('hacker news')) {
+        return 'Social Buzz & Cộng đồng';
+      }
+      if (src.includes('gh') || src.includes('github') || src.includes('arxiv')) {
+        return 'AI Ecosystem & Mã nguồn mở';
+      }
+      return 'Kinh doanh & Thị trường khác';
+    }
+
+    function toggleTopicAccordion(groupKey) {
+      accordionState[groupKey] = !accordionState[groupKey];
+      const groupSlug = groupKey.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      const el = document.getElementById(`accordion-body-${groupSlug}`);
+      const icon = document.getElementById(`accordion-icon-${groupSlug}`);
+      if (el) el.style.display = accordionState[groupKey] ? 'block' : 'none';
+      if (icon) icon.style.transform = accordionState[groupKey] ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+
+    function toggleAllAccordions(expand) {
+      document.querySelectorAll('.topic-accordion-body').forEach(b => {
+        b.style.display = expand ? 'block' : 'none';
+      });
+      document.querySelectorAll('.topic-accordion-chevron').forEach(c => {
+        c.style.transform = expand ? 'rotate(180deg)' : 'rotate(0deg)';
+      });
+      Object.keys(accordionState).forEach(k => {
+        accordionState[k] = expand;
+      });
+    }
+
+    function renderRecentSignalsGrouped() {
+      const container = document.getElementById('recentList');
+      if (!container) return;
+
+      const allSignals = getActiveSignalsList();
+      const search = (currentSignalsSearch || '').toLowerCase().trim();
+
+      const filtered = allSignals.filter(it => {
+        const st = getSignalReadStatus(it.url);
+        if (currentSignalsStatusFilter === 'unread' && st !== 'unread') return false;
+        if (currentSignalsStatusFilter === 'read' && st !== 'read') return false;
+        if (currentSignalsStatusFilter === 'bookmarked' && st !== 'bookmarked') return false;
+
+        if (search) {
+          const text = `${it.title || ''} ${it.summary || ''} ${it.url || ''} ${it.topic || ''}`.toLowerCase();
+          if (!text.includes(search)) return false;
+        }
+        return true;
+      });
+
+      const recentCountPill = document.getElementById('recentCountPill');
+      if (recentCountPill) recentCountPill.textContent = `(${filtered.length} / ${allSignals.length} tin)`;
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state" style="padding: 30px; text-align: center; color: var(--fg-dim);">
+            Không có tin tức nào phù hợp với bộ lọc hiện tại.
+          </div>
+        `;
+        return;
+      }
+
+      const groupOrder = [
+        'AI & Tech',
+        'Funding & Dòng tiền',
+        'Aquaculture & IoT',
+        'Social Buzz & Cộng đồng',
+        'AI Ecosystem & Mã nguồn mở',
+        'Kinh doanh & Thị trường khác'
+      ];
+
+      const groupIcons = {
+        'AI & Tech': '🤖',
+        'Funding & Dòng tiền': '💰',
+        'Aquaculture & IoT': '🦐',
+        'Social Buzz & Cộng đồng': '🔥',
+        'AI Ecosystem & Mã nguồn mở': '🧩',
+        'Kinh doanh & Thị trường khác': '📊'
+      };
+
+      const groups = {};
+      groupOrder.forEach(g => { groups[g] = []; });
+
+      filtered.forEach(item => {
+        const g = getSignalGroupTopic(item);
+        if (!groups[g]) groups[g] = [];
+        groups[g].push(item);
+      });
+
+      let html = '';
+
+      groupOrder.forEach(groupName => {
+        const items = groups[groupName] || [];
+        if (items.length === 0) return;
+
+        items.sort((a, b) => (b.score || 0) - (a.score || 0));
+
+        const groupSlug = groupName.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        const isExpanded = accordionState[groupName] !== false;
+        const unreadCount = items.filter(it => getSignalReadStatus(it.url) === 'unread').length;
+        const icon = groupIcons[groupName] || '📌';
+
+        html += `
+          <div class="topic-accordion-group" style="margin-bottom: 14px; border: 1px solid var(--border); border-radius: var(--radius-md); background: rgba(255,255,255,0.02); overflow: hidden;">
+            <div class="topic-accordion-header" onclick="toggleTopicAccordion('${escapeHtml(groupName)}')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: rgba(255,255,255,0.03); cursor: pointer; user-select: none;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.15rem;">${icon}</span>
+                <span style="font-size: 0.95rem; font-weight: 700; color: var(--fg);">${escapeHtml(groupName)}</span>
+                <span class="count-pill" style="font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; background: rgba(255,255,255,0.08);">${items.length} tin</span>
+                ${unreadCount > 0 ? `<span class="read-badge unread" style="font-size: 0.7rem; padding: 2px 7px;">${unreadCount} chưa đọc</span>` : ''}
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="topic-accordion-chevron" id="accordion-icon-${groupSlug}" style="font-size: 11px; color: var(--fg-muted); transition: transform 0.2s ease; transform: ${isExpanded ? 'rotate(180deg)' : 'rotate(0deg)'};">&#9660;</span>
+              </div>
+            </div>
+            <div class="topic-accordion-body" id="accordion-body-${groupSlug}" style="display: ${isExpanded ? 'block' : 'none'}; padding: 8px 12px;">
+              ${items.map(item => {
+                const st = getSignalReadStatus(item.url);
+                const isRead = st === 'read';
+                const isBookmarked = st === 'bookmarked';
+                const scorePercent = Math.min(100, Math.max(0, item.score || 0));
+                const barColor = (item.score || 0) >= 70 ? 'var(--score-high)' : ((item.score || 0) >= 45 ? 'var(--score-mid)' : 'var(--score-low)');
+
+                let statusBadgeHtml = '';
+                if (st === 'bookmarked') {
+                  statusBadgeHtml = `<span class="read-badge bookmarked" onclick="toggleSignalRead('${escapeHtml(item.url)}', event)" title="Nhấn để đổi trạng thái">⭐ Đã lưu</span>`;
+                } else if (st === 'read') {
+                  statusBadgeHtml = `<span class="read-badge read" onclick="toggleSignalRead('${escapeHtml(item.url)}', event)" title="Nhấn để đánh dấu chưa đọc">✓ Đã đọc</span>`;
+                } else {
+                  statusBadgeHtml = `<span class="read-badge unread" onclick="toggleSignalRead('${escapeHtml(item.url)}', event)" title="Nhấn để đánh dấu đã đọc">● Chưa đọc</span>`;
+                }
+
+                const titleDisplay = escapeHtml(item.title_vi || item.title || 'Untitled');
+                const summaryDisplay = escapeHtml(item.summary_vi || item.summary || 'Chưa có mô tả — nhấn link để xem chi tiết');
+
+                return `
+                  <div class="recent-row ${isRead ? 'read-item' : ''}" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.04); transition: all 0.2s ease;">
+                    <div class="recent-main" style="flex: 1; min-width: 0;">
+                      <div class="recent-title-line" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px;">
+                        ${statusBadgeHtml}
+                        <button onclick="toggleSignalBookmark('${escapeHtml(item.url)}', '${escapeHtml(item.title || '')}', '${escapeHtml(item.summary || '')}', event)" style="background: none; border: none; cursor: pointer; font-size: 13px; color: ${isBookmarked ? '#f59e0b' : 'var(--fg-dim)'}; padding: 0 4px;" title="Lưu tin / Bỏ lưu">
+                          ${isBookmarked ? '★' : '☆'}
+                        </button>
+                        <a class="recent-title" href="${escapeHtml(item.url || '#')}" target="_blank" rel="noopener noreferrer" style="font-weight: 700; font-size: 0.92rem; color: var(--fg); text-decoration: none;">
+                          ${titleDisplay}
+                        </a>
+                      </div>
+                      <p class="recent-summary" style="margin: 3px 0 6px 0; font-size: 0.84rem; color: var(--fg-dim); line-height: 1.45;">
+                        ${summaryDisplay}
+                      </p>
+                      <div class="recent-meta" style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 0.72rem; color: var(--fg-muted);">
+                        ${renderSourceBadges(item.sources || (item.source ? [item.source] : ['rss']))}
+                        ${item.tag ? renderImpactTag(item.tag) : ''}
+                        ${item.velocity ? renderVelocityBadge(item.velocity) : ''}
+                        <span>&bull;</span>
+                        <span>${escapeHtml(item.time || 'hôm nay')}</span>
+                      </div>
+                    </div>
+                    <div class="recent-right" style="flex-shrink: 0; text-align: right;">
+                      <div class="score-chart-cell" style="display: flex; flex-direction: column; align-items: flex-end; gap: 3px;">
+                        <span class="${getScoreClass(item.score || 0)}" style="font-size: 0.85rem; font-weight: 800;">${item.score || 50}</span>
+                        <div class="mini-bar-container" style="width: 48px; height: 4px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
+                          <div class="mini-bar-fill" style="width: ${scorePercent}%; height: 100%; background-color: ${barColor}"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    // --- PHASE 17 HANDLERS: 30-DAY ARCHIVE MODAL (Nhóm A1) ---
+    async function openArchiveModal() {
+      const modal = document.getElementById('archiveModal');
+      if (!modal) return;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+
+      const badge = document.getElementById('archiveTotalCountBadge');
+      if (badge) badge.textContent = 'Đang tải...';
+
+      if (!SIGNALS_ARCHIVE_DATA || SIGNALS_ARCHIVE_DATA.length === 0) {
+        try {
+          const res = await fetch('data/signals_archive.json');
+          if (res.ok) {
+            SIGNALS_ARCHIVE_DATA = await res.json();
+          } else {
+            const res2 = await fetch('data/news/signals_archive.json');
+            if (res2.ok) SIGNALS_ARCHIVE_DATA = await res2.json();
+          }
+        } catch (e) {
+          console.warn('Could not load signals_archive.json:', e);
+        }
+      }
+
+      renderArchiveModal();
+    }
+
+    function closeArchiveModal() {
+      const modal = document.getElementById('archiveModal');
+      if (modal) modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function handleArchiveBackdropClick(event) {
+      if (event.target && event.target.id === 'archiveModal') {
+        closeArchiveModal();
+      }
+    }
+
+    function filterArchiveByDate(date) {
+      archiveCurrentDateFilter = date;
+      renderArchiveModal();
+    }
+
+    function onArchiveSearch(val) {
+      archiveSearchTerm = (val || '').toLowerCase().trim();
+      renderArchiveModal();
+    }
+
+    function renderArchiveModal() {
+      const container = document.getElementById('archiveContentArea');
+      const dateFiltersContainer = document.getElementById('archiveDateFilters');
+      const countBadge = document.getElementById('archiveTotalCountBadge');
+      if (!container) return;
+
+      const list = SIGNALS_ARCHIVE_DATA || [];
+      if (countBadge) countBadge.textContent = `${list.length} tin tích lũy`;
+
+      const datesSet = new Set();
+      list.forEach(it => { if (it.archived_date) datesSet.add(it.archived_date); });
+      const sortedDates = Array.from(datesSet).sort().reverse();
+
+      if (dateFiltersContainer) {
+        let dateBtnsHtml = `<span style="font-size: 12px; color: var(--fg-dim);">Lọc theo ngày:</span>`;
+        dateBtnsHtml += `<button class="bm-filter-btn ${archiveCurrentDateFilter === 'all' ? 'active' : ''}" onclick="filterArchiveByDate('all')">Tất cả (${list.length})</button>`;
+        sortedDates.slice(0, 10).forEach(d => {
+          const cnt = list.filter(it => it.archived_date === d).length;
+          dateBtnsHtml += `<button class="bm-filter-btn ${archiveCurrentDateFilter === d ? 'active' : ''}" onclick="filterArchiveByDate('${d}')">${d} (${cnt})</button>`;
+        });
+        dateFiltersContainer.innerHTML = dateBtnsHtml;
+      }
+
+      const filtered = list.filter(it => {
+        if (archiveCurrentDateFilter !== 'all' && it.archived_date !== archiveCurrentDateFilter) return false;
+        if (archiveSearchTerm) {
+          const text = `${it.title || ''} ${it.summary || ''} ${it.url || ''} ${it.batch_id || ''}`.toLowerCase();
+          if (!text.includes(archiveSearchTerm)) return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div style="padding: 30px; text-align: center; color: var(--fg-dim);">Không tìm thấy tin lưu trữ phù hợp.</div>`;
+        return;
+      }
+
+      container.innerHTML = `
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          ${filtered.map(it => `
+            <div class="bookmark-item-card" style="padding: 12px 14px; border-left: 3px solid #10b981;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 6px;">
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: rgba(16, 185, 129, 0.15); color: #34d399; font-family: var(--font-mono);">${escapeHtml(it.archived_date || 'Lưu trữ')}</span>
+                  <span style="font-size: 10px; padding: 2px 6px; border-radius: 4px; background: rgba(255,255,255,0.06); color: var(--fg-muted); font-family: var(--font-mono);">${escapeHtml(it.batch_id || 'run')}</span>
+                  <a href="${escapeHtml(it.url || '#')}" target="_blank" rel="noopener noreferrer" style="font-weight: 700; font-size: 14px; color: var(--fg); text-decoration: none;">
+                    ${escapeHtml(it.title_vi || it.title || 'Untitled')}
+                  </a>
+                </div>
+                <span class="score-badge ${getScoreClass(it.score || 0)}" style="font-size: 11px;">${it.score || 50}</span>
+              </div>
+              <div style="font-size: 12px; color: var(--fg-dim); margin-bottom: 6px; line-height: 1.45;">
+                ${escapeHtml(it.summary_vi || it.summary || 'Chưa có mô tả')}
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--fg-muted);">
+                <div>${renderSourceBadges(it.sources || (it.source ? [it.source] : ['rss']))}</div>
+                <a href="${escapeHtml(it.url || '#')}" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; font-weight: 600;">Xem bài gốc ↗</a>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    // --- PHASE 17 HANDLERS: AI DISRUPTION RADAR OVERHAUL (Nhóm C) ---
+    function filterDisruptionSector(sec) {
+      disruptionSectorFilter = sec;
+      document.querySelectorAll('#disruptionSectorFilters .status-pill-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('onclick')?.includes(`'${sec}'`));
+      });
+      renderDisruptionPositions();
+    }
+
+    function onDisruptionSearch(term) {
+      disruptionSearchQuery = (term || '').toLowerCase().trim();
+      renderDisruptionPositions();
+    }
+
+    function renderDisruptionView() {
+      renderDisruptionCharts();
+      renderDisruptionPositions();
+    }
+
+    function renderDisruptionCharts() {
+      if (!DISRUPTION_INSIGHTS_DATA) return;
+
+      // Chart 1: Risk Level Distribution
+      const riskArea = document.getElementById('riskLevelChartArea');
+      if (riskArea && DISRUPTION_INSIGHTS_DATA.by_risk_level) {
+        const rl = DISRUPTION_INSIGHTS_DATA.by_risk_level;
+        const total = (rl.safe?.count || 0) + (rl.opportunity?.count || 0) + (rl.at_risk?.count || 0) || 20;
+        const safePct = Math.round(((rl.safe?.count || 0) / total) * 100);
+        const oppPct = Math.round(((rl.opportunity?.count || 0) / total) * 100);
+        const riskPct = Math.round(((rl.at_risk?.count || 0) / total) * 100);
+
+        riskArea.innerHTML = `
+          <div style="display: flex; height: 12px; border-radius: 999px; overflow: hidden; background: rgba(255,255,255,0.06); margin-bottom: 6px;">
+            <div style="width: ${safePct}%; background: #10b981;" title="An toàn: ${rl.safe?.count} vị trí"></div>
+            <div style="width: ${oppPct}%; background: #f59e0b;" title="Cơ hội: ${rl.opportunity?.count} vị trí"></div>
+            <div style="width: ${riskPct}%; background: #ef4444;" title="Nguy cơ cao: ${rl.at_risk?.count} vị trí"></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+                <span>An toàn (&lt; 40%)</span>
+              </span>
+              <span style="font-weight: 700; color: #34d399;">${rl.safe?.count || 0} vị trí (${safePct}%)</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+                <span>Cơ hội đồng hành (40-69%)</span>
+              </span>
+              <span style="font-weight: 700; color: #fbbf24;">${rl.opportunity?.count || 0} vị trí (${oppPct}%)</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="display: flex; align-items: center; gap: 6px;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+                <span>Nguy cơ cao (&ge; 70%)</span>
+              </span>
+              <span style="font-weight: 700; color: #f87171;">${rl.at_risk?.count || 0} vị trí (${riskPct}%)</span>
+            </div>
+          </div>
+        `;
+      }
+
+      // Chart 2: Top Skills by Demand
+      const demandArea = document.getElementById('skillsDemandChartArea');
+      if (demandArea && DISRUPTION_INSIGHTS_DATA.skills_by_demand) {
+        const skills = (DISRUPTION_INSIGHTS_DATA.skills_by_demand || []).slice(0, 5);
+        const maxMentions = Math.max(...skills.map(s => s.mentions || 1), 1);
+
+        demandArea.innerHTML = skills.map(sk => {
+          const pct = Math.min(100, Math.round(((sk.mentions || 0) / maxMentions) * 100));
+          return `
+            <div style="display: flex; flex-direction: column; gap: 2px;">
+              <div style="display: flex; justify-content: space-between; font-size: 11px;">
+                <span style="color: var(--fg); font-weight: 600; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; max-width: 170px;" title="${escapeHtml(sk.skill)}">${escapeHtml(sk.skill)}</span>
+                <span style="font-weight: 700; color: #38bdf8;">+${sk.growth_pct || 0}%</span>
+              </div>
+              <div style="height: 5px; width: 100%; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
+                <div style="width: ${pct}%; height: 100%; background: linear-gradient(90deg, #38bdf8, #818cf8); border-radius: 999px;"></div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Chart 3: Replacement Timeline
+      const timelineArea = document.getElementById('replacementTimelineChartArea');
+      if (timelineArea && DISRUPTION_INSIGHTS_DATA.replacement_timeline) {
+        const tl = DISRUPTION_INSIGHTS_DATA.replacement_timeline || [];
+        timelineArea.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; height: 50px; padding: 4px 10px 0 10px; background: rgba(255,255,255,0.02); border-radius: 6px;">
+            ${tl.map(point => `
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                <span style="font-size: 11px; font-weight: 800; color: #f59e0b;">${point.avg_ai_pct}%</span>
+                <div style="width: 24px; height: ${(point.avg_ai_pct || 40) * 0.4}px; background: rgba(245, 158, 11, 0.4); border: 1px solid rgba(245, 158, 11, 0.7); border-radius: 4px 4px 0 0;"></div>
+                <span style="font-size: 10px; color: var(--fg-muted);">${escapeHtml(point.week)}</span>
+              </div>
+            `).join('')}
+          </div>
+          <div style="font-size: 11px; color: var(--fg-dim); text-align: center; margin-top: 4px;">
+            Trung bình can thiệp AI: <strong>${DISRUPTION_INSIGHTS_DATA.summary?.average_ai_penetration_pct || 45}%</strong>
+          </div>
+        `;
+      }
+    }
+
+    function renderDisruptionPositions() {
+      const grid = document.getElementById('positionsGrid');
+      if (!grid) return;
+
+      const positions = (DISRUPTION_CURRENT_DATA && DISRUPTION_CURRENT_DATA.positions) ? DISRUPTION_CURRENT_DATA.positions : [];
+      if (positions.length === 0) {
+        grid.innerHTML = '<div style="padding: 30px; text-align: center; color: var(--fg-dim);">Đang tải dữ liệu vị trí & kỹ năng...</div>';
+        return;
+      }
+
+      const countAll = document.getElementById('countDisruptAll');
+      if (countAll) countAll.textContent = positions.length;
+
+      const filtered = positions.filter(pos => {
+        if (disruptionSectorFilter !== 'all' && !(pos.sector || '').toLowerCase().includes(disruptionSectorFilter.toLowerCase())) {
+          return false;
+        }
+        if (disruptionSearchQuery) {
+          const pText = `${pos.name || ''} ${pos.sector || ''}`.toLowerCase();
+          const sText = (pos.skills || []).map(s => `${s.name || ''} ${s.evidence || ''}`).join(' ').toLowerCase();
+          if (!pText.includes(disruptionSearchQuery) && !sText.includes(disruptionSearchQuery)) return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div style="padding: 30px; text-align: center; color: var(--fg-dim); grid-column: 1/-1;">Không tìm thấy vị trí nào phù hợp.</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(pos => {
+        const aiPct = pos.total_ai_pct || 50;
+        const barColor = aiPct < 40 ? '#10b981' : (aiPct < 70 ? '#f59e0b' : '#ef4444');
+        const badgeCls = aiPct < 40 ? 'level-badge-safe' : (aiPct < 70 ? 'level-badge-opp' : 'level-badge-avoid');
+        const badgeText = aiPct < 40 ? 'An toàn' : (aiPct < 70 ? 'Cơ hội đồng hành' : 'Nguy cơ thay thế');
+
+        return `
+          <div class="position-card" style="background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px; display: flex; flex-direction: column; gap: 12px; transition: border-color 0.2s ease;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+              <div>
+                <div style="font-size: 15px; font-weight: 800; color: var(--fg); margin-bottom: 2px;">
+                  ${escapeHtml(pos.name)}
+                </div>
+                <span style="font-size: 11px; padding: 2px 7px; border-radius: 4px; background: rgba(255,255,255,0.06); color: var(--fg-muted);">
+                  ${escapeHtml(pos.sector || 'Đa ngành')}
+                </span>
+              </div>
+              <div style="text-align: right;">
+                <span class="level-badge ${badgeCls}" style="font-size: 10px;">${badgeText}</span>
+                <div style="font-size: 14px; font-weight: 800; color: ${barColor}; margin-top: 2px;">
+                  ${aiPct}% AI
+                </div>
+              </div>
+            </div>
+
+            <div style="width: 100%; height: 5px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden;">
+              <div style="width: ${aiPct}%; height: 100%; background: ${barColor}; border-radius: 999px;"></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--fg-muted); text-transform: uppercase;">
+                Kỹ năng cụ thể (Nhấn để xem chi tiết & tài liệu học):
+              </div>
+              ${(pos.skills || []).map(sk => {
+                const skColor = sk.ai_pct < 40 ? '#10b981' : (sk.ai_pct < 70 ? '#f59e0b' : '#ef4444');
+                const trendIcon = sk.trend === 'rising' ? '🔥 Tăng' : (sk.trend === 'fading' ? '📉 Giảm' : '➡️ Ổn định');
+                return `
+                  <div class="skill-card-row" onclick="openSkillDetailModal('${escapeHtml(sk.name)}', '${escapeHtml(pos.name)}')" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 8px 10px; cursor: pointer; transition: background 0.2s ease;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; gap: 8px;">
+                      <span style="font-size: 12px; font-weight: 700; color: var(--fg);">${escapeHtml(sk.name)}</span>
+                      <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+                        <span style="font-size: 10px; color: var(--fg-muted);">${trendIcon}</span>
+                        <span style="font-size: 11px; font-weight: 800; color: ${skColor};">${sk.ai_pct}%</span>
+                      </div>
+                    </div>
+                    <div style="font-size: 11px; color: var(--fg-dim); line-height: 1.4;">
+                      <strong>Chứng cứ:</strong> ${escapeHtml(sk.evidence || 'Ước tính — chưa có dữ liệu xác nhận')}
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openSkillDetailModal(skillName, positionName) {
+      const modal = document.getElementById('skillDetailModal');
+      const body = document.getElementById('skillDetailBody');
+      const nameEl = document.getElementById('skillDetailName');
+      const aiBadge = document.getElementById('skillDetailAiBadge');
+      const trendBadge = document.getElementById('skillDetailTrendBadge');
+      if (!modal || !body) return;
+
+      let foundSkill = null;
+      const positions = (DISRUPTION_CURRENT_DATA && DISRUPTION_CURRENT_DATA.positions) ? DISRUPTION_CURRENT_DATA.positions : [];
+      for (const pos of positions) {
+        if (positionName && pos.name !== positionName) continue;
+        const match = (pos.skills || []).find(s => s.name === skillName);
+        if (match) {
+          foundSkill = match;
+          break;
+        }
+      }
+      if (!foundSkill) {
+        for (const pos of positions) {
+          const match = (pos.skills || []).find(s => s.name === skillName);
+          if (match) { foundSkill = match; break; }
+        }
+      }
+
+      if (!foundSkill) {
+        foundSkill = {
+          name: skillName,
+          ai_pct: 50,
+          trend: 'stable',
+          description_vi: 'Kỹ năng chuyên môn trong ngành.',
+          evidence: 'Ước tính theo thị trường.',
+          demand_mentions: 12,
+          growth_pct: 25,
+          related_positions: [positionName || 'Vị trí liên quan'],
+          learn_keywords: [skillName],
+          learn_resources: [],
+          related_signals: []
+        };
+      }
+
+      if (nameEl) nameEl.textContent = foundSkill.name;
+      if (aiBadge) {
+        aiBadge.textContent = `${foundSkill.ai_pct}% AI`;
+        const col = foundSkill.ai_pct < 40 ? '#10b981' : (foundSkill.ai_pct < 70 ? '#f59e0b' : '#ef4444');
+        aiBadge.style.borderColor = col;
+        aiBadge.style.color = col;
+      }
+      if (trendBadge) {
+        trendBadge.textContent = foundSkill.trend === 'rising' ? '🔥 Tăng trưởng' : (foundSkill.trend === 'fading' ? '📉 Giảm nhiệt' : '➡️ Ổn định');
+      }
+
+      let html = '';
+
+      html += `
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px;">
+          <div style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: #38bdf8; margin-bottom: 4px;">
+            📝 Mô tả kỹ năng:
+          </div>
+          <div style="font-size: 13px; color: var(--fg); line-height: 1.5; margin-bottom: 8px;">
+            ${escapeHtml(foundSkill.description_vi || 'Kỹ năng chuyên môn.')}
+          </div>
+          <div style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: #fbbf24; margin-bottom: 4px;">
+            🔍 Chứng cứ & Dữ liệu thực tế:
+          </div>
+          <div style="font-size: 13px; color: var(--fg); line-height: 1.5;">
+            ${escapeHtml(foundSkill.evidence || 'Ước tính — chưa có dữ liệu xác nhận')}
+          </div>
+        </div>
+      `;
+
+      html += `
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px;">
+          <div style="background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.25); border-radius: 6px; padding: 10px;">
+            <div style="font-size: 10px; text-transform: uppercase; color: #93c5fd; font-weight: 700;">Nhu cầu thị trường</div>
+            <div style="font-size: 18px; font-weight: 800; color: #38bdf8;">${foundSkill.demand_mentions || 15} nhắc đến</div>
+            <div style="font-size: 11px; color: var(--fg-dim);">Tăng trưởng: +${foundSkill.growth_pct || 20}%</div>
+          </div>
+          <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 6px; padding: 10px;">
+            <div style="font-size: 10px; text-transform: uppercase; color: #6ee7b7; font-weight: 700;">Vị trí liên quan</div>
+            <div style="display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px;">
+              ${(foundSkill.related_positions || [positionName]).map(p => `
+                <span style="font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 4px; background: rgba(16, 185, 129, 0.15); color: #34d399;">${escapeHtml(p)}</span>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+
+      if (foundSkill.learn_keywords && foundSkill.learn_keywords.length > 0) {
+        html += `
+          <div>
+            <div style="font-size: 11px; font-weight: 700; color: var(--fg-muted); text-transform: uppercase; margin-bottom: 6px;">
+              🎯 Từ khóa công nghệ nên học:
+            </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              ${foundSkill.learn_keywords.map(kw => `
+                <span style="font-size: 11px; padding: 3px 8px; border-radius: 4px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: var(--fg); font-family: var(--font-mono);">#${escapeHtml(kw)}</span>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      if (foundSkill.learn_resources && foundSkill.learn_resources.length > 0) {
+        html += `
+          <div>
+            <div style="font-size: 11px; font-weight: 700; color: var(--fg-muted); text-transform: uppercase; margin-bottom: 6px;">
+              📚 Tài nguyên học tập & Tài liệu:
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              ${foundSkill.learn_resources.map(res => `
+                <a href="${escapeHtml(res.url)}" target="_blank" rel="noopener noreferrer" style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 6px; color: var(--accent); text-decoration: none; font-size: 12px; font-weight: 600;">
+                  <span>📖 ${escapeHtml(res.name)}</span>
+                  <span>↗ Mở link</span>
+                </a>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      if (foundSkill.related_signals && foundSkill.related_signals.length > 0) {
+        html += `
+          <div>
+            <div style="font-size: 11px; font-weight: 700; color: var(--fg-muted); text-transform: uppercase; margin-bottom: 6px;">
+              📡 Tín hiệu thị trường liên quan:
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              ${foundSkill.related_signals.map(sig => `
+                <a href="${escapeHtml(sig.url)}" target="_blank" rel="noopener noreferrer" style="display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 6px; color: var(--fg); text-decoration: none; font-size: 12px;">
+                  <span style="font-weight: 600;">${escapeHtml(sig.title)}</span>
+                  <span style="font-size: 10px; color: var(--fg-muted);">${escapeHtml(sig.date || '')}</span>
+                </a>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      body.innerHTML = html;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSkillDetailModal() {
+      const modal = document.getElementById('skillDetailModal');
+      if (modal) modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function handleSkillDetailBackdropClick(event) {
+      if (event.target && event.target.id === 'skillDetailModal') {
+        closeSkillDetailModal();
+      }
+    }
+
+    function handleInitialNavigation() {
+      const hash = window.location.hash;
+      if (hash === '#co-hoi' || hash === '#opportunity-radar' || hash === '#dong-tien' || hash === '#funding' || hash === '#combos') {
+        switchMainTab('opportunities');
+        if (hash === '#dong-tien' || hash === '#funding') switchOppSubView('funding');
+        if (hash === '#combos') switchOppSubView('combos');
+      } else if (hash === '#thi-truong' || hash === '#chu-de-nong' || hash === '#social-buzz' || hash === '#glossary' || hash === '#timeline') {
+        switchMainTab('market');
+        if (hash === '#glossary') switchMarketSubView('glossary');
+        if (hash === '#timeline') switchMarketSubView('timeline');
+      } else if (hash === '#ai-skills' || hash === '#disruption' || hash === '#ai-disruption') {
+        switchMainTab('disruption');
+      } else {
+        switchMainTab('news');
+      }
+    }
+
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeDailyDigestModal();
@@ -6007,6 +7522,8 @@
         closeCombosModal();
         closeDisruptionModal();
         closeWeeklyModal();
+        closeArchiveModal();
+        closeSkillDetailModal();
       }
     });
 
@@ -6021,6 +7538,18 @@
       await loadRepoCombos();
       await loadDisruptionData();
       await loadWeeklyArchive();
+
+      try {
+        const sigRes = await fetch('data/signals.json');
+        if (sigRes.ok) {
+          SIGNALS_CURRENT_DATA = await sigRes.json();
+        } else {
+          const sigRes2 = await fetch('data/news/signals_current.json');
+          if (sigRes2.ok) SIGNALS_CURRENT_DATA = await sigRes2.json();
+        }
+      } catch (e) {
+        console.warn('Could not load data/signals.json:', e);
+      }
       
       try {
         const res = await fetch('data/news.json');
@@ -6038,13 +7567,16 @@
               clusters: Array.isArray(rawTopic.clusters) ? rawTopic.clusters : [],
               items: (rawTopic.items || []).map(item => ({
                 title: item.title || 'Untitled',
+                title_vi: item.title_vi || '',
                 summary: item.summary || '',
+                summary_vi: item.summary_vi || '',
                 url: item.url || '#',
                 sources: Array.isArray(item.sources) ? item.sources : (item.source ? [item.source] : ['rss']),
                 time: item.time || (item.published ? new Date(item.published).toLocaleDateString() : 'recent'),
                 score: typeof item.score === 'number' ? item.score : (item.relevance_score ? Math.round(item.relevance_score * 75) : 50),
                 velocity: item.velocity || 'stable',
-                tag: item.tag || 'signal'
+                tag: item.tag || 'signal',
+                topic: item.topic || topicKey
               }))
             };
           });
@@ -6054,13 +7586,16 @@
           DATA = JSON.parse(JSON.stringify(MOCK_DATA));
           const convertedItems = json.items.map(item => ({
             title: item.title || 'Untitled',
+            title_vi: item.title_vi || '',
             summary: item.summary || '',
+            summary_vi: item.summary_vi || '',
             url: item.url || '#',
             sources: [item.source ? 'rss' : 'rss'],
             time: item.meta || (item.published ? new Date(item.published).toLocaleDateString() : 'recent'),
             score: typeof item.score === 'number' ? item.score : (item.relevance_score ? Math.round(item.relevance_score * 75) : 55),
             velocity: item.velocity || 'stable',
-            tag: item.tag || 'signal'
+            tag: item.tag || 'signal',
+            topic: item.topic || 'News'
           }));
 
           if (DATA['News']) {
@@ -6078,12 +7613,14 @@
         }
 
         render();
+        handleInitialNavigation();
       } catch (e) {
         console.warn('Failed to load news data, falling back to MOCK_DATA:', e);
         showFallbackBanner();
         DATA = JSON.parse(JSON.stringify(MOCK_DATA));
         lastUpdatedIso = new Date().toISOString();
         render();
+        handleInitialNavigation();
       }
     }
 
@@ -6092,19 +7629,12 @@
       const topicKeys = Object.keys(DATA);
       if (topicKeys.length === 0 && OPPORTUNITIES_DATA.length === 0) return;
 
-      // Ensure activeTopic exists (supports 'Opportunity Radar', 'Dòng Tiền', 'Chủ Đề Nóng' or URL hash)
+      // Ensure activeTopic exists
       const savedTopic = localStorage.getItem('mynews_active_topic');
-      const hash = window.location.hash;
-      if (hash === '#opportunity-radar') {
-        activeTopic = 'Opportunity Radar';
-      } else if (hash === '#dong-tien' || hash === '#funding') {
-        activeTopic = 'Dòng Tiền';
-      } else if (hash === '#chu-de-nong' || hash === '#social-buzz' || hash === '#buzz') {
-        activeTopic = 'Chủ Đề Nóng';
-      } else if (savedTopic === 'Opportunity Radar' || savedTopic === 'Dòng Tiền' || savedTopic === 'Funding' || savedTopic === 'Chủ Đề Nóng' || (savedTopic && DATA[savedTopic])) {
-        activeTopic = savedTopic === 'Funding' ? 'Dòng Tiền' : savedTopic;
-      } else if (!DATA[activeTopic] && activeTopic !== 'Opportunity Radar' && activeTopic !== 'Dòng Tiền' && activeTopic !== 'Chủ Đề Nóng') {
-        activeTopic = topicKeys[0] || 'Opportunity Radar';
+      if (savedTopic && DATA[savedTopic]) {
+        activeTopic = savedTopic;
+      } else if (!DATA[activeTopic]) {
+        activeTopic = topicKeys[0] || 'AI/Tech';
       }
 
       // 1. Sync Status
@@ -6120,7 +7650,14 @@
       // 4. Render Active Topic Content
       renderActiveTopic();
 
-      // 5. Render Footer Stats
+      // 5. Update Signals Filter Counts and Grouped Signals (Phase 17)
+      updateSignalsFilterCounts();
+      renderRecentSignalsGrouped();
+
+      // 6. Update Main Nav Badges
+      updateNavBadges();
+
+      // 7. Render Footer Stats
       renderStats();
     }
 
@@ -6128,59 +7665,27 @@
       const tabsContainer = document.getElementById('topicTabs');
       if (!tabsContainer) return;
 
-      const isRadarActive = activeTopic === 'Opportunity Radar';
-      const isFundingActive = activeTopic === 'Dòng Tiền' || activeTopic === 'Funding';
-      const isBuzzActive = activeTopic === 'Chủ Đề Nóng' || activeTopic === 'Social Buzz';
-      const oppCount = OPPORTUNITIES_DATA.length;
-      const fundingCount = getAllFundingDeals().length;
-      const buzzCount = (SOCIAL_BUZZ_DATA.reddit_posts ? SOCIAL_BUZZ_DATA.reddit_posts.length : 0) + (SOCIAL_BUZZ_DATA.google_trends_keywords ? SOCIAL_BUZZ_DATA.google_trends_keywords.length : 0) + (SOCIAL_BUZZ_DATA.twitter_trends ? SOCIAL_BUZZ_DATA.twitter_trends.length : 0);
+      const keys = Object.keys(DATA).filter(topic => topic !== 'Funding' && topic !== 'Social Buzz' && topic !== 'Dòng Tiền' && topic !== 'Opportunity Radar' && topic !== 'Chủ Đề Nóng');
+      if (keys.length === 0) return;
 
-      let tabsHtml = `
-        <button class="tab-btn tab-btn-radar ${isRadarActive ? 'active' : ''}" onclick="switchTopic('Opportunity Radar')">
-          <span>📡 Opportunity Radar</span>
-          <span class="tab-badge tab-badge-radar">${oppCount}</span>
-        </button>
-        <button class="tab-btn tab-btn-funding ${isFundingActive ? 'active' : ''}" onclick="switchTopic('Dòng Tiền')">
-          <span>💰 Dòng Tiền</span>
-          <span class="tab-badge tab-badge-funding">${fundingCount}</span>
-        </button>
-        <button class="tab-btn tab-btn-buzz ${isBuzzActive ? 'active' : ''}" onclick="switchTopic('Chủ Đề Nóng')">
-          <span>🔥 Chủ Đề Nóng</span>
-          <span class="tab-badge tab-badge-buzz">${buzzCount}</span>
-        </button>
-      `;
-
-      tabsHtml += Object.keys(DATA)
-        .filter(topic => topic !== 'Funding' && topic !== 'Social Buzz' && topic !== 'Dòng Tiền' && topic !== 'Opportunity Radar' && topic !== 'Chủ Đề Nóng')
-        .map(topic => {
-          const count = DATA[topic].items?.length || 0;
-          const isActive = (topic === activeTopic) && !isRadarActive && !isFundingActive && !isBuzzActive;
-          return `
-            <button class="tab-btn ${isActive ? 'active' : ''}" onclick="switchTopic('${topic.replace(/'/g, "\\'")}')">
-              <span>${topic}</span>
-              <span class="tab-badge">${count}</span>
-            </button>
-          `;
-        }).join('');
+      let tabsHtml = keys.map(topic => {
+        const count = DATA[topic].items?.length || 0;
+        const isActive = (topic === activeTopic);
+        return `
+          <button class="tab-btn ${isActive ? 'active' : ''}" onclick="switchTopic('${topic.replace(/'/g, "\\'")}')">
+            <span>${topic}</span>
+            <span class="tab-badge">${count}</span>
+          </button>
+        `;
+      }).join('');
 
       tabsContainer.innerHTML = tabsHtml;
     }
 
     function switchTopic(topic) {
-      if (topic === 'Funding') topic = 'Dòng Tiền';
-      if (topic === 'Social Buzz') topic = 'Chủ Đề Nóng';
-      if (topic !== 'Opportunity Radar' && topic !== 'Dòng Tiền' && topic !== 'Chủ Đề Nóng' && !DATA[topic]) return;
+      if (!DATA[topic]) return;
       activeTopic = topic;
       localStorage.setItem('mynews_active_topic', topic);
-      if (topic === 'Opportunity Radar') {
-        window.history.replaceState(null, '', '#opportunity-radar');
-      } else if (topic === 'Dòng Tiền') {
-        window.history.replaceState(null, '', '#dong-tien');
-      } else if (topic === 'Chủ Đề Nóng') {
-        window.history.replaceState(null, '', '#chu-de-nong');
-      } else if (window.location.hash === '#opportunity-radar' || window.location.hash === '#dong-tien' || window.location.hash === '#funding' || window.location.hash === '#chu-de-nong' || window.location.hash === '#social-buzz') {
-        window.history.replaceState(null, '', window.location.pathname);
-      }
       renderTopicTabs();
       renderActiveTopic();
       renderStats();
@@ -6261,61 +7766,6 @@
       const fundingSection = document.getElementById('fundingFlowSection');
       const buzzSection = document.getElementById('socialBuzzSection');
 
-      if (isRadar) {
-        if (digestBanner) digestBanner.style.display = 'none';
-        if (briefingCard) briefingCard.style.display = 'none';
-        if (watchlistCard) watchlistCard.style.display = 'none';
-        if (sourcesRow) sourcesRow.style.display = 'none';
-        if (hotSection) hotSection.style.display = 'none';
-        if (clustersSection) clustersSection.style.display = 'none';
-        if (recentSection) recentSection.style.display = 'none';
-        if (fundingSection) fundingSection.style.display = 'none';
-        if (buzzSection) buzzSection.style.display = 'none';
-        if (radarSection) {
-          radarSection.style.display = 'block';
-          renderOpportunityRadar();
-        }
-        return;
-      }
-
-      if (isFunding) {
-        if (digestBanner) digestBanner.style.display = 'none';
-        if (briefingCard) briefingCard.style.display = 'none';
-        if (watchlistCard) watchlistCard.style.display = 'none';
-        if (sourcesRow) sourcesRow.style.display = 'none';
-        if (hotSection) hotSection.style.display = 'none';
-        if (clustersSection) clustersSection.style.display = 'none';
-        if (recentSection) recentSection.style.display = 'none';
-        if (radarSection) radarSection.style.display = 'none';
-        if (buzzSection) buzzSection.style.display = 'none';
-        if (fundingSection) {
-          fundingSection.style.display = 'block';
-          renderFundingFlow();
-        }
-        return;
-      }
-
-      if (isBuzz) {
-        if (digestBanner) digestBanner.style.display = 'none';
-        if (briefingCard) briefingCard.style.display = 'none';
-        if (watchlistCard) watchlistCard.style.display = 'none';
-        if (sourcesRow) sourcesRow.style.display = 'none';
-        if (hotSection) hotSection.style.display = 'none';
-        if (clustersSection) clustersSection.style.display = 'none';
-        if (recentSection) recentSection.style.display = 'none';
-        if (radarSection) radarSection.style.display = 'none';
-        if (fundingSection) fundingSection.style.display = 'none';
-        if (buzzSection) {
-          buzzSection.style.display = 'block';
-          renderSocialBuzz();
-        }
-        return;
-      }
-
-      // Hide all special sections and restore regular sections
-      if (radarSection) radarSection.style.display = 'none';
-      if (fundingSection) fundingSection.style.display = 'none';
-      if (buzzSection) buzzSection.style.display = 'none';
       if (digestBanner) digestBanner.style.display = 'block';
       if (briefingCard) briefingCard.style.display = 'block';
       if (sourcesRow) sourcesRow.style.display = 'flex';
@@ -6648,7 +8098,7 @@
                           <span class="opp-score-badge-inline">${s}/9</span>
                           <span class="opp-card-title-text" title="${escapeHtml(item.title)}">
                             <a href="${escapeHtml(primaryUrl)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();">
-                              ${escapeHtml(item.title)} ↗
+                              ${escapeHtml(item.title_vi || item.title)} ↗
                             </a>
                           </span>
                         </div>
@@ -6994,9 +8444,10 @@
                         <tr>
                           <td class="opp-title-cell">
                             <a class="opp-title-link" href="${escapeHtml(primaryUrl)}" target="_blank" rel="noopener noreferrer">
-                              ${escapeHtml(item.title)}
+                              ${escapeHtml(item.title_vi || item.title)}
                             </a>
-                            <p class="opp-summary-text">${escapeHtml(item.summary || '')}</p>
+                            ${item.title_vi ? `<div style="font-size: 11px; color: var(--fg-muted); font-family: monospace;">${escapeHtml(item.title)}</div>` : ''}
+                            <p class="opp-summary-text">${escapeHtml(item.summary_vi || item.summary || '')}</p>
                             <div class="opp-meta-sub">
                               <span class="opp-meta-pill">#${idx + 1}</span>
                               <span class="opp-meta-pill">${escapeHtml(item.id || '')}</span>

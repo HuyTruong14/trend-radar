@@ -844,7 +844,11 @@ def fetch_social_buzz():
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(buzz_payload, f, indent=2, ensure_ascii=False)
-    print(f"  -> Saved {len(reddit_posts)} Reddit posts, {len(gt_kws)} Trends kws, {len(twitter_trends)} Twitter trends to {OUTPUT_FILE}")
+    market_dir = os.path.join(DATA_DIR, "market")
+    os.makedirs(market_dir, exist_ok=True)
+    with open(os.path.join(market_dir, "social_buzz.json"), "w", encoding="utf-8") as f:
+        json.dump(buzz_payload, f, indent=2, ensure_ascii=False)
+    print(f"  -> Saved {len(reddit_posts)} Reddit posts, {len(gt_kws)} Trends kws, {len(twitter_trends)} Twitter trends to {OUTPUT_FILE} and market/")
 
     # 8. Format standardized signals for signals.json
     signals = []

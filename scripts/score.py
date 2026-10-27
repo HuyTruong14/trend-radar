@@ -53,12 +53,13 @@ except ImportError:
     notify = None
 
 try:
-    from summary_vi import generate_summary_vi
+    from summary_vi import generate_summary_vi, translate_title_vi
 except ImportError:
     try:
-        from scripts.summary_vi import generate_summary_vi
+        from scripts.summary_vi import generate_summary_vi, translate_title_vi
     except ImportError:
         generate_summary_vi = None
+        translate_title_vi = None
 
 
 # ==================== 1. JUNK FILTER PATTERNS (UPFRONT ELIMINATION) ====================
@@ -1048,6 +1049,9 @@ def main():
         )
 
         summary_vi = generate_summary_vi(title, summary) if generate_summary_vi else title[:80]
+        if not summary_vi or len(summary_vi) < 20:
+            summary_vi = "Chưa có mô tả — nhấn link để xem chi tiết"
+        title_vi = translate_title_vi(title, summary) if translate_title_vi else title
 
         # Phase 8: Funding intelligence metadata
         funding_sector = determine_funding_sector(title, summary, summary_vi)
@@ -1067,10 +1071,13 @@ def main():
             except Exception:
                 pass
 
+        clean_summary = summary if (summary and len(summary.strip()) >= 20) else "Chưa có mô tả — nhấn link để xem chi tiết"
+
         opp_record = {
             "id": opp_id,
             "title": title,
-            "summary": summary if summary else f"Tín hiệu công nghệ và cơ hội thị trường từ {formatted_sources[0]['name']}.",
+            "title_vi": title_vi,
+            "summary": clean_summary,
             "summary_vi": summary_vi,
             "signal_type": signal_types,
             "sources": formatted_sources,
@@ -1166,8 +1173,12 @@ def main():
         aged_opp["scores"] = aged_scores
         aged_opp["total"] = aged_total
         aged_opp["stage"] = compute_stage(aged_total)
-        if not aged_opp.get("summary_vi") or "tín hiệu công nghệ và cơ hội thị trường" in aged_opp.get("summary_vi", "").lower():
+        if not aged_opp.get("summary_vi") or len(aged_opp.get("summary_vi", "")) < 20 or "tín hiệu công nghệ và cơ hội thị trường" in aged_opp.get("summary_vi", "").lower():
             aged_opp["summary_vi"] = generate_summary_vi(aged_opp.get("title", ""), aged_opp.get("summary", "")) if generate_summary_vi else aged_opp.get("title", "")[:80]
+            if not aged_opp.get("summary_vi") or len(aged_opp["summary_vi"]) < 20:
+                aged_opp["summary_vi"] = "Chưa có mô tả — nhấn link để xem chi tiết"
+        if not aged_opp.get("title_vi"):
+            aged_opp["title_vi"] = translate_title_vi(aged_opp.get("title", ""), aged_opp.get("summary", "")) if translate_title_vi else aged_opp.get("title", "")
 
         # Phase 8: Funding intelligence metadata
         aged_opp["funding_sector"] = determine_funding_sector(aged_opp.get("title", ""), aged_opp.get("summary", ""), aged_opp.get("summary_vi", ""))
@@ -1269,15 +1280,20 @@ def main():
         reverse=True
     )
 
-    # Save to opportunities.json
+    # Save to opportunities.json (root and subfolder)
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(opportunities, f, ensure_ascii=False, indent=2)
+
+    opps_subfolder = os.path.join(DATA_DIR, "opportunities")
+    os.makedirs(opps_subfolder, exist_ok=True)
+    with open(os.path.join(opps_subfolder, "opportunities.json"), "w", encoding="utf-8") as f:
         json.dump(opportunities, f, ensure_ascii=False, indent=2)
 
     # Phase 14: Update last_updated.json
     try:
         import last_updated
-        last_updated.update_last_updated(signals_count=len(candidate_signals), status="success")
+        last_updated.update_last_updated(signals_count=len(filtered_items), status="success")
     except Exception as e:
         print(f"[score] Warning: could not update last_updated: {e}")
 

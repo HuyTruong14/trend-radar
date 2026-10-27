@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-10-21 đến 2026-10-27  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-10-27 09:46 (giờ VN)  
+**Tạo lúc:** 2026-10-27 20:50 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W44) | Tuần này (W44) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 744 | **755** | +11 (+1.5%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 294 | **323** | +29 (+9.9%) | Chất lượng cơ hội ổn định |
-| 🔴 **Build-ready (9/9)** | 1 | **1** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 72 | **75** | +3 (+4.2%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 221 | **247** | +26 (+11.8%) | Dòng tín hiệu thị trường rộng |
+| **Tổng tín hiệu đầu vào** | 744 | **635** | -109 (-14.7%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 294 | **285** | -9 (-3.1%) | Chất lượng cơ hội ổn định |
+| 🔴 **Build-ready (9/9)** | 1 | **7** | +6 (+600.0%) | Đúng ngách IoT & cảm biến nước |
+| 🟡 **Research (7–8/9)** | 72 | **80** | +8 (+11.1%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 221 | **198** | -23 (-10.4%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -22,11 +22,11 @@
 
 | # | Tiêu đề dự án / Repo | Điểm | Stage | Loại tín hiệu | Tóm tắt cơ hội (summary_vi) |
 |---|---|:---:|:---:|---|---|
-| 1 | [Gaganmn7353/aquaculture-iot](https://github.com/Gaganmn7353/aquaculture-iot) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
-| 2 | [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Startup Eka Robotics gọi $150M phát triển robot nông nghiệp tự hành |
-| 3 | [5 Interesting Startup Deals You May Have Missed: Robot Training, Space Lasers And Greener Cement](https://news.crunchbase.com/venture/interesting-startup-deals-robots-ai-gaming-clean-tech/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Dòng vốn đầu tư mới vào huấn luyện robot và vật liệu xanh |
-| 4 | [Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions”](https://agfundernews.com/layoffs-at-carbon-robotics-as-firm-realigns-costs-due-to-broader-economic-conditions) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Carbon Robotics cắt giảm chi phí tái cấu trúc mảng robot nông nghiệp |
-| 5 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
+| 1 | [ishiniayodya610/J26-SE-351](https://github.com/ishiniayodya610/J26-SE-351) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
+| 2 | [forgotmenet/Iotlab-Automation-Test](https://github.com/forgotmenet/Iotlab-Automation-Test) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
+| 3 | [mohamedsadhathj-techwork/Smart-Aquaculture-Assistant](https://github.com/mohamedsadhathj-techwork/Smart-Aquaculture-Assistant) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Trợ lý AI quản lý ao nuôi và chất lượng nước thủy sản |
+| 4 | [api-evangelist/jala](https://github.com/api-evangelist/jala) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp |
+| 5 | [Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-](https://github.com/Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Dự đoán chất lượng nước thời gian thực bằng IoT và máy học |
 
 ---
 
@@ -34,11 +34,11 @@
 
 | Thương vụ / Doanh nghiệp | Hình thức | Giá trị | Ngành chuẩn hóa | Chi tiết định hướng |
 |---|:---:|:---:|---|---|
-| [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) | **Gọi vốn** | **$150M** | Nông nghiệp | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [ESP-Mosaico Lets AI Agents Do the Coding](https://www.hackster.io/news/esp-mosaico-lets-ai-agents-do-the-coding-707ebfc43a55) | **Gọi vốn** | **N/A** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [CSL Group Acquires SIMPL Wireless to Bring Critical Connectivity® to North America](https://iotbusinessnews.com/2026/10/20/csl-group-acquires-simpl-wireless-to-bring-critical-connectivity-to-north-america/) | **M&A** | **N/A** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Cambridge Analytica's fallout is still costing Meta, this time $25 billion in New Mexico](https://www.reddit.com/r/technology/comments/1xdlpex/cambridge_analyticas_fallout_is_still_costing/) | **Gọi vốn** | **$25B** | Công nghệ & Startup | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [Connected Home Medical Monitoring Devices to Reach 160 Million by 2030](https://iotbusinessnews.com/2026/10/23/connected-home-medical-monitoring-devices-to-reach-160-million-by-2030/) | **Xu hướng** | **$160M** | Y tế | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [IMIO raises $12m to unlock nutrients trapped in crop residues with new generation of ‘dependable ag biologicals’](https://agfundernews.com/imio-raises-12m-to-unlock-nutrients-trapped-in-crop-residues-with-new-generation-of-dependable-ag-biologicals) | **Gọi vốn** | **$12M** | Nông nghiệp | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [Warhound raises $200M to engineer war dogs and arm them with Anduril gear](https://techcrunch.com/2026/10/22/ben-lamm-raises-200m-for-warhound-to-engineer-war-dogs-and-arm-them-with-anduril-gear/) | **Gọi vốn** | **$200M** | Công nghệ & Startup | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 
 ---
 
@@ -74,19 +74,19 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W44) | Tuần trước (W44) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **50** | 52 | `-4%` | ➡️ Ổn định |
-| **ESP32** | **23** | 23 | `0%` | ➡️ Ổn định |
-| **Sensor** | **21** | 21 | `0%` | ➡️ Ổn định |
+| **Robotics** | **60** | 52 | `+15%` | 📈 Tăng nhẹ |
+| **Sensor** | **29** | 21 | `+38%` | 🚀 Tăng mạnh |
+| **ESP32** | **28** | 23 | `+22%` | 📈 Tăng nhẹ |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
 | **LoRaWAN** | **14** | 14 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **14** | 12 | `+17%` | 📈 Tăng nhẹ |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
+| **Humanoid** | **10** | 12 | `-17%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
 | **RP2350** | **8** | 8 | `0%` | ➡️ Ổn định |
-| **MQTT** | **5** | 5 | `0%` | ➡️ Ổn định |
+| **MQTT** | **7** | 5 | `+40%` | 🚀 Tăng mạnh |
+| **Computer Vision** | **2** | 0 | `+200%` | 🚀 Tăng mạnh |
 | **STM32** | **0** | 0 | `0%` | ➡️ Ổn định |
-| **Computer Vision** | **0** | 0 | `0%` | ➡️ Ổn định |
 | **BLE** | **0** | 0 | `0%` | ➡️ Ổn định |
 
 ---
@@ -94,13 +94,13 @@
 ## 6. Thuật Ngữ Mới Xuất Hiện Trong Tuần
 
 - **`OpenAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`RoboBusiness`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`GR8_TECH`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`BeagleBoard`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`PocketBeagle`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`RoboWeeder`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`SenseUP`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`EpiSEM`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`SpectralCanary`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`FairPlay`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
 ---
 
@@ -109,7 +109,7 @@
 - **Kỹ năng bị AI can thiệp mạnh nhất:** `Viết mã Boilerplate CRUD & API cơ bản` (88%)
 - **Tỷ lệ mã nguồn / tác vụ AI hỗ trợ:** **88%** (Thay đổi so với tuần trước: `+4%`)
 - **Phân bổ 30 kỹ năng theo dõi:** 🟢 An toàn: **16** skills (<30%) | 🟡 Cơ hội cầu nối: **12** skills (30-80%) | 🔴 Cần tránh: **2** skills (>80%)
-- **Vị trí công việc mới nổi bật:** `AI Hardware Integrator`, `AI iGaming Experience Architect`, `AI Agent Engineer`, `Embodied AI Specialist`
+- **Vị trí công việc mới nổi bật:** `AI Hardware Integrator`, `Agentic Workflow Architect`, `AI Automation Business Consultant`, `Creative AI Director & Art Curator`
 - **Đánh giá chuyển dịch:** AI Agent đã có thể tự động sinh mã boilerplate và hỗ trợ layout mạch. Lợi thế cạnh tranh chuyển dịch từ người *viết code boilerplate* sang người *am hiểu phần cứng thực tế, tích hợp TinyML và làm cầu nối kiến trúc hệ thống*.
 
 ---

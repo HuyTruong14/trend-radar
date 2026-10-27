@@ -1,0 +1,2427 @@
+{
+  "updated": "2026-10-27T13:50:08.639861+00:00",
+  "week": "W43",
+  "positions": [
+    {
+      "name": "Translator / Thông dịch viên",
+      "sector": "Ngôn ngữ",
+      "total_ai_pct": 57,
+      "skills": [
+        {
+          "name": "Dịch tài liệu kỹ thuật & Hợp đồng cơ bản",
+          "ai_pct": 92,
+          "trend": "rising",
+          "evidence": "DeepL Pro và GPT-4o dịch tài liệu kỹ thuật đạt độ chính xác tương đương người dịch",
+          "description_vi": "Dịch văn bản chuyên ngành, tài liệu hướng dẫn sử dụng và báo cáo tài chính",
+          "demand_mentions": 18,
+          "growth_pct": 36,
+          "related_positions": [
+            "Translator / Thông dịch viên"
+          ],
+          "learn_keywords": [
+            "DeepL API",
+            "Computer-Assisted Translation (CAT)",
+            "Post-Editing MT"
+          ],
+          "learn_resources": [
+            {
+              "name": "DeepL Documentation",
+              "url": "https://www.deepl.com/docs-api"
+            },
+            {
+              "name": "Machine Translation Post-Editing Course",
+              "url": "https://www.atanet.org"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Tạo phụ đề video đa ngữ (Subtitling)",
+          "ai_pct": 85,
+          "trend": "rising",
+          "evidence": "OpenAI Whisper và ElevenLabs dịch lồng tiếng theo thời gian thực (Dubbing AI)",
+          "description_vi": "Bóc băng giọng nói và đồng bộ phụ đề cho video, podcast",
+          "demand_mentions": 17,
+          "growth_pct": 34,
+          "related_positions": [
+            "Translator / Thông dịch viên"
+          ],
+          "learn_keywords": [
+            "OpenAI Whisper",
+            "ElevenLabs Dubbing",
+            "Subtitle Timing"
+          ],
+          "learn_resources": [
+            {
+              "name": "Whisper Speech Recognition Model",
+              "url": "https://github.com/openai/whisper"
+            },
+            {
+              "name": "ElevenLabs AI Voice Studio",
+              "url": "https://elevenlabs.io"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Dịch văn học & Thơ ca",
+          "ai_pct": 32,
+          "trend": "stable",
+          "evidence": "Ngôn ngữ văn học gắn chặt với điển tích lịch sử, cảm thức cô đơn và triết lý dân tộc",
+          "description_vi": "Chuyển tải hàm ý nghệ thuật, ẩn dụ và nhịp điệu của tác phẩm văn chương",
+          "demand_mentions": 8,
+          "growth_pct": 12,
+          "related_positions": [
+            "Translator / Thông dịch viên"
+          ],
+          "learn_keywords": [
+            "Literary Translation",
+            "Poetic Nuance",
+            "Cultural Hermeneutics"
+          ],
+          "learn_resources": [
+            {
+              "name": "Words Without Borders Translation",
+              "url": "https://wordswithoutborders.org"
+            },
+            {
+              "name": "ALTA Literary Translation Resources",
+              "url": "https://literarytranslators.org"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Dịch đuổi cabin ngoại giao cấp cao (Simultaneous Interpreting)",
+          "ai_pct": 20,
+          "trend": "stable",
+          "evidence": "Rủi ro sai lệch ngoại giao quá lớn; cần độ tin cậy tuyệt đối và khả năng ứng biến nghi thức",
+          "description_vi": "Dịch đồng thời cho nguyên thủ quốc gia và hội nghị thượng đỉnh quốc tế",
+          "demand_mentions": 8,
+          "growth_pct": 8,
+          "related_positions": [
+            "Translator / Thông dịch viên"
+          ],
+          "learn_keywords": [
+            "Diplomatic Interpreting",
+            "Cognitive Load Management",
+            "Conference Interpreting"
+          ],
+          "learn_resources": [
+            {
+              "name": "AIIC International Association of Interpreters",
+              "url": "https://aiic.org"
+            },
+            {
+              "name": "UN Interpretation Guidelines",
+              "url": "https://www.un.org"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Graphic Designer",
+      "sector": "Thiết kế & Sáng tạo",
+      "total_ai_pct": 56,
+      "skills": [
+        {
+          "name": "Tạo hình ảnh minh họa & Banner quảng cáo",
+          "ai_pct": 88,
+          "trend": "rising",
+          "evidence": "Midjourney v6, Flux.1 và Stable Diffusion sinh hình ảnh chất lượng studio trong 10 giây",
+          "description_vi": "Vẽ tranh minh họa bài viết, banner marketing và visual social media",
+          "demand_mentions": 27,
+          "growth_pct": 47,
+          "related_positions": [
+            "Graphic Designer"
+          ],
+          "learn_keywords": [
+            "Midjourney",
+            "Flux.1",
+            "Prompt Engineering for Art",
+            "Canva AI"
+          ],
+          "learn_resources": [
+            {
+              "name": "Midjourney User Guide",
+              "url": "https://docs.midjourney.com"
+            },
+            {
+              "name": "Black Forest Labs Flux.1",
+              "url": "https://blackforestlabs.ai"
+            }
+          ],
+          "related_signals": [
+            {
+              "title": "Anil-matcha/Open-Generative-AI",
+              "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+              "date": "3d"
+            },
+            {
+              "title": "Large language models are having their Stable Diffusion moment",
+              "url": "https://simonwillison.net/2023/Mar/11/llama/",
+              "date": "1325d"
+            }
+          ]
+        },
+        {
+          "name": "Chỉnh sửa ảnh & Tách nền (Retouching)",
+          "ai_pct": 82,
+          "trend": "rising",
+          "evidence": "Photoshop Generative Fill và Magnific AI tự động hóa hoàn toàn việc retouching",
+          "description_vi": "Xóa vật thể, tăng độ nét và chỉnh màu sắc sản phẩm thương mại",
+          "demand_mentions": 31,
+          "growth_pct": 50,
+          "related_positions": [
+            "Graphic Designer"
+          ],
+          "learn_keywords": [
+            "Photoshop Generative Fill",
+            "Magnific AI",
+            "Inpainting"
+          ],
+          "learn_resources": [
+            {
+              "name": "Adobe Photoshop Generative AI Tutorials",
+              "url": "https://helpx.adobe.com/photoshop"
+            },
+            {
+              "name": "Magnific AI Upscaling",
+              "url": "https://magnific.ai"
+            }
+          ],
+          "related_signals": [
+            {
+              "title": "UniVOE: A Removal-Driven Framework for Interaction-Aware Universal Video Object Editing",
+              "url": "https://arxiv.org/abs/2610.31641v1",
+              "date": "4d"
+            },
+            {
+              "title": "UniVOE: A Removal-Driven Framework for Interaction-Aware Universal Video Object Editing",
+              "url": "https://arxiv.org/abs/2610.31641v1",
+              "date": "4d"
+            },
+            {
+              "title": "UniVOE: A Removal-Driven Framework for Interaction-Aware Universal Video Object Editing",
+              "url": "https://arxiv.org/abs/2610.31641v1",
+              "date": "4d"
+            }
+          ]
+        },
+        {
+          "name": "Định hình bản sắc thương hiệu (Brand Identity)",
+          "ai_pct": 30,
+          "trend": "stable",
+          "evidence": "Thương hiệu lớn đòi hỏi thông điệp văn hóa sâu sắc, giá trị nhân văn và sự độc bản",
+          "description_vi": "Xây dựng triết lý màu sắc, typography và tinh thần cốt lõi của thương hiệu",
+          "demand_mentions": 8,
+          "growth_pct": 12,
+          "related_positions": [
+            "Graphic Designer"
+          ],
+          "learn_keywords": [
+            "Brand Strategy",
+            "Typography Systems",
+            "Semiotic Design"
+          ],
+          "learn_resources": [
+            {
+              "name": "Brand Identity Essentials",
+              "url": "https://www.pentagram.com"
+            },
+            {
+              "name": "Thinking with Type - Ellen Lupton",
+              "url": "https://thinkingwithtype.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Cố vấn nghệ thuật & Giám tuyển thị giác (Art Direction)",
+          "ai_pct": 22,
+          "trend": "stable",
+          "evidence": "Gu thẩm mỹ tinh tế và cảm quan thời đại là thứ AI không thể tự định đoạt thay con người",
+          "description_vi": "Lựa chọn concept thẩm mỹ phù hợp với cảm xúc đối tượng mục tiêu",
+          "demand_mentions": 8,
+          "growth_pct": 8,
+          "related_positions": [
+            "Graphic Designer"
+          ],
+          "learn_keywords": [
+            "Art Direction",
+            "Visual Storytelling",
+            "Design Criticism"
+          ],
+          "learn_resources": [
+            {
+              "name": "D&AD Masterclasses in Art Direction",
+              "url": "https://www.dandad.org"
+            },
+            {
+              "name": "AIGA Design Archives",
+              "url": "https://www.aiga.org"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Customer Support Specialist",
+      "sector": "Chăm sóc khách hàng",
+      "total_ai_pct": 54,
+      "skills": [
+        {
+          "name": "Trả lời câu hỏi thường gặp (FAQ) & Tra cứu chính sách",
+          "ai_pct": 94,
+          "trend": "rising",
+          "evidence": "Chatbot AI (Klotski, Intercom Fin) giải quyết tự động 70-80% ticket khách hàng không cần người",
+          "description_vi": "Giải đáp quy định hoàn tiền, thời gian giao hàng và đổi trả sản phẩm",
+          "demand_mentions": 18,
+          "growth_pct": 37,
+          "related_positions": [
+            "Customer Support Specialist"
+          ],
+          "learn_keywords": [
+            "Intercom Fin AI",
+            "Zendesk AI Agents",
+            "RAG Customer Support"
+          ],
+          "learn_resources": [
+            {
+              "name": "Intercom Fin AI Copilot Guide",
+              "url": "https://www.intercom.com/fin"
+            },
+            {
+              "name": "Zendesk Customer Service Academy",
+              "url": "https://training.zendesk.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Tra cứu mã đơn hàng & Thao tác reset tài khoản",
+          "ai_pct": 86,
+          "trend": "rising",
+          "evidence": "AI kết nối API kho vận và CRM để tự thực hiện hành động hủy/đổi hàng trong 1 giây",
+          "description_vi": "Kiểm tra trạng thái vận chuyển bưu kiện và gửi link đổi mật khẩu",
+          "demand_mentions": 17,
+          "growth_pct": 34,
+          "related_positions": [
+            "Customer Support Specialist"
+          ],
+          "learn_keywords": [
+            "Support API Actions",
+            "Automated Refund Flows",
+            "Self-Service Portals"
+          ],
+          "learn_resources": [
+            {
+              "name": "Stripe Customer Support Integrations",
+              "url": "https://docs.stripe.com"
+            },
+            {
+              "name": "Shopify Support Automation",
+              "url": "https://help.shopify.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Xoa dịu khách hàng giận dữ & Khủng hoảng (De-escalation)",
+          "ai_pct": 16,
+          "trend": "stable",
+          "evidence": "Khách hàng đang phẫn nộ sẽ bùng nổ dữ dội hơn nếu nhận câu trả lời vô cảm từ bot AI",
+          "description_vi": "Lắng nghe người dùng bức xúc, bày tỏ sự đồng cảm chân thành và xin lỗi thấu đáo",
+          "demand_mentions": 8,
+          "growth_pct": 6,
+          "related_positions": [
+            "Customer Support Specialist"
+          ],
+          "learn_keywords": [
+            "De-escalation Techniques",
+            "Empathetic Communication",
+            "Customer Empathy"
+          ],
+          "learn_resources": [
+            {
+              "name": "Verbal Judo - George Thompson",
+              "url": "https://verbaljudo.com"
+            },
+            {
+              "name": "Delivering Happiness - Tony Hsieh",
+              "url": "https://www.deliveringhappiness.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Giải quyết tranh chấp bồi thường đặc biệt",
+          "ai_pct": 18,
+          "trend": "stable",
+          "evidence": "Chỉ có nhân sự con người được trao quyền ngoại lệ để bảo vệ danh tiếng thương hiệu công ty",
+          "description_vi": "Đánh giá các trường hợp bất khả kháng để ngoại lệ bồi thường vượt khung quy định",
+          "demand_mentions": 8,
+          "growth_pct": 7,
+          "related_positions": [
+            "Customer Support Specialist"
+          ],
+          "learn_keywords": [
+            "Customer Retention Negotiation",
+            "Discretionary Compensation",
+            "Escalation Policy"
+          ],
+          "learn_resources": [
+            {
+              "name": "Support Driven Community Handbook",
+              "url": "https://supportdriven.com"
+            },
+            {
+              "name": "HBR Customer Experience Case Studies",
+              "url": "https://hbr.org"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Content Writer / Copywriter",
+      "sector": "Marketing & Nội dung",
+      "total_ai_pct": 52,
+      "skills": [
+        {
+          "name": "Viết bài SEO & Blog tin tức chung",
+          "ai_pct": 90,
+          "trend": "rising",
+          "evidence": "ChatGPT, Claude và Jasper viết bài SEO trôi chảy chỉ sau 1 prompt tóm tắt",
+          "description_vi": "Viết bài chuẩn SEO 1000 từ về các chủ đề phổ quát trên mạng",
+          "demand_mentions": 18,
+          "growth_pct": 36,
+          "related_positions": [
+            "Content Writer / Copywriter"
+          ],
+          "learn_keywords": [
+            "SEO AI Writing",
+            "SurferSEO",
+            "Keyword Optimization",
+            "Claude Copywriting"
+          ],
+          "learn_resources": [
+            {
+              "name": "HubSpot Inbound Marketing",
+              "url": "https://academy.hubspot.com"
+            },
+            {
+              "name": "Ahrefs SEO Content Course",
+              "url": "https://ahrefs.com/academy"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Tóm tắt & Viết lại nội dung (Paraphrasing)",
+          "ai_pct": 88,
+          "trend": "rising",
+          "evidence": "Năng lực tóm tắt và tái cấu trúc văn bản của LLM đã vượt trội và hoàn toàn tự động",
+          "description_vi": "Rút gọn văn bản dài, viết caption mạng xã hội và chuyển đổi định dạng",
+          "demand_mentions": 17,
+          "growth_pct": 35,
+          "related_positions": [
+            "Content Writer / Copywriter"
+          ],
+          "learn_keywords": [
+            "Text Summarization",
+            "Cross-Platform Repurposing",
+            "Notion AI"
+          ],
+          "learn_resources": [
+            {
+              "name": "Copywriting Secrets - Jim Edwards",
+              "url": "https://copywritingsecrets.com"
+            },
+            {
+              "name": "OpenAI Prompt Engineering Guide",
+              "url": "https://platform.openai.com/docs/guides/prompt-engineering"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Phỏng vấn nhân vật & Phóng sự trải nghiệm",
+          "ai_pct": 10,
+          "trend": "stable",
+          "evidence": "AI không thể có mặt tại hiện trường hay có cảm nhận chân thực về nỗi đau của con người",
+          "description_vi": "Đi thực địa, phỏng vấn chuyên gia và ghi nhận câu chuyện thực tế",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Content Writer / Copywriter"
+          ],
+          "learn_keywords": [
+            "Investigative Journalism",
+            "Field Reporting",
+            "Narrative Nonfiction"
+          ],
+          "learn_resources": [
+            {
+              "name": "Poynter Institute Reporting Tutorials",
+              "url": "https://www.poynter.org"
+            },
+            {
+              "name": "Nieman Storyboard Narrative Writing",
+              "url": "https://niemanstoryboard.org"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Chiến lược thông điệp cốt lõi (Brand Voice)",
+          "ai_pct": 20,
+          "trend": "stable",
+          "evidence": "Những câu slogan lịch sử như 'Just Do It' hay 'Think Different' đến từ thấu thị nhân sinh",
+          "description_vi": "Tạo ra khẩu hiệu (slogan) và giọng điệu truyền cảm mang tính cách mạng",
+          "demand_mentions": 8,
+          "growth_pct": 8,
+          "related_positions": [
+            "Content Writer / Copywriter"
+          ],
+          "learn_keywords": [
+            "Brand Voice Archetypes",
+            "Creative Copywriting",
+            "Cultural Insight"
+          ],
+          "learn_resources": [
+            {
+              "name": "Hey Whipple, Squeeze This - Luke Sullivan",
+              "url": "https://www.amazon.com/dp/1119164003"
+            },
+            {
+              "name": "Ogilvy on Advertising",
+              "url": "https://www.amazon.com/dp/039472903X"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "QA / Software Tester",
+      "sector": "Kiểm thử phần mềm",
+      "total_ai_pct": 50,
+      "skills": [
+        {
+          "name": "Viết Test Case từ yêu cầu",
+          "ai_pct": 82,
+          "trend": "rising",
+          "evidence": "AI phân tích tài liệu và sinh bộ test case chi tiết trong vài giây",
+          "description_vi": "Liệt kê danh sách kịch bản kiểm thử bao phủ tính năng và edge-cases",
+          "demand_mentions": 16,
+          "growth_pct": 32,
+          "related_positions": [
+            "QA / Software Tester"
+          ],
+          "learn_keywords": [
+            "Test Case Generation AI",
+            "Boundary Value Analysis",
+            "Equivalence Partitioning"
+          ],
+          "learn_resources": [
+            {
+              "name": "ISTQB Foundation Guide",
+              "url": "https://www.istqb.org"
+            },
+            {
+              "name": "Ministry of Testing Resources",
+              "url": "https://www.ministryoftesting.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Viết mã Automation Test (Playwright / Cypress)",
+          "ai_pct": 75,
+          "trend": "rising",
+          "evidence": "Mô hình thị giác máy (Vision AI) và Playwright code-gen tự record & fix kịch bản gãy",
+          "description_vi": "Lập trình kịch bản tự động hóa kiểm tra UI và API",
+          "demand_mentions": 15,
+          "growth_pct": 30,
+          "related_positions": [
+            "QA / Software Tester"
+          ],
+          "learn_keywords": [
+            "Playwright",
+            "Cypress",
+            "Self-Healing Tests",
+            "Testcontainers"
+          ],
+          "learn_resources": [
+            {
+              "name": "Playwright Official Getting Started",
+              "url": "https://playwright.dev"
+            },
+            {
+              "name": "Test Automation University",
+              "url": "https://testautomationu.applitools.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Kiểm thử thăm dò (Exploratory Testing)",
+          "ai_pct": 25,
+          "trend": "stable",
+          "evidence": "Tư duy 'phá hệ thống' và đặt mình vào người dùng bực bội là thế mạnh riêng của con người",
+          "description_vi": "Dò tìm hành vi bất thường và lỗi UX bằng trực giác và tư duy nghịch đảo",
+          "demand_mentions": 8,
+          "growth_pct": 10,
+          "related_positions": [
+            "QA / Software Tester"
+          ],
+          "learn_keywords": [
+            "Exploratory Testing Session",
+            "Heuristic Testing",
+            "Bug Hunting"
+          ],
+          "learn_resources": [
+            {
+              "name": "Explore It! - Elisabeth Hendrickson",
+              "url": "https://pragprog.com/titles/ehxta/explore-it"
+            },
+            {
+              "name": "James Bach Testing Heuristics",
+              "url": "https://www.satisfice.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Đánh giá chất lượng phát hành (Release Gate)",
+          "ai_pct": 18,
+          "trend": "stable",
+          "evidence": "Cần chịu trách nhiệm trực tiếp với uy tín thương hiệu và an toàn dữ liệu khách hàng",
+          "description_vi": "Phân tích rủi ro kinh doanh khi đưa bản cập nhật lên production",
+          "demand_mentions": 8,
+          "growth_pct": 7,
+          "related_positions": [
+            "QA / Software Tester"
+          ],
+          "learn_keywords": [
+            "Release Management",
+            "Risk-Based Testing",
+            "Compliance Audit"
+          ],
+          "learn_resources": [
+            {
+              "name": "Continuous Delivery - Jez Humble",
+              "url": "https://continuousdelivery.com"
+            },
+            {
+              "name": "Google Software Testing Guide",
+              "url": "https://testing.googleblog.com"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Accountant / Kế toán viên",
+      "sector": "Tài chính & Kế toán",
+      "total_ai_pct": 50,
+      "skills": [
+        {
+          "name": "Nhập liệu hóa đơn & Đối soát chứng từ",
+          "ai_pct": 90,
+          "trend": "rising",
+          "evidence": "OCR thông minh và AI tự động đọc hóa đơn điện tử, hạch toán vào phần mềm kế toán",
+          "description_vi": "Quét hóa đơn đầu vào, nhập sổ sách và đối chiếu số dư tài khoản ngân hàng",
+          "demand_mentions": 18,
+          "growth_pct": 36,
+          "related_positions": [
+            "Accountant / Kế toán viên"
+          ],
+          "learn_keywords": [
+            "MISA AI",
+            "Xero Automation",
+            "Automated Bank Reconciliation"
+          ],
+          "learn_resources": [
+            {
+              "name": "Xero Official Training",
+              "url": "https://www.xero.com/training"
+            },
+            {
+              "name": "Intuit QuickBooks AI Workflows",
+              "url": "https://quickbooks.intuit.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Lập báo cáo thuế & Bảng cân đối định kỳ",
+          "ai_pct": 70,
+          "trend": "rising",
+          "evidence": "Hệ thống tự kết xuất tờ khai theo biểu mẫu chuẩn chỉ sau vài click kiểm tra",
+          "description_vi": "Tổng hợp doanh thu chi phí, lập tờ khai thuế GTGT và quyết toán thu nhập",
+          "demand_mentions": 14,
+          "growth_pct": 28,
+          "related_positions": [
+            "Accountant / Kế toán viên"
+          ],
+          "learn_keywords": [
+            "Tax Software Automation",
+            "Financial Statement Compilation",
+            "Excel PowerQuery"
+          ],
+          "learn_resources": [
+            {
+              "name": "ACCA Financial Accounting",
+              "url": "https://www.accaglobal.com"
+            },
+            {
+              "name": "Corporate Finance Institute (CFI)",
+              "url": "https://corporatefinanceinstitute.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Tư vấn cấu trúc thuế & Tối ưu dòng tiền",
+          "ai_pct": 28,
+          "trend": "stable",
+          "evidence": "Luật thuế thay đổi liên tục và chứa nhiều vùng xám cần phán đoán chuyên gia giàu kinh nghiệm",
+          "description_vi": "Hoạch định chính sách giá chuyển nhượng và tận dụng các gói ưu đãi thuế hợp pháp",
+          "demand_mentions": 8,
+          "growth_pct": 11,
+          "related_positions": [
+            "Accountant / Kế toán viên"
+          ],
+          "learn_keywords": [
+            "Strategic Tax Planning",
+            "Transfer Pricing",
+            "Cash Flow Engineering"
+          ],
+          "learn_resources": [
+            {
+              "name": "Big 4 Tax Insights - PwC/Deloitte",
+              "url": "https://www.pwc.com/gx/en/services/tax"
+            },
+            {
+              "name": "Tax Policy Center Studies",
+              "url": "https://www.taxpolicycenter.org"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Kiểm toán gian lận & Trách nhiệm pháp lý",
+          "ai_pct": 12,
+          "trend": "stable",
+          "evidence": "Luật pháp quy định cá nhân kiểm toán viên có chứng chỉ hành nghề (CPA) phải chịu trách nhiệm",
+          "description_vi": "Ký biên bản kiểm toán độc lập và chịu trách nhiệm pháp lý trước tòa án",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Accountant / Kế toán viên"
+          ],
+          "learn_keywords": [
+            "Forensic Accounting",
+            "Audit Risk Assessment",
+            "CPA Ethics"
+          ],
+          "learn_resources": [
+            {
+              "name": "AICPA Professional Standards",
+              "url": "https://www.aicpa-cima.com"
+            },
+            {
+              "name": "Association of Certified Fraud Examiners",
+              "url": "https://www.acfe.com"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "DevOps / SRE Engineer",
+      "sector": "Hạ tầng đám mây",
+      "total_ai_pct": 48,
+      "skills": [
+        {
+          "name": "Viết script CI/CD & Terraform",
+          "ai_pct": 78,
+          "trend": "rising",
+          "evidence": "AI viết cú pháp Terraform HCL và Dockerfile cực kỳ chuẩn xác",
+          "description_vi": "Cấu hình pipeline GitHub Actions, GitLab CI và mã nguồn hạ tầng IaC",
+          "demand_mentions": 15,
+          "growth_pct": 31,
+          "related_positions": [
+            "DevOps / SRE Engineer"
+          ],
+          "learn_keywords": [
+            "Terraform",
+            "GitHub Actions",
+            "Docker",
+            "Kubernetes Manifests"
+          ],
+          "learn_resources": [
+            {
+              "name": "HashiCorp Terraform Tutorials",
+              "url": "https://developer.hashicorp.com/terraform/tutorials"
+            },
+            {
+              "name": "GitHub Actions Official Docs",
+              "url": "https://docs.github.com/actions"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Giám sát & Tự động phát hiện bất thường",
+          "ai_pct": 62,
+          "trend": "rising",
+          "evidence": "Các giải pháp AIOps (Datadog Bits AI, Dynatrace) tự gom cụm root-cause từ log",
+          "description_vi": "Phân tích log, metrics CPU/RAM và kích hoạt cảnh báo thông minh",
+          "demand_mentions": 12,
+          "growth_pct": 24,
+          "related_positions": [
+            "DevOps / SRE Engineer"
+          ],
+          "learn_keywords": [
+            "Prometheus & Grafana",
+            "Datadog Bits AI",
+            "OpenTelemetry"
+          ],
+          "learn_resources": [
+            {
+              "name": "Datadog AIOps Overview",
+              "url": "https://www.datadoghq.com"
+            },
+            {
+              "name": "Prometheus Monitoring Up & Running",
+              "url": "https://prometheus.io"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Ứng cứu sự cố hạ tầng khẩn cấp (Incident Response)",
+          "ai_pct": 28,
+          "trend": "stable",
+          "evidence": "AI đề xuất checklist nhưng người trực on-call phải chịu trách nhiệm ra quyết định rollback",
+          "description_vi": "Xử lý khi server sập lúc 3h sáng, cô lập sự cố và phục hồi hệ thống",
+          "demand_mentions": 8,
+          "growth_pct": 11,
+          "related_positions": [
+            "DevOps / SRE Engineer"
+          ],
+          "learn_keywords": [
+            "Site Reliability Engineering (SRE)",
+            "Chaos Engineering",
+            "Incident Triage"
+          ],
+          "learn_resources": [
+            {
+              "name": "Google SRE Books (Free Online)",
+              "url": "https://sre.google/books"
+            },
+            {
+              "name": "PagerDuty Incident Management",
+              "url": "https://response.pagerduty.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Quy hoạch kiến trúc Multi-Cloud & FinOps",
+          "ai_pct": 25,
+          "trend": "stable",
+          "evidence": "Trade-off chi phí kinh doanh, cam kết hợp đồng nhà mạng đòi hỏi đàm phán con người",
+          "description_vi": "Tối ưu hóa hóa đơn đám mây AWS/GCP và thiết kế redundancy chống sập toàn vùng",
+          "demand_mentions": 8,
+          "growth_pct": 10,
+          "related_positions": [
+            "DevOps / SRE Engineer"
+          ],
+          "learn_keywords": [
+            "FinOps Foundation",
+            "AWS Well-Architected Framework",
+            "Kubernetes Cost"
+          ],
+          "learn_resources": [
+            {
+              "name": "FinOps Certified Practitioner",
+              "url": "https://www.finops.org"
+            },
+            {
+              "name": "AWS Architecture Center",
+              "url": "https://aws.amazon.com/architecture"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "HR / Talent Recruiter",
+      "sector": "Nhân sự",
+      "total_ai_pct": 48,
+      "skills": [
+        {
+          "name": "Sàng lọc CV & Lọc hồ sơ ứng viên",
+          "ai_pct": 85,
+          "trend": "rising",
+          "evidence": "ATS thông minh (Greenhouse, Lever AI) xếp hạng độ khớp CV ứng viên tự động trong tích tắc",
+          "description_vi": "Đọc hàng nghìn hồ sơ để tìm kiếm từ khóa kinh nghiệm phù hợp JD",
+          "demand_mentions": 17,
+          "growth_pct": 34,
+          "related_positions": [
+            "HR / Talent Recruiter"
+          ],
+          "learn_keywords": [
+            "AI Resume Screening",
+            "Greenhouse AI",
+            "LinkedIn Recruiter AI"
+          ],
+          "learn_resources": [
+            {
+              "name": "Greenhouse Modern Recruiting",
+              "url": "https://www.greenhouse.com"
+            },
+            {
+              "name": "SHRM Talent Acquisition Standards",
+              "url": "https://www.shrm.org"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Soạn thảo JD & Thư mời nhận việc",
+          "ai_pct": 80,
+          "trend": "rising",
+          "evidence": "AI tạo JD chuẩn theo từng level và viết email cá nhân hóa cho từng ứng viên",
+          "description_vi": "Viết mô tả công việc hấp dẫn và email trao đổi quy trình tuyển dụng",
+          "demand_mentions": 16,
+          "growth_pct": 32,
+          "related_positions": [
+            "HR / Talent Recruiter"
+          ],
+          "learn_keywords": [
+            "Job Description Generation",
+            "Recruitment Marketing AI",
+            "Notion HR Templates"
+          ],
+          "learn_resources": [
+            {
+              "name": "Textio Inclusive Writing Tools",
+              "url": "https://textio.com"
+            },
+            {
+              "name": "Workable Job Description Library",
+              "url": "https://resources.workable.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Phỏng vấn đánh giá độ phù hợp văn hóa (Culture Fit)",
+          "ai_pct": 15,
+          "trend": "stable",
+          "evidence": "Đánh giá động lực nội tại và thái độ làm việc đòi hỏi trực giác tâm lý tinh tường của con người",
+          "description_vi": "Cảm nhận giá trị sống, đạo đức nghề nghiệp và sự hòa nhập vào đội ngũ",
+          "demand_mentions": 8,
+          "growth_pct": 6,
+          "related_positions": [
+            "HR / Talent Recruiter"
+          ],
+          "learn_keywords": [
+            "Behavioral Interviewing",
+            "Culture Assessment",
+            "Emotional Intelligence"
+          ],
+          "learn_resources": [
+            {
+              "name": "STAR Method Interview Handbook",
+              "url": "https://www.themuse.com"
+            },
+            {
+              "name": "Who: The A Method for Hiring",
+              "url": "https://whothebook.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Đàm phán đãi ngộ & Thuyết phục nhân tài (Closing)",
+          "ai_pct": 14,
+          "trend": "stable",
+          "evidence": "Chuyển việc là quyết định bước ngoặt cuộc đời; ứng viên cần người đồng hành tạo dựng niềm tin",
+          "description_vi": "Xây dựng gói phúc lợi linh hoạt và thuyết phục ứng viên cấp cao rời bỏ đối thủ",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "HR / Talent Recruiter"
+          ],
+          "learn_keywords": [
+            "Executive Candidate Closing",
+            "Total Rewards Compensation",
+            "Talent Relationship"
+          ],
+          "learn_resources": [
+            {
+              "name": "Radical Hiring Strategies",
+              "url": "https://hbr.org"
+            },
+            {
+              "name": "WorldatWork Total Rewards Certification",
+              "url": "https://www.worldatwork.org"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Sales Representative / BDR",
+      "sector": "Kinh doanh B2B/B2C",
+      "total_ai_pct": 48,
+      "skills": [
+        {
+          "name": "Tìm kiếm khách hàng tiềm năng & Cold Email",
+          "ai_pct": 82,
+          "trend": "rising",
+          "evidence": "Apollo.io và Clay AI tự động enrich dữ liệu và gửi hàng nghìn email cá nhân hóa",
+          "description_vi": "Quét danh sách công ty mục tiêu và gửi email tiếp cận tự động",
+          "demand_mentions": 16,
+          "growth_pct": 32,
+          "related_positions": [
+            "Sales Representative / BDR"
+          ],
+          "learn_keywords": [
+            "Clay.com Automation",
+            "Apollo.io Lead Gen",
+            "Instantly.ai"
+          ],
+          "learn_resources": [
+            {
+              "name": "Clay University Lead Gen Workflows",
+              "url": "https://clay.com/university"
+            },
+            {
+              "name": "Cold Email Masterclass",
+              "url": "https://instantly.ai/blog"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Cập nhật dữ liệu CRM & Ghi chú cuộc gọi",
+          "ai_pct": 88,
+          "trend": "rising",
+          "evidence": "Fathom, Gong và Fireflies tự ghi âm, tóm tắt và tự điền trường CRM chuẩn 100%",
+          "description_vi": "Lắng nghe cuộc gọi với khách và tự ghi chép vào Salesforce/HubSpot",
+          "demand_mentions": 17,
+          "growth_pct": 35,
+          "related_positions": [
+            "Sales Representative / BDR"
+          ],
+          "learn_keywords": [
+            "Gong.io Revenue AI",
+            "Fireflies.ai",
+            "HubSpot CRM Copilot"
+          ],
+          "learn_resources": [
+            {
+              "name": "Gong Sales Methodology",
+              "url": "https://www.gong.io/resources"
+            },
+            {
+              "name": "HubSpot Sales Software Certification",
+              "url": "https://academy.hubspot.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Xây dựng mối quan hệ & Bàn ăn chốt hợp đồng (Relationship)",
+          "ai_pct": 8,
+          "trend": "stable",
+          "evidence": "Các hợp đồng lớn triệu USD được ký dựa trên uy tín cá nhân và mối quan hệ con người bền vững",
+          "description_vi": "Ăn trưa, chơi golf và tạo dựng sự quý mến tin cậy với Giám đốc ra quyết định",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Sales Representative / BDR"
+          ],
+          "learn_keywords": [
+            "High-Stakes Relationship Selling",
+            "MEDDPICC Framework",
+            "Challenger Sale"
+          ],
+          "learn_resources": [
+            {
+              "name": "The Challenger Sale - Dixon & Adamson",
+              "url": "https://www.challengerinc.com"
+            },
+            {
+              "name": "MEDDPICC Masterclass",
+              "url": "https://meddicc.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Thuyết phục giải tỏa lo ngại pháp lý & Rủi ro",
+          "ai_pct": 14,
+          "trend": "stable",
+          "evidence": "Cần EQ cao để hiểu nỗi sợ sâu kín của người mua: 'Nobody gets fired for buying IBM'",
+          "description_vi": "Giải tỏa nỗi sợ bị sa thải hoặc rủi ro uy tín của người mua nội bộ",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Sales Representative / BDR"
+          ],
+          "learn_keywords": [
+            "Buyer Psychology",
+            "Risk De-escalation",
+            "Executive Objection Handling"
+          ],
+          "learn_resources": [
+            {
+              "name": "Never Split the Difference - Chris Voss",
+              "url": "https://www.blackswanltd.com"
+            },
+            {
+              "name": "Spin Selling - Neil Rackham",
+              "url": "https://www.amazon.com/dp/0070511136"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Frontend Developer",
+      "sector": "IT",
+      "total_ai_pct": 46,
+      "skills": [
+        {
+          "name": "Viết HTML/CSS & Layout",
+          "ai_pct": 85,
+          "trend": "rising",
+          "evidence": "AI sinh code UI rất nhanh từ ảnh và Figma (v0.dev, Cursor, Claude 3.5 Sonnet)",
+          "description_vi": "Dựng khung giao diện từ thiết kế Figma sang mã nguồn",
+          "demand_mentions": 17,
+          "growth_pct": 34,
+          "related_positions": [
+            "Frontend Developer"
+          ],
+          "learn_keywords": [
+            "v0.dev",
+            "Tailwind CSS",
+            "Figma to Code",
+            "CSS Subgrid"
+          ],
+          "learn_resources": [
+            {
+              "name": "v0 by Vercel Documentation",
+              "url": "https://v0.dev"
+            },
+            {
+              "name": "Modern CSS Guide - web.dev",
+              "url": "https://web.dev/learn/css"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Viết logic JS phức tạp",
+          "ai_pct": 50,
+          "trend": "rising",
+          "evidence": "AI viết được logic giải thuật nhưng vẫn cần lập trình viên review và refactor",
+          "description_vi": "Xử lý luồng state client-side, websocket và routing nâng cao",
+          "demand_mentions": 10,
+          "growth_pct": 20,
+          "related_positions": [
+            "Frontend Developer"
+          ],
+          "learn_keywords": [
+            "TypeScript",
+            "State Machines",
+            "React 19",
+            "Web Workers"
+          ],
+          "learn_resources": [
+            {
+              "name": "Fullstack Open React & TS",
+              "url": "https://fullstackopen.com"
+            },
+            {
+              "name": "TypeScript Deep Dive",
+              "url": "https://basarat.gitbook.io/typescript"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Debug production & Performance",
+          "ai_pct": 30,
+          "trend": "stable",
+          "evidence": "Cần hiểu sâu context hệ thống production, network latency và devtools profiling",
+          "description_vi": "Tối ưu Web Vitals, fix memory leaks và tương thích đa trình duyệt",
+          "demand_mentions": 8,
+          "growth_pct": 12,
+          "related_positions": [
+            "Frontend Developer"
+          ],
+          "learn_keywords": [
+            "Chrome DevTools",
+            "Web Vitals Optimization",
+            "Bundle Analysis"
+          ],
+          "learn_resources": [
+            {
+              "name": "Chrome DevTools Performance",
+              "url": "https://developer.chrome.com/docs/devtools/performance"
+            },
+            {
+              "name": "Web Vitals Guide",
+              "url": "https://web.dev/vitals"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "UX Research & Phỏng vấn người dùng",
+          "ai_pct": 20,
+          "trend": "stable",
+          "evidence": "Cần tương tác trực tiếp, lắng nghe cảm xúc và phỏng vấn người dùng thật",
+          "description_vi": "Quan sát hành vi người dùng thật để tinh chỉnh trải nghiệm",
+          "demand_mentions": 8,
+          "growth_pct": 8,
+          "related_positions": [
+            "Frontend Developer"
+          ],
+          "learn_keywords": [
+            "Usability Testing",
+            "Accessibility A11y",
+            "User Psychology"
+          ],
+          "learn_resources": [
+            {
+              "name": "Nielsen Norman Group UX Basics",
+              "url": "https://www.nngroup.com"
+            },
+            {
+              "name": "Web Content Accessibility Guidelines",
+              "url": "https://www.w3.org/WAI/standards-guidelines/wcag"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Backend Developer",
+      "sector": "IT",
+      "total_ai_pct": 46,
+      "skills": [
+        {
+          "name": "Viết API CRUD & Boilerplate",
+          "ai_pct": 80,
+          "trend": "rising",
+          "evidence": "Cursor, Claude và Copilot sinh toàn bộ khung CRUD API chỉ từ schema trong vài giây",
+          "description_vi": "Sinh endpoints REST/GraphQL và viết câu truy vấn cơ bản",
+          "demand_mentions": 16,
+          "growth_pct": 32,
+          "related_positions": [
+            "Backend Developer"
+          ],
+          "learn_keywords": [
+            "FastAPI",
+            "Go Chi",
+            "Prisma ORM",
+            "OpenAPI Spec"
+          ],
+          "learn_resources": [
+            {
+              "name": "FastAPI Full Tutorial",
+              "url": "https://fastapi.tiangolo.com"
+            },
+            {
+              "name": "Go Web Development",
+              "url": "https://quii.gitbook.io/learn-go-with-tests"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Thiết kế kiến trúc phân tán",
+          "ai_pct": 25,
+          "trend": "stable",
+          "evidence": "Đòi hỏi hiểu trade-off tính nhất quán (CAP theorem) và khả năng chịu tải thực tế",
+          "description_vi": "Quy hoạch microservices, event streaming và partition dữ liệu",
+          "demand_mentions": 8,
+          "growth_pct": 10,
+          "related_positions": [
+            "Backend Developer"
+          ],
+          "learn_keywords": [
+            "Kafka Event-Driven",
+            "Distributed Transactions",
+            "CQRS"
+          ],
+          "learn_resources": [
+            {
+              "name": "Designing Data-Intensive Applications",
+              "url": "https://dataintensive.net"
+            },
+            {
+              "name": "Distributed Systems Course MIT 6.824",
+              "url": "https://pdos.csail.mit.edu/6.824"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Tối ưu hóa Database & Query Indexing",
+          "ai_pct": 45,
+          "trend": "rising",
+          "evidence": "AI đề xuất index và giải thích query plan nhưng DBA/kỹ sư phải quyết định rollout",
+          "description_vi": "Tối ưu execution plan, đánh chỉ mục và xử lý lock contention",
+          "demand_mentions": 9,
+          "growth_pct": 18,
+          "related_positions": [
+            "Backend Developer"
+          ],
+          "learn_keywords": [
+            "PostgreSQL EXPLAIN ANALYZE",
+            "Database Indexing Internals",
+            "PgBouncer"
+          ],
+          "learn_resources": [
+            {
+              "name": "Use The Index, Luke!",
+              "url": "https://use-the-index-luke.com"
+            },
+            {
+              "name": "PostgreSQL High Performance",
+              "url": "https://www.postgresql.org/docs"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Bảo mật hệ thống & Auth",
+          "ai_pct": 35,
+          "trend": "stable",
+          "evidence": "AI hỗ trợ quét lỗ hổng static (SAST) nhưng audit quyền hạn logic cần con người",
+          "description_vi": "Thiết lập OAuth2/OIDC, mã hóa dữ liệu và phòng chống SQL injection",
+          "demand_mentions": 8,
+          "growth_pct": 14,
+          "related_positions": [
+            "Backend Developer"
+          ],
+          "learn_keywords": [
+            "OAuth2 / OIDC",
+            "OWASP Top 10",
+            "Zero Trust Architecture"
+          ],
+          "learn_resources": [
+            {
+              "name": "OWASP API Security Top 10",
+              "url": "https://owasp.org/www-project-api-security"
+            },
+            {
+              "name": "Auth0 Architecture Guide",
+              "url": "https://auth0.com/docs"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Cyber Security Analyst",
+      "sector": "An toàn thông tin",
+      "total_ai_pct": 46,
+      "skills": [
+        {
+          "name": "Phân tích cảnh báo SIEM & Triage log",
+          "ai_pct": 76,
+          "trend": "rising",
+          "evidence": "Microsoft Security Copilot và Splunk AI tóm tắt chuỗi tấn công MITRE ATT&CK tự động",
+          "description_vi": "Sàng lọc hàng triệu cảnh báo tấn công mạng để loại bỏ dương tính giả",
+          "demand_mentions": 15,
+          "growth_pct": 30,
+          "related_positions": [
+            "Cyber Security Analyst"
+          ],
+          "learn_keywords": [
+            "Microsoft Security Copilot",
+            "Splunk SIEM AI",
+            "MITRE ATT&CK Framework"
+          ],
+          "learn_resources": [
+            {
+              "name": "Microsoft Security Copilot Documentation",
+              "url": "https://learn.microsoft.com/security-copilot"
+            },
+            {
+              "name": "Splunk Education Cybersecurity",
+              "url": "https://www.splunk.com/education"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Quét lỗ hổng tự động (DAST / SAST)",
+          "ai_pct": 70,
+          "trend": "rising",
+          "evidence": "Snyk AI và GitHub Advanced Security tự động chỉ ra dòng code lỗi và tạo Pull Request vá",
+          "description_vi": "Chạy phần mềm rà soát lỗ hổng bảo mật trên mã nguồn và web application",
+          "demand_mentions": 14,
+          "growth_pct": 28,
+          "related_positions": [
+            "Cyber Security Analyst"
+          ],
+          "learn_keywords": [
+            "Snyk DeepCode AI",
+            "GitHub CodeQL",
+            "OWASP ZAP Automation"
+          ],
+          "learn_resources": [
+            {
+              "name": "Snyk Learn Security Tutorials",
+              "url": "https://learn.snyk.io"
+            },
+            {
+              "name": "GitHub Advanced Security Guide",
+              "url": "https://docs.github.com/code-security"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Điều tra pháp y kỹ thuật số (Digital Forensics)",
+          "ai_pct": 22,
+          "trend": "stable",
+          "evidence": "Tin tặc cao cấp dùng kỹ thuật zero-day tùy biến đòi hỏi tư duy giải mã của chuyên gia kỳ cựu",
+          "description_vi": "Lần theo dấu vết tin tặc trốn thoát qua bộ nhớ RAM và ổ cứng bị mã hóa",
+          "demand_mentions": 8,
+          "growth_pct": 8,
+          "related_positions": [
+            "Cyber Security Analyst"
+          ],
+          "learn_keywords": [
+            "Volatility Memory Forensics",
+            "SANS GIAC Forensic Analysis",
+            "Malware Reverse Engineering"
+          ],
+          "learn_resources": [
+            {
+              "name": "SANS Digital Forensics Resources",
+              "url": "https://www.sans.org/digital-forensics"
+            },
+            {
+              "name": "Malware Analysis Handbook - Sikorski",
+              "url": "https://nostarch.com/malware"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Mô phỏng tấn công Red Teaming & Social Engineering",
+          "ai_pct": 14,
+          "trend": "stable",
+          "evidence": "Tấn công phi kỹ thuật vào tâm lý con người và xâm nhập cổng vật lý không thể thực hiện bằng AI",
+          "description_vi": "Đóng giả nhân viên giao hàng để thâm nhập vật lý vào phòng máy chủ công ty",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Cyber Security Analyst"
+          ],
+          "learn_keywords": [
+            "Physical Penetration Testing",
+            "Social Engineering Assessment",
+            "OSCP Certification"
+          ],
+          "learn_resources": [
+            {
+              "name": "Offensive Security OSCP Training",
+              "url": "https://www.offsec.com"
+            },
+            {
+              "name": "Social Engineering: The Art of Human Hacking",
+              "url": "https://www.social-engineer.com"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Teacher / Online Instructor",
+      "sector": "Giáo dục",
+      "total_ai_pct": 44,
+      "skills": [
+        {
+          "name": "Soạn giáo án & Đề thi trắc nghiệm",
+          "ai_pct": 82,
+          "trend": "rising",
+          "evidence": "AI tạo bộ đề trắc nghiệm có giải thích chi tiết theo từng cấp độ học lực trong 30 giây",
+          "description_vi": "Thiết kế đề cương bài giảng và ngân hàng câu hỏi kiểm tra kèm đáp án",
+          "demand_mentions": 16,
+          "growth_pct": 32,
+          "related_positions": [
+            "Teacher / Online Instructor"
+          ],
+          "learn_keywords": [
+            "Khanmigo AI",
+            "Lesson Plan Generation",
+            "Automated Quiz Builder"
+          ],
+          "learn_resources": [
+            {
+              "name": "Khan Academy AI for Educators",
+              "url": "https://www.khanacademy.org/khanmigo"
+            },
+            {
+              "name": "Coursera Course Authoring Guides",
+              "url": "https://www.coursera.org"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Chấm bài tập & Sửa lỗi ngữ pháp",
+          "ai_pct": 74,
+          "trend": "rising",
+          "evidence": "Các mô hình ngôn ngữ chấm bài luận kèm nhận xét gợi ý chỉnh sửa cực kỳ tỉ mỉ",
+          "description_vi": "Kiểm tra bài luận, chỉ ra lỗi diễn đạt và tính điểm theo thang rubric",
+          "demand_mentions": 14,
+          "growth_pct": 29,
+          "related_positions": [
+            "Teacher / Online Instructor"
+          ],
+          "learn_keywords": [
+            "Automated Essay Scoring",
+            "Grammarly for Education",
+            "Rubric Grading AI"
+          ],
+          "learn_resources": [
+            {
+              "name": "Turnitin AI Writing Detection",
+              "url": "https://www.turnitin.com"
+            },
+            {
+              "name": "Grammarly Education Overview",
+              "url": "https://www.grammarly.com/edu"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Tạo động lực & Đánh thức niềm say mê học tập",
+          "ai_pct": 12,
+          "trend": "stable",
+          "evidence": "Một lời động viên ấm áp của thầy cô có thể thay đổi cả số phận một con người",
+          "description_vi": "Nhận biết học sinh chán nản, khích lệ lòng tự tin và thắp lên đam mê khám phá",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Teacher / Online Instructor"
+          ],
+          "learn_keywords": [
+            "Pedagogical Empathy",
+            "Growth Mindset Coaching",
+            "Mentorship"
+          ],
+          "learn_resources": [
+            {
+              "name": "Mindset: The New Psychology of Success - Dweck",
+              "url": "https://www.mindsetworks.com"
+            },
+            {
+              "name": "Harvard Graduate School of Education Resources",
+              "url": "https://www.gse.harvard.edu"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Quản lý hành vi lớp học & Giáo dục nhân cách",
+          "ai_pct": 8,
+          "trend": "stable",
+          "evidence": "Giáo dục nhân cách chỉ có thể truyền đạt thông qua tấm gương nhân cách sống của người thầy",
+          "description_vi": "Xử lý xung đột giữa học sinh, dạy lòng biết ơn và tinh thần tương thân tương ái",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Teacher / Online Instructor"
+          ],
+          "learn_keywords": [
+            "Classroom Management",
+            "Social-Emotional Learning (SEL)",
+            "Conflict Mediation"
+          ],
+          "learn_resources": [
+            {
+              "name": "CASEL Framework for Social and Emotional Learning",
+              "url": "https://casel.org"
+            },
+            {
+              "name": "Edutopia Classroom Culture Strategies",
+              "url": "https://www.edutopia.org"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Product Manager (PM)",
+      "sector": "Công nghệ",
+      "total_ai_pct": 41,
+      "skills": [
+        {
+          "name": "Nghiên cứu đối thủ cạnh tranh",
+          "ai_pct": 72,
+          "trend": "rising",
+          "evidence": "AI tổng hợp và đối chiếu tính năng từ hàng trăm website đối thủ trong vài phút",
+          "description_vi": "Tổng hợp tính năng, giá bán và chiến lược của đối thủ trên thị trường",
+          "demand_mentions": 14,
+          "growth_pct": 28,
+          "related_positions": [
+            "Product Manager (PM)"
+          ],
+          "learn_keywords": [
+            "Perplexity Pro",
+            "Competitor Matrix AI",
+            "Market Intelligence"
+          ],
+          "learn_resources": [
+            {
+              "name": "Reforge Product Strategy Series",
+              "url": "https://www.reforge.com"
+            },
+            {
+              "name": "Perplexity AI for Research",
+              "url": "https://www.perplexity.ai"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Viết PRD (Product Requirement Doc)",
+          "ai_pct": 65,
+          "trend": "rising",
+          "evidence": "Claude 3.5 và ChatGPT soạn thảo khung PRD chi tiết kèm edge-cases rất tốt",
+          "description_vi": "Soạn thảo tài liệu yêu cầu sản phẩm, tiêu chí thành công và roadmap",
+          "demand_mentions": 13,
+          "growth_pct": 26,
+          "related_positions": [
+            "Product Manager (PM)"
+          ],
+          "learn_keywords": [
+            "PRD Templates",
+            "Lenny's Newsletter Frameworks",
+            "Linear Method"
+          ],
+          "learn_resources": [
+            {
+              "name": "Lenny's Newsletter PRD Guides",
+              "url": "https://www.lennysnewsletter.com"
+            },
+            {
+              "name": "Linear Product Principles",
+              "url": "https://linear.app/method"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Định hướng chiến lược & Product Vision",
+          "ai_pct": 18,
+          "trend": "stable",
+          "evidence": "Chiến lược gắn liền với đánh cược rủi ro kinh doanh và tầm nhìn cá nhân của Founder",
+          "description_vi": "Quyết định sản phẩm giải quyết vấn đề gì và tại sao trong 3-5 năm tới",
+          "demand_mentions": 8,
+          "growth_pct": 7,
+          "related_positions": [
+            "Product Manager (PM)"
+          ],
+          "learn_keywords": [
+            "Product Strategy",
+            "Blue Ocean Strategy",
+            "Unit Economics"
+          ],
+          "learn_resources": [
+            {
+              "name": "Marty Cagan - Inspired & Empowered",
+              "url": "https://svpg.com/books"
+            },
+            {
+              "name": "Good Strategy / Bad Strategy - Rumelt",
+              "url": "https://www.amazon.com/dp/0307886239"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Truyền cảm hứng & Dẫn dắt đội ngũ",
+          "ai_pct": 8,
+          "trend": "stable",
+          "evidence": "Sự tin tưởng, đồng cảm và văn hóa đội ngũ chỉ có thể xây dựng giữa con người với nhau",
+          "description_vi": "Tạo động lực cho kỹ sư, designer và bán hàng cùng nhìn về một mục tiêu",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Product Manager (PM)"
+          ],
+          "learn_keywords": [
+            "Leadership",
+            "Cross-functional Team Influence",
+            "Empathetic Communication"
+          ],
+          "learn_resources": [
+            {
+              "name": "Radical Candor - Kim Scott",
+              "url": "https://www.radicalcandor.com"
+            },
+            {
+              "name": "High Output Management - Andy Grove",
+              "url": "https://www.amazon.com/dp/0679762884"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Data Analyst",
+      "sector": "Đa ngành",
+      "total_ai_pct": 40,
+      "skills": [
+        {
+          "name": "Làm report & Dashboard",
+          "ai_pct": 75,
+          "trend": "rising",
+          "evidence": "AI tạo report từ data tự động (ChatGPT Code Interpreter, PowerBI Copilot)",
+          "description_vi": "Tạo dashboard, xuất báo cáo KPI và biểu đồ tự động",
+          "demand_mentions": 15,
+          "growth_pct": 30,
+          "related_positions": [
+            "Data Analyst"
+          ],
+          "learn_keywords": [
+            "PowerBI Copilot",
+            "Tableau Pulse",
+            "Automated Reporting",
+            "Python Data Viz"
+          ],
+          "learn_resources": [
+            {
+              "name": "Microsoft Power BI Copilot Guide",
+              "url": "https://learn.microsoft.com/power-bi/copilot"
+            },
+            {
+              "name": "Data Analysis with Python FreeCodeCamp",
+              "url": "https://www.freecodecamp.org/learn"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Phân tích dữ liệu & Khám phá insight",
+          "ai_pct": 60,
+          "trend": "rising",
+          "evidence": "AI đọc data, tìm pattern, đề xuất insight qua mô hình ngôn ngữ lớn",
+          "description_vi": "Đọc tập dữ liệu lớn, tìm quy luật bất thường và đề xuất insight",
+          "demand_mentions": 12,
+          "growth_pct": 24,
+          "related_positions": [
+            "Data Analyst"
+          ],
+          "learn_keywords": [
+            "EDA AI",
+            "PandasAI",
+            "Prompt for Analytics",
+            "Statistical Modeling"
+          ],
+          "learn_resources": [
+            {
+              "name": "PandasAI Official Documentation",
+              "url": "https://github.com/Sinaptik-AI/pandas-ai"
+            },
+            {
+              "name": "Kaggle Advanced Data Analytics",
+              "url": "https://www.kaggle.com/learn"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Trình bày cho stakeholder",
+          "ai_pct": 15,
+          "trend": "stable",
+          "evidence": "Vẫn cần con người diễn giải bối cảnh kinh doanh, đồng thuận và thuyết phục",
+          "description_vi": "Thuyết trình, giải thích ý nghĩa số liệu và trả lời phản biện",
+          "demand_mentions": 8,
+          "growth_pct": 6,
+          "related_positions": [
+            "Data Analyst"
+          ],
+          "learn_keywords": [
+            "Data Storytelling",
+            "Executive Presentation",
+            "Stakeholder Management"
+          ],
+          "learn_resources": [
+            {
+              "name": "Storytelling with Data Course",
+              "url": "https://www.storytellingwithdata.com"
+            },
+            {
+              "name": "HBR Guide to Data Presentations",
+              "url": "https://hbr.org"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Thu thập yêu cầu business",
+          "ai_pct": 10,
+          "trend": "stable",
+          "evidence": "Cần thấu hiểu ngữ cảnh tổ chức, văn hóa công ty và mối quan hệ con người",
+          "description_vi": "Phỏng vấn phòng ban, hiểu đúng bài toán kinh doanh cần giải quyết",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Data Analyst"
+          ],
+          "learn_keywords": [
+            "Business Requirements Gathering",
+            "Domain Discovery",
+            "User Interview"
+          ],
+          "learn_resources": [
+            {
+              "name": "IIBA Business Analysis Standards",
+              "url": "https://www.iiba.org"
+            },
+            {
+              "name": "Product Discovery Playbook",
+              "url": "https://svpg.com"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Business Analyst (BA)",
+      "sector": "IT & Kinh doanh",
+      "total_ai_pct": 38,
+      "skills": [
+        {
+          "name": "Soạn thảo tài liệu SRS / User Story",
+          "ai_pct": 70,
+          "trend": "rising",
+          "evidence": "LLM chuyển ghi chú họp thành User Stories và Gherkin BDD nhanh gấp 5 lần",
+          "description_vi": "Viết đặc tả yêu cầu phần mềm và tiêu chí nghiệm thu Acceptance Criteria",
+          "demand_mentions": 14,
+          "growth_pct": 28,
+          "related_positions": [
+            "Business Analyst (BA)"
+          ],
+          "learn_keywords": [
+            "Jira AI",
+            "BDD Gherkin",
+            "Agile User Stories",
+            "Notion AI"
+          ],
+          "learn_resources": [
+            {
+              "name": "Modern Business Analysis Handbook",
+              "url": "https://www.iiba.org"
+            },
+            {
+              "name": "Writing Good User Stories - Mike Cohn",
+              "url": "https://www.mountaingoatsoftware.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Vẽ quy trình nghiệp vụ BPMN",
+          "ai_pct": 55,
+          "trend": "rising",
+          "evidence": "Công cụ Mermaid AI và Miro AI tự động vẽ diagram từ mô tả văn bản",
+          "description_vi": "Mô hình hóa luồng công việc giữa các phòng ban bằng sơ đồ chuẩn",
+          "demand_mentions": 11,
+          "growth_pct": 22,
+          "related_positions": [
+            "Business Analyst (BA)"
+          ],
+          "learn_keywords": [
+            "BPMN 2.0",
+            "Mermaid.js",
+            "Process Mining",
+            "Miro AI"
+          ],
+          "learn_resources": [
+            {
+              "name": "Camunda BPMN Tutorial",
+              "url": "https://camunda.com/bpmn"
+            },
+            {
+              "name": "Mermaid Live Editor",
+              "url": "https://mermaid.live"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Phỏng vấn & Khai thác nhu cầu ẩn",
+          "ai_pct": 12,
+          "trend": "stable",
+          "evidence": "Người dùng thường không biết chính xác họ cần gì; cần EQ và sự quan sát tinh tế",
+          "description_vi": "Đặt câu hỏi sâu để tìm ra căn nguyên vấn đề khách hàng chưa nói ra",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Business Analyst (BA)"
+          ],
+          "learn_keywords": [
+            "Interviewing Stakeholders",
+            "5 Whys Technique",
+            "Active Listening"
+          ],
+          "learn_resources": [
+            {
+              "name": "The Mom Test - Rob Fitzpatrick",
+              "url": "https://www.momtestbook.com"
+            },
+            {
+              "name": "Requirements Elicitation Best Practices",
+              "url": "https://www.batimes.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Đàm phán phạm vi dự án (Scope)",
+          "ai_pct": 15,
+          "trend": "stable",
+          "evidence": "Tranh luận về deadline và tradeoff ngân sách đòi hỏi con người chịu trách nhiệm",
+          "description_vi": "Cân đối giữa kỳ vọng kinh doanh, ngân sách và hạn chót kỹ thuật",
+          "demand_mentions": 8,
+          "growth_pct": 6,
+          "related_positions": [
+            "Business Analyst (BA)"
+          ],
+          "learn_keywords": [
+            "Scope Management",
+            "MoSCoW Prioritization",
+            "Conflict Resolution"
+          ],
+          "learn_resources": [
+            {
+              "name": "Agile Product Management Guide",
+              "url": "https://scrumalliance.org"
+            },
+            {
+              "name": "Harvard Negotiation Project",
+              "url": "https://www.pon.harvard.edu"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Doctor / Bác sĩ lâm sàng",
+      "sector": "Y tế (Tham khảo)",
+      "total_ai_pct": 38,
+      "skills": [
+        {
+          "name": "Đọc ảnh chụp X-quang, MRI & CT",
+          "ai_pct": 68,
+          "trend": "rising",
+          "evidence": "Mô hình Computer Vision của Google Med-PaLM và VinBrain đạt độ nhạy phát hiện u phổi >90%",
+          "description_vi": "Phát hiện khối u, nốt mờ phổi và tổn thương mô trên phim chụp y khoa",
+          "demand_mentions": 13,
+          "growth_pct": 27,
+          "related_positions": [
+            "Doctor / Bác sĩ lâm sàng"
+          ],
+          "learn_keywords": [
+            "Google Med-PaLM 2",
+            "DICOM AI Analysis",
+            "Radiology Deep Learning"
+          ],
+          "learn_resources": [
+            {
+              "name": "Google Research Health AI",
+              "url": "https://research.google/teams/applied-science/health"
+            },
+            {
+              "name": "RSNA Radiology AI Journal",
+              "url": "https://pubs.rsna.org/journal/ai"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Tra cứu tương tác thuốc & Liều lượng",
+          "ai_pct": 72,
+          "trend": "rising",
+          "evidence": "Phần mềm dược lý tự động cảnh báo tương tác thuốc nguy hiểm ngay khi bác sĩ gõ đơn",
+          "description_vi": "Kiểm tra cảnh báo phản ứng chéo giữa các loại thuốc khi kê đơn",
+          "demand_mentions": 14,
+          "growth_pct": 28,
+          "related_positions": [
+            "Doctor / Bác sĩ lâm sàng"
+          ],
+          "learn_keywords": [
+            "Drug Interaction Checker",
+            "Pharmacogenomics AI",
+            "Clinical Decision Support"
+          ],
+          "learn_resources": [
+            {
+              "name": "UpToDate Clinical Decision Support",
+              "url": "https://www.wolterskluwer.com/uptodate"
+            },
+            {
+              "name": "Epocrates Drug Reference",
+              "url": "https://www.epocrates.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Phẫu thuật ngoại khoa lâm sàng (Surgery)",
+          "ai_pct": 8,
+          "trend": "stable",
+          "evidence": "Robot Da Vinci do bác sĩ điều khiển; chưa một AI nào có thể tự mổ độc lập trên cơ thể người sống",
+          "description_vi": "Trực tiếp mổ rạch, khâu vết thương và xử lý cầm máu trong phòng mổ",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Doctor / Bác sĩ lâm sàng"
+          ],
+          "learn_keywords": [
+            "Minimally Invasive Surgery",
+            "Da Vinci Surgical System",
+            "Surgical Decision Making"
+          ],
+          "learn_resources": [
+            {
+              "name": "American College of Surgeons Guidelines",
+              "url": "https://www.facs.org"
+            },
+            {
+              "name": "Intuitive Surgical da Vinci Training",
+              "url": "https://www.intuitive.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Thăm khám trực tiếp & Thông báo tin dữ (Bedside Manner)",
+          "ai_pct": 5,
+          "trend": "stable",
+          "evidence": "Y học là nghệ thuật của lòng trắc ẩn; cái chạm tay của bác sĩ đem lại sức mạnh chữa lành tâm lý",
+          "description_vi": "Bắt mạch, sờ nắn ổ bụng và nắm tay an ủi người bệnh khi nghe chẩn đoán hiểm nghèo",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Doctor / Bác sĩ lâm sàng"
+          ],
+          "learn_keywords": [
+            "Bedside Manner",
+            "Breaking Bad News Protocol (SPIKES)",
+            "Doctor-Patient Relationship"
+          ],
+          "learn_resources": [
+            {
+              "name": "SPIKES Protocol for Breaking Bad News",
+              "url": "https://www.theoncologist.com"
+            },
+            {
+              "name": "Mayo Clinic Patient Communication Guidelines",
+              "url": "https://www.mayoclinic.org"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "IoT Hardware Engineer",
+      "sector": "Phần cứng & IoT",
+      "total_ai_pct": 34,
+      "skills": [
+        {
+          "name": "Thiết kế schematic & Routing PCB",
+          "ai_pct": 52,
+          "trend": "rising",
+          "evidence": "Flux.ai và Quilter AI hỗ trợ auto-routing và kiểm tra xung đột linh kiện tự động",
+          "description_vi": "Vẽ sơ đồ nguyên lý và chạy đường mạch in trên bo mạch điện tử",
+          "demand_mentions": 10,
+          "growth_pct": 20,
+          "related_positions": [
+            "IoT Hardware Engineer"
+          ],
+          "learn_keywords": [
+            "KiCad 8.0",
+            "Flux.ai Web EDA",
+            "Quilter AI Routing",
+            "High-Speed PCB Design"
+          ],
+          "learn_resources": [
+            {
+              "name": "KiCad Official Tutorials",
+              "url": "https://www.kicad.org/help/tutorials"
+            },
+            {
+              "name": "Flux.ai Cloud Copilot for Hardware",
+              "url": "https://www.flux.ai"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Lựa chọn linh kiện & Quản lý BOM",
+          "ai_pct": 65,
+          "trend": "rising",
+          "evidence": "AI đọc datasheet PDF, đề xuất chip tương đương về chân cắm (pin-to-pin) ngay lập tức",
+          "description_vi": "Tra cứu thông số datasheet, tìm linh kiện thay thế khi chuỗi cung ứng đứt gãy",
+          "demand_mentions": 13,
+          "growth_pct": 26,
+          "related_positions": [
+            "IoT Hardware Engineer"
+          ],
+          "learn_keywords": [
+            "Octopart API",
+            "Datasheet LLM Parser",
+            "Supply Chain BOM Analysis"
+          ],
+          "learn_resources": [
+            {
+              "name": "Octopart Electronic Component Search",
+              "url": "https://octopart.com"
+            },
+            {
+              "name": "DigiKey Component Selector",
+              "url": "https://www.digikey.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Hàn mạch & Kiểm thử bo mạch tại bàn lab",
+          "ai_pct": 6,
+          "trend": "stable",
+          "evidence": "Đòi hỏi kỹ năng cơ học bằng tay cực kỳ khéo léo, xử lý điện thế thật và rủi ro cháy nổ",
+          "description_vi": "Dùng máy hàn khò, đo xung bằng oscilloscope và fix cầu chì trên bo mạch thật",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "IoT Hardware Engineer"
+          ],
+          "learn_keywords": [
+            "Oscilloscope Debugging",
+            "SMD Hand Soldering",
+            "Logic Analyzer"
+          ],
+          "learn_resources": [
+            {
+              "name": "PACE Soldering Lessons",
+              "url": "https://paceworldwide.com"
+            },
+            {
+              "name": "EEVblog Oscilloscope Basics",
+              "url": "https://www.eevblog.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Kiểm định chuẩn quốc tế (FCC / CE / EMC)",
+          "ai_pct": 12,
+          "trend": "stable",
+          "evidence": "Cần máy móc phòng lab triệu đô và kỹ sư giải trình trực tiếp với cơ quan đo lường nhà nước",
+          "description_vi": "Đưa sản phẩm vào phòng lab buồng câm đo phát xạ điện từ và chứng nhận hợp quy",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "IoT Hardware Engineer"
+          ],
+          "learn_keywords": [
+            "EMC / EMI Testing",
+            "FCC Part 15 Certification",
+            "RF Anechoic Chamber"
+          ],
+          "learn_resources": [
+            {
+              "name": "In Compliance Magazine Standards",
+              "url": "https://incompliancemag.com"
+            },
+            {
+              "name": "Rohde & Schwarz EMC Educational Resources",
+              "url": "https://www.rohde-schwarz.com"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Embedded Firmware Engineer",
+      "sector": "Kỹ thuật nhúng",
+      "total_ai_pct": 32,
+      "skills": [
+        {
+          "name": "Viết driver ngoại vi (I2C / SPI / UART)",
+          "ai_pct": 68,
+          "trend": "rising",
+          "evidence": "AI đọc datasheet cảm biến và sinh mã C driver chuẩn xác cho thanh ghi",
+          "description_vi": "Lập trình thanh ghi giao tiếp cảm biến và màn hình hiển thị",
+          "demand_mentions": 13,
+          "growth_pct": 27,
+          "related_positions": [
+            "Embedded Firmware Engineer"
+          ],
+          "learn_keywords": [
+            "ESP-IDF C++",
+            "STM32 HAL Drivers",
+            "Zephyr RTOS Drivers"
+          ],
+          "learn_resources": [
+            {
+              "name": "ESP-IDF Programming Guide",
+              "url": "https://docs.espressif.com"
+            },
+            {
+              "name": "Zephyr Project Getting Started",
+              "url": "https://docs.zephyrproject.org"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Triển khai TinyML lên vi điều khiển biên",
+          "ai_pct": 22,
+          "trend": "rising",
+          "evidence": "Đang bùng nổ nhu cầu đưa AI xuống biên; cần tối ưu hóa bộ nhớ SRAM và chu kỳ CPU",
+          "description_vi": "Lượng tử hóa mô hình AI để chạy trực tiếp trên vi điều khiển 64KB RAM",
+          "demand_mentions": 8,
+          "growth_pct": 8,
+          "related_positions": [
+            "Embedded Firmware Engineer"
+          ],
+          "learn_keywords": [
+            "TinyML",
+            "TensorFlow Lite Micro",
+            "Edge Impulse",
+            "CMSIS-NN"
+          ],
+          "learn_resources": [
+            {
+              "name": "Harvard TinyML edX Course",
+              "url": "https://www.edx.org/learn/tinyml"
+            },
+            {
+              "name": "Edge Impulse Tutorials",
+              "url": "https://docs.edgeimpulse.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Quản lý năng lượng cực thấp (Ultra Low Power)",
+          "ai_pct": 18,
+          "trend": "stable",
+          "evidence": "Đòi hỏi hiểu cặn kẽ rò rỉ dòng điện vật lý trên từng chân GPIO và đặc tính hóa học pin",
+          "description_vi": "Thiết kế chế độ ngủ sâu (deep sleep) giúp thiết bị chạy pin 5 năm",
+          "demand_mentions": 8,
+          "growth_pct": 7,
+          "related_positions": [
+            "Embedded Firmware Engineer"
+          ],
+          "learn_keywords": [
+            "Deep Sleep Power Gating",
+            "Nordic Power Profiler",
+            "Coin Cell Battery Optimization"
+          ],
+          "learn_resources": [
+            {
+              "name": "Nordic Semiconductor Low Power Design Guide",
+              "url": "https://www.nordicsemi.com"
+            },
+            {
+              "name": "Ultra-Low Power Wireless Systems Book",
+              "url": "https://link.springer.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Debug phần cứng qua JTAG / GDB",
+          "ai_pct": 20,
+          "trend": "stable",
+          "evidence": "Lỗi phần cứng ngẫu nhiên phụ thuộc nhiễu nguồn và xung clock thực tế tại hiện trường",
+          "description_vi": "Bắt lỗi treo vi điều khiển (HardFault) và tràn ngăn xếp thực tế",
+          "demand_mentions": 8,
+          "growth_pct": 8,
+          "related_positions": [
+            "Embedded Firmware Engineer"
+          ],
+          "learn_keywords": [
+            "J-Link Debugging",
+            "ARM Cortex-M HardFault Handler",
+            "FreeRTOS Trace"
+          ],
+          "learn_resources": [
+            {
+              "name": "Segger J-Link Documentation",
+              "url": "https://www.segger.com"
+            },
+            {
+              "name": "Debugging with GDB",
+              "url": "https://sourceware.org/gdb"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    },
+    {
+      "name": "Robotics Automation Engineer",
+      "sector": "Robotics & Tự động hóa",
+      "total_ai_pct": 30,
+      "skills": [
+        {
+          "name": "Mô phỏng động học & Quỹ đạo (Simulation)",
+          "ai_pct": 58,
+          "trend": "rising",
+          "evidence": "NVIDIA Isaac Sim và Isaac Lab tích hợp mô hình generative tăng tốc Sim2Real gấp 10 lần",
+          "description_vi": "Mô phỏng thế giới ảo Gazebo/Isaac Sim để robot học tránh chướng ngại vật",
+          "demand_mentions": 11,
+          "growth_pct": 23,
+          "related_positions": [
+            "Robotics Automation Engineer"
+          ],
+          "learn_keywords": [
+            "NVIDIA Isaac Sim",
+            "ROS2 Humble",
+            "Gazebo Simulation",
+            "Sim2Real Transfer"
+          ],
+          "learn_resources": [
+            {
+              "name": "NVIDIA Isaac Sim Documentation",
+              "url": "https://docs.omniverse.nvidia.com/isaacsim"
+            },
+            {
+              "name": "ROS2 Official Tutorials",
+              "url": "https://docs.ros.org/en/humble"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Thị giác máy tính định vị vật thể (Visual SLAM / 3D)",
+          "ai_pct": 45,
+          "trend": "rising",
+          "evidence": "Mô hình thị giác không gian 3D (Spatial AI) phát hiện đồ vật trong kho bãi thời gian thực",
+          "description_vi": "Xử lý dữ liệu camera RGB-D và LiDAR để robot nhận biết môi trường xung quanh",
+          "demand_mentions": 9,
+          "growth_pct": 18,
+          "related_positions": [
+            "Robotics Automation Engineer"
+          ],
+          "learn_keywords": [
+            "Point Cloud Library",
+            "RTAB-Map Visual SLAM",
+            "YOLOv10 3D Bounding Box"
+          ],
+          "learn_resources": [
+            {
+              "name": "OpenCV Spatial AI Courses",
+              "url": "https://opencv.org"
+            },
+            {
+              "name": "Introduction to Mobile Robotics Freiburg",
+              "url": "http://ais.informatik.uni-freiburg.de/teaching"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Hiệu chỉnh cơ khí tay gắp & Động cơ (Actuators)",
+          "ai_pct": 5,
+          "trend": "stable",
+          "evidence": "Hoàn toàn là thao tác cơ khí chính xác tại nhà máy; cần bàn tay con người siết ốc và bôi trơn",
+          "description_vi": "Lắp ráp hộp số hành tinh, cân chỉnh lực ép tay gắp và bảo trì động cơ servo",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Robotics Automation Engineer"
+          ],
+          "learn_keywords": [
+            "Harmonic Drive Tuning",
+            "Torque Control",
+            "End-Effector Calibration"
+          ],
+          "learn_resources": [
+            {
+              "name": "Modern Robotics Mechanics & Control - Lynch",
+              "url": "https://modernrobotics.northwestern.edu"
+            },
+            {
+              "name": "Robot Gripper Mechanics Handbook",
+              "url": "https://robotiq.com"
+            }
+          ],
+          "related_signals": []
+        },
+        {
+          "name": "Tiêu chuẩn an toàn công nghiệp (ISO 10218)",
+          "ai_pct": 10,
+          "trend": "stable",
+          "evidence": "Quy định pháp luật bắt buộc kỹ sư an toàn người thật phải ký xác nhận trước khi nghiệm thu dây chuyền",
+          "description_vi": "Cài đặt cảm biến an toàn rèm quang và nút dừng khẩn cấp (E-stop) bảo vệ tính mạng công nhân",
+          "demand_mentions": 8,
+          "growth_pct": 5,
+          "related_positions": [
+            "Robotics Automation Engineer"
+          ],
+          "learn_keywords": [
+            "ISO 10218 Robot Safety",
+            "Safety PLC Programming",
+            "Emergency Stop Circuits"
+          ],
+          "learn_resources": [
+            {
+              "name": "Pilz Safety Machinery Certification",
+              "url": "https://www.pilz.com"
+            },
+            {
+              "name": "OSHA Robotics Safety Guidelines",
+              "url": "https://www.osha.gov"
+            }
+          ],
+          "related_signals": []
+        }
+      ]
+    }
+  ]
+}
