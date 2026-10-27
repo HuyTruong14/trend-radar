@@ -53,24 +53,6 @@
     "consecutive_rising_weeks": 0,
     "total_mentions": 40
   },
-  "LLM": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 22
-      },
-      {
-        "week": "W44",
-        "count": 16
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 38
-  },
   "LoRaWAN": {
     "weekly": [
       {
@@ -88,6 +70,24 @@
     ],
     "consecutive_rising_weeks": 0,
     "total_mentions": 37
+  },
+  "LLM": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 22
+      },
+      {
+        "week": "W44",
+        "count": 13
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 35
   },
   "RISC-V": {
     "weekly": [
@@ -161,78 +161,6 @@
     "consecutive_rising_weeks": 2,
     "total_mentions": 19
   },
-  "TDS": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 9
-      },
-      {
-        "week": "W44",
-        "count": 9
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 18
-  },
-  "Arduino": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 8
-      },
-      {
-        "week": "W44",
-        "count": 8
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 16
-  },
-  "ESP32-S3": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 8
-      },
-      {
-        "week": "W44",
-        "count": 8
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 16
-  },
-  "Turbidity": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 8
-      },
-      {
-        "week": "W44",
-        "count": 8
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 16
-  },
   "MQTT": {
     "weekly": [
       {
@@ -250,6 +178,96 @@
     ],
     "consecutive_rising_weeks": 0,
     "total_mentions": 14
+  },
+  "ESP32-S3": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 8
+      },
+      {
+        "week": "W44",
+        "count": 5
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 13
+  },
+  "Arduino": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 8
+      },
+      {
+        "week": "W44",
+        "count": 4
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 12
+  },
+  "TDS": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 9
+      },
+      {
+        "week": "W44",
+        "count": 2
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 11
+  },
+  "Turbidity": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 8
+      },
+      {
+        "week": "W44",
+        "count": 3
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 11
+  },
+  "Raspberry Pi": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 4
+      },
+      {
+        "week": "W44",
+        "count": 5
+      }
+    ],
+    "consecutive_rising_weeks": 2,
+    "total_mentions": 9
   },
   "Modbus": {
     "weekly": [
@@ -287,43 +305,7 @@
     "consecutive_rising_weeks": 0,
     "total_mentions": 8
   },
-  "Raspberry Pi": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 4
-      },
-      {
-        "week": "W44",
-        "count": 4
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 8
-  },
   "LoRA": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 4
-      },
-      {
-        "week": "W44",
-        "count": 4
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 8
-  },
-  "RAG": {
     "weekly": [
       {
         "week": "W42",
@@ -376,6 +358,24 @@
     ],
     "consecutive_rising_weeks": 0,
     "total_mentions": 5
+  },
+  "RAG": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 4
+      },
+      {
+        "week": "W44",
+        "count": 0
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 4
   },
   "RP2040": {
     "weekly": [
@@ -497,11 +497,11 @@
       },
       {
         "week": "W44",
-        "count": 2
+        "count": 1
       }
     ],
     "consecutive_rising_weeks": 0,
-    "total_mentions": 4
+    "total_mentions": 3
   },
   "Docker": {
     "weekly": [
@@ -515,29 +515,11 @@
       },
       {
         "week": "W44",
-        "count": 2
+        "count": 1
       }
     ],
     "consecutive_rising_weeks": 0,
-    "total_mentions": 4
-  },
-  "Temperature Sensor": {
-    "weekly": [
-      {
-        "week": "W42",
-        "count": 0
-      },
-      {
-        "week": "W43",
-        "count": 2
-      },
-      {
-        "week": "W44",
-        "count": 2
-      }
-    ],
-    "consecutive_rising_weeks": 0,
-    "total_mentions": 4
+    "total_mentions": 3
   },
   "WebSockets": {
     "weekly": [
@@ -556,6 +538,24 @@
     ],
     "consecutive_rising_weeks": 0,
     "total_mentions": 3
+  },
+  "Temperature Sensor": {
+    "weekly": [
+      {
+        "week": "W42",
+        "count": 0
+      },
+      {
+        "week": "W43",
+        "count": 2
+      },
+      {
+        "week": "W44",
+        "count": 0
+      }
+    ],
+    "consecutive_rising_weeks": 0,
+    "total_mentions": 2
   },
   "LangChain": {
     "weekly": [
@@ -641,11 +641,11 @@
       },
       {
         "week": "W44",
-        "count": 0
+        "count": 1
       }
     ],
     "consecutive_rising_weeks": 0,
-    "total_mentions": 1
+    "total_mentions": 2
   },
   "ESP32-C6": {
     "weekly": [

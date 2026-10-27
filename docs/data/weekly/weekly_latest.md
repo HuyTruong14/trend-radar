@@ -1,8 +1,8 @@
 # Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W44
 
-**Khoảng thời gian:** 2026-10-21 đến 2026-10-27  
+**Khoảng thời gian:** 2026-10-22 đến 2026-10-28  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-10-27 20:50 (giờ VN)  
+**Tạo lúc:** 2026-10-28 04:38 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W44) | Tuần này (W44) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 744 | **635** | -109 (-14.7%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 294 | **285** | -9 (-3.1%) | Chất lượng cơ hội ổn định |
-| 🔴 **Build-ready (9/9)** | 1 | **7** | +6 (+600.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 72 | **80** | +8 (+11.1%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 221 | **198** | -23 (-10.4%) | Dòng tín hiệu thị trường rộng |
+| **Tổng tín hiệu đầu vào** | 635 | **772** | +137 (+21.6%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 285 | **350** | +65 (+22.8%) | Chất lượng cơ hội ổn định |
+| 🔴 **Build-ready (9/9)** | 7 | **3** | -4 (-57.1%) | Đúng ngách IoT & cảm biến nước |
+| 🟡 **Research (7–8/9)** | 80 | **82** | +2 (+2.5%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 198 | **265** | +67 (+33.8%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -22,11 +22,11 @@
 
 | # | Tiêu đề dự án / Repo | Điểm | Stage | Loại tín hiệu | Tóm tắt cơ hội (summary_vi) |
 |---|---|:---:|:---:|---|---|
-| 1 | [ishiniayodya610/J26-SE-351](https://github.com/ishiniayodya610/J26-SE-351) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
-| 2 | [forgotmenet/Iotlab-Automation-Test](https://github.com/forgotmenet/Iotlab-Automation-Test) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
-| 3 | [mohamedsadhathj-techwork/Smart-Aquaculture-Assistant](https://github.com/mohamedsadhathj-techwork/Smart-Aquaculture-Assistant) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Trợ lý AI quản lý ao nuôi và chất lượng nước thủy sản |
-| 4 | [api-evangelist/jala](https://github.com/api-evangelist/jala) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp |
-| 5 | [Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-](https://github.com/Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Dự đoán chất lượng nước thời gian thực bằng IoT và máy học |
+| 1 | [deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML](https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Dự đoán chất lượng nước thời gian thực bằng IoT và máy học |
+| 2 | [Gaganmn7353/aquaculture-iot](https://github.com/Gaganmn7353/aquaculture-iot) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
+| 3 | [api-evangelist/jala](https://github.com/api-evangelist/jala) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp |
+| 4 | [5 Interesting Startup Deals You May Have Missed: Robot Training, Space Lasers And Greener Cement](https://news.crunchbase.com/venture/interesting-startup-deals-robots-ai-gaming-clean-tech/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Dòng vốn đầu tư mới vào huấn luyện robot và vật liệu xanh |
+| 5 | [Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions”](https://agfundernews.com/layoffs-at-carbon-robotics-as-firm-realigns-costs-due-to-broader-economic-conditions) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Carbon Robotics cắt giảm chi phí tái cấu trúc mảng robot nông nghiệp |
 
 ---
 
@@ -34,11 +34,11 @@
 
 | Thương vụ / Doanh nghiệp | Hình thức | Giá trị | Ngành chuẩn hóa | Chi tiết định hướng |
 |---|:---:|:---:|---|---|
+| [Gaganmn7353/aquaculture-iot](https://github.com/Gaganmn7353/aquaculture-iot) | **Gọi vốn** | **$10M** | Thủy sản & Nước | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [ESP-Mosaico Lets AI Agents Do the Coding](https://www.hackster.io/news/esp-mosaico-lets-ai-agents-do-the-coding-707ebfc43a55) | **Gọi vốn** | **N/A** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [CSL Group Acquires SIMPL Wireless to Bring Critical Connectivity® to North America](https://iotbusinessnews.com/2026/10/20/csl-group-acquires-simpl-wireless-to-bring-critical-connectivity-to-north-america/) | **M&A** | **N/A** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Cambridge Analytica's fallout is still costing Meta, this time $25 billion in New Mexico](https://www.reddit.com/r/technology/comments/1xdlpex/cambridge_analyticas_fallout_is_still_costing/) | **Gọi vốn** | **$25B** | Công nghệ & Startup | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [Warhound raises $200M to engineer war dogs and arm them with Anduril gear](https://techcrunch.com/2026/10/22/ben-lamm-raises-200m-for-warhound-to-engineer-war-dogs-and-arm-them-with-anduril-gear/) | **Gọi vốn** | **$200M** | Công nghệ & Startup | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 
 ---
 
@@ -74,19 +74,19 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W44) | Tuần trước (W44) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **60** | 52 | `+15%` | 📈 Tăng nhẹ |
-| **Sensor** | **29** | 21 | `+38%` | 🚀 Tăng mạnh |
-| **ESP32** | **28** | 23 | `+22%` | 📈 Tăng nhẹ |
+| **Robotics** | **51** | 60 | `-15%` | ➡️ Ổn định |
+| **ESP32** | **23** | 28 | `-18%` | ➡️ Ổn định |
+| **Sensor** | **20** | 29 | `-31%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
+| **Humanoid** | **15** | 10 | `+50%` | 🚀 Tăng mạnh |
 | **LoRaWAN** | **14** | 14 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **10** | 12 | `-17%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
 | **RP2350** | **8** | 8 | `0%` | ➡️ Ổn định |
-| **MQTT** | **7** | 5 | `+40%` | 🚀 Tăng mạnh |
-| **Computer Vision** | **2** | 0 | `+200%` | 🚀 Tăng mạnh |
+| **MQTT** | **5** | 7 | `-29%` | ➡️ Ổn định |
 | **STM32** | **0** | 0 | `0%` | ➡️ Ổn định |
+| **Computer Vision** | **0** | 2 | `-100%` | ➡️ Ổn định |
 | **BLE** | **0** | 0 | `0%` | ➡️ Ổn định |
 
 ---
@@ -94,13 +94,13 @@
 ## 6. Thuật Ngữ Mới Xuất Hiện Trong Tuần
 
 - **`OpenAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`GR8_TECH`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`RoboWeeder`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`SenseUP`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`EpiSEM`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`SpectralCanary`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`FairPlay`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`RoboBusiness`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`BetConstruct`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`BeagleBoard`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`PocketBeagle`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
 ---
 
