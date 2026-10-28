@@ -41,6 +41,15 @@
       "ESP32": 8
     }
   },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 15,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "LoRaWAN": {
     "type": "Protocol",
     "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
@@ -53,15 +62,6 @@
       "DO (Dissolved Oxygen)": 5,
       "LoRA": 4
     }
-  },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 13,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "RISC-V": {
     "type": "Hardware",
@@ -162,15 +162,6 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "Modbus": {
-    "type": "Protocol",
-    "description_vi": "Giao thức truyền thông công nghiệp chuẩn mực nối PLC, cảm biến và thiết bị đo",
-    "mentions_this_week": 4,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "LoRA": {
     "type": "AI/ML",
     "description_vi": "Phương pháp tinh chỉnh mô hình ngôn ngữ bằng ma trận rank thấp siêu tiết kiệm bộ nhớ",
@@ -196,6 +187,15 @@
       "Turbidity": 2,
       "Actuator": 2
     }
+  },
+  "Modbus": {
+    "type": "Protocol",
+    "description_vi": "Giao thức truyền thông công nghiệp chuẩn mực nối PLC, cảm biến và thiết bị đo",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "DO (Dissolved Oxygen)": {
     "type": "Sensor",
@@ -273,6 +273,15 @@
     "trend": "rising",
     "co_occurs_with": {}
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "TDS": {
     "type": "Sensor",
     "description_vi": "Cảm biến đo tổng chất rắn hòa tan trong nước (Total Dissolved Solids)",
@@ -307,15 +316,6 @@
     "co_occurs_with": {
       "MQTT": 1
     }
-  },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "LangChain": {
     "type": "AI/ML",
