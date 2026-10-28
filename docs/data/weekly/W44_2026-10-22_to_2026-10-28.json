@@ -2,14 +2,14 @@
   "week": "W44",
   "start_date": "2026-10-22",
   "end_date": "2026-10-28",
-  "created_at": "2026-10-28T10:00:51.537471+07:00",
+  "created_at": "2026-10-28T18:52:20.146432+07:00",
   "previous_week": "W44",
   "stats": {
-    "total_signals": 776,
-    "total_opportunities": 362,
+    "total_signals": 768,
+    "total_opportunities": 370,
     "build_ready": 2,
     "research": 83,
-    "watch": 277
+    "watch": 285
   },
   "prev_stats": {
     "total_signals": 635,
@@ -19,6 +19,18 @@
     "watch": 198
   },
   "top_opportunities": [
+    {
+      "id": "opp_2026_1028_ffebd3b0",
+      "title": "latverian/edge-intelligent-aquaculture",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
+      "url": "https://github.com/latverian/edge-intelligent-aquaculture"
+    },
     {
       "id": "opp_2026_1027_8bea0614",
       "title": "deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML",
@@ -30,18 +42,6 @@
       ],
       "summary_vi": "Dự đoán chất lượng nước thời gian thực bằng IoT và máy học",
       "url": "https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML"
-    },
-    {
-      "id": "opp_2026_1027_d64676ce",
-      "title": "Gaganmn7353/aquaculture-iot",
-      "total": 9,
-      "stage": "build_ready",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
-      "url": "https://github.com/Gaganmn7353/aquaculture-iot"
     },
     {
       "id": "opp_2026_1025_1008f4c5",
@@ -82,12 +82,12 @@
   ],
   "funding_deals": [
     {
-      "title": "Gaganmn7353/aquaculture-iot",
+      "title": "deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML",
       "type": "Gọi vốn",
       "amount": "$10M",
       "sector": "aquatech",
       "sector_vi": "Thủy sản & Nước",
-      "url": "https://github.com/Gaganmn7353/aquaculture-iot"
+      "url": "https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML"
     },
     {
       "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
@@ -268,7 +268,7 @@
     "LR2021",
     "RoboBusiness",
     "ChatGPT",
-    "BetConstruct",
+    "CasinoNieuws",
     "BeagleBoard",
     "PocketBeagle"
   ],

@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-10-22 đến 2026-10-28  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-10-28 10:00 (giờ VN)  
+**Tạo lúc:** 2026-10-28 18:52 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W44) | Tuần này (W44) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 635 | **776** | +141 (+22.2%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 285 | **362** | +77 (+27.0%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 635 | **768** | +133 (+20.9%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 285 | **370** | +85 (+29.8%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 7 | **2** | -5 (-71.4%) | Đúng ngách IoT & cảm biến nước |
 | 🟡 **Research (7–8/9)** | 80 | **83** | +3 (+3.8%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 198 | **277** | +79 (+39.9%) | Dòng tín hiệu thị trường rộng |
+| ⚪ **Watch (4–6/9)** | 198 | **285** | +87 (+43.9%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -22,8 +22,8 @@
 
 | # | Tiêu đề dự án / Repo | Điểm | Stage | Loại tín hiệu | Tóm tắt cơ hội (summary_vi) |
 |---|---|:---:|:---:|---|---|
-| 1 | [deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML](https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Dự đoán chất lượng nước thời gian thực bằng IoT và máy học |
-| 2 | [Gaganmn7353/aquaculture-iot](https://github.com/Gaganmn7353/aquaculture-iot) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
+| 1 | [latverian/edge-intelligent-aquaculture](https://github.com/latverian/edge-intelligent-aquaculture) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
+| 2 | [deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML](https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Dự đoán chất lượng nước thời gian thực bằng IoT và máy học |
 | 3 | [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Startup Eka Robotics gọi $150M phát triển robot nông nghiệp tự hành |
 | 4 | [5 Interesting Startup Deals You May Have Missed: Robot Training, Space Lasers And Greener Cement](https://news.crunchbase.com/venture/interesting-startup-deals-robots-ai-gaming-clean-tech/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Dòng vốn đầu tư mới vào huấn luyện robot và vật liệu xanh |
 | 5 | [Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions”](https://agfundernews.com/layoffs-at-carbon-robotics-as-firm-realigns-costs-due-to-broader-economic-conditions) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Carbon Robotics cắt giảm chi phí tái cấu trúc mảng robot nông nghiệp |
@@ -34,7 +34,7 @@
 
 | Thương vụ / Doanh nghiệp | Hình thức | Giá trị | Ngành chuẩn hóa | Chi tiết định hướng |
 |---|:---:|:---:|---|---|
-| [Gaganmn7353/aquaculture-iot](https://github.com/Gaganmn7353/aquaculture-iot) | **Gọi vốn** | **$10M** | Thủy sản & Nước | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML](https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML) | **Gọi vốn** | **$10M** | Thủy sản & Nước | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) | **Gọi vốn** | **$150M** | Nông nghiệp | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [ESP-Mosaico Lets AI Agents Do the Coding](https://www.hackster.io/news/esp-mosaico-lets-ai-agents-do-the-coding-707ebfc43a55) | **Gọi vốn** | **N/A** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
@@ -98,7 +98,7 @@
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`RoboBusiness`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`BetConstruct`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`CasinoNieuws`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`BeagleBoard`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`PocketBeagle`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
