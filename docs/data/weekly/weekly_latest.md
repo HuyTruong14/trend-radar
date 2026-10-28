@@ -1,8 +1,8 @@
 # Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W44
 
-**Khoảng thời gian:** 2026-10-22 đến 2026-10-28  
+**Khoảng thời gian:** 2026-10-23 đến 2026-10-29  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-10-28 18:52 (giờ VN)  
+**Tạo lúc:** 2026-10-29 00:39 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W44) | Tuần này (W44) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 635 | **768** | +133 (+20.9%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 285 | **370** | +85 (+29.8%) | Chất lượng cơ hội ổn định |
-| 🔴 **Build-ready (9/9)** | 7 | **2** | -5 (-71.4%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 80 | **83** | +3 (+3.8%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 198 | **285** | +87 (+43.9%) | Dòng tín hiệu thị trường rộng |
+| **Tổng tín hiệu đầu vào** | 768 | **778** | +10 (+1.3%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 370 | **392** | +22 (+5.9%) | Chất lượng cơ hội ổn định |
+| 🔴 **Build-ready (9/9)** | 2 | **2** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
+| 🟡 **Research (7–8/9)** | 83 | **84** | +1 (+1.2%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 285 | **306** | +21 (+7.4%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -25,8 +25,8 @@
 | 1 | [latverian/edge-intelligent-aquaculture](https://github.com/latverian/edge-intelligent-aquaculture) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
 | 2 | [deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML](https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Dự đoán chất lượng nước thời gian thực bằng IoT và máy học |
 | 3 | [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Startup Eka Robotics gọi $150M phát triển robot nông nghiệp tự hành |
-| 4 | [5 Interesting Startup Deals You May Have Missed: Robot Training, Space Lasers And Greener Cement](https://news.crunchbase.com/venture/interesting-startup-deals-robots-ai-gaming-clean-tech/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Dòng vốn đầu tư mới vào huấn luyện robot và vật liệu xanh |
-| 5 | [Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions”](https://agfundernews.com/layoffs-at-carbon-robotics-as-firm-realigns-costs-due-to-broader-economic-conditions) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Carbon Robotics cắt giảm chi phí tái cấu trúc mảng robot nông nghiệp |
+| 4 | [Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions”](https://agfundernews.com/layoffs-at-carbon-robotics-as-firm-realigns-costs-due-to-broader-economic-conditions) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Carbon Robotics cắt giảm chi phí tái cấu trúc mảng robot nông nghiệp |
+| 5 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
 
 ---
 
@@ -74,19 +74,19 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W44) | Tuần trước (W44) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **51** | 60 | `-15%` | ➡️ Ổn định |
-| **ESP32** | **23** | 28 | `-18%` | ➡️ Ổn định |
-| **Sensor** | **20** | 29 | `-31%` | ➡️ Ổn định |
+| **Robotics** | **50** | 51 | `-2%` | ➡️ Ổn định |
+| **ESP32** | **23** | 23 | `0%` | ➡️ Ổn định |
+| **Sensor** | **20** | 20 | `0%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
 | **LoRaWAN** | **14** | 14 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **12** | 10 | `+20%` | 📈 Tăng nhẹ |
+| **Humanoid** | **12** | 12 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
 | **RP2350** | **8** | 8 | `0%` | ➡️ Ổn định |
-| **MQTT** | **5** | 7 | `-29%` | ➡️ Ổn định |
+| **MQTT** | **5** | 5 | `0%` | ➡️ Ổn định |
 | **STM32** | **0** | 0 | `0%` | ➡️ Ổn định |
-| **Computer Vision** | **0** | 2 | `-100%` | ➡️ Ổn định |
+| **Computer Vision** | **0** | 0 | `0%` | ➡️ Ổn định |
 | **BLE** | **0** | 0 | `0%` | ➡️ Ổn định |
 
 ---
@@ -96,11 +96,11 @@
 - **`OpenAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`RoboBusiness`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`BeagleBoard`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`CasinoNieuws`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`BeagleBoard`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`PocketBeagle`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`DeepMind`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
 ---
 
