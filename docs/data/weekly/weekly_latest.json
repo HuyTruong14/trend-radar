@@ -1,22 +1,22 @@
 {
   "week": "W44",
-  "start_date": "2026-10-23",
-  "end_date": "2026-10-29",
-  "created_at": "2026-10-29T19:00:08.088116+07:00",
+  "start_date": "2026-10-24",
+  "end_date": "2026-10-30",
+  "created_at": "2026-10-30T00:55:49.048820+07:00",
   "previous_week": "W44",
   "stats": {
+    "total_signals": 785,
+    "total_opportunities": 415,
+    "build_ready": 2,
+    "research": 89,
+    "watch": 324
+  },
+  "prev_stats": {
     "total_signals": 784,
     "total_opportunities": 405,
     "build_ready": 2,
     "research": 87,
     "watch": 316
-  },
-  "prev_stats": {
-    "total_signals": 768,
-    "total_opportunities": 370,
-    "build_ready": 2,
-    "research": 83,
-    "watch": 285
   },
   "top_opportunities": [
     {
@@ -248,29 +248,29 @@
     },
     "Humanoid": {
       "count": 10,
-      "prev_week": 12,
-      "change_pct": -17
+      "prev_week": 10,
+      "change_pct": 0
     },
     "Robotics": {
-      "count": 53,
-      "prev_week": 51,
-      "change_pct": 4
+      "count": 52,
+      "prev_week": 53,
+      "change_pct": -2
     },
     "Sensor": {
-      "count": 20,
+      "count": 22,
       "prev_week": 20,
-      "change_pct": 0
+      "change_pct": 10
     }
   },
   "new_terms": [
     "OpenAI",
     "ChatGPT",
+    "GR8_TECH",
     "AquaMindAI",
     "LR2021",
     "BeagleBoard",
     "PocketBeagle",
-    "DeepMind",
-    "ThinkWorld"
+    "DeepMind"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",

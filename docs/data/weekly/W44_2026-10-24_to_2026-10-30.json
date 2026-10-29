@@ -1,0 +1,289 @@
+{
+  "week": "W44",
+  "start_date": "2026-10-24",
+  "end_date": "2026-10-30",
+  "created_at": "2026-10-30T00:55:49.048820+07:00",
+  "previous_week": "W44",
+  "stats": {
+    "total_signals": 785,
+    "total_opportunities": 415,
+    "build_ready": 2,
+    "research": 89,
+    "watch": 324
+  },
+  "prev_stats": {
+    "total_signals": 784,
+    "total_opportunities": 405,
+    "build_ready": 2,
+    "research": 87,
+    "watch": 316
+  },
+  "top_opportunities": [
+    {
+      "id": "opp_2026_1027_8bea0614",
+      "title": "deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Dự đoán chất lượng nước thời gian thực bằng IoT và máy học",
+      "url": "https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML"
+    },
+    {
+      "id": "opp_2026_1028_ffebd3b0",
+      "title": "latverian/edge-intelligent-aquaculture",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
+      "url": "https://github.com/latverian/edge-intelligent-aquaculture"
+    },
+    {
+      "id": "opp_2026_1027_c437aac5",
+      "title": "Crunchbase Data Shows Q3 Robotics Startup Funding Jumps 185% As US And China Lead Physical AI Push",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Crunchbase Data Shows",
+      "url": "https://news.crunchbase.com/venture/q3-2026-us-china-robotics-startup-funding-jumps-physical-ai-push/"
+    },
+    {
+      "id": "opp_2026_1027_ead3e2e2",
+      "title": "Bedrock Robotics nears $1B in total funding as demand for autonomous heavy equipment surges",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Bedrock Robotics near",
+      "url": "https://www.therobotreport.com/bedrock-robotics-nears-1b-in-total-funding-as-demand-for-autonomous-heavy-equipment-surges/"
+    },
+    {
+      "id": "opp_2026_1025_1008f4c5",
+      "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Startup Eka Robotics gọi $150M phát triển robot nông nghiệp tự hành",
+      "url": "https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/"
+    }
+  ],
+  "funding_deals": [
+    {
+      "title": "latverian/edge-intelligent-aquaculture",
+      "type": "Gọi vốn",
+      "amount": "$10M",
+      "sector": "aquatech",
+      "sector_vi": "Thủy sản & Nước",
+      "url": "https://github.com/latverian/edge-intelligent-aquaculture"
+    },
+    {
+      "title": "Bedrock Robotics nears $1B in total funding as demand for autonomous heavy equipment surges",
+      "type": "Gọi vốn",
+      "amount": "$1B",
+      "sector": "robotics",
+      "sector_vi": "Robotics",
+      "url": "https://www.therobotreport.com/bedrock-robotics-nears-1b-in-total-funding-as-demand-for-autonomous-heavy-equipment-surges/"
+    },
+    {
+      "title": "Eka Robotics raises $150M to scale its vision-force-action model for robots",
+      "type": "Gọi vốn",
+      "amount": "$150M",
+      "sector": "agtech",
+      "sector_vi": "Nông nghiệp",
+      "url": "https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/"
+    },
+    {
+      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
+      "type": "Gọi vốn",
+      "amount": "$20K",
+      "sector": "hardware",
+      "sector_vi": "Phần cứng & IoT",
+      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
+    },
+    {
+      "title": "A $4 Robot With a Mind of Its Own",
+      "type": "Gọi vốn",
+      "amount": "N/A",
+      "sector": "robotics",
+      "sector_vi": "Robotics",
+      "url": "https://www.hackster.io/news/a-4-robot-with-a-mind-of-its-own-341626d8d8b7"
+    }
+  ],
+  "hot_topics": {
+    "reddit_top3": [
+      {
+        "title": "Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM",
+        "subreddit": "r/LocalLLaMA",
+        "upvotes": 720,
+        "summary_vi": "Chạy mô hình LLM 70B tối ưu trên phần cứng cá nhân với KV cache 4-bit",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xe_70b_quant/"
+      },
+      {
+        "title": "Best workflows for automated code refactoring and multi-file project architecture in 2026",
+        "subreddit": "r/ChatGPT",
+        "upvotes": 650,
+        "summary_vi": "Quy trình ứng dụng AI tự động hóa rà soát code và tái cấu trúc dự án",
+        "url": "https://www.reddit.com/r/ChatGPT/comments/1xe_code_workflow/"
+      },
+      {
+        "title": "Embodied intelligence breakthroughs: From language models to physical world manipulation",
+        "subreddit": "r/singularity",
+        "upvotes": 640,
+        "summary_vi": "Đột phá AI hiện thân kết hợp mô hình ngôn ngữ với thao tác vật lý",
+        "url": "https://www.reddit.com/r/singularity/comments/1xe_embodied_ai/"
+      }
+    ],
+    "google_trends_top3": [
+      {
+        "keyword": "electric vehicle",
+        "volume": 72,
+        "change": "+18%",
+        "summary_vi": "Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc",
+        "link": "https://trends.google.com/trends/explore?q=electric%20vehicle&date=today+1-m"
+      },
+      {
+        "keyword": "AI hardware",
+        "volume": 65,
+        "change": "+42%",
+        "summary_vi": "Làn sóng tìm kiếm chip chuyên dụng và phần cứng tăng tốc AI",
+        "link": "https://trends.google.com/trends/explore?q=AI%20hardware&date=today+1-m"
+      },
+      {
+        "keyword": "renewable energy",
+        "volume": 58,
+        "change": "+15%",
+        "summary_vi": "Xu hướng chuyển dịch năng lượng tái tạo và lưu trữ điện",
+        "link": "https://trends.google.com/trends/explore?q=renewable%20energy&date=today+1-m"
+      }
+    ],
+    "twitter_top3": [
+      {
+        "keyword": "#AI",
+        "tweets": "125K",
+        "summary_vi": "Làn sóng thảo luận nóng về bước tiến AI và ứng dụng vào thực tế",
+        "url": "https://x.com/search?q=%23AI"
+      },
+      {
+        "keyword": "#startup",
+        "tweets": "42K",
+        "summary_vi": "Cộng đồng khởi nghiệp chia sẻ sản phẩm mới và chiến lược gọi vốn",
+        "url": "https://x.com/search?q=%23startup"
+      },
+      {
+        "keyword": "#IoT",
+        "tweets": "24K",
+        "summary_vi": "Xu hướng thiết bị kết nối IoT và cảm biến thông minh đang được bàn luận sôi nổi",
+        "url": "https://x.com/search?q=%23IoT"
+      }
+    ]
+  },
+  "tech_frequency": {
+    "ESP32": {
+      "count": 23,
+      "prev_week": 23,
+      "change_pct": 0
+    },
+    "TinyML": {
+      "count": 15,
+      "prev_week": 15,
+      "change_pct": 0
+    },
+    "LoRaWAN": {
+      "count": 14,
+      "prev_week": 14,
+      "change_pct": 0
+    },
+    "RP2350": {
+      "count": 8,
+      "prev_week": 8,
+      "change_pct": 0
+    },
+    "RISC-V": {
+      "count": 11,
+      "prev_week": 11,
+      "change_pct": 0
+    },
+    "STM32": {
+      "count": 0,
+      "prev_week": 0,
+      "change_pct": 0
+    },
+    "ROS2": {
+      "count": 9,
+      "prev_week": 9,
+      "change_pct": 0
+    },
+    "Edge AI": {
+      "count": 19,
+      "prev_week": 19,
+      "change_pct": 0
+    },
+    "Computer Vision": {
+      "count": 0,
+      "prev_week": 0,
+      "change_pct": 0
+    },
+    "BLE": {
+      "count": 0,
+      "prev_week": 0,
+      "change_pct": 0
+    },
+    "MQTT": {
+      "count": 5,
+      "prev_week": 5,
+      "change_pct": 0
+    },
+    "Humanoid": {
+      "count": 10,
+      "prev_week": 10,
+      "change_pct": 0
+    },
+    "Robotics": {
+      "count": 52,
+      "prev_week": 53,
+      "change_pct": -2
+    },
+    "Sensor": {
+      "count": 22,
+      "prev_week": 20,
+      "change_pct": 10
+    }
+  },
+  "new_terms": [
+    "OpenAI",
+    "ChatGPT",
+    "GR8_TECH",
+    "AquaMindAI",
+    "LR2021",
+    "BeagleBoard",
+    "PocketBeagle",
+    "DeepMind"
+  ],
+  "disruption_snapshot": {
+    "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",
+    "ai_pct": 88,
+    "change": "+4%",
+    "safe_count": 16,
+    "opportunity_count": 12,
+    "avoid_count": 2,
+    "new_roles": [
+      "AI Hardware Integrator",
+      "Agentic Workflow Architect",
+      "AI Automation Business Consultant",
+      "Creative AI Director & Art Curator"
+    ]
+  }
+}

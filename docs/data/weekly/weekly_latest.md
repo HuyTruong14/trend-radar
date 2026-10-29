@@ -1,8 +1,8 @@
 # Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W44
 
-**Khoảng thời gian:** 2026-10-23 đến 2026-10-29  
+**Khoảng thời gian:** 2026-10-24 đến 2026-10-30  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-10-29 19:00 (giờ VN)  
+**Tạo lúc:** 2026-10-30 00:55 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W44) | Tuần này (W44) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 768 | **784** | +16 (+2.1%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 370 | **405** | +35 (+9.5%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 784 | **785** | +1 (+0.1%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 405 | **415** | +10 (+2.5%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 2 | **2** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 83 | **87** | +4 (+4.8%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 285 | **316** | +31 (+10.9%) | Dòng tín hiệu thị trường rộng |
+| 🟡 **Research (7–8/9)** | 87 | **89** | +2 (+2.3%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 316 | **324** | +8 (+2.5%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -74,14 +74,14 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W44) | Tuần trước (W44) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **53** | 51 | `+4%` | 📈 Tăng nhẹ |
+| **Robotics** | **52** | 53 | `-2%` | ➡️ Ổn định |
 | **ESP32** | **23** | 23 | `0%` | ➡️ Ổn định |
-| **Sensor** | **20** | 20 | `0%` | ➡️ Ổn định |
+| **Sensor** | **22** | 20 | `+10%` | 📈 Tăng nhẹ |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
 | **LoRaWAN** | **14** | 14 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **10** | 12 | `-17%` | ➡️ Ổn định |
+| **Humanoid** | **10** | 10 | `0%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
 | **RP2350** | **8** | 8 | `0%` | ➡️ Ổn định |
 | **MQTT** | **5** | 5 | `0%` | ➡️ Ổn định |
@@ -95,12 +95,12 @@
 
 - **`OpenAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`GR8_TECH`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`BeagleBoard`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`PocketBeagle`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`DeepMind`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`ThinkWorld`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
 ---
 
