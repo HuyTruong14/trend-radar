@@ -2,14 +2,14 @@
   "week": "W44",
   "start_date": "2026-10-23",
   "end_date": "2026-10-29",
-  "created_at": "2026-10-29T10:28:44.102725+07:00",
+  "created_at": "2026-10-29T19:00:08.088116+07:00",
   "previous_week": "W44",
   "stats": {
-    "total_signals": 778,
-    "total_opportunities": 399,
+    "total_signals": 784,
+    "total_opportunities": 405,
     "build_ready": 2,
     "research": 87,
-    "watch": 310
+    "watch": 316
   },
   "prev_stats": {
     "total_signals": 768,
@@ -19,18 +19,6 @@
     "watch": 285
   },
   "top_opportunities": [
-    {
-      "id": "opp_2026_1028_ffebd3b0",
-      "title": "latverian/edge-intelligent-aquaculture",
-      "total": 9,
-      "stage": "build_ready",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
-      "url": "https://github.com/latverian/edge-intelligent-aquaculture"
-    },
     {
       "id": "opp_2026_1027_8bea0614",
       "title": "deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML",
@@ -42,6 +30,18 @@
       ],
       "summary_vi": "Dự đoán chất lượng nước thời gian thực bằng IoT và máy học",
       "url": "https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML"
+    },
+    {
+      "id": "opp_2026_1028_ffebd3b0",
+      "title": "latverian/edge-intelligent-aquaculture",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
+      "url": "https://github.com/latverian/edge-intelligent-aquaculture"
     },
     {
       "id": "opp_2026_1027_c437aac5",
@@ -82,12 +82,12 @@
   ],
   "funding_deals": [
     {
-      "title": "deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML",
+      "title": "latverian/edge-intelligent-aquaculture",
       "type": "Gọi vốn",
       "amount": "$10M",
       "sector": "aquatech",
       "sector_vi": "Thủy sản & Nước",
-      "url": "https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML"
+      "url": "https://github.com/latverian/edge-intelligent-aquaculture"
     },
     {
       "title": "Bedrock Robotics nears $1B in total funding as demand for autonomous heavy equipment surges",
@@ -264,13 +264,13 @@
   },
   "new_terms": [
     "OpenAI",
+    "ChatGPT",
     "AquaMindAI",
     "LR2021",
-    "ChatGPT",
     "BeagleBoard",
-    "CasinoNieuws",
     "PocketBeagle",
-    "DeepMind"
+    "DeepMind",
+    "ThinkWorld"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",
