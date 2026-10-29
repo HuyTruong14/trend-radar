@@ -180,17 +180,17 @@
     "role": "platform"
   },
   {
-    "repo": "langchain-ai/langchain",
+    "repo": "affaan-m/ECC",
     "stars": 912,
     "stars_prev_week": 776,
     "velocity": 136,
     "language": "Python",
     "tags": [
-      "Edge AI",
-      "LangChain"
+      "IoT",
+      "Open Source"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
-    "role": "ai"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: ECC",
+    "role": "platform"
   },
   {
     "repo": "earendil-works/pi",
@@ -204,6 +204,19 @@
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
     "role": "platform"
+  },
+  {
+    "repo": "langchain-ai/langchain",
+    "stars": 912,
+    "stars_prev_week": 776,
+    "velocity": 136,
+    "language": "Python",
+    "tags": [
+      "Edge AI",
+      "LangChain"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
+    "role": "ai"
   },
   {
     "repo": "infiniflow/ragflow",
@@ -294,19 +307,6 @@
     "role": "platform"
   },
   {
-    "repo": "affaan-m/ECC",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: ECC",
-    "role": "platform"
-  },
-  {
     "repo": "Shubhamsaboo/awesome-llm-apps",
     "stars": 912,
     "stars_prev_week": 776,
@@ -380,18 +380,6 @@
     "role": "ai"
   },
   {
-    "repo": "huggingface/lerobot",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "Robotics"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
-    "role": "platform"
-  },
-  {
     "repo": "commaai/openpilot",
     "stars": 912,
     "stars_prev_week": 776,
@@ -414,6 +402,18 @@
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: genesis world",
     "role": "ai"
+  },
+  {
+    "repo": "huggingface/lerobot",
+    "stars": 912,
+    "stars_prev_week": 776,
+    "velocity": 136,
+    "language": "Python",
+    "tags": [
+      "Robotics"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
+    "role": "platform"
   },
   {
     "repo": "Developer-Y/cs-video-courses",
@@ -491,19 +491,6 @@
     "role": "ai"
   },
   {
-    "repo": "google-deepmind/mujoco",
-    "stars": 720,
-    "stars_prev_week": 613,
-    "velocity": 107,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
-    "role": "platform"
-  },
-  {
     "repo": "questdb/questdb",
     "stars": 720,
     "stars_prev_week": 613,
@@ -517,7 +504,7 @@
     "role": "platform"
   },
   {
-    "repo": "ArduPilot/ardupilot",
+    "repo": "google-deepmind/mujoco",
     "stars": 720,
     "stars_prev_week": 613,
     "velocity": 107,
@@ -526,7 +513,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
     "role": "platform"
   },
   {
@@ -540,6 +527,19 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "role": "platform"
+  },
+  {
+    "repo": "ArduPilot/ardupilot",
+    "stars": 720,
+    "stars_prev_week": 613,
+    "velocity": 107,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
     "role": "platform"
   },
   {
@@ -723,6 +723,19 @@
     "role": "ai"
   },
   {
+    "repo": "PurpleDoubleD/locally-uncensored",
+    "stars": 528,
+    "stars_prev_week": 449,
+    "velocity": 79,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho locally uncensored",
+    "role": "platform"
+  },
+  {
     "repo": "tetherto/qvac",
     "stars": 528,
     "stars_prev_week": 449,
@@ -746,19 +759,6 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho awesome seedance",
-    "role": "platform"
-  },
-  {
-    "repo": "PurpleDoubleD/locally-uncensored",
-    "stars": 528,
-    "stars_prev_week": 449,
-    "velocity": 79,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho locally uncensored",
     "role": "platform"
   },
   {

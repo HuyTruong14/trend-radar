@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-10-24 đến 2026-10-30  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-10-30 00:55 (giờ VN)  
+**Tạo lúc:** 2026-10-30 05:13 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W44) | Tuần này (W44) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 784 | **785** | +1 (+0.1%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 405 | **415** | +10 (+2.5%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 784 | **787** | +3 (+0.4%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 405 | **421** | +16 (+4.0%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 2 | **2** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 87 | **89** | +2 (+2.3%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 316 | **324** | +8 (+2.5%) | Dòng tín hiệu thị trường rộng |
+| 🟡 **Research (7–8/9)** | 87 | **91** | +4 (+4.6%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 316 | **328** | +12 (+3.8%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -74,7 +74,7 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W44) | Tuần trước (W44) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **52** | 53 | `-2%` | ➡️ Ổn định |
+| **Robotics** | **53** | 53 | `0%` | ➡️ Ổn định |
 | **ESP32** | **23** | 23 | `0%` | ➡️ Ổn định |
 | **Sensor** | **22** | 20 | `+10%` | 📈 Tăng nhẹ |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
@@ -100,7 +100,7 @@
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`BeagleBoard`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`PocketBeagle`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`DeepMind`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`VetClaimsAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
 ---
 
