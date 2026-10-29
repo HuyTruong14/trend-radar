@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-10-23 đến 2026-10-29  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-10-29 05:05 (giờ VN)  
+**Tạo lúc:** 2026-10-29 10:28 (giờ VN)  
 
 ---
 
@@ -11,10 +11,10 @@
 | Chỉ số quan trắc | Tuần trước (W44) | Tuần này (W44) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
 | **Tổng tín hiệu đầu vào** | 768 | **778** | +10 (+1.3%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 370 | **398** | +28 (+7.6%) | Chất lượng cơ hội ổn định |
+| **Tổng số cơ hội lọc được** | 370 | **399** | +29 (+7.8%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 2 | **2** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
 | 🟡 **Research (7–8/9)** | 83 | **87** | +4 (+4.8%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 285 | **309** | +24 (+8.4%) | Dòng tín hiệu thị trường rộng |
+| ⚪ **Watch (4–6/9)** | 285 | **310** | +25 (+8.8%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -24,9 +24,9 @@
 |---|---|:---:|:---:|---|---|
 | 1 | [latverian/edge-intelligent-aquaculture](https://github.com/latverian/edge-intelligent-aquaculture) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
 | 2 | [deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML](https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Dự đoán chất lượng nước thời gian thực bằng IoT và máy học |
-| 3 | [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Startup Eka Robotics gọi $150M phát triển robot nông nghiệp tự hành |
-| 4 | [Layoffs at Carbon Robotics as firm “realigns costs due to broader economic conditions”](https://agfundernews.com/layoffs-at-carbon-robotics-as-firm-realigns-costs-due-to-broader-economic-conditions) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Carbon Robotics cắt giảm chi phí tái cấu trúc mảng robot nông nghiệp |
-| 5 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
+| 3 | [Crunchbase Data Shows Q3 Robotics Startup Funding Jumps 185% As US And China Lead Physical AI Push](https://news.crunchbase.com/venture/q3-2026-us-china-robotics-startup-funding-jumps-physical-ai-push/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Crunchbase Data Shows |
+| 4 | [Bedrock Robotics nears $1B in total funding as demand for autonomous heavy equipment surges](https://www.therobotreport.com/bedrock-robotics-nears-1b-in-total-funding-as-demand-for-autonomous-heavy-equipment-surges/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Bedrock Robotics near |
+| 5 | [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Startup Eka Robotics gọi $150M phát triển robot nông nghiệp tự hành |
 
 ---
 
@@ -35,10 +35,10 @@
 | Thương vụ / Doanh nghiệp | Hình thức | Giá trị | Ngành chuẩn hóa | Chi tiết định hướng |
 |---|:---:|:---:|---|---|
 | [deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML](https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML) | **Gọi vốn** | **$10M** | Thủy sản & Nước | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [Bedrock Robotics nears $1B in total funding as demand for autonomous heavy equipment surges](https://www.therobotreport.com/bedrock-robotics-nears-1b-in-total-funding-as-demand-for-autonomous-heavy-equipment-surges/) | **Gọi vốn** | **$1B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Eka Robotics raises $150M to scale its vision-force-action model for robots](https://www.therobotreport.com/eka-robotics-raises-150m-scale-vision-force-action-model-robots/) | **Gọi vốn** | **$150M** | Nông nghiệp | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [ESP-Mosaico Lets AI Agents Do the Coding](https://www.hackster.io/news/esp-mosaico-lets-ai-agents-do-the-coding-707ebfc43a55) | **Gọi vốn** | **N/A** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [CSL Group Acquires SIMPL Wireless to Bring Critical Connectivity® to North America](https://iotbusinessnews.com/2026/10/20/csl-group-acquires-simpl-wireless-to-bring-critical-connectivity-to-north-america/) | **M&A** | **N/A** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [A $4 Robot With a Mind of Its Own](https://www.hackster.io/news/a-4-robot-with-a-mind-of-its-own-341626d8d8b7) | **Gọi vốn** | **N/A** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 
 ---
 
@@ -94,9 +94,9 @@
 ## 6. Thuật Ngữ Mới Xuất Hiện Trong Tuần
 
 - **`OpenAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`BeagleBoard`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`CasinoNieuws`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`PocketBeagle`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.

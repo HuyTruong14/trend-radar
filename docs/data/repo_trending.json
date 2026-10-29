@@ -167,7 +167,7 @@
     "role": "ai"
   },
   {
-    "repo": "earendil-works/pi",
+    "repo": "infiniflow/ragflow",
     "stars": 912,
     "stars_prev_week": 776,
     "velocity": 136,
@@ -176,20 +176,19 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ragflow",
     "role": "platform"
   },
   {
-    "repo": "langchain-ai/langchain",
+    "repo": "DietrichGebert/ponytail",
     "stars": 912,
     "stars_prev_week": 776,
     "velocity": 136,
     "language": "Python",
     "tags": [
-      "Edge AI",
-      "LangChain"
+      "Edge AI"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán ponytail",
     "role": "ai"
   },
   {
@@ -206,7 +205,20 @@
     "role": "platform"
   },
   {
-    "repo": "infiniflow/ragflow",
+    "repo": "langchain-ai/langchain",
+    "stars": 912,
+    "stars_prev_week": 776,
+    "velocity": 136,
+    "language": "Python",
+    "tags": [
+      "Edge AI",
+      "LangChain"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
+    "role": "ai"
+  },
+  {
+    "repo": "earendil-works/pi",
     "stars": 912,
     "stars_prev_week": 776,
     "velocity": 136,
@@ -215,7 +227,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ragflow",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
     "role": "platform"
   },
   {
@@ -307,18 +319,6 @@
     "role": "ai"
   },
   {
-    "repo": "DietrichGebert/ponytail",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán ponytail",
-    "role": "ai"
-  },
-  {
     "repo": "matplotlib/matplotlib",
     "stars": 912,
     "stars_prev_week": 776,
@@ -380,18 +380,6 @@
     "role": "ai"
   },
   {
-    "repo": "Genesis-Embodied-AI/genesis-world",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: genesis world",
-    "role": "ai"
-  },
-  {
     "repo": "huggingface/lerobot",
     "stars": 912,
     "stars_prev_week": 776,
@@ -402,6 +390,18 @@
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
     "role": "platform"
+  },
+  {
+    "repo": "Genesis-Embodied-AI/genesis-world",
+    "stars": 912,
+    "stars_prev_week": 776,
+    "velocity": 136,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: genesis world",
+    "role": "ai"
   },
   {
     "repo": "commaai/openpilot",
@@ -517,6 +517,19 @@
     "role": "platform"
   },
   {
+    "repo": "harvard-edge/cs249r_book",
+    "stars": 720,
+    "stars_prev_week": 613,
+    "velocity": 107,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "role": "platform"
+  },
+  {
     "repo": "google-deepmind/mujoco",
     "stars": 720,
     "stars_prev_week": 613,
@@ -540,19 +553,6 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho nicegui",
-    "role": "platform"
-  },
-  {
-    "repo": "harvard-edge/cs249r_book",
-    "stars": 720,
-    "stars_prev_week": 613,
-    "velocity": 107,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
     "role": "platform"
   },
   {
@@ -710,19 +710,6 @@
     "role": "ai"
   },
   {
-    "repo": "tetherto/qvac",
-    "stars": 528,
-    "stars_prev_week": 449,
-    "velocity": 79,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
-    "role": "platform"
-  },
-  {
     "repo": "ZeroLu/awesome-seedance",
     "stars": 528,
     "stars_prev_week": 449,
@@ -733,6 +720,19 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho awesome seedance",
+    "role": "platform"
+  },
+  {
+    "repo": "tetherto/qvac",
+    "stars": 528,
+    "stars_prev_week": 449,
+    "velocity": 79,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
     "role": "platform"
   },
   {
@@ -944,6 +944,19 @@
     "role": "ai"
   },
   {
+    "repo": "api-evangelist/jala",
+    "stars": 336,
+    "stars_prev_week": 286,
+    "velocity": 50,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp",
+    "role": "platform"
+  },
+  {
     "repo": "zgordon-source/WaterQualityConfiguration",
     "stars": 336,
     "stars_prev_week": 286,
@@ -1139,19 +1152,6 @@
     "role": "platform"
   },
   {
-    "repo": "api-evangelist/jala",
-    "stars": 336,
-    "stars_prev_week": 286,
-    "velocity": 50,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp",
-    "role": "platform"
-  },
-  {
     "repo": "JaredReabow/hsy-250617-ph-ec-rs485-modbus",
     "stars": 336,
     "stars_prev_week": 286,
@@ -1257,19 +1257,6 @@
       "Water Quality"
     ],
     "summary_vi": "Nền tảng trang trại nuôi cá thông minh kết hợp IoT",
-    "role": "platform"
-  },
-  {
-    "repo": "ALNezar/FishMaster",
-    "stars": 180,
-    "stars_prev_week": 154,
-    "velocity": 26,
-    "language": "Python",
-    "tags": [
-      "Aquaculture",
-      "Water Quality"
-    ],
-    "summary_vi": "Hệ thống tự động hóa quản lý và cho cá ăn thông minh",
     "role": "platform"
   },
   {
