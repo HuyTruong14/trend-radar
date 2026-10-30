@@ -41,15 +41,6 @@
       "ESP32": 8
     }
   },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 15,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "LoRaWAN": {
     "type": "Protocol",
     "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
@@ -62,6 +53,15 @@
       "DO (Dissolved Oxygen)": 5,
       "LoRA": 4
     }
+  },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 14,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "RISC-V": {
     "type": "Hardware",
@@ -197,15 +197,6 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 3,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "DO (Dissolved Oxygen)": {
     "type": "Sensor",
     "description_vi": "Cảm biến oxy hòa tan (quang học hoặc galvanic) giám sát mức dưỡng khí trong nước ao",
@@ -271,6 +262,15 @@
     "mentions_prev_week": 1,
     "change_pct": 100,
     "trend": "rising",
+    "co_occurs_with": {}
+  },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
     "co_occurs_with": {}
   },
   "TDS": {
