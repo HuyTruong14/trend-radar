@@ -125,6 +125,15 @@
       "WebSockets": 1
     }
   },
+  "Arduino": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
+    "mentions_this_week": 6,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "ESP32-S3": {
     "type": "Hardware",
     "description_vi": "Chip ESP32 chuyên xử lý AI tăng tốc vector và giao tiếp camera/màn hình",
@@ -143,7 +152,7 @@
   "Raspberry Pi": {
     "type": "Hardware",
     "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
-    "mentions_this_week": 5,
+    "mentions_this_week": 4,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -152,15 +161,6 @@
       "RP2040": 2,
       "MicroPython": 1
     }
-  },
-  "Arduino": {
-    "type": "Hardware",
-    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
-    "mentions_this_week": 4,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "LoRA": {
     "type": "AI/ML",
@@ -244,6 +244,15 @@
       "Raspberry Pi": 2
     }
   },
+  "Nordic nRF52": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "BLE": {
     "type": "Protocol",
     "description_vi": "Bluetooth năng lượng thấp (Bluetooth Low Energy) kết nối tầm gần tiết kiệm pin",
@@ -254,15 +263,6 @@
     "co_occurs_with": {
       "RISC-V": 2
     }
-  },
-  "NB-IoT": {
-    "type": "Protocol",
-    "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "Computer Vision": {
     "type": "AI/ML",
@@ -316,6 +316,15 @@
     "co_occurs_with": {
       "MQTT": 1
     }
+  },
+  "NB-IoT": {
+    "type": "Protocol",
+    "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "LangChain": {
     "type": "AI/ML",
@@ -426,15 +435,6 @@
   "Coral": {
     "type": "Hardware",
     "description_vi": "Module tăng tốc Edge TPU của Google để suy luận mô hình học sâu tại biên",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "Nordic nRF52": {
-    "type": "Hardware",
-    "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,

@@ -692,38 +692,38 @@
   },
   {
     "date": "2026-10-30",
-    "total_items": 196,
+    "total_items": 198,
     "avg_relevance_score": null,
     "cross_source_count": 0,
     "by_source": {
       "GitHub": 44,
+      "IoT Business News": 15,
+      "IEEE Spectrum": 11,
+      "The Robot Report": 15,
+      "Robohub": 13,
+      "Hackster News - Hackster.io": 15,
       "SBC News": 10,
       "iGB": 15,
-      "Hackster News - Hackster.io": 15,
-      "The Robot Report": 15,
       "arXiv": 15,
-      "IoT Business News": 15,
-      "Robohub": 12,
-      "IEEE Spectrum": 10,
       "Fish Farmer Magazine RSS Feed": 15,
       "Engineering News | Aquaculture": 15,
       "The Fish Site": 15
     },
     "by_keyword": {
-      "aquaculture iot": 15,
-      "": 137,
-      "water quality sensor": 14,
       "robotics": 15,
+      "": 139,
+      "water quality sensor": 14,
+      "aquaculture iot": 15,
       "cs.AI, cs.CV, cs.RO": 15
     },
     "top_repos": [
       {
         "name": "Developer-Y/cs-video-courses",
-        "stars": 84296
+        "stars": 84323
       },
       {
         "name": "commaai/openpilot",
-        "stars": 64019
+        "stars": 64023
       },
       {
         "name": "NaiboWang/EasySpider",
@@ -731,27 +731,27 @@
       },
       {
         "name": "AtsushiSakai/PythonRobotics",
-        "stars": 30828
+        "stars": 30829
       },
       {
         "name": "Genesis-Embodied-AI/genesis-world",
-        "stars": 30144
+        "stars": 30142
       },
       {
         "name": "harvard-edge/cs249r_book",
-        "stars": 29737
+        "stars": 29738
       },
       {
         "name": "huggingface/lerobot",
-        "stars": 28589
+        "stars": 28597
       },
       {
         "name": "earthtojake/text-to-cad",
-        "stars": 24272
+        "stars": 24309
       },
       {
         "name": "questdb/questdb",
-        "stars": 17487
+        "stars": 17486
       },
       {
         "name": "hubotio/hubot",
@@ -759,16 +759,17 @@
       }
     ],
     "github_repos": [
-      "api-evangelist/jala",
-      "kousik-728457/Smart-Greywater-Quality-Monitoring-System",
       "questdb/questdb",
-      "LowCostSensor/DOMino-sensor",
+      "google-deepmind/mujoco",
       "huggingface/lerobot",
       "zauberzeug/nicegui",
-      "google-deepmind/mujoco",
-      "commaai/openpilot",
       "earthtojake/text-to-cad",
+      "julianm12345/Arduino-Based-Water-Quality-Detection-Apparatus",
       "harvard-edge/cs249r_book",
+      "api-evangelist/jala",
+      "kousik-728457/Smart-Greywater-Quality-Monitoring-System",
+      "LowCostSensor/DOMino-sensor",
+      "commaai/openpilot",
       "rknightion/meraki-dashboard-ha",
       "ArduPilot/ardupilot",
       "api-evangelist/efishery",
@@ -779,7 +780,6 @@
       "deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML",
       "Banez-ALI/IoT-Water-Quality-Monitoring-System",
       "elon00/jaljeevan-ai",
-      "sitl25cs05-droid/AquaTrack",
       "Alt-2-cyber/lanqi-aqua",
       "NaiboWang/EasySpider",
       "latverian/edge-intelligent-aquaculture",
