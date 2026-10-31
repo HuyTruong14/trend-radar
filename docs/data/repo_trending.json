@@ -142,7 +142,7 @@
     "role": "hardware"
   },
   {
-    "repo": "OpenHands/OpenHands",
+    "repo": "earendil-works/pi",
     "stars": 912,
     "stars_prev_week": 776,
     "velocity": 136,
@@ -151,20 +151,8 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
     "role": "platform"
-  },
-  {
-    "repo": "HBAI-Ltd/Toonflow-app",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Toonflow app",
-    "role": "ai"
   },
   {
     "repo": "paperclipai/paperclip",
@@ -179,7 +167,7 @@
     "role": "ai"
   },
   {
-    "repo": "earendil-works/pi",
+    "repo": "OpenHands/OpenHands",
     "stars": 912,
     "stars_prev_week": 776,
     "velocity": 136,
@@ -188,7 +176,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
     "role": "platform"
   },
   {
@@ -205,19 +193,6 @@
     "role": "ai"
   },
   {
-    "repo": "JuliusBrussee/caveman",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: caveman",
-    "role": "platform"
-  },
-  {
     "repo": "infiniflow/ragflow",
     "stars": 912,
     "stars_prev_week": 776,
@@ -228,6 +203,31 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ragflow",
+    "role": "platform"
+  },
+  {
+    "repo": "HBAI-Ltd/Toonflow-app",
+    "stars": 912,
+    "stars_prev_week": 776,
+    "velocity": 136,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Toonflow app",
+    "role": "ai"
+  },
+  {
+    "repo": "JuliusBrussee/caveman",
+    "stars": 912,
+    "stars_prev_week": 776,
+    "velocity": 136,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: caveman",
     "role": "platform"
   },
   {
@@ -478,19 +478,6 @@
     "role": "ai"
   },
   {
-    "repo": "ArduPilot/ardupilot",
-    "stars": 720,
-    "stars_prev_week": 613,
-    "velocity": 107,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
-    "role": "platform"
-  },
-  {
     "repo": "questdb/questdb",
     "stars": 720,
     "stars_prev_week": 613,
@@ -501,32 +488,6 @@
       "Open Source"
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
-    "role": "platform"
-  },
-  {
-    "repo": "hubotio/hubot",
-    "stars": 720,
-    "stars_prev_week": 613,
-    "velocity": 107,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: hubot",
-    "role": "platform"
-  },
-  {
-    "repo": "earthtojake/text-to-cad",
-    "stars": 720,
-    "stars_prev_week": 613,
-    "velocity": 107,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho text to cad",
     "role": "platform"
   },
   {
@@ -543,7 +504,7 @@
     "role": "platform"
   },
   {
-    "repo": "harvard-edge/cs249r_book",
+    "repo": "earthtojake/text-to-cad",
     "stars": 720,
     "stars_prev_week": 613,
     "velocity": 107,
@@ -552,7 +513,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho text to cad",
     "role": "platform"
   },
   {
@@ -566,6 +527,45 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
+    "role": "platform"
+  },
+  {
+    "repo": "harvard-edge/cs249r_book",
+    "stars": 720,
+    "stars_prev_week": 613,
+    "velocity": 107,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "role": "platform"
+  },
+  {
+    "repo": "ArduPilot/ardupilot",
+    "stars": 720,
+    "stars_prev_week": 613,
+    "velocity": 107,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
+    "role": "platform"
+  },
+  {
+    "repo": "hubotio/hubot",
+    "stars": 720,
+    "stars_prev_week": 613,
+    "velocity": 107,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: hubot",
     "role": "platform"
   },
   {
@@ -603,6 +603,19 @@
       "Open Source"
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: needle",
+    "role": "platform"
+  },
+  {
+    "repo": "unum-cloud/UForm",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho UForm",
     "role": "platform"
   },
   {
@@ -777,7 +790,7 @@
     "role": "platform"
   },
   {
-    "repo": "tetherto/qvac",
+    "repo": "PurpleDoubleD/locally-uncensored",
     "stars": 528,
     "stars_prev_week": 449,
     "velocity": 79,
@@ -786,7 +799,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho locally uncensored",
     "role": "platform"
   },
   {
@@ -803,7 +816,7 @@
     "role": "platform"
   },
   {
-    "repo": "PurpleDoubleD/locally-uncensored",
+    "repo": "tetherto/qvac",
     "stars": 528,
     "stars_prev_week": 449,
     "velocity": 79,
@@ -812,7 +825,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho locally uncensored",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
     "role": "platform"
   },
   {
@@ -867,7 +880,7 @@
     "role": "platform"
   },
   {
-    "repo": "Aseiel/VideoHighlighter",
+    "repo": "api-evangelist/optoscale",
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
@@ -876,7 +889,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho VideoHighlighter",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: optoscale",
     "role": "platform"
   },
   {
@@ -955,19 +968,6 @@
       "Water Quality"
     ],
     "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
-    "role": "platform"
-  },
-  {
-    "repo": "api-evangelist/optoscale",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: optoscale",
     "role": "platform"
   },
   {
