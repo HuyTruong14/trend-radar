@@ -142,6 +142,18 @@
     "role": "hardware"
   },
   {
+    "repo": "paperclipai/paperclip",
+    "stars": 912,
+    "stars_prev_week": 776,
+    "velocity": 136,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
+    "role": "ai"
+  },
+  {
     "repo": "earendil-works/pi",
     "stars": 912,
     "stars_prev_week": 776,
@@ -153,18 +165,6 @@
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
     "role": "platform"
-  },
-  {
-    "repo": "paperclipai/paperclip",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
-    "role": "ai"
   },
   {
     "repo": "OpenHands/OpenHands",
@@ -379,6 +379,19 @@
     "role": "ai"
   },
   {
+    "repo": "Developer-Y/cs-video-courses",
+    "stars": 912,
+    "stars_prev_week": 776,
+    "velocity": 136,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs video courses",
+    "role": "platform"
+  },
+  {
     "repo": "huggingface/lerobot",
     "stars": 912,
     "stars_prev_week": 776,
@@ -401,19 +414,6 @@
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: genesis world",
     "role": "ai"
-  },
-  {
-    "repo": "Developer-Y/cs-video-courses",
-    "stars": 912,
-    "stars_prev_week": 776,
-    "velocity": 136,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs video courses",
-    "role": "platform"
   },
   {
     "repo": "AtsushiSakai/PythonRobotics",
@@ -478,6 +478,32 @@
     "role": "ai"
   },
   {
+    "repo": "google-deepmind/mujoco",
+    "stars": 720,
+    "stars_prev_week": 613,
+    "velocity": 107,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
+    "role": "platform"
+  },
+  {
+    "repo": "harvard-edge/cs249r_book",
+    "stars": 720,
+    "stars_prev_week": 613,
+    "velocity": 107,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "role": "platform"
+  },
+  {
     "repo": "earthtojake/text-to-cad",
     "stars": 720,
     "stars_prev_week": 613,
@@ -514,32 +540,6 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho nicegui",
-    "role": "platform"
-  },
-  {
-    "repo": "harvard-edge/cs249r_book",
-    "stars": 720,
-    "stars_prev_week": 613,
-    "velocity": 107,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
-    "role": "platform"
-  },
-  {
-    "repo": "google-deepmind/mujoco",
-    "stars": 720,
-    "stars_prev_week": 613,
-    "velocity": 107,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
     "role": "platform"
   },
   {
@@ -630,6 +630,21 @@
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
     "role": "platform"
+  },
+  {
+    "repo": "Ehiejakhian/water-quality-monitor-esp32",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "C++",
+    "tags": [
+      "Aquaculture",
+      "ESP32",
+      "IoT",
+      "Water Quality"
+    ],
+    "summary_vi": "Mạch ESP32 kết nối cảm biến đo pH, độ đục và nhiệt độ nước",
+    "role": "hardware"
   },
   {
     "repo": "shalinir-ops/IoT-Water-Quality-Monitoring-System",
@@ -749,20 +764,6 @@
     "role": "ai"
   },
   {
-    "repo": "sec25ec305-bee/AquaGuard-AI-Smart-Water-Quality-Monitoring-",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Aquaculture",
-      "Edge AI",
-      "Water Quality"
-    ],
-    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
-    "role": "ai"
-  },
-  {
     "repo": "dbreunig/nesformer",
     "stars": 540,
     "stars_prev_week": 460,
@@ -774,6 +775,21 @@
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho nesformer",
     "role": "platform"
+  },
+  {
+    "repo": "sec25ec305-bee/AquaGuard-AI-Smart-Water-Quality-Monitoring-",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Aquaculture",
+      "Edge AI",
+      "IoT",
+      "Water Quality"
+    ],
+    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+    "role": "ai"
   },
   {
     "repo": "Banez-ALI/IoT-Water-Quality-Monitoring-System",
@@ -790,7 +806,7 @@
     "role": "platform"
   },
   {
-    "repo": "PurpleDoubleD/locally-uncensored",
+    "repo": "tetherto/qvac",
     "stars": 528,
     "stars_prev_week": 449,
     "velocity": 79,
@@ -799,7 +815,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho locally uncensored",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
     "role": "platform"
   },
   {
@@ -816,7 +832,7 @@
     "role": "platform"
   },
   {
-    "repo": "tetherto/qvac",
+    "repo": "PurpleDoubleD/locally-uncensored",
     "stars": 528,
     "stars_prev_week": 449,
     "velocity": 79,
@@ -825,7 +841,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho locally uncensored",
     "role": "platform"
   },
   {
