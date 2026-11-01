@@ -923,16 +923,16 @@
   },
   {
     "date": "2026-11-01",
-    "total_items": 197,
+    "total_items": 196,
     "avg_relevance_score": null,
     "cross_source_count": 0,
     "by_source": {
       "GitHub": 45,
+      "The Robot Report": 15,
       "Hackster News - Hackster.io": 15,
       "iGB": 15,
-      "The Robot Report": 15,
       "IoT Business News": 15,
-      "IEEE Spectrum": 10,
+      "IEEE Spectrum": 9,
       "Robohub": 12,
       "SBC News": 10,
       "arXiv": 15,
@@ -942,47 +942,47 @@
     },
     "by_keyword": {
       "robotics": 15,
-      "aquaculture iot": 15,
       "water quality sensor": 15,
-      "": 137,
+      "": 136,
+      "aquaculture iot": 15,
       "cs.AI, cs.CV, cs.RO": 15
     },
     "top_repos": [
       {
         "name": "Developer-Y/cs-video-courses",
-        "stars": 84453
+        "stars": 84467
       },
       {
         "name": "commaai/openpilot",
-        "stars": 64041
+        "stars": 64040
       },
       {
         "name": "NaiboWang/EasySpider",
-        "stars": 44760
+        "stars": 44759
       },
       {
         "name": "AtsushiSakai/PythonRobotics",
-        "stars": 30836
+        "stars": 30837
       },
       {
         "name": "Genesis-Embodied-AI/genesis-world",
-        "stars": 30149
+        "stars": 30150
       },
       {
         "name": "harvard-edge/cs249r_book",
-        "stars": 29756
+        "stars": 29760
       },
       {
         "name": "huggingface/lerobot",
-        "stars": 28621
+        "stars": 28626
       },
       {
         "name": "earthtojake/text-to-cad",
-        "stars": 24601
+        "stars": 24678
       },
       {
         "name": "questdb/questdb",
-        "stars": 17494
+        "stars": 17493
       },
       {
         "name": "hubotio/hubot",
@@ -990,22 +990,25 @@
       }
     ],
     "github_repos": [
+      "hubotio/hubot",
+      "google-deepmind/mujoco",
+      "questdb/questdb",
+      "cactus-compute/needle",
+      "earthtojake/text-to-cad",
+      "chinokoyuki/underwaterrobot-water-quality-sensor-mqtt-arduino-esp32",
+      "NaiboWang/EasySpider",
       "zauberzeug/nicegui",
+      "harvard-edge/cs249r_book",
       "Fakruddin-Coder/AquaNova-IOT-AI-For-Smart-Aquaculture",
       "Alt-2-cyber/lanqi-aqua",
       "commaai/openpilot",
-      "harvard-edge/cs249r_book",
-      "earthtojake/text-to-cad",
       "huggingface/lerobot",
       "rknightion/meraki-dashboard-ha",
-      "google-deepmind/mujoco",
-      "questdb/questdb",
       "Ehiejakhian/water-quality-monitor-esp32",
       "Developer-Y/cs-video-courses",
       "forgotmenet/Iotlab-Automation-Test",
       "api-evangelist/optoscale",
       "ArduPilot/ardupilot",
-      "hubotio/hubot",
       "shalinir-ops/IoT-Water-Quality-Monitoring-System",
       "rahulmanikanta026/smart-water-purification-and-quality-monitoring",
       "julianm12345/Arduino-Based-Water-Quality-Detection-Apparatus",
@@ -1018,8 +1021,6 @@
       "Rhoswen-void/Water-Quality-testing-Project",
       "deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML",
       "Banez-ALI/IoT-Water-Quality-Monitoring-System",
-      "elon00/jaljeevan-ai",
-      "NaiboWang/EasySpider",
       "latverian/edge-intelligent-aquaculture",
       "lavanya-mlds/SmartRAS-Analytics",
       "mihirkavi/AquaChain",
@@ -1033,8 +1034,7 @@
       "zgordon-source/WaterQualityConfiguration",
       "TonucciGiovanni/Aquawatch",
       "DileepaNayanajith/esp32-water-quality-monitor",
-      "Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
-      "cactus-compute/needle"
+      "Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-"
     ]
   }
 ]

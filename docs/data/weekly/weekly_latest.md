@@ -1,20 +1,20 @@
-# Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W44
+# Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W45
 
-**Khoảng thời gian:** 2026-10-26 đến 2026-11-01  
+**Khoảng thời gian:** 2026-10-27 đến 2026-11-02  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-01 19:21 (giờ VN)  
+**Tạo lúc:** 2026-11-02 01:22 (giờ VN)  
 
 ---
 
-## 1. Tổng quan thị trường (So sánh W44 vs W44)
+## 1. Tổng quan thị trường (So sánh W45 vs W44)
 
-| Chỉ số quan trắc | Tuần trước (W44) | Tuần này (W44) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
+| Chỉ số quan trắc | Tuần trước (W44) | Tuần này (W45) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 809 | **816** | +7 (+0.9%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 466 | **475** | +9 (+1.9%) | Chất lượng cơ hội ổn định |
-| 🔴 **Build-ready (9/9)** | 3 | **2** | -1 (-33.3%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 96 | **97** | +1 (+1.0%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 367 | **376** | +9 (+2.5%) | Dòng tín hiệu thị trường rộng |
+| **Tổng tín hiệu đầu vào** | 816 | **813** | -3 (-0.4%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 475 | **479** | +4 (+0.8%) | Chất lượng cơ hội ổn định |
+| 🔴 **Build-ready (9/9)** | 2 | **2** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
+| 🟡 **Research (7–8/9)** | 97 | **100** | +3 (+3.1%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 376 | **377** | +1 (+0.3%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -26,7 +26,7 @@
 | 2 | [deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML](https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Dự đoán chất lượng nước thời gian thực bằng IoT và máy học |
 | 3 | [Humanoid developer Agility now expects to raise $465M in SPAC deal](https://www.therobotreport.com/humanoid-developer-agility-now-expects-raise-465m-spac-deal/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Humanoid developer Ag |
 | 4 | [Crunchbase Data Shows Q3 Robotics Startup Funding Jumps 185% As US And China Lead Physical AI Push](https://news.crunchbase.com/venture/q3-2026-us-china-robotics-startup-funding-jumps-physical-ai-push/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Crunchbase Data Shows |
-| 5 | [Bedrock Robotics nears $1B in total funding as demand for autonomous heavy equipment surges](https://www.therobotreport.com/bedrock-robotics-nears-1b-in-total-funding-as-demand-for-autonomous-heavy-equipment-surges/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Bedrock Robotics near |
+| 5 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
 
 ---
 
@@ -36,8 +36,8 @@
 |---|:---:|:---:|---|---|
 | [deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML](https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML) | **Gọi vốn** | **$10M** | Thủy sản & Nước | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Humanoid developer Agility now expects to raise $465M in SPAC deal](https://www.therobotreport.com/humanoid-developer-agility-now-expects-raise-465m-spac-deal/) | **Gọi vốn** | **$465M** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [Bedrock Robotics nears $1B in total funding as demand for autonomous heavy equipment surges](https://www.therobotreport.com/bedrock-robotics-nears-1b-in-total-funding-as-demand-for-autonomous-heavy-equipment-surges/) | **Gọi vốn** | **$1B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [Bedrock Robotics nears $1B in total funding as demand for autonomous heavy equipment surges](https://www.therobotreport.com/bedrock-robotics-nears-1b-in-total-funding-as-demand-for-autonomous-heavy-equipment-surges/) | **Gọi vốn** | **$1B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [A $4 Robot With a Mind of Its Own](https://www.hackster.io/news/a-4-robot-with-a-mind-of-its-own-341626d8d8b7) | **Gọi vốn** | **N/A** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 
 ---
@@ -72,19 +72,19 @@
 
 ## 5. Công Nghệ Được Nhắc Nhiều (Tần suất & Tăng trưởng)
 
-| Công nghệ / Phần cứng | Tần suất tuần này (W44) | Tuần trước (W44) | Tăng trưởng (%) | Đánh giá xu thế |
+| Công nghệ / Phần cứng | Tần suất tuần này (W45) | Tuần trước (W44) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **51** | 52 | `-2%` | ➡️ Ổn định |
-| **Sensor** | **22** | 22 | `0%` | ➡️ Ổn định |
+| **Robotics** | **55** | 51 | `+8%` | 📈 Tăng nhẹ |
+| **Sensor** | **25** | 22 | `+14%` | 📈 Tăng nhẹ |
+| **ESP32** | **20** | 17 | `+18%` | 📈 Tăng nhẹ |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
-| **ESP32** | **17** | 23 | `-26%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
 | **LoRaWAN** | **14** | 14 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
 | **Humanoid** | **11** | 11 | `0%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
 | **RP2350** | **8** | 8 | `0%` | ➡️ Ổn định |
-| **MQTT** | **5** | 5 | `0%` | ➡️ Ổn định |
+| **MQTT** | **8** | 5 | `+60%` | 🚀 Tăng mạnh |
 | **STM32** | **0** | 0 | `0%` | ➡️ Ổn định |
 | **Computer Vision** | **0** | 0 | `0%` | ➡️ Ổn định |
 | **BLE** | **0** | 0 | `0%` | ➡️ Ổn định |

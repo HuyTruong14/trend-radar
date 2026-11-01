@@ -12,9 +12,9 @@
       "LoRaWAN": 6,
       "ESP32-S3": 5,
       "Turbidity": 3,
+      "Arduino": 2,
       "Ultrasonic": 2,
-      "TDS": 1,
-      "Water Level": 1
+      "TDS": 1
     }
   },
   "Edge AI": {
@@ -110,6 +110,18 @@
       "MicroPython": 1
     }
   },
+  "Arduino": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
+    "mentions_this_week": 8,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 2,
+      "MQTT": 2
+    }
+  },
   "MQTT": {
     "type": "Protocol",
     "description_vi": "Giao thức truyền tin publish/subscribe nhẹ tối ưu cho mạng IoT băng thông thấp",
@@ -120,19 +132,11 @@
     "co_occurs_with": {
       "ESP32": 15,
       "ESP32-S3": 4,
+      "Arduino": 2,
       "Turbidity": 2,
       "Ultrasonic": 2,
       "WebSockets": 1
     }
-  },
-  "Arduino": {
-    "type": "Hardware",
-    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
-    "mentions_this_week": 6,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "ESP32-S3": {
     "type": "Hardware",
