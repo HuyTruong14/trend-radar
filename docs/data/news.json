@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T18:22:25.607429+00:00",
+  "updated": "2026-11-01T21:30:26.141984+00:00",
   "topics": {
     "AI/Tech": {
       "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Scaling limits in multi-modal LLM reasoning and synthetic data generation</strong> (Score 51) — <em>Researchers discuss whether pre-training scaling laws are plateauing and the emergence of test-time compute reinforcement learning.</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM</strong> (Score 51): Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware. và <strong>Anthropic and DeepMind autonomous agent benchmarks highlight multi-step tool reliability</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 124 tín hiệu theo dõi. Trong đó có <strong>5 tín hiệu đang bứt phá mạnh (Rising Velocity)</strong>.",
@@ -85,7 +85,7 @@
           "sources": [
             "reddit"
           ],
-          "time": "2m",
+          "time": "1m",
           "score": 51,
           "velocity": "rising",
           "tag": "signal",
@@ -100,7 +100,7 @@
           "sources": [
             "reddit"
           ],
-          "time": "2m",
+          "time": "1m",
           "score": 51,
           "velocity": "rising",
           "tag": "signal",
@@ -115,7 +115,7 @@
           "sources": [
             "reddit"
           ],
-          "time": "2m",
+          "time": "1m",
           "score": 51,
           "velocity": "rising",
           "tag": "tool",
@@ -130,7 +130,7 @@
           "sources": [
             "reddit"
           ],
-          "time": "2m",
+          "time": "1m",
           "score": 51,
           "velocity": "rising",
           "tag": "signal",
@@ -144,7 +144,7 @@
           "sources": [
             "reddit"
           ],
-          "time": "2m",
+          "time": "1m",
           "score": 51,
           "velocity": "rising",
           "tag": "signal",
@@ -158,20 +158,7 @@
           "sources": [
             "gh"
           ],
-          "time": "7m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "AceDataCloud/Nexior",
-          "summary": "",
-          "url": "https://github.com/AceDataCloud/Nexior",
-          "sources": [
-            "gh"
-          ],
-          "time": "8m",
+          "time": "1m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -184,20 +171,20 @@
           "sources": [
             "gh"
           ],
-          "time": "16m",
+          "time": "8m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
           "source": "GitHub"
         },
         {
-          "title": "aqm857886159/Nomi",
+          "title": "langchain-ai/langchain",
           "summary": "",
-          "url": "https://github.com/aqm857886159/Nomi",
+          "url": "https://github.com/langchain-ai/langchain",
           "sources": [
             "gh"
           ],
-          "time": "17m",
+          "time": "26m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -207,6 +194,32 @@
           "title": "paperclipai/paperclip",
           "summary": "",
           "url": "https://github.com/paperclipai/paperclip",
+          "sources": [
+            "gh"
+          ],
+          "time": "55m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "AceDataCloud/Nexior",
+          "summary": "",
+          "url": "https://github.com/AceDataCloud/Nexior",
+          "sources": [
+            "gh"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "aqm857886159/Nomi",
+          "summary": "",
+          "url": "https://github.com/aqm857886159/Nomi",
           "sources": [
             "gh"
           ],
@@ -223,20 +236,7 @@
           "sources": [
             "gh"
           ],
-          "time": "1h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "langchain-ai/langchain",
-          "summary": "",
-          "url": "https://github.com/langchain-ai/langchain",
-          "sources": [
-            "gh"
-          ],
-          "time": "1h",
+          "time": "2h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -249,7 +249,7 @@
           "sources": [
             "gh"
           ],
-          "time": "1h",
+          "time": "4h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -262,7 +262,7 @@
           "sources": [
             "gh"
           ],
-          "time": "3h",
+          "time": "6h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -275,7 +275,7 @@
           "sources": [
             "gh"
           ],
-          "time": "3h",
+          "time": "6h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -288,7 +288,7 @@
           "sources": [
             "gh"
           ],
-          "time": "6h",
+          "time": "9h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -301,7 +301,7 @@
           "sources": [
             "gh"
           ],
-          "time": "6h",
+          "time": "9h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -314,7 +314,7 @@
           "sources": [
             "gh"
           ],
-          "time": "8h",
+          "time": "11h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -327,9 +327,9 @@
           "sources": [
             "gh"
           ],
-          "time": "10h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "14h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "GitHub"
         },
@@ -340,7 +340,7 @@
           "sources": [
             "gh"
           ],
-          "time": "14h",
+          "time": "17h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -353,7 +353,7 @@
           "sources": [
             "gh"
           ],
-          "time": "18h",
+          "time": "21h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -366,7 +366,7 @@
           "sources": [
             "gh"
           ],
-          "time": "21h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -731,7 +731,7 @@
           "sources": [
             "gh"
           ],
-          "time": "9d",
+          "time": "10d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -759,7 +759,7 @@
           "sources": [
             "hn"
           ],
-          "time": "53d",
+          "time": "54d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -800,7 +800,7 @@
           "sources": [
             "hn"
           ],
-          "time": "107d",
+          "time": "108d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -855,7 +855,7 @@
           "sources": [
             "hn"
           ],
-          "time": "157d",
+          "time": "158d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -882,7 +882,7 @@
           "sources": [
             "hn"
           ],
-          "time": "203d",
+          "time": "204d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -909,7 +909,7 @@
           "sources": [
             "hn"
           ],
-          "time": "225d",
+          "time": "226d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1045,7 +1045,7 @@
           "sources": [
             "hn"
           ],
-          "time": "368d",
+          "time": "369d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1058,7 +1058,7 @@
           "sources": [
             "hn"
           ],
-          "time": "374d",
+          "time": "375d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1266,7 +1266,7 @@
           "sources": [
             "hn"
           ],
-          "time": "646d",
+          "time": "647d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
@@ -1553,7 +1553,7 @@
           "sources": [
             "hn"
           ],
-          "time": "1330d",
+          "time": "1331d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1644,7 +1644,7 @@
           "sources": [
             "hn"
           ],
-          "time": "1981d",
+          "time": "1982d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1657,7 +1657,7 @@
           "sources": [
             "hn"
           ],
-          "time": "2355d",
+          "time": "2356d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1670,7 +1670,7 @@
           "sources": [
             "hn"
           ],
-          "time": "2482d",
+          "time": "2483d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1683,7 +1683,7 @@
           "sources": [
             "hn"
           ],
-          "time": "3372d",
+          "time": "3373d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1770,7 +1770,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4h",
+          "time": "7h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -1783,7 +1783,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4h",
+          "time": "7h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -1796,7 +1796,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5h",
+          "time": "8h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -1809,7 +1809,7 @@
           "sources": [
             "rss"
           ],
-          "time": "20h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1822,7 +1822,7 @@
           "sources": [
             "rss"
           ],
-          "time": "21h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1965,7 +1965,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1978,7 +1978,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -1991,7 +1991,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
@@ -2004,7 +2004,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2368,7 +2368,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2381,7 +2381,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2394,7 +2394,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2602,7 +2602,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2615,7 +2615,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2850,7 +2850,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2863,7 +2863,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2994,7 +2994,7 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -3007,7 +3007,7 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3020,7 +3020,7 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3099,7 +3099,7 @@
           "sources": [
             "rss"
           ],
-          "time": "9d",
+          "time": "10d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3112,7 +3112,7 @@
           "sources": [
             "rss"
           ],
-          "time": "9d",
+          "time": "10d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -3290,7 +3290,7 @@
       ]
     },
     "Aquaculture & IoT": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>chinokoyuki/underwaterrobot-water-quality-sensor-mqtt-arduino-esp32</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Fakruddin-Coder/AquaNova-IOT-AI-For-Smart-Aquaculture</strong> (Score 45) và <strong>Alt-2-cyber/lanqi-aqua</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 89 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>forgotmenet/Iotlab-Automation-Test</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>chinokoyuki/underwaterrobot-water-quality-sensor-mqtt-arduino-esp32</strong> (Score 45) và <strong>Fakruddin-Coder/AquaNova-IOT-AI-For-Smart-Aquaculture</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 89 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "Quality",
@@ -3306,7 +3306,7 @@
         {
           "label": "IoT",
           "items": [
-            7,
+            8,
             22,
             46,
             51,
@@ -3326,7 +3326,7 @@
         {
           "label": "Smart",
           "items": [
-            1,
+            2,
             26,
             54,
             58
@@ -3335,8 +3335,8 @@
         {
           "label": "Aquaculture",
           "items": [
-            1,
-            17,
+            2,
+            18,
             46,
             54
           ]
@@ -3344,13 +3344,26 @@
       ],
       "items": [
         {
+          "title": "forgotmenet/Iotlab-Automation-Test",
+          "summary": "",
+          "url": "https://github.com/forgotmenet/Iotlab-Automation-Test",
+          "sources": [
+            "gh"
+          ],
+          "time": "31m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
           "title": "chinokoyuki/underwaterrobot-water-quality-sensor-mqtt-arduino-esp32",
           "summary": "",
           "url": "https://github.com/chinokoyuki/underwaterrobot-water-quality-sensor-mqtt-arduino-esp32",
           "sources": [
             "gh"
           ],
-          "time": "2h",
+          "time": "5h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -3363,7 +3376,7 @@
           "sources": [
             "gh"
           ],
-          "time": "6h",
+          "time": "10h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -3376,7 +3389,7 @@
           "sources": [
             "gh"
           ],
-          "time": "7h",
+          "time": "10h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -3584,7 +3597,7 @@
           "sources": [
             "gh"
           ],
-          "time": "15h",
+          "time": "18h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3594,19 +3607,6 @@
           "title": "Ehiejakhian/water-quality-monitor-esp32",
           "summary": "",
           "url": "https://github.com/Ehiejakhian/water-quality-monitor-esp32",
-          "sources": [
-            "gh"
-          ],
-          "time": "18h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "forgotmenet/Iotlab-Automation-Test",
-          "summary": "",
-          "url": "https://github.com/forgotmenet/Iotlab-Automation-Test",
           "sources": [
             "gh"
           ],
@@ -4067,7 +4067,7 @@
           "sources": [
             "gh"
           ],
-          "time": "9d",
+          "time": "10d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4505,7 +4505,7 @@
       ]
     },
     "Social Buzz": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM</strong> (Score 45) — <em>Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware.</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Best workflows for automated code refactoring and multi-file project architecture in 2026</strong> (Score 45): Developers share prompt templates and custom actions for codebase review, debugging, and systematic test generation. và <strong>Embodied intelligence breakthroughs: From language models to physical world manipulation</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 120 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM</strong> (Score 45) — <em>Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware.</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Best workflows for automated code refactoring and multi-file project architecture in 2026</strong> (Score 45): Developers share prompt templates and custom actions for codebase review, debugging, and systematic test generation. và <strong>Embodied intelligence breakthroughs: From language models to physical world manipulation</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 119 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "Google",
@@ -4553,7 +4553,8 @@
             13,
             27,
             35,
-            102
+            102,
+            118
           ]
         },
         {
@@ -5047,9 +5048,9 @@
           "subreddit": "r/Entrepreneur"
         },
         {
-          "title": "Take pre-orders for an unfinished hardware product now, or keep improving it for another 6-9 months? (I will not promote)",
-          "summary": "Me and my co-founder are building a small hardware product: a screen-free study timer for your desk. Instead of a screen it shows your progress mechanically, little elements pop out while you work. There’s also an app that’s already live. I’m studying full-time and my co-founder works full-time, so ",
-          "url": "https://www.reddit.com/r/startups/comments/1xl1r3b/take_preorders_for_an_unfinished_hardware_product/",
+          "title": "How to find customers to talk to in the first place? i will not promote",
+          "summary": "Someone recently recommended me The Mom Test with some rules about talking to customers. I'm working on building a community for a new social app and trying to find the exact PMF, but i've been 6 months at it and I'm just as lost as day 1. The amount of cold outreach I've done is exhausting. Across ",
+          "url": "https://www.reddit.com/r/startups/comments/1xl6x5c/how_to_find_customers_to_talk_to_in_the_first/",
           "sources": [
             "reddit"
           ],
@@ -5119,9 +5120,9 @@
           "subreddit": "r/Entrepreneur"
         },
         {
-          "title": "How to find customers to talk to in the first place? i will not promote",
-          "summary": "Someone recently recommended me The Mom Test with some rules about talking to customers. I'm working on building a community for a new social app and trying to find the exact PMF, but i've been 6 months at it and I'm just as lost as day 1. The amount of cold outreach I've done is exhausting. Across ",
-          "url": "https://www.reddit.com/r/startups/comments/1xl6x5c/how_to_find_customers_to_talk_to_in_the_first/",
+          "title": "Take pre-orders for an unfinished hardware product now, or keep improving it for another 6-9 months? (I will not promote)",
+          "summary": "Me and my co-founder are building a small hardware product: a screen-free study timer for your desk. Instead of a screen it shows your progress mechanically, little elements pop out while you work. There’s also an app that’s already live. I’m studying full-time and my co-founder works full-time, so ",
+          "url": "https://www.reddit.com/r/startups/comments/1xl1r3b/take_preorders_for_an_unfinished_hardware_product/",
           "sources": [
             "reddit"
           ],
@@ -6642,9 +6643,9 @@
           "engagement": 15000
         },
         {
-          "title": "Mike Rogers trending with 15K+ tweets",
-          "summary": "Chủ đề Mike Rogers ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=Mike%20Rogers",
+          "title": "Lamar trending with 15K+ tweets",
+          "summary": "Chủ đề Jack Campbell ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+          "url": "https://x.com/search?q=Lamar",
           "sources": [
             "x"
           ],
@@ -6657,9 +6658,9 @@
           "engagement": 15000
         },
         {
-          "title": "AIPAC trending with 15K+ tweets",
-          "summary": "Chủ đề #startup ghi nhận 42K bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=AIPAC",
+          "title": "#IoT trending with 24K tweets",
+          "summary": "Chủ đề #robotics ghi nhận 18K bài đăng trên Twitter/X với biến động +20%.",
+          "url": "https://x.com/search?q=%23IoT",
           "sources": [
             "x"
           ],
@@ -6669,22 +6670,7 @@
           "tag": "signal",
           "source": "Twitter/X Trending",
           "date": "2026-11-01",
-          "engagement": 15000
-        },
-        {
-          "title": "Villanova trending with 15K+ tweets",
-          "summary": "Chủ đề Villanova ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=Villanova",
-          "sources": [
-            "x"
-          ],
-          "time": "today",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "Twitter/X Trending",
-          "date": "2026-11-01",
-          "engagement": 15000
+          "engagement": 24000
         }
       ]
     },
@@ -6724,7 +6710,7 @@
           "sources": [
             "rss"
           ],
-          "time": "20h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -6880,7 +6866,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -7141,7 +7127,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -7207,7 +7193,7 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -7220,7 +7206,7 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7243,17 +7229,17 @@
       ]
     },
     "News": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Four major tech companies agree on a mechanism to control AI training data. - Vietnam.vn</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Sam Altman warns that AI could spiral out of control in cybersecurity. - Vietnam.vn</strong> (Score 45) và <strong>Rules tightened on foreign-only prize-winning electronic games - vietnamnews.vn</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 16 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Rules tightened on foreign-only prize-winning electronic games - vietnamnews.vn</strong> (Score 41).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Four major tech companies agree on a mechanism to control AI training data. - Vietnam.vn</strong> (Score 41) và <strong>Sam Altman warns that AI could spiral out of control in cybersecurity. - Vietnam.vn</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 16 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "Vietnam",
           "items": [
-            0,
             1,
+            2,
             4,
-            5,
-            7,
-            9,
+            6,
+            8,
+            14,
             15
           ]
         },
@@ -7261,58 +7247,25 @@
           "label": "Laodong",
           "items": [
             3,
-            13
-          ]
-        },
-        {
-          "label": "AI Law",
-          "items": [
-            4,
-            14
+            12
           ]
         },
         {
           "label": "Nam",
           "items": [
-            10,
-            11
+            9,
+            10
           ]
         },
         {
           "label": "Hanoi",
           "items": [
-            12,
-            13
+            11,
+            12
           ]
         }
       ],
       "items": [
-        {
-          "title": "Four major tech companies agree on a mechanism to control AI training data. - Vietnam.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQLWFlLUJwZ3RCQlV0REEzTklHbmVqQmxrNEhlUVljXzNlYkxlWUxweDdBZVpmT0p6Y0hqNEswRjkyYkhIUUE0cTdXMXRzR1p2NmlBbUVKLU9YVXNSTzhQQmVXTFVNeE1uQTFmaVZETzNtei1PSkswYkUzb0Zna1dCMHktMFNsMjNaSmozVTl3Ni1PZ1FidWlndmEwc3VQMXc?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "10h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "\"AI regulation\" - Google Tin tức"
-        },
-        {
-          "title": "Sam Altman warns that AI could spiral out of control in cybersecurity. - Vietnam.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNcDlBaWs4S3ZBeHFrZ0NJNEdHV3FCZmxjOEtBQ0ZpeUJaV0pqSEFsTk51WVVpOVRnRWI2Z0RILWNfMVdiVHpaSGVIelhyZUhSRGx1RFd2WFVlS3M1RXNGeWJHeWtjczliU0ptMWc3SVVoV2lWSG1pZXE4Z3Q5cW53UTlJXzBiY3c5eWhaVUlkWWM?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "\"AI regulation\" - Google Tin tức"
-        },
         {
           "title": "Rules tightened on foreign-only prize-winning electronic games - vietnamnews.vn",
           "summary": "",
@@ -7327,6 +7280,32 @@
           "source": "\"igaming regulation\" - Google Tin tức"
         },
         {
+          "title": "Four major tech companies agree on a mechanism to control AI training data. - Vietnam.vn",
+          "summary": "",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQLWFlLUJwZ3RCQlV0REEzTklHbmVqQmxrNEhlUVljXzNlYkxlWUxweDdBZVpmT0p6Y0hqNEswRjkyYkhIUUE0cTdXMXRzR1p2NmlBbUVKLU9YVXNSTzhQQmVXTFVNeE1uQTFmaVZETzNtei1PSkswYkUzb0Zna1dCMHktMFNsMjNaSmozVTl3Ni1PZ1FidWlndmEwc3VQMXc?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "13h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
+          "title": "Sam Altman warns that AI could spiral out of control in cybersecurity. - Vietnam.vn",
+          "summary": "",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNcDlBaWs4S3ZBeHFrZ0NJNEdHV3FCZmxjOEtBQ0ZpeUJaV0pqSEFsTk51WVVpOVRnRWI2Z0RILWNfMVdiVHpaSGVIelhyZUhSRGx1RFd2WFVlS3M1RXNGeWJHeWtjczliU0ptMWc3SVVoV2lWSG1pZXE4Z3Q5cW53UTlJXzBiY3c5eWhaVUlkWWM?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "13h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
           "title": "New York bans AI chatbots pretending to be real when interacting with children under 18 years old - Laodong.vn",
           "summary": "",
           "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPOS10ODVyRlppTG51SkIyUEJiUmxNcE5QQzZVSjdvWFllU1E1akxWZlU2TDY1bmQ3SDVLLVY1N0tFUEhhRlB3RTFzMVRWTGlHWWtUYzFMRFFTMmtySUNMT3ZrVlVUdGY3SjhwVFdpbTNNRC1LQ3NGUWUtbGdUbVNMYW41aVUxMDFReTNjY3BnVHJIT01YSGJXNGVZemFYV2lmQllnWGlfVDhMdlBISWxGa0paV3UxcDNHbzFNNHMzOA?oc=5",
@@ -7337,19 +7316,6 @@
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
-          "source": "\"AI regulation\" - Google Tin tức"
-        },
-        {
-          "title": "AI Law lays legal framework for Vietnam’s secure, human-centred digital future - LuatVietnam",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxORGxmWk1WZ1o3cnlDVm1HTVpKSFJpcVByajZQc1lDX2xZS0tubFRBLUVMNERuQXlBV1dRUHpnd2lyLW50b2Flc0ZBVGZmV19FSnNvRUtHQm5BbVFEMzlrQlh1QmtsdXdRcGgzNXlESi1ENFJGX3Nqcm9Db1F4Q3FwYm1aMVJZYW9STm1LSWZFSUlQVmRpRzh6aFV4S2x4QXNSZWVKalZkZ29lT3gtZjZkTEYtUzZGV1JtMzY1VkpKaUVydm55U1BVSlpsU3Z6WTNs?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "244d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "tool",
           "source": "\"AI regulation\" - Google Tin tức"
         },
         {
@@ -7494,6 +7460,19 @@
           "velocity": "cooling",
           "tag": "signal",
           "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
+          "title": "AI management based on standards and accountability. - Vietnam.vn",
+          "summary": "",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5QTVg0ZldEZktndzV2RG94Mklxc2RFdm1vTnFkUVY0eFdhd1hlTnpZVDZ3eDZIZWRpMUZoR2pnVkFnd1hORVNhb3VRNzRfY2FLVmVqVEFrWENsQmlZTXNnQjdYNHZiaWpESlcyS2RQaVdwbEUwa1EzTFJtMA?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "13d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
         }
       ]
     },
@@ -7557,7 +7536,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -7979,7 +7958,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1h",
+          "time": "4h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -7992,7 +7971,7 @@
           "sources": [
             "rss"
           ],
-          "time": "19h",
+          "time": "22h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8005,7 +7984,7 @@
           "sources": [
             "rss"
           ],
-          "time": "20h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8039,9 +8018,9 @@
           "source": "Product Hunt AI"
         },
         {
-          "title": "AC Bridge",
+          "title": "Godwit",
           "summary": "",
-          "url": "https://www.producthunt.com/products/ac-bridge",
+          "url": "https://www.producthunt.com/products/godwit",
           "sources": [
             "rss"
           ],
@@ -8124,7 +8103,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8197,9 +8176,9 @@
           "source": "NVIDIA AI Blog"
         },
         {
-          "title": "telemetry.dev",
+          "title": "GitHub Copilot Fusion",
           "summary": "",
-          "url": "https://www.producthunt.com/products/telemetry-dev",
+          "url": "https://www.producthunt.com/products/github-copilot-fusion",
           "sources": [
             "rss"
           ],
@@ -8307,7 +8286,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8346,7 +8325,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8554,7 +8533,7 @@
           "sources": [
             "rss"
           ],
-          "time": "11d",
+          "time": "12d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8568,19 +8547,6 @@
             "rss"
           ],
           "time": "12d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "Product Hunt AI"
-        },
-        {
-          "title": "Specsight",
-          "summary": "",
-          "url": "https://www.producthunt.com/products/specsight",
-          "sources": [
-            "rss"
-          ],
-          "time": "14d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8650,6 +8616,19 @@
           "velocity": "cooling",
           "tag": "signal",
           "source": "Google AI Blog"
+        },
+        {
+          "title": "SpaceO",
+          "summary": "",
+          "url": "https://www.producthunt.com/products/spaceo",
+          "sources": [
+            "rss"
+          ],
+          "time": "28d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Product Hunt AI"
         },
         {
           "title": "Making it easier for websites to express AI training preferences",
@@ -9045,7 +9024,7 @@
       ]
     },
     "Industry News": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>hubotio/hubot</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>google-deepmind/mujoco</strong> (Score 45) và <strong>questdb/questdb</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 195 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>commaai/openpilot</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>huggingface/lerobot</strong> (Score 45) và <strong>forgotmenet/Iotlab-Automation-Test</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 195 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "Quality",
@@ -9061,7 +9040,7 @@
         {
           "label": "IoT",
           "items": [
-            19,
+            22,
             41,
             106,
             132,
@@ -9081,7 +9060,7 @@
         {
           "label": "Smart",
           "items": [
-            12,
+            16,
             63,
             137,
             149
@@ -9090,8 +9069,8 @@
         {
           "label": "Aquaculture",
           "items": [
-            12,
-            29,
+            16,
+            32,
             106,
             137
           ]
@@ -9099,9 +9078,22 @@
       ],
       "items": [
         {
-          "title": "hubotio/hubot",
+          "title": "commaai/openpilot",
           "summary": "",
-          "url": "https://github.com/hubotio/hubot",
+          "url": "https://github.com/commaai/openpilot",
+          "sources": [
+            "gh"
+          ],
+          "time": "4m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "huggingface/lerobot",
+          "summary": "",
+          "url": "https://github.com/huggingface/lerobot",
           "sources": [
             "gh"
           ],
@@ -9112,39 +9104,13 @@
           "source": "GitHub"
         },
         {
-          "title": "google-deepmind/mujoco",
+          "title": "forgotmenet/Iotlab-Automation-Test",
           "summary": "",
-          "url": "https://github.com/google-deepmind/mujoco",
+          "url": "https://github.com/forgotmenet/Iotlab-Automation-Test",
           "sources": [
             "gh"
           ],
-          "time": "54m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "questdb/questdb",
-          "summary": "",
-          "url": "https://github.com/questdb/questdb",
-          "sources": [
-            "gh"
-          ],
-          "time": "1h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "cactus-compute/needle",
-          "summary": "",
-          "url": "https://github.com/cactus-compute/needle",
-          "sources": [
-            "gh"
-          ],
-          "time": "1h",
+          "time": "31m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -9164,78 +9130,26 @@
           "source": "GitHub"
         },
         {
-          "title": "chinokoyuki/underwaterrobot-water-quality-sensor-mqtt-arduino-esp32",
+          "title": "ArduPilot/ardupilot",
           "summary": "",
-          "url": "https://github.com/chinokoyuki/underwaterrobot-water-quality-sensor-mqtt-arduino-esp32",
+          "url": "https://github.com/ArduPilot/ardupilot",
           "sources": [
             "gh"
           ],
-          "time": "2h",
+          "time": "1h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
           "source": "GitHub"
         },
         {
-          "title": "28 Zero-Day Findings in Less Than Two Days: What AI-Speed Discovery Means for Robotics",
+          "title": "google-deepmind/mujoco",
           "summary": "",
-          "url": "https://www.therobotreport.com/28-zero-day-findings-in-less-than-two-days-what-ai-speed-discovery-means-for-robotics/",
-          "sources": [
-            "rss"
-          ],
-          "time": "4h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "The Robot Report"
-        },
-        {
-          "title": "NaiboWang/EasySpider",
-          "summary": "",
-          "url": "https://github.com/NaiboWang/EasySpider",
+          "url": "https://github.com/google-deepmind/mujoco",
           "sources": [
             "gh"
           ],
-          "time": "4h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "Why physical AI is the next lucrative frontier",
-          "summary": "",
-          "url": "https://www.therobotreport.com/why-physical-ai-next-lucrative-frontier/",
-          "sources": [
-            "rss"
-          ],
-          "time": "4h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "The Robot Report"
-        },
-        {
-          "title": "Solving the Interconnect Challenge in Modern Robotics: How 3M Is Engineering for Motion, Density, and Uptime",
-          "summary": "",
-          "url": "https://www.therobotreport.com/solving-the-interconnect-challenge-in-modern-robotics-how-3m-is-engineering-for-motion-density-and-uptime/",
-          "sources": [
-            "rss"
-          ],
-          "time": "5h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "The Robot Report"
-        },
-        {
-          "title": "zauberzeug/nicegui",
-          "summary": "",
-          "url": "https://github.com/zauberzeug/nicegui",
-          "sources": [
-            "gh"
-          ],
-          "time": "5h",
+          "time": "1h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -9248,7 +9162,124 @@
           "sources": [
             "gh"
           ],
+          "time": "3h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "hubotio/hubot",
+          "summary": "",
+          "url": "https://github.com/hubotio/hubot",
+          "sources": [
+            "gh"
+          ],
+          "time": "3h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "questdb/questdb",
+          "summary": "",
+          "url": "https://github.com/questdb/questdb",
+          "sources": [
+            "gh"
+          ],
+          "time": "4h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "cactus-compute/needle",
+          "summary": "",
+          "url": "https://github.com/cactus-compute/needle",
+          "sources": [
+            "gh"
+          ],
+          "time": "4h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "chinokoyuki/underwaterrobot-water-quality-sensor-mqtt-arduino-esp32",
+          "summary": "",
+          "url": "https://github.com/chinokoyuki/underwaterrobot-water-quality-sensor-mqtt-arduino-esp32",
+          "sources": [
+            "gh"
+          ],
           "time": "5h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "28 Zero-Day Findings in Less Than Two Days: What AI-Speed Discovery Means for Robotics",
+          "summary": "",
+          "url": "https://www.therobotreport.com/28-zero-day-findings-in-less-than-two-days-what-ai-speed-discovery-means-for-robotics/",
+          "sources": [
+            "rss"
+          ],
+          "time": "7h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "The Robot Report"
+        },
+        {
+          "title": "NaiboWang/EasySpider",
+          "summary": "",
+          "url": "https://github.com/NaiboWang/EasySpider",
+          "sources": [
+            "gh"
+          ],
+          "time": "7h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "Why physical AI is the next lucrative frontier",
+          "summary": "",
+          "url": "https://www.therobotreport.com/why-physical-ai-next-lucrative-frontier/",
+          "sources": [
+            "rss"
+          ],
+          "time": "7h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "The Robot Report"
+        },
+        {
+          "title": "Solving the Interconnect Challenge in Modern Robotics: How 3M Is Engineering for Motion, Density, and Uptime",
+          "summary": "",
+          "url": "https://www.therobotreport.com/solving-the-interconnect-challenge-in-modern-robotics-how-3m-is-engineering-for-motion-density-and-uptime/",
+          "sources": [
+            "rss"
+          ],
+          "time": "8h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "The Robot Report"
+        },
+        {
+          "title": "zauberzeug/nicegui",
+          "summary": "",
+          "url": "https://github.com/zauberzeug/nicegui",
+          "sources": [
+            "gh"
+          ],
+          "time": "8h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -9261,7 +9292,7 @@
           "sources": [
             "gh"
           ],
-          "time": "6h",
+          "time": "10h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -9274,20 +9305,7 @@
           "sources": [
             "gh"
           ],
-          "time": "7h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "commaai/openpilot",
-          "summary": "",
-          "url": "https://github.com/commaai/openpilot",
-          "sources": [
-            "gh"
-          ],
-          "time": "9h",
+          "time": "10h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -9489,26 +9507,13 @@
           "source": "Engineering News | Aquaculture"
         },
         {
-          "title": "huggingface/lerobot",
-          "summary": "",
-          "url": "https://github.com/huggingface/lerobot",
-          "sources": [
-            "gh"
-          ],
-          "time": "14h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
           "title": "rknightion/meraki-dashboard-ha",
           "summary": "",
           "url": "https://github.com/rknightion/meraki-dashboard-ha",
           "sources": [
             "gh"
           ],
-          "time": "15h",
+          "time": "18h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -9521,7 +9526,7 @@
           "sources": [
             "gh"
           ],
-          "time": "18h",
+          "time": "21h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -9534,20 +9539,7 @@
           "sources": [
             "gh"
           ],
-          "time": "20h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "forgotmenet/Iotlab-Automation-Test",
-          "summary": "",
-          "url": "https://github.com/forgotmenet/Iotlab-Automation-Test",
-          "sources": [
-            "gh"
-          ],
-          "time": "21h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -9616,19 +9608,6 @@
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
-          "source": "GitHub"
-        },
-        {
-          "title": "ArduPilot/ardupilot",
-          "summary": "",
-          "url": "https://github.com/ArduPilot/ardupilot",
-          "sources": [
-            "gh"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
           "source": "GitHub"
         },
         {
@@ -9703,7 +9682,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -9716,7 +9695,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
@@ -10132,7 +10111,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10145,7 +10124,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10158,7 +10137,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10562,7 +10541,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10575,7 +10554,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -10783,7 +10762,7 @@
           "sources": [
             "gh"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10952,7 +10931,7 @@
           "sources": [
             "gh"
           ],
-          "time": "9d",
+          "time": "10d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
