@@ -57,7 +57,7 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 14,
+    "mentions_this_week": 13,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -134,8 +134,7 @@
       "ESP32-S3": 4,
       "Arduino": 2,
       "Turbidity": 2,
-      "Ultrasonic": 2,
-      "WebSockets": 1
+      "Ultrasonic": 2
     }
   },
   "ESP32-S3": {
@@ -195,15 +194,6 @@
   "Modbus": {
     "type": "Protocol",
     "description_vi": "Giao thức truyền thông công nghiệp chuẩn mực nối PLC, cảm biến và thiết bị đo",
-    "mentions_this_week": 3,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
     "mentions_this_week": 3,
     "mentions_prev_week": 0,
     "change_pct": 100,
@@ -277,6 +267,15 @@
     "trend": "rising",
     "co_occurs_with": {}
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "TDS": {
     "type": "Sensor",
     "description_vi": "Cảm biến đo tổng chất rắn hòa tan trong nước (Total Dissolved Solids)",
@@ -310,20 +309,18 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "WebSockets": {
+  "NB-IoT": {
     "type": "Protocol",
-    "description_vi": "Kênh liên lạc song công thời gian thực giữa máy chủ và trình duyệt hoặc gateway",
+    "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
     "mentions_this_week": 1,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
-    "co_occurs_with": {
-      "MQTT": 1
-    }
+    "co_occurs_with": {}
   },
-  "NB-IoT": {
-    "type": "Protocol",
-    "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
+  "SLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ nhỏ (<7B tham số) tối ưu để chạy offline trên máy tính cá nhân hoặc chip biên",
     "mentions_this_week": 1,
     "mentions_prev_week": 0,
     "change_pct": 100,
@@ -472,6 +469,15 @@
     "trend": "stable",
     "co_occurs_with": {}
   },
+  "WebSockets": {
+    "type": "Protocol",
+    "description_vi": "Kênh liên lạc song công thời gian thực giữa máy chủ và trình duyệt hoặc gateway",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
   "RAG": {
     "type": "AI/ML",
     "description_vi": "Kỹ thuật kết hợp truy xuất tri thức ngoài (Retrieval) với mô hình tạo sinh (Generation)",
@@ -484,15 +490,6 @@
   "YOLO": {
     "type": "AI/ML",
     "description_vi": "Họ mô hình phát hiện vật thể thời gian thực tốc độ cao và độ chính xác vượt trội",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "SLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ nhỏ (<7B tham số) tối ưu để chạy offline trên máy tính cá nhân hoặc chip biên",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,

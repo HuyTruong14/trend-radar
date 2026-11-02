@@ -118,11 +118,8 @@
     "velocity": 175,
     "language": "TypeScript",
     "tags": [
-      "Aquaculture",
       "IoT",
-      "MQTT",
-      "Water Quality",
-      "WebSockets"
+      "Open Source"
     ],
     "summary_vi": "Backend IoT thu thập cảm biến chất lượng nước phao nổi và dashboard giám sát",
     "role": "platform"
@@ -154,6 +151,19 @@
     "role": "infra"
   },
   {
+    "repo": "infiniflow/ragflow",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ragflow",
+    "role": "platform"
+  },
+  {
     "repo": "OpenHands/OpenHands",
     "stars": 540,
     "stars_prev_week": 460,
@@ -180,6 +190,58 @@
     "role": "ai"
   },
   {
+    "repo": "aqm857886159/Nomi",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Nomi",
+    "role": "platform"
+  },
+  {
+    "repo": "ZeroLu/awesome-seedance",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho awesome seedance",
+    "role": "platform"
+  },
+  {
+    "repo": "earendil-works/pi",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
+    "role": "platform"
+  },
+  {
+    "repo": "tetherto/qvac",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
+    "role": "platform"
+  },
+  {
     "repo": "paperclipai/paperclip",
     "stars": 540,
     "stars_prev_week": 460,
@@ -202,71 +264,6 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho Nexior",
-    "role": "platform"
-  },
-  {
-    "repo": "aqm857886159/Nomi",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Nomi",
-    "role": "platform"
-  },
-  {
-    "repo": "tetherto/qvac",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
-    "role": "platform"
-  },
-  {
-    "repo": "earendil-works/pi",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
-    "role": "platform"
-  },
-  {
-    "repo": "infiniflow/ragflow",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ragflow",
-    "role": "platform"
-  },
-  {
-    "repo": "ZeroLu/awesome-seedance",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho awesome seedance",
     "role": "platform"
   },
   {
@@ -352,18 +349,6 @@
     "role": "platform"
   },
   {
-    "repo": "commaai/openpilot",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: openpilot",
-    "role": "ai"
-  },
-  {
     "repo": "earthtojake/text-to-cad",
     "stars": 540,
     "stars_prev_week": 460,
@@ -377,7 +362,19 @@
     "role": "platform"
   },
   {
-    "repo": "google-deepmind/mujoco",
+    "repo": "commaai/openpilot",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: openpilot",
+    "role": "ai"
+  },
+  {
+    "repo": "questdb/questdb",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -386,7 +383,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
     "role": "platform"
   },
   {
@@ -403,6 +400,19 @@
     "role": "platform"
   },
   {
+    "repo": "google-deepmind/mujoco",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
+    "role": "platform"
+  },
+  {
     "repo": "hubotio/hubot",
     "stars": 540,
     "stars_prev_week": 460,
@@ -413,19 +423,6 @@
       "Open Source"
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: hubot",
-    "role": "platform"
-  },
-  {
-    "repo": "questdb/questdb",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
     "role": "platform"
   },
   {
@@ -467,7 +464,7 @@
     "role": "platform"
   },
   {
-    "repo": "Likely7/Veyra-NRVideo",
+    "repo": "browser-use/browser-use",
     "stars": 492,
     "stars_prev_week": 419,
     "velocity": 73,
@@ -476,7 +473,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Veyra NRVideo",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: browser use",
     "role": "platform"
   },
   {
@@ -490,6 +487,19 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho locally uncensored",
+    "role": "platform"
+  },
+  {
+    "repo": "Likely7/Veyra-NRVideo",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Veyra NRVideo",
     "role": "platform"
   },
   {
@@ -541,19 +551,6 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
-    "role": "platform"
-  },
-  {
-    "repo": "browser-use/browser-use",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: browser use",
     "role": "platform"
   },
   {
@@ -768,21 +765,6 @@
     "role": "platform"
   },
   {
-    "repo": "Ehiejakhian/water-quality-monitor-esp32",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "C++",
-    "tags": [
-      "Aquaculture",
-      "ESP32",
-      "IoT",
-      "Water Quality"
-    ],
-    "summary_vi": "Mạch ESP32 kết nối cảm biến đo pH, độ đục và nhiệt độ nước",
-    "role": "hardware"
-  },
-  {
     "repo": "api-evangelist/optoscale",
     "stars": 492,
     "stars_prev_week": 419,
@@ -965,6 +947,18 @@
     "role": "ai"
   },
   {
+    "repo": "ducanh19020217/-XFarm",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "AgTech"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: XFarm",
+    "role": "platform"
+  },
+  {
     "repo": "Gaganmn7353/aquaculture-iot",
     "stars": 492,
     "stars_prev_week": 419,
@@ -1055,6 +1049,18 @@
     "role": "platform"
   },
   {
+    "repo": "Genesis-Embodied-AI/genesis-world",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: genesis world",
+    "role": "ai"
+  },
+  {
     "repo": "ArduPilot/ardupilot",
     "stars": 492,
     "stars_prev_week": 419,
@@ -1081,18 +1087,6 @@
     "role": "platform"
   },
   {
-    "repo": "Genesis-Embodied-AI/genesis-world",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: genesis world",
-    "role": "ai"
-  },
-  {
     "repo": "AtsushiSakai/PythonRobotics",
     "stars": 492,
     "stars_prev_week": 419,
@@ -1116,6 +1110,21 @@
     ],
     "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Embodied AI Guide",
     "role": "ai"
+  },
+  {
+    "repo": "Ehiejakhian/water-quality-monitor-esp32",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "C++",
+    "tags": [
+      "Aquaculture",
+      "ESP32",
+      "IoT",
+      "Water Quality"
+    ],
+    "summary_vi": "Mạch ESP32 kết nối cảm biến đo pH, độ đục và nhiệt độ nước",
+    "role": "hardware"
   },
   {
     "repo": "sec25ec305-bee/AquaGuard-AI-Smart-Water-Quality-Monitoring-",

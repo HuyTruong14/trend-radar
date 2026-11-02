@@ -2,14 +2,14 @@
   "week": "W45",
   "start_date": "2026-10-27",
   "end_date": "2026-11-02",
-  "created_at": "2026-11-02T04:30:51.618915+07:00",
+  "created_at": "2026-11-02T10:20:35.450863+07:00",
   "previous_week": "W44",
   "stats": {
-    "total_signals": 812,
-    "total_opportunities": 478,
+    "total_signals": 787,
+    "total_opportunities": 483,
     "build_ready": 2,
     "research": 101,
-    "watch": 375
+    "watch": 380
   },
   "prev_stats": {
     "total_signals": 816,
@@ -192,9 +192,9 @@
   },
   "tech_frequency": {
     "ESP32": {
-      "count": 20,
+      "count": 18,
       "prev_week": 17,
-      "change_pct": 18
+      "change_pct": 6
     },
     "TinyML": {
       "count": 15,
@@ -242,9 +242,9 @@
       "change_pct": 0
     },
     "MQTT": {
-      "count": 8,
+      "count": 7,
       "prev_week": 5,
-      "change_pct": 60
+      "change_pct": 40
     },
     "Humanoid": {
       "count": 11,
@@ -252,14 +252,14 @@
       "change_pct": 0
     },
     "Robotics": {
-      "count": 57,
+      "count": 56,
       "prev_week": 51,
-      "change_pct": 12
+      "change_pct": 10
     },
     "Sensor": {
-      "count": 25,
+      "count": 24,
       "prev_week": 22,
-      "change_pct": 14
+      "change_pct": 9
     }
   },
   "new_terms": [
@@ -267,9 +267,9 @@
     "ChatGPT",
     "AquaMindAI",
     "LR2021",
-    "BeagleBoard",
     "TrafficStars",
     "CreedRoomz",
+    "BeagleBoard",
     "PocketBeagle"
   ],
   "disruption_snapshot": {
