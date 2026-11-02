@@ -760,19 +760,22 @@
   },
   {
     "date": "2026-11-02",
-    "total_items": 75,
+    "total_items": 98,
     "avg_relevance_score": null,
     "cross_source_count": 0,
     "by_source": {
       "GitHub": 30,
+      "arXiv": 15,
       "Fish Farmer Magazine RSS Feed": 15,
       "Engineering News | Aquaculture": 15,
+      "aquablurb": 8,
       "The Fish Site": 15
     },
     "by_keyword": {
-      "water quality sensor": 15,
       "aquaculture iot": 15,
-      "": 45
+      "water quality sensor": 15,
+      "cs.AI, cs.CV": 15,
+      "": 53
     },
     "top_repos": [
       {
@@ -782,6 +785,10 @@
       {
         "name": "wissen-csi/backend_station",
         "stars": 2
+      },
+      {
+        "name": "J-Akiru5/OptiFeed",
+        "stars": 1
       },
       {
         "name": "mihirkavi/AquaChain",
@@ -796,6 +803,10 @@
         "stars": 1
       },
       {
+        "name": "deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML",
+        "stars": 0
+      },
+      {
         "name": "forgotmenet/Iotlab-Automation-Test",
         "stars": 0
       },
@@ -806,17 +817,11 @@
       {
         "name": "Fakruddin-Coder/AquaNova-IOT-AI-For-Smart-Aquaculture",
         "stars": 0
-      },
-      {
-        "name": "Alt-2-cyber/lanqi-aqua",
-        "stars": 0
-      },
-      {
-        "name": "api-evangelist/optoscale",
-        "stars": 0
       }
     ],
     "github_repos": [
+      "J-Akiru5/OptiFeed",
+      "deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML",
       "wissen-csi/backend_station",
       "forgotmenet/Iotlab-Automation-Test",
       "chinokoyuki/underwaterrobot-water-quality-sensor-mqtt-arduino-esp32",
@@ -833,12 +838,10 @@
       "api-evangelist/efishery",
       "AquaMindAI/AquaMindAI.github.io",
       "Rhoswen-void/Water-Quality-testing-Project",
-      "deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML",
       "Banez-ALI/IoT-Water-Quality-Monitoring-System",
       "latverian/edge-intelligent-aquaculture",
       "lavanya-mlds/SmartRAS-Analytics",
       "mihirkavi/AquaChain",
-      "ducanh19020217/-XFarm",
       "Gaganmn7353/aquaculture-iot",
       "Leamon-Lee/Design-of-Enterprise-IoT-design",
       "Drwae/TinyFeeder",

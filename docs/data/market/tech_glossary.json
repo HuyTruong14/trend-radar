@@ -57,7 +57,7 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 13,
+    "mentions_this_week": 14,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -137,6 +137,19 @@
       "Ultrasonic": 2
     }
   },
+  "Raspberry Pi": {
+    "type": "Hardware",
+    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
+    "mentions_this_week": 6,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2350": 4,
+      "RP2040": 2,
+      "MicroPython": 1
+    }
+  },
   "ESP32-S3": {
     "type": "Hardware",
     "description_vi": "Chip ESP32 chuyên xử lý AI tăng tốc vector và giao tiếp camera/màn hình",
@@ -150,19 +163,6 @@
       "Turbidity": 2,
       "Ultrasonic": 2,
       "TDS": 1
-    }
-  },
-  "Raspberry Pi": {
-    "type": "Hardware",
-    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
-    "mentions_this_week": 4,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2350": 4,
-      "RP2040": 2,
-      "MicroPython": 1
     }
   },
   "LoRA": {
@@ -194,6 +194,15 @@
   "Modbus": {
     "type": "Protocol",
     "description_vi": "Giao thức truyền thông công nghiệp chuẩn mực nối PLC, cảm biến và thiết bị đo",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
     "mentions_this_week": 3,
     "mentions_prev_week": 0,
     "change_pct": 100,
@@ -267,15 +276,6 @@
     "trend": "rising",
     "co_occurs_with": {}
   },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "TDS": {
     "type": "Sensor",
     "description_vi": "Cảm biến đo tổng chất rắn hòa tan trong nước (Total Dissolved Solids)",
@@ -312,15 +312,6 @@
   "NB-IoT": {
     "type": "Protocol",
     "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
-  "SLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ nhỏ (<7B tham số) tối ưu để chạy offline trên máy tính cá nhân hoặc chip biên",
     "mentions_this_week": 1,
     "mentions_prev_week": 0,
     "change_pct": 100,
@@ -490,6 +481,15 @@
   "YOLO": {
     "type": "AI/ML",
     "description_vi": "Họ mô hình phát hiện vật thể thời gian thực tốc độ cao và độ chính xác vượt trội",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "SLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ nhỏ (<7B tham số) tối ưu để chạy offline trên máy tính cá nhân hoặc chip biên",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,
