@@ -41,15 +41,6 @@
       "ESP32": 8
     }
   },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 15,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "LoRaWAN": {
     "type": "Protocol",
     "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
@@ -62,6 +53,15 @@
       "DO (Dissolved Oxygen)": 5,
       "LoRA": 4
     }
+  },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 14,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "Humanoid": {
     "type": "Robotics",
@@ -83,6 +83,19 @@
     "trend": "rising",
     "co_occurs_with": {
       "BLE": 2
+    }
+  },
+  "Raspberry Pi": {
+    "type": "Hardware",
+    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
+    "mentions_this_week": 9,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2350": 4,
+      "RP2040": 2,
+      "MicroPython": 1
     }
   },
   "ROS2": {
@@ -135,19 +148,6 @@
       "Arduino": 2,
       "Turbidity": 2,
       "Ultrasonic": 2
-    }
-  },
-  "Raspberry Pi": {
-    "type": "Hardware",
-    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
-    "mentions_this_week": 6,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2350": 4,
-      "RP2040": 2,
-      "MicroPython": 1
     }
   },
   "ESP32-S3": {
