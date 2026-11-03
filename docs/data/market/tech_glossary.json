@@ -14,7 +14,7 @@
       "Turbidity": 3,
       "Arduino": 2,
       "Ultrasonic": 2,
-      "TDS": 1
+      "Water Level": 1
     }
   },
   "Edge AI": {
@@ -41,6 +41,15 @@
       "ESP32": 8
     }
   },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 15,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "LoRaWAN": {
     "type": "Protocol",
     "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
@@ -54,14 +63,16 @@
       "LoRA": 4
     }
   },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 14,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
+  "Humanoid": {
+    "type": "Robotics",
+    "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
+    "mentions_this_week": 13,
+    "mentions_prev_week": 7,
+    "change_pct": 86,
+    "trend": "rising",
+    "co_occurs_with": {
+      "ROS2": 5
+    }
   },
   "RISC-V": {
     "type": "Hardware",
@@ -72,17 +83,6 @@
     "trend": "rising",
     "co_occurs_with": {
       "BLE": 2
-    }
-  },
-  "Humanoid": {
-    "type": "Robotics",
-    "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 10,
-    "mentions_prev_week": 7,
-    "change_pct": 43,
-    "trend": "rising",
-    "co_occurs_with": {
-      "ROS2": 5
     }
   },
   "ROS2": {
@@ -200,15 +200,6 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 3,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "DO (Dissolved Oxygen)": {
     "type": "Sensor",
     "description_vi": "Cảm biến oxy hòa tan (quang học hoặc galvanic) giám sát mức dưỡng khí trong nước ao",
@@ -234,6 +225,15 @@
       "Ultrasonic": 2,
       "Edge AI": 1
     }
+  },
+  "Drone": {
+    "type": "Robotics",
+    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "RP2040": {
     "type": "Hardware",
@@ -274,6 +274,15 @@
     "mentions_prev_week": 1,
     "change_pct": 100,
     "trend": "rising",
+    "co_occurs_with": {}
+  },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
     "co_occurs_with": {}
   },
   "TDS": {
@@ -378,15 +387,6 @@
     "co_occurs_with": {
       "ESP32": 1
     }
-  },
-  "Drone": {
-    "type": "Robotics",
-    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "ESP32-C6": {
     "type": "Hardware",

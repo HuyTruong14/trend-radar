@@ -1,22 +1,22 @@
 {
   "week": "W45",
-  "start_date": "2026-10-27",
-  "end_date": "2026-11-02",
-  "created_at": "2026-11-02T21:12:04.011401+07:00",
-  "previous_week": "W44",
+  "start_date": "2026-10-28",
+  "end_date": "2026-11-03",
+  "created_at": "2026-11-03T07:15:05.887929+07:00",
+  "previous_week": "W45",
   "stats": {
+    "total_signals": 794,
+    "total_opportunities": 512,
+    "build_ready": 2,
+    "research": 108,
+    "watch": 402
+  },
+  "prev_stats": {
     "total_signals": 835,
     "total_opportunities": 495,
     "build_ready": 5,
     "research": 103,
     "watch": 387
-  },
-  "prev_stats": {
-    "total_signals": 816,
-    "total_opportunities": 475,
-    "build_ready": 2,
-    "research": 97,
-    "watch": 376
   },
   "top_opportunities": [
     {
@@ -44,50 +44,58 @@
       "url": "https://github.com/Fakruddin-Coder/AquaNova-IOT-AI-For-Smart-Aquaculture"
     },
     {
-      "id": "opp_2026_1028_ffebd3b0",
-      "title": "latverian/edge-intelligent-aquaculture",
-      "total": 9,
-      "stage": "build_ready",
+      "id": "opp_2026_1101_8ed6d301",
+      "title": "Solving the Interconnect Challenge in Modern Robotics: How 3M Is Engineering for Motion, Density, and Uptime",
+      "total": 8,
+      "stage": "research",
       "signal_type": [
         "price_shift",
         "tech_cheap"
       ],
-      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
-      "url": "https://github.com/latverian/edge-intelligent-aquaculture"
+      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Solving the Interconn",
+      "url": "https://www.therobotreport.com/solving-the-interconnect-challenge-in-modern-robotics-how-3m-is-engineering-for-motion-density-and-uptime/"
     },
     {
-      "id": "opp_2026_1027_d64676ce",
-      "title": "Gaganmn7353/aquaculture-iot",
-      "total": 9,
-      "stage": "build_ready",
+      "id": "opp_2026_1030_01a08619",
+      "title": "Humanoid developer Agility now expects to raise $465M in SPAC deal",
+      "total": 8,
+      "stage": "research",
       "signal_type": [
         "price_shift",
         "tech_cheap"
       ],
-      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
-      "url": "https://github.com/Gaganmn7353/aquaculture-iot"
+      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Humanoid developer Ag",
+      "url": "https://www.therobotreport.com/humanoid-developer-agility-now-expects-raise-465m-spac-deal/"
     },
     {
-      "id": "opp_2026_1024_499128aa",
-      "title": "mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
-      "total": 9,
-      "stage": "build_ready",
+      "id": "opp_2026_1027_c437aac5",
+      "title": "Crunchbase Data Shows Q3 Robotics Startup Funding Jumps 185% As US And China Lead Physical AI Push",
+      "total": 8,
+      "stage": "research",
       "signal_type": [
         "price_shift",
         "tech_cheap"
       ],
-      "summary_vi": "Trợ lý AI quản lý ao nuôi và chất lượng nước thủy sản",
-      "url": "https://github.com/mohamedsadhathj-techwork/Smart-Aquaculture-Assistant"
+      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Crunchbase Data Shows",
+      "url": "https://news.crunchbase.com/venture/q3-2026-us-china-robotics-startup-funding-jumps-physical-ai-push/"
     }
   ],
   "funding_deals": [
     {
-      "title": "mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
+      "title": "Fakruddin-Coder/AquaNova-IOT-AI-For-Smart-Aquaculture",
       "type": "Gọi vốn",
       "amount": "$10M",
       "sector": "aquatech",
       "sector_vi": "Thủy sản & Nước",
-      "url": "https://github.com/mohamedsadhathj-techwork/Smart-Aquaculture-Assistant"
+      "url": "https://github.com/Fakruddin-Coder/AquaNova-IOT-AI-For-Smart-Aquaculture"
+    },
+    {
+      "title": "Solving the Interconnect Challenge in Modern Robotics: How 3M Is Engineering for Motion, Density, and Uptime",
+      "type": "Gọi vốn",
+      "amount": "N/A",
+      "sector": "robotics",
+      "sector_vi": "Robotics",
+      "url": "https://www.therobotreport.com/solving-the-interconnect-challenge-in-modern-robotics-how-3m-is-engineering-for-motion-density-and-uptime/"
     },
     {
       "title": "Humanoid developer Agility now expects to raise $465M in SPAC deal",
@@ -112,14 +120,6 @@
       "sector": "robotics",
       "sector_vi": "Robotics",
       "url": "https://www.therobotreport.com/bedrock-robotics-nears-1b-in-total-funding-as-demand-for-autonomous-heavy-equipment-surges/"
-    },
-    {
-      "title": "A $4 Robot With a Mind of Its Own",
-      "type": "Gọi vốn",
-      "amount": "N/A",
-      "sector": "robotics",
-      "sector_vi": "Robotics",
-      "url": "https://www.hackster.io/news/a-4-robot-with-a-mind-of-its-own-341626d8d8b7"
     }
   ],
   "hot_topics": {
@@ -193,8 +193,8 @@
   "tech_frequency": {
     "ESP32": {
       "count": 18,
-      "prev_week": 17,
-      "change_pct": 6
+      "prev_week": 18,
+      "change_pct": 0
     },
     "TinyML": {
       "count": 15,
@@ -243,23 +243,23 @@
     },
     "MQTT": {
       "count": 7,
-      "prev_week": 5,
-      "change_pct": 40
-    },
-    "Humanoid": {
-      "count": 11,
-      "prev_week": 11,
+      "prev_week": 7,
       "change_pct": 0
     },
+    "Humanoid": {
+      "count": 15,
+      "prev_week": 11,
+      "change_pct": 36
+    },
     "Robotics": {
-      "count": 57,
-      "prev_week": 51,
-      "change_pct": 12
+      "count": 54,
+      "prev_week": 57,
+      "change_pct": -5
     },
     "Sensor": {
       "count": 23,
-      "prev_week": 22,
-      "change_pct": 5
+      "prev_week": 23,
+      "change_pct": 0
     }
   },
   "new_terms": [
@@ -267,10 +267,10 @@
     "ChatGPT",
     "AquaMindAI",
     "LR2021",
-    "DeepMind",
+    "RoboArchitect",
     "BeagleBoard",
     "PocketBeagle",
-    "RoboArchitect"
+    "DeepMind"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",
