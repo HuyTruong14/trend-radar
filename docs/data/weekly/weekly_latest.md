@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-10-28 đến 2026-11-03  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-03 07:15 (giờ VN)  
+**Tạo lúc:** 2026-11-03 20:17 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W45) | Tuần này (W45) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 835 | **794** | -41 (-4.9%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 495 | **512** | +17 (+3.4%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 835 | **802** | -33 (-4.0%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 495 | **531** | +36 (+7.3%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 5 | **2** | -3 (-60.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 103 | **108** | +5 (+4.9%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 387 | **402** | +15 (+3.9%) | Dòng tín hiệu thị trường rộng |
+| 🟡 **Research (7–8/9)** | 103 | **112** | +9 (+8.7%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 387 | **417** | +30 (+7.8%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -26,7 +26,7 @@
 | 2 | [Fakruddin-Coder/AquaNova-IOT-AI-For-Smart-Aquaculture](https://github.com/Fakruddin-Coder/AquaNova-IOT-AI-For-Smart-Aquaculture) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
 | 3 | [Solving the Interconnect Challenge in Modern Robotics: How 3M Is Engineering for Motion, Density, and Uptime](https://www.therobotreport.com/solving-the-interconnect-challenge-in-modern-robotics-how-3m-is-engineering-for-motion-density-and-uptime/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Solving the Interconn |
 | 4 | [Humanoid developer Agility now expects to raise $465M in SPAC deal](https://www.therobotreport.com/humanoid-developer-agility-now-expects-raise-465m-spac-deal/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Humanoid developer Ag |
-| 5 | [Crunchbase Data Shows Q3 Robotics Startup Funding Jumps 185% As US And China Lead Physical AI Push](https://news.crunchbase.com/venture/q3-2026-us-china-robotics-startup-funding-jumps-physical-ai-push/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Crunchbase Data Shows |
+| 5 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
 
 ---
 
@@ -74,12 +74,12 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W45) | Tuần trước (W45) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **54** | 57 | `-5%` | ➡️ Ổn định |
+| **Robotics** | **56** | 57 | `-2%` | ➡️ Ổn định |
 | **Sensor** | **23** | 23 | `0%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
 | **ESP32** | **18** | 18 | `0%` | ➡️ Ổn định |
+| **Humanoid** | **17** | 11 | `+55%` | 🚀 Tăng mạnh |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **15** | 11 | `+36%` | 🚀 Tăng mạnh |
 | **LoRaWAN** | **14** | 14 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
@@ -97,10 +97,10 @@
 - **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`RoboArchitect`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`BeagleBoard`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`PocketBeagle`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`DeepMind`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`EgoActionBench`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
 ---
 

@@ -2,14 +2,14 @@
   "week": "W45",
   "start_date": "2026-10-28",
   "end_date": "2026-11-03",
-  "created_at": "2026-11-03T07:15:05.887929+07:00",
+  "created_at": "2026-11-03T20:17:54.947577+07:00",
   "previous_week": "W45",
   "stats": {
-    "total_signals": 794,
-    "total_opportunities": 512,
+    "total_signals": 802,
+    "total_opportunities": 531,
     "build_ready": 2,
-    "research": 108,
-    "watch": 402
+    "research": 112,
+    "watch": 417
   },
   "prev_stats": {
     "total_signals": 835,
@@ -68,16 +68,16 @@
       "url": "https://www.therobotreport.com/humanoid-developer-agility-now-expects-raise-465m-spac-deal/"
     },
     {
-      "id": "opp_2026_1027_c437aac5",
-      "title": "Crunchbase Data Shows Q3 Robotics Startup Funding Jumps 185% As US And China Lead Physical AI Push",
+      "id": "opp_2026_1024_55c0af0b",
+      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
       "total": 8,
       "stage": "research",
       "signal_type": [
         "price_shift",
         "tech_cheap"
       ],
-      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Crunchbase Data Shows",
-      "url": "https://news.crunchbase.com/venture/q3-2026-us-china-robotics-startup-funding-jumps-physical-ai-push/"
+      "summary_vi": "Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway",
+      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
     }
   ],
   "funding_deals": [
@@ -247,14 +247,14 @@
       "change_pct": 0
     },
     "Humanoid": {
-      "count": 15,
+      "count": 17,
       "prev_week": 11,
-      "change_pct": 36
+      "change_pct": 55
     },
     "Robotics": {
-      "count": 54,
+      "count": 56,
       "prev_week": 57,
-      "change_pct": -5
+      "change_pct": -2
     },
     "Sensor": {
       "count": 23,
@@ -267,10 +267,10 @@
     "ChatGPT",
     "AquaMindAI",
     "LR2021",
-    "RoboArchitect",
     "BeagleBoard",
     "PocketBeagle",
-    "DeepMind"
+    "DeepMind",
+    "EgoActionBench"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",
