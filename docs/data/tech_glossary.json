@@ -66,9 +66,9 @@
   "Humanoid": {
     "type": "Robotics",
     "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 14,
+    "mentions_this_week": 12,
     "mentions_prev_week": 7,
-    "change_pct": 100,
+    "change_pct": 71,
     "trend": "rising",
     "co_occurs_with": {
       "ROS2": 5
@@ -83,19 +83,6 @@
     "trend": "rising",
     "co_occurs_with": {
       "BLE": 2
-    }
-  },
-  "Raspberry Pi": {
-    "type": "Hardware",
-    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
-    "mentions_this_week": 9,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2350": 4,
-      "RP2040": 2,
-      "MicroPython": 1
     }
   },
   "ROS2": {
@@ -133,6 +120,19 @@
     "co_occurs_with": {
       "ESP32": 2,
       "MQTT": 2
+    }
+  },
+  "Raspberry Pi": {
+    "type": "Hardware",
+    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
+    "mentions_this_week": 8,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2350": 4,
+      "RP2040": 2,
+      "MicroPython": 1
     }
   },
   "MQTT": {
@@ -176,15 +176,6 @@
       "LoRaWAN": 4
     }
   },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 4,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "Ultrasonic": {
     "type": "Sensor",
     "description_vi": "Cảm biến sóng siêu âm đo khoảng cách và mực nước bồn chứa/ao nuôi không tiếp xúc",
@@ -218,6 +209,15 @@
     "trend": "new",
     "co_occurs_with": {}
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "DO (Dissolved Oxygen)": {
     "type": "Sensor",
     "description_vi": "Cảm biến oxy hòa tan (quang học hoặc galvanic) giám sát mức dưỡng khí trong nước ao",
@@ -243,6 +243,15 @@
       "Ultrasonic": 2,
       "Edge AI": 1
     }
+  },
+  "Drone": {
+    "type": "Robotics",
+    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "RP2040": {
     "type": "Hardware",
@@ -299,6 +308,15 @@
     "co_occurs_with": {
       "Ultrasonic": 2
     }
+  },
+  "STM32": {
+    "type": "Hardware",
+    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 1,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
   },
   "Matter": {
     "type": "Protocol",
@@ -370,15 +388,6 @@
       "ESP32": 1
     }
   },
-  "Drone": {
-    "type": "Robotics",
-    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "ESP32-C6": {
     "type": "Hardware",
     "description_vi": "Vi điều khiển RISC-V hỗ trợ WiFi 6, Zigbee, Thread và Matter",
@@ -386,15 +395,6 @@
     "mentions_prev_week": 0,
     "change_pct": 0,
     "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "STM32": {
-    "type": "Hardware",
-    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 1,
-    "change_pct": -100,
-    "trend": "fading",
     "co_occurs_with": {}
   },
   "Jetson": {

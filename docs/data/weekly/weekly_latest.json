@@ -1,22 +1,22 @@
 {
   "week": "W45",
-  "start_date": "2026-10-29",
-  "end_date": "2026-11-04",
-  "created_at": "2026-11-04T20:29:39.840050+07:00",
+  "start_date": "2026-10-30",
+  "end_date": "2026-11-05",
+  "created_at": "2026-11-05T06:02:18.938405+07:00",
   "previous_week": "W45",
   "stats": {
+    "total_signals": 838,
+    "total_opportunities": 573,
+    "build_ready": 1,
+    "research": 122,
+    "watch": 450
+  },
+  "prev_stats": {
     "total_signals": 832,
     "total_opportunities": 558,
     "build_ready": 1,
     "research": 119,
     "watch": 438
-  },
-  "prev_stats": {
-    "total_signals": 802,
-    "total_opportunities": 531,
-    "build_ready": 2,
-    "research": 112,
-    "watch": 417
   },
   "top_opportunities": [
     {
@@ -44,18 +44,6 @@
       "url": "https://www.therobotreport.com/solving-the-interconnect-challenge-in-modern-robotics-how-3m-is-engineering-for-motion-density-and-uptime/"
     },
     {
-      "id": "opp_2026_1030_01a08619",
-      "title": "Humanoid developer Agility now expects to raise $465M in SPAC deal",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Humanoid developer Ag",
-      "url": "https://www.therobotreport.com/humanoid-developer-agility-now-expects-raise-465m-spac-deal/"
-    },
-    {
       "id": "opp_2026_1024_55c0af0b",
       "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
       "total": 8,
@@ -66,6 +54,18 @@
       ],
       "summary_vi": "Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway",
       "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
+    },
+    {
+      "id": "opp_2026_1030_01a08619",
+      "title": "Humanoid developer Agility now expects to raise $465M in SPAC deal",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Humanoid developer Ag",
+      "url": "https://www.therobotreport.com/humanoid-developer-agility-now-expects-raise-465m-spac-deal/"
     },
     {
       "id": "opp_2026_1027_c437aac5",
@@ -98,20 +98,20 @@
       "url": "https://www.therobotreport.com/solving-the-interconnect-challenge-in-modern-robotics-how-3m-is-engineering-for-motion-density-and-uptime/"
     },
     {
-      "title": "Humanoid developer Agility now expects to raise $465M in SPAC deal",
-      "type": "Gọi vốn",
-      "amount": "$465M",
-      "sector": "robotics",
-      "sector_vi": "Robotics",
-      "url": "https://www.therobotreport.com/humanoid-developer-agility-now-expects-raise-465m-spac-deal/"
-    },
-    {
       "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
       "type": "Gọi vốn",
       "amount": "$20K",
       "sector": "hardware",
       "sector_vi": "Phần cứng & IoT",
       "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
+    },
+    {
+      "title": "Humanoid developer Agility now expects to raise $465M in SPAC deal",
+      "type": "Gọi vốn",
+      "amount": "$465M",
+      "sector": "robotics",
+      "sector_vi": "Robotics",
+      "url": "https://www.therobotreport.com/humanoid-developer-agility-now-expects-raise-465m-spac-deal/"
     },
     {
       "title": "Bedrock Robotics nears $1B in total funding as demand for autonomous heavy equipment surges",
@@ -193,8 +193,8 @@
   "tech_frequency": {
     "ESP32": {
       "count": 16,
-      "prev_week": 18,
-      "change_pct": -11
+      "prev_week": 16,
+      "change_pct": 0
     },
     "TinyML": {
       "count": 15,
@@ -217,9 +217,9 @@
       "change_pct": 0
     },
     "STM32": {
-      "count": 0,
+      "count": 1,
       "prev_week": 0,
-      "change_pct": 0
+      "change_pct": 100
     },
     "ROS2": {
       "count": 9,
@@ -247,14 +247,14 @@
       "change_pct": 0
     },
     "Humanoid": {
-      "count": 17,
+      "count": 14,
       "prev_week": 17,
-      "change_pct": 0
+      "change_pct": -18
     },
     "Robotics": {
-      "count": 53,
-      "prev_week": 56,
-      "change_pct": -5
+      "count": 59,
+      "prev_week": 53,
+      "change_pct": 11
     },
     "Sensor": {
       "count": 23,
@@ -269,8 +269,8 @@
     "AquaMindAI",
     "LR2021",
     "DataFarm",
-    "ReferOn",
-    "BeagleBoard"
+    "FY26",
+    "ReferOn"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",
