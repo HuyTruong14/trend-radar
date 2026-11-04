@@ -32,7 +32,7 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 17,
+    "mentions_this_week": 16,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -176,6 +176,15 @@
       "LoRaWAN": 4
     }
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "Ultrasonic": {
     "type": "Sensor",
     "description_vi": "Cảm biến sóng siêu âm đo khoảng cách và mực nước bồn chứa/ao nuôi không tiếp xúc",
@@ -191,18 +200,18 @@
       "Actuator": 2
     }
   },
-  "Modbus": {
-    "type": "Protocol",
-    "description_vi": "Giao thức truyền thông công nghiệp chuẩn mực nối PLC, cảm biến và thiết bị đo",
+  "Nordic nRF52": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
     "mentions_this_week": 3,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
     "co_occurs_with": {}
   },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+  "Modbus": {
+    "type": "Protocol",
+    "description_vi": "Giao thức truyền thông công nghiệp chuẩn mực nối PLC, cảm biến và thiết bị đo",
     "mentions_this_week": 3,
     "mentions_prev_week": 0,
     "change_pct": 100,
@@ -246,15 +255,6 @@
       "RP2350": 4,
       "Raspberry Pi": 2
     }
-  },
-  "Nordic nRF52": {
-    "type": "Hardware",
-    "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "BLE": {
     "type": "Protocol",
