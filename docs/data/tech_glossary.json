@@ -32,7 +32,7 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 16,
+    "mentions_this_week": 17,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -66,9 +66,9 @@
   "Humanoid": {
     "type": "Robotics",
     "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 12,
+    "mentions_this_week": 14,
     "mentions_prev_week": 7,
-    "change_pct": 71,
+    "change_pct": 100,
     "trend": "rising",
     "co_occurs_with": {
       "ROS2": 5
@@ -209,15 +209,6 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 3,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "DO (Dissolved Oxygen)": {
     "type": "Sensor",
     "description_vi": "Cảm biến oxy hòa tan (quang học hoặc galvanic) giám sát mức dưỡng khí trong nước ao",
@@ -276,6 +267,15 @@
       "RISC-V": 2
     }
   },
+  "Matter": {
+    "type": "Protocol",
+    "description_vi": "Tiêu chuẩn kết nối nhà thông minh hợp nhất trên nền tảng IPv6, Thread và WiFi",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "Computer Vision": {
     "type": "AI/ML",
     "description_vi": "Thị giác máy tính trích xuất thông tin, nhận dạng vật thể và hành vi từ hình ảnh/video",
@@ -283,6 +283,15 @@
     "mentions_prev_week": 1,
     "change_pct": 100,
     "trend": "rising",
+    "co_occurs_with": {}
+  },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
     "co_occurs_with": {}
   },
   "TDS": {
@@ -316,15 +325,6 @@
     "mentions_prev_week": 1,
     "change_pct": 0,
     "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "Matter": {
-    "type": "Protocol",
-    "description_vi": "Tiêu chuẩn kết nối nhà thông minh hợp nhất trên nền tảng IPv6, Thread và WiFi",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
     "co_occurs_with": {}
   },
   "NB-IoT": {
