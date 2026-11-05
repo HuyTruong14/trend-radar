@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T04:09:08.925531+00:00",
+  "updated": "2026-11-05T13:43:18.617768+00:00",
   "topics": {
     "AI/Tech": {
       "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Scaling limits in multi-modal LLM reasoning and synthetic data generation</strong> (Score 51) — <em>Researchers discuss whether pre-training scaling laws are plateauing and the emergence of test-time compute reinforcement learning.</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM</strong> (Score 51): Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware. và <strong>Anthropic and DeepMind autonomous agent benchmarks highlight multi-step tool reliability</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 124 tín hiệu theo dõi. Trong đó có <strong>5 tín hiệu đang bứt phá mạnh (Rising Velocity)</strong>.",
@@ -8,8 +8,8 @@
           "label": "Agent",
           "items": [
             2,
-            12,
-            28,
+            11,
+            34,
             52,
             57,
             58,
@@ -46,7 +46,7 @@
         {
           "label": "Open",
           "items": [
-            42,
+            23,
             63,
             82,
             89,
@@ -70,9 +70,9 @@
           "items": [
             0,
             1,
-            20,
-            28,
-            32
+            26,
+            34,
+            37
           ]
         }
       ],
@@ -151,26 +151,13 @@
           "subreddit": "r/StableDiffusion"
         },
         {
-          "title": "paperclipai/paperclip",
-          "summary": "",
-          "url": "https://github.com/paperclipai/paperclip",
-          "sources": [
-            "gh"
-          ],
-          "time": "1m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
           "title": "bytedance/deer-flow",
           "summary": "",
           "url": "https://github.com/bytedance/deer-flow",
           "sources": [
             "gh"
           ],
-          "time": "1m",
+          "time": "2m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -183,20 +170,7 @@
           "sources": [
             "gh"
           ],
-          "time": "1m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "langgenius/dify",
-          "summary": "",
-          "url": "https://github.com/langgenius/dify",
-          "sources": [
-            "gh"
-          ],
-          "time": "5m",
+          "time": "3m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -209,20 +183,7 @@
           "sources": [
             "gh"
           ],
-          "time": "10m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "tt-a1i/archify",
-          "summary": "",
-          "url": "https://github.com/tt-a1i/archify",
-          "sources": [
-            "gh"
-          ],
-          "time": "12m",
+          "time": "3m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -235,85 +196,20 @@
           "sources": [
             "gh"
           ],
-          "time": "13m",
+          "time": "7m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
           "source": "GitHub"
         },
         {
-          "title": "NousResearch/hermes-agent",
+          "title": "paperclipai/paperclip",
           "summary": "",
-          "url": "https://github.com/NousResearch/hermes-agent",
+          "url": "https://github.com/paperclipai/paperclip",
           "sources": [
             "gh"
           ],
-          "time": "45m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "firecrawl/firecrawl",
-          "summary": "",
-          "url": "https://github.com/firecrawl/firecrawl",
-          "sources": [
-            "gh"
-          ],
-          "time": "49m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "HBAI-Ltd/Toonflow-app",
-          "summary": "",
-          "url": "https://github.com/HBAI-Ltd/Toonflow-app",
-          "sources": [
-            "gh"
-          ],
-          "time": "59m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "qianshuixia/shrimpreel",
-          "summary": "",
-          "url": "https://github.com/qianshuixia/shrimpreel",
-          "sources": [
-            "gh"
-          ],
-          "time": "2h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "ZeroLu/awesome-seedance",
-          "summary": "",
-          "url": "https://github.com/ZeroLu/awesome-seedance",
-          "sources": [
-            "gh"
-          ],
-          "time": "3h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "langchain-ai/langchain",
-          "summary": "",
-          "url": "https://github.com/langchain-ai/langchain",
-          "sources": [
-            "gh"
-          ],
-          "time": "3h",
+          "time": "7m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -326,7 +222,189 @@
           "sources": [
             "gh"
           ],
+          "time": "22m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "NousResearch/hermes-agent",
+          "summary": "",
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "sources": [
+            "gh"
+          ],
+          "time": "24m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "langgenius/dify",
+          "summary": "",
+          "url": "https://github.com/langgenius/dify",
+          "sources": [
+            "gh"
+          ],
+          "time": "30m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "AceDataCloud/Nexior",
+          "summary": "",
+          "url": "https://github.com/AceDataCloud/Nexior",
+          "sources": [
+            "gh"
+          ],
+          "time": "41m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "langchain-ai/langchain",
+          "summary": "",
+          "url": "https://github.com/langchain-ai/langchain",
+          "sources": [
+            "gh"
+          ],
+          "time": "56m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "ZeroLu/awesome-seedance",
+          "summary": "",
+          "url": "https://github.com/ZeroLu/awesome-seedance",
+          "sources": [
+            "gh"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "wideeyededi/uncensored-nsfw-ai-video-api",
+          "summary": "",
+          "url": "https://github.com/wideeyededi/uncensored-nsfw-ai-video-api",
+          "sources": [
+            "gh"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "tool",
+          "source": "GitHub"
+        },
+        {
+          "title": "aqm857886159/Nomi",
+          "summary": "",
+          "url": "https://github.com/aqm857886159/Nomi",
+          "sources": [
+            "gh"
+          ],
+          "time": "2h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "flatkey-ai/flatkey-cli",
+          "summary": "",
+          "url": "https://github.com/flatkey-ai/flatkey-cli",
+          "sources": [
+            "gh"
+          ],
+          "time": "3h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "firecrawl/firecrawl",
+          "summary": "",
+          "url": "https://github.com/firecrawl/firecrawl",
+          "sources": [
+            "gh"
+          ],
           "time": "4h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "browser-use/browser-use",
+          "summary": "",
+          "url": "https://github.com/browser-use/browser-use",
+          "sources": [
+            "gh"
+          ],
+          "time": "4h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "HBAI-Ltd/Toonflow-app",
+          "summary": "",
+          "url": "https://github.com/HBAI-Ltd/Toonflow-app",
+          "sources": [
+            "gh"
+          ],
+          "time": "5h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "JuliusBrussee/caveman",
+          "summary": "",
+          "url": "https://github.com/JuliusBrussee/caveman",
+          "sources": [
+            "gh"
+          ],
+          "time": "6h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "Anil-matcha/Open-Generative-AI",
+          "summary": "",
+          "url": "https://github.com/Anil-matcha/Open-Generative-AI",
+          "sources": [
+            "gh"
+          ],
+          "time": "6h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "tt-a1i/archify",
+          "summary": "",
+          "url": "https://github.com/tt-a1i/archify",
+          "sources": [
+            "gh"
+          ],
+          "time": "9h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -339,9 +417,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
         },
@@ -352,9 +430,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "tool",
           "source": "arXiv",
           "watchlist_matched": "llm"
@@ -366,9 +444,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
         },
@@ -379,9 +457,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
         },
@@ -392,9 +470,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
         },
@@ -405,9 +483,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
         },
@@ -418,9 +496,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
         },
@@ -431,9 +509,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
         },
@@ -444,9 +522,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
         },
@@ -457,25 +535,12 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv",
           "watchlist_matched": "llm"
-        },
-        {
-          "title": "AceDataCloud/Nexior",
-          "summary": "",
-          "url": "https://github.com/AceDataCloud/Nexior",
-          "sources": [
-            "gh"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
         },
         {
           "title": "Learning to Decode Linear Codes with Generalized Belief Propagation Network",
@@ -484,9 +549,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
         },
@@ -497,9 +562,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
         },
@@ -510,9 +575,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv",
           "watchlist_matched": "llm"
@@ -524,9 +589,9 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
         },
@@ -537,24 +602,11 @@
           "sources": [
             "arxiv"
           ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "arXiv"
-        },
-        {
-          "title": "aqm857886159/Nomi",
-          "summary": "",
-          "url": "https://github.com/aqm857886159/Nomi",
-          "sources": [
-            "gh"
-          ],
-          "time": "10h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
         },
         {
           "title": "unclecode/crawl4ai",
@@ -563,7 +615,7 @@
           "sources": [
             "gh"
           ],
-          "time": "15h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -576,7 +628,7 @@
           "sources": [
             "gh"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -589,20 +641,7 @@
           "sources": [
             "gh"
           ],
-          "time": "17h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "JuliusBrussee/caveman",
-          "summary": "",
-          "url": "https://github.com/JuliusBrussee/caveman",
-          "sources": [
-            "gh"
-          ],
-          "time": "20h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -628,20 +667,7 @@
           "sources": [
             "gh"
           ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "Anil-matcha/Open-Generative-AI",
-          "summary": "",
-          "url": "https://github.com/Anil-matcha/Open-Generative-AI",
-          "sources": [
-            "gh"
-          ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -680,19 +706,6 @@
           "sources": [
             "gh"
           ],
-          "time": "2d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "browser-use/browser-use",
-          "summary": "",
-          "url": "https://github.com/browser-use/browser-use",
-          "sources": [
-            "gh"
-          ],
           "time": "3d",
           "score": 41,
           "velocity": "cooling",
@@ -719,7 +732,7 @@
           "sources": [
             "gh"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -732,20 +745,7 @@
           "sources": [
             "gh"
           ],
-          "time": "6d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "flatkey-ai/flatkey-cli",
-          "summary": "",
-          "url": "https://github.com/flatkey-ai/flatkey-cli",
-          "sources": [
-            "gh"
-          ],
-          "time": "8d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -799,7 +799,7 @@
           "sources": [
             "hn"
           ],
-          "time": "86d",
+          "time": "87d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -827,7 +827,7 @@
           "sources": [
             "hn"
           ],
-          "time": "117d",
+          "time": "118d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -840,7 +840,7 @@
           "sources": [
             "hn"
           ],
-          "time": "145d",
+          "time": "146d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -963,7 +963,7 @@
           "sources": [
             "hn"
           ],
-          "time": "265d",
+          "time": "266d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1018,7 +1018,7 @@
           "sources": [
             "hn"
           ],
-          "time": "328d",
+          "time": "329d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1084,7 +1084,7 @@
           "sources": [
             "hn"
           ],
-          "time": "427d",
+          "time": "428d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1110,7 +1110,7 @@
           "sources": [
             "hn"
           ],
-          "time": "444d",
+          "time": "445d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1188,7 +1188,7 @@
           "sources": [
             "hn"
           ],
-          "time": "543d",
+          "time": "544d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1201,7 +1201,7 @@
           "sources": [
             "hn"
           ],
-          "time": "554d",
+          "time": "555d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1214,7 +1214,7 @@
           "sources": [
             "hn"
           ],
-          "time": "564d",
+          "time": "565d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1305,7 +1305,7 @@
           "sources": [
             "hn"
           ],
-          "time": "752d",
+          "time": "753d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1410,7 +1410,7 @@
           "sources": [
             "hn"
           ],
-          "time": "1015d",
+          "time": "1016d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1423,7 +1423,7 @@
           "sources": [
             "hn"
           ],
-          "time": "1040d",
+          "time": "1041d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1475,7 +1475,7 @@
           "sources": [
             "hn"
           ],
-          "time": "1168d",
+          "time": "1169d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1501,7 +1501,7 @@
           "sources": [
             "hn"
           ],
-          "time": "1219d",
+          "time": "1220d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1514,7 +1514,7 @@
           "sources": [
             "hn"
           ],
-          "time": "1248d",
+          "time": "1249d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1527,7 +1527,7 @@
           "sources": [
             "hn"
           ],
-          "time": "1259d",
+          "time": "1260d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1605,7 +1605,7 @@
           "sources": [
             "hn"
           ],
-          "time": "1400d",
+          "time": "1401d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1631,7 +1631,7 @@
           "sources": [
             "hn"
           ],
-          "time": "1497d",
+          "time": "1498d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1718,56 +1718,160 @@
       ]
     },
     "Funding": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Crunchbase Data: Less Than 2% Of 2026 Venture Funding Went To Post-Election Red States</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>The Crunchbase Tech Layoffs Tracker</strong> (Score 45) và <strong>EveryMatrix: Building trust on a history of success</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 117 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Raketech maps out investment plan as Q3 shows cost cutting success</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>What AI-Powered Digital Marketing Can Automate for IoT Companies</strong> (Score 45) và <strong>Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 117 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "TechCrunch Founder Summit",
           "items": [
-            16,
-            38,
-            61,
-            83,
-            85,
-            91
+            23,
+            42,
+            65,
+            86,
+            88,
+            94
           ]
         },
         {
           "label": "Brazil",
           "items": [
-            11,
-            22,
-            23,
+            5,
+            18,
             29,
-            48
+            30,
+            52
           ]
         },
         {
           "label": "Boston",
           "items": [
-            16,
-            37,
-            38,
-            61
+            23,
+            41,
+            42,
+            65
           ]
         },
         {
           "label": "Robot Talk Episode",
           "items": [
-            84,
+            87,
             109,
             112,
             115
           ]
         },
         {
-          "label": "Flutter",
+          "label": "IoT Companies",
           "items": [
-            11,
-            15
+            1,
+            32
           ]
         }
       ],
       "items": [
+        {
+          "title": "Raketech maps out investment plan as Q3 shows cost cutting success",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/affiliatenews/2026/11/05/raketech-investment-targets/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "SBC News"
+        },
+        {
+          "title": "What AI-Powered Digital Marketing Can Automate for IoT Companies",
+          "summary": "",
+          "url": "https://iotbusinessnews.com/2026/11/05/what-ai-powered-digital-marketing-can-automate-for-iot-companies/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "IoT Business News"
+        },
+        {
+          "title": "Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak",
+          "summary": "",
+          "url": "https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "market",
+          "source": "Crunchbase News"
+        },
+        {
+          "title": "Envision Energy Unveils AI-Powered Renewable Energy System for Mining and Smelting",
+          "summary": "",
+          "url": "https://igrownews.com/envision-energy-latest-news/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "iGrow News"
+        },
+        {
+          "title": "SBC establishes Regulatory Advisory Board to strengthen global industry dialogue",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/events/sbcevents/2026/11/05/sbc-advisory-board/",
+          "sources": [
+            "rss"
+          ],
+          "time": "2h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "SBC News"
+        },
+        {
+          "title": "Brazil betting ban divides the spectrum of sports, society and commerce",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/features/comment/2026/11/05/brazil-betting-ban-sports-debt/",
+          "sources": [
+            "rss"
+          ],
+          "time": "2h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "risk",
+          "source": "SBC News"
+        },
+        {
+          "title": "GRAI shares important takeaways for Irish operators",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/europe/2026/11/05/ireland-gambling-grai/",
+          "sources": [
+            "rss"
+          ],
+          "time": "2h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "SBC News"
+        },
+        {
+          "title": "Guest article: The ag biologicals market is at a crossroads. Here are four possible futures to explore",
+          "summary": "",
+          "url": "https://agfundernews.com/guest-article-the-ag-biologicals-market-is-at-a-crossroads-here-are-four-possible-futures-to-explore",
+          "sources": [
+            "rss"
+          ],
+          "time": "17h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "market",
+          "source": "AgFunderNews"
+        },
         {
           "title": "Crunchbase Data: Less Than 2% Of 2026 Venture Funding Went To Post-Election Red States",
           "summary": "",
@@ -1775,9 +1879,9 @@
           "sources": [
             "rss"
           ],
-          "time": "8h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "17h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "market",
           "source": "Crunchbase News"
         },
@@ -1788,24 +1892,11 @@
           "sources": [
             "rss"
           ],
-          "time": "10h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "20h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "Crunchbase News"
-        },
-        {
-          "title": "EveryMatrix: Building trust on a history of success",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/features/interviews/2026/11/04/everymatrix-gambling-supplier/",
-          "sources": [
-            "rss"
-          ],
-          "time": "10h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "SBC News"
         },
         {
           "title": "Sequoia hits rewind, undoing 20 years of expansion",
@@ -1814,22 +1905,22 @@
           "sources": [
             "rss"
           ],
-          "time": "10h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "20h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "Venture Capital News | TechCrunch"
         },
         {
           "title": "Channel 4 “game show” risks damaging gambling’s public image",
           "summary": "",
-          "url": "https://sbcnews.co.uk/social-responsibility/2026/11/04/channel-4-gambling-show/",
+          "url": "https://sbcnews.co.uk/features/video/2026/11/04/channel-4-gambling-show/",
           "sources": [
             "rss"
           ],
-          "time": "11h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "21h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "SBC News"
         },
@@ -1840,9 +1931,9 @@
           "sources": [
             "rss"
           ],
-          "time": "11h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "21h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "IoT Business News"
         },
@@ -1853,7 +1944,7 @@
           "sources": [
             "rss"
           ],
-          "time": "12h",
+          "time": "21h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1866,7 +1957,7 @@
           "sources": [
             "rss"
           ],
-          "time": "12h",
+          "time": "22h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1879,7 +1970,7 @@
           "sources": [
             "rss"
           ],
-          "time": "12h",
+          "time": "22h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1892,7 +1983,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13h",
+          "time": "22h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1905,7 +1996,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13h",
+          "time": "22h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1918,7 +2009,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1931,7 +2022,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1944,7 +2035,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -1957,7 +2048,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1970,7 +2061,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1983,7 +2074,7 @@
           "sources": [
             "rss"
           ],
-          "time": "15h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1996,7 +2087,7 @@
           "sources": [
             "rss"
           ],
-          "time": "15h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2009,7 +2100,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2022,7 +2113,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2035,7 +2126,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2048,7 +2139,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2061,7 +2152,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2074,7 +2165,7 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
@@ -2087,7 +2178,7 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2100,7 +2191,7 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2113,7 +2204,7 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
@@ -2126,50 +2217,11 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
           "source": "iGB"
-        },
-        {
-          "title": "Is Super Group about to lap itself? YTD profit close to beating FY25 figures",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/sportsbook/2026/11/04/super-group-q3-results/",
-          "sources": [
-            "rss"
-          ],
-          "time": "18h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "SBC News"
-        },
-        {
-          "title": "Kambi reports resilient Q3 against Brazil ban and post-World Cup slowdown",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/sportsbook/2026/11/04/kambi-brazil-world-cup-q3/",
-          "sources": [
-            "rss"
-          ],
-          "time": "19h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "risk",
-          "source": "SBC News"
-        },
-        {
-          "title": "“All the features of a bet” – ASIC says no to Australian prediction markets",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/technology/2026/11/04/australia-prediction-markets/",
-          "sources": [
-            "rss"
-          ],
-          "time": "20h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market",
-          "source": "SBC News"
         },
         {
           "title": "BREAKING: David Protein maker prevails in antitrust lawsuit over alt fat EPG",
@@ -2295,7 +2347,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
@@ -2308,7 +2360,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2321,7 +2373,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2334,7 +2386,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2347,7 +2399,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
@@ -2360,7 +2412,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2373,7 +2425,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2386,7 +2438,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2399,7 +2451,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2412,7 +2464,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2425,7 +2477,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2438,7 +2490,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2451,7 +2503,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2464,7 +2516,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2607,7 +2659,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2620,7 +2672,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2633,7 +2685,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2646,7 +2698,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2672,7 +2724,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2685,7 +2737,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2744,26 +2796,13 @@
           "source": "iGrow News"
         },
         {
-          "title": "Massey Ferguson Adds Hydraulic Singulation Chute for MF SB.1436DB Small Square Baler",
-          "summary": "",
-          "url": "https://igrownews.com/massey-ferguson-latest-news/",
-          "sources": [
-            "rss"
-          ],
-          "time": "4d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "iGrow News"
-        },
-        {
           "title": "Unusual robotic animals can prove their utility",
           "summary": "",
           "url": "https://www.therobotreport.com/unusual-robotic-animals-can-prove-their-utility/",
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2776,7 +2815,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2867,7 +2906,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2880,7 +2919,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2893,7 +2932,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2958,7 +2997,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2971,7 +3010,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2984,7 +3023,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2997,7 +3036,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -3010,7 +3049,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3082,26 +3121,13 @@
           "source": "IoT Business News"
         },
         {
-          "title": "Exclusive: Numeracle Raises $28M To Keep Legitimate Business Calls From Spam Label",
-          "summary": "",
-          "url": "https://news.crunchbase.com/venture/numeracle-raise-edison-ai-spam-communications-johnson/",
-          "sources": [
-            "rss"
-          ],
-          "time": "7d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market",
-          "source": "Crunchbase News"
-        },
-        {
           "title": "🎥 Amatera tackles plant breeding bottleneck with high-throughput cell screening platform",
           "summary": "",
           "url": "https://agfundernews.com/%f0%9f%8e%a5-amatera-tackles-plant-breeding-bottleneck-with-high-throughput-cell-screening-platform",
           "sources": [
             "rss"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3114,7 +3140,7 @@
           "sources": [
             "rss"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3147,35 +3173,9 @@
           "source": "AgFunderNews"
         },
         {
-          "title": "iPROOF facility aims to bridge biotech’s valley of death",
-          "summary": "",
-          "url": "https://agfundernews.com/primients-iproof-facility-aims-to-bridge-biotechs-valley-of-death",
-          "sources": [
-            "rss"
-          ],
-          "time": "9d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "AgFunderNews"
-        },
-        {
           "title": "Why Clear IoT Explainer Videos Help Convert Website Visitors",
           "summary": "",
           "url": "https://iotbusinessnews.com/2026/10/24/why-clear-iot-explainer-videos-help-convert-website-visitors/",
-          "sources": [
-            "rss"
-          ],
-          "time": "11d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "IoT Business News"
-        },
-        {
-          "title": "How IoT and Predictive Maintenance Can Reduce Aerial Lift Downtime",
-          "summary": "",
-          "url": "https://iotbusinessnews.com/2026/10/23/how-iot-and-predictive-maintenance-can-reduce-aerial-lift-downtime/",
           "sources": [
             "rss"
           ],
@@ -3192,7 +3192,7 @@
           "sources": [
             "rss"
           ],
-          "time": "12d",
+          "time": "13d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3205,7 +3205,7 @@
           "sources": [
             "rss"
           ],
-          "time": "15d",
+          "time": "16d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3218,7 +3218,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16d",
+          "time": "17d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3231,7 +3231,7 @@
           "sources": [
             "rss"
           ],
-          "time": "19d",
+          "time": "20d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3244,7 +3244,7 @@
           "sources": [
             "rss"
           ],
-          "time": "21d",
+          "time": "22d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3257,7 +3257,7 @@
           "sources": [
             "rss"
           ],
-          "time": "23d",
+          "time": "24d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3270,7 +3270,7 @@
           "sources": [
             "rss"
           ],
-          "time": "26d",
+          "time": "27d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3283,7 +3283,7 @@
           "sources": [
             "rss"
           ],
-          "time": "28d",
+          "time": "29d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3292,297 +3292,61 @@
       ]
     },
     "Aquaculture & IoT": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>forgotmenet/Iotlab-Automation-Test</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-</strong> (Score 45) và <strong>J-Akiru5/OptiFeed</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 89 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Sea Harvest declares maiden interim dividend, reduces debt despite revenue decline</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Dam fixed without disrupting crop cycle</strong> (Score 45) và <strong>Rentech highlights long-term solar value for farming sector</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 89 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "IoT",
           "items": [
-            1,
-            22,
-            37,
+            4,
+            17,
             38,
             39,
-            46,
-            56
-          ]
-        },
-        {
-          "label": "Water",
-          "items": [
-            1,
-            35,
-            37,
-            39,
-            46,
+            40,
             47,
-            51
+            57
           ]
         },
         {
-          "label": "Smart",
+          "label": "Quality",
           "items": [
-            1,
+            17,
+            36,
             38,
-            42,
-            58
+            40,
+            47,
+            48,
+            52
           ]
         },
         {
           "label": "Aquaculture",
           "items": [
-            32,
+            14,
+            40,
+            43,
+            59
+          ]
+        },
+        {
+          "label": "Smart",
+          "items": [
+            17,
             39,
-            42,
-            58
+            43,
+            59
           ]
         },
         {
           "label": "System",
           "items": [
-            35,
-            37,
+            36,
             38,
-            46
+            39,
+            47
           ]
         }
       ],
       "items": [
-        {
-          "title": "forgotmenet/Iotlab-Automation-Test",
-          "summary": "",
-          "url": "https://github.com/forgotmenet/Iotlab-Automation-Test",
-          "sources": [
-            "gh"
-          ],
-          "time": "5h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
-          "summary": "",
-          "url": "https://github.com/Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
-          "sources": [
-            "gh"
-          ],
-          "time": "6h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "J-Akiru5/OptiFeed",
-          "summary": "",
-          "url": "https://github.com/J-Akiru5/OptiFeed",
-          "sources": [
-            "gh"
-          ],
-          "time": "7h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "From Pixels to Actions - Towards Native Vision-Language-Action Policies",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06918v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "BEAKER: An Expert-Curated Benchmark for Embodied Brains in Self-Driving Chemical Laboratories",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06911v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "FrontierPhysics: Evaluating Agents for End-to-End Physics Research",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06910v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Perceptive Humanoid Motion from Simulation",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06908v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Motion-guided Contrastive Regularization For Latent World Models",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06901v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Occlusion for Free: Detecting Occlusion from the Disagreement Between Two Monocular Distance Cues",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06899v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Procedural Adversarial Learning",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06890v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Dull, Dirty, Dangerous? Working Conditions and the Limits of Occupational AI Exposure",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06888v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Learning to Decode Linear Codes with Generalized Belief Propagation Network",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06874v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "PixelSpline: Continuous Space-Time Video Super-Resolution via Endpoint-Anchored Shared Pixel Trajectories",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06870v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "On Turn-Level Best-of-N Sampling for Scaling LLM Agents",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06868v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv",
-          "watchlist_matched": "llm"
-        },
-        {
-          "title": "CounterFactual Retrieval for Evidence-Aware Individual Animal Identification",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06864v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "CompressionBench: How can your coding agents compress LLMs?",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06858v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv",
-          "watchlist_matched": "llm"
-        },
-        {
-          "title": "LongBanana: An Expert-Verified Benchmark for Long-Context Multi-Reference Image Synthesis",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06856v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Visual Token Routing: Learning to keep tokens that matter",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06854v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
         {
           "title": "Sea Harvest declares maiden interim dividend, reduces debt despite revenue decline",
           "summary": "",
@@ -3779,13 +3543,262 @@
           "source": "Engineering News | Aquaculture"
         },
         {
+          "title": "CAT scientist honoured for advances in aquaculture genetics",
+          "summary": "",
+          "url": "https://thefishsite.com/articles/cat-scientist-honoured-for-aquaculture-genetics-advances",
+          "sources": [
+            "rss"
+          ],
+          "time": "6h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "The Fish Site"
+        },
+        {
+          "title": "forgotmenet/Iotlab-Automation-Test",
+          "summary": "",
+          "url": "https://github.com/forgotmenet/Iotlab-Automation-Test",
+          "sources": [
+            "gh"
+          ],
+          "time": "15h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
+          "summary": "",
+          "url": "https://github.com/Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
+          "sources": [
+            "gh"
+          ],
+          "time": "15h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "J-Akiru5/OptiFeed",
+          "summary": "",
+          "url": "https://github.com/J-Akiru5/OptiFeed",
+          "sources": [
+            "gh"
+          ],
+          "time": "17h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "From Pixels to Actions - Towards Native Vision-Language-Action Policies",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06918v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "BEAKER: An Expert-Curated Benchmark for Embodied Brains in Self-Driving Chemical Laboratories",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06911v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "FrontierPhysics: Evaluating Agents for End-to-End Physics Research",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06910v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Perceptive Humanoid Motion from Simulation",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06908v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Motion-guided Contrastive Regularization For Latent World Models",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06901v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Occlusion for Free: Detecting Occlusion from the Disagreement Between Two Monocular Distance Cues",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06899v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Procedural Adversarial Learning",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06890v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Dull, Dirty, Dangerous? Working Conditions and the Limits of Occupational AI Exposure",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06888v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Learning to Decode Linear Codes with Generalized Belief Propagation Network",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06874v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "PixelSpline: Continuous Space-Time Video Super-Resolution via Endpoint-Anchored Shared Pixel Trajectories",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06870v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "On Turn-Level Best-of-N Sampling for Scaling LLM Agents",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06868v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "CounterFactual Retrieval for Evidence-Aware Individual Animal Identification",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06864v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "CompressionBench: How can your coding agents compress LLMs?",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06858v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "LongBanana: An Expert-Verified Benchmark for Long-Context Multi-Reference Image Synthesis",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06856v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Visual Token Routing: Learning to keep tokens that matter",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06854v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
           "title": "naginenijoshi/WATERGUARD-AI",
           "summary": "",
           "url": "https://github.com/naginenijoshi/WATERGUARD-AI",
           "sources": [
             "gh"
           ],
-          "time": "19h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3798,7 +3811,7 @@
           "sources": [
             "gh"
           ],
-          "time": "19h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3811,7 +3824,7 @@
           "sources": [
             "gh"
           ],
-          "time": "22h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3837,7 +3850,7 @@
           "sources": [
             "gh"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3902,7 +3915,7 @@
           "sources": [
             "gh"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3915,7 +3928,7 @@
           "sources": [
             "gh"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3941,7 +3954,7 @@
           "sources": [
             "gh"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
@@ -3954,7 +3967,7 @@
           "sources": [
             "gh"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3967,7 +3980,7 @@
           "sources": [
             "gh"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3980,7 +3993,7 @@
           "sources": [
             "gh"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
@@ -3993,7 +4006,7 @@
           "sources": [
             "gh"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4019,7 +4032,7 @@
           "sources": [
             "gh"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4032,7 +4045,7 @@
           "sources": [
             "gh"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4045,7 +4058,7 @@
           "sources": [
             "gh"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4071,7 +4084,7 @@
           "sources": [
             "gh"
           ],
-          "time": "9d",
+          "time": "10d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4097,7 +4110,7 @@
           "sources": [
             "gh"
           ],
-          "time": "10d",
+          "time": "11d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4110,7 +4123,7 @@
           "sources": [
             "gh"
           ],
-          "time": "11d",
+          "time": "12d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4123,7 +4136,7 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4149,7 +4162,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13d",
+          "time": "14d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4162,7 +4175,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16d",
+          "time": "17d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4175,7 +4188,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4188,7 +4201,7 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4201,7 +4214,7 @@
           "sources": [
             "rss"
           ],
-          "time": "22d",
+          "time": "23d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4214,7 +4227,7 @@
           "sources": [
             "rss"
           ],
-          "time": "42d",
+          "time": "43d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4227,7 +4240,7 @@
           "sources": [
             "rss"
           ],
-          "time": "43d",
+          "time": "44d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4240,7 +4253,7 @@
           "sources": [
             "rss"
           ],
-          "time": "44d",
+          "time": "45d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4253,7 +4266,7 @@
           "sources": [
             "rss"
           ],
-          "time": "48d",
+          "time": "49d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4279,7 +4292,7 @@
           "sources": [
             "rss"
           ],
-          "time": "69d",
+          "time": "70d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4318,7 +4331,7 @@
           "sources": [
             "rss"
           ],
-          "time": "18h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4331,7 +4344,7 @@
           "sources": [
             "rss"
           ],
-          "time": "21h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4357,7 +4370,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4370,7 +4383,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4383,7 +4396,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4396,7 +4409,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4409,7 +4422,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4422,7 +4435,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4435,7 +4448,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4448,7 +4461,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4461,7 +4474,7 @@
           "sources": [
             "rss"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -4474,7 +4487,7 @@
           "sources": [
             "rss"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -4487,37 +4500,23 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
-          "source": "The Fish Site"
-        },
-        {
-          "title": "New A$10 million aquaculture research hub in Australia",
-          "summary": "",
-          "url": "https://thefishsite.com/articles/new-a-10-million-aquaculture-research-hub-in-australia",
-          "sources": [
-            "rss"
-          ],
-          "time": "8d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market",
           "source": "The Fish Site"
         }
       ]
     },
     "Social Buzz": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM</strong> (Score 45) — <em>Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware.</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Best workflows for automated code refactoring and multi-file project architecture in 2026</strong> (Score 45): Developers share prompt templates and custom actions for codebase review, debugging, and systematic test generation. và <strong>Embodied intelligence breakthroughs: From language models to physical world manipulation</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 144 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM</strong> (Score 45) — <em>Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware.</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Best workflows for automated code refactoring and multi-file project architecture in 2026</strong> (Score 45): Developers share prompt templates and custom actions for codebase review, debugging, and systematic test generation. và <strong>Embodied intelligence breakthroughs: From language models to physical world manipulation</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 147 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "Google",
           "items": [
-            32,
+            36,
             53,
             56,
-            124,
             125,
             126,
             127,
@@ -4530,13 +4529,13 @@
             134,
             135,
             136,
-            137
+            137,
+            138
           ]
         },
         {
           "label": "Google Trends",
           "items": [
-            124,
             125,
             126,
             127,
@@ -4549,17 +4548,8 @@
             134,
             135,
             136,
-            137
-          ]
-        },
-        {
-          "label": "IoT",
-          "items": [
-            13,
-            28,
-            37,
-            124,
-            143
+            137,
+            138
           ]
         },
         {
@@ -4570,6 +4560,15 @@
             70,
             102,
             112
+          ]
+        },
+        {
+          "label": "IoT",
+          "items": [
+            13,
+            28,
+            37,
+            125
           ]
         },
         {
@@ -5072,16 +5071,16 @@
           "subreddit": "r/startups"
         },
         {
-          "title": "8 months into our B2B SaaS startup. Early traction, then nothing. When do you know it's time to quit? - I will not promote",
-          "summary": "We started a B2B SaaS company earlier this year, building a platform for IT teams. Initially, things went surprisingly well. We built an MVP, got a few paying customers relatively quickly, and felt like we were onto something. Then summer came, and sales slowed down. Not unexpected. After summer, we",
-          "url": "https://www.reddit.com/r/startups/comments/1xnnazv/8_months_into_our_b2b_saas_startup_early_traction/",
+          "title": "What's the best way to code if you're not a Coder ( I will not promote )",
+          "summary": "The whole world is now riding the AI wave and i am no exception and to be honest i am not that well versed in coding or coding language and i take help from the AI chatbots every now and then and put my code up to produce something or the other like features and stuff. What i want to know that how m",
+          "url": "https://www.reddit.com/r/startups/comments/1xoaxvu/whats_the_best_way_to_code_if_youre_not_a_coder_i/",
           "sources": [
             "reddit"
           ],
           "time": "today",
           "score": 45,
           "velocity": "stable",
-          "tag": "tool",
+          "tag": "signal",
           "source": "Reddit r/startups",
           "date": "2026-11-05",
           "engagement": 210,
@@ -5144,6 +5143,24 @@
           "subreddit": "r/Entrepreneur"
         },
         {
+          "title": "8 months into our B2B SaaS startup. Early traction, then nothing. When do you know it's time to quit? - I will not promote",
+          "summary": "We started a B2B SaaS company earlier this year, building a platform for IT teams. Initially, things went surprisingly well. We built an MVP, got a few paying customers relatively quickly, and felt like we were onto something. Then summer came, and sales slowed down. Not unexpected. After summer, we",
+          "url": "https://www.reddit.com/r/startups/comments/1xnnazv/8_months_into_our_b2b_saas_startup_early_traction/",
+          "sources": [
+            "reddit"
+          ],
+          "time": "today",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "tool",
+          "source": "Reddit r/startups",
+          "date": "2026-11-05",
+          "engagement": 200,
+          "upvotes": 200,
+          "comments": 40,
+          "subreddit": "r/startups"
+        },
+        {
           "title": "Web Summit Lisbon - I will not promote",
           "summary": "I have 2 Women in Tech tickets for Web Summit 2026 in Lisbon (November 9–12). The tickets were purchased through the official website, but unfortunately we won’t be able to attend. Tickets will be transferred via email. DM me if you’re interested. &#32; submitted by &#32; /u/Keen_Looker [link] &#32;",
           "url": "https://www.reddit.com/r/startups/comments/1xnikfl/web_summit_lisbon_i_will_not_promote/",
@@ -5156,24 +5173,6 @@
           "tag": "signal",
           "source": "Reddit r/startups",
           "date": "2026-11-04",
-          "engagement": 200,
-          "upvotes": 200,
-          "comments": 40,
-          "subreddit": "r/startups"
-        },
-        {
-          "title": "I will not promote | UK App Developers: How are you passing Apple/Google org verification without revealing your home address?",
-          "summary": "Hey everyone, I hope this is the right place to ask. I’m currently setting up a UK Ltd company for an app I’m releasing on both the App Store and Google Play. Since I work from home, I don’t want my residential address publicly displayed on Companies House or the app store listings (under EU/UK trad",
-          "url": "https://www.reddit.com/r/startups/comments/1xny66q/i_will_not_promote_uk_app_developers_how_are_you/",
-          "sources": [
-            "reddit"
-          ],
-          "time": "today",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "Reddit r/startups",
-          "date": "2026-11-05",
           "engagement": 200,
           "upvotes": 200,
           "comments": 40,
@@ -5234,16 +5233,16 @@
           "subreddit": "r/Entrepreneur"
         },
         {
-          "title": "How can you handle distributions? I will not promote",
-          "summary": "how do you guys approach distribution when launching your products? what do you rely on the most for organic marketing, aso, or paid ads through meta and google? i use different ways to promote my own products and so far i feel like organic growth works best especially when it comes to unit economic",
-          "url": "https://www.reddit.com/r/startups/comments/1xnw373/how_can_you_handle_distributions_i_will_not/",
+          "title": "I will not promote | UK App Developers: How are you passing Apple/Google org verification without revealing your home address?",
+          "summary": "Hey everyone, I hope this is the right place to ask. I’m currently setting up a UK Ltd company for an app I’m releasing on both the App Store and Google Play. Since I work from home, I don’t want my residential address publicly displayed on Companies House or the app store listings (under EU/UK trad",
+          "url": "https://www.reddit.com/r/startups/comments/1xny66q/i_will_not_promote_uk_app_developers_how_are_you/",
           "sources": [
             "reddit"
           ],
           "time": "today",
           "score": 45,
           "velocity": "stable",
-          "tag": "market",
+          "tag": "signal",
           "source": "Reddit r/startups",
           "date": "2026-11-05",
           "engagement": 190,
@@ -5324,9 +5323,9 @@
           "subreddit": "r/Entrepreneur"
         },
         {
-          "title": "Best Resources for First-Time SaaS Founders? - I will not promote",
-          "summary": "A friend and I are working on a cybersecurity startup. He’ll handle product development, while I’ll focus on business development, go-to-market strategy, and company operations. I have a strong IT and cybersecurity background, including leadership and some sales engineering experience. However, I’ve",
-          "url": "https://www.reddit.com/r/startups/comments/1xnwwyk/best_resources_for_firsttime_saas_founders_i_will/",
+          "title": "How can you handle distributions? I will not promote",
+          "summary": "how do you guys approach distribution when launching your products? what do you rely on the most for organic marketing, aso, or paid ads through meta and google? i use different ways to promote my own products and so far i feel like organic growth works best especially when it comes to unit economic",
+          "url": "https://www.reddit.com/r/startups/comments/1xnw373/how_can_you_handle_distributions_i_will_not/",
           "sources": [
             "reddit"
           ],
@@ -5522,16 +5521,16 @@
           "subreddit": "r/startups"
         },
         {
-          "title": "(Equity split) Is there a complete spreadsheet that helps deciding the equity split between founders? Is there a more straightforward way than that? (I will not promote)",
-          "summary": "There are so many variables that need to be taken into account, that is why I am considering a spreadsheet to be a good option. At least to know a hint of the ideal split. In my case, it is not a simple 50 50 split, because one side will do less than the other, that is why I wanted something that ca",
-          "url": "https://www.reddit.com/r/startups/comments/1xnsnyd/equity_split_is_there_a_complete_spreadsheet_that/",
+          "title": "Best Resources for First-Time SaaS Founders? - I will not promote",
+          "summary": "A friend and I are working on a cybersecurity startup. He’ll handle product development, while I’ll focus on business development, go-to-market strategy, and company operations. I have a strong IT and cybersecurity background, including leadership and some sales engineering experience. However, I’ve",
+          "url": "https://www.reddit.com/r/startups/comments/1xnwwyk/best_resources_for_firsttime_saas_founders_i_will/",
           "sources": [
             "reddit"
           ],
           "time": "today",
           "score": 45,
           "velocity": "stable",
-          "tag": "signal",
+          "tag": "market",
           "source": "Reddit r/startups",
           "date": "2026-11-05",
           "engagement": 170,
@@ -5774,16 +5773,16 @@
           "subreddit": "r/startups"
         },
         {
-          "title": "Launch marketing strateg, affiliate? - I will not promote",
-          "summary": "I’m working on desktop app, the idea came from my own need and what I’ve seen at work. I validated pain points with people in similar positions to mine that experience the same issues. Currently my plan is to start alpha testing with some friends and then open a waitlist and start beta testing. I ne",
-          "url": "https://www.reddit.com/r/startups/comments/1xnrb5a/launch_marketing_strateg_affiliate_i_will_not/",
+          "title": "(Equity split) Is there a complete spreadsheet that helps deciding the equity split between founders? Is there a more straightforward way than that? (I will not promote)",
+          "summary": "There are so many variables that need to be taken into account, that is why I am considering a spreadsheet to be a good option. At least to know a hint of the ideal split. In my case, it is not a simple 50 50 split, because one side will do less than the other, that is why I wanted something that ca",
+          "url": "https://www.reddit.com/r/startups/comments/1xnsnyd/equity_split_is_there_a_complete_spreadsheet_that/",
           "sources": [
             "reddit"
           ],
           "time": "today",
           "score": 45,
           "velocity": "stable",
-          "tag": "tool",
+          "tag": "signal",
           "source": "Reddit r/startups",
           "date": "2026-11-05",
           "engagement": 160,
@@ -6153,16 +6152,16 @@
           "subreddit": "r/startups"
         },
         {
-          "title": "B2B SaaS Build Dilemma ( I will not promote )",
-          "summary": "I don't know who needs to hear this or how many experts are sitting here thinking they know everything but - Building a B2B SaaS is not an easy task and needs serious lock in and efforts to build it. It demands constant lock in and necessary basic understanding of what you are doing at the basic or ",
-          "url": "https://www.reddit.com/r/startups/comments/1xnixrh/b2b_saas_build_dilemma_i_will_not_promote/",
+          "title": "Launch marketing strateg, affiliate? - I will not promote",
+          "summary": "I’m working on desktop app, the idea came from my own need and what I’ve seen at work. I validated pain points with people in similar positions to mine that experience the same issues. Currently my plan is to start alpha testing with some friends and then open a waitlist and start beta testing. I ne",
+          "url": "https://www.reddit.com/r/startups/comments/1xnrb5a/launch_marketing_strateg_affiliate_i_will_not/",
           "sources": [
             "reddit"
           ],
           "time": "today",
           "score": 45,
           "velocity": "stable",
-          "tag": "signal",
+          "tag": "tool",
           "source": "Reddit r/startups",
           "date": "2026-11-05",
           "engagement": 150,
@@ -6712,6 +6711,24 @@
           "subreddit": "r/startups"
         },
         {
+          "title": "B2B SaaS Build Dilemma ( I will not promote )",
+          "summary": "I don't know who needs to hear this or how many experts are sitting here thinking they know everything but - Building a B2B SaaS is not an easy task and needs serious lock in and efforts to build it. It demands constant lock in and necessary basic understanding of what you are doing at the basic or ",
+          "url": "https://www.reddit.com/r/startups/comments/1xnixrh/b2b_saas_build_dilemma_i_will_not_promote/",
+          "sources": [
+            "reddit"
+          ],
+          "time": "today",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "Reddit r/startups",
+          "date": "2026-11-05",
+          "engagement": 140,
+          "upvotes": 140,
+          "comments": 28,
+          "subreddit": "r/startups"
+        },
+        {
           "title": "What are the best books to learn Embedded Linux and Linux device driver development for SoCs?",
           "summary": "I want to start studying Linux internals and embedded Linux systematically. I would appreciate recommendations for books or other learning resources covering: Linux kernel internals: Memory management, process scheduling, synchronization, and kernel architecture. Linux device driver development: Cha",
           "url": "https://www.reddit.com/r/embedded/comments/1xeavk7/what_are_the_best_books_to_learn_embedded_linux/",
@@ -7031,9 +7048,9 @@
           "engagement": 30
         },
         {
-          "title": "#AEWDynamite trending with 15K+ tweets",
-          "summary": "Chủ đề #AEWBloodAndGuts ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=%23AEWDynamite",
+          "title": "Good Thursday trending with 15K+ tweets",
+          "summary": "Chủ đề Good Thursday ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+          "url": "https://x.com/search?q=Good%20Thursday",
           "sources": [
             "x"
           ],
@@ -7046,9 +7063,9 @@
           "engagement": 15000
         },
         {
-          "title": "#Survivor51 trending with 15K+ tweets",
-          "summary": "Chủ đề #Survivor51 ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=%23Survivor51",
+          "title": "Cristiano Ronaldo trending with 15K+ tweets",
+          "summary": "Chủ đề Cristiano Ronaldo ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+          "url": "https://x.com/search?q=Cristiano%20Ronaldo",
           "sources": [
             "x"
           ],
@@ -7061,9 +7078,9 @@
           "engagement": 15000
         },
         {
-          "title": "#WWENXT trending with 15K+ tweets",
-          "summary": "Chủ đề #WWENXT ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=%23WWENXT",
+          "title": "#YaoRunhaoSecretLifeWithSubs trending with 15K+ tweets",
+          "summary": "Chủ đề #YaoRunhaoSecretLifeWithSubs ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+          "url": "https://x.com/search?q=%23YaoRunhaoSecretLifeWithSubs",
           "sources": [
             "x"
           ],
@@ -7076,9 +7093,9 @@
           "engagement": 15000
         },
         {
-          "title": "#MitchJonesWoWGiveaway trending with 15K+ tweets",
-          "summary": "Chủ đề #MitchJonesWoWGiveaway ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=%23MitchJonesWoWGiveaway",
+          "title": "#ä¸æµ·å çº¸å§æ¶¦æç¯çé²åº trending with 15K+ tweets",
+          "summary": "Chủ đề #ä¸æµ·å çº¸å§æ¶¦æç¯çé²åº ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+          "url": "https://x.com/search?q=%23%C3%A4%C2%B8%C2%8A%C3%A6%C2%B5%C2%B7%C3%A5%C2%8F%C2%A0%C3%A7%C2%BA%C2%B8%C3%A5%C2%A7%C2%9A%C3%A6%C2%B6%C2%A6%C3%A6%C2%98%C2%8A%C3%A7%C2%8E%C2%AF%C3%A7%C2%90%C2%83%C3%A9%C2%9C%C2%B2%C3%A5%C2%87%C2%BA",
           "sources": [
             "x"
           ],
@@ -7091,9 +7108,9 @@
           "engagement": 15000
         },
         {
-          "title": "Vance trending with 15K+ tweets",
-          "summary": "Chủ đề Vance ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=Vance",
+          "title": "Happy Friday Eve trending with 15K+ tweets",
+          "summary": "Chủ đề Happy Friday Eve ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+          "url": "https://x.com/search?q=Happy%20Friday%20Eve",
           "sources": [
             "x"
           ],
@@ -7106,9 +7123,39 @@
           "engagement": 15000
         },
         {
-          "title": "#IoT trending with 24K tweets",
+          "title": "PERTHSANTA MEMORABLE NIGHT trending with 15K+ tweets",
+          "summary": "Chủ đề PERTHSANTA MEMORABLE NIGHT ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+          "url": "https://x.com/search?q=PERTHSANTA%20MEMORABLE%20NIGHT",
+          "sources": [
+            "x"
+          ],
+          "time": "today",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "Twitter/X Trending",
+          "date": "2026-11-05",
+          "engagement": 15000
+        },
+        {
+          "title": "#iQIYIiJOYTH2027 trending with 15K+ tweets",
+          "summary": "Chủ đề #iQIYIiJOYTH2027 ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+          "url": "https://x.com/search?q=%23iQIYIiJOYTH2027",
+          "sources": [
+            "x"
+          ],
+          "time": "today",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "Twitter/X Trending",
+          "date": "2026-11-05",
+          "engagement": 15000
+        },
+        {
+          "title": "#AI trending with 125K tweets",
           "summary": "Chủ đề #startup ghi nhận 42K bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=%23IoT",
+          "url": "https://x.com/search?q=%23AI",
           "sources": [
             "x"
           ],
@@ -7118,42 +7165,75 @@
           "tag": "signal",
           "source": "Twitter/X Trending",
           "date": "2026-11-05",
-          "engagement": 24000
+          "engagement": 125000
         }
       ]
     },
     "Business": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Crunchbase Data: Less Than 2% Of 2026 Venture Funding Went To Post-Election Red States</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>The Crunchbase Tech Layoffs Tracker</strong> (Score 45) và <strong>Sequoia hits rewind, undoing 20 years of expansion</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 40 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>AI Lost Big in the Midterms. What Does That Mean for Your Business?</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak</strong> (Score 45) và <strong>Crunchbase Data: Less Than 2% Of 2026 Venture Funding Went To Post-Election Red States</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 40 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "TechCrunch Founder Summit",
           "items": [
-            5,
-            10,
-            19,
-            28,
+            7,
+            12,
+            21,
             30,
-            36
+            32,
+            37
           ]
         },
         {
           "label": "Boston",
           "items": [
-            5,
-            9,
-            10,
-            19
+            7,
+            11,
+            12,
+            21
+          ]
+        },
+        {
+          "label": "Sector Snapshot",
+          "items": [
+            1,
+            34
           ]
         },
         {
           "label": "Here",
           "items": [
-            4,
-            21
+            6,
+            23
           ]
         }
       ],
       "items": [
+        {
+          "title": "AI Lost Big in the Midterms. What Does That Mean for Your Business?",
+          "summary": "",
+          "url": "http://hbr.org/2026/11/ai-lost-big-in-the-midterms-what-does-that-mean-for-your-business",
+          "sources": [
+            "rss"
+          ],
+          "time": "37m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "HBR CMS"
+        },
+        {
+          "title": "Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak",
+          "summary": "",
+          "url": "https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "market",
+          "source": "Crunchbase News"
+        },
         {
           "title": "Crunchbase Data: Less Than 2% Of 2026 Venture Funding Went To Post-Election Red States",
           "summary": "",
@@ -7161,9 +7241,9 @@
           "sources": [
             "rss"
           ],
-          "time": "8h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "17h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "market",
           "source": "Crunchbase News"
         },
@@ -7174,9 +7254,9 @@
           "sources": [
             "rss"
           ],
-          "time": "10h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "20h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "Crunchbase News"
         },
@@ -7187,9 +7267,9 @@
           "sources": [
             "rss"
           ],
-          "time": "10h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "20h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "Venture Capital News | TechCrunch"
         },
@@ -7200,7 +7280,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7213,7 +7293,7 @@
           "sources": [
             "rss"
           ],
-          "time": "15h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7226,7 +7306,7 @@
           "sources": [
             "rss"
           ],
-          "time": "15h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7239,7 +7319,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7304,7 +7384,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7317,7 +7397,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7330,7 +7410,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -7343,7 +7423,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7356,7 +7436,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7421,7 +7501,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7434,7 +7514,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7447,7 +7527,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7460,7 +7540,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -7486,7 +7566,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7551,7 +7631,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7564,20 +7644,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "HBR CMS"
-        },
-        {
-          "title": "Build the Mindset That Keeps Your Team Moving Forward",
-          "summary": "",
-          "url": "http://hbr.org/2026/10/build-the-mindset-that-keeps-your-team-moving-forward",
-          "sources": [
-            "rss"
-          ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7590,7 +7657,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -7629,7 +7696,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7642,7 +7709,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -7655,23 +7722,10 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "Crunchbase News"
-        },
-        {
-          "title": "Exclusive: Numeracle Raises $28M To Keep Legitimate Business Calls From Spam Label",
-          "summary": "",
-          "url": "https://news.crunchbase.com/venture/numeracle-raise-edison-ai-spam-communications-johnson/",
-          "sources": [
-            "rss"
-          ],
           "time": "7d",
           "score": 41,
           "velocity": "cooling",
-          "tag": "market",
+          "tag": "signal",
           "source": "Crunchbase News"
         }
       ]
@@ -7679,15 +7733,6 @@
     "News": {
       "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Rules tightened on foreign-only prize-winning electronic games - vietnamnews.vn</strong> (Score 41).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>China plans to issue a set of standards for AI management. - Vietnam.vn</strong> (Score 41) và <strong>AI Act sửa đổi của EU: Tác động và gợi mở đối với Việt Nam - Báo Đại biểu Nhân dân</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 16 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
-        {
-          "label": "Vietnam",
-          "items": [
-            1,
-            4,
-            13,
-            15
-          ]
-        },
         {
           "label": "Nam",
           "items": [
@@ -7698,18 +7743,18 @@
           ]
         },
         {
-          "label": "Artificial Intelligence",
+          "label": "Vietnam",
           "items": [
-            7,
-            10,
-            15
+            1,
+            4,
+            14
           ]
         },
         {
           "label": "AI Act",
           "items": [
             2,
-            12
+            13
           ]
         },
         {
@@ -7717,6 +7762,13 @@
           "items": [
             3,
             8
+          ]
+        },
+        {
+          "label": "Artificial Intelligence",
+          "items": [
+            7,
+            10
           ]
         }
       ],
@@ -7728,7 +7780,7 @@
           "sources": [
             "rss"
           ],
-          "time": "221d",
+          "time": "222d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
@@ -7754,7 +7806,7 @@
           "sources": [
             "rss"
           ],
-          "time": "86d",
+          "time": "87d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7767,7 +7819,7 @@
           "sources": [
             "rss"
           ],
-          "time": "78d",
+          "time": "79d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7793,7 +7845,7 @@
           "sources": [
             "rss"
           ],
-          "time": "247d",
+          "time": "248d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
@@ -7806,7 +7858,7 @@
           "sources": [
             "rss"
           ],
-          "time": "169d",
+          "time": "170d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7819,7 +7871,7 @@
           "sources": [
             "rss"
           ],
-          "time": "347d",
+          "time": "348d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
@@ -7832,7 +7884,7 @@
           "sources": [
             "rss"
           ],
-          "time": "246d",
+          "time": "247d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7845,7 +7897,7 @@
           "sources": [
             "rss"
           ],
-          "time": "275d",
+          "time": "276d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7858,7 +7910,7 @@
           "sources": [
             "rss"
           ],
-          "time": "350d",
+          "time": "351d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7871,7 +7923,20 @@
           "sources": [
             "rss"
           ],
-          "time": "20d",
+          "time": "21d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
+          "title": "Dự luật SAVE America Act của Tổng thống Trump không vượt qua ‘ải’ Thượng viện - Báo Tin tức và Dân tộc - TTXVN",
+          "summary": "",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdXptQ1hyRURsUzl0V0NWaHpzWmhnSWFPRlZ0T3Fmalh4TXpEc21Pd2l0MUFYTEpvOFNGWkNaY0dpV3FCWjZSVU5nSnRxbEx5OTJ1cTdaemdiSmdteldJcVJVYThrMW1JQ1dmMEl0U2FFbFViZjNJUzdQMlJNY1pCeDQ2Tm42SkU4eGxRSk9GRl9fUmNiR09vUUU2MTJna3ZTRzg4REZFeW1LZU5JVlNLa3dn?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "153d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7884,7 +7949,7 @@
           "sources": [
             "rss"
           ],
-          "time": "86d",
+          "time": "87d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7897,7 +7962,7 @@
           "sources": [
             "rss"
           ],
-          "time": "36d",
+          "time": "37d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -7910,59 +7975,39 @@
           "sources": [
             "rss"
           ],
-          "time": "321d",
+          "time": "322d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
-          "source": "\"AI regulation\" - Google Tin tức"
-        },
-        {
-          "title": "Vietnam officially has a law on Artificial Intelligence, with a human-centered approach. - Vietnam.vn",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQTDIyaFFPNjdyWXZrQldGUkhRTFVpSHQzVDZwT0w5aHhSQnc1aEZwOHVQZ2c4U05OZmpoUEE0QkNmMW9kSTY4Um5KNzlTQUJTLWRQVmE5UTVnSU5BWHhweUJSR1JJN2lvVVVrSXd2SHN6bWU4R1hFMlQyU3ZZanl6X3FOdmxndWx3WlNQM1ppczBFYU1xN2tsNUJHT3JJeUE?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "328d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
           "source": "\"AI regulation\" - Google Tin tức"
         }
       ]
     },
     "iGaming": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>EveryMatrix: Building trust on a history of success</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Channel 4 “game show” risks damaging gambling’s public image</strong> (Score 45) và <strong>“You are prohibited” – TikTok makes gambling policy clear to users</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 25 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Raketech maps out investment plan as Q3 shows cost cutting success</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>SBC establishes Regulatory Advisory Board to strengthen global industry dialogue</strong> (Score 45) và <strong>Brazil betting ban divides the spectrum of sports, society and commerce</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 25 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "Brazil",
           "items": [
-            3,
-            8,
-            9,
-            14,
+            2,
+            6,
+            11,
+            12,
             21
           ]
         },
         {
           "label": "Flutter",
           "items": [
-            3,
-            6
+            6,
+            9
           ]
         },
         {
           "label": "Lottomatica",
           "items": [
-            4,
+            7,
             19
-          ]
-        },
-        {
-          "label": "ASIC",
-          "items": [
-            15,
-            20
           ]
         },
         {
@@ -7975,13 +8020,52 @@
       ],
       "items": [
         {
-          "title": "EveryMatrix: Building trust on a history of success",
+          "title": "Raketech maps out investment plan as Q3 shows cost cutting success",
           "summary": "",
-          "url": "https://sbcnews.co.uk/features/interviews/2026/11/04/everymatrix-gambling-supplier/",
+          "url": "https://sbcnews.co.uk/affiliatenews/2026/11/05/raketech-investment-targets/",
           "sources": [
             "rss"
           ],
-          "time": "10h",
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "SBC News"
+        },
+        {
+          "title": "SBC establishes Regulatory Advisory Board to strengthen global industry dialogue",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/events/sbcevents/2026/11/05/sbc-advisory-board/",
+          "sources": [
+            "rss"
+          ],
+          "time": "2h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "SBC News"
+        },
+        {
+          "title": "Brazil betting ban divides the spectrum of sports, society and commerce",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/features/comment/2026/11/05/brazil-betting-ban-sports-debt/",
+          "sources": [
+            "rss"
+          ],
+          "time": "2h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "risk",
+          "source": "SBC News"
+        },
+        {
+          "title": "GRAI shares important takeaways for Irish operators",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/europe/2026/11/05/ireland-gambling-grai/",
+          "sources": [
+            "rss"
+          ],
+          "time": "2h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -7990,13 +8074,13 @@
         {
           "title": "Channel 4 “game show” risks damaging gambling’s public image",
           "summary": "",
-          "url": "https://sbcnews.co.uk/social-responsibility/2026/11/04/channel-4-gambling-show/",
+          "url": "https://sbcnews.co.uk/features/video/2026/11/04/channel-4-gambling-show/",
           "sources": [
             "rss"
           ],
-          "time": "11h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "21h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "SBC News"
         },
@@ -8007,7 +8091,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13h",
+          "time": "22h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8020,7 +8104,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8033,7 +8117,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8046,7 +8130,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8059,7 +8143,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8072,7 +8156,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8085,7 +8169,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -8098,7 +8182,7 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
@@ -8111,7 +8195,7 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8124,7 +8208,7 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
@@ -8137,50 +8221,11 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
           "source": "iGB"
-        },
-        {
-          "title": "Is Super Group about to lap itself? YTD profit close to beating FY25 figures",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/sportsbook/2026/11/04/super-group-q3-results/",
-          "sources": [
-            "rss"
-          ],
-          "time": "18h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "SBC News"
-        },
-        {
-          "title": "Kambi reports resilient Q3 against Brazil ban and post-World Cup slowdown",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/sportsbook/2026/11/04/kambi-brazil-world-cup-q3/",
-          "sources": [
-            "rss"
-          ],
-          "time": "19h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "risk",
-          "source": "SBC News"
-        },
-        {
-          "title": "“All the features of a bet” – ASIC says no to Australian prediction markets",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/technology/2026/11/04/australia-prediction-markets/",
-          "sources": [
-            "rss"
-          ],
-          "time": "20h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market",
-          "source": "SBC News"
         },
         {
           "title": "US midterm elections 2026 ballot measures to watch: Nebraska, Virginia, Indiana",
@@ -8215,7 +8260,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8228,7 +8273,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -8241,7 +8286,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -8254,7 +8299,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8267,7 +8312,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8280,7 +8325,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8293,7 +8338,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8307,13 +8352,13 @@
         {
           "label": "NVIDIA",
           "items": [
-            19,
-            36,
-            42,
+            18,
+            40,
             45,
-            46,
-            47,
-            48
+            48,
+            49,
+            50,
+            51
           ]
         },
         {
@@ -8323,8 +8368,7 @@
             64,
             66,
             67,
-            69,
-            72
+            70
           ]
         },
         {
@@ -8332,23 +8376,23 @@
           "items": [
             0,
             1,
-            6,
-            10
+            8,
+            12
           ]
         },
         {
           "label": "Agent",
           "items": [
             2,
-            9,
-            36
+            11,
+            40
           ]
         },
         {
-          "label": "ChatGPT",
+          "label": "October",
           "items": [
-            15,
-            32
+            21,
+            23
           ]
         }
       ],
@@ -8427,17 +8471,43 @@
           "subreddit": "r/StableDiffusion"
         },
         {
-          "title": "Dharma Field Extractor: Any Document In, Structured Fields in JSON Out",
+          "title": "Nemotron 3.5 Transcribe",
           "summary": "",
-          "url": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor",
+          "url": "https://www.producthunt.com/products/nvidia",
           "sources": [
             "rss"
           ],
-          "time": "10h",
+          "time": "8h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
-          "source": "Hugging Face Blog"
+          "source": "Product Hunt AI"
+        },
+        {
+          "title": "Setting a new standard for responsible AI infrastructure",
+          "summary": "",
+          "url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure",
+          "sources": [
+            "rss"
+          ],
+          "time": "11h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "OpenAI Blog"
+        },
+        {
+          "title": "Polylane for Google Cloud",
+          "summary": "",
+          "url": "https://www.producthunt.com/products/polylane",
+          "sources": [
+            "rss"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Product Hunt AI"
         },
         {
           "title": "datasette-llm 0.1a10",
@@ -8446,7 +8516,7 @@
           "sources": [
             "rss"
           ],
-          "time": "12h",
+          "time": "22h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8454,13 +8524,13 @@
           "watchlist_matched": "llm"
         },
         {
-          "title": "Rungle",
+          "title": "AI Employees by Easy-Peasy.AI",
           "summary": "",
-          "url": "https://www.producthunt.com/products/rungle",
+          "url": "https://www.producthunt.com/products/easy-peasy-ai",
           "sources": [
             "rss"
           ],
-          "time": "21h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8507,19 +8577,6 @@
           "watchlist_matched": "llm"
         },
         {
-          "title": "Hindsight Models and Inference API",
-          "summary": "",
-          "url": "https://www.producthunt.com/products/vectorize",
-          "sources": [
-            "rss"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "tool",
-          "source": "Product Hunt AI"
-        },
-        {
           "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
           "summary": "",
           "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
@@ -8546,65 +8603,39 @@
           "source": "NVIDIA AI Blog"
         },
         {
-          "title": "Zero Wire",
+          "title": "Rerun",
           "summary": "",
-          "url": "https://www.producthunt.com/products/cloudflare",
+          "url": "https://www.producthunt.com/products/rerun-2",
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
           "source": "Product Hunt AI"
         },
         {
-          "title": "LiveReacting for ChatGPT",
+          "title": "Seamcult",
           "summary": "",
-          "url": "https://www.producthunt.com/products/livereacting",
+          "url": "https://www.producthunt.com/products/seamcult",
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
           "source": "Product Hunt AI"
         },
         {
-          "title": "Datashake MCP",
+          "title": "Pinku",
           "summary": "",
-          "url": "https://www.producthunt.com/products/datashake-hub",
+          "url": "https://www.producthunt.com/products/pinku",
           "sources": [
             "rss"
           ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "Product Hunt AI"
-        },
-        {
-          "title": "QualityLayer",
-          "summary": "",
-          "url": "https://www.producthunt.com/products/qualitylayer",
-          "sources": [
-            "rss"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "Product Hunt AI"
-        },
-        {
-          "title": "Resum",
-          "summary": "",
-          "url": "https://www.producthunt.com/products/resum",
-          "sources": [
-            "rss"
-          ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8617,11 +8648,24 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
           "source": "NVIDIA AI Blog"
+        },
+        {
+          "title": "Stitch.ai",
+          "summary": "",
+          "url": "https://www.producthunt.com/products/stitch-ai",
+          "sources": [
+            "rss"
+          ],
+          "time": "2d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Product Hunt AI"
         },
         {
           "title": "I discovered a sound that leaks your exact location (and it's everywhere) - YouTube",
@@ -8630,7 +8674,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8643,11 +8687,24 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
           "source": "Simon Willison"
+        },
+        {
+          "title": "Glasshand",
+          "summary": "",
+          "url": "https://www.producthunt.com/products/glasshand",
+          "sources": [
+            "rss"
+          ],
+          "time": "2d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Product Hunt AI"
         },
         {
           "title": "The latest AI news we announced in October 2026",
@@ -8663,9 +8720,9 @@
           "source": "Google AI Blog"
         },
         {
-          "title": "OpusClip 4.0",
+          "title": "Living Brain",
           "summary": "",
-          "url": "https://www.producthunt.com/products/opusclip",
+          "url": "https://www.producthunt.com/products/chatandbuild",
           "sources": [
             "rss"
           ],
@@ -8682,11 +8739,24 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
           "source": "Simon Willison"
+        },
+        {
+          "title": "Clocknext",
+          "summary": "",
+          "url": "https://www.producthunt.com/products/clocknext",
+          "sources": [
+            "rss"
+          ],
+          "time": "3d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Product Hunt AI"
         },
         {
           "title": "If in doubt, delete the uv.lock file",
@@ -8702,9 +8772,9 @@
           "source": "Simon Willison"
         },
         {
-          "title": "KREV AI",
+          "title": "Maritime",
           "summary": "",
-          "url": "https://www.producthunt.com/products/krev",
+          "url": "https://www.producthunt.com/products/maritime",
           "sources": [
             "rss"
           ],
@@ -8728,9 +8798,9 @@
           "source": "Simon Willison"
         },
         {
-          "title": "Prelulu",
+          "title": "Pushary for Teams",
           "summary": "",
-          "url": "https://www.producthunt.com/products/prelulu",
+          "url": "https://www.producthunt.com/products/pushary",
           "sources": [
             "rss"
           ],
@@ -8813,11 +8883,37 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
           "source": "NVIDIA AI Blog"
+        },
+        {
+          "title": "Zerg Client",
+          "summary": "",
+          "url": "https://www.producthunt.com/products/zerg",
+          "sources": [
+            "rss"
+          ],
+          "time": "7d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Product Hunt AI"
+        },
+        {
+          "title": "Bridge",
+          "summary": "",
+          "url": "https://www.producthunt.com/products/meetonbridge",
+          "sources": [
+            "rss"
+          ],
+          "time": "7d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Product Hunt AI"
         },
         {
           "title": "Meta Partners With Five US Universities to Accelerate Medical and Scientific Breakthroughs",
@@ -8846,13 +8942,13 @@
           "source": "NVIDIA AI Blog"
         },
         {
-          "title": "Wanaka Studio",
+          "title": "SnapTiles",
           "summary": "",
-          "url": "https://www.producthunt.com/products/wanaka-studio",
+          "url": "https://www.producthunt.com/products/snaptiles",
           "sources": [
             "rss"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8883,19 +8979,6 @@
           "velocity": "cooling",
           "tag": "signal",
           "source": "Google AI Blog"
-        },
-        {
-          "title": "Render Sandboxes",
-          "summary": "",
-          "url": "https://www.producthunt.com/products/render",
-          "sources": [
-            "rss"
-          ],
-          "time": "12d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "Product Hunt AI"
         },
         {
           "title": "Kazakhstan Expands Compute for Its AI Future",
@@ -8930,7 +9013,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13d",
+          "time": "14d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8943,7 +9026,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13d",
+          "time": "14d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8956,7 +9039,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13d",
+          "time": "14d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8969,7 +9052,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13d",
+          "time": "14d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8982,7 +9065,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13d",
+          "time": "14d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -8995,24 +9078,11 @@
           "sources": [
             "rss"
           ],
-          "time": "13d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "NVIDIA AI Blog"
-        },
-        {
-          "title": "Dessn",
-          "summary": "",
-          "url": "https://www.producthunt.com/products/dessn-2",
-          "sources": [
-            "rss"
-          ],
           "time": "14d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
-          "source": "Product Hunt AI"
+          "source": "NVIDIA AI Blog"
         },
         {
           "title": "Southeast Asia’s digital economy to hit $368 billion",
@@ -9026,19 +9096,6 @@
           "velocity": "cooling",
           "tag": "market",
           "source": "Google AI Blog"
-        },
-        {
-          "title": "OpenMail",
-          "summary": "",
-          "url": "https://www.producthunt.com/products/openmail",
-          "sources": [
-            "rss"
-          ],
-          "time": "15d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "Product Hunt AI"
         },
         {
           "title": "Gemini 4 Argon: Built to solve your hardest problems",
@@ -9099,24 +9156,11 @@
           "sources": [
             "rss"
           ],
-          "time": "28d",
+          "time": "29d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
           "source": "Google AI Blog"
-        },
-        {
-          "title": "Orphex MCP",
-          "summary": "",
-          "url": "https://www.producthunt.com/products/orphex-mcp-let-s-do-agentic-marketing",
-          "sources": [
-            "rss"
-          ],
-          "time": "28d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "Product Hunt AI"
         },
         {
           "title": "OpenAI to acquire Pierre Computer Company, Inc.",
@@ -9125,7 +9169,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -9138,7 +9182,7 @@
           "sources": [
             "rss"
           ],
-          "time": "21h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -9151,7 +9195,7 @@
           "sources": [
             "rss"
           ],
-          "time": "20h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -9190,7 +9234,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -9203,7 +9247,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -9216,7 +9260,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -9262,19 +9306,6 @@
           "source": "OpenAI Blog"
         },
         {
-          "title": "Preparing our next security sprint to harden OpenAI",
-          "summary": "",
-          "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
-          "sources": [
-            "rss"
-          ],
-          "time": "2d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "risk",
-          "source": "OpenAI Blog"
-        },
-        {
           "title": "Rewarding defenders with bigger bug bounties",
           "summary": "",
           "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
@@ -9288,30 +9319,56 @@
           "source": "OpenAI Blog"
         },
         {
-          "title": "LifeVal",
+          "title": "Preparing our next security sprint to harden OpenAI",
           "summary": "",
-          "url": "https://openai.com/index/lifeval",
+          "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
           "sources": [
             "rss"
           ],
           "time": "2d",
           "score": 41,
           "velocity": "cooling",
-          "tag": "signal",
+          "tag": "risk",
           "source": "OpenAI Blog"
         },
         {
-          "title": "OpenAI appoints Dan Driscoll as Senior Counselor for National Security Modernization",
+          "title": "LifeVal",
           "summary": "",
-          "url": "https://openai.com/index/dan-driscoll-joins-openai",
+          "url": "https://openai.com/index/lifeval",
           "sources": [
             "rss"
           ],
           "time": "3d",
           "score": 41,
           "velocity": "cooling",
-          "tag": "risk",
+          "tag": "signal",
           "source": "OpenAI Blog"
+        },
+        {
+          "title": "A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks.",
+          "summary": "",
+          "url": "https://huggingface.co/blog/phonon-tts",
+          "sources": [
+            "rss"
+          ],
+          "time": "13h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Hugging Face Blog"
+        },
+        {
+          "title": "Dharma Field Extractor: Any Document In, Structured Fields in JSON Out",
+          "summary": "",
+          "url": "https://huggingface.co/blog/Dharma-AI/dharma-field-extractor",
+          "sources": [
+            "rss"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Hugging Face Blog"
         },
         {
           "title": "StateBench: Testing how language models track state changes over long documents",
@@ -9385,7 +9442,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -9481,88 +9538,88 @@
           "velocity": "cooling",
           "tag": "signal",
           "source": "Hugging Face Blog"
-        },
-        {
-          "title": "Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.",
-          "summary": "",
-          "url": "https://huggingface.co/blog/amazon/profiling-torchneuron-part-1",
-          "sources": [
-            "rss"
-          ],
-          "time": "14d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "Hugging Face Blog"
         }
       ]
     },
     "Industry News": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>harvard-edge/cs249r_book</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>huggingface/lerobot</strong> (Score 45) và <strong>commaai/openpilot</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 196 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>questdb/questdb</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>zauberzeug/nicegui</strong> (Score 45) và <strong>huggingface/lerobot</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 196 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "IoT",
           "items": [
-            7,
-            36,
-            89,
-            95,
-            103,
-            109,
-            123,
-            145
+            19,
+            32,
+            91,
+            97,
+            105,
+            111,
+            125,
+            147
           ]
         },
         {
-          "label": "Water",
+          "label": "Quality",
           "items": [
-            7,
-            77,
-            95,
-            109,
-            123,
-            129,
-            133
+            32,
+            79,
+            97,
+            111,
+            125,
+            131,
+            135
           ]
         },
         {
           "label": "Brazil",
           "items": [
-            53,
-            64,
-            65,
+            10,
+            59,
+            70,
             71,
-            96
+            98
+          ]
+        },
+        {
+          "label": "Aquaculture",
+          "items": [
+            29,
+            111,
+            120,
+            151
           ]
         },
         {
           "label": "Smart",
           "items": [
-            7,
-            103,
-            118,
-            149
-          ]
-        },
-        {
-          "label": "Benchmark",
-          "items": [
-            12,
-            22,
-            164,
-            194
+            32,
+            105,
+            120,
+            151
           ]
         }
       ],
       "items": [
         {
-          "title": "harvard-edge/cs249r_book",
+          "title": "questdb/questdb",
           "summary": "",
-          "url": "https://github.com/harvard-edge/cs249r_book",
+          "url": "https://github.com/questdb/questdb",
           "sources": [
             "gh"
           ],
-          "time": "11m",
+          "time": "1m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "zauberzeug/nicegui",
+          "summary": "",
+          "url": "https://github.com/zauberzeug/nicegui",
+          "sources": [
+            "gh"
+          ],
+          "time": "1m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -9575,33 +9632,7 @@
           "sources": [
             "gh"
           ],
-          "time": "39m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "commaai/openpilot",
-          "summary": "",
-          "url": "https://github.com/commaai/openpilot",
-          "sources": [
-            "gh"
-          ],
-          "time": "1h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "questdb/questdb",
-          "summary": "",
-          "url": "https://github.com/questdb/questdb",
-          "sources": [
-            "gh"
-          ],
-          "time": "1h",
+          "time": "4m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -9614,7 +9645,20 @@
           "sources": [
             "gh"
           ],
-          "time": "2h",
+          "time": "5m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "harvard-edge/cs249r_book",
+          "summary": "",
+          "url": "https://github.com/harvard-edge/cs249r_book",
+          "sources": [
+            "gh"
+          ],
+          "time": "10m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -9627,29 +9671,107 @@
           "sources": [
             "gh"
           ],
-          "time": "4h",
+          "time": "23m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
           "source": "GitHub"
         },
         {
-          "title": "forgotmenet/Iotlab-Automation-Test",
+          "title": "Genesis-Embodied-AI/genesis-world",
           "summary": "",
-          "url": "https://github.com/forgotmenet/Iotlab-Automation-Test",
+          "url": "https://github.com/Genesis-Embodied-AI/genesis-world",
           "sources": [
             "gh"
           ],
-          "time": "5h",
+          "time": "41m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
           "source": "GitHub"
         },
         {
-          "title": "Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
+          "title": "Raketech maps out investment plan as Q3 shows cost cutting success",
           "summary": "",
-          "url": "https://github.com/Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
+          "url": "https://sbcnews.co.uk/affiliatenews/2026/11/05/raketech-investment-targets/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "SBC News"
+        },
+        {
+          "title": "What AI-Powered Digital Marketing Can Automate for IoT Companies",
+          "summary": "",
+          "url": "https://iotbusinessnews.com/2026/11/05/what-ai-powered-digital-marketing-can-automate-for-iot-companies/",
+          "sources": [
+            "rss"
+          ],
+          "time": "1h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "IoT Business News"
+        },
+        {
+          "title": "SBC establishes Regulatory Advisory Board to strengthen global industry dialogue",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/events/sbcevents/2026/11/05/sbc-advisory-board/",
+          "sources": [
+            "rss"
+          ],
+          "time": "2h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "SBC News"
+        },
+        {
+          "title": "Brazil betting ban divides the spectrum of sports, society and commerce",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/features/comment/2026/11/05/brazil-betting-ban-sports-debt/",
+          "sources": [
+            "rss"
+          ],
+          "time": "2h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "risk",
+          "source": "SBC News"
+        },
+        {
+          "title": "GRAI shares important takeaways for Irish operators",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/europe/2026/11/05/ireland-gambling-grai/",
+          "sources": [
+            "rss"
+          ],
+          "time": "2h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "SBC News"
+        },
+        {
+          "title": "commaai/openpilot",
+          "summary": "",
+          "url": "https://github.com/commaai/openpilot",
+          "sources": [
+            "gh"
+          ],
+          "time": "3h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "earthtojake/text-to-cad",
+          "summary": "",
+          "url": "https://github.com/earthtojake/text-to-cad",
           "sources": [
             "gh"
           ],
@@ -9660,317 +9782,17 @@
           "source": "GitHub"
         },
         {
-          "title": "J-Akiru5/OptiFeed",
+          "title": "NaiboWang/EasySpider",
           "summary": "",
-          "url": "https://github.com/J-Akiru5/OptiFeed",
+          "url": "https://github.com/NaiboWang/EasySpider",
           "sources": [
             "gh"
           ],
-          "time": "7h",
+          "time": "6h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
           "source": "GitHub"
-        },
-        {
-          "title": "Developer-Y/cs-video-courses",
-          "summary": "",
-          "url": "https://github.com/Developer-Y/cs-video-courses",
-          "sources": [
-            "gh"
-          ],
-          "time": "7h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "From Pixels to Actions - Towards Native Vision-Language-Action Policies",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06918v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "cuRoboV2-Fast: Fast Torque-Limited Collision-Free Motion Planning",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06913v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "BEAKER: An Expert-Curated Benchmark for Embodied Brains in Self-Driving Chemical Laboratories",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06911v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "FrontierPhysics: Evaluating Agents for End-to-End Physics Research",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06910v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Perceptive Humanoid Motion from Simulation",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06908v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Reinforcement Learning Enables Scaling Generalist Robot Policy Improvement",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06905v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Motion-guided Contrastive Regularization For Latent World Models",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06901v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Occlusion for Free: Detecting Occlusion from the Disagreement Between Two Monocular Distance Cues",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06899v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Are Drone Ports the Next Annoying Tech Neighbor?",
-          "summary": "",
-          "url": "https://spectrum.ieee.org/drone-delivery-noise",
-          "sources": [
-            "rss"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "IEEE Spectrum"
-        },
-        {
-          "title": "Genesis-Embodied-AI/genesis-world",
-          "summary": "",
-          "url": "https://github.com/Genesis-Embodied-AI/genesis-world",
-          "sources": [
-            "gh"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "Procedural Adversarial Learning",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06890v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Dull, Dirty, Dangerous? Working Conditions and the Limits of Occupational AI Exposure",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06888v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "VABAR: A Variational Automation Benchmark for Agentic Robotics",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06881v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "Learning to Decode Linear Codes with Generalized Belief Propagation Network",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06874v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "PixelSpline: Continuous Space-Time Video Super-Resolution via Endpoint-Anchored Shared Pixel Trajectories",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06870v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "On Turn-Level Best-of-N Sampling for Scaling LLM Agents",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06868v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv",
-          "watchlist_matched": "llm"
-        },
-        {
-          "title": "CounterFactual Retrieval for Evidence-Aware Individual Animal Identification",
-          "summary": "",
-          "url": "https://arxiv.org/abs/2611.06864v1",
-          "sources": [
-            "arxiv"
-          ],
-          "time": "9h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "arXiv"
-        },
-        {
-          "title": "earthtojake/text-to-cad",
-          "summary": "",
-          "url": "https://github.com/earthtojake/text-to-cad",
-          "sources": [
-            "gh"
-          ],
-          "time": "10h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "EveryMatrix: Building trust on a history of success",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/features/interviews/2026/11/04/everymatrix-gambling-supplier/",
-          "sources": [
-            "rss"
-          ],
-          "time": "10h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "SBC News"
-        },
-        {
-          "title": "Channel 4 “game show” risks damaging gambling’s public image",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/social-responsibility/2026/11/04/channel-4-gambling-show/",
-          "sources": [
-            "rss"
-          ],
-          "time": "11h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "SBC News"
-        },
-        {
-          "title": "SoftBank and Sceye Plan Nationwide Stratospheric Connectivity Network in Japan",
-          "summary": "",
-          "url": "https://iotbusinessnews.com/2026/11/04/softbank-and-sceye-plan-nationwide-stratospheric-connectivity-network-in-japan/",
-          "sources": [
-            "rss"
-          ],
-          "time": "11h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "IoT Business News"
-        },
-        {
-          "title": "This Hack Makes Any Blood Pressure Monitor Smarter",
-          "summary": "",
-          "url": "https://www.hackster.io/news/this-hack-makes-any-blood-pressure-monitor-smarter-94f5cc1e687e",
-          "sources": [
-            "rss"
-          ],
-          "time": "11h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "Hackster News - Hackster.io"
         },
         {
           "title": "Sea Harvest declares maiden interim dividend, reduces debt despite revenue decline",
@@ -10168,30 +9990,330 @@
           "source": "Engineering News | Aquaculture"
         },
         {
+          "title": "CAT scientist honoured for advances in aquaculture genetics",
+          "summary": "",
+          "url": "https://thefishsite.com/articles/cat-scientist-honoured-for-aquaculture-genetics-advances",
+          "sources": [
+            "rss"
+          ],
+          "time": "6h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "The Fish Site"
+        },
+        {
+          "title": "forgotmenet/Iotlab-Automation-Test",
+          "summary": "",
+          "url": "https://github.com/forgotmenet/Iotlab-Automation-Test",
+          "sources": [
+            "gh"
+          ],
+          "time": "15h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
+          "summary": "",
+          "url": "https://github.com/Showrish/Smart-Water-Quality-Prediction-using-IoT-and-ML-",
+          "sources": [
+            "gh"
+          ],
+          "time": "15h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "J-Akiru5/OptiFeed",
+          "summary": "",
+          "url": "https://github.com/J-Akiru5/OptiFeed",
+          "sources": [
+            "gh"
+          ],
+          "time": "17h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "Developer-Y/cs-video-courses",
+          "summary": "",
+          "url": "https://github.com/Developer-Y/cs-video-courses",
+          "sources": [
+            "gh"
+          ],
+          "time": "17h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "From Pixels to Actions - Towards Native Vision-Language-Action Policies",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06918v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "cuRoboV2-Fast: Fast Torque-Limited Collision-Free Motion Planning",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06913v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "BEAKER: An Expert-Curated Benchmark for Embodied Brains in Self-Driving Chemical Laboratories",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06911v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "FrontierPhysics: Evaluating Agents for End-to-End Physics Research",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06910v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Perceptive Humanoid Motion from Simulation",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06908v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Reinforcement Learning Enables Scaling Generalist Robot Policy Improvement",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06905v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Motion-guided Contrastive Regularization For Latent World Models",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06901v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Occlusion for Free: Detecting Occlusion from the Disagreement Between Two Monocular Distance Cues",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06899v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Are Drone Ports the Next Annoying Tech Neighbor?",
+          "summary": "",
+          "url": "https://spectrum.ieee.org/drone-delivery-noise",
+          "sources": [
+            "rss"
+          ],
+          "time": "18h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "IEEE Spectrum"
+        },
+        {
+          "title": "Procedural Adversarial Learning",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06890v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Dull, Dirty, Dangerous? Working Conditions and the Limits of Occupational AI Exposure",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06888v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "VABAR: A Variational Automation Benchmark for Agentic Robotics",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06881v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Learning to Decode Linear Codes with Generalized Belief Propagation Network",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06874v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "PixelSpline: Continuous Space-Time Video Super-Resolution via Endpoint-Anchored Shared Pixel Trajectories",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06870v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "On Turn-Level Best-of-N Sampling for Scaling LLM Agents",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06868v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "CounterFactual Retrieval for Evidence-Aware Individual Animal Identification",
+          "summary": "",
+          "url": "https://arxiv.org/abs/2611.06864v1",
+          "sources": [
+            "arxiv"
+          ],
+          "time": "19h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "arXiv"
+        },
+        {
+          "title": "Channel 4 “game show” risks damaging gambling’s public image",
+          "summary": "",
+          "url": "https://sbcnews.co.uk/features/video/2026/11/04/channel-4-gambling-show/",
+          "sources": [
+            "rss"
+          ],
+          "time": "21h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "SBC News"
+        },
+        {
+          "title": "SoftBank and Sceye Plan Nationwide Stratospheric Connectivity Network in Japan",
+          "summary": "",
+          "url": "https://iotbusinessnews.com/2026/11/04/softbank-and-sceye-plan-nationwide-stratospheric-connectivity-network-in-japan/",
+          "sources": [
+            "rss"
+          ],
+          "time": "21h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "IoT Business News"
+        },
+        {
+          "title": "This Hack Makes Any Blood Pressure Monitor Smarter",
+          "summary": "",
+          "url": "https://www.hackster.io/news/this-hack-makes-any-blood-pressure-monitor-smarter-94f5cc1e687e",
+          "sources": [
+            "rss"
+          ],
+          "time": "21h",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Hackster News - Hackster.io"
+        },
+        {
           "title": "Robotics Startup Radar 2026",
           "summary": "",
           "url": "https://www.therobotreport.com/robotics-startup-radar-2026/",
           "sources": [
             "rss"
           ],
-          "time": "12h",
+          "time": "21h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
           "source": "The Robot Report"
-        },
-        {
-          "title": "zauberzeug/nicegui",
-          "summary": "",
-          "url": "https://github.com/zauberzeug/nicegui",
-          "sources": [
-            "gh"
-          ],
-          "time": "12h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
         },
         {
           "title": "How GlobalLogic helped Haystack Robotics build a UV disinfection robot",
@@ -10200,7 +10322,7 @@
           "sources": [
             "rss"
           ],
-          "time": "12h",
+          "time": "22h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10213,7 +10335,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13h",
+          "time": "22h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10226,7 +10348,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13h",
+          "time": "22h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10239,7 +10361,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13h",
+          "time": "22h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10252,7 +10374,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10265,7 +10387,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10278,7 +10400,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10291,7 +10413,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10304,7 +10426,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10317,7 +10439,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10330,7 +10452,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10343,7 +10465,7 @@
           "sources": [
             "rss"
           ],
-          "time": "14h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10356,7 +10478,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10369,7 +10491,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10382,7 +10504,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10395,7 +10517,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -10408,7 +10530,7 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
@@ -10421,7 +10543,7 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10434,7 +10556,7 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10447,7 +10569,7 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
@@ -10460,37 +10582,11 @@
           "sources": [
             "rss"
           ],
-          "time": "17h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
           "source": "iGB"
-        },
-        {
-          "title": "Is Super Group about to lap itself? YTD profit close to beating FY25 figures",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/sportsbook/2026/11/04/super-group-q3-results/",
-          "sources": [
-            "rss"
-          ],
-          "time": "18h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "SBC News"
-        },
-        {
-          "title": "Kambi reports resilient Q3 against Brazil ban and post-World Cup slowdown",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/sportsbook/2026/11/04/kambi-brazil-world-cup-q3/",
-          "sources": [
-            "rss"
-          ],
-          "time": "19h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "risk",
-          "source": "SBC News"
         },
         {
           "title": "naginenijoshi/WATERGUARD-AI",
@@ -10499,7 +10595,7 @@
           "sources": [
             "gh"
           ],
-          "time": "19h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10512,33 +10608,7 @@
           "sources": [
             "gh"
           ],
-          "time": "19h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "“All the features of a bet” – ASIC says no to Australian prediction markets",
-          "summary": "",
-          "url": "https://sbcnews.co.uk/technology/2026/11/04/australia-prediction-markets/",
-          "sources": [
-            "rss"
-          ],
-          "time": "20h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market",
-          "source": "SBC News"
-        },
-        {
-          "title": "NaiboWang/EasySpider",
-          "summary": "",
-          "url": "https://github.com/NaiboWang/EasySpider",
-          "sources": [
-            "gh"
-          ],
-          "time": "20h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10551,7 +10621,7 @@
           "sources": [
             "gh"
           ],
-          "time": "22h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10564,11 +10634,24 @@
           "sources": [
             "gh"
           ],
-          "time": "22h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
           "source": "GitHub"
+        },
+        {
+          "title": "Why You Should Use a Teensy 4.0 or 4.1",
+          "summary": "",
+          "url": "https://www.hackster.io/news/why-you-should-use-a-teensy-4-0-or-4-1-f1748dd95e3a",
+          "sources": [
+            "rss"
+          ],
+          "time": "1d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Hackster News - Hackster.io"
         },
         {
           "title": "Ben Waters on the latest wireless charging strategies",
@@ -10694,23 +10777,10 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
-          "source": "Hackster News - Hackster.io"
-        },
-        {
-          "title": "You Can Build a Better Camera with a Raspberry Pi",
-          "summary": "",
-          "url": "https://www.hackster.io/news/you-can-build-a-better-camera-with-a-raspberry-pi-f5bc74781b07",
-          "sources": [
-            "rss"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
           "source": "Hackster News - Hackster.io"
         },
         {
@@ -10720,7 +10790,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
@@ -10733,7 +10803,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10746,7 +10816,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
@@ -10759,7 +10829,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10772,7 +10842,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -10785,7 +10855,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -10798,7 +10868,7 @@
           "sources": [
             "gh"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10811,7 +10881,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10824,7 +10894,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10837,7 +10907,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10850,7 +10920,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10863,7 +10933,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -11006,7 +11076,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11071,7 +11141,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11084,7 +11154,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11097,7 +11167,7 @@
           "sources": [
             "gh"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11110,7 +11180,7 @@
           "sources": [
             "gh"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11136,7 +11206,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11149,7 +11219,7 @@
           "sources": [
             "gh"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
@@ -11162,7 +11232,7 @@
           "sources": [
             "gh"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11227,7 +11297,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11240,7 +11310,7 @@
           "sources": [
             "gh"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11253,7 +11323,7 @@
           "sources": [
             "gh"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
@@ -11266,7 +11336,7 @@
           "sources": [
             "gh"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11292,7 +11362,7 @@
           "sources": [
             "gh"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11305,7 +11375,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -11370,7 +11440,7 @@
           "sources": [
             "gh"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11383,7 +11453,7 @@
           "sources": [
             "rss"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11409,7 +11479,7 @@
           "sources": [
             "gh"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11435,7 +11505,7 @@
           "sources": [
             "gh"
           ],
-          "time": "9d",
+          "time": "10d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11461,7 +11531,7 @@
           "sources": [
             "gh"
           ],
-          "time": "10d",
+          "time": "11d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11474,7 +11544,7 @@
           "sources": [
             "gh"
           ],
-          "time": "10d",
+          "time": "11d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11487,7 +11557,7 @@
           "sources": [
             "rss"
           ],
-          "time": "11d",
+          "time": "12d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11500,7 +11570,7 @@
           "sources": [
             "gh"
           ],
-          "time": "11d",
+          "time": "12d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11520,26 +11590,13 @@
           "source": "IEEE Spectrum"
         },
         {
-          "title": "How IoT and Predictive Maintenance Can Reduce Aerial Lift Downtime",
-          "summary": "",
-          "url": "https://iotbusinessnews.com/2026/10/23/how-iot-and-predictive-maintenance-can-reduce-aerial-lift-downtime/",
-          "sources": [
-            "rss"
-          ],
-          "time": "12d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "IoT Business News"
-        },
-        {
           "title": "Robot Talk Episode 167 – Automating construction, with Jan Petrš",
           "summary": "",
           "url": "https://robohub.org/robot-talk-episode-167-automating-construction-with-jan-petrs/",
           "sources": [
             "rss"
           ],
-          "time": "12d",
+          "time": "13d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11552,7 +11609,7 @@
           "sources": [
             "rss"
           ],
-          "time": "15d",
+          "time": "16d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11565,7 +11622,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16d",
+          "time": "17d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11578,7 +11635,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16d",
+          "time": "17d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11604,7 +11661,7 @@
           "sources": [
             "rss"
           ],
-          "time": "19d",
+          "time": "20d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11617,7 +11674,7 @@
           "sources": [
             "rss"
           ],
-          "time": "21d",
+          "time": "22d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11643,7 +11700,7 @@
           "sources": [
             "rss"
           ],
-          "time": "23d",
+          "time": "24d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11669,7 +11726,7 @@
           "sources": [
             "rss"
           ],
-          "time": "26d",
+          "time": "27d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11682,7 +11739,7 @@
           "sources": [
             "rss"
           ],
-          "time": "27d",
+          "time": "28d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11708,7 +11765,7 @@
           "sources": [
             "rss"
           ],
-          "time": "28d",
+          "time": "29d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11721,7 +11778,7 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11747,7 +11804,7 @@
           "sources": [
             "rss"
           ],
-          "time": "13d",
+          "time": "14d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11760,7 +11817,7 @@
           "sources": [
             "rss"
           ],
-          "time": "16d",
+          "time": "17d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11773,7 +11830,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11786,7 +11843,7 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11799,7 +11856,7 @@
           "sources": [
             "rss"
           ],
-          "time": "22d",
+          "time": "23d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11812,7 +11869,7 @@
           "sources": [
             "rss"
           ],
-          "time": "42d",
+          "time": "43d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11825,7 +11882,7 @@
           "sources": [
             "rss"
           ],
-          "time": "43d",
+          "time": "44d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11838,7 +11895,7 @@
           "sources": [
             "rss"
           ],
-          "time": "44d",
+          "time": "45d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11851,7 +11908,7 @@
           "sources": [
             "rss"
           ],
-          "time": "48d",
+          "time": "49d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11877,7 +11934,7 @@
           "sources": [
             "rss"
           ],
-          "time": "69d",
+          "time": "70d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11916,7 +11973,7 @@
           "sources": [
             "rss"
           ],
-          "time": "18h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11929,7 +11986,7 @@
           "sources": [
             "rss"
           ],
-          "time": "21h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11955,7 +12012,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11968,7 +12025,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11981,7 +12038,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11994,7 +12051,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -12007,7 +12064,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -12020,7 +12077,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -12033,7 +12090,7 @@
           "sources": [
             "rss"
           ],
-          "time": "5d",
+          "time": "6d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -12046,7 +12103,7 @@
           "sources": [
             "rss"
           ],
-          "time": "6d",
+          "time": "7d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -12059,7 +12116,7 @@
           "sources": [
             "rss"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -12072,7 +12129,7 @@
           "sources": [
             "rss"
           ],
-          "time": "7d",
+          "time": "8d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -12085,23 +12142,10 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
-          "source": "The Fish Site"
-        },
-        {
-          "title": "New A$10 million aquaculture research hub in Australia",
-          "summary": "",
-          "url": "https://thefishsite.com/articles/new-a-10-million-aquaculture-research-hub-in-australia",
-          "sources": [
-            "rss"
-          ],
-          "time": "8d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "market",
           "source": "The Fish Site"
         }
       ]
