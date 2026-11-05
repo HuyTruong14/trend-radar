@@ -138,43 +138,17 @@
     "role": "infra"
   },
   {
-    "repo": "bytedance/deer-flow",
+    "repo": "langchain-ai/langchain",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "IoT",
-      "Open Source"
+      "Edge AI",
+      "LangChain"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho deer flow",
-    "role": "platform"
-  },
-  {
-    "repo": "OpenHands/OpenHands",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
-    "role": "platform"
-  },
-  {
-    "repo": "tetherto/qvac",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
-    "role": "platform"
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
+    "role": "ai"
   },
   {
     "repo": "paperclipai/paperclip",
@@ -202,6 +176,32 @@
     "role": "platform"
   },
   {
+    "repo": "tetherto/qvac",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
+    "role": "platform"
+  },
+  {
+    "repo": "OpenHands/OpenHands",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
+    "role": "platform"
+  },
+  {
     "repo": "AceDataCloud/Nexior",
     "stars": 540,
     "stars_prev_week": 460,
@@ -215,17 +215,42 @@
     "role": "platform"
   },
   {
-    "repo": "langchain-ai/langchain",
+    "repo": "Anil-matcha/Open-Generative-AI",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "Edge AI",
-      "LangChain"
+      "Edge AI"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Open Generative AI",
     "role": "ai"
+  },
+  {
+    "repo": "aqm857886159/Nomi",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Nomi",
+    "role": "platform"
+  },
+  {
+    "repo": "bytedance/deer-flow",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho deer flow",
+    "role": "platform"
   },
   {
     "repo": "ZeroLu/awesome-seedance",
@@ -253,19 +278,6 @@
     "role": "ai"
   },
   {
-    "repo": "aqm857886159/Nomi",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Nomi",
-    "role": "platform"
-  },
-  {
     "repo": "JuliusBrussee/caveman",
     "stars": 540,
     "stars_prev_week": 460,
@@ -279,18 +291,6 @@
     "role": "platform"
   },
   {
-    "repo": "Anil-matcha/Open-Generative-AI",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Open Generative AI",
-    "role": "ai"
-  },
-  {
     "repo": "unclecode/crawl4ai",
     "stars": 540,
     "stars_prev_week": 460,
@@ -301,6 +301,33 @@
     ],
     "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán crawl4ai",
     "role": "ai"
+  },
+  {
+    "repo": "sakthivel-vs7/AI-Water-Quality-prediction",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Aquaculture",
+      "Edge AI",
+      "Water Quality"
+    ],
+    "summary_vi": "Dự đoán chất lượng nước thời gian thực bằng IoT và máy học",
+    "role": "ai"
+  },
+  {
+    "repo": "AlivelliAshwanth/smart_city_pulse",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: smart city pulse",
+    "role": "platform"
   },
   {
     "repo": "J-Akiru5/OptiFeed",
@@ -342,20 +369,6 @@
     ],
     "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
     "role": "ai"
-  },
-  {
-    "repo": "Divi3216/IoT-Based-Water-Quality-Monitoring-System",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Aquaculture",
-      "IoT",
-      "Water Quality"
-    ],
-    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
-    "role": "platform"
   },
   {
     "repo": "Sayantan001/IoT-based-Smart-Agriculture-Monitoring-System-using-NodeMCU",
@@ -415,7 +428,7 @@
     "role": "platform"
   },
   {
-    "repo": "questdb/questdb",
+    "repo": "google-deepmind/mujoco",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -424,7 +437,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
     "role": "platform"
   },
   {
@@ -441,7 +454,7 @@
     "role": "platform"
   },
   {
-    "repo": "google-deepmind/mujoco",
+    "repo": "questdb/questdb",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -450,20 +463,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
-    "role": "platform"
-  },
-  {
-    "repo": "harvard-edge/cs249r_book",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
     "role": "platform"
   },
   {
@@ -477,6 +477,19 @@
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: openpilot",
     "role": "ai"
+  },
+  {
+    "repo": "harvard-edge/cs249r_book",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "role": "platform"
   },
   {
     "repo": "earthtojake/text-to-cad",
@@ -504,19 +517,6 @@
     "role": "ai"
   },
   {
-    "repo": "cactus-compute/needle",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: needle",
-    "role": "platform"
-  },
-  {
     "repo": "hubotio/hubot",
     "stars": 540,
     "stars_prev_week": 460,
@@ -527,6 +527,47 @@
       "Open Source"
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: hubot",
+    "role": "platform"
+  },
+  {
+    "repo": "Divi3216/IoT-Based-Water-Quality-Monitoring-System",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Aquaculture",
+      "IoT",
+      "Water Quality"
+    ],
+    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+    "role": "platform"
+  },
+  {
+    "repo": "cactus-compute/needle",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI",
+      "IoT",
+      "Robotics"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: needle",
+    "role": "hardware"
+  },
+  {
+    "repo": "browser-use/browser-use",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: browser use",
     "role": "platform"
   },
   {
@@ -543,6 +584,19 @@
     "role": "platform"
   },
   {
+    "repo": "tt-a1i/archify",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
+    "role": "platform"
+  },
+  {
     "repo": "flatkey-ai/flatkey-cli",
     "stars": 492,
     "stars_prev_week": 419,
@@ -555,19 +609,6 @@
     "role": "ai"
   },
   {
-    "repo": "browser-use/browser-use",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: browser use",
-    "role": "platform"
-  },
-  {
     "repo": "HBAI-Ltd/Toonflow-app",
     "stars": 492,
     "stars_prev_week": 419,
@@ -578,19 +619,6 @@
     ],
     "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Toonflow app",
     "role": "ai"
-  },
-  {
-    "repo": "tt-a1i/archify",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
-    "role": "platform"
   },
   {
     "repo": "YILS-LIN/short-video-factory",
@@ -806,6 +834,19 @@
     "role": "ai"
   },
   {
+    "repo": "Rhoswen-void/Water-Quality-testing-Project",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Aquaculture",
+      "Water Quality"
+    ],
+    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+    "role": "infra"
+  },
+  {
     "repo": "AquaMindAI/AquaMindAI.github.io",
     "stars": 492,
     "stars_prev_week": 419,
@@ -925,19 +966,6 @@
     "role": "platform"
   },
   {
-    "repo": "Rhoswen-void/Water-Quality-testing-Project",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Aquaculture",
-      "Water Quality"
-    ],
-    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
-    "role": "infra"
-  },
-  {
     "repo": "latverian/edge-intelligent-aquaculture",
     "stars": 492,
     "stars_prev_week": 419,
@@ -1027,18 +1055,6 @@
     "role": "platform"
   },
   {
-    "repo": "huggingface/lerobot",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Robotics"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
-    "role": "platform"
-  },
-  {
     "repo": "ArduPilot/ardupilot",
     "stars": 492,
     "stars_prev_week": 419,
@@ -1049,6 +1065,18 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
+    "role": "platform"
+  },
+  {
+    "repo": "huggingface/lerobot",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Robotics"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
     "role": "platform"
   },
   {
@@ -1088,6 +1116,19 @@
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: PythonRobotics",
     "role": "ai"
+  },
+  {
+    "repo": "DLR-RM/stable-baselines3",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho stable baselines3",
+    "role": "platform"
   },
   {
     "repo": "TianxingChen/Embodied-AI-Guide",
@@ -1139,6 +1180,7 @@
     "tags": [
       "Aquaculture",
       "Edge AI",
+      "IoT",
       "Water Quality"
     ],
     "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
