@@ -1,22 +1,22 @@
 {
   "week": "W45",
-  "start_date": "2026-10-31",
-  "end_date": "2026-11-06",
-  "created_at": "2026-11-06T20:28:51.935834+07:00",
+  "start_date": "2026-11-01",
+  "end_date": "2026-11-07",
+  "created_at": "2026-11-07T05:32:04.604265+07:00",
   "previous_week": "W45",
   "stats": {
+    "total_signals": 843,
+    "total_opportunities": 635,
+    "build_ready": 0,
+    "research": 134,
+    "watch": 501
+  },
+  "prev_stats": {
     "total_signals": 842,
     "total_opportunities": 622,
     "build_ready": 0,
     "research": 130,
     "watch": 492
-  },
-  "prev_stats": {
-    "total_signals": 841,
-    "total_opportunities": 584,
-    "build_ready": 0,
-    "research": 124,
-    "watch": 460
   },
   "top_opportunities": [
     {
@@ -193,8 +193,8 @@
   "tech_frequency": {
     "ESP32": {
       "count": 22,
-      "prev_week": 16,
-      "change_pct": 38
+      "prev_week": 22,
+      "change_pct": 0
     },
     "TinyML": {
       "count": 15,
@@ -208,8 +208,8 @@
     },
     "RP2350": {
       "count": 5,
-      "prev_week": 8,
-      "change_pct": -38
+      "prev_week": 5,
+      "change_pct": 0
     },
     "RISC-V": {
       "count": 11,
@@ -248,29 +248,29 @@
     },
     "Humanoid": {
       "count": 15,
-      "prev_week": 18,
-      "change_pct": -17
+      "prev_week": 15,
+      "change_pct": 0
     },
     "Robotics": {
-      "count": 73,
-      "prev_week": 64,
-      "change_pct": 14
+      "count": 75,
+      "prev_week": 73,
+      "change_pct": 3
     },
     "Sensor": {
-      "count": 23,
+      "count": 21,
       "prev_week": 23,
-      "change_pct": 0
+      "change_pct": -9
     }
   },
   "new_terms": [
     "OpenAI",
+    "SoftBank",
     "SaaS",
+    "GR8_TECH",
     "AquaMindAI",
     "LR2021",
     "ChatGPT",
-    "SoftBank",
-    "ReferOn",
-    "BeagleBoard"
+    "ReferOn"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",
