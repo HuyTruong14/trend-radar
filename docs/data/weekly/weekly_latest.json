@@ -1,22 +1,22 @@
 {
   "week": "W45",
-  "start_date": "2026-11-01",
-  "end_date": "2026-11-07",
-  "created_at": "2026-11-07T19:05:53.123363+07:00",
+  "start_date": "2026-11-02",
+  "end_date": "2026-11-08",
+  "created_at": "2026-11-08T04:18:54.065457+07:00",
   "previous_week": "W45",
   "stats": {
+    "total_signals": 847,
+    "total_opportunities": 646,
+    "build_ready": 0,
+    "research": 136,
+    "watch": 510
+  },
+  "prev_stats": {
     "total_signals": 845,
     "total_opportunities": 642,
     "build_ready": 0,
     "research": 135,
     "watch": 507
-  },
-  "prev_stats": {
-    "total_signals": 842,
-    "total_opportunities": 622,
-    "build_ready": 0,
-    "research": 130,
-    "watch": 492
   },
   "top_opportunities": [
     {
@@ -194,8 +194,8 @@
   "tech_frequency": {
     "ESP32": {
       "count": 21,
-      "prev_week": 22,
-      "change_pct": -5
+      "prev_week": 21,
+      "change_pct": 0
     },
     "TinyML": {
       "count": 15,
@@ -253,9 +253,9 @@
       "change_pct": 0
     },
     "Robotics": {
-      "count": 76,
-      "prev_week": 73,
-      "change_pct": 4
+      "count": 75,
+      "prev_week": 76,
+      "change_pct": -1
     },
     "Sensor": {
       "count": 23,
@@ -268,9 +268,9 @@
     "SoftBank",
     "SaaS",
     "GR8_TECH",
-    "ChatGPT",
     "AquaMindAI",
     "LR2021",
+    "ChatGPT",
     "ReferOn"
   ],
   "disruption_snapshot": {

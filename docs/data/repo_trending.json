@@ -139,6 +139,31 @@
     "role": "infra"
   },
   {
+    "repo": "paperclipai/paperclip",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
+    "role": "ai"
+  },
+  {
+    "repo": "earendil-works/pi",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
+    "role": "platform"
+  },
+  {
     "repo": "OpenHands/OpenHands",
     "stars": 540,
     "stars_prev_week": 460,
@@ -152,16 +177,17 @@
     "role": "platform"
   },
   {
-    "repo": "paperclipai/paperclip",
+    "repo": "AceDataCloud/Nexior",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "Edge AI"
+      "IoT",
+      "Open Source"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
-    "role": "ai"
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho Nexior",
+    "role": "platform"
   },
   {
     "repo": "tetherto/qvac",
@@ -190,6 +216,19 @@
     "role": "platform"
   },
   {
+    "repo": "ZeroLu/awesome-seedance",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho awesome seedance",
+    "role": "platform"
+  },
+  {
     "repo": "langchain-ai/langchain",
     "stars": 540,
     "stars_prev_week": 460,
@@ -203,32 +242,6 @@
     "role": "ai"
   },
   {
-    "repo": "earendil-works/pi",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
-    "role": "platform"
-  },
-  {
-    "repo": "AceDataCloud/Nexior",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho Nexior",
-    "role": "platform"
-  },
-  {
     "repo": "JuliusBrussee/caveman",
     "stars": 540,
     "stars_prev_week": 460,
@@ -239,19 +252,6 @@
       "Open Source"
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: caveman",
-    "role": "platform"
-  },
-  {
-    "repo": "ZeroLu/awesome-seedance",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho awesome seedance",
     "role": "platform"
   },
   {
@@ -442,32 +442,6 @@
     "role": "platform"
   },
   {
-    "repo": "harvard-edge/cs249r_book",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
-    "role": "platform"
-  },
-  {
-    "repo": "google-deepmind/mujoco",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
-    "role": "platform"
-  },
-  {
     "repo": "commaai/openpilot",
     "stars": 540,
     "stars_prev_week": 460,
@@ -506,6 +480,44 @@
     "role": "platform"
   },
   {
+    "repo": "harvard-edge/cs249r_book",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "role": "platform"
+  },
+  {
+    "repo": "google-deepmind/mujoco",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
+    "role": "platform"
+  },
+  {
+    "repo": "NaiboWang/EasySpider",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán EasySpider",
+    "role": "ai"
+  },
+  {
     "repo": "wechaty/wechaty",
     "stars": 540,
     "stars_prev_week": 460,
@@ -530,18 +542,6 @@
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho nicegui",
     "role": "platform"
-  },
-  {
-    "repo": "NaiboWang/EasySpider",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán EasySpider",
-    "role": "ai"
   },
   {
     "repo": "hubotio/hubot",
@@ -585,19 +585,6 @@
     "role": "hardware"
   },
   {
-    "repo": "browser-use/browser-use",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: browser use",
-    "role": "platform"
-  },
-  {
     "repo": "tt-a1i/archify",
     "stars": 492,
     "stars_prev_week": 419,
@@ -608,6 +595,19 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
+    "role": "platform"
+  },
+  {
+    "repo": "browser-use/browser-use",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: browser use",
     "role": "platform"
   },
   {
@@ -1105,19 +1105,6 @@
     "role": "platform"
   },
   {
-    "repo": "ArduPilot/ardupilot",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
-    "role": "platform"
-  },
-  {
     "repo": "Developer-Y/cs-video-courses",
     "stars": 492,
     "stars_prev_week": 419,
@@ -1128,6 +1115,19 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs video courses",
+    "role": "platform"
+  },
+  {
+    "repo": "ArduPilot/ardupilot",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
     "role": "platform"
   },
   {
