@@ -139,6 +139,19 @@
     "role": "infra"
   },
   {
+    "repo": "OpenHands/OpenHands",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
+    "role": "platform"
+  },
+  {
     "repo": "paperclipai/paperclip",
     "stars": 540,
     "stars_prev_week": 460,
@@ -151,7 +164,7 @@
     "role": "ai"
   },
   {
-    "repo": "JuliusBrussee/caveman",
+    "repo": "tetherto/qvac",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -160,7 +173,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: caveman",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
     "role": "platform"
   },
   {
@@ -177,17 +190,17 @@
     "role": "platform"
   },
   {
-    "repo": "OpenHands/OpenHands",
+    "repo": "langchain-ai/langchain",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "IoT",
-      "Open Source"
+      "Edge AI",
+      "LangChain"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
-    "role": "platform"
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
+    "role": "ai"
   },
   {
     "repo": "earendil-works/pi",
@@ -203,7 +216,7 @@
     "role": "platform"
   },
   {
-    "repo": "tetherto/qvac",
+    "repo": "AceDataCloud/Nexior",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -212,7 +225,20 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho Nexior",
+    "role": "platform"
+  },
+  {
+    "repo": "JuliusBrussee/caveman",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: caveman",
     "role": "platform"
   },
   {
@@ -226,32 +252,6 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho awesome seedance",
-    "role": "platform"
-  },
-  {
-    "repo": "langchain-ai/langchain",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI",
-      "LangChain"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
-    "role": "ai"
-  },
-  {
-    "repo": "AceDataCloud/Nexior",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho Nexior",
     "role": "platform"
   },
   {
@@ -442,6 +442,32 @@
     "role": "platform"
   },
   {
+    "repo": "harvard-edge/cs249r_book",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "role": "platform"
+  },
+  {
+    "repo": "google-deepmind/mujoco",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
+    "role": "platform"
+  },
+  {
     "repo": "commaai/openpilot",
     "stars": 540,
     "stars_prev_week": 460,
@@ -454,7 +480,7 @@
     "role": "ai"
   },
   {
-    "repo": "wechaty/wechaty",
+    "repo": "questdb/questdb",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -463,7 +489,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho wechaty",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
     "role": "platform"
   },
   {
@@ -480,7 +506,7 @@
     "role": "platform"
   },
   {
-    "repo": "harvard-edge/cs249r_book",
+    "repo": "wechaty/wechaty",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -489,33 +515,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
-    "role": "platform"
-  },
-  {
-    "repo": "questdb/questdb",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
-    "role": "platform"
-  },
-  {
-    "repo": "google-deepmind/mujoco",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho wechaty",
     "role": "platform"
   },
   {
@@ -1081,18 +1081,6 @@
     "role": "platform"
   },
   {
-    "repo": "huggingface/lerobot",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Robotics"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
-    "role": "platform"
-  },
-  {
     "repo": "Genesis-Embodied-AI/genesis-world",
     "stars": 492,
     "stars_prev_week": 419,
@@ -1103,6 +1091,18 @@
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: genesis world",
     "role": "ai"
+  },
+  {
+    "repo": "huggingface/lerobot",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Robotics"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
+    "role": "platform"
   },
   {
     "repo": "ArduPilot/ardupilot",
