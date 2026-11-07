@@ -9,7 +9,7 @@
     "co_occurs_with": {
       "MQTT": 15,
       "TinyML": 8,
-      "ESP32-S3": 7,
+      "ESP32-S3": 6,
       "LoRaWAN": 6,
       "Turbidity": 3,
       "Arduino": 2,
@@ -137,21 +137,6 @@
       "MQTT": 2
     }
   },
-  "ESP32-S3": {
-    "type": "Hardware",
-    "description_vi": "Chip ESP32 chuyên xử lý AI tăng tốc vector và giao tiếp camera/màn hình",
-    "mentions_this_week": 7,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "ESP32": 7,
-      "MQTT": 4,
-      "Turbidity": 2,
-      "Ultrasonic": 2,
-      "TDS": 1
-    }
-  },
   "MQTT": {
     "type": "Protocol",
     "description_vi": "Giao thức truyền tin publish/subscribe nhẹ tối ưu cho mạng IoT băng thông thấp",
@@ -165,6 +150,21 @@
       "Arduino": 2,
       "Turbidity": 2,
       "Ultrasonic": 2
+    }
+  },
+  "ESP32-S3": {
+    "type": "Hardware",
+    "description_vi": "Chip ESP32 chuyên xử lý AI tăng tốc vector và giao tiếp camera/màn hình",
+    "mentions_this_week": 6,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 6,
+      "MQTT": 4,
+      "Turbidity": 2,
+      "Ultrasonic": 2,
+      "TDS": 1
     }
   },
   "RP2040": {
@@ -250,15 +250,6 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "STM32": {
-    "type": "Hardware",
-    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 1,
-    "change_pct": 100,
-    "trend": "rising",
-    "co_occurs_with": {}
-  },
   "Nordic nRF52": {
     "type": "Hardware",
     "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
@@ -320,6 +311,15 @@
     "co_occurs_with": {
       "Ultrasonic": 2
     }
+  },
+  "STM32": {
+    "type": "Hardware",
+    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 1,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
   },
   "Matter": {
     "type": "Protocol",

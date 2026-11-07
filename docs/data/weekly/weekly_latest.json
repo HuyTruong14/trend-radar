@@ -2,14 +2,14 @@
   "week": "W45",
   "start_date": "2026-11-01",
   "end_date": "2026-11-07",
-  "created_at": "2026-11-07T05:32:04.604265+07:00",
+  "created_at": "2026-11-07T10:43:33.708139+07:00",
   "previous_week": "W45",
   "stats": {
     "total_signals": 843,
-    "total_opportunities": 635,
+    "total_opportunities": 638,
     "build_ready": 0,
-    "research": 134,
-    "watch": 501
+    "research": 135,
+    "watch": 503
   },
   "prev_stats": {
     "total_signals": 842,
@@ -19,6 +19,31 @@
     "watch": 492
   },
   "top_opportunities": [
+    {
+      "id": "opp_2026_1105_c274594a",
+      "title": "Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "supply_gap",
+        "tech_cheap"
+      ],
+      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Chinese regulators bl",
+      "url": "https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/"
+    },
+    {
+      "id": "opp_2026_1105_2d1d928a",
+      "title": "Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Sector Snapshot: Cons",
+      "url": "https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/"
+    },
     {
       "id": "opp_2026_1103_0ccb3c60",
       "title": "Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands",
@@ -54,33 +79,25 @@
       ],
       "summary_vi": "Cơ hội công nghệ và giải pháp mới: Tutor Intelligence raises Series B to scale m",
       "url": "https://www.therobotreport.com/tutor-intelligence-raises-series-b-to-scale-model-training-robot-deployments/"
-    },
-    {
-      "id": "opp_2026_1024_55c0af0b",
-      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway",
-      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
-    },
-    {
-      "id": "opp_2026_1101_8ed6d301",
-      "title": "Solving the Interconnect Challenge in Modern Robotics: How 3M Is Engineering for Motion, Density, and Uptime",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Solving the Interconn",
-      "url": "https://www.therobotreport.com/solving-the-interconnect-challenge-in-modern-robotics-how-3m-is-engineering-for-motion-density-and-uptime/"
     }
   ],
   "funding_deals": [
+    {
+      "title": "Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics",
+      "type": "M&A",
+      "amount": "$5.4B",
+      "sector": "robotics",
+      "sector_vi": "Robotics",
+      "url": "https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/"
+    },
+    {
+      "title": "Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak",
+      "type": "Gọi vốn",
+      "amount": "$1.6B",
+      "sector": "robotics",
+      "sector_vi": "Robotics",
+      "url": "https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/"
+    },
     {
       "title": "Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands",
       "type": "Xu hướng",
@@ -104,22 +121,6 @@
       "sector": "robotics",
       "sector_vi": "Robotics",
       "url": "https://www.therobotreport.com/tutor-intelligence-raises-series-b-to-scale-model-training-robot-deployments/"
-    },
-    {
-      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
-      "type": "Gọi vốn",
-      "amount": "$20K",
-      "sector": "hardware",
-      "sector_vi": "Phần cứng & IoT",
-      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
-    },
-    {
-      "title": "Solving the Interconnect Challenge in Modern Robotics: How 3M Is Engineering for Motion, Density, and Uptime",
-      "type": "Gọi vốn",
-      "amount": "N/A",
-      "sector": "robotics",
-      "sector_vi": "Robotics",
-      "url": "https://www.therobotreport.com/solving-the-interconnect-challenge-in-modern-robotics-how-3m-is-engineering-for-motion-density-and-uptime/"
     }
   ],
   "hot_topics": {
@@ -192,9 +193,9 @@
   },
   "tech_frequency": {
     "ESP32": {
-      "count": 22,
+      "count": 21,
       "prev_week": 22,
-      "change_pct": 0
+      "change_pct": -5
     },
     "TinyML": {
       "count": 15,
@@ -257,9 +258,9 @@
       "change_pct": 3
     },
     "Sensor": {
-      "count": 21,
+      "count": 23,
       "prev_week": 23,
-      "change_pct": -9
+      "change_pct": 0
     }
   },
   "new_terms": [
