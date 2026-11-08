@@ -312,15 +312,6 @@
       "Ultrasonic": 2
     }
   },
-  "STM32": {
-    "type": "Hardware",
-    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 1,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
-  },
   "Matter": {
     "type": "Protocol",
     "description_vi": "Tiêu chuẩn kết nối nhà thông minh hợp nhất trên nền tảng IPv6, Thread và WiFi",
@@ -398,6 +389,15 @@
     "mentions_prev_week": 0,
     "change_pct": 0,
     "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "STM32": {
+    "type": "Hardware",
+    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 1,
+    "change_pct": -100,
+    "trend": "fading",
     "co_occurs_with": {}
   },
   "Jetson": {
