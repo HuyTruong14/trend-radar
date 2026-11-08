@@ -14,7 +14,7 @@
       "Turbidity": 3,
       "Arduino": 2,
       "Ultrasonic": 2,
-      "RP2040": 2
+      "RP2040": 1
     }
   },
   "Edge AI": {
@@ -85,20 +85,6 @@
       "BLE": 2
     }
   },
-  "Raspberry Pi": {
-    "type": "Hardware",
-    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
-    "mentions_this_week": 9,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2350": 5,
-      "RP2040": 4,
-      "ESP32": 2,
-      "MicroPython": 1
-    }
-  },
   "ROS2": {
     "type": "Platform",
     "description_vi": "Hệ điều hành robot thế hệ 2 có tính phân tán, bảo mật và hỗ trợ thời gian thực",
@@ -119,9 +105,9 @@
     "change_pct": 60,
     "trend": "rising",
     "co_occurs_with": {
-      "Raspberry Pi": 5,
       "RP2040": 4,
-      "ESP32": 2,
+      "Raspberry Pi": 4,
+      "ESP32": 1,
       "MicroPython": 1
     }
   },
@@ -135,6 +121,20 @@
     "co_occurs_with": {
       "ESP32": 2,
       "MQTT": 2
+    }
+  },
+  "Raspberry Pi": {
+    "type": "Hardware",
+    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
+    "mentions_this_week": 8,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2350": 4,
+      "RP2040": 3,
+      "ESP32": 1,
+      "MicroPython": 1
     }
   },
   "MQTT": {
@@ -167,19 +167,6 @@
       "TDS": 1
     }
   },
-  "RP2040": {
-    "type": "Hardware",
-    "description_vi": "Vi điều khiển lõi kép Cortex-M0+ đầu tiên do Raspberry Pi tự thiết kế",
-    "mentions_this_week": 4,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2350": 4,
-      "Raspberry Pi": 4,
-      "ESP32": 2
-    }
-  },
   "LoRA": {
     "type": "AI/ML",
     "description_vi": "Phương pháp tinh chỉnh mô hình ngôn ngữ bằng ma trận rank thấp siêu tiết kiệm bộ nhớ",
@@ -204,6 +191,19 @@
       "MQTT": 2,
       "Turbidity": 2,
       "Actuator": 2
+    }
+  },
+  "RP2040": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển lõi kép Cortex-M0+ đầu tiên do Raspberry Pi tự thiết kế",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2350": 4,
+      "Raspberry Pi": 3,
+      "ESP32": 1
     }
   },
   "Modbus": {
