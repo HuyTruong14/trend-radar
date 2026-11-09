@@ -1850,18 +1850,19 @@
   },
   {
     "date": "2026-11-09",
-    "total_items": 178,
+    "total_items": 195,
     "avg_relevance_score": null,
     "cross_source_count": 0,
     "by_source": {
       "GitHub": 44,
-      "The Robot Report": 15,
+      "IEEE Spectrum": 9,
       "Hackster News - Hackster.io": 15,
-      "iGB": 15,
-      "IEEE Spectrum": 8,
       "SBC News": 10,
       "IoT Business News": 15,
-      "Robohub": 11,
+      "iGB": 15,
+      "The Robot Report": 15,
+      "arXiv": 15,
+      "Robohub": 12,
       "Fish Farmer Magazine RSS Feed": 15,
       "Engineering News | Aquaculture": 15,
       "The Fish Site": 15
@@ -1869,25 +1870,26 @@
     "by_keyword": {
       "robotics": 15,
       "aquaculture iot": 14,
+      "": 136,
       "water quality sensor": 15,
-      "": 134
+      "cs.AI, cs.CV, cs.RO": 15
     },
     "top_repos": [
       {
         "name": "Developer-Y/cs-video-courses",
-        "stars": 84719
+        "stars": 84752
       },
       {
         "name": "commaai/openpilot",
-        "stars": 64090
+        "stars": 64094
       },
       {
         "name": "NaiboWang/EasySpider",
-        "stars": 44771
+        "stars": 44772
       },
       {
         "name": "AtsushiSakai/PythonRobotics",
-        "stars": 30875
+        "stars": 30878
       },
       {
         "name": "Genesis-Embodied-AI/genesis-world",
@@ -1895,19 +1897,19 @@
       },
       {
         "name": "harvard-edge/cs249r_book",
-        "stars": 30061
+        "stars": 30084
       },
       {
         "name": "huggingface/lerobot",
-        "stars": 28761
+        "stars": 28774
       },
       {
         "name": "earthtojake/text-to-cad",
-        "stars": 25854
+        "stars": 25887
       },
       {
         "name": "wechaty/wechaty",
-        "stars": 23534
+        "stars": 23535
       },
       {
         "name": "questdb/questdb",
@@ -1915,23 +1917,23 @@
       }
     ],
     "github_repos": [
-      "ArduPilot/ardupilot",
-      "earthtojake/text-to-cad",
       "questdb/questdb",
-      "commaai/openpilot",
-      "pollen-robotics/microduck",
-      "harvard-edge/cs249r_book",
-      "larry-athey/climate-czar",
+      "Genesis-Embodied-AI/genesis-world",
       "J-Akiru5/OptiFeed",
+      "pollen-robotics/microduck",
+      "commaai/openpilot",
+      "ArduPilot/ardupilot",
+      "zauberzeug/nicegui",
+      "huggingface/lerobot",
       "google-deepmind/mujoco",
       "rknightion/meraki-dashboard-ha",
-      "Genesis-Embodied-AI/genesis-world",
-      "huggingface/lerobot",
+      "harvard-edge/cs249r_book",
+      "earthtojake/text-to-cad",
+      "wechaty/wechaty",
+      "larry-athey/climate-czar",
       "NaiboWang/EasySpider",
       "Developer-Y/cs-video-courses",
-      "wechaty/wechaty",
       "Namrata-Kar/water-quality-backend",
-      "zauberzeug/nicegui",
       "Ankit02124/AquaSense",
       "sakthivel-vs7/AI-Water-Quality-prediction",
       "AlivelliAshwanth/smart_city_pulse",
