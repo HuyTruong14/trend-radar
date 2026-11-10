@@ -1,8 +1,8 @@
 # Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W46
 
-**Khoảng thời gian:** 2026-11-04 đến 2026-11-10  
+**Khoảng thời gian:** 2026-11-05 đến 2026-11-11  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-10 20:59 (giờ VN)  
+**Tạo lúc:** 2026-11-11 05:40 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W46) | Tuần này (W46) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 857 | **828** | -29 (-3.4%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 674 | **714** | +40 (+5.9%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 828 | **881** | +53 (+6.4%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 714 | **729** | +15 (+2.1%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 140 | **145** | +5 (+3.6%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 534 | **569** | +35 (+6.6%) | Dòng tín hiệu thị trường rộng |
+| 🟡 **Research (7–8/9)** | 145 | **149** | +4 (+2.8%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 569 | **580** | +11 (+1.9%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -23,9 +23,9 @@
 | # | Tiêu đề dự án / Repo | Điểm | Stage | Loại tín hiệu | Tóm tắt cơ hội (summary_vi) |
 |---|---|:---:|:---:|---|---|
 | 1 | [Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics](https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/) | **⚡ 8/9** | `research` | `price_shift, supply_gap, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Chinese regulators bl |
-| 2 | [Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak](https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Sector Snapshot: Cons |
-| 3 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31 |
-| 4 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
+| 2 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31 |
+| 3 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
+| 4 | [Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak](https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Sector Snapshot: Cons |
 | 5 | [Churchill Capital XI shareholders approve $2.5B Agility Robotics humanoid SPAC](https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Churchill Capital XI |
 
 ---
@@ -35,9 +35,9 @@
 | Thương vụ / Doanh nghiệp | Hình thức | Giá trị | Ngành chuẩn hóa | Chi tiết định hướng |
 |---|:---:|:---:|---|---|
 | [Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics](https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/) | **M&A** | **$5.4B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak](https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/) | **Gọi vốn** | **$1.6B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **Xu hướng** | **$31.4M** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak](https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/) | **Gọi vốn** | **$1.6B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Churchill Capital XI shareholders approve $2.5B Agility Robotics humanoid SPAC](https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/) | **Gọi vốn** | **$2.5B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 
 ---
@@ -74,11 +74,11 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W46) | Tuần trước (W46) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **82** | 83 | `-1%` | ➡️ Ổn định |
-| **ESP32** | **28** | 23 | `+22%` | 📈 Tăng nhẹ |
-| **Sensor** | **23** | 23 | `0%` | ➡️ Ổn định |
+| **Robotics** | **74** | 82 | `-10%` | ➡️ Ổn định |
+| **ESP32** | **27** | 28 | `-4%` | ➡️ Ổn định |
+| **Sensor** | **24** | 23 | `+4%` | 📈 Tăng nhẹ |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **16** | 15 | `+7%` | 📈 Tăng nhẹ |
+| **Humanoid** | **16** | 16 | `0%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
 | **LoRaWAN** | **14** | 14 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
@@ -95,12 +95,12 @@
 
 - **`SaaS`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`OpenAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`GR8_TECH`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`SoftBank`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AutoModerator`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`BioMar`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
 ---
 

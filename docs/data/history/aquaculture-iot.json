@@ -1504,11 +1504,12 @@
   },
   {
     "date": "2026-11-10",
-    "total_items": 73,
+    "total_items": 88,
     "avg_relevance_score": null,
     "cross_source_count": 0,
     "by_source": {
       "GitHub": 28,
+      "arXiv": 15,
       "Fish Farmer Magazine RSS Feed": 15,
       "Engineering News | Aquaculture": 15,
       "The Fish Site": 15
@@ -1516,6 +1517,7 @@
     "by_keyword": {
       "aquaculture iot": 13,
       "water quality sensor": 15,
+      "cs.AI, cs.CV": 15,
       "": 45
     },
     "top_repos": [
@@ -1556,16 +1558,17 @@
         "stars": 1
       },
       {
-        "name": "berunadh/Smart-Water-Quality-Monitor",
+        "name": "AITT-VN/yolouno_extension_water_quality_sensor",
         "stars": 0
       }
     ],
     "github_repos": [
+      "larry-athey/climate-czar",
+      "AITT-VN/yolouno_extension_water_quality_sensor",
       "J-Akiru5/OptiFeed",
       "berunadh/Smart-Water-Quality-Monitor",
       "wissen-csi/backend_station",
       "rknightion/meraki-dashboard-ha",
-      "larry-athey/climate-czar",
       "Namrata-Kar/water-quality-backend",
       "Ankit02124/AquaSense",
       "sakthivel-vs7/AI-Water-Quality-prediction",
@@ -1585,7 +1588,6 @@
       "shalinir-ops/IoT-Water-Quality-Monitoring-System",
       "julianm12345/Arduino-Based-Water-Quality-Detection-Apparatus",
       "api-evangelist/jala",
-      "LowCostSensor/DOMino-sensor",
       "api-evangelist/efishery",
       "Banez-ALI/IoT-Water-Quality-Monitoring-System",
       "latverian/edge-intelligent-aquaculture"

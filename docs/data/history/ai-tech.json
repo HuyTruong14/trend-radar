@@ -2374,17 +2374,19 @@
   },
   {
     "date": "2026-11-10",
-    "total_items": 109,
+    "total_items": 124,
     "avg_relevance_score": null,
     "cross_source_count": 0,
     "by_source": {
       "GitHub": 30,
+      "arXiv": 15,
       "Hacker News": 74,
       "reddit": 5
     },
     "by_keyword": {
       "llm agent": 15,
       "ai video generation": 15,
+      "cs.AI, cs.CV, cs.CL": 15,
       "AI agent": 15,
       "generative AI": 15,
       "AI video": 15,
@@ -2395,74 +2397,74 @@
     "top_repos": [
       {
         "name": "affaan-m/ECC",
-        "stars": 300530
+        "stars": 300767
       },
       {
         "name": "NousResearch/hermes-agent",
-        "stars": 262281
+        "stars": 262428
       },
       {
         "name": "firecrawl/firecrawl",
-        "stars": 200357
+        "stars": 200502
       },
       {
         "name": "DietrichGebert/ponytail",
-        "stars": 188143
+        "stars": 188352
       },
       {
         "name": "langgenius/dify",
-        "stars": 160836
+        "stars": 160882
       },
       {
         "name": "langchain-ai/langchain",
-        "stars": 149301
+        "stars": 149327
       },
       {
         "name": "Shubhamsaboo/awesome-llm-apps",
-        "stars": 144346
+        "stars": 144368
       },
       {
         "name": "TauricResearch/TradingAgents",
-        "stars": 121803
+        "stars": 121874
       },
       {
         "name": "earendil-works/pi",
-        "stars": 121203
+        "stars": 121245
       },
       {
         "name": "browser-use/browser-use",
-        "stars": 120535
+        "stars": 120590
       }
     ],
     "github_repos": [
       "paperclipai/paperclip",
       "NousResearch/hermes-agent",
-      "tetherto/qvac",
       "OpenHands/OpenHands",
-      "earendil-works/pi",
-      "langgenius/dify",
       "tt-a1i/archify",
+      "tetherto/qvac",
+      "earendil-works/pi",
+      "JuliusBrussee/caveman",
+      "langchain-ai/langchain",
+      "langgenius/dify",
       "firecrawl/firecrawl",
+      "browser-use/browser-use",
+      "Likely7/Veyra-NRVideo",
       "unclecode/crawl4ai",
       "invoke-ai/InvokeAI",
       "ZeroLu/awesome-seedance",
       "Anil-matcha/Open-Generative-AI",
-      "browser-use/browser-use",
-      "langchain-ai/langchain",
       "aqm857886159/Nomi",
       "Shubhamsaboo/awesome-llm-apps",
-      "Likely7/Veyra-NRVideo",
       "czg86389-hub/muse2api",
       "PurpleDoubleD/locally-uncensored",
+      "qianshuixia/shrimpreel",
       "affaan-m/ECC",
       "YILS-LIN/short-video-factory",
-      "JuliusBrussee/caveman",
       "wideeyededi/uncensored-nsfw-ai-video-api",
       "flatkey-ai/flatkey-cli",
       "HBAI-Ltd/Toonflow-app",
       "TauricResearch/TradingAgents",
       "leofan90/Awesome-World-Models",
-      "unum-cloud/UForm",
       "andyhuo520/digital-human-koubo",
       "DietrichGebert/ponytail"
     ]
