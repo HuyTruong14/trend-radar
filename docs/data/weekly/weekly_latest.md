@@ -1,20 +1,20 @@
 # Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W46
 
-**Khoảng thời gian:** 2026-11-03 đến 2026-11-09  
+**Khoảng thời gian:** 2026-11-04 đến 2026-11-10  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-09 21:41 (giờ VN)  
+**Tạo lúc:** 2026-11-10 07:59 (giờ VN)  
 
 ---
 
-## 1. Tổng quan thị trường (So sánh W46 vs W45)
+## 1. Tổng quan thị trường (So sánh W46 vs W46)
 
-| Chỉ số quan trắc | Tuần trước (W45) | Tuần này (W46) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
+| Chỉ số quan trắc | Tuần trước (W46) | Tuần này (W46) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 851 | **857** | +6 (+0.7%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 651 | **674** | +23 (+3.5%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 857 | **854** | -3 (-0.4%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 674 | **687** | +13 (+1.9%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 136 | **140** | +4 (+2.9%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 515 | **534** | +19 (+3.7%) | Dòng tín hiệu thị trường rộng |
+| 🟡 **Research (7–8/9)** | 140 | **141** | +1 (+0.7%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 534 | **546** | +12 (+2.2%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -25,8 +25,8 @@
 | 1 | [Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics](https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/) | **⚡ 8/9** | `research` | `price_shift, supply_gap, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Chinese regulators bl |
 | 2 | [Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak](https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Sector Snapshot: Cons |
 | 3 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31 |
-| 4 | [Churchill Capital XI shareholders approve $2.5B Agility Robotics humanoid SPAC](https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Churchill Capital XI |
-| 5 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
+| 4 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
+| 5 | [Churchill Capital XI shareholders approve $2.5B Agility Robotics humanoid SPAC](https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Churchill Capital XI |
 
 ---
 
@@ -37,8 +37,8 @@
 | [Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics](https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/) | **M&A** | **$5.4B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak](https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/) | **Gọi vốn** | **$1.6B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **Xu hướng** | **$31.4M** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [Churchill Capital XI shareholders approve $2.5B Agility Robotics humanoid SPAC](https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/) | **Gọi vốn** | **$2.5B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [Churchill Capital XI shareholders approve $2.5B Agility Robotics humanoid SPAC](https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/) | **Gọi vốn** | **$2.5B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 
 ---
 
@@ -72,20 +72,20 @@
 
 ## 5. Công Nghệ Được Nhắc Nhiều (Tần suất & Tăng trưởng)
 
-| Công nghệ / Phần cứng | Tần suất tuần này (W46) | Tuần trước (W45) | Tăng trưởng (%) | Đánh giá xu thế |
+| Công nghệ / Phần cứng | Tần suất tuần này (W46) | Tuần trước (W46) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **83** | 76 | `+9%` | 📈 Tăng nhẹ |
-| **ESP32** | **23** | 22 | `+5%` | 📈 Tăng nhẹ |
+| **Robotics** | **81** | 83 | `-2%` | ➡️ Ổn định |
+| **ESP32** | **29** | 23 | `+26%` | 📈 Tăng nhẹ |
 | **Sensor** | **23** | 23 | `0%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
+| **Humanoid** | **16** | 15 | `+7%` | 📈 Tăng nhẹ |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **15** | 15 | `0%` | ➡️ Ổn định |
 | **LoRaWAN** | **14** | 14 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
 | **RP2350** | **8** | 8 | `0%` | ➡️ Ổn định |
 | **MQTT** | **7** | 7 | `0%` | ➡️ Ổn định |
-| **STM32** | **0** | 1 | `-100%` | ➡️ Ổn định |
+| **STM32** | **0** | 0 | `0%` | ➡️ Ổn định |
 | **Computer Vision** | **0** | 0 | `0%` | ➡️ Ổn định |
 | **BLE** | **0** | 0 | `0%` | ➡️ Ổn định |
 

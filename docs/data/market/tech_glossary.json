@@ -29,6 +29,15 @@
       "Turbidity": 1
     }
   },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 16,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "TinyML": {
     "type": "AI/ML",
     "description_vi": "Kỹ thuật chạy mô hình máy học trực tiếp trên vi điều khiển không cần điện toán đám mây",
@@ -40,15 +49,6 @@
       "Edge AI": 9,
       "ESP32": 8
     }
-  },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 15,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "LoRaWAN": {
     "type": "Protocol",
@@ -66,9 +66,9 @@
   "Humanoid": {
     "type": "Robotics",
     "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 13,
+    "mentions_this_week": 14,
     "mentions_prev_week": 7,
-    "change_pct": 86,
+    "change_pct": 100,
     "trend": "rising",
     "co_occurs_with": {
       "ROS2": 5
@@ -226,6 +226,18 @@
     "trend": "new",
     "co_occurs_with": {}
   },
+  "NB-IoT": {
+    "type": "Protocol",
+    "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "STM32": 2,
+      "Zephyr": 2
+    }
+  },
   "DO (Dissolved Oxygen)": {
     "type": "Sensor",
     "description_vi": "Cảm biến oxy hòa tan (quang học hoặc galvanic) giám sát mức dưỡng khí trong nước ao",
@@ -250,6 +262,18 @@
       "MQTT": 2,
       "Ultrasonic": 2,
       "Edge AI": 1
+    }
+  },
+  "STM32": {
+    "type": "Hardware",
+    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 1,
+    "change_pct": 100,
+    "trend": "rising",
+    "co_occurs_with": {
+      "NB-IoT": 2,
+      "Zephyr": 2
     }
   },
   "Nordic nRF52": {
@@ -290,6 +314,18 @@
     "trend": "new",
     "co_occurs_with": {}
   },
+  "Zephyr": {
+    "type": "Platform",
+    "description_vi": "Hệ điều hành RTOS bảo mật mã nguồn mở của Linux Foundation hỗ trợ đa kiến trúc",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "STM32": 2,
+      "NB-IoT": 2
+    }
+  },
   "TDS": {
     "type": "Sensor",
     "description_vi": "Cảm biến đo tổng chất rắn hòa tan trong nước (Total Dissolved Solids)",
@@ -317,15 +353,6 @@
   "Matter": {
     "type": "Protocol",
     "description_vi": "Tiêu chuẩn kết nối nhà thông minh hợp nhất trên nền tảng IPv6, Thread và WiFi",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
-  "NB-IoT": {
-    "type": "Protocol",
-    "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
     "mentions_this_week": 1,
     "mentions_prev_week": 0,
     "change_pct": 100,
@@ -411,15 +438,6 @@
     "mentions_prev_week": 0,
     "change_pct": 0,
     "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "STM32": {
-    "type": "Hardware",
-    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 1,
-    "change_pct": -100,
-    "trend": "fading",
     "co_occurs_with": {}
   },
   "Jetson": {
@@ -560,15 +578,6 @@
   "FreeRTOS": {
     "type": "Platform",
     "description_vi": "Hệ điều hành thời gian thực (RTOS) siêu nhẹ và phổ biến nhất cho vi điều khiển",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "Zephyr": {
-    "type": "Platform",
-    "description_vi": "Hệ điều hành RTOS bảo mật mã nguồn mở của Linux Foundation hỗ trợ đa kiến trúc",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,
