@@ -29,15 +29,6 @@
       "Turbidity": 1
     }
   },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 16,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "TinyML": {
     "type": "AI/ML",
     "description_vi": "Kỹ thuật chạy mô hình máy học trực tiếp trên vi điều khiển không cần điện toán đám mây",
@@ -63,6 +54,15 @@
       "DO (Dissolved Oxygen)": 5
     }
   },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 14,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "Humanoid": {
     "type": "Robotics",
     "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
@@ -85,17 +85,31 @@
       "BLE": 2
     }
   },
+  "Raspberry Pi": {
+    "type": "Hardware",
+    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
+    "mentions_this_week": 10,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2350": 4,
+      "RP2040": 3,
+      "ESP32": 1,
+      "MicroPython": 1
+    }
+  },
   "Arduino": {
     "type": "Hardware",
     "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
-    "mentions_this_week": 10,
+    "mentions_this_week": 9,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
     "co_occurs_with": {
       "ESP32": 2,
       "MQTT": 2,
-      "ROS2": 2
+      "ROS2": 1
     }
   },
   "ROS2": {
@@ -108,7 +122,7 @@
     "co_occurs_with": {
       "Humanoid": 5,
       "LiDAR": 4,
-      "Arduino": 2
+      "Arduino": 1
     }
   },
   "RP2350": {
@@ -121,20 +135,6 @@
     "co_occurs_with": {
       "RP2040": 4,
       "Raspberry Pi": 4,
-      "ESP32": 1,
-      "MicroPython": 1
-    }
-  },
-  "Raspberry Pi": {
-    "type": "Hardware",
-    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
-    "mentions_this_week": 8,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2350": 4,
-      "RP2040": 3,
       "ESP32": 1,
       "MicroPython": 1
     }
@@ -359,15 +359,6 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "RAG": {
-    "type": "AI/ML",
-    "description_vi": "Kỹ thuật kết hợp truy xuất tri thức ngoài (Retrieval) với mô hình tạo sinh (Generation)",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "LangChain": {
     "type": "AI/ML",
     "description_vi": "Framework kết nối LLM với cơ sở dữ liệu ngoài, công cụ thực thi và chuỗi tác vụ AI",
@@ -407,17 +398,6 @@
     "trend": "new",
     "co_occurs_with": {
       "TDS": 1
-    }
-  },
-  "LiDAR": {
-    "type": "Sensor",
-    "description_vi": "Cảm biến quét laser đo khoảng cách tạo bản đồ không gian 3D cho xe tự hành và robot",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "ROS2": 4
     }
   },
   "Water Level": {
@@ -497,6 +477,15 @@
   "WebSockets": {
     "type": "Protocol",
     "description_vi": "Kênh liên lạc song công thời gian thực giữa máy chủ và trình duyệt hoặc gateway",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "RAG": {
+    "type": "AI/ML",
+    "description_vi": "Kỹ thuật kết hợp truy xuất tri thức ngoài (Retrieval) với mô hình tạo sinh (Generation)",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,
@@ -628,6 +617,17 @@
     "change_pct": 0,
     "trend": "stable",
     "co_occurs_with": {}
+  },
+  "LiDAR": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến quét laser đo khoảng cách tạo bản đồ không gian 3D cho xe tự hành và robot",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {
+      "ROS2": 4
+    }
   },
   "Temperature Sensor": {
     "type": "Sensor",
