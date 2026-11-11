@@ -29,16 +29,14 @@
       "Turbidity": 1
     }
   },
-  "Humanoid": {
-    "type": "Robotics",
-    "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
     "mentions_this_week": 16,
-    "mentions_prev_week": 7,
-    "change_pct": 129,
-    "trend": "rising",
-    "co_occurs_with": {
-      "ROS2": 5
-    }
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "TinyML": {
     "type": "AI/ML",
@@ -52,15 +50,6 @@
       "ESP32": 8
     }
   },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 15,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "LoRaWAN": {
     "type": "Protocol",
     "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
@@ -72,6 +61,17 @@
       "ESP32": 6,
       "LoRA": 5,
       "DO (Dissolved Oxygen)": 5
+    }
+  },
+  "Humanoid": {
+    "type": "Robotics",
+    "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
+    "mentions_this_week": 14,
+    "mentions_prev_week": 7,
+    "change_pct": 100,
+    "trend": "rising",
+    "co_occurs_with": {
+      "ROS2": 5
     }
   },
   "Arduino": {
@@ -169,6 +169,15 @@
       "TDS": 1
     }
   },
+  "Drone": {
+    "type": "Robotics",
+    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
+    "mentions_this_week": 6,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "LoRA": {
     "type": "AI/ML",
     "description_vi": "Phương pháp tinh chỉnh mô hình ngôn ngữ bằng ma trận rank thấp siêu tiết kiệm bộ nhớ",
@@ -203,15 +212,6 @@
       "Turbidity": 2,
       "Actuator": 2
     }
-  },
-  "Drone": {
-    "type": "Robotics",
-    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
-    "mentions_this_week": 4,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "RP2040": {
     "type": "Hardware",
@@ -324,17 +324,6 @@
       "Salinity": 1
     }
   },
-  "LiDAR": {
-    "type": "Sensor",
-    "description_vi": "Cảm biến quét laser đo khoảng cách tạo bản đồ không gian 3D cho xe tự hành và robot",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "ROS2": 4
-    }
-  },
   "Actuator": {
     "type": "Hardware",
     "description_vi": "Cơ cấu chấp hành (động cơ servo, van điện từ, relay) thực hiện hành vi vật lý",
@@ -418,6 +407,17 @@
     "trend": "new",
     "co_occurs_with": {
       "TDS": 1
+    }
+  },
+  "LiDAR": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến quét laser đo khoảng cách tạo bản đồ không gian 3D cho xe tự hành và robot",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ROS2": 4
     }
   },
   "Water Level": {
