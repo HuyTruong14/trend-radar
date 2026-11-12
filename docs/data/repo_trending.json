@@ -139,31 +139,6 @@
     "role": "infra"
   },
   {
-    "repo": "paperclipai/paperclip",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
-    "role": "ai"
-  },
-  {
-    "repo": "aqm857886159/Nomi",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Nomi",
-    "role": "platform"
-  },
-  {
     "repo": "tetherto/qvac",
     "stars": 540,
     "stars_prev_week": 460,
@@ -177,17 +152,28 @@
     "role": "platform"
   },
   {
-    "repo": "earendil-works/pi",
+    "repo": "paperclipai/paperclip",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "IoT",
-      "Open Source"
+      "Edge AI"
     ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
-    "role": "platform"
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
+    "role": "ai"
+  },
+  {
+    "repo": "invoke-ai/InvokeAI",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán InvokeAI",
+    "role": "ai"
   },
   {
     "repo": "OpenHands/OpenHands",
@@ -200,19 +186,6 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
-    "role": "platform"
-  },
-  {
-    "repo": "browser-use/browser-use",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: browser use",
     "role": "platform"
   },
   {
@@ -229,17 +202,43 @@
     "role": "platform"
   },
   {
-    "repo": "langchain-ai/langchain",
+    "repo": "aqm857886159/Nomi",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "Edge AI",
-      "LangChain"
+      "IoT",
+      "Open Source"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
-    "role": "ai"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Nomi",
+    "role": "platform"
+  },
+  {
+    "repo": "browser-use/browser-use",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: browser use",
+    "role": "platform"
+  },
+  {
+    "repo": "earendil-works/pi",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
+    "role": "platform"
   },
   {
     "repo": "ZeroLu/awesome-seedance",
@@ -253,6 +252,19 @@
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho awesome seedance",
     "role": "platform"
+  },
+  {
+    "repo": "langchain-ai/langchain",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI",
+      "LangChain"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
+    "role": "ai"
   },
   {
     "repo": "czg86389-hub/muse2api",
@@ -277,18 +289,6 @@
       "LLM"
     ],
     "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán awesome llm apps",
-    "role": "ai"
-  },
-  {
-    "repo": "invoke-ai/InvokeAI",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán InvokeAI",
     "role": "ai"
   },
   {
@@ -358,6 +358,18 @@
     "role": "platform"
   },
   {
+    "repo": "pollen-robotics/microduck",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Robotics"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: microduck",
+    "role": "platform"
+  },
+  {
     "repo": "questdb/questdb",
     "stars": 540,
     "stars_prev_week": 460,
@@ -368,6 +380,32 @@
       "Open Source"
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
+    "role": "platform"
+  },
+  {
+    "repo": "earthtojake/text-to-cad",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho text to cad",
+    "role": "platform"
+  },
+  {
+    "repo": "harvard-edge/cs249r_book",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
     "role": "platform"
   },
   {
@@ -408,44 +446,6 @@
     "role": "platform"
   },
   {
-    "repo": "earthtojake/text-to-cad",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho text to cad",
-    "role": "platform"
-  },
-  {
-    "repo": "harvard-edge/cs249r_book",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
-    "role": "platform"
-  },
-  {
-    "repo": "pollen-robotics/microduck",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Robotics"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: microduck",
-    "role": "platform"
-  },
-  {
     "repo": "Likely7/Veyra-NRVideo",
     "stars": 492,
     "stars_prev_week": 419,
@@ -457,6 +457,19 @@
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Veyra NRVideo",
     "role": "platform"
+  },
+  {
+    "repo": "datawhalechina/hello-agents",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán hello agents",
+    "role": "ai"
   },
   {
     "repo": "unclecode/crawl4ai",
@@ -584,18 +597,6 @@
     "role": "platform"
   },
   {
-    "repo": "DietrichGebert/ponytail",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán ponytail",
-    "role": "ai"
-  },
-  {
     "repo": "fikrikarim/parlor",
     "stars": 492,
     "stars_prev_week": 419,
@@ -694,6 +695,19 @@
     "role": "ai"
   },
   {
+    "repo": "Rhoswen-void/Water-Quality-testing-Project",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Aquaculture",
+      "Water Quality"
+    ],
+    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+    "role": "infra"
+  },
+  {
     "repo": "rknightion/meraki-dashboard-ha",
     "stars": 492,
     "stars_prev_week": 419,
@@ -783,19 +797,6 @@
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: smart city pulse",
     "role": "platform"
-  },
-  {
-    "repo": "Rhoswen-void/Water-Quality-testing-Project",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Aquaculture",
-      "Water Quality"
-    ],
-    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
-    "role": "infra"
   },
   {
     "repo": "barabz/poseidon-admin-panel",
@@ -977,19 +978,6 @@
     "role": "hardware"
   },
   {
-    "repo": "api-evangelist/efishery",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Aquaculture",
-      "Water Quality"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: efishery",
-    "role": "platform"
-  },
-  {
     "repo": "wechaty/wechaty",
     "stars": 492,
     "stars_prev_week": 419,
@@ -1003,6 +991,18 @@
     "role": "platform"
   },
   {
+    "repo": "huggingface/lerobot",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Robotics"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
+    "role": "platform"
+  },
+  {
     "repo": "google-deepmind/mujoco",
     "stars": 492,
     "stars_prev_week": 419,
@@ -1013,18 +1013,6 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
-    "role": "platform"
-  },
-  {
-    "repo": "huggingface/lerobot",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Robotics"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
     "role": "platform"
   },
   {
@@ -1134,6 +1122,18 @@
     "role": "ai"
   },
   {
+    "repo": "Leamon-Lee/Design-of-Enterprise-IoT-design",
+    "stars": 120,
+    "stars_prev_week": 73,
+    "velocity": 47,
+    "language": "Python",
+    "tags": [
+      "IoT"
+    ],
+    "summary_vi": "Thiết kế kiến trúc hệ thống IoT cho quy mô trang trại lớn",
+    "role": "platform"
+  },
+  {
     "repo": "Divi3216/IoT-Based-Water-Quality-Monitoring-System",
     "stars": 120,
     "stars_prev_week": 73,
@@ -1145,18 +1145,6 @@
       "Water Quality"
     ],
     "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
-    "role": "platform"
-  },
-  {
-    "repo": "Leamon-Lee/Design-of-Enterprise-IoT-design",
-    "stars": 120,
-    "stars_prev_week": 73,
-    "velocity": 47,
-    "language": "Python",
-    "tags": [
-      "IoT"
-    ],
-    "summary_vi": "Thiết kế kiến trúc hệ thống IoT cho quy mô trang trại lớn",
     "role": "platform"
   },
   {
