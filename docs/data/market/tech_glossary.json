@@ -32,7 +32,7 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 16,
+    "mentions_this_week": 17,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -74,19 +74,6 @@
       "ROS2": 5
     }
   },
-  "Arduino": {
-    "type": "Hardware",
-    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
-    "mentions_this_week": 11,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "ESP32": 2,
-      "MQTT": 2,
-      "ROS2": 1
-    }
-  },
   "RISC-V": {
     "type": "Hardware",
     "description_vi": "Kiến trúc tập lệnh (ISA) mở cho phép tự do thiết kế chip không phụ thuộc bản quyền",
@@ -96,6 +83,19 @@
     "trend": "rising",
     "co_occurs_with": {
       "BLE": 2
+    }
+  },
+  "Arduino": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
+    "mentions_this_week": 10,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 2,
+      "MQTT": 2,
+      "ROS2": 1
     }
   },
   "Raspberry Pi": {
@@ -169,15 +169,6 @@
       "TDS": 1
     }
   },
-  "Drone": {
-    "type": "Robotics",
-    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
-    "mentions_this_week": 6,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "LoRA": {
     "type": "AI/ML",
     "description_vi": "Phương pháp tinh chỉnh mô hình ngôn ngữ bằng ma trận rank thấp siêu tiết kiệm bộ nhớ",
@@ -188,6 +179,15 @@
     "co_occurs_with": {
       "LoRaWAN": 5
     }
+  },
+  "Drone": {
+    "type": "Robotics",
+    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
+    "mentions_this_week": 5,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "Ultrasonic": {
     "type": "Sensor",
@@ -270,15 +270,6 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "Nordic nRF52": {
-    "type": "Hardware",
-    "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "BLE": {
     "type": "Protocol",
     "description_vi": "Bluetooth năng lượng thấp (Bluetooth Low Energy) kết nối tầm gần tiết kiệm pin",
@@ -346,6 +337,15 @@
       "NB-IoT": 1,
       "Zephyr": 1
     }
+  },
+  "Nordic nRF52": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "Matter": {
     "type": "Protocol",
