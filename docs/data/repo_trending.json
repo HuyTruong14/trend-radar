@@ -139,18 +139,6 @@
     "role": "infra"
   },
   {
-    "repo": "invoke-ai/InvokeAI",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán InvokeAI",
-    "role": "ai"
-  },
-  {
     "repo": "paperclipai/paperclip",
     "stars": 540,
     "stars_prev_week": 460,
@@ -163,7 +151,7 @@
     "role": "ai"
   },
   {
-    "repo": "earendil-works/pi",
+    "repo": "OpenHands/OpenHands",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -172,7 +160,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
     "role": "platform"
   },
   {
@@ -189,6 +177,19 @@
     "role": "platform"
   },
   {
+    "repo": "tt-a1i/archify",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
+    "role": "platform"
+  },
+  {
     "repo": "JuliusBrussee/caveman",
     "stars": 540,
     "stars_prev_week": 460,
@@ -202,7 +203,7 @@
     "role": "platform"
   },
   {
-    "repo": "OpenHands/OpenHands",
+    "repo": "ZeroLu/awesome-seedance",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -211,7 +212,20 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho awesome seedance",
+    "role": "platform"
+  },
+  {
+    "repo": "earendil-works/pi",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
     "role": "platform"
   },
   {
@@ -228,6 +242,18 @@
     "role": "platform"
   },
   {
+    "repo": "invoke-ai/InvokeAI",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán InvokeAI",
+    "role": "ai"
+  },
+  {
     "repo": "tetherto/qvac",
     "stars": 540,
     "stars_prev_week": 460,
@@ -238,19 +264,6 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
-    "role": "platform"
-  },
-  {
-    "repo": "tt-a1i/archify",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
     "role": "platform"
   },
   {
@@ -277,19 +290,6 @@
     ],
     "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Open Generative AI",
     "role": "ai"
-  },
-  {
-    "repo": "ZeroLu/awesome-seedance",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho awesome seedance",
-    "role": "platform"
   },
   {
     "repo": "czg86389-hub/muse2api",
@@ -358,16 +358,16 @@
     "role": "ai"
   },
   {
-    "repo": "Genesis-Embodied-AI/genesis-world",
+    "repo": "pollen-robotics/microduck",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "Edge AI"
+      "Robotics"
     ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: genesis world",
-    "role": "ai"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: microduck",
+    "role": "platform"
   },
   {
     "repo": "commaai/openpilot",
@@ -395,6 +395,18 @@
     "role": "platform"
   },
   {
+    "repo": "Genesis-Embodied-AI/genesis-world",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: genesis world",
+    "role": "ai"
+  },
+  {
     "repo": "harvard-edge/cs249r_book",
     "stars": 540,
     "stars_prev_week": 460,
@@ -418,18 +430,6 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
-    "role": "platform"
-  },
-  {
-    "repo": "pollen-robotics/microduck",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Robotics"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: microduck",
     "role": "platform"
   },
   {
@@ -746,6 +746,19 @@
     "role": "platform"
   },
   {
+    "repo": "ruwinkaushalya/smart-water-quality-monitoring-system",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Aquaculture",
+      "Water Quality"
+    ],
+    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+    "role": "platform"
+  },
+  {
     "repo": "Namrata-Kar/water-quality-backend",
     "stars": 492,
     "stars_prev_week": 419,
@@ -939,45 +952,6 @@
     "role": "platform"
   },
   {
-    "repo": "julianm12345/Arduino-Based-Water-Quality-Detection-Apparatus",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "C++",
-    "tags": [
-      "Aquaculture",
-      "Arduino",
-      "Water Quality"
-    ],
-    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
-    "role": "platform"
-  },
-  {
-    "repo": "api-evangelist/jala",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp",
-    "role": "platform"
-  },
-  {
-    "repo": "LowCostSensor/DOMino-sensor",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "C++",
-    "tags": [
-      "IoT"
-    ],
-    "summary_vi": "Cảm biến quang học đo oxy hòa tan giá rẻ cho ao nuôi",
-    "role": "hardware"
-  },
-  {
     "repo": "huggingface/lerobot",
     "stars": 492,
     "stars_prev_week": 419,
@@ -1080,6 +1054,35 @@
     "role": "platform"
   },
   {
+    "repo": "LowCostSensor/DOMino-sensor",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "C++",
+    "tags": [
+      "Aquaculture",
+      "IoT",
+      "Water Quality"
+    ],
+    "summary_vi": "Cảm biến quang học đo oxy hòa tan giá rẻ cho ao nuôi",
+    "role": "hardware"
+  },
+  {
+    "repo": "julianm12345/Arduino-Based-Water-Quality-Detection-Apparatus",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "C++",
+    "tags": [
+      "Aquaculture",
+      "Arduino",
+      "IoT",
+      "Water Quality"
+    ],
+    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+    "role": "platform"
+  },
+  {
     "repo": "Gaganmn7353/aquaculture-iot",
     "stars": 492,
     "stars_prev_week": 419,
@@ -1091,6 +1094,19 @@
       "Water Quality"
     ],
     "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
+    "role": "platform"
+  },
+  {
+    "repo": "api-evangelist/jala",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Bộ API kết nối và chuẩn hóa dữ liệu nuôi tôm công nghiệp",
     "role": "platform"
   },
   {
@@ -1115,7 +1131,6 @@
     "tags": [
       "Aquaculture",
       "Edge AI",
-      "IoT",
       "Water Quality"
     ],
     "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",

@@ -32,7 +32,7 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 17,
+    "mentions_this_week": 18,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -88,7 +88,7 @@
   "Arduino": {
     "type": "Hardware",
     "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
-    "mentions_this_week": 10,
+    "mentions_this_week": 9,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -356,6 +356,15 @@
     "trend": "new",
     "co_occurs_with": {}
   },
+  "RAG": {
+    "type": "AI/ML",
+    "description_vi": "Kỹ thuật kết hợp truy xuất tri thức ngoài (Retrieval) với mô hình tạo sinh (Generation)",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "LangChain": {
     "type": "AI/ML",
     "description_vi": "Framework kết nối LLM với cơ sở dữ liệu ngoài, công cụ thực thi và chuỗi tác vụ AI",
@@ -488,15 +497,6 @@
   "WebSockets": {
     "type": "Protocol",
     "description_vi": "Kênh liên lạc song công thời gian thực giữa máy chủ và trình duyệt hoặc gateway",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "RAG": {
-    "type": "AI/ML",
-    "description_vi": "Kỹ thuật kết hợp truy xuất tri thức ngoài (Retrieval) với mô hình tạo sinh (Generation)",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,
