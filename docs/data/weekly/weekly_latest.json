@@ -1,22 +1,22 @@
 {
   "week": "W46",
-  "start_date": "2026-11-07",
-  "end_date": "2026-11-13",
-  "created_at": "2026-11-13T20:38:49.389175+07:00",
+  "start_date": "2026-11-08",
+  "end_date": "2026-11-14",
+  "created_at": "2026-11-14T06:02:45.978837+07:00",
   "previous_week": "W46",
   "stats": {
+    "total_signals": 904,
+    "total_opportunities": 826,
+    "build_ready": 0,
+    "research": 159,
+    "watch": 667
+  },
+  "prev_stats": {
     "total_signals": 895,
     "total_opportunities": 814,
     "build_ready": 0,
     "research": 157,
     "watch": 657
-  },
-  "prev_stats": {
-    "total_signals": 896,
-    "total_opportunities": 789,
-    "build_ready": 0,
-    "research": 156,
-    "watch": 633
   },
   "top_opportunities": [
     {
@@ -193,8 +193,8 @@
   },
   "tech_frequency": {
     "ESP32": {
-      "count": 26,
-      "prev_week": 24,
+      "count": 28,
+      "prev_week": 26,
       "change_pct": 8
     },
     "TinyML": {
@@ -253,14 +253,14 @@
       "change_pct": 0
     },
     "Robotics": {
-      "count": 77,
+      "count": 78,
       "prev_week": 77,
-      "change_pct": 0
+      "change_pct": 1
     },
     "Sensor": {
       "count": 25,
-      "prev_week": 30,
-      "change_pct": -17
+      "prev_week": 25,
+      "change_pct": 0
     }
   },
   "new_terms": [
