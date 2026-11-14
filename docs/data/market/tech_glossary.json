@@ -32,7 +32,7 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 18,
+    "mentions_this_week": 19,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -189,6 +189,21 @@
       "LoRaWAN": 5
     }
   },
+  "Turbidity": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến quang học đo độ đục của nước để đánh giá chất lượng và phù sa lơ lửng",
+    "mentions_this_week": 5,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 3,
+      "ESP32-S3": 2,
+      "MQTT": 2,
+      "Ultrasonic": 2,
+      "Edge AI": 1
+    }
+  },
   "Ultrasonic": {
     "type": "Sensor",
     "description_vi": "Cảm biến sóng siêu âm đo khoảng cách và mực nước bồn chứa/ao nuôi không tiếp xúc",
@@ -226,6 +241,15 @@
     "trend": "new",
     "co_occurs_with": {}
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "DO (Dissolved Oxygen)": {
     "type": "Sensor",
     "description_vi": "Cảm biến oxy hòa tan (quang học hoặc galvanic) giám sát mức dưỡng khí trong nước ao",
@@ -235,21 +259,6 @@
     "trend": "new",
     "co_occurs_with": {
       "LoRaWAN": 5
-    }
-  },
-  "Turbidity": {
-    "type": "Sensor",
-    "description_vi": "Cảm biến quang học đo độ đục của nước để đánh giá chất lượng và phù sa lơ lửng",
-    "mentions_this_week": 3,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "ESP32": 3,
-      "ESP32-S3": 2,
-      "MQTT": 2,
-      "Ultrasonic": 2,
-      "Edge AI": 1
     }
   },
   "FPGA": {
@@ -300,15 +309,6 @@
     "mentions_prev_week": 1,
     "change_pct": 100,
     "trend": "rising",
-    "co_occurs_with": {}
-  },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
     "co_occurs_with": {}
   },
   "TDS": {

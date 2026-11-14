@@ -2,14 +2,14 @@
   "week": "W46",
   "start_date": "2026-11-08",
   "end_date": "2026-11-14",
-  "created_at": "2026-11-14T11:00:27.179928+07:00",
+  "created_at": "2026-11-14T19:43:13.204135+07:00",
   "previous_week": "W46",
   "stats": {
-    "total_signals": 901,
-    "total_opportunities": 827,
-    "build_ready": 0,
-    "research": 159,
-    "watch": 668
+    "total_signals": 931,
+    "total_opportunities": 832,
+    "build_ready": 3,
+    "research": 160,
+    "watch": 669
   },
   "prev_stats": {
     "total_signals": 895,
@@ -19,6 +19,42 @@
     "watch": 657
   },
   "top_opportunities": [
+    {
+      "id": "opp_2026_1113_2c371fa8",
+      "title": "vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản",
+      "url": "https://github.com/vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring"
+    },
+    {
+      "id": "opp_2026_1113_7fa79344",
+      "title": "git-nxbl/smart-biofloc-aquaculture",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
+      "url": "https://github.com/git-nxbl/smart-biofloc-aquaculture"
+    },
+    {
+      "id": "opp_2026_1027_8bea0614",
+      "title": "deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Dự đoán chất lượng nước thời gian thực bằng IoT và máy học",
+      "url": "https://github.com/deepshekhar555/Water-Quality-Prediction-Aquaculture-IoT-ML"
+    },
     {
       "id": "opp_2026_1103_0ccb3c60",
       "title": "Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands",
@@ -42,43 +78,6 @@
       ],
       "summary_vi": "Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway",
       "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
-    },
-    {
-      "id": "opp_2026_1105_c274594a",
-      "title": "Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "supply_gap",
-        "tech_cheap"
-      ],
-      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Chinese regulators bl",
-      "url": "https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/"
-    },
-    {
-      "id": "opp_2026_1105_2d1d928a",
-      "title": "Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Sector Snapshot: Cons",
-      "url": "https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/"
-    },
-    {
-      "id": "opp_2026_1103_652eb435",
-      "title": "Churchill Capital XI shareholders approve $2.5B Agility Robotics humanoid SPAC",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Churchill Capital XI",
-      "url": "https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/"
     }
   ],
   "funding_deals": [
@@ -253,9 +252,9 @@
       "change_pct": 0
     },
     "Robotics": {
-      "count": 77,
+      "count": 80,
       "prev_week": 77,
-      "change_pct": 0
+      "change_pct": 4
     },
     "Sensor": {
       "count": 25,
@@ -271,7 +270,7 @@
     "AquaMindAI",
     "LR2021",
     "GR8_TECH",
-    "BioMar"
+    "DeepMind"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",

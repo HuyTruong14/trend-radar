@@ -139,44 +139,6 @@
     "role": "infra"
   },
   {
-    "repo": "paperclipai/paperclip",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
-    "role": "ai"
-  },
-  {
-    "repo": "OpenHands/OpenHands",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
-    "role": "platform"
-  },
-  {
-    "repo": "tt-a1i/archify",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
-    "role": "platform"
-  },
-  {
     "repo": "invoke-ai/InvokeAI",
     "stars": 540,
     "stars_prev_week": 460,
@@ -186,6 +148,18 @@
       "Edge AI"
     ],
     "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán InvokeAI",
+    "role": "ai"
+  },
+  {
+    "repo": "paperclipai/paperclip",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
     "role": "ai"
   },
   {
@@ -202,17 +176,17 @@
     "role": "platform"
   },
   {
-    "repo": "langchain-ai/langchain",
+    "repo": "earendil-works/pi",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "Edge AI",
-      "LangChain"
+      "IoT",
+      "Open Source"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
-    "role": "ai"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
+    "role": "platform"
   },
   {
     "repo": "ZeroLu/awesome-seedance",
@@ -228,7 +202,7 @@
     "role": "platform"
   },
   {
-    "repo": "tetherto/qvac",
+    "repo": "OpenHands/OpenHands",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -237,21 +211,33 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
     "role": "platform"
   },
   {
-    "repo": "earendil-works/pi",
+    "repo": "Anil-matcha/Open-Generative-AI",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "IoT",
-      "Open Source"
+      "Edge AI"
     ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: pi",
-    "role": "platform"
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Open Generative AI",
+    "role": "ai"
+  },
+  {
+    "repo": "langchain-ai/langchain",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI",
+      "LangChain"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
+    "role": "ai"
   },
   {
     "repo": "browser-use/browser-use",
@@ -280,16 +266,30 @@
     "role": "platform"
   },
   {
-    "repo": "Anil-matcha/Open-Generative-AI",
+    "repo": "tt-a1i/archify",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "Edge AI"
+      "IoT",
+      "Open Source"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Open Generative AI",
-    "role": "ai"
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
+    "role": "platform"
+  },
+  {
+    "repo": "tetherto/qvac",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
+    "role": "platform"
   },
   {
     "repo": "czg86389-hub/muse2api",
@@ -328,6 +328,33 @@
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: short video factory",
     "role": "platform"
+  },
+  {
+    "repo": "codewithasnari/oxyfeeder",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: oxyfeeder",
+    "role": "platform"
+  },
+  {
+    "repo": "sdivyadarshan/water-quality-monitoring-system-usingarduino-nano-turbidity-based",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "C++",
+    "tags": [
+      "Aquaculture",
+      "Turbidity",
+      "Water Quality"
+    ],
+    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+    "role": "hardware"
   },
   {
     "repo": "vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring",
@@ -386,19 +413,7 @@
     "role": "ai"
   },
   {
-    "repo": "commaai/openpilot",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: openpilot",
-    "role": "ai"
-  },
-  {
-    "repo": "earthtojake/text-to-cad",
+    "repo": "harvard-edge/cs249r_book",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -407,20 +422,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho text to cad",
-    "role": "platform"
-  },
-  {
-    "repo": "ArduPilot/ardupilot",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
     "role": "platform"
   },
   {
@@ -437,7 +439,7 @@
     "role": "platform"
   },
   {
-    "repo": "harvard-edge/cs249r_book",
+    "repo": "ArduPilot/ardupilot",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -446,8 +448,33 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
     "role": "platform"
+  },
+  {
+    "repo": "earthtojake/text-to-cad",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho text to cad",
+    "role": "platform"
+  },
+  {
+    "repo": "commaai/openpilot",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: openpilot",
+    "role": "ai"
   },
   {
     "repo": "Genesis-Embodied-AI/genesis-world",
@@ -471,6 +498,32 @@
       "Robotics"
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: microduck",
+    "role": "platform"
+  },
+  {
+    "repo": "qianshuixia/shrimpreel",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "TypeScript",
+    "tags": [
+      "Aquaculture",
+      "Water Quality"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho shrimpreel",
+    "role": "platform"
+  },
+  {
+    "repo": "Likely7/Veyra-NRVideo",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Veyra NRVideo",
     "role": "platform"
   },
   {
@@ -521,32 +574,6 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho DataMagic",
-    "role": "platform"
-  },
-  {
-    "repo": "qianshuixia/shrimpreel",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "TypeScript",
-    "tags": [
-      "Aquaculture",
-      "Water Quality"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho shrimpreel",
-    "role": "platform"
-  },
-  {
-    "repo": "Likely7/Veyra-NRVideo",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Veyra NRVideo",
     "role": "platform"
   },
   {
