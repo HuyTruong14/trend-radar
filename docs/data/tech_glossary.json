@@ -14,7 +14,7 @@
       "Turbidity": 3,
       "Arduino": 2,
       "Ultrasonic": 2,
-      "RP2040": 1
+      "Water Level": 1
     }
   },
   "Edge AI": {
@@ -108,8 +108,8 @@
     "co_occurs_with": {
       "RP2350": 4,
       "RP2040": 3,
-      "ESP32": 1,
-      "MicroPython": 1
+      "MicroPython": 1,
+      "ESP32": 1
     }
   },
   "ROS2": {
@@ -135,8 +135,8 @@
     "co_occurs_with": {
       "RP2040": 4,
       "Raspberry Pi": 4,
-      "ESP32": 1,
-      "MicroPython": 1
+      "MicroPython": 1,
+      "ESP32": 1
     }
   },
   "MQTT": {

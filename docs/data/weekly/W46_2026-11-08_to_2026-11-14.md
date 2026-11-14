@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-11-08 đến 2026-11-14  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-14 06:02 (giờ VN)  
+**Tạo lúc:** 2026-11-14 11:00 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W46) | Tuần này (W46) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 895 | **904** | +9 (+1.0%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 814 | **826** | +12 (+1.5%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 895 | **901** | +6 (+0.7%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 814 | **827** | +13 (+1.6%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
 | 🟡 **Research (7–8/9)** | 157 | **159** | +2 (+1.3%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 657 | **667** | +10 (+1.5%) | Dòng tín hiệu thị trường rộng |
+| ⚪ **Watch (4–6/9)** | 657 | **668** | +11 (+1.7%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -74,7 +74,7 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W46) | Tuần trước (W46) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **78** | 77 | `+1%` | 📈 Tăng nhẹ |
+| **Robotics** | **77** | 77 | `0%` | ➡️ Ổn định |
 | **ESP32** | **28** | 26 | `+8%` | 📈 Tăng nhẹ |
 | **Sensor** | **25** | 25 | `0%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
