@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-11-10 đến 2026-11-16  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-16 02:20 (giờ VN)  
+**Tạo lúc:** 2026-11-16 05:17 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W46) | Tuần này (W47) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 904 | **904** | 0 (0.0%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 843 | **844** | +1 (+0.1%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 904 | **905** | +1 (+0.1%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 843 | **847** | +4 (+0.5%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
 | 🟡 **Research (7–8/9)** | 162 | **162** | 0 (0.0%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 681 | **682** | +1 (+0.1%) | Dòng tín hiệu thị trường rộng |
+| ⚪ **Watch (4–6/9)** | 681 | **685** | +4 (+0.6%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
