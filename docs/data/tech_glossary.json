@@ -12,8 +12,8 @@
       "ESP32-S3": 6,
       "LoRaWAN": 6,
       "Turbidity": 3,
-      "Arduino": 2,
       "Ultrasonic": 2,
+      "Arduino": 1,
       "Water Level": 1
     }
   },
@@ -32,7 +32,7 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 18,
+    "mentions_this_week": 19,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -85,19 +85,6 @@
       "BLE": 2
     }
   },
-  "Arduino": {
-    "type": "Hardware",
-    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
-    "mentions_this_week": 9,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "ESP32": 2,
-      "MQTT": 2,
-      "ROS2": 1
-    }
-  },
   "Raspberry Pi": {
     "type": "Hardware",
     "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
@@ -139,6 +126,19 @@
       "ESP32": 1
     }
   },
+  "Arduino": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
+    "mentions_this_week": 8,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 1,
+      "MQTT": 1,
+      "ROS2": 1
+    }
+  },
   "MQTT": {
     "type": "Protocol",
     "description_vi": "Giao thức truyền tin publish/subscribe nhẹ tối ưu cho mạng IoT băng thông thấp",
@@ -149,9 +149,9 @@
     "co_occurs_with": {
       "ESP32": 15,
       "ESP32-S3": 4,
-      "Arduino": 2,
       "Turbidity": 2,
-      "Ultrasonic": 2
+      "Ultrasonic": 2,
+      "Arduino": 1
     }
   },
   "ESP32-S3": {
