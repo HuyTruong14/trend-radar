@@ -2530,7 +2530,7 @@
   },
   {
     "date": "2026-11-15",
-    "total_items": 192,
+    "total_items": 191,
     "avg_relevance_score": null,
     "cross_source_count": 0,
     "by_source": {
@@ -2541,7 +2541,7 @@
       "IEEE Spectrum": 9,
       "The Robot Report": 15,
       "SBC News": 10,
-      "Robohub": 13,
+      "Robohub": 12,
       "arXiv": 15,
       "Fish Farmer Magazine RSS Feed": 15,
       "Engineering News | Aquaculture": 15,
@@ -2549,47 +2549,47 @@
     },
     "by_keyword": {
       "robotics": 15,
-      "": 137,
-      "aquaculture iot": 10,
       "water quality sensor": 15,
+      "": 136,
+      "aquaculture iot": 10,
       "cs.AI, cs.CV, cs.RO": 15
     },
     "top_repos": [
       {
         "name": "Developer-Y/cs-video-courses",
-        "stars": 84849
+        "stars": 84855
       },
       {
         "name": "commaai/openpilot",
-        "stars": 64140
+        "stars": 64144
       },
       {
         "name": "NaiboWang/EasySpider",
-        "stars": 44795
+        "stars": 44797
       },
       {
         "name": "AtsushiSakai/PythonRobotics",
-        "stars": 30917
+        "stars": 30919
       },
       {
         "name": "Genesis-Embodied-AI/genesis-world",
-        "stars": 30224
+        "stars": 30228
       },
       {
         "name": "harvard-edge/cs249r_book",
-        "stars": 30205
+        "stars": 30212
       },
       {
         "name": "huggingface/lerobot",
-        "stars": 28882
+        "stars": 28891
       },
       {
         "name": "earthtojake/text-to-cad",
-        "stars": 26335
+        "stars": 26358
       },
       {
         "name": "google-deepmind/mujoco",
-        "stars": 17993
+        "stars": 18033
       },
       {
         "name": "questdb/questdb",
@@ -2597,18 +2597,20 @@
       }
     ],
     "github_repos": [
-      "commaai/openpilot",
-      "earthtojake/text-to-cad",
-      "huggingface/lerobot",
-      "Genesis-Embodied-AI/genesis-world",
-      "ArduPilot/ardupilot",
-      "harvard-edge/cs249r_book",
-      "kornia/kornia",
       "questdb/questdb",
+      "earthtojake/text-to-cad",
+      "harvard-edge/cs249r_book",
+      "ArduPilot/ardupilot",
+      "Genesis-Embodied-AI/genesis-world",
+      "kornia/kornia",
+      "Developer-Y/cs-video-courses",
+      "commaai/openpilot",
+      "AITT-VN/yolouno_extension_water_quality_sensor",
+      "google-deepmind/mujoco",
+      "huggingface/lerobot",
       "zauberzeug/nicegui",
       "codewithasnari/oxyfeeder",
       "sdivyadarshan/water-quality-monitoring-system-usingarduino-nano-turbidity-based",
-      "google-deepmind/mujoco",
       "vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring",
       "git-nxbl/smart-biofloc-aquaculture",
       "pollen-robotics/microduck",
@@ -2620,8 +2622,6 @@
       "AquaMindAI/AquaMindAI.github.io",
       "J-Akiru5/OptiFeed",
       "wissen-csi/backend_station",
-      "Developer-Y/cs-video-courses",
-      "AITT-VN/yolouno_extension_water_quality_sensor",
       "AtsushiSakai/PythonRobotics",
       "ruwinkaushalya/smart-water-quality-monitoring-system",
       "NaiboWang/EasySpider",
