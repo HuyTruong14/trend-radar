@@ -1,20 +1,20 @@
-# Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W46
+# Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W47
 
-**Khoảng thời gian:** 2026-11-09 đến 2026-11-15  
+**Khoảng thời gian:** 2026-11-10 đến 2026-11-16  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-15 20:10 (giờ VN)  
+**Tạo lúc:** 2026-11-16 02:20 (giờ VN)  
 
 ---
 
-## 1. Tổng quan thị trường (So sánh W46 vs W46)
+## 1. Tổng quan thị trường (So sánh W47 vs W46)
 
-| Chỉ số quan trắc | Tuần trước (W46) | Tuần này (W46) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
+| Chỉ số quan trắc | Tuần trước (W46) | Tuần này (W47) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 931 | **904** | -27 (-2.9%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 832 | **843** | +11 (+1.3%) | Chất lượng cơ hội ổn định |
-| 🔴 **Build-ready (9/9)** | 3 | **0** | -3 (-100.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 160 | **162** | +2 (+1.2%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 669 | **681** | +12 (+1.8%) | Dòng tín hiệu thị trường rộng |
+| **Tổng tín hiệu đầu vào** | 904 | **904** | 0 (0.0%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 843 | **844** | +1 (+0.1%) | Chất lượng cơ hội ổn định |
+| 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
+| 🟡 **Research (7–8/9)** | 162 | **162** | 0 (0.0%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 681 | **682** | +1 (+0.1%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -72,11 +72,11 @@
 
 ## 5. Công Nghệ Được Nhắc Nhiều (Tần suất & Tăng trưởng)
 
-| Công nghệ / Phần cứng | Tần suất tuần này (W46) | Tuần trước (W46) | Tăng trưởng (%) | Đánh giá xu thế |
+| Công nghệ / Phần cứng | Tần suất tuần này (W47) | Tuần trước (W46) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **79** | 80 | `-1%` | ➡️ Ổn định |
-| **ESP32** | **26** | 28 | `-7%` | ➡️ Ổn định |
-| **Sensor** | **23** | 25 | `-8%` | ➡️ Ổn định |
+| **Robotics** | **79** | 79 | `0%` | ➡️ Ổn định |
+| **ESP32** | **26** | 26 | `0%` | ➡️ Ổn định |
+| **Sensor** | **23** | 23 | `0%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
 | **Humanoid** | **15** | 15 | `0%` | ➡️ Ổn định |
@@ -84,7 +84,7 @@
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
 | **RP2350** | **8** | 8 | `0%` | ➡️ Ổn định |
-| **MQTT** | **5** | 7 | `-29%` | ➡️ Ổn định |
+| **MQTT** | **5** | 5 | `0%` | ➡️ Ổn định |
 | **STM32** | **0** | 0 | `0%` | ➡️ Ổn định |
 | **Computer Vision** | **0** | 0 | `0%` | ➡️ Ổn định |
 | **BLE** | **0** | 0 | `0%` | ➡️ Ổn định |
