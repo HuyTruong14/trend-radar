@@ -1,34 +1,5 @@
 [
   {
-    "combo_name": "Thiết bị giám sát ao tôm thông minh",
-    "repos": [
-      {
-        "repo": "DileepaNayanajith/esp32-water-quality-monitor",
-        "role": "hardware",
-        "velocity": 260
-      },
-      {
-        "repo": "mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
-        "role": "ai",
-        "velocity": 285
-      },
-      {
-        "repo": "wissen-csi/backend_station",
-        "role": "platform",
-        "velocity": 175
-      }
-    ],
-    "total_velocity": 720,
-    "product_idea_vi": "Hộp cảm biến cắm ao tôm tự đo pH/DO qua ESP32, tích hợp AI dự đoán bùng phát tảo và cảnh báo tức thời trên ứng dụng di động",
-    "tags": [
-      "IoT",
-      "Aquaculture",
-      "ESP32",
-      "Edge AI",
-      "Water Quality"
-    ]
-  },
-  {
     "combo_name": "Trợ lý giọng nói Edge AI bảo mật nội bộ",
     "repos": [
       {
@@ -55,6 +26,35 @@
       "Hardware",
       "Smart Home",
       "Privacy"
+    ]
+  },
+  {
+    "combo_name": "Thiết bị giám sát ao tôm thông minh",
+    "repos": [
+      {
+        "repo": "DileepaNayanajith/esp32-water-quality-monitor",
+        "role": "hardware",
+        "velocity": 260
+      },
+      {
+        "repo": "mohamedsadhathj-techwork/Smart-Aquaculture-Assistant",
+        "role": "ai",
+        "velocity": 285
+      },
+      {
+        "repo": "wissen-csi/backend_station",
+        "role": "platform",
+        "velocity": 150
+      }
+    ],
+    "total_velocity": 695,
+    "product_idea_vi": "Hộp cảm biến cắm ao tôm tự đo pH/DO qua ESP32, tích hợp AI dự đoán bùng phát tảo và cảnh báo tức thời trên ứng dụng di động",
+    "tags": [
+      "IoT",
+      "Aquaculture",
+      "ESP32",
+      "Edge AI",
+      "Water Quality"
     ]
   },
   {

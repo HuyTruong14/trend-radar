@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-11-10 đến 2026-11-16  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-16 05:17 (giờ VN)  
+**Tạo lúc:** 2026-11-16 21:18 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W46) | Tuần này (W47) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 904 | **905** | +1 (+0.1%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 843 | **847** | +4 (+0.5%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 904 | **889** | -15 (-1.7%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 843 | **864** | +21 (+2.5%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 162 | **162** | 0 (0.0%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 681 | **685** | +4 (+0.6%) | Dòng tín hiệu thị trường rộng |
+| 🟡 **Research (7–8/9)** | 162 | **164** | +2 (+1.2%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 681 | **700** | +19 (+2.8%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -26,7 +26,7 @@
 | 2 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
 | 3 | [Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics](https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/) | **⚡ 8/9** | `research` | `price_shift, supply_gap, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Chinese regulators bl |
 | 4 | [Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak](https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Sector Snapshot: Cons |
-| 5 | [Churchill Capital XI shareholders approve $2.5B Agility Robotics humanoid SPAC](https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Churchill Capital XI |
+| 5 | [berunadh/Smart-Water-Quality-Monitor](https://github.com/berunadh/Smart-Water-Quality-Monitor) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
 
 ---
 
@@ -38,7 +38,7 @@
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics](https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/) | **M&A** | **$5.4B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak](https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/) | **Gọi vốn** | **$1.6B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [Churchill Capital XI shareholders approve $2.5B Agility Robotics humanoid SPAC](https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/) | **Gọi vốn** | **$2.5B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [Industry experts discuss China blocking SoftBank acquisition of ABB Robotics](https://www.therobotreport.com/industry-experts-discuss-china-blocking-softbank-acquisition-abb-robotics/) | **M&A** | **N/A** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 
 ---
 
@@ -74,7 +74,7 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W47) | Tuần trước (W46) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **79** | 79 | `0%` | ➡️ Ổn định |
+| **Robotics** | **80** | 79 | `+1%` | 📈 Tăng nhẹ |
 | **ESP32** | **26** | 26 | `0%` | ➡️ Ổn định |
 | **Sensor** | **23** | 23 | `0%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
@@ -100,7 +100,7 @@
 - **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`GR8_TECH`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`BioMar`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`BofA`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
 ---
 

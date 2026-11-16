@@ -32,7 +32,7 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 19,
+    "mentions_this_week": 17,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -139,15 +139,6 @@
       "ROS2": 1
     }
   },
-  "Drone": {
-    "type": "Robotics",
-    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
-    "mentions_this_week": 8,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "MQTT": {
     "type": "Protocol",
     "description_vi": "Giao thức truyền tin publish/subscribe nhẹ tối ưu cho mạng IoT băng thông thấp",
@@ -162,6 +153,15 @@
       "Ultrasonic": 2,
       "Arduino": 1
     }
+  },
+  "Drone": {
+    "type": "Robotics",
+    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
+    "mentions_this_week": 7,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "ESP32-S3": {
     "type": "Hardware",
@@ -241,6 +241,15 @@
     "trend": "new",
     "co_occurs_with": {}
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "DO (Dissolved Oxygen)": {
     "type": "Sensor",
     "description_vi": "Cảm biến oxy hòa tan (quang học hoặc galvanic) giám sát mức dưỡng khí trong nước ao",
@@ -300,15 +309,6 @@
     "mentions_prev_week": 1,
     "change_pct": 100,
     "trend": "rising",
-    "co_occurs_with": {}
-  },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
     "co_occurs_with": {}
   },
   "FreeRTOS": {

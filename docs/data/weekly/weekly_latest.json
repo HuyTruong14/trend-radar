@@ -2,14 +2,14 @@
   "week": "W47",
   "start_date": "2026-11-10",
   "end_date": "2026-11-16",
-  "created_at": "2026-11-16T05:17:49.721552+07:00",
+  "created_at": "2026-11-16T21:18:29.651784+07:00",
   "previous_week": "W46",
   "stats": {
-    "total_signals": 905,
-    "total_opportunities": 847,
+    "total_signals": 889,
+    "total_opportunities": 864,
     "build_ready": 0,
-    "research": 162,
-    "watch": 685
+    "research": 164,
+    "watch": 700
   },
   "prev_stats": {
     "total_signals": 904,
@@ -69,16 +69,15 @@
       "url": "https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/"
     },
     {
-      "id": "opp_2026_1103_652eb435",
-      "title": "Churchill Capital XI shareholders approve $2.5B Agility Robotics humanoid SPAC",
+      "id": "opp_2026_1110_6f61c08c",
+      "title": "berunadh/Smart-Water-Quality-Monitor",
       "total": 8,
       "stage": "research",
       "signal_type": [
-        "price_shift",
         "tech_cheap"
       ],
-      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Churchill Capital XI",
-      "url": "https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/"
+      "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+      "url": "https://github.com/berunadh/Smart-Water-Quality-Monitor"
     }
   ],
   "funding_deals": [
@@ -115,12 +114,12 @@
       "url": "https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/"
     },
     {
-      "title": "Churchill Capital XI shareholders approve $2.5B Agility Robotics humanoid SPAC",
-      "type": "Gọi vốn",
-      "amount": "$2.5B",
+      "title": "Industry experts discuss China blocking SoftBank acquisition of ABB Robotics",
+      "type": "M&A",
+      "amount": "N/A",
       "sector": "robotics",
       "sector_vi": "Robotics",
-      "url": "https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/"
+      "url": "https://www.therobotreport.com/industry-experts-discuss-china-blocking-softbank-acquisition-abb-robotics/"
     }
   ],
   "hot_topics": {
@@ -253,9 +252,9 @@
       "change_pct": 0
     },
     "Robotics": {
-      "count": 79,
+      "count": 80,
       "prev_week": 79,
-      "change_pct": 0
+      "change_pct": 1
     },
     "Sensor": {
       "count": 23,
@@ -271,7 +270,7 @@
     "AquaMindAI",
     "LR2021",
     "GR8_TECH",
-    "BioMar"
+    "BofA"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",
