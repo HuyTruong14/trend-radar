@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-11-11 đến 2026-11-17  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-17 08:19 (giờ VN)  
+**Tạo lúc:** 2026-11-17 22:11 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W47) | Tuần này (W47) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 889 | **894** | +5 (+0.6%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 864 | **887** | +23 (+2.7%) | Chất lượng cơ hội ổn định |
-| 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 164 | **168** | +4 (+2.4%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 700 | **719** | +19 (+2.7%) | Dòng tín hiệu thị trường rộng |
+| **Tổng tín hiệu đầu vào** | 889 | **947** | +58 (+6.5%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 864 | **904** | +40 (+4.6%) | Chất lượng cơ hội ổn định |
+| 🔴 **Build-ready (9/9)** | 0 | **3** | +3 (+300.0%) | Đúng ngách IoT & cảm biến nước |
+| 🟡 **Research (7–8/9)** | 164 | **172** | +8 (+4.9%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 700 | **729** | +29 (+4.1%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -22,11 +22,11 @@
 
 | # | Tiêu đề dự án / Repo | Điểm | Stage | Loại tín hiệu | Tóm tắt cơ hội (summary_vi) |
 |---|---|:---:|:---:|---|---|
-| 1 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31 |
-| 2 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
-| 3 | [Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics](https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/) | **⚡ 8/9** | `research` | `price_shift, supply_gap, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Chinese regulators bl |
-| 4 | [berunadh/Smart-Water-Quality-Monitor](https://github.com/berunadh/Smart-Water-Quality-Monitor) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
-| 5 | [Autonomous robotics and physical AI are decoupling manufacturing from labor shortages](https://www.reddit.com/r/Futurology/comments/1xe_robotics_labor/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Autonomous robotics a |
+| 1 | [carlitronix/Smart-Aquaculture](https://github.com/carlitronix/Smart-Aquaculture) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
+| 2 | [hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS](https://github.com/hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản |
+| 3 | [vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring](https://github.com/vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản |
+| 4 | [Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat](https://github.com/Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
+| 5 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31 |
 
 ---
 
@@ -100,7 +100,7 @@
 - **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`GR8_TECH`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`BofA`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`DeepMind`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
 ---
 
