@@ -1,20 +1,20 @@
 # Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W47
 
-**Khoảng thời gian:** 2026-11-10 đến 2026-11-16  
+**Khoảng thời gian:** 2026-11-11 đến 2026-11-17  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-16 21:18 (giờ VN)  
+**Tạo lúc:** 2026-11-17 08:19 (giờ VN)  
 
 ---
 
-## 1. Tổng quan thị trường (So sánh W47 vs W46)
+## 1. Tổng quan thị trường (So sánh W47 vs W47)
 
-| Chỉ số quan trắc | Tuần trước (W46) | Tuần này (W47) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
+| Chỉ số quan trắc | Tuần trước (W47) | Tuần này (W47) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 904 | **889** | -15 (-1.7%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 843 | **864** | +21 (+2.5%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 889 | **894** | +5 (+0.6%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 864 | **887** | +23 (+2.7%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 162 | **164** | +2 (+1.2%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 681 | **700** | +19 (+2.8%) | Dòng tín hiệu thị trường rộng |
+| 🟡 **Research (7–8/9)** | 164 | **168** | +4 (+2.4%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 700 | **719** | +19 (+2.7%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -25,8 +25,8 @@
 | 1 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31 |
 | 2 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
 | 3 | [Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics](https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/) | **⚡ 8/9** | `research` | `price_shift, supply_gap, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Chinese regulators bl |
-| 4 | [Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak](https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Sector Snapshot: Cons |
-| 5 | [berunadh/Smart-Water-Quality-Monitor](https://github.com/berunadh/Smart-Water-Quality-Monitor) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
+| 4 | [berunadh/Smart-Water-Quality-Monitor](https://github.com/berunadh/Smart-Water-Quality-Monitor) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
+| 5 | [Autonomous robotics and physical AI are decoupling manufacturing from labor shortages](https://www.reddit.com/r/Futurology/comments/1xe_robotics_labor/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Autonomous robotics a |
 
 ---
 
@@ -37,8 +37,8 @@
 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **Xu hướng** | **$31.4M** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics](https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/) | **M&A** | **$5.4B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [Sector Snapshot: Construction Robotics Funding Soars To $1.6B, Tripling Previous Peak](https://news.crunchbase.com/venture/sector-snapshot-2026-construction-robotics-funding-soars-bedrock/) | **Gọi vốn** | **$1.6B** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Industry experts discuss China blocking SoftBank acquisition of ABB Robotics](https://www.therobotreport.com/industry-experts-discuss-china-blocking-softbank-acquisition-abb-robotics/) | **M&A** | **N/A** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [The back office stack that actually survived our first year (and what we killed) (I will not promote)](https://www.reddit.com/r/startups/comments/1xp20c6/the_back_office_stack_that_actually_survived_our/) | **Gọi vốn** | **N/A** | Công nghệ & Startup | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 
 ---
 
@@ -72,15 +72,15 @@
 
 ## 5. Công Nghệ Được Nhắc Nhiều (Tần suất & Tăng trưởng)
 
-| Công nghệ / Phần cứng | Tần suất tuần này (W47) | Tuần trước (W46) | Tăng trưởng (%) | Đánh giá xu thế |
+| Công nghệ / Phần cứng | Tần suất tuần này (W47) | Tuần trước (W47) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **80** | 79 | `+1%` | 📈 Tăng nhẹ |
+| **Robotics** | **85** | 80 | `+6%` | 📈 Tăng nhẹ |
 | **ESP32** | **26** | 26 | `0%` | ➡️ Ổn định |
 | **Sensor** | **23** | 23 | `0%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **15** | 15 | `0%` | ➡️ Ổn định |
 | **LoRaWAN** | **14** | 14 | `0%` | ➡️ Ổn định |
+| **Humanoid** | **13** | 15 | `-13%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
 | **RP2350** | **8** | 8 | `0%` | ➡️ Ổn định |

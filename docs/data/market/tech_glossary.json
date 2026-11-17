@@ -66,12 +66,26 @@
   "Humanoid": {
     "type": "Robotics",
     "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 14,
+    "mentions_this_week": 13,
     "mentions_prev_week": 7,
-    "change_pct": 100,
+    "change_pct": 86,
     "trend": "rising",
     "co_occurs_with": {
       "ROS2": 5
+    }
+  },
+  "Raspberry Pi": {
+    "type": "Hardware",
+    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
+    "mentions_this_week": 11,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2040": 5,
+      "RP2350": 4,
+      "MicroPython": 1,
+      "ESP32": 1
     }
   },
   "RISC-V": {
@@ -83,20 +97,6 @@
     "trend": "rising",
     "co_occurs_with": {
       "BLE": 2
-    }
-  },
-  "Raspberry Pi": {
-    "type": "Hardware",
-    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
-    "mentions_this_week": 9,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2350": 4,
-      "RP2040": 3,
-      "MicroPython": 1,
-      "ESP32": 1
     }
   },
   "ROS2": {
@@ -178,6 +178,19 @@
       "TDS": 1
     }
   },
+  "RP2040": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển lõi kép Cortex-M0+ đầu tiên do Raspberry Pi tự thiết kế",
+    "mentions_this_week": 5,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "Raspberry Pi": 5,
+      "RP2350": 4,
+      "ESP32": 1
+    }
+  },
   "LoRA": {
     "type": "AI/ML",
     "description_vi": "Phương pháp tinh chỉnh mô hình ngôn ngữ bằng ma trận rank thấp siêu tiết kiệm bộ nhớ",
@@ -204,6 +217,15 @@
       "Edge AI": 1
     }
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "Ultrasonic": {
     "type": "Sensor",
     "description_vi": "Cảm biến sóng siêu âm đo khoảng cách và mực nước bồn chứa/ao nuôi không tiếp xúc",
@@ -219,31 +241,18 @@
       "Actuator": 2
     }
   },
-  "RP2040": {
-    "type": "Hardware",
-    "description_vi": "Vi điều khiển lõi kép Cortex-M0+ đầu tiên do Raspberry Pi tự thiết kế",
-    "mentions_this_week": 3,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2350": 4,
-      "Raspberry Pi": 3,
-      "ESP32": 1
-    }
-  },
-  "Modbus": {
+  "Matter": {
     "type": "Protocol",
-    "description_vi": "Giao thức truyền thông công nghiệp chuẩn mực nối PLC, cảm biến và thiết bị đo",
+    "description_vi": "Tiêu chuẩn kết nối nhà thông minh hợp nhất trên nền tảng IPv6, Thread và WiFi",
     "mentions_this_week": 3,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
     "co_occurs_with": {}
   },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+  "Modbus": {
+    "type": "Protocol",
+    "description_vi": "Giao thức truyền thông công nghiệp chuẩn mực nối PLC, cảm biến và thiết bị đo",
     "mentions_this_week": 3,
     "mentions_prev_week": 0,
     "change_pct": 100,
@@ -264,15 +273,6 @@
   "FPGA": {
     "type": "Hardware",
     "description_vi": "Mạch logic khả trình có độ trễ cực thấp cho xử lý tín hiệu và tăng tốc phần cứng",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
-  "Nordic nRF52": {
-    "type": "Hardware",
-    "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
     "mentions_this_week": 2,
     "mentions_prev_week": 0,
     "change_pct": 100,
@@ -356,9 +356,9 @@
       "Zephyr": 1
     }
   },
-  "Matter": {
-    "type": "Protocol",
-    "description_vi": "Tiêu chuẩn kết nối nhà thông minh hợp nhất trên nền tảng IPv6, Thread và WiFi",
+  "Nordic nRF52": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
     "mentions_this_week": 1,
     "mentions_prev_week": 0,
     "change_pct": 100,
