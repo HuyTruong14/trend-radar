@@ -1,60 +1,24 @@
 {
   "week": "W47",
-  "start_date": "2026-11-11",
-  "end_date": "2026-11-17",
-  "created_at": "2026-11-17T22:11:14.372136+07:00",
+  "start_date": "2026-11-12",
+  "end_date": "2026-11-18",
+  "created_at": "2026-11-18T07:14:19.623299+07:00",
   "previous_week": "W47",
   "stats": {
+    "total_signals": 929,
+    "total_opportunities": 917,
+    "build_ready": 0,
+    "research": 172,
+    "watch": 745
+  },
+  "prev_stats": {
     "total_signals": 947,
     "total_opportunities": 904,
     "build_ready": 3,
     "research": 172,
     "watch": 729
   },
-  "prev_stats": {
-    "total_signals": 889,
-    "total_opportunities": 864,
-    "build_ready": 0,
-    "research": 164,
-    "watch": 700
-  },
   "top_opportunities": [
-    {
-      "id": "opp_2026_1116_af9c5034",
-      "title": "carlitronix/Smart-Aquaculture",
-      "total": 9,
-      "stage": "build_ready",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
-      "url": "https://github.com/carlitronix/Smart-Aquaculture"
-    },
-    {
-      "id": "opp_2026_1115_d4624b87",
-      "title": "hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS",
-      "total": 9,
-      "stage": "build_ready",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản",
-      "url": "https://github.com/hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS"
-    },
-    {
-      "id": "opp_2026_1113_2c371fa8",
-      "title": "vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring",
-      "total": 9,
-      "stage": "build_ready",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản",
-      "url": "https://github.com/vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring"
-    },
     {
       "id": "opp_2026_1117_d8298106",
       "title": "Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat",
@@ -77,6 +41,41 @@
       ],
       "summary_vi": "Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31",
       "url": "https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/"
+    },
+    {
+      "id": "opp_2026_1024_55c0af0b",
+      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway",
+      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
+    },
+    {
+      "id": "opp_2026_1110_6f61c08c",
+      "title": "berunadh/Smart-Water-Quality-Monitor",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "tech_cheap"
+      ],
+      "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+      "url": "https://github.com/berunadh/Smart-Water-Quality-Monitor"
+    },
+    {
+      "id": "opp_2026_1024_58d5f214",
+      "title": "Autonomous robotics and physical AI are decoupling manufacturing from labor shortages",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Autonomous robotics a",
+      "url": "https://www.reddit.com/r/Futurology/comments/1xe_robotics_labor/"
     }
   ],
   "funding_deals": [
@@ -97,14 +96,6 @@
       "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
     },
     {
-      "title": "Chinese regulators block SoftBank’s $5.4B acquisition of ABB Robotics",
-      "type": "M&A",
-      "amount": "$5.4B",
-      "sector": "robotics",
-      "sector_vi": "Robotics",
-      "url": "https://www.therobotreport.com/chinese-regulators-block-softbanks-5-4b-acquisition-of-abb-robotics/"
-    },
-    {
       "title": "Industry experts discuss China blocking SoftBank acquisition of ABB Robotics",
       "type": "M&A",
       "amount": "N/A",
@@ -119,6 +110,14 @@
       "sector": "other",
       "sector_vi": "Công nghệ & Startup",
       "url": "https://www.reddit.com/r/startups/comments/1xp20c6/the_back_office_stack_that_actually_survived_our/"
+    },
+    {
+      "title": "Lula praises betting ban as clock ticks on Congress decision",
+      "type": "Gọi vốn",
+      "amount": "N/A",
+      "sector": "igaming",
+      "sector_vi": "iGaming & Betting",
+      "url": "https://sbcnews.co.uk/southamerica/2026/11/10/lula-bets-ban-video/"
     }
   ],
   "hot_topics": {
@@ -246,19 +245,19 @@
       "change_pct": 0
     },
     "Humanoid": {
-      "count": 13,
-      "prev_week": 15,
-      "change_pct": -13
+      "count": 16,
+      "prev_week": 13,
+      "change_pct": 23
     },
     "Robotics": {
-      "count": 85,
-      "prev_week": 80,
-      "change_pct": 6
+      "count": 88,
+      "prev_week": 85,
+      "change_pct": 4
     },
     "Sensor": {
-      "count": 23,
+      "count": 21,
       "prev_week": 23,
-      "change_pct": 0
+      "change_pct": -9
     }
   },
   "new_terms": [
@@ -269,7 +268,7 @@
     "AquaMindAI",
     "LR2021",
     "GR8_TECH",
-    "DeepMind"
+    "BofA"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",

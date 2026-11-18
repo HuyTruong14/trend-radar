@@ -1,43 +1,86 @@
 {
-  "date": "2026-11-16",
-  "date_formatted": "16/11/2026",
-  "generated_at": "2026-11-17T22:11:13.540631+07:00",
-  "quiet_day": true,
-  "top_opportunities": [],
-  "remaining_high_tier_count": 0,
+  "date": "2026-11-17",
+  "date_formatted": "17/11/2026",
+  "generated_at": "2026-11-18T07:14:18.745484+07:00",
+  "quiet_day": false,
+  "top_opportunities": [
+    {
+      "id": "opp_2026_1117_2b2cfbda",
+      "title": "Boatengs/water-quality-anomaly-detection",
+      "title_vi": "Dự án mã nguồn mở Water Quality Anomaly Detection (Boatengs)",
+      "total": 8,
+      "stage": "research",
+      "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+      "alert_sent": true,
+      "url": "https://github.com/Boatengs/water-quality-anomaly-detection",
+      "signal_type": [
+        "tech_cheap"
+      ],
+      "velocity": "steady"
+    },
+    {
+      "id": "opp_2026_1104_d35bdc87",
+      "title": "Hirakhyzer/ai-powered-water-quality-monitoring-platform",
+      "title_vi": "Dự án mã nguồn mở Ai Powered Water Quality Monitoring Platform (Hirakhyzer)",
+      "total": 7,
+      "stage": "research",
+      "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+      "alert_sent": true,
+      "url": "https://github.com/Hirakhyzer/ai-powered-water-quality-monitoring-platform",
+      "signal_type": [
+        "tech_cheap"
+      ],
+      "velocity": "rising"
+    },
+    {
+      "id": "opp_2026_1024_400f82ff",
+      "title": "sampreethaise25-max/Water-Quality-Monitoring-System",
+      "title_vi": "Dự án mã nguồn mở Water Quality Monitoring System (sampreethaise25-max)",
+      "total": 7,
+      "stage": "research",
+      "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+      "alert_sent": true,
+      "url": "https://github.com/sampreethaise25-max/Water-Quality-Monitoring-System",
+      "signal_type": [
+        "tech_cheap"
+      ],
+      "velocity": "rising"
+    }
+  ],
+  "remaining_high_tier_count": 3,
   "funding_deals": [
     {
-      "title": "Trajectory raises $45M to make AI model training accessible to nontechnical experts",
+      "title": "SEG Solar Secures Land for $950 Million, 4 GW HJT Solar Cell Plant in Texas",
       "deal_type": "Gọi vốn",
-      "amount": "$45M",
-      "funding_amount": "$45M",
-      "sector": "other",
-      "url": "https://techcrunch.com/2026/11/02/trajectory-raises-45m-to-make-ai-model-training-accessible-to-nontechnical-experts/",
-      "formatted_text": "• Trajectory gọi $45M — Công nghệ & Startup",
-      "sector_vi": "Công nghệ & Startup",
-      "title_vi": "Trajectory huy động vốn $45M cho make AI model training accessible to nontechnical experts"
+      "amount": "$950M",
+      "funding_amount": "$950M",
+      "sector": "agtech",
+      "url": "https://igrownews.com/seg-solar-latest-news/",
+      "formatted_text": "• SEG Solar gọi $950M — Nông nghiệp",
+      "sector_vi": "Nông nghiệp",
+      "title_vi": "Ứng dụng điện mặt trời tối ưu chi phí vận hành trang trại"
     },
     {
-      "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+      "title": "Carlsberg spinout Traitomic lands $22m to speed up trait discovery and development",
       "deal_type": "Gọi vốn",
       "amount": "N/A",
       "funding_amount": "N/A",
       "sector": "other",
-      "url": "https://openai.com/index/jiostar-vijay-seshadri",
-      "formatted_text": "• JioStar’s chief architect on AI discovery at 500M-user scale — Công nghệ & Startup",
+      "url": "https://agfundernews.com/carlsberg-spinout-traitomic-lands-22m-to-speed-up-trait-discovery-and-development",
+      "formatted_text": "• Carlsberg spinout Traitomic gọi $22m to speed up trait discovery and development — Công nghệ & Startup",
       "sector_vi": "Công nghệ & Startup",
-      "title_vi": "Cơ hội công nghệ và giải pháp mới: JioStar’s chief architect on AI discovery at"
+      "title_vi": "Carlsberg spinout Traitomic huy động vốn $22m cho speed up trait discovery and development"
     },
     {
-      "title": "Genesis AI Raises $500M At $3.5B Valuation To Bring Its Robots To Factories And Warehouses",
+      "title": "Boston Dynamics’ Atlas humanoid lands first non-automotive trial",
       "deal_type": "Gọi vốn",
       "amount": "N/A",
       "funding_amount": "N/A",
       "sector": "other",
-      "url": "https://news.crunchbase.com/venture/robot-factory-workers-genesis-ai-fundraise/",
-      "formatted_text": "• Genesis AI gọi $500M — Công nghệ & Startup",
+      "url": "https://www.therobotreport.com/boston-dynamics-atlas-humanoid-lands-first-non-automotive-trial/",
+      "formatted_text": "• Boston Dynamics’ Atlas humanoid gọi first non-automotive trial — Công nghệ & Startup",
       "sector_vi": "Công nghệ & Startup",
-      "title_vi": "Startup Genesis AI gọi $500M phát triển robot nông nghiệp tự hành"
+      "title_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Boston Dynamics’ Atla"
     }
   ],
   "hot_topics": [
@@ -64,14 +107,14 @@
     }
   ],
   "stats": {
-    "total_signals": 947,
-    "new_opportunities": 16,
+    "total_signals": 929,
+    "new_opportunities": 22,
     "build_ready": 0,
-    "research": 0,
+    "research": 6,
     "watch": 16,
     "triple_signals": 3,
     "triple_signal_theme": "Robot tự hành & AI vật lý (Robotics & Embodied AI)",
-    "rising": 16,
+    "rising": 9,
     "fading": 0,
     "labels_vi": {
       "total_signals": "Tổng tín hiệu mới",
@@ -85,5 +128,5 @@
     }
   },
   "dashboard_url": "https://huytruong14.github.io/trend-radar/",
-  "telegram_text": "📰 TREND RADAR — BẢN TIN NGÀY 16/11/2026\n\n😴 Hôm qua yên ắng — không có cơ hội mới đáng chú ý.\n\n📊 Tín hiệu mới: 947 | Tất cả ở mức watch hoặc thấp hơn.\n\n🔗 Dashboard: https://huytruong14.github.io/trend-radar/"
+  "telegram_text": "📰 TREND RADAR — BẢN TIN NGÀY 17/11/2026\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🎯 CƠ HỘI NỔI BẬT\n\n⚡ 8/9 · Boatengs/water-quality-anomaly-detection (đã gửi alert)\n→ Hệ thống quan trắc chất lượng nước đa thông số qua IoT\n\n⚡ 7/9 · Hirakhyzer/ai-powered-water-quality-monitoring-platform (đã gửi alert)\n→ Hệ thống quan trắc chất lượng nước đa thông số qua IoT\n\n⚡ 7/9 · sampreethaise25-max/Water-Quality-Monitoring-System (đã gửi alert)\n→ Hệ thống quan trắc chất lượng nước đa thông số qua IoT\n\n(và 3 cơ hội khác trên dashboard)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n💰 DÒNG TIỀN HÔM QUA\n• SEG Solar gọi $950M — Nông nghiệp\n• Carlsberg spinout Traitomic gọi $22m to speed up trait discovery and development — Công nghệ & Startup\n• Boston Dynamics’ Atlas humanoid gọi first non-automotive trial — Công nghệ & Startup\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔥 CHỦ ĐỀ NÓNG\n\n1. Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM — Reddit r/LocalLLaMA\n   → Chạy mô hình LLM 70B tối ưu trên phần cứng cá nhân với KV cache 4-bit\n\n2. #AI — Twitter/X\n   → Làn sóng thảo luận nóng về bước tiến AI và ứng dụng vào thực tế\n\n3. electric vehicle — Google Trends\n   → Mức độ quan tâm thị trường xe điện và hạ tầng trạm sạc\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n📊 SỐ LIỆU NHANH\n• Tổng tín hiệu mới: 929 | Cơ hội mới: 22\n• Build-ready: 0 | Research: 6 | Watch: 16\n• Triple Signal: Có (3) → Robot tự hành & AI vật lý (Robotics & Embodied AI)\n• Velocity: 9 rising ↑ | 0 fading ↓\n• Công nghệ nổi bật: Humanoid (↑+114%)\n\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🔗 Xem chi tiết: https://huytruong14.github.io/trend-radar/"
 }
