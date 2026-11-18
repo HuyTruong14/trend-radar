@@ -1,8 +1,8 @@
 # Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W47
 
-**Khoảng thời gian:** 2026-11-12 đến 2026-11-18  
+**Khoảng thời gian:** 2026-11-13 đến 2026-11-19  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-18 21:49 (giờ VN)  
+**Tạo lúc:** 2026-11-19 06:44 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W47) | Tuần này (W47) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 947 | **902** | -45 (-4.8%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 904 | **937** | +33 (+3.7%) | Chất lượng cơ hội ổn định |
-| 🔴 **Build-ready (9/9)** | 3 | **0** | -3 (-100.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 172 | **174** | +2 (+1.2%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 729 | **763** | +34 (+4.7%) | Dòng tín hiệu thị trường rộng |
+| **Tổng tín hiệu đầu vào** | 902 | **962** | +60 (+6.7%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 937 | **944** | +7 (+0.7%) | Chất lượng cơ hội ổn định |
+| 🔴 **Build-ready (9/9)** | 0 | **3** | +3 (+300.0%) | Đúng ngách IoT & cảm biến nước |
+| 🟡 **Research (7–8/9)** | 174 | **177** | +3 (+1.7%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 763 | **764** | +1 (+0.1%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -22,11 +22,11 @@
 
 | # | Tiêu đề dự án / Repo | Điểm | Stage | Loại tín hiệu | Tóm tắt cơ hội (summary_vi) |
 |---|---|:---:|:---:|---|---|
-| 1 | [Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat](https://github.com/Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
-| 2 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31 |
-| 3 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
-| 4 | [berunadh/Smart-Water-Quality-Monitor](https://github.com/berunadh/Smart-Water-Quality-Monitor) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
-| 5 | [Autonomous robotics and physical AI are decoupling manufacturing from labor shortages](https://www.reddit.com/r/Futurology/comments/1xe_robotics_labor/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Autonomous robotics a |
+| 1 | [harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT](https://github.com/harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
+| 2 | [carlitronix/Smart-Aquaculture](https://github.com/carlitronix/Smart-Aquaculture) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
+| 3 | [hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS](https://github.com/hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản |
+| 4 | [Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat](https://github.com/Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
+| 5 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
 
 ---
 
@@ -34,8 +34,8 @@
 
 | Thương vụ / Doanh nghiệp | Hình thức | Giá trị | Ngành chuẩn hóa | Chi tiết định hướng |
 |---|:---:|:---:|---|---|
-| [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **Xu hướng** | **$31.4M** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **Xu hướng** | **$31.4M** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Industry experts discuss China blocking SoftBank acquisition of ABB Robotics](https://www.therobotreport.com/industry-experts-discuss-china-blocking-softbank-acquisition-abb-robotics/) | **M&A** | **N/A** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [The back office stack that actually survived our first year (and what we killed) (I will not promote)](https://www.reddit.com/r/startups/comments/1xp20c6/the_back_office_stack_that_actually_survived_our/) | **Gọi vốn** | **N/A** | Công nghệ & Startup | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Lula praises betting ban as clock ticks on Congress decision](https://sbcnews.co.uk/southamerica/2026/11/10/lula-bets-ban-video/) | **Gọi vốn** | **N/A** | iGaming & Betting | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
@@ -74,16 +74,16 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W47) | Tuần trước (W47) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **89** | 85 | `+5%` | 📈 Tăng nhẹ |
+| **Robotics** | **93** | 89 | `+4%` | 📈 Tăng nhẹ |
 | **ESP32** | **26** | 26 | `0%` | ➡️ Ổn định |
-| **Sensor** | **24** | 23 | `+4%` | 📈 Tăng nhẹ |
+| **Sensor** | **22** | 24 | `-8%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **16** | 13 | `+23%` | 📈 Tăng nhẹ |
+| **Humanoid** | **16** | 16 | `0%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
-| **LoRaWAN** | **9** | 14 | `-36%` | ➡️ Ổn định |
+| **LoRaWAN** | **9** | 9 | `0%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
-| **RP2350** | **5** | 8 | `-38%` | ➡️ Ổn định |
+| **RP2350** | **5** | 5 | `0%` | ➡️ Ổn định |
 | **MQTT** | **5** | 5 | `0%` | ➡️ Ổn định |
 | **STM32** | **0** | 0 | `0%` | ➡️ Ổn định |
 | **Computer Vision** | **0** | 0 | `0%` | ➡️ Ổn định |
@@ -97,10 +97,10 @@
 - **`OpenAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AutoModerator`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`KiwisIoT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`GR8_TECH`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`DeepMind`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
 ---
 
