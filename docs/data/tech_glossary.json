@@ -112,6 +112,15 @@
       "Arduino": 1
     }
   },
+  "Drone": {
+    "type": "Robotics",
+    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
+    "mentions_this_week": 9,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "RP2350": {
     "type": "Hardware",
     "description_vi": "Thế hệ vi điều khiển kép ARM Cortex-M33 và Hazard3 RISC-V mới của Raspberry Pi",
@@ -122,7 +131,7 @@
     "co_occurs_with": {
       "RP2040": 4,
       "Raspberry Pi": 4,
-      "MicroPython": 1,
+      "MicroPython": 2,
       "ESP32": 1
     }
   },
@@ -153,15 +162,6 @@
       "Ultrasonic": 2,
       "Arduino": 1
     }
-  },
-  "Drone": {
-    "type": "Robotics",
-    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
-    "mentions_this_week": 7,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "ESP32-S3": {
     "type": "Hardware",
@@ -311,6 +311,18 @@
     "trend": "new",
     "co_occurs_with": {}
   },
+  "MicroPython": {
+    "type": "Platform",
+    "description_vi": "Bản triển khai ngôn ngữ Python 3 tối giản chạy trực tiếp trên vi điều khiển trần",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2350": 2,
+      "Raspberry Pi": 1
+    }
+  },
   "TDS": {
     "type": "Sensor",
     "description_vi": "Cảm biến đo tổng chất rắn hòa tan trong nước (Total Dissolved Solids)",
@@ -384,18 +396,6 @@
     "co_occurs_with": {
       "STM32": 1,
       "NB-IoT": 1
-    }
-  },
-  "MicroPython": {
-    "type": "Platform",
-    "description_vi": "Bản triển khai ngôn ngữ Python 3 tối giản chạy trực tiếp trên vi điều khiển trần",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2350": 1,
-      "Raspberry Pi": 1
     }
   },
   "Docker": {
