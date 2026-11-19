@@ -32,7 +32,7 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 18,
+    "mentions_this_week": 16,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -74,20 +74,6 @@
       "DO (Dissolved Oxygen)": 5
     }
   },
-  "Raspberry Pi": {
-    "type": "Hardware",
-    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
-    "mentions_this_week": 11,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2040": 5,
-      "RP2350": 4,
-      "MicroPython": 1,
-      "ESP32": 1
-    }
-  },
   "RISC-V": {
     "type": "Hardware",
     "description_vi": "Kiến trúc tập lệnh (ISA) mở cho phép tự do thiết kế chip không phụ thuộc bản quyền",
@@ -107,6 +93,20 @@
     "change_pct": 100,
     "trend": "new",
     "co_occurs_with": {}
+  },
+  "Raspberry Pi": {
+    "type": "Hardware",
+    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
+    "mentions_this_week": 10,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2040": 4,
+      "RP2350": 4,
+      "MicroPython": 1,
+      "ESP32": 1
+    }
   },
   "ROS2": {
     "type": "Platform",
@@ -178,19 +178,6 @@
       "TDS": 1
     }
   },
-  "RP2040": {
-    "type": "Hardware",
-    "description_vi": "Vi điều khiển lõi kép Cortex-M0+ đầu tiên do Raspberry Pi tự thiết kế",
-    "mentions_this_week": 5,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "Raspberry Pi": 5,
-      "RP2350": 4,
-      "ESP32": 1
-    }
-  },
   "LoRA": {
     "type": "AI/ML",
     "description_vi": "Phương pháp tinh chỉnh mô hình ngôn ngữ bằng ma trận rank thấp siêu tiết kiệm bộ nhớ",
@@ -201,15 +188,6 @@
     "co_occurs_with": {
       "LoRaWAN": 5
     }
-  },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 5,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "Turbidity": {
     "type": "Sensor",
@@ -225,6 +203,28 @@
       "Ultrasonic": 2,
       "Edge AI": 1
     }
+  },
+  "RP2040": {
+    "type": "Hardware",
+    "description_vi": "Vi điều khiển lõi kép Cortex-M0+ đầu tiên do Raspberry Pi tự thiết kế",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2350": 4,
+      "Raspberry Pi": 4,
+      "ESP32": 1
+    }
+  },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "Ultrasonic": {
     "type": "Sensor",
