@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-11-13 đến 2026-11-19  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-19 12:00 (giờ VN)  
+**Tạo lúc:** 2026-11-19 21:54 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W47) | Tuần này (W47) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 902 | **929** | +27 (+3.0%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 937 | **953** | +16 (+1.7%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 902 | **933** | +31 (+3.4%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 937 | **961** | +24 (+2.6%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 174 | **179** | +5 (+2.9%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 763 | **774** | +11 (+1.4%) | Dòng tín hiệu thị trường rộng |
+| 🟡 **Research (7–8/9)** | 174 | **180** | +6 (+3.4%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 763 | **781** | +18 (+2.4%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -80,8 +80,8 @@
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
 | **Humanoid** | **16** | 16 | `0%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
+| **LoRaWAN** | **12** | 9 | `+33%` | 🚀 Tăng mạnh |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
-| **LoRaWAN** | **9** | 9 | `0%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
 | **RP2350** | **5** | 5 | `0%` | ➡️ Ổn định |
 | **MQTT** | **5** | 5 | `0%` | ➡️ Ổn định |

@@ -32,11 +32,24 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 16,
+    "mentions_this_week": 17,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
     "co_occurs_with": {}
+  },
+  "LoRaWAN": {
+    "type": "Protocol",
+    "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
+    "mentions_this_week": 15,
+    "mentions_prev_week": 9,
+    "change_pct": 67,
+    "trend": "rising",
+    "co_occurs_with": {
+      "ESP32": 6,
+      "LoRA": 5,
+      "DO (Dissolved Oxygen)": 5
+    }
   },
   "TinyML": {
     "type": "AI/ML",
@@ -59,19 +72,6 @@
     "trend": "rising",
     "co_occurs_with": {
       "ROS2": 5
-    }
-  },
-  "LoRaWAN": {
-    "type": "Protocol",
-    "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
-    "mentions_this_week": 14,
-    "mentions_prev_week": 9,
-    "change_pct": 56,
-    "trend": "rising",
-    "co_occurs_with": {
-      "ESP32": 6,
-      "LoRA": 5,
-      "DO (Dissolved Oxygen)": 5
     }
   },
   "RISC-V": {
@@ -217,6 +217,27 @@
       "ESP32": 1
     }
   },
+  "Matter": {
+    "type": "Protocol",
+    "description_vi": "Tiêu chuẩn kết nối nhà thông minh hợp nhất trên nền tảng IPv6, Thread và WiFi",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "NB-IoT": {
+    "type": "Protocol",
+    "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "STM32": 1,
+      "Zephyr": 1
+    }
+  },
   "Transformers": {
     "type": "AI/ML",
     "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
@@ -240,15 +261,6 @@
       "Turbidity": 2,
       "Actuator": 2
     }
-  },
-  "Matter": {
-    "type": "Protocol",
-    "description_vi": "Tiêu chuẩn kết nối nhà thông minh hợp nhất trên nền tảng IPv6, Thread và WiFi",
-    "mentions_this_week": 3,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "Modbus": {
     "type": "Protocol",
@@ -279,18 +291,6 @@
     "trend": "rising",
     "co_occurs_with": {
       "RISC-V": 2
-    }
-  },
-  "NB-IoT": {
-    "type": "Protocol",
-    "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "STM32": 1,
-      "Zephyr": 1
     }
   },
   "Computer Vision": {
