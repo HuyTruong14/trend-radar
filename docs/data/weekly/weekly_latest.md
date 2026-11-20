@@ -1,8 +1,8 @@
 # Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W47
 
-**Khoảng thời gian:** 2026-11-13 đến 2026-11-19  
+**Khoảng thời gian:** 2026-11-14 đến 2026-11-20  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-19 21:54 (giờ VN)  
+**Tạo lúc:** 2026-11-20 07:04 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W47) | Tuần này (W47) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 902 | **933** | +31 (+3.4%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 937 | **961** | +24 (+2.6%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 933 | **903** | -30 (-3.2%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 961 | **969** | +8 (+0.8%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 174 | **180** | +6 (+3.4%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 763 | **781** | +18 (+2.4%) | Dòng tín hiệu thị trường rộng |
+| 🟡 **Research (7–8/9)** | 180 | **180** | 0 (0.0%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 781 | **789** | +8 (+1.0%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -23,10 +23,10 @@
 | # | Tiêu đề dự án / Repo | Điểm | Stage | Loại tín hiệu | Tóm tắt cơ hội (summary_vi) |
 |---|---|:---:|:---:|---|---|
 | 1 | [Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat](https://github.com/Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
-| 2 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
-| 3 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31 |
-| 4 | [berunadh/Smart-Water-Quality-Monitor](https://github.com/berunadh/Smart-Water-Quality-Monitor) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
-| 5 | [Autonomous robotics and physical AI are decoupling manufacturing from labor shortages](https://www.reddit.com/r/Futurology/comments/1xe_robotics_labor/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: Autonomous robotics a |
+| 2 | [Humyn Labs raises $47M to collect real-world data for robotics](https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Startup Humyn Labs gọi $47M phát triển giải pháp công nghệ mới |
+| 3 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
+| 4 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31 |
+| 5 | [PrakatheeshWaran2105/IoT-Based-Water-Quality-Monitoring-Using-EC-Sensor-and-KiwisIoT](https://github.com/PrakatheeshWaran2105/IoT-Based-Water-Quality-Monitoring-Using-EC-Sensor-and-KiwisIoT) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
 
 ---
 
@@ -34,11 +34,11 @@
 
 | Thương vụ / Doanh nghiệp | Hình thức | Giá trị | Ngành chuẩn hóa | Chi tiết định hướng |
 |---|:---:|:---:|---|---|
+| [Humyn Labs raises $47M to collect real-world data for robotics](https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/) | **Gọi vốn** | **$47M** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **Xu hướng** | **$31.4M** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [The back office stack that actually survived our first year (and what we killed) (I will not promote)](https://www.reddit.com/r/startups/comments/1xp20c6/the_back_office_stack_that_actually_survived_our/) | **Gọi vốn** | **N/A** | Công nghệ & Startup | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [Cambridge Analytica's fallout is still costing Meta, this time $25 billion in New Mexico](https://www.reddit.com/r/technology/comments/1xdlpex/cambridge_analyticas_fallout_is_still_costing/) | **Gọi vốn** | **$25B** | Công nghệ & Startup | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [Genesis AI Raises $500M At $3.5B Valuation To Bring Its Robots To Factories And Warehouses](https://news.crunchbase.com/venture/robot-factory-workers-genesis-ai-fundraise/) | **Gọi vốn** | **$500M** | Nông nghiệp | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [Boston Dynamics’ Atlas humanoid lands first non-automotive trial](https://www.therobotreport.com/boston-dynamics-atlas-humanoid-lands-first-non-automotive-trial/) | **Gọi vốn** | **N/A** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 
 ---
 
@@ -74,18 +74,18 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W47) | Tuần trước (W47) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **92** | 89 | `+3%` | 📈 Tăng nhẹ |
+| **Robotics** | **90** | 92 | `-2%` | ➡️ Ổn định |
 | **ESP32** | **26** | 26 | `0%` | ➡️ Ổn định |
 | **Sensor** | **24** | 24 | `0%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
 | **Humanoid** | **16** | 16 | `0%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
-| **LoRaWAN** | **12** | 9 | `+33%` | 🚀 Tăng mạnh |
+| **LoRaWAN** | **12** | 12 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
-| **RP2350** | **5** | 5 | `0%` | ➡️ Ổn định |
+| **RP2350** | **8** | 5 | `+60%` | 🚀 Tăng mạnh |
 | **MQTT** | **5** | 5 | `0%` | ➡️ Ổn định |
-| **Computer Vision** | **4** | 0 | `+400%` | 🚀 Tăng mạnh |
+| **Computer Vision** | **2** | 4 | `-50%` | ➡️ Ổn định |
 | **STM32** | **0** | 0 | `0%` | ➡️ Ổn định |
 | **BLE** | **0** | 0 | `0%` | ➡️ Ổn định |
 

@@ -32,7 +32,7 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 17,
+    "mentions_this_week": 16,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -74,6 +74,15 @@
       "ROS2": 5
     }
   },
+  "Drone": {
+    "type": "Robotics",
+    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
+    "mentions_this_week": 13,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "RISC-V": {
     "type": "Hardware",
     "description_vi": "Kiến trúc tập lệnh (ISA) mở cho phép tự do thiết kế chip không phụ thuộc bản quyền",
@@ -84,15 +93,6 @@
     "co_occurs_with": {
       "BLE": 2
     }
-  },
-  "Drone": {
-    "type": "Robotics",
-    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
-    "mentions_this_week": 11,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "Raspberry Pi": {
     "type": "Hardware",
@@ -131,7 +131,7 @@
     "co_occurs_with": {
       "RP2040": 4,
       "Raspberry Pi": 4,
-      "MicroPython": 2,
+      "MicroPython": 1,
       "ESP32": 1
     }
   },
@@ -311,18 +311,6 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "MicroPython": {
-    "type": "Platform",
-    "description_vi": "Bản triển khai ngôn ngữ Python 3 tối giản chạy trực tiếp trên vi điều khiển trần",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2350": 2,
-      "Raspberry Pi": 1
-    }
-  },
   "TDS": {
     "type": "Sensor",
     "description_vi": "Cảm biến đo tổng chất rắn hòa tan trong nước (Total Dissolved Solids)",
@@ -405,6 +393,18 @@
     "co_occurs_with": {
       "STM32": 1,
       "NB-IoT": 1
+    }
+  },
+  "MicroPython": {
+    "type": "Platform",
+    "description_vi": "Bản triển khai ngôn ngữ Python 3 tối giản chạy trực tiếp trên vi điều khiển trần",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "RP2350": 1,
+      "Raspberry Pi": 1
     }
   },
   "Docker": {
