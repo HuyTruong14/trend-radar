@@ -29,17 +29,24 @@
       "Turbidity": 1
     }
   },
-  "LoRaWAN": {
-    "type": "Protocol",
-    "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
-    "mentions_this_week": 15,
-    "mentions_prev_week": 9,
-    "change_pct": 67,
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 17,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "Humanoid": {
+    "type": "Robotics",
+    "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
+    "mentions_this_week": 17,
+    "mentions_prev_week": 7,
+    "change_pct": 143,
     "trend": "rising",
     "co_occurs_with": {
-      "ESP32": 6,
-      "LoRA": 5,
-      "DO (Dissolved Oxygen)": 5
+      "ROS2": 5
     }
   },
   "TinyML": {
@@ -54,24 +61,17 @@
       "ESP32": 8
     }
   },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 15,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
-  "Humanoid": {
-    "type": "Robotics",
-    "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 15,
-    "mentions_prev_week": 7,
-    "change_pct": 114,
+  "LoRaWAN": {
+    "type": "Protocol",
+    "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
+    "mentions_this_week": 14,
+    "mentions_prev_week": 9,
+    "change_pct": 56,
     "trend": "rising",
     "co_occurs_with": {
-      "ROS2": 5
+      "ESP32": 6,
+      "LoRA": 5,
+      "DO (Dissolved Oxygen)": 5
     }
   },
   "Drone": {
@@ -189,6 +189,15 @@
       "LoRaWAN": 5
     }
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 5,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "Turbidity": {
     "type": "Sensor",
     "description_vi": "Cảm biến quang học đo độ đục của nước để đánh giá chất lượng và phù sa lơ lửng",
@@ -237,15 +246,6 @@
       "STM32": 1,
       "Zephyr": 1
     }
-  },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 4,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "Ultrasonic": {
     "type": "Sensor",

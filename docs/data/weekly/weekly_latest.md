@@ -1,8 +1,8 @@
 # Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W47
 
-**Khoảng thời gian:** 2026-11-14 đến 2026-11-20  
+**Khoảng thời gian:** 2026-11-15 đến 2026-11-21  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-20 13:09 (giờ VN)  
+**Tạo lúc:** 2026-11-21 02:26 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W47) | Tuần này (W47) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 933 | **888** | -45 (-4.8%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 961 | **976** | +15 (+1.6%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 888 | **940** | +52 (+5.9%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 976 | **995** | +19 (+1.9%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 180 | **181** | +1 (+0.6%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 781 | **795** | +14 (+1.8%) | Dòng tín hiệu thị trường rộng |
+| 🟡 **Research (7–8/9)** | 181 | **186** | +5 (+2.8%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 795 | **809** | +14 (+1.8%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -74,18 +74,18 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W47) | Tuần trước (W47) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **91** | 92 | `-1%` | ➡️ Ổn định |
-| **ESP32** | **26** | 26 | `0%` | ➡️ Ổn định |
+| **Robotics** | **96** | 91 | `+5%` | 📈 Tăng nhẹ |
+| **ESP32** | **28** | 26 | `+8%` | 📈 Tăng nhẹ |
 | **Sensor** | **24** | 24 | `0%` | ➡️ Ổn định |
+| **Humanoid** | **20** | 16 | `+25%` | 📈 Tăng nhẹ |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **16** | 16 | `0%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
-| **LoRaWAN** | **12** | 12 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
+| **LoRaWAN** | **9** | 12 | `-25%` | ➡️ Ổn định |
 | **ROS2** | **9** | 9 | `0%` | ➡️ Ổn định |
-| **RP2350** | **8** | 5 | `+60%` | 🚀 Tăng mạnh |
+| **RP2350** | **8** | 8 | `0%` | ➡️ Ổn định |
 | **MQTT** | **5** | 5 | `0%` | ➡️ Ổn định |
-| **Computer Vision** | **1** | 4 | `-75%` | ➡️ Ổn định |
+| **Computer Vision** | **1** | 1 | `0%` | ➡️ Ổn định |
 | **STM32** | **0** | 0 | `0%` | ➡️ Ổn định |
 | **BLE** | **0** | 0 | `0%` | ➡️ Ổn định |
 

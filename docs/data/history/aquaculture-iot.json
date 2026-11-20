@@ -2405,18 +2405,20 @@
   },
   {
     "date": "2026-11-20",
-    "total_items": 71,
+    "total_items": 87,
     "avg_relevance_score": null,
     "cross_source_count": 0,
     "by_source": {
-      "GitHub": 26,
+      "GitHub": 27,
+      "arXiv": 15,
       "Fish Farmer Magazine RSS Feed": 15,
       "Engineering News | Aquaculture": 15,
       "The Fish Site": 15
     },
     "by_keyword": {
+      "aquaculture iot": 13,
       "water quality sensor": 14,
-      "aquaculture iot": 12,
+      "cs.AI, cs.CV": 15,
       "": 45
     },
     "top_repos": [
@@ -2433,6 +2435,10 @@
         "stars": 2
       },
       {
+        "name": "AmjedKhaled165/Smart-Fishing",
+        "stars": 1
+      },
+      {
         "name": "mohith0324-mohi/AQUASENSE-iot-adbms",
         "stars": 1
       },
@@ -2445,28 +2451,26 @@
         "stars": 1
       },
       {
+        "name": "Drwae/TinyFeeder",
+        "stars": 0
+      },
+      {
         "name": "elon00/jaljeevan-ai",
         "stars": 0
       },
       {
         "name": "MelizaBustos/Rainbow-trout-suitability-molino-river",
         "stars": 0
-      },
-      {
-        "name": "ritikmr1001/Water-Quality-Monitoring-system",
-        "stars": 0
-      },
-      {
-        "name": "PrakatheeshWaran2105/IoT-Based-Water-Quality-Monitoring-Using-EC-Sensor-and-KiwisIoT",
-        "stars": 0
       }
     ],
     "github_repos": [
+      "Drwae/TinyFeeder",
+      "rknightion/meraki-dashboard-ha",
+      "AmjedKhaled165/Smart-Fishing",
       "elon00/jaljeevan-ai",
       "MelizaBustos/Rainbow-trout-suitability-molino-river",
       "J-Akiru5/OptiFeed",
       "mohith0324-mohi/AQUASENSE-iot-adbms",
-      "rknightion/meraki-dashboard-ha",
       "ritikmr1001/Water-Quality-Monitoring-system",
       "PrakatheeshWaran2105/IoT-Based-Water-Quality-Monitoring-Using-EC-Sensor-and-KiwisIoT",
       "harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT",
@@ -2475,7 +2479,6 @@
       "AquaMindAI/AquaMindAI.github.io",
       "carlitronix/Smart-Aquaculture",
       "FreyderPD07/waterQualitySensors",
-      "Drwae/TinyFeeder",
       "hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS",
       "AITT-VN/yolouno_extension_water_quality_sensor",
       "codewithasnari/oxyfeeder",
