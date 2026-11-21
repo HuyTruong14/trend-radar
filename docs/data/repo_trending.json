@@ -126,17 +126,16 @@
     "role": "infra"
   },
   {
-    "repo": "tt-a1i/archify",
+    "repo": "paperclipai/paperclip",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "IoT",
-      "Open Source"
+      "Edge AI"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
-    "role": "platform"
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
+    "role": "ai"
   },
   {
     "repo": "OpenHands/OpenHands",
@@ -152,16 +151,17 @@
     "role": "platform"
   },
   {
-    "repo": "paperclipai/paperclip",
+    "repo": "PurpleDoubleD/locally-uncensored",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "Edge AI"
+      "IoT",
+      "Open Source"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
-    "role": "ai"
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho locally uncensored",
+    "role": "platform"
   },
   {
     "repo": "invoke-ai/InvokeAI",
@@ -176,16 +176,17 @@
     "role": "ai"
   },
   {
-    "repo": "Anil-matcha/Open-Generative-AI",
+    "repo": "aqm857886159/Nomi",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
     "language": "Python",
     "tags": [
-      "Edge AI"
+      "IoT",
+      "Open Source"
     ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Open Generative AI",
-    "role": "ai"
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Nomi",
+    "role": "platform"
   },
   {
     "repo": "tetherto/qvac",
@@ -199,6 +200,44 @@
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho qvac",
     "role": "platform"
+  },
+  {
+    "repo": "tt-a1i/archify",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
+    "role": "platform"
+  },
+  {
+    "repo": "langchain-ai/langchain",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI",
+      "LangChain"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
+    "role": "ai"
+  },
+  {
+    "repo": "Anil-matcha/Open-Generative-AI",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Open Generative AI",
+    "role": "ai"
   },
   {
     "repo": "ZeroLu/awesome-seedance",
@@ -227,32 +266,6 @@
     "role": "platform"
   },
   {
-    "repo": "aqm857886159/Nomi",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Nomi",
-    "role": "platform"
-  },
-  {
-    "repo": "langchain-ai/langchain",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI",
-      "LangChain"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán langchain",
-    "role": "ai"
-  },
-  {
     "repo": "earendil-works/pi",
     "stars": 540,
     "stars_prev_week": 460,
@@ -276,19 +289,6 @@
       "Open Source"
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Veyra NRVideo",
-    "role": "platform"
-  },
-  {
-    "repo": "PurpleDoubleD/locally-uncensored",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho locally uncensored",
     "role": "platform"
   },
   {
@@ -478,7 +478,7 @@
     "role": "platform"
   },
   {
-    "repo": "harvard-edge/cs249r_book",
+    "repo": "questdb/questdb",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -487,7 +487,20 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
+    "role": "platform"
+  },
+  {
+    "repo": "earthtojake/text-to-cad",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho text to cad",
     "role": "platform"
   },
   {
@@ -504,19 +517,6 @@
     "role": "platform"
   },
   {
-    "repo": "questdb/questdb",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
-    "role": "platform"
-  },
-  {
     "repo": "commaai/openpilot",
     "stars": 540,
     "stars_prev_week": 460,
@@ -529,7 +529,7 @@
     "role": "ai"
   },
   {
-    "repo": "earthtojake/text-to-cad",
+    "repo": "harvard-edge/cs249r_book",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -538,7 +538,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho text to cad",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
     "role": "platform"
   },
   {
@@ -906,6 +906,21 @@
     "role": "platform"
   },
   {
+    "repo": "AITT-VN/yolouno_extension_water_quality_sensor",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "C++",
+    "tags": [
+      "Aquaculture",
+      "Edge AI",
+      "IoT",
+      "Water Quality"
+    ],
+    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+    "role": "ai"
+  },
+  {
     "repo": "elon00/jaljeevan-ai",
     "stars": 492,
     "stars_prev_week": 419,
@@ -940,21 +955,6 @@
       "Edge AI"
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: AquaMindAI.github.io",
-    "role": "ai"
-  },
-  {
-    "repo": "AITT-VN/yolouno_extension_water_quality_sensor",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "C++",
-    "tags": [
-      "Aquaculture",
-      "Edge AI",
-      "IoT",
-      "Water Quality"
-    ],
-    "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
     "role": "ai"
   },
   {
@@ -1080,18 +1080,6 @@
     "role": "platform"
   },
   {
-    "repo": "pollen-robotics/microduck",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "Robotics"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: microduck",
-    "role": "platform"
-  },
-  {
     "repo": "huggingface/lerobot",
     "stars": 492,
     "stars_prev_week": 419,
@@ -1101,6 +1089,18 @@
       "Robotics"
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
+    "role": "platform"
+  },
+  {
+    "repo": "pollen-robotics/microduck",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "Robotics"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: microduck",
     "role": "platform"
   },
   {
