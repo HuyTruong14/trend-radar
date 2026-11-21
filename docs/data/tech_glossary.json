@@ -29,12 +29,21 @@
       "Turbidity": 1
     }
   },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 17,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "Humanoid": {
     "type": "Robotics",
     "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 16,
+    "mentions_this_week": 17,
     "mentions_prev_week": 7,
-    "change_pct": 129,
+    "change_pct": 143,
     "trend": "rising",
     "co_occurs_with": {
       "ROS2": 5
@@ -51,15 +60,6 @@
       "Edge AI": 9,
       "ESP32": 8
     }
-  },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 15,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "LoRaWAN": {
     "type": "Protocol",
@@ -238,6 +238,15 @@
       "Zephyr": 1
     }
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "Ultrasonic": {
     "type": "Sensor",
     "description_vi": "Cảm biến sóng siêu âm đo khoảng cách và mực nước bồn chứa/ao nuôi không tiếp xúc",
@@ -291,15 +300,6 @@
     "mentions_prev_week": 1,
     "change_pct": 100,
     "trend": "rising",
-    "co_occurs_with": {}
-  },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
     "co_occurs_with": {}
   },
   "FreeRTOS": {
