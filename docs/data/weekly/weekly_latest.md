@@ -1,20 +1,20 @@
-# Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W47
+# Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W48
 
-**Khoảng thời gian:** 2026-11-16 đến 2026-11-22  
+**Khoảng thời gian:** 2026-11-17 đến 2026-11-23  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-22 20:47 (giờ VN)  
+**Tạo lúc:** 2026-11-23 03:15 (giờ VN)  
 
 ---
 
-## 1. Tổng quan thị trường (So sánh W47 vs W47)
+## 1. Tổng quan thị trường (So sánh W48 vs W47)
 
-| Chỉ số quan trắc | Tuần trước (W47) | Tuần này (W47) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
+| Chỉ số quan trắc | Tuần trước (W47) | Tuần này (W48) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 944 | **937** | -7 (-0.7%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 1014 | **1016** | +2 (+0.2%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 937 | **939** | +2 (+0.2%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 1016 | **1016** | 0 (0.0%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
 | 🟡 **Research (7–8/9)** | 188 | **188** | 0 (0.0%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 826 | **828** | +2 (+0.2%) | Dòng tín hiệu thị trường rộng |
+| ⚪ **Watch (4–6/9)** | 828 | **828** | 0 (0.0%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -72,7 +72,7 @@
 
 ## 5. Công Nghệ Được Nhắc Nhiều (Tần suất & Tăng trưởng)
 
-| Công nghệ / Phần cứng | Tần suất tuần này (W47) | Tuần trước (W47) | Tăng trưởng (%) | Đánh giá xu thế |
+| Công nghệ / Phần cứng | Tần suất tuần này (W48) | Tuần trước (W47) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
 | **Robotics** | **97** | 97 | `0%` | ➡️ Ổn định |
 | **ESP32** | **28** | 28 | `0%` | ➡️ Ổn định |
@@ -95,8 +95,8 @@
 
 - **`SaaS`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`OpenAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AutoModerator`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`KiwisIoT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
