@@ -2,14 +2,14 @@
   "week": "W48",
   "start_date": "2026-11-17",
   "end_date": "2026-11-23",
-  "created_at": "2026-11-23T03:15:37.595458+07:00",
+  "created_at": "2026-11-23T05:58:07.645112+07:00",
   "previous_week": "W47",
   "stats": {
-    "total_signals": 939,
-    "total_opportunities": 1016,
-    "build_ready": 0,
+    "total_signals": 963,
+    "total_opportunities": 1017,
+    "build_ready": 3,
     "research": 188,
-    "watch": 828
+    "watch": 826
   },
   "prev_stats": {
     "total_signals": 937,
@@ -19,6 +19,42 @@
     "watch": 828
   },
   "top_opportunities": [
+    {
+      "id": "opp_2026_1118_788864f8",
+      "title": "harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
+      "url": "https://github.com/harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT"
+    },
+    {
+      "id": "opp_2026_1116_af9c5034",
+      "title": "carlitronix/Smart-Aquaculture",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
+      "url": "https://github.com/carlitronix/Smart-Aquaculture"
+    },
+    {
+      "id": "opp_2026_1115_d4624b87",
+      "title": "hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản",
+      "url": "https://github.com/hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS"
+    },
     {
       "id": "opp_2026_1117_d8298106",
       "title": "Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat",
@@ -41,42 +77,6 @@
       ],
       "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: John Deere Orchard Ro",
       "url": "https://agfundernews.com/john-deere-orchard-robotics-deal-signals-growing-value-of-actionable-farm-data-says-ag-robotics-og"
-    },
-    {
-      "id": "opp_2026_1118_fee16b3c",
-      "title": "Humyn Labs raises $47M to collect real-world data for robotics",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Startup Humyn Labs gọi $47M phát triển giải pháp công nghệ mới",
-      "url": "https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/"
-    },
-    {
-      "id": "opp_2026_1024_55c0af0b",
-      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway",
-      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
-    },
-    {
-      "id": "opp_2026_1103_0ccb3c60",
-      "title": "Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31",
-      "url": "https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/"
     }
   ],
   "funding_deals": [
@@ -251,9 +251,9 @@
       "change_pct": 0
     },
     "Robotics": {
-      "count": 97,
+      "count": 96,
       "prev_week": 97,
-      "change_pct": 0
+      "change_pct": -1
     },
     "Sensor": {
       "count": 24,

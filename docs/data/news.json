@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T20:15:09.083185+00:00",
+  "updated": "2026-11-22T22:57:43.870012+00:00",
   "topics": {
     "AI/Tech": {
       "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Scaling limits in multi-modal LLM reasoning and synthetic data generation</strong> (Score 51) — <em>Researchers discuss whether pre-training scaling laws are plateauing and the emergence of test-time compute reinforcement learning.</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM</strong> (Score 51): Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware. và <strong>Anthropic and DeepMind autonomous agent benchmarks highlight multi-step tool reliability</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 124 tín hiệu theo dõi. Trong đó có <strong>5 tín hiệu đang bứt phá mạnh (Rising Velocity)</strong>.",
@@ -151,13 +151,13 @@
           "subreddit": "r/StableDiffusion"
         },
         {
-          "title": "OpenHands/OpenHands",
+          "title": "invoke-ai/InvokeAI",
           "summary": "",
-          "url": "https://github.com/OpenHands/OpenHands",
+          "url": "https://github.com/invoke-ai/InvokeAI",
           "sources": [
             "gh"
           ],
-          "time": "1m",
+          "time": "4m",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -167,19 +167,6 @@
           "title": "NousResearch/hermes-agent",
           "summary": "",
           "url": "https://github.com/NousResearch/hermes-agent",
-          "sources": [
-            "gh"
-          ],
-          "time": "3m",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "tetherto/qvac",
-          "summary": "",
-          "url": "https://github.com/tetherto/qvac",
           "sources": [
             "gh"
           ],
@@ -196,7 +183,46 @@
           "sources": [
             "gh"
           ],
-          "time": "38m",
+          "time": "17m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "OpenHands/OpenHands",
+          "summary": "",
+          "url": "https://github.com/OpenHands/OpenHands",
+          "sources": [
+            "gh"
+          ],
+          "time": "29m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "tetherto/qvac",
+          "summary": "",
+          "url": "https://github.com/tetherto/qvac",
+          "sources": [
+            "gh"
+          ],
+          "time": "2h",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "PurpleDoubleD/locally-uncensored",
+          "summary": "",
+          "url": "https://github.com/PurpleDoubleD/locally-uncensored",
+          "sources": [
+            "gh"
+          ],
+          "time": "2h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -209,7 +235,7 @@
           "sources": [
             "gh"
           ],
-          "time": "43m",
+          "time": "3h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -222,7 +248,7 @@
           "sources": [
             "gh"
           ],
-          "time": "1h",
+          "time": "4h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -235,20 +261,7 @@
           "sources": [
             "gh"
           ],
-          "time": "1h",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "invoke-ai/InvokeAI",
-          "summary": "",
-          "url": "https://github.com/invoke-ai/InvokeAI",
-          "sources": [
-            "gh"
-          ],
-          "time": "1h",
+          "time": "4h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -261,7 +274,7 @@
           "sources": [
             "gh"
           ],
-          "time": "1h",
+          "time": "4h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -274,7 +287,7 @@
           "sources": [
             "gh"
           ],
-          "time": "4h",
+          "time": "6h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -287,7 +300,7 @@
           "sources": [
             "gh"
           ],
-          "time": "5h",
+          "time": "8h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -300,7 +313,7 @@
           "sources": [
             "gh"
           ],
-          "time": "8h",
+          "time": "10h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -313,9 +326,9 @@
           "sources": [
             "gh"
           ],
-          "time": "11h",
-          "score": 45,
-          "velocity": "stable",
+          "time": "14h",
+          "score": 41,
+          "velocity": "cooling",
           "tag": "signal",
           "source": "GitHub"
         },
@@ -326,7 +339,7 @@
           "sources": [
             "gh"
           ],
-          "time": "12h",
+          "time": "14h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -339,7 +352,7 @@
           "sources": [
             "gh"
           ],
-          "time": "13h",
+          "time": "16h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -352,7 +365,7 @@
           "sources": [
             "gh"
           ],
-          "time": "15h",
+          "time": "18h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -365,20 +378,7 @@
           "sources": [
             "gh"
           ],
-          "time": "16h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "PurpleDoubleD/locally-uncensored",
-          "summary": "",
-          "url": "https://github.com/PurpleDoubleD/locally-uncensored",
-          "sources": [
-            "gh"
-          ],
-          "time": "16h",
+          "time": "19h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -391,7 +391,7 @@
           "sources": [
             "gh"
           ],
-          "time": "17h",
+          "time": "20h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -404,7 +404,7 @@
           "sources": [
             "gh"
           ],
-          "time": "18h",
+          "time": "20h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -745,7 +745,7 @@
           "sources": [
             "hn"
           ],
-          "time": "10d",
+          "time": "11d",
           "score": 41,
           "velocity": "cooling",
           "tag": "risk",
@@ -773,7 +773,7 @@
           "sources": [
             "hn"
           ],
-          "time": "18d",
+          "time": "19d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -936,7 +936,7 @@
           "sources": [
             "hn"
           ],
-          "time": "246d",
+          "time": "247d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1254,7 +1254,7 @@
           "sources": [
             "hn"
           ],
-          "time": "639d",
+          "time": "640d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1644,7 +1644,7 @@
           "sources": [
             "hn"
           ],
-          "time": "2002d",
+          "time": "2003d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1770,7 +1770,7 @@
           "sources": [
             "rss"
           ],
-          "time": "21h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -1913,7 +1913,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -1926,7 +1926,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2564,7 +2564,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2577,7 +2577,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -2591,7 +2591,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2604,7 +2604,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -2969,7 +2969,7 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -3138,7 +3138,7 @@
           "sources": [
             "rss"
           ],
-          "time": "11d",
+          "time": "12d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -3290,12 +3290,12 @@
       ]
     },
     "Aquaculture & IoT": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Sea Harvest declares maiden interim dividend, reduces debt despite revenue decline</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Dam fixed without disrupting crop cycle</strong> (Score 45) và <strong>Rentech highlights long-term solar value for farming sector</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 89 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>rknightion/meraki-dashboard-ha</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Drwae/TinyFeeder</strong> (Score 45) và <strong>Sea Harvest declares maiden interim dividend, reduces debt despite revenue decline</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 96 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "IoT",
           "items": [
-            4,
+            6,
             41,
             42,
             43,
@@ -3317,17 +3317,6 @@
           ]
         },
         {
-          "label": "Monitoring",
-          "items": [
-            40,
-            41,
-            42,
-            44,
-            51,
-            53
-          ]
-        },
-        {
           "label": "Quality",
           "items": [
             40,
@@ -3339,9 +3328,20 @@
           ]
         },
         {
+          "label": "Monitoring",
+          "items": [
+            40,
+            41,
+            42,
+            44,
+            51,
+            53
+          ]
+        },
+        {
           "label": "Aquaculture",
           "items": [
-            14,
+            16,
             42,
             46,
             48,
@@ -3350,6 +3350,32 @@
         }
       ],
       "items": [
+        {
+          "title": "rknightion/meraki-dashboard-ha",
+          "summary": "",
+          "url": "https://github.com/rknightion/meraki-dashboard-ha",
+          "sources": [
+            "gh"
+          ],
+          "time": "49m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "Drwae/TinyFeeder",
+          "summary": "",
+          "url": "https://github.com/Drwae/TinyFeeder",
+          "sources": [
+            "gh"
+          ],
+          "time": "57m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
         {
           "title": "Sea Harvest declares maiden interim dividend, reduces debt despite revenue decline",
           "summary": "",
@@ -3552,20 +3578,7 @@
           "sources": [
             "gh"
           ],
-          "time": "12h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "rknightion/meraki-dashboard-ha",
-          "summary": "",
-          "url": "https://github.com/rknightion/meraki-dashboard-ha",
-          "sources": [
-            "gh"
-          ],
-          "time": "19h",
+          "time": "15h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -3588,19 +3601,6 @@
           "title": "LlvallVeiz/water-quality-monitoring-system",
           "summary": "",
           "url": "https://github.com/LlvallVeiz/water-quality-monitoring-system",
-          "sources": [
-            "gh"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "Drwae/TinyFeeder",
-          "summary": "",
-          "url": "https://github.com/Drwae/TinyFeeder",
           "sources": [
             "gh"
           ],
@@ -4302,6 +4302,97 @@
           "source": "Fish Farmer Magazine RSS Feed"
         },
         {
+          "title": "aquaflow by aquablurb | May 29 - Jun 11, 2023",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/aquaflow-by-aquablurb-may-29-jun",
+          "sources": [
+            "rss"
+          ],
+          "time": "1203d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
+          "title": "aquaflow by aquablurb | Apr 17 - 30, 2023",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/aquaflow-by-aquablurb-apr-17-30-2023",
+          "sources": [
+            "rss"
+          ],
+          "time": "1301d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
+          "title": "Aquaculture Dealflow | Mar 18 - 31, 2023",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/aquaculture-dealflow-mar-18-31-2023",
+          "sources": [
+            "rss"
+          ],
+          "time": "1332d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
+          "title": "Some Housekeeping",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/some-housekeeping",
+          "sources": [
+            "rss"
+          ],
+          "time": "1369d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
+          "title": "Aquaculture Dealflow | Feb 4 - Feb 17, 2023",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/aquaculture-dealflow-feb-4-feb-17",
+          "sources": [
+            "rss"
+          ],
+          "time": "1374d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
+          "title": "Pigmentation",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/pigmentation",
+          "sources": [
+            "rss"
+          ],
+          "time": "1393d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
+          "title": "Aquaculture Dealflow & Notable Reads - 16",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/aquaculture-dealflow-and-notable-981",
+          "sources": [
+            "rss"
+          ],
+          "time": "1402d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
           "title": "Experts back red seaweed farming in the UK",
           "summary": "",
           "url": "https://thefishsite.com/articles/experts-back-red-seaweed-farming-in-the-uk",
@@ -4512,7 +4603,7 @@
       ]
     },
     "Social Buzz": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM</strong> (Score 45) — <em>Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware.</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Best workflows for automated code refactoring and multi-file project architecture in 2026</strong> (Score 45): Developers share prompt templates and custom actions for codebase review, debugging, and systematic test generation. và <strong>Embodied intelligence breakthroughs: From language models to physical world manipulation</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 234 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM</strong> (Score 45) — <em>Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware.</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Best workflows for automated code refactoring and multi-file project architecture in 2026</strong> (Score 45): Developers share prompt templates and custom actions for codebase review, debugging, and systematic test generation. và <strong>Embodied intelligence breakthroughs: From language models to physical world manipulation</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 229 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "Google",
@@ -8644,9 +8735,9 @@
           "engagement": 30
         },
         {
-          "title": "Steelers trending with 22K tweets",
-          "summary": "Chủ đề Steelers ghi nhận 22K bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=Steelers",
+          "title": "Mets trending with 24K tweets",
+          "summary": "Chủ đề DK Metcalf ghi nhận 15K bài đăng trên Twitter/X với biến động Ổn định ➡️.",
+          "url": "https://x.com/search?q=Mets",
           "sources": [
             "x"
           ],
@@ -8657,81 +8748,6 @@
           "source": "Twitter/X Trending",
           "date": "2026-11-22",
           "engagement": 15000
-        },
-        {
-          "title": "Wester trending with 15K+ tweets",
-          "summary": "Chủ đề Wester ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=Wester",
-          "sources": [
-            "x"
-          ],
-          "time": "today",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "Twitter/X Trending",
-          "date": "2026-11-22",
-          "engagement": 15000
-        },
-        {
-          "title": "DK Metcalf trending with 15K+ tweets",
-          "summary": "Chủ đề DK Metcalf ghi nhận 15K+ bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=DK%20Metcalf",
-          "sources": [
-            "x"
-          ],
-          "time": "today",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "Twitter/X Trending",
-          "date": "2026-11-22",
-          "engagement": 15000
-        },
-        {
-          "title": "Tom Jackson trending with 49K tweets",
-          "summary": "Chủ đề Tom Jackson ghi nhận 49K bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=Tom%20Jackson",
-          "sources": [
-            "x"
-          ],
-          "time": "today",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "Twitter/X Trending",
-          "date": "2026-11-22",
-          "engagement": 15000
-        },
-        {
-          "title": "Luffy trending with 47K tweets",
-          "summary": "Chủ đề Naruto ghi nhận 71K bài đăng trên Twitter/X với biến động Ổn định ➡️.",
-          "url": "https://x.com/search?q=Luffy",
-          "sources": [
-            "x"
-          ],
-          "time": "today",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "Twitter/X Trending",
-          "date": "2026-11-22",
-          "engagement": 15000
-        },
-        {
-          "title": "#robotics trending with 18K tweets",
-          "summary": "Chủ đề #robotics ghi nhận 18K bài đăng trên Twitter/X với biến động +20%.",
-          "url": "https://x.com/search?q=%23robotics",
-          "sources": [
-            "x"
-          ],
-          "time": "today",
-          "score": 45,
-          "velocity": "stable",
-          "tag": "signal",
-          "source": "Twitter/X Trending",
-          "date": "2026-11-22",
-          "engagement": 18000
         },
         {
           "title": "#hardware trending with 16K tweets",
@@ -8785,7 +8801,7 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -8981,7 +8997,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -8995,7 +9011,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -9191,7 +9207,7 @@
           "sources": [
             "rss"
           ],
-          "time": "8d",
+          "time": "9d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -9230,7 +9246,7 @@
           "sources": [
             "rss"
           ],
-          "time": "11d",
+          "time": "12d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -9304,15 +9320,15 @@
       ]
     },
     "News": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>The Democratic Party is pushing for control over the AI ​​industry by early 2027. - Vietnam.vn</strong> (Score 41).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>AI Act sửa đổi của EU: Tác động và gợi mở đối với Việt Nam - Báo Đại biểu Nhân dân</strong> (Score 41) và <strong>LuatVietnam brings Law AI to the ASEAN Law Forum 2026 - LuatVietnam</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 15 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>The Democratic Party is pushing for control over the AI ​​industry by early 2027. - Vietnam.vn</strong> (Score 41).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>AI Act sửa đổi của EU: Tác động và gợi mở đối với Việt Nam - Báo Đại biểu Nhân dân</strong> (Score 41) và <strong>AI-generated images and videos must be labelled starting March 1, 2026 - LuatVietnam</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 15 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "Nam",
           "items": [
             1,
             4,
-            10,
-            13
+            9,
+            12
           ]
         },
         {
@@ -9320,21 +9336,21 @@
           "items": [
             0,
             5,
-            9
+            8
           ]
         },
         {
           "label": "AI Act",
           "items": [
             1,
-            12
+            13
           ]
         },
         {
           "label": "LuatVietnam",
           "items": [
             2,
-            8
+            11
           ]
         },
         {
@@ -9373,13 +9389,13 @@
           "source": "\"AI regulation\" - Google Tin tức"
         },
         {
-          "title": "LuatVietnam brings Law AI to the ASEAN Law Forum 2026 - LuatVietnam",
+          "title": "AI-generated images and videos must be labelled starting March 1, 2026 - LuatVietnam",
           "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQdTlhLVl1aVA1T2d5YUx1ZXZ4UFFuNWVsUEN1VmRLb1I5T1VCZzNIQmE0aWFOdjREcWpQRVZnV1RoeXZFai1EZjBiSmVBcU9IYkZ2T1ZDVEppMkhLU2tfY0JkeVB1Z2IyVm9YYWVsRTdLaGVQT1hOdFFMUGw2SUQtc2Z1dUcwRmxkVmRfX21la0szS3YyN0pkVG1vN195SjUyZEJEeXktWXpjYVF5eWxCTW5B?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQMmpnZHd3S0sxZUptOXJuX0ZONTY2WWF1S04xWlU3bW5LaTJTeTd0UkRFU0NvUWphdVI4azNsS0Q1V2x6M2NJYXFZeGRvMTVGd2JOVUF2dmwtZHo0TGJ1WjFLelNSWElNR1JIUHlsejJmS1dFVU4zcXVSTDgtdUVnVkpSME9QQ3JwUm11ZEk0WnJ0Q3BNZTl6Um9fYnp1YlJtek1KbXlkSlUteUdwWnFlRzNqWFo2eVVDQUxmMENseVpIaXM0WUE0Nkl3?oc=5",
           "sources": [
             "rss"
           ],
-          "time": "96d",
+          "time": "264d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -9451,19 +9467,6 @@
           "source": "\"AI regulation\" - Google Tin tức"
         },
         {
-          "title": "AI-generated images and videos must be labelled starting March 1, 2026 - LuatVietnam",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQMmpnZHd3S0sxZUptOXJuX0ZONTY2WWF1S04xWlU3bW5LaTJTeTd0UkRFU0NvUWphdVI4azNsS0Q1V2x6M2NJYXFZeGRvMTVGd2JOVUF2dmwtZHo0TGJ1WjFLelNSWElNR1JIUHlsejJmS1dFVU4zcXVSTDgtdUVnVkpSME9QQ3JwUm11ZEk0WnJ0Q3BNZTl6Um9fYnp1YlJtek1KbXlkSlUteUdwWnFlRzNqWFo2eVVDQUxmMENseVpIaXM0WUE0Nkl3?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "264d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "\"AI regulation\" - Google Tin tức"
-        },
-        {
           "title": "China is establishing regulations to prevent AI from getting out of human control. - Vietnam.vn",
           "summary": "",
           "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQdHRNQmVkMGNaOW9LRnlKTVE4dkFaeU9oOU4xdXE4N2dVeURjSTZvdC1EVVZ0MlFDcUktSE1pRWEtUy1jNWJCcVlTY0Z6NHQwWVFGWXNJalBuY3U0cHR1R1puNFc1N3NMZVRyZnBjX2JFcjludFRMbFNscnJybXVkRjFwQzY4RUI5S05hQnZkMDM4SVh1aGlMNm9ZcVVhTnl6QXc?oc=5",
@@ -9503,6 +9506,32 @@
           "source": "\"AI regulation\" - Google Tin tức"
         },
         {
+          "title": "LuatVietnam brings Law AI to the ASEAN Law Forum 2026 - LuatVietnam",
+          "summary": "",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQdTlhLVl1aVA1T2d5YUx1ZXZ4UFFuNWVsUEN1VmRLb1I5T1VCZzNIQmE0aWFOdjREcWpQRVZnV1RoeXZFai1EZjBiSmVBcU9IYkZ2T1ZDVEppMkhLU2tfY0JkeVB1Z2IyVm9YYWVsRTdLaGVQT1hOdFFMUGw2SUQtc2Z1dUcwRmxkVmRfX21la0szS3YyN0pkVG1vN195SjUyZEJEeXktWXpjYVF5eWxCTW5B?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "96d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
+          "title": "Bài 2: Kinh nghiệm từ thế giới cho việc xây dựng đạo luật khung về AI tại Việt Nam - Tạp chí KH&CN Việt Nam",
+          "summary": "",
+          "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNR1dtR0k1QjFoalFRZjk0eE5hYVhoU0NXUE5aZ0Npcl9acF9BSndPbzJFSjZ5cmNFX0VqOVpiVEJWekNhdV9jRFFwODhoR3U1SDFvNTFtWGtfenZid1pkNDdDUUFEUzh6bVh0cHdtYmZKeTN2S2VYTXBiU2F2c1JrUndvSlVJaFJITVpKc1dXYm9fREVNd0RlWElESVJ0QmdTdjRoVE1MdE5Ob2lQMnpmYzdoemsyWFJBaHI3eGZxOEJTWWVFY1BOcVpOZFA3NThkcTU0ekp4bWtXNlN0RmZJVk1jcDVqVHBGWWlibQ?oc=5",
+          "sources": [
+            "rss"
+          ],
+          "time": "401d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "\"AI regulation\" - Google Tin tức"
+        },
+        {
           "title": "AI Act sửa đổi của EU: Từ “luật tiên phong” tới “luật khả thi” - Báo Đại biểu Nhân dân",
           "summary": "",
           "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNQjF3TlhlSjEwdmFxZTVaRVRkNzJGUzRvb2FDQ2s2a1lFYlF2TFFnRXplN1lTdXZ4ZmlDMGNaWVpoUUR2RThKSkJtRkZ1dUdIbVZsUTJhZWlaSGlDMFJoNE5ZSGFIXzJJYnR5OFVIWHpCOFBkVFMtdFkydFBwZ255ZVJFT0JXX1JXM3pocHFjS2pkUEJHY283aURseW41UQ?oc=5",
@@ -9510,19 +9539,6 @@
             "rss"
           ],
           "time": "104d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "\"AI regulation\" - Google Tin tức"
-        },
-        {
-          "title": "Bài 3: Xây dựng khung pháp lý cho trí tuệ nhân tạo cần cân bằng giữa đổi mới và quản trị rủi ro - Tạp chí KH&CN Việt Nam",
-          "summary": "",
-          "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPVE11Q2J1X21GWWhDZGUwQk8xTTdtd3JvMDYtNTQwY3J5dFh3UmRRMm9lRFdDQXM4MTFxLVBPUjZ5RG5PeEVnR0ZfTkJWZHQ3S20xbnZ5ZmlLZlo1V3RKOGI0TGE1TDFTejZuUVR3ZjlRZ0RjT01tTTlzYkNjYXVHOXk4Ulh0ZC1LaGZXMm5PZGc1SzkteWdLb2c0d2NkeENXbTA4R3NZd0RnZnNPczMxb3IzdEllLVFjLXh2TnhsRzVBTnRIZzB1WFlsSEtDSmNsb3doUEE3R0VxRlU2LTktZGtMSzdueXl4bVdEZlJlRFJCenhQY01DN1FUVEE5UQ?oc=5",
-          "sources": [
-            "rss"
-          ],
-          "time": "400d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -9898,15 +9914,35 @@
       ]
     },
     "AI Ecosystem": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Scaling limits in multi-modal LLM reasoning and synthetic data generation</strong> (Score 51) — <em>Researchers discuss whether pre-training scaling laws are plateauing and the emergence of test-time compute reinforcement learning.</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM</strong> (Score 51): Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware. và <strong>Anthropic and DeepMind autonomous agent benchmarks highlight multi-step tool reliability</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 99 tín hiệu theo dõi. Trong đó có <strong>5 tín hiệu đang bứt phá mạnh (Rising Velocity)</strong>.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>Scaling limits in multi-modal LLM reasoning and synthetic data generation</strong> (Score 51) — <em>Researchers discuss whether pre-training scaling laws are plateauing and the emergence of test-time compute reinforcement learning.</em>.<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>Running 70B quantized LLM on consumer GPUs with 4-bit KV cache and vLLM</strong> (Score 51): Community benchmark of sub-4-bit quantization, context window scaling, and local inference throughput on RTX hardware. và <strong>Anthropic and DeepMind autonomous agent benchmarks highlight multi-step tool reliability</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 114 tín hiệu theo dõi. Trong đó có <strong>5 tín hiệu đang bứt phá mạnh (Rising Velocity)</strong>.",
       "clusters": [
+        {
+          "label": "Import AI",
+          "items": [
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113
+          ]
+        },
         {
           "label": "Gemini",
           "items": [
             13,
             17,
             24,
-            31,
+            32,
             51,
             53,
             57,
@@ -9919,7 +9955,7 @@
           "items": [
             16,
             27,
-            33,
+            34,
             38,
             41,
             42,
@@ -9939,19 +9975,13 @@
           ]
         },
         {
-          "label": "Fast",
+          "label": "RSI",
           "items": [
-            4,
-            53,
-            65
-          ]
-        },
-        {
-          "label": "Google",
-          "items": [
-            51,
-            58,
-            59
+            102,
+            104,
+            106,
+            111,
+            112
           ]
         }
       ],
@@ -10036,7 +10066,7 @@
           "sources": [
             "rss"
           ],
-          "time": "20h",
+          "time": "23h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10167,7 +10197,7 @@
           "sources": [
             "rss"
           ],
-          "time": "2d",
+          "time": "3d",
           "score": 41,
           "velocity": "cooling",
           "tag": "tool",
@@ -10337,7 +10367,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10350,7 +10380,7 @@
           "sources": [
             "rss"
           ],
-          "time": "4d",
+          "time": "5d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10360,6 +10390,19 @@
           "title": "Ulika",
           "summary": "",
           "url": "https://www.producthunt.com/products/ulika",
+          "sources": [
+            "rss"
+          ],
+          "time": "5d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Product Hunt AI"
+        },
+        {
+          "title": "Prompt Puncher",
+          "summary": "",
+          "url": "https://www.producthunt.com/products/prompt-puncher",
           "sources": [
             "rss"
           ],
@@ -10407,19 +10450,6 @@
           "velocity": "cooling",
           "tag": "signal",
           "source": "NVIDIA AI Blog"
-        },
-        {
-          "title": "AlterContacts",
-          "summary": "",
-          "url": "https://www.producthunt.com/products/alter-contacts-ai-client-relationships",
-          "sources": [
-            "rss"
-          ],
-          "time": "5d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "Product Hunt AI"
         },
         {
           "title": "Zapyso",
@@ -10702,7 +10732,7 @@
           "sources": [
             "rss"
           ],
-          "time": "11d",
+          "time": "12d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -10871,7 +10901,7 @@
           "sources": [
             "rss"
           ],
-          "time": "20h",
+          "time": "22h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11254,32 +11284,216 @@
           "velocity": "cooling",
           "tag": "signal",
           "source": "Hugging Face Blog"
+        },
+        {
+          "title": "Import AI 481: AI sub-contractors; a wet lab for AI; and subterfuge during development",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-481-ai-sub-contractors",
+          "sources": [
+            "rss"
+          ],
+          "time": "6d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 480: Self-sustaining space economies; AI for science progress, and Meta builds perfect hands for a superintelligence",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-480-self-sustaining-space",
+          "sources": [
+            "rss"
+          ],
+          "time": "13d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 479: Spacewar; low-latency tasks versus LLMs; Genie 4",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-479-spacewar-low-latency",
+          "sources": [
+            "rss"
+          ],
+          "time": "20d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI",
+          "watchlist_matched": "llm"
+        },
+        {
+          "title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
+          "sources": [
+            "rss"
+          ],
+          "time": "27d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 477: In which I tell the IMF the Singularity has begun",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-477-in-which-i-tell-the",
+          "sources": [
+            "rss"
+          ],
+          "time": "34d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 476: Creativity and RSI; worse-than-China open weight models; AI goes to space",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-476-creativity-and-rsi",
+          "sources": [
+            "rss"
+          ],
+          "time": "41d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 475: Swarm scaling; Google DeepMind watermarks biology; and the AI science economy",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-475-swarm-scaling-google",
+          "sources": [
+            "rss"
+          ],
+          "time": "48d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 474: Platonic mindspace; TPUs in space; Zhipu starts an outer RSI loop",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-474-platonic-mindspace",
+          "sources": [
+            "rss"
+          ],
+          "time": "55d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 473: The US's superintelligence strategy; human brain in a mouse skull; and machine hermeneutics",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence",
+          "sources": [
+            "rss"
+          ],
+          "time": "62d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 472: DeepMind's cheating math agents; populist AI policies; and Forethought theorizes a nightwatchman",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-472-deepminds-cheating",
+          "sources": [
+            "rss"
+          ],
+          "time": "76d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 471: Why Hugging Face worries me; space mining; FIve Eyes on AI",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-471-why-hugging-face-worries",
+          "sources": [
+            "rss"
+          ],
+          "time": "83d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 470: No rights for machines; automating environment generation with SPADE; and building better GPU kernels with Hawkeye",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-470-no-rights-for-machines",
+          "sources": [
+            "rss"
+          ],
+          "time": "90d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 469: Science AI; RSI simulator; and Zuck's technological pessimism",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-469-science-ai-rsi-simulator",
+          "sources": [
+            "rss"
+          ],
+          "time": "97d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 468: 23 RSI ideas; PostTrainBench+; and how trust and transparency interplay with AI racing",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-468-23-rsi-ideas-posttrainbench",
+          "sources": [
+            "rss"
+          ],
+          "time": "104d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
+        },
+        {
+          "title": "Import AI 467: Self-sustaining AI viruses; pacing AI progress; confusion about AI and creativity",
+          "summary": "",
+          "url": "https://importai.substack.com/p/import-ai-467-self-sustaining-ai",
+          "sources": [
+            "rss"
+          ],
+          "time": "111d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "Import AI"
         }
       ]
     },
     "Industry News": {
-      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>questdb/questdb</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>commaai/openpilot</strong> (Score 45) và <strong>ArduPilot/ardupilot</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 196 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
+      "briefing": "🌟 <strong>Tiêu điểm dẫn đầu:</strong> <strong>questdb/questdb</strong> (Score 45).<br><br>🔥 <strong>Xu hướng nổi bật:</strong> <strong>rknightion/meraki-dashboard-ha</strong> (Score 45) và <strong>Drwae/TinyFeeder</strong>.<br><br>📊 <strong>Nhịp đập hôm nay:</strong> Ghi nhận tổng cộng 203 tín hiệu theo dõi. Các tín hiệu duy trì mức lan tỏa và quan tâm ổn định trên các nền tảng.",
       "clusters": [
         {
           "label": "IoT",
           "items": [
-            12,
+            15,
             114,
             115,
             116,
             134,
-            141,
-            146
-          ]
-        },
-        {
-          "label": "Monitoring",
-          "items": [
-            109,
-            114,
-            115,
-            122,
-            138,
             141,
             146
           ]
@@ -11297,6 +11511,18 @@
           ]
         },
         {
+          "label": "Monitoring",
+          "items": [
+            109,
+            114,
+            115,
+            122,
+            138,
+            141,
+            146
+          ]
+        },
+        {
           "label": "Quality",
           "items": [
             109,
@@ -11310,7 +11536,7 @@
         {
           "label": "Aquaculture",
           "items": [
-            22,
+            25,
             115,
             131,
             134,
@@ -11326,7 +11552,46 @@
           "sources": [
             "gh"
           ],
-          "time": "4m",
+          "time": "44m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "rknightion/meraki-dashboard-ha",
+          "summary": "",
+          "url": "https://github.com/rknightion/meraki-dashboard-ha",
+          "sources": [
+            "gh"
+          ],
+          "time": "49m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "Drwae/TinyFeeder",
+          "summary": "",
+          "url": "https://github.com/Drwae/TinyFeeder",
+          "sources": [
+            "gh"
+          ],
+          "time": "57m",
+          "score": 45,
+          "velocity": "stable",
+          "tag": "signal",
+          "source": "GitHub"
+        },
+        {
+          "title": "zauberzeug/nicegui",
+          "summary": "",
+          "url": "https://github.com/zauberzeug/nicegui",
+          "sources": [
+            "gh"
+          ],
+          "time": "1h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -11339,7 +11604,7 @@
           "sources": [
             "gh"
           ],
-          "time": "20m",
+          "time": "1h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -11352,7 +11617,7 @@
           "sources": [
             "gh"
           ],
-          "time": "40m",
+          "time": "3h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -11365,7 +11630,7 @@
           "sources": [
             "gh"
           ],
-          "time": "1h",
+          "time": "4h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -11378,7 +11643,7 @@
           "sources": [
             "gh"
           ],
-          "time": "2h",
+          "time": "5h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -11391,7 +11656,7 @@
           "sources": [
             "gh"
           ],
-          "time": "5h",
+          "time": "8h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -11404,7 +11669,7 @@
           "sources": [
             "gh"
           ],
-          "time": "5h",
+          "time": "8h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -11417,7 +11682,7 @@
           "sources": [
             "gh"
           ],
-          "time": "6h",
+          "time": "9h",
           "score": 45,
           "velocity": "stable",
           "tag": "signal",
@@ -11625,20 +11890,7 @@
           "sources": [
             "gh"
           ],
-          "time": "12h",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
-        },
-        {
-          "title": "rknightion/meraki-dashboard-ha",
-          "summary": "",
-          "url": "https://github.com/rknightion/meraki-dashboard-ha",
-          "sources": [
-            "gh"
-          ],
-          "time": "19h",
+          "time": "15h",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11651,7 +11903,7 @@
           "sources": [
             "rss"
           ],
-          "time": "21h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11664,7 +11916,7 @@
           "sources": [
             "rss"
           ],
-          "time": "21h",
+          "time": "1d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
@@ -11755,24 +12007,11 @@
           "sources": [
             "rss"
           ],
-          "time": "1d",
+          "time": "2d",
           "score": 41,
           "velocity": "cooling",
           "tag": "signal",
           "source": "Hackster News - Hackster.io"
-        },
-        {
-          "title": "Drwae/TinyFeeder",
-          "summary": "",
-          "url": "https://github.com/Drwae/TinyFeeder",
-          "sources": [
-            "gh"
-          ],
-          "time": "1d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
         },
         {
           "title": "Vuduykhang2306/aquaoracle-app",
@@ -11838,19 +12077,6 @@
           "velocity": "cooling",
           "tag": "signal",
           "source": "IEEE Spectrum"
-        },
-        {
-          "title": "zauberzeug/nicegui",
-          "summary": "",
-          "url": "https://github.com/zauberzeug/nicegui",
-          "sources": [
-            "gh"
-          ],
-          "time": "2d",
-          "score": 41,
-          "velocity": "cooling",
-          "tag": "signal",
-          "source": "GitHub"
         },
         {
           "title": "MassRobotics launching marine robotics facility on Boston Harbor",
@@ -12718,7 +12944,7 @@
           "sources": [
             "rss"
           ],
-          "time": "3d",
+          "time": "4d",
           "score": 41,
           "velocity": "cooling",
           "tag": "market",
@@ -13659,6 +13885,97 @@
           "velocity": "cooling",
           "tag": "signal",
           "source": "Fish Farmer Magazine RSS Feed"
+        },
+        {
+          "title": "aquaflow by aquablurb | May 29 - Jun 11, 2023",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/aquaflow-by-aquablurb-may-29-jun",
+          "sources": [
+            "rss"
+          ],
+          "time": "1203d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
+          "title": "aquaflow by aquablurb | Apr 17 - 30, 2023",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/aquaflow-by-aquablurb-apr-17-30-2023",
+          "sources": [
+            "rss"
+          ],
+          "time": "1301d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
+          "title": "Aquaculture Dealflow | Mar 18 - 31, 2023",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/aquaculture-dealflow-mar-18-31-2023",
+          "sources": [
+            "rss"
+          ],
+          "time": "1332d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
+          "title": "Some Housekeeping",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/some-housekeeping",
+          "sources": [
+            "rss"
+          ],
+          "time": "1369d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
+          "title": "Aquaculture Dealflow | Feb 4 - Feb 17, 2023",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/aquaculture-dealflow-feb-4-feb-17",
+          "sources": [
+            "rss"
+          ],
+          "time": "1374d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
+          "title": "Pigmentation",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/pigmentation",
+          "sources": [
+            "rss"
+          ],
+          "time": "1393d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
+        },
+        {
+          "title": "Aquaculture Dealflow & Notable Reads - 16",
+          "summary": "",
+          "url": "https://aquageek.substack.com/p/aquaculture-dealflow-and-notable-981",
+          "sources": [
+            "rss"
+          ],
+          "time": "1402d",
+          "score": 41,
+          "velocity": "cooling",
+          "tag": "signal",
+          "source": "aquablurb"
         },
         {
           "title": "Experts back red seaweed farming in the UK",
