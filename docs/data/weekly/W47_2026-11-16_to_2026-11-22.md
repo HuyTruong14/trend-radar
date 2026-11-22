@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-11-16 đến 2026-11-22  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-22 05:36 (giờ VN)  
+**Tạo lúc:** 2026-11-22 10:59 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W47) | Tuần này (W47) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 944 | **943** | -1 (-0.1%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 1014 | **1015** | +1 (+0.1%) | Chất lượng cơ hội ổn định |
-| 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
+| **Tổng tín hiệu đầu vào** | 944 | **973** | +29 (+3.1%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 1014 | **1016** | +2 (+0.2%) | Chất lượng cơ hội ổn định |
+| 🔴 **Build-ready (9/9)** | 0 | **3** | +3 (+300.0%) | Đúng ngách IoT & cảm biến nước |
 | 🟡 **Research (7–8/9)** | 188 | **188** | 0 (0.0%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 826 | **827** | +1 (+0.1%) | Dòng tín hiệu thị trường rộng |
+| ⚪ **Watch (4–6/9)** | 826 | **825** | -1 (-0.1%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -22,11 +22,11 @@
 
 | # | Tiêu đề dự án / Repo | Điểm | Stage | Loại tín hiệu | Tóm tắt cơ hội (summary_vi) |
 |---|---|:---:|:---:|---|---|
-| 1 | [Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat](https://github.com/Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
-| 2 | [Humyn Labs raises $47M to collect real-world data for robotics](https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Startup Humyn Labs gọi $47M phát triển giải pháp công nghệ mới |
-| 3 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
-| 4 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31 |
-| 5 | [PrakatheeshWaran2105/IoT-Based-Water-Quality-Monitoring-Using-EC-Sensor-and-KiwisIoT](https://github.com/PrakatheeshWaran2105/IoT-Based-Water-Quality-Monitoring-Using-EC-Sensor-and-KiwisIoT) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
+| 1 | [harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT](https://github.com/harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
+| 2 | [carlitronix/Smart-Aquaculture](https://github.com/carlitronix/Smart-Aquaculture) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
+| 3 | [hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS](https://github.com/hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản |
+| 4 | [Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat](https://github.com/Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
+| 5 | [John Deere Orchard Robotics deal signals growing value of actionable farm data, says ag robotics OG](https://agfundernews.com/john-deere-orchard-robotics-deal-signals-growing-value-of-actionable-farm-data-says-ag-robotics-og) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: John Deere Orchard Ro |
 
 ---
 
