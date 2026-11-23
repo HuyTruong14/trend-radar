@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-11-17 đến 2026-11-23  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-23 11:40 (giờ VN)  
+**Tạo lúc:** 2026-11-23 23:49 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W47) | Tuần này (W48) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 937 | **893** | -44 (-4.7%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 1016 | **1018** | +2 (+0.2%) | Chất lượng cơ hội ổn định |
-| 🔴 **Build-ready (9/9)** | 0 | **0** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 188 | **188** | 0 (0.0%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 828 | **830** | +2 (+0.2%) | Dòng tín hiệu thị trường rộng |
+| **Tổng tín hiệu đầu vào** | 937 | **970** | +33 (+3.5%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 1016 | **1029** | +13 (+1.3%) | Chất lượng cơ hội ổn định |
+| 🔴 **Build-ready (9/9)** | 0 | **4** | +4 (+400.0%) | Đúng ngách IoT & cảm biến nước |
+| 🟡 **Research (7–8/9)** | 188 | **190** | +2 (+1.1%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 828 | **835** | +7 (+0.8%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -22,11 +22,11 @@
 
 | # | Tiêu đề dự án / Repo | Điểm | Stage | Loại tín hiệu | Tóm tắt cơ hội (summary_vi) |
 |---|---|:---:|:---:|---|---|
-| 1 | [Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat](https://github.com/Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
-| 2 | [John Deere Orchard Robotics deal signals growing value of actionable farm data, says ag robotics OG](https://agfundernews.com/john-deere-orchard-robotics-deal-signals-growing-value-of-actionable-farm-data-says-ag-robotics-og) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: John Deere Orchard Ro |
-| 3 | [Humyn Labs raises $47M to collect real-world data for robotics](https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Startup Humyn Labs gọi $47M phát triển giải pháp công nghệ mới |
-| 4 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
-| 5 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31 |
+| 1 | [harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT](https://github.com/harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
+| 2 | [carlitronix/Smart-Aquaculture](https://github.com/carlitronix/Smart-Aquaculture) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
+| 3 | [hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS](https://github.com/hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản |
+| 4 | [vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring](https://github.com/vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản |
+| 5 | [Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat](https://github.com/Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
 
 ---
 
@@ -34,11 +34,11 @@
 
 | Thương vụ / Doanh nghiệp | Hình thức | Giá trị | Ngành chuẩn hóa | Chi tiết định hướng |
 |---|:---:|:---:|---|---|
+| [harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT](https://github.com/harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT) | **Gọi vốn** | **$40M** | Thủy sản & Nước | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Humyn Labs raises $47M to collect real-world data for robotics](https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/) | **Gọi vốn** | **$47M** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands](https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/) | **Xu hướng** | **$31.4M** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Bally’s Intralot reports €830m revenue as UK growth offsets higher gambling duty](https://igamingbusiness.com/finance/ballys-intralot-reports-830m-revenue-uk-growth-gambling-duty/) | **Gọi vốn** | **€830M** | iGaming & Betting | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [The back office stack that actually survived our first year (and what we killed) (I will not promote)](https://www.reddit.com/r/startups/comments/1xp20c6/the_back_office_stack_that_actually_survived_our/) | **Gọi vốn** | **N/A** | Công nghệ & Startup | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 
 ---
 
@@ -74,7 +74,7 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W48) | Tuần trước (W47) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **96** | 97 | `-1%` | ➡️ Ổn định |
+| **Robotics** | **94** | 97 | `-3%` | ➡️ Ổn định |
 | **ESP32** | **28** | 28 | `0%` | ➡️ Ổn định |
 | **Sensor** | **24** | 24 | `0%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |

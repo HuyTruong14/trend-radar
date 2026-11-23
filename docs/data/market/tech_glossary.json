@@ -52,6 +52,24 @@
       "ESP32": 8
     }
   },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 15,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "Drone": {
+    "type": "Robotics",
+    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
+    "mentions_this_week": 15,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "LoRaWAN": {
     "type": "Protocol",
     "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
@@ -65,24 +83,6 @@
       "DO (Dissolved Oxygen)": 5
     }
   },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 14,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
-  "Drone": {
-    "type": "Robotics",
-    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
-    "mentions_this_week": 13,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "RISC-V": {
     "type": "Hardware",
     "description_vi": "Kiến trúc tập lệnh (ISA) mở cho phép tự do thiết kế chip không phụ thuộc bản quyền",
@@ -92,6 +92,19 @@
     "trend": "rising",
     "co_occurs_with": {
       "BLE": 2
+    }
+  },
+  "Arduino": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
+    "mentions_this_week": 10,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 1,
+      "MQTT": 1,
+      "ROS2": 1
     }
   },
   "Raspberry Pi": {
@@ -135,19 +148,6 @@
       "ESP32": 1
     }
   },
-  "Arduino": {
-    "type": "Hardware",
-    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
-    "mentions_this_week": 8,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "ESP32": 1,
-      "MQTT": 1,
-      "ROS2": 1
-    }
-  },
   "MQTT": {
     "type": "Protocol",
     "description_vi": "Giao thức truyền tin publish/subscribe nhẹ tối ưu cho mạng IoT băng thông thấp",
@@ -189,6 +189,15 @@
       "LoRaWAN": 5
     }
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 5,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "Turbidity": {
     "type": "Sensor",
     "description_vi": "Cảm biến quang học đo độ đục của nước để đánh giá chất lượng và phù sa lơ lửng",
@@ -217,15 +226,6 @@
       "ESP32": 1
     }
   },
-  "Matter": {
-    "type": "Protocol",
-    "description_vi": "Tiêu chuẩn kết nối nhà thông minh hợp nhất trên nền tảng IPv6, Thread và WiFi",
-    "mentions_this_week": 4,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "NB-IoT": {
     "type": "Protocol",
     "description_vi": "Mạng di động băng hẹp chuẩn 3GPP cho truyền dữ liệu cảm biến ngầm và pin lâu",
@@ -252,6 +252,15 @@
       "Turbidity": 2,
       "Actuator": 2
     }
+  },
+  "Matter": {
+    "type": "Protocol",
+    "description_vi": "Tiêu chuẩn kết nối nhà thông minh hợp nhất trên nền tảng IPv6, Thread và WiFi",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "Modbus": {
     "type": "Protocol",
@@ -291,15 +300,6 @@
     "mentions_prev_week": 1,
     "change_pct": 100,
     "trend": "rising",
-    "co_occurs_with": {}
-  },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
     "co_occurs_with": {}
   },
   "FreeRTOS": {
