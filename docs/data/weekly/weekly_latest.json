@@ -1,22 +1,22 @@
 {
   "week": "W48",
-  "start_date": "2026-11-17",
-  "end_date": "2026-11-23",
-  "created_at": "2026-11-23T23:49:16.991183+07:00",
-  "previous_week": "W47",
+  "start_date": "2026-11-18",
+  "end_date": "2026-11-24",
+  "created_at": "2026-11-24T10:37:21.449352+07:00",
+  "previous_week": "W48",
   "stats": {
+    "total_signals": 962,
+    "total_opportunities": 1012,
+    "build_ready": 4,
+    "research": 181,
+    "watch": 827
+  },
+  "prev_stats": {
     "total_signals": 970,
     "total_opportunities": 1029,
     "build_ready": 4,
     "research": 190,
     "watch": 835
-  },
-  "prev_stats": {
-    "total_signals": 937,
-    "total_opportunities": 1016,
-    "build_ready": 0,
-    "research": 188,
-    "watch": 828
   },
   "top_opportunities": [
     {
@@ -68,15 +68,16 @@
       "url": "https://github.com/vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring"
     },
     {
-      "id": "opp_2026_1117_d8298106",
-      "title": "Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat",
+      "id": "opp_2026_1120_a235cdc4",
+      "title": "John Deere Orchard Robotics deal signals growing value of actionable farm data, says ag robotics OG",
       "total": 8,
       "stage": "research",
       "signal_type": [
+        "price_shift",
         "tech_cheap"
       ],
-      "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
-      "url": "https://github.com/Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat"
+      "summary_vi": "Ứng dụng robot tự hành và công nghệ điều khiển thông minh: John Deere Orchard Ro",
+      "url": "https://agfundernews.com/john-deere-orchard-robotics-deal-signals-growing-value-of-actionable-farm-data-says-ag-robotics-og"
     }
   ],
   "funding_deals": [
@@ -191,9 +192,9 @@
   },
   "tech_frequency": {
     "ESP32": {
-      "count": 28,
+      "count": 25,
       "prev_week": 28,
-      "change_pct": 0
+      "change_pct": -11
     },
     "TinyML": {
       "count": 15,
@@ -247,25 +248,25 @@
     },
     "Humanoid": {
       "count": 17,
-      "prev_week": 20,
-      "change_pct": -15
+      "prev_week": 17,
+      "change_pct": 0
     },
     "Robotics": {
-      "count": 94,
-      "prev_week": 97,
-      "change_pct": -3
+      "count": 90,
+      "prev_week": 94,
+      "change_pct": -4
     },
     "Sensor": {
-      "count": 24,
+      "count": 20,
       "prev_week": 24,
-      "change_pct": 0
+      "change_pct": -17
     }
   },
   "new_terms": [
     "SaaS",
     "OpenAI",
-    "AutoModerator",
     "ChatGPT",
+    "AutoModerator",
     "KiwisIoT",
     "AquaMindAI",
     "LR2021",

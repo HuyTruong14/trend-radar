@@ -14,7 +14,7 @@
       "Turbidity": 3,
       "Ultrasonic": 2,
       "Arduino": 1,
-      "Water Level": 1
+      "TDS": 1
     }
   },
   "Edge AI": {
@@ -28,6 +28,15 @@
       "TinyML": 9,
       "Turbidity": 1
     }
+  },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 18,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "Humanoid": {
     "type": "Robotics",
@@ -52,24 +61,6 @@
       "ESP32": 8
     }
   },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 15,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
-  "Drone": {
-    "type": "Robotics",
-    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
-    "mentions_this_week": 15,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "LoRaWAN": {
     "type": "Protocol",
     "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
@@ -83,6 +74,29 @@
       "DO (Dissolved Oxygen)": 5
     }
   },
+  "Drone": {
+    "type": "Robotics",
+    "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
+    "mentions_this_week": 14,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "Arduino": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
+    "mentions_this_week": 12,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "Jetson": 2,
+      "ESP32": 1,
+      "MQTT": 1,
+      "ROS2": 1
+    }
+  },
   "RISC-V": {
     "type": "Hardware",
     "description_vi": "Kiến trúc tập lệnh (ISA) mở cho phép tự do thiết kế chip không phụ thuộc bản quyền",
@@ -92,19 +106,6 @@
     "trend": "rising",
     "co_occurs_with": {
       "BLE": 2
-    }
-  },
-  "Arduino": {
-    "type": "Hardware",
-    "description_vi": "Nền tảng phần cứng mã nguồn mở thông dụng cho tạo mẫu điện tử nhanh",
-    "mentions_this_week": 10,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "ESP32": 1,
-      "MQTT": 1,
-      "ROS2": 1
     }
   },
   "Raspberry Pi": {
@@ -189,15 +190,6 @@
       "LoRaWAN": 5
     }
   },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 5,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "Turbidity": {
     "type": "Sensor",
     "description_vi": "Cảm biến quang học đo độ đục của nước để đánh giá chất lượng và phù sa lơ lửng",
@@ -238,6 +230,15 @@
       "Zephyr": 1
     }
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 4,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "Ultrasonic": {
     "type": "Sensor",
     "description_vi": "Cảm biến sóng siêu âm đo khoảng cách và mực nước bồn chứa/ao nuôi không tiếp xúc",
@@ -271,15 +272,15 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "DO (Dissolved Oxygen)": {
-    "type": "Sensor",
-    "description_vi": "Cảm biến oxy hòa tan (quang học hoặc galvanic) giám sát mức dưỡng khí trong nước ao",
-    "mentions_this_week": 3,
+  "Jetson": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng máy tính nhúng tăng tốc GPU của NVIDIA cho AI thị giác và robot",
+    "mentions_this_week": 2,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
     "co_occurs_with": {
-      "LoRaWAN": 5
+      "Arduino": 2
     }
   },
   "BLE": {
@@ -311,17 +312,15 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "TDS": {
+  "DO (Dissolved Oxygen)": {
     "type": "Sensor",
-    "description_vi": "Cảm biến đo tổng chất rắn hòa tan trong nước (Total Dissolved Solids)",
+    "description_vi": "Cảm biến oxy hòa tan (quang học hoặc galvanic) giám sát mức dưỡng khí trong nước ao",
     "mentions_this_week": 2,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
     "co_occurs_with": {
-      "ESP32": 1,
-      "ESP32-S3": 1,
-      "Salinity": 1
+      "LoRaWAN": 5
     }
   },
   "AMR": {
@@ -416,15 +415,16 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "Salinity": {
+  "TDS": {
     "type": "Sensor",
-    "description_vi": "Cảm biến đo độ mặn của nước lợ và nước biển trong ao tôm cá",
+    "description_vi": "Cảm biến đo tổng chất rắn hòa tan trong nước (Total Dissolved Solids)",
     "mentions_this_week": 1,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
     "co_occurs_with": {
-      "TDS": 1
+      "ESP32": 1,
+      "ESP32-S3": 1
     }
   },
   "LiDAR": {
@@ -438,29 +438,9 @@
       "ROS2": 4
     }
   },
-  "Water Level": {
-    "type": "Sensor",
-    "description_vi": "Cảm biến giám sát mức nước và cảnh báo tràn ngập hoặc cạn ao",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "ESP32": 1
-    }
-  },
   "ESP32-C6": {
     "type": "Hardware",
     "description_vi": "Vi điều khiển RISC-V hỗ trợ WiFi 6, Zigbee, Thread và Matter",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "Jetson": {
-    "type": "Hardware",
-    "description_vi": "Nền tảng máy tính nhúng tăng tốc GPU của NVIDIA cho AI thị giác và robot",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,
@@ -629,6 +609,15 @@
     "trend": "stable",
     "co_occurs_with": {}
   },
+  "Salinity": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến đo độ mặn của nước lợ và nước biển trong ao tôm cá",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
   "IMU": {
     "type": "Sensor",
     "description_vi": "Khối đo quán tính (gia tốc kế + con quay hồi chuyển) định vị góc nghiêng và chuyển động",
@@ -650,6 +639,15 @@
   "Flow Meter": {
     "type": "Sensor",
     "description_vi": "Lưu lượng kế đo thể tích dòng chảy nước và hóa chất theo thời gian",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "Water Level": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến giám sát mức nước và cảnh báo tràn ngập hoặc cạn ao",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,

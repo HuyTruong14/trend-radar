@@ -1,20 +1,20 @@
 # Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W48
 
-**Khoảng thời gian:** 2026-11-17 đến 2026-11-23  
+**Khoảng thời gian:** 2026-11-18 đến 2026-11-24  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-23 23:49 (giờ VN)  
+**Tạo lúc:** 2026-11-24 10:37 (giờ VN)  
 
 ---
 
-## 1. Tổng quan thị trường (So sánh W48 vs W47)
+## 1. Tổng quan thị trường (So sánh W48 vs W48)
 
-| Chỉ số quan trắc | Tuần trước (W47) | Tuần này (W48) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
+| Chỉ số quan trắc | Tuần trước (W48) | Tuần này (W48) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 937 | **970** | +33 (+3.5%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 1016 | **1029** | +13 (+1.3%) | Chất lượng cơ hội ổn định |
-| 🔴 **Build-ready (9/9)** | 0 | **4** | +4 (+400.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 188 | **190** | +2 (+1.1%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 828 | **835** | +7 (+0.8%) | Dòng tín hiệu thị trường rộng |
+| **Tổng tín hiệu đầu vào** | 970 | **962** | -8 (-0.8%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 1029 | **1012** | -17 (-1.7%) | Chất lượng cơ hội ổn định |
+| 🔴 **Build-ready (9/9)** | 4 | **4** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
+| 🟡 **Research (7–8/9)** | 190 | **181** | -9 (-4.7%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 835 | **827** | -8 (-1.0%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -26,7 +26,7 @@
 | 2 | [carlitronix/Smart-Aquaculture](https://github.com/carlitronix/Smart-Aquaculture) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
 | 3 | [hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS](https://github.com/hoan211443378-sudo/Lab3-IoT-Aquaculture-FreeRTOS) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản |
 | 4 | [vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring](https://github.com/vietd420-dotcom/ESP32-IoT-Aquaculture-Monitoring) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Hệ thống IoT giám sát chất lượng nước ao nuôi thủy sản |
-| 5 | [Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat](https://github.com/Muhammadkaif88/Smart-Water-Quality-Monitoring-Boat) | **⚡ 8/9** | `research` | `tech_cheap` | Hệ thống quan trắc chất lượng nước đa thông số qua IoT |
+| 5 | [John Deere Orchard Robotics deal signals growing value of actionable farm data, says ag robotics OG](https://agfundernews.com/john-deere-orchard-robotics-deal-signals-growing-value-of-actionable-farm-data-says-ag-robotics-og) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: John Deere Orchard Ro |
 
 ---
 
@@ -72,13 +72,13 @@
 
 ## 5. Công Nghệ Được Nhắc Nhiều (Tần suất & Tăng trưởng)
 
-| Công nghệ / Phần cứng | Tần suất tuần này (W48) | Tuần trước (W47) | Tăng trưởng (%) | Đánh giá xu thế |
+| Công nghệ / Phần cứng | Tần suất tuần này (W48) | Tuần trước (W48) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **94** | 97 | `-3%` | ➡️ Ổn định |
-| **ESP32** | **28** | 28 | `0%` | ➡️ Ổn định |
-| **Sensor** | **24** | 24 | `0%` | ➡️ Ổn định |
+| **Robotics** | **90** | 94 | `-4%` | ➡️ Ổn định |
+| **ESP32** | **25** | 28 | `-11%` | ➡️ Ổn định |
+| **Sensor** | **20** | 24 | `-17%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **17** | 20 | `-15%` | ➡️ Ổn định |
+| **Humanoid** | **17** | 17 | `0%` | ➡️ Ổn định |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
 | **LoRaWAN** | **9** | 9 | `0%` | ➡️ Ổn định |
@@ -95,8 +95,8 @@
 
 - **`SaaS`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`OpenAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`AutoModerator`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`AutoModerator`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`KiwisIoT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
