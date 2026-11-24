@@ -29,15 +29,6 @@
       "Turbidity": 1
     }
   },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 18,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "Humanoid": {
     "type": "Robotics",
     "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
@@ -74,10 +65,19 @@
       "DO (Dissolved Oxygen)": 5
     }
   },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 14,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "Drone": {
     "type": "Robotics",
     "description_vi": "Thiết bị bay không người lái (UAV) phục vụ khảo sát địa hình, phun xịt và tuần tra",
-    "mentions_this_week": 14,
+    "mentions_this_week": 13,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -272,6 +272,18 @@
     "trend": "new",
     "co_occurs_with": {}
   },
+  "STM32": {
+    "type": "Hardware",
+    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
+    "mentions_this_week": 2,
+    "mentions_prev_week": 1,
+    "change_pct": 100,
+    "trend": "rising",
+    "co_occurs_with": {
+      "NB-IoT": 1,
+      "Zephyr": 1
+    }
+  },
   "Jetson": {
     "type": "Hardware",
     "description_vi": "Nền tảng máy tính nhúng tăng tốc GPU của NVIDIA cho AI thị giác và robot",
@@ -341,18 +353,6 @@
     "trend": "new",
     "co_occurs_with": {
       "Ultrasonic": 2
-    }
-  },
-  "STM32": {
-    "type": "Hardware",
-    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 1,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {
-      "NB-IoT": 1,
-      "Zephyr": 1
     }
   },
   "FPGA": {
