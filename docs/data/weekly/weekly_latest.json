@@ -2,14 +2,14 @@
   "week": "W48",
   "start_date": "2026-11-19",
   "end_date": "2026-11-25",
-  "created_at": "2026-11-25T08:46:09.087091+07:00",
+  "created_at": "2026-11-25T23:26:57.917527+07:00",
   "previous_week": "W48",
   "stats": {
-    "total_signals": 942,
-    "total_opportunities": 1036,
-    "build_ready": 1,
-    "research": 185,
-    "watch": 850
+    "total_signals": 940,
+    "total_opportunities": 1053,
+    "build_ready": 2,
+    "research": 187,
+    "watch": 864
   },
   "prev_stats": {
     "total_signals": 936,
@@ -19,6 +19,18 @@
     "watch": 838
   },
   "top_opportunities": [
+    {
+      "id": "opp_2026_1125_2767b87e",
+      "title": "jagadeeshsrikakolapu03/Aquaculture-Health-Monitoring-System",
+      "total": 9,
+      "stage": "build_ready",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản",
+      "url": "https://github.com/jagadeeshsrikakolapu03/Aquaculture-Health-Monitoring-System"
+    },
     {
       "id": "opp_2026_1118_788864f8",
       "title": "harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT",
@@ -66,20 +78,17 @@
       ],
       "summary_vi": "Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway",
       "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
-    },
-    {
-      "id": "opp_2026_1118_9e9582c4",
-      "title": "PrakatheeshWaran2105/IoT-Based-Water-Quality-Monitoring-Using-EC-Sensor-and-KiwisIoT",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "tech_cheap"
-      ],
-      "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
-      "url": "https://github.com/PrakatheeshWaran2105/IoT-Based-Water-Quality-Monitoring-Using-EC-Sensor-and-KiwisIoT"
     }
   ],
   "funding_deals": [
+    {
+      "title": "jagadeeshsrikakolapu03/Aquaculture-Health-Monitoring-System",
+      "type": "Gọi vốn",
+      "amount": "$28M",
+      "sector": "aquatech",
+      "sector_vi": "Thủy sản & Nước",
+      "url": "https://github.com/jagadeeshsrikakolapu03/Aquaculture-Health-Monitoring-System"
+    },
     {
       "title": "harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT",
       "type": "Gọi vốn",
@@ -111,14 +120,6 @@
       "sector": "igaming",
       "sector_vi": "iGaming & Betting",
       "url": "https://igamingbusiness.com/finance/ballys-intralot-reports-830m-revenue-uk-growth-gambling-duty/"
-    },
-    {
-      "title": "The back office stack that actually survived our first year (and what we killed) (I will not promote)",
-      "type": "Gọi vốn",
-      "amount": "N/A",
-      "sector": "other",
-      "sector_vi": "Công nghệ & Startup",
-      "url": "https://www.reddit.com/r/startups/comments/1xp20c6/the_back_office_stack_that_actually_survived_our/"
     }
   ],
   "hot_topics": {
@@ -246,14 +247,14 @@
       "change_pct": 0
     },
     "Humanoid": {
-      "count": 15,
+      "count": 17,
       "prev_week": 17,
-      "change_pct": -12
+      "change_pct": 0
     },
     "Robotics": {
-      "count": 96,
+      "count": 97,
       "prev_week": 95,
-      "change_pct": 1
+      "change_pct": 2
     },
     "Sensor": {
       "count": 23,
@@ -264,12 +265,12 @@
   "new_terms": [
     "SaaS",
     "OpenAI",
+    "GR8_TECH",
     "AutoModerator",
     "ChatGPT",
     "KiwisIoT",
     "AquaMindAI",
-    "LR2021",
-    "GR8_TECH"
+    "LR2021"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",

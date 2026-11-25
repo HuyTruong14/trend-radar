@@ -29,6 +29,26 @@
       "Turbidity": 1
     }
   },
+  "Humanoid": {
+    "type": "Robotics",
+    "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
+    "mentions_this_week": 17,
+    "mentions_prev_week": 7,
+    "change_pct": 143,
+    "trend": "rising",
+    "co_occurs_with": {
+      "ROS2": 5
+    }
+  },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 16,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "LoRaWAN": {
     "type": "Protocol",
     "description_vi": "Giao thức mạng diện rộng không dây tầm xa, tiêu thụ năng lượng thấp cho cảm biến",
@@ -55,24 +75,20 @@
       "ESP32": 8
     }
   },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 15,
+  "Raspberry Pi": {
+    "type": "Hardware",
+    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
+    "mentions_this_week": 14,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
-    "co_occurs_with": {}
-  },
-  "Humanoid": {
-    "type": "Robotics",
-    "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 15,
-    "mentions_prev_week": 7,
-    "change_pct": 114,
-    "trend": "rising",
     "co_occurs_with": {
-      "ROS2": 5
+      "RP2040": 4,
+      "RP2350": 4,
+      "LoRaWAN": 2,
+      "LoRA": 2,
+      "MicroPython": 1,
+      "ESP32": 1
     }
   },
   "Drone": {
@@ -92,26 +108,10 @@
     "change_pct": 100,
     "trend": "new",
     "co_occurs_with": {
-      "Jetson": 2,
+      "Jetson": 1,
       "ESP32": 1,
       "MQTT": 1,
       "ROS2": 1
-    }
-  },
-  "Raspberry Pi": {
-    "type": "Hardware",
-    "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
-    "mentions_this_week": 12,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "RP2040": 4,
-      "RP2350": 4,
-      "LoRaWAN": 2,
-      "LoRA": 2,
-      "MicroPython": 1,
-      "ESP32": 1
     }
   },
   "RISC-V": {
@@ -234,15 +234,6 @@
       "Zephyr": 1
     }
   },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
-    "mentions_this_week": 4,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
   "Ultrasonic": {
     "type": "Sensor",
     "description_vi": "Cảm biến sóng siêu âm đo khoảng cách và mực nước bồn chứa/ao nuôi không tiếp xúc",
@@ -276,6 +267,15 @@
     "trend": "new",
     "co_occurs_with": {}
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "STM32": {
     "type": "Hardware",
     "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
@@ -286,17 +286,6 @@
     "co_occurs_with": {
       "NB-IoT": 1,
       "Zephyr": 1
-    }
-  },
-  "Jetson": {
-    "type": "Hardware",
-    "description_vi": "Nền tảng máy tính nhúng tăng tốc GPU của NVIDIA cho AI thị giác và robot",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "Arduino": 2
     }
   },
   "BLE": {
@@ -359,6 +348,17 @@
       "Ultrasonic": 2
     }
   },
+  "Jetson": {
+    "type": "Hardware",
+    "description_vi": "Nền tảng máy tính nhúng tăng tốc GPU của NVIDIA cho AI thị giác và robot",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "Arduino": 1
+    }
+  },
   "FPGA": {
     "type": "Hardware",
     "description_vi": "Mạch logic khả trình có độ trễ cực thấp cho xử lý tín hiệu và tăng tốc phần cứng",
@@ -371,6 +371,15 @@
   "Nordic nRF52": {
     "type": "Hardware",
     "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
+  "SLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ nhỏ (<7B tham số) tối ưu để chạy offline trên máy tính cá nhân hoặc chip biên",
     "mentions_this_week": 1,
     "mentions_prev_week": 0,
     "change_pct": 100,
@@ -508,15 +517,6 @@
   "YOLO": {
     "type": "AI/ML",
     "description_vi": "Họ mô hình phát hiện vật thể thời gian thực tốc độ cao và độ chính xác vượt trội",
-    "mentions_this_week": 0,
-    "mentions_prev_week": 0,
-    "change_pct": 0,
-    "trend": "stable",
-    "co_occurs_with": {}
-  },
-  "SLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ nhỏ (<7B tham số) tối ưu để chạy offline trên máy tính cá nhân hoặc chip biên",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,
