@@ -1,22 +1,22 @@
 {
   "week": "W48",
-  "start_date": "2026-11-18",
-  "end_date": "2026-11-24",
-  "created_at": "2026-11-24T23:42:49.759548+07:00",
+  "start_date": "2026-11-19",
+  "end_date": "2026-11-25",
+  "created_at": "2026-11-25T08:46:09.087091+07:00",
   "previous_week": "W48",
   "stats": {
+    "total_signals": 942,
+    "total_opportunities": 1036,
+    "build_ready": 1,
+    "research": 185,
+    "watch": 850
+  },
+  "prev_stats": {
     "total_signals": 936,
     "total_opportunities": 1025,
     "build_ready": 1,
     "research": 186,
     "watch": 838
-  },
-  "prev_stats": {
-    "total_signals": 970,
-    "total_opportunities": 1029,
-    "build_ready": 4,
-    "research": 190,
-    "watch": 835
   },
   "top_opportunities": [
     {
@@ -68,16 +68,15 @@
       "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
     },
     {
-      "id": "opp_2026_1103_0ccb3c60",
-      "title": "Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands",
+      "id": "opp_2026_1118_9e9582c4",
+      "title": "PrakatheeshWaran2105/IoT-Based-Water-Quality-Monitoring-Using-EC-Sensor-and-KiwisIoT",
       "total": 8,
       "stage": "research",
       "signal_type": [
-        "price_shift",
         "tech_cheap"
       ],
-      "summary_vi": "Cơ hội công nghệ và giải pháp mới: Consumer IoT Tracking Devices Set to Reach 31",
-      "url": "https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/"
+      "summary_vi": "Hệ thống quan trắc chất lượng nước đa thông số qua IoT",
+      "url": "https://github.com/PrakatheeshWaran2105/IoT-Based-Water-Quality-Monitoring-Using-EC-Sensor-and-KiwisIoT"
     }
   ],
   "funding_deals": [
@@ -106,20 +105,20 @@
       "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
     },
     {
-      "title": "Consumer IoT Tracking Devices Set to Reach 31.4 Million by 2030 as Adoption Expands",
-      "type": "Xu hướng",
-      "amount": "$31.4M",
-      "sector": "hardware",
-      "sector_vi": "Phần cứng & IoT",
-      "url": "https://iotbusinessnews.com/2026/11/03/consumer-iot-tracking-devices-set-to-reach-31-4-million-by-2030-as-adoption-expands/"
-    },
-    {
       "title": "Bally’s Intralot reports €830m revenue as UK growth offsets higher gambling duty",
       "type": "Gọi vốn",
       "amount": "€830M",
       "sector": "igaming",
       "sector_vi": "iGaming & Betting",
       "url": "https://igamingbusiness.com/finance/ballys-intralot-reports-830m-revenue-uk-growth-gambling-duty/"
+    },
+    {
+      "title": "The back office stack that actually survived our first year (and what we killed) (I will not promote)",
+      "type": "Gọi vốn",
+      "amount": "N/A",
+      "sector": "other",
+      "sector_vi": "Công nghệ & Startup",
+      "url": "https://www.reddit.com/r/startups/comments/1xp20c6/the_back_office_stack_that_actually_survived_our/"
     }
   ],
   "hot_topics": {
@@ -193,8 +192,8 @@
   "tech_frequency": {
     "ESP32": {
       "count": 25,
-      "prev_week": 28,
-      "change_pct": -11
+      "prev_week": 25,
+      "change_pct": 0
     },
     "TinyML": {
       "count": 15,
@@ -247,19 +246,19 @@
       "change_pct": 0
     },
     "Humanoid": {
-      "count": 17,
+      "count": 15,
       "prev_week": 17,
-      "change_pct": 0
+      "change_pct": -12
     },
     "Robotics": {
-      "count": 95,
-      "prev_week": 94,
+      "count": 96,
+      "prev_week": 95,
       "change_pct": 1
     },
     "Sensor": {
-      "count": 20,
-      "prev_week": 24,
-      "change_pct": -17
+      "count": 23,
+      "prev_week": 20,
+      "change_pct": 15
     }
   },
   "new_terms": [
