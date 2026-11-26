@@ -2,7 +2,7 @@
 
 **Khoảng thời gian:** 2026-11-20 đến 2026-11-26  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-26 08:19 (giờ VN)  
+**Tạo lúc:** 2026-11-26 23:00 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W48) | Tuần này (W48) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 940 | **943** | +3 (+0.3%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 1053 | **1066** | +13 (+1.2%) | Chất lượng cơ hội ổn định |
+| **Tổng tín hiệu đầu vào** | 940 | **941** | +1 (+0.1%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 1053 | **1082** | +29 (+2.8%) | Chất lượng cơ hội ổn định |
 | 🔴 **Build-ready (9/9)** | 2 | **2** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 187 | **191** | +4 (+2.1%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 864 | **873** | +9 (+1.0%) | Dòng tín hiệu thị trường rộng |
+| 🟡 **Research (7–8/9)** | 187 | **192** | +5 (+2.7%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 864 | **888** | +24 (+2.8%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -74,11 +74,11 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W48) | Tuần trước (W48) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **98** | 97 | `+1%` | 📈 Tăng nhẹ |
+| **Robotics** | **99** | 97 | `+2%` | 📈 Tăng nhẹ |
 | **Sensor** | **26** | 23 | `+13%` | 📈 Tăng nhẹ |
 | **ESP32** | **25** | 25 | `0%` | ➡️ Ổn định |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **19** | 17 | `+12%` | 📈 Tăng nhẹ |
+| **Humanoid** | **18** | 17 | `+6%` | 📈 Tăng nhẹ |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
 | **LoRaWAN** | **9** | 9 | `0%` | ➡️ Ổn định |
@@ -95,12 +95,12 @@
 
 - **`SaaS`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`OpenAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`GR8_TECH`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`KiwisIoT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`LatAm`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AutoModerator`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`GR8_TECH`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`PrakatheeshWaran2105`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
 ---
 

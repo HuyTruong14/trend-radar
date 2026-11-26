@@ -126,31 +126,6 @@
     "role": "infra"
   },
   {
-    "repo": "OpenHands/OpenHands",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
-    "role": "platform"
-  },
-  {
-    "repo": "paperclipai/paperclip",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
-    "role": "ai"
-  },
-  {
     "repo": "invoke-ai/InvokeAI",
     "stars": 540,
     "stars_prev_week": 460,
@@ -163,7 +138,7 @@
     "role": "ai"
   },
   {
-    "repo": "tt-a1i/archify",
+    "repo": "aqm857886159/Nomi",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -172,7 +147,7 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Nomi",
     "role": "platform"
   },
   {
@@ -202,7 +177,7 @@
     "role": "platform"
   },
   {
-    "repo": "aqm857886159/Nomi",
+    "repo": "OpenHands/OpenHands",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
@@ -211,8 +186,20 @@
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Nomi",
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho OpenHands",
     "role": "platform"
+  },
+  {
+    "repo": "paperclipai/paperclip",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán paperclip",
+    "role": "ai"
   },
   {
     "repo": "ZeroLu/awesome-seedance",
@@ -241,16 +228,28 @@
     "role": "ai"
   },
   {
-    "repo": "qianshuixia/shrimpreel",
+    "repo": "DataTalksClub/production-ai-agents-for-media-generation",
     "stars": 540,
     "stars_prev_week": 460,
     "velocity": 80,
-    "language": "TypeScript",
+    "language": "Python",
     "tags": [
-      "Aquaculture",
-      "Water Quality"
+      "Edge AI"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho shrimpreel",
+    "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán production ai agents for media generation",
+    "role": "ai"
+  },
+  {
+    "repo": "tt-a1i/archify",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho archify",
     "role": "platform"
   },
   {
@@ -281,6 +280,82 @@
     "role": "hardware"
   },
   {
+    "repo": "questdb/questdb",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
+    "role": "platform"
+  },
+  {
+    "repo": "huggingface/lerobot",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Robotics"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
+    "role": "platform"
+  },
+  {
+    "repo": "google-deepmind/mujoco",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
+    "role": "platform"
+  },
+  {
+    "repo": "ArduPilot/ardupilot",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
+    "role": "platform"
+  },
+  {
+    "repo": "Genesis-Embodied-AI/genesis-world",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "Edge AI"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: genesis world",
+    "role": "ai"
+  },
+  {
+    "repo": "harvard-edge/cs249r_book",
+    "stars": 540,
+    "stars_prev_week": 460,
+    "velocity": 80,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
+    "role": "platform"
+  },
+  {
     "repo": "commaai/openpilot",
     "stars": 540,
     "stars_prev_week": 460,
@@ -306,79 +381,16 @@
     "role": "platform"
   },
   {
-    "repo": "harvard-edge/cs249r_book",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
+    "repo": "JuliusBrussee/caveman",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
     "language": "Python",
     "tags": [
       "IoT",
       "Open Source"
     ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho cs249r book",
-    "role": "platform"
-  },
-  {
-    "repo": "questdb/questdb",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: questdb",
-    "role": "platform"
-  },
-  {
-    "repo": "Genesis-Embodied-AI/genesis-world",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Edge AI"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: genesis world",
-    "role": "ai"
-  },
-  {
-    "repo": "google-deepmind/mujoco",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho mujoco",
-    "role": "platform"
-  },
-  {
-    "repo": "huggingface/lerobot",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "Robotics"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: lerobot",
-    "role": "platform"
-  },
-  {
-    "repo": "ArduPilot/ardupilot",
-    "stars": 540,
-    "stars_prev_week": 460,
-    "velocity": 80,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho ardupilot",
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: caveman",
     "role": "platform"
   },
   {
@@ -392,6 +404,32 @@
       "Open Source"
     ],
     "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: browser use",
+    "role": "platform"
+  },
+  {
+    "repo": "Likely7/Veyra-NRVideo",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Veyra NRVideo",
+    "role": "platform"
+  },
+  {
+    "repo": "YILS-LIN/short-video-factory",
+    "stars": 492,
+    "stars_prev_week": 419,
+    "velocity": 73,
+    "language": "Python",
+    "tags": [
+      "IoT",
+      "Open Source"
+    ],
+    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: short video factory",
     "role": "platform"
   },
   {
@@ -470,19 +508,6 @@
     "role": "platform"
   },
   {
-    "repo": "JuliusBrussee/caveman",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: caveman",
-    "role": "platform"
-  },
-  {
     "repo": "czg86389-hub/muse2api",
     "stars": 492,
     "stars_prev_week": 419,
@@ -506,19 +531,6 @@
       "Open Source"
     ],
     "summary_vi": "Giao diện điều khiển và nền tảng quản trị trung tâm cho VideoHighlighter",
-    "role": "platform"
-  },
-  {
-    "repo": "Likely7/Veyra-NRVideo",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: Veyra NRVideo",
     "role": "platform"
   },
   {
@@ -557,19 +569,6 @@
     ],
     "summary_vi": "Mô hình AI và thuật toán phân tích dự đoán Toonflow app",
     "role": "ai"
-  },
-  {
-    "repo": "YILS-LIN/short-video-factory",
-    "stars": 492,
-    "stars_prev_week": 419,
-    "velocity": 73,
-    "language": "Python",
-    "tags": [
-      "IoT",
-      "Open Source"
-    ],
-    "summary_vi": "Ứng dụng mã nguồn mở IoT và AI: short video factory",
-    "role": "platform"
   },
   {
     "repo": "Shubhamsaboo/awesome-llm-apps",

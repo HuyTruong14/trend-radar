@@ -32,22 +32,13 @@
   "Humanoid": {
     "type": "Robotics",
     "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 19,
+    "mentions_this_week": 18,
     "mentions_prev_week": 7,
-    "change_pct": 171,
+    "change_pct": 157,
     "trend": "rising",
     "co_occurs_with": {
       "ROS2": 5
     }
-  },
-  "LLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 16,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
   },
   "LoRaWAN": {
     "type": "Protocol",
@@ -90,6 +81,15 @@
       "MicroPython": 1,
       "ESP32": 1
     }
+  },
+  "LLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
+    "mentions_this_week": 14,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
   },
   "Drone": {
     "type": "Robotics",
@@ -194,6 +194,15 @@
       "TDS": 1
     }
   },
+  "Transformers": {
+    "type": "AI/ML",
+    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
+    "mentions_this_week": 5,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {}
+  },
   "Turbidity": {
     "type": "Sensor",
     "description_vi": "Cảm biến quang học đo độ đục của nước để đánh giá chất lượng và phù sa lơ lửng",
@@ -261,15 +270,6 @@
   "Modbus": {
     "type": "Protocol",
     "description_vi": "Giao thức truyền thông công nghiệp chuẩn mực nối PLC, cảm biến và thiết bị đo",
-    "mentions_this_week": 3,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
-  "Transformers": {
-    "type": "AI/ML",
-    "description_vi": "Kiến trúc mạng nơ-ron dựa trên cơ chế Attention làm nền móng cho cuộc cách mạng AI hiện đại",
     "mentions_this_week": 3,
     "mentions_prev_week": 0,
     "change_pct": 100,
@@ -371,15 +371,6 @@
   "Nordic nRF52": {
     "type": "Hardware",
     "description_vi": "Vi điều khiển Bluetooth Low Energy công suất cực thấp cho thiết bị đeo và beacon",
-    "mentions_this_week": 1,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {}
-  },
-  "SLM": {
-    "type": "AI/ML",
-    "description_vi": "Mô hình ngôn ngữ nhỏ (<7B tham số) tối ưu để chạy offline trên máy tính cá nhân hoặc chip biên",
     "mentions_this_week": 1,
     "mentions_prev_week": 0,
     "change_pct": 100,
@@ -517,6 +508,15 @@
   "YOLO": {
     "type": "AI/ML",
     "description_vi": "Họ mô hình phát hiện vật thể thời gian thực tốc độ cao và độ chính xác vượt trội",
+    "mentions_this_week": 0,
+    "mentions_prev_week": 0,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {}
+  },
+  "SLM": {
+    "type": "AI/ML",
+    "description_vi": "Mô hình ngôn ngữ nhỏ (<7B tham số) tối ưu để chạy offline trên máy tính cá nhân hoặc chip biên",
     "mentions_this_week": 0,
     "mentions_prev_week": 0,
     "change_pct": 0,
