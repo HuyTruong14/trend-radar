@@ -1,22 +1,22 @@
 {
   "week": "W48",
-  "start_date": "2026-11-19",
-  "end_date": "2026-11-25",
-  "created_at": "2026-11-25T23:26:57.917527+07:00",
+  "start_date": "2026-11-20",
+  "end_date": "2026-11-26",
+  "created_at": "2026-11-26T08:19:23.630897+07:00",
   "previous_week": "W48",
   "stats": {
+    "total_signals": 943,
+    "total_opportunities": 1066,
+    "build_ready": 2,
+    "research": 191,
+    "watch": 873
+  },
+  "prev_stats": {
     "total_signals": 940,
     "total_opportunities": 1053,
     "build_ready": 2,
     "research": 187,
     "watch": 864
-  },
-  "prev_stats": {
-    "total_signals": 936,
-    "total_opportunities": 1025,
-    "build_ready": 1,
-    "research": 186,
-    "watch": 838
   },
   "top_opportunities": [
     {
@@ -44,6 +44,18 @@
       "url": "https://github.com/harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT"
     },
     {
+      "id": "opp_2026_1124_f0fe7f5d",
+      "title": "Connected Mining IoT Deployments to Double to 3.1 Million by 2030",
+      "total": 8,
+      "stage": "research",
+      "signal_type": [
+        "price_shift",
+        "tech_cheap"
+      ],
+      "summary_vi": "Cơ hội công nghệ và giải pháp mới: Connected Mining IoT Deployments to Double to",
+      "url": "https://iotbusinessnews.com/2026/11/24/connected-mining-iot-deployments-to-double-to-3-1-million-by-2030/"
+    },
+    {
       "id": "opp_2026_1120_a235cdc4",
       "title": "John Deere Orchard Robotics deal signals growing value of actionable farm data, says ag robotics OG",
       "total": 8,
@@ -66,18 +78,6 @@
       ],
       "summary_vi": "Startup Humyn Labs gọi $47M phát triển giải pháp công nghệ mới",
       "url": "https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/"
-    },
-    {
-      "id": "opp_2026_1024_55c0af0b",
-      "title": "How we bootstrapped our hardware IoT gateway to $20k MRR without VC",
-      "total": 8,
-      "stage": "research",
-      "signal_type": [
-        "price_shift",
-        "tech_cheap"
-      ],
-      "summary_vi": "Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway",
-      "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
     }
   ],
   "funding_deals": [
@@ -98,6 +98,14 @@
       "url": "https://github.com/harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT"
     },
     {
+      "title": "Connected Mining IoT Deployments to Double to 3.1 Million by 2030",
+      "type": "Xu hướng",
+      "amount": "$3.1M",
+      "sector": "hardware",
+      "sector_vi": "Phần cứng & IoT",
+      "url": "https://iotbusinessnews.com/2026/11/24/connected-mining-iot-deployments-to-double-to-3-1-million-by-2030/"
+    },
+    {
       "title": "Humyn Labs raises $47M to collect real-world data for robotics",
       "type": "Gọi vốn",
       "amount": "$47M",
@@ -112,14 +120,6 @@
       "sector": "hardware",
       "sector_vi": "Phần cứng & IoT",
       "url": "https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/"
-    },
-    {
-      "title": "Bally’s Intralot reports €830m revenue as UK growth offsets higher gambling duty",
-      "type": "Gọi vốn",
-      "amount": "€830M",
-      "sector": "igaming",
-      "sector_vi": "iGaming & Betting",
-      "url": "https://igamingbusiness.com/finance/ballys-intralot-reports-830m-revenue-uk-growth-gambling-duty/"
     }
   ],
   "hot_topics": {
@@ -247,30 +247,30 @@
       "change_pct": 0
     },
     "Humanoid": {
-      "count": 17,
+      "count": 19,
       "prev_week": 17,
-      "change_pct": 0
+      "change_pct": 12
     },
     "Robotics": {
-      "count": 97,
-      "prev_week": 95,
-      "change_pct": 2
+      "count": 98,
+      "prev_week": 97,
+      "change_pct": 1
     },
     "Sensor": {
-      "count": 23,
-      "prev_week": 20,
-      "change_pct": 15
+      "count": 26,
+      "prev_week": 23,
+      "change_pct": 13
     }
   },
   "new_terms": [
     "SaaS",
     "OpenAI",
     "GR8_TECH",
-    "AutoModerator",
-    "ChatGPT",
     "KiwisIoT",
-    "AquaMindAI",
-    "LR2021"
+    "ChatGPT",
+    "AutoModerator",
+    "PrakatheeshWaran2105",
+    "AquaMindAI"
   ],
   "disruption_snapshot": {
     "most_disrupted_skill": "Viết mã Boilerplate CRUD & API cơ bản",

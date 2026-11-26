@@ -1,8 +1,8 @@
 # Báo Cáo Xu Hướng Thị Trường & Cơ Hội Tuần W48
 
-**Khoảng thời gian:** 2026-11-19 đến 2026-11-25  
+**Khoảng thời gian:** 2026-11-20 đến 2026-11-26  
 **Chu kỳ lưu trữ:** 52 tuần (1 năm)  
-**Tạo lúc:** 2026-11-25 23:26 (giờ VN)  
+**Tạo lúc:** 2026-11-26 08:19 (giờ VN)  
 
 ---
 
@@ -10,11 +10,11 @@
 
 | Chỉ số quan trắc | Tuần trước (W48) | Tuần này (W48) | Tăng trưởng / Thay đổi | Đánh giá xu thế |
 | --- | :---: | :---: | :---: | --- |
-| **Tổng tín hiệu đầu vào** | 936 | **940** | +4 (+0.4%) | Nguồn dữ liệu mở rộng đều đặn |
-| **Tổng số cơ hội lọc được** | 1025 | **1053** | +28 (+2.7%) | Chất lượng cơ hội ổn định |
-| 🔴 **Build-ready (9/9)** | 1 | **2** | +1 (+100.0%) | Đúng ngách IoT & cảm biến nước |
-| 🟡 **Research (7–8/9)** | 186 | **187** | +1 (+0.5%) | Khối lượng nghiên cứu dồi dào |
-| ⚪ **Watch (4–6/9)** | 838 | **864** | +26 (+3.1%) | Dòng tín hiệu thị trường rộng |
+| **Tổng tín hiệu đầu vào** | 940 | **943** | +3 (+0.3%) | Nguồn dữ liệu mở rộng đều đặn |
+| **Tổng số cơ hội lọc được** | 1053 | **1066** | +13 (+1.2%) | Chất lượng cơ hội ổn định |
+| 🔴 **Build-ready (9/9)** | 2 | **2** | 0 (0.0%) | Đúng ngách IoT & cảm biến nước |
+| 🟡 **Research (7–8/9)** | 187 | **191** | +4 (+2.1%) | Khối lượng nghiên cứu dồi dào |
+| ⚪ **Watch (4–6/9)** | 864 | **873** | +9 (+1.0%) | Dòng tín hiệu thị trường rộng |
 
 ---
 
@@ -24,9 +24,9 @@
 |---|---|:---:|:---:|---|---|
 | 1 | [jagadeeshsrikakolapu03/Aquaculture-Health-Monitoring-System](https://github.com/jagadeeshsrikakolapu03/Aquaculture-Health-Monitoring-System) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
 | 2 | [harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT](https://github.com/harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT) | **🔴 9/9** | `build_ready` | `price_shift, tech_cheap` | Giải pháp số hóa quản lý ao nuôi và trang trại thủy sản |
-| 3 | [John Deere Orchard Robotics deal signals growing value of actionable farm data, says ag robotics OG](https://agfundernews.com/john-deere-orchard-robotics-deal-signals-growing-value-of-actionable-farm-data-says-ag-robotics-og) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: John Deere Orchard Ro |
-| 4 | [Humyn Labs raises $47M to collect real-world data for robotics](https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Startup Humyn Labs gọi $47M phát triển giải pháp công nghệ mới |
-| 5 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: How we bootstrapped our hardware IoT gateway |
+| 3 | [Connected Mining IoT Deployments to Double to 3.1 Million by 2030](https://iotbusinessnews.com/2026/11/24/connected-mining-iot-deployments-to-double-to-3-1-million-by-2030/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Cơ hội công nghệ và giải pháp mới: Connected Mining IoT Deployments to Double to |
+| 4 | [John Deere Orchard Robotics deal signals growing value of actionable farm data, says ag robotics OG](https://agfundernews.com/john-deere-orchard-robotics-deal-signals-growing-value-of-actionable-farm-data-says-ag-robotics-og) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Ứng dụng robot tự hành và công nghệ điều khiển thông minh: John Deere Orchard Ro |
+| 5 | [Humyn Labs raises $47M to collect real-world data for robotics](https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/) | **⚡ 8/9** | `research` | `price_shift, tech_cheap` | Startup Humyn Labs gọi $47M phát triển giải pháp công nghệ mới |
 
 ---
 
@@ -36,9 +36,9 @@
 |---|:---:|:---:|---|---|
 | [jagadeeshsrikakolapu03/Aquaculture-Health-Monitoring-System](https://github.com/jagadeeshsrikakolapu03/Aquaculture-Health-Monitoring-System) | **Gọi vốn** | **$28M** | Thủy sản & Nước | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT](https://github.com/harispidy07/IoT-Based-Smart-Aquaculture-Water-Monitoring-Using-KiwisIoT) | **Gọi vốn** | **$40M** | Thủy sản & Nước | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
+| [Connected Mining IoT Deployments to Double to 3.1 Million by 2030](https://iotbusinessnews.com/2026/11/24/connected-mining-iot-deployments-to-double-to-3-1-million-by-2030/) | **Xu hướng** | **$3.1M** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [Humyn Labs raises $47M to collect real-world data for robotics](https://www.therobotreport.com/humyn-labs-raises-47m-to-collect-real-world-data-for-robotics/) | **Gọi vốn** | **$47M** | Robotics | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 | [How we bootstrapped our hardware IoT gateway to $20k MRR without VC](https://www.reddit.com/r/startups/comments/1xe_bootstrap_iot/) | **Gọi vốn** | **$20K** | Phần cứng & IoT | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
-| [Bally’s Intralot reports €830m revenue as UK growth offsets higher gambling duty](https://igamingbusiness.com/finance/ballys-intralot-reports-830m-revenue-uk-growth-gambling-duty/) | **Gọi vốn** | **€830M** | iGaming & Betting | Dòng vốn tập trung vào phần cứng & giải pháp bền vững |
 
 ---
 
@@ -74,11 +74,11 @@
 
 | Công nghệ / Phần cứng | Tần suất tuần này (W48) | Tuần trước (W48) | Tăng trưởng (%) | Đánh giá xu thế |
 |---|:---:|:---:|:---:|---|
-| **Robotics** | **97** | 95 | `+2%` | 📈 Tăng nhẹ |
+| **Robotics** | **98** | 97 | `+1%` | 📈 Tăng nhẹ |
+| **Sensor** | **26** | 23 | `+13%` | 📈 Tăng nhẹ |
 | **ESP32** | **25** | 25 | `0%` | ➡️ Ổn định |
-| **Sensor** | **23** | 20 | `+15%` | 📈 Tăng nhẹ |
 | **Edge AI** | **19** | 19 | `0%` | ➡️ Ổn định |
-| **Humanoid** | **17** | 17 | `0%` | ➡️ Ổn định |
+| **Humanoid** | **19** | 17 | `+12%` | 📈 Tăng nhẹ |
 | **TinyML** | **15** | 15 | `0%` | ➡️ Ổn định |
 | **RISC-V** | **11** | 11 | `0%` | ➡️ Ổn định |
 | **LoRaWAN** | **9** | 9 | `0%` | ➡️ Ổn định |
@@ -96,11 +96,11 @@
 - **`SaaS`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`OpenAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`GR8_TECH`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`AutoModerator`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`KiwisIoT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`ChatGPT`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`AutoModerator`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
+- **`PrakatheeshWaran2105`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 - **`AquaMindAI`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
-- **`LR2021`**: Thuật ngữ/mô hình phần cứng mới ghi nhận lần đầu trong các bài thảo luận và mã nguồn tuần này.
 
 ---
 

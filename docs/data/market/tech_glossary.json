@@ -32,9 +32,9 @@
   "Humanoid": {
     "type": "Robotics",
     "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 17,
+    "mentions_this_week": 19,
     "mentions_prev_week": 7,
-    "change_pct": 143,
+    "change_pct": 171,
     "trend": "rising",
     "co_occurs_with": {
       "ROS2": 5
@@ -276,18 +276,6 @@
     "trend": "new",
     "co_occurs_with": {}
   },
-  "STM32": {
-    "type": "Hardware",
-    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
-    "mentions_this_week": 2,
-    "mentions_prev_week": 1,
-    "change_pct": 100,
-    "trend": "rising",
-    "co_occurs_with": {
-      "NB-IoT": 1,
-      "Zephyr": 1
-    }
-  },
   "BLE": {
     "type": "Protocol",
     "description_vi": "Bluetooth năng lượng thấp (Bluetooth Low Energy) kết nối tầm gần tiết kiệm pin",
@@ -346,6 +334,18 @@
     "trend": "new",
     "co_occurs_with": {
       "Ultrasonic": 2
+    }
+  },
+  "STM32": {
+    "type": "Hardware",
+    "description_vi": "Dòng vi điều khiển công nghiệp ARM Cortex-M hiệu năng cao từ STMicroelectronics",
+    "mentions_this_week": 1,
+    "mentions_prev_week": 1,
+    "change_pct": 0,
+    "trend": "stable",
+    "co_occurs_with": {
+      "NB-IoT": 1,
+      "Zephyr": 1
     }
   },
   "Jetson": {
