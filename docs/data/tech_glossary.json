@@ -31,7 +31,7 @@
   "Raspberry Pi": {
     "type": "Hardware",
     "description_vi": "Máy tính đơn bo mạch (SBC) Linux đa năng cho gateway IoT và server mini",
-    "mentions_this_week": 16,
+    "mentions_this_week": 15,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -81,9 +81,9 @@
   "Humanoid": {
     "type": "Robotics",
     "description_vi": "Robot dạng người có hai chân và cánh tay thao tác vật lý trong môi trường con người",
-    "mentions_this_week": 14,
+    "mentions_this_week": 13,
     "mentions_prev_week": 7,
-    "change_pct": 100,
+    "change_pct": 86,
     "trend": "rising",
     "co_occurs_with": {
       "ROS2": 5
@@ -117,7 +117,7 @@
   "LLM": {
     "type": "AI/ML",
     "description_vi": "Mô hình ngôn ngữ lớn có khả năng hiểu, tạo sinh văn bản và lý luận phức tạp",
-    "mentions_this_week": 10,
+    "mentions_this_week": 11,
     "mentions_prev_week": 0,
     "change_pct": 100,
     "trend": "new",
@@ -233,20 +233,6 @@
       "Zephyr": 1
     }
   },
-  "Turbidity": {
-    "type": "Sensor",
-    "description_vi": "Cảm biến quang học đo độ đục của nước để đánh giá chất lượng và phù sa lơ lửng",
-    "mentions_this_week": 4,
-    "mentions_prev_week": 0,
-    "change_pct": 100,
-    "trend": "new",
-    "co_occurs_with": {
-      "ESP32": 3,
-      "ESP32-S3": 2,
-      "MQTT": 2,
-      "Ultrasonic": 2
-    }
-  },
   "Ultrasonic": {
     "type": "Sensor",
     "description_vi": "Cảm biến sóng siêu âm đo khoảng cách và mực nước bồn chứa/ao nuôi không tiếp xúc",
@@ -260,6 +246,20 @@
       "MQTT": 2,
       "Turbidity": 2,
       "Actuator": 2
+    }
+  },
+  "Turbidity": {
+    "type": "Sensor",
+    "description_vi": "Cảm biến quang học đo độ đục của nước để đánh giá chất lượng và phù sa lơ lửng",
+    "mentions_this_week": 3,
+    "mentions_prev_week": 0,
+    "change_pct": 100,
+    "trend": "new",
+    "co_occurs_with": {
+      "ESP32": 3,
+      "ESP32-S3": 2,
+      "MQTT": 2,
+      "Ultrasonic": 2
     }
   },
   "BLE": {
